@@ -9,7 +9,7 @@ const MarqueeText = () => (
       {[...words, ...words, ...words].map((w, i) => (
         <span
           key={i}
-          className="text-[5rem] sm:text-[7rem] lg:text-[9rem] font-extrabold font-display text-foreground/[0.03] mx-4 leading-none"
+          className="text-[5rem] sm:text-[7rem] lg:text-[9rem] font-extrabold font-display text-foreground/[0.07] mx-4 leading-none"
         >
           {w}
           <span className="text-primary/10 mx-6">✦</span>
