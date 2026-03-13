@@ -10,7 +10,7 @@ const blocks = [
   {
     icon: Bot,
     title: "Automatización Inteligente",
-    desc: "Reducimos procesos manuales mediante software y automatización. Workflows eficientes y operaciones inteligentes.",
+    desc: "Reducimos trabajo manual mediante workflows automatizados. Operaciones inteligentes y eficientes.",
   },
   {
     icon: Cloud,
@@ -44,7 +44,6 @@ const AboutSection = () => (
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6 relative">
-        {/* Connecting line behind cards */}
         <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2 pointer-events-none" />
 
         {blocks.map((block, i) => (

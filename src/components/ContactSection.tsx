@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, CheckCircle2 } from "lucide-react";
+import { Send, MessageCircle, CheckCircle2, User, Mail, Building2, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const trustItems = [
   "Respuesta en menos de 24h",
@@ -11,8 +18,36 @@ const trustItems = [
   "Infraestructura cloud segura",
 ];
 
+const projectTypes = [
+  "Desarrollo Web",
+  "Sistema / CRM",
+  "Automatización",
+  "Infraestructura Cloud",
+  "Marketing Digital",
+  "Integraciones / APIs",
+  "Otro",
+];
+
+const budgets = [
+  "Menos de $2,000",
+  "$2,000 – $5,000",
+  "$5,000 – $10,000",
+  "$10,000 – $25,000",
+  "$25,000+",
+];
+
+const timelines = [
+  "Lo antes posible",
+  "1-2 meses",
+  "3-6 meses",
+  "Explorando opciones",
+];
+
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({
+    name: "", email: "", company: "", phone: "", message: "",
+    projectType: "", budget: "", timeline: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,8 +57,9 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="section-divider" />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-primary/[0.03] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.04] pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/4 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-accent/3 blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -37,7 +73,7 @@ const ContactSection = () => {
               Hablemos de tu <span className="gradient-text">Proyecto</span>
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Cuéntanos qué necesitas y te ayudamos a encontrar la mejor solución tecnológica para tu empresa.
+              Cuéntanos qué quieres construir y te ayudaremos a diseñar la mejor solución tecnológica para tu empresa.
             </p>
 
             {/* Trust indicators */}
@@ -72,48 +108,126 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-8 space-y-5"
+            className="glass-card rounded-2xl p-8 space-y-4 shadow-xl"
           >
+            {/* Name & Email */}
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Nombre</label>
-                <Input
-                  placeholder="Tu nombre"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
-                />
+                <div className="relative">
+                  <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    placeholder="Tu nombre"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
+                  />
+                </div>
               </div>
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Email</label>
-                <Input
-                  type="email"
-                  placeholder="tu@email.com"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
+                <div className="relative">
+                  <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    type="email"
+                    placeholder="tu@email.com"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Company & Phone */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Empresa</label>
+                <div className="relative">
+                  <Building2 size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    placeholder="Nombre de tu empresa"
+                    value={form.company}
+                    onChange={(e) => setForm({ ...form, company: e.target.value })}
+                    className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Teléfono / WhatsApp</label>
+                <div className="relative">
+                  <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    type="tel"
+                    placeholder="+1 234 567 890"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Project Type & Budget */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
+                <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
+                  <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                    <SelectValue placeholder="Seleccionar..." />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {projectTypes.map((t) => (
+                      <SelectItem key={t} value={t}>{t}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Presupuesto Estimado</label>
+                <Select onValueChange={(v) => setForm({ ...form, budget: v })}>
+                  <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                    <SelectValue placeholder="Seleccionar..." />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {budgets.map((b) => (
+                      <SelectItem key={b} value={b}>{b}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            {/* Timeline */}
+            <div>
+              <label className="text-xs font-medium mb-1.5 block">Tiempo Estimado</label>
+              <Select onValueChange={(v) => setForm({ ...form, timeline: v })}>
+                <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                  <SelectValue placeholder="Seleccionar..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {timelines.map((t) => (
+                    <SelectItem key={t} value={t}>{t}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
+              <div className="relative">
+                <FileText size={14} className="absolute left-3 top-3 text-muted-foreground" />
+                <Textarea
+                  placeholder="Cuéntanos sobre tu proyecto..."
+                  rows={3}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                 />
               </div>
             </div>
-            <div>
-              <label className="text-xs font-medium mb-1.5 block">Empresa</label>
-              <Input
-                placeholder="Nombre de tu empresa"
-                value={form.company}
-                onChange={(e) => setForm({ ...form, company: e.target.value })}
-                className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
-              />
-            </div>
-            <div>
-              <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
-              <Textarea
-                placeholder="Cuéntanos sobre tu proyecto..."
-                rows={4}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
-              />
-            </div>
+
             <Button variant="gradient" size="lg" type="submit" className="w-full group">
               Enviar Mensaje <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
             </Button>
