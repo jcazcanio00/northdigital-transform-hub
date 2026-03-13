@@ -33,9 +33,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
       <HeroSection />
+      <SolutionsSection />
       <TrustSection />
       <AboutSection />
-      <SolutionsSection />
       <SystemsSection />
       <CloudSection />
       <GrowthSection />

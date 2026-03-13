@@ -1,52 +1,29 @@
 import { motion } from "framer-motion";
-import { Brain, Cloud, Briefcase, Zap, Code2 } from "lucide-react";
 
-const categories = [
-  {
-    icon: Brain,
-    title: "Inteligencia Artificial",
-    techs: [
-      { name: "ChatGPT", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" },
-      { name: "Claude", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/anthropic.svg" },
-      { name: "Gemini", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlegemini.svg" },
-    ],
-  },
-  {
-    icon: Cloud,
-    title: "Infraestructura Cloud",
-    techs: [
-      { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-      { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
-      { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-    ],
-  },
-  {
-    icon: Briefcase,
-    title: "Productividad Empresarial",
-    techs: [
-      { name: "Google Workspace", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" },
-      { name: "Microsoft 365", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoft.svg" },
-    ],
-  },
-  {
-    icon: Zap,
-    title: "Automatización",
-    techs: [
-      { name: "Zapier", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zapier.svg" },
-      { name: "Make", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/integromat.svg" },
-      { name: "API Integrations", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/fastapi.svg" },
-    ],
-  },
-  {
-    icon: Code2,
-    title: "Desarrollo",
-    techs: [
-      { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-      { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/supabase.svg" },
-    ],
-  },
+const technologies = [
+  { name: "ChatGPT", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" },
+  { name: "Claude", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/anthropic.svg" },
+  { name: "Gemini", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlegemini.svg" },
+  { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+  { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+  { name: "Google Workspace", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" },
+  { name: "Microsoft 365", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoft.svg" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/supabase.svg" },
+  { name: "Zapier", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zapier.svg" },
+  { name: "Make", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/integromat.svg" },
+];
+
+// Predefined positions for an organic floating cloud layout
+const positions = [
+  { x: 0, y: 0 }, { x: 55, y: -10 }, { x: 110, y: 15 },
+  { x: 165, y: -5 }, { x: 220, y: 10 }, { x: 30, y: 70 },
+  { x: 85, y: 55 }, { x: 140, y: 75 }, { x: 195, y: 50 },
+  { x: 250, y: 65 }, { x: 10, y: 130 }, { x: 70, y: 120 },
+  { x: 130, y: 140 }, { x: 200, y: 125 },
 ];
 
 const TrustSection = () => (
@@ -57,54 +34,98 @@ const TrustSection = () => (
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14"
+        className="text-center mb-16"
       >
         <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Stack Tecnológico</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5">
           La Plataforma Tecnológica que{" "}
           <span className="gradient-text">Utilizamos</span>
         </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto">
-          Herramientas líderes de la industria para construir soluciones robustas y escalables.
-        </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-        {categories.map((cat, ci) => (
-          <motion.div
-            key={cat.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: ci * 0.08 }}
-            className="glass-card rounded-2xl p-5 group transition-all duration-500 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.2)]"
-          >
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <cat.icon size={15} className="text-primary" />
-              </div>
-              <h3 className="text-xs font-bold font-display">{cat.title}</h3>
-            </div>
-            <div className="space-y-2.5">
-              {cat.techs.map((tech) => (
-                <div
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left column - Text */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="max-w-lg"
+        >
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Utilizamos tecnologías modernas e innovadoras de la industria para construir
+            sistemas digitales escalables, seguros y de alto rendimiento.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Desde inteligencia artificial y automatización hasta infraestructura cloud empresarial,
+            seleccionamos las mejores herramientas para cada proyecto.
+          </p>
+        </motion.div>
+
+        {/* Right column - Floating cloud of logos */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative min-h-[280px] flex items-center justify-center"
+        >
+          <div className="relative w-full max-w-[380px] h-[220px] mx-auto">
+            {technologies.map((tech, i) => {
+              const pos = positions[i];
+              const floatDelay = i * 0.4;
+              const floatDuration = 4 + (i % 3) * 1.5;
+
+              return (
+                <motion.div
                   key={tech.name}
-                  className="flex items-center gap-2.5 px-2.5 py-2 rounded-lg bg-muted/20 border border-border/15 transition-all duration-300 hover:border-primary/20 hover:bg-muted/30 group/tech cursor-default"
+                  className="absolute group cursor-default"
+                  style={{ left: pos.x, top: pos.y }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05, duration: 0.4 }}
+                  animate={{
+                    y: [0, -8, 0, 5, 0],
+                  }}
+                  // @ts-ignore
+                  transition2={{
+                    y: {
+                      duration: floatDuration,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: floatDelay,
+                    },
+                  }}
                 >
-                  <img
-                    src={tech.icon}
-                    alt={tech.name}
-                    className="w-4 h-4 opacity-50 group-hover/tech:opacity-80 transition-opacity duration-300 dark:invert dark:brightness-200"
-                    loading="lazy"
-                  />
-                  <span className="text-[11px] font-medium text-muted-foreground group-hover/tech:text-foreground transition-colors duration-300">
+                  <motion.div
+                    className="w-12 h-12 rounded-xl bg-card border border-border/40 flex items-center justify-center
+                      transition-all duration-300
+                      group-hover:border-primary/30 group-hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.3)]
+                      group-hover:scale-110 group-hover:-translate-y-1"
+                    animate={{
+                      y: [0, -6 - (i % 3) * 3, 0],
+                    }}
+                    transition={{
+                      duration: floatDuration,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: floatDelay,
+                    }}
+                  >
+                    <img
+                      src={tech.icon}
+                      alt={tech.name}
+                      className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300 dark:invert dark:brightness-200"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                  <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] font-medium text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                     {tech.name}
                   </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </div>
   </section>
