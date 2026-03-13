@@ -4,20 +4,20 @@ import { Code2, Cloud, TrendingUp, ArrowRight } from "lucide-react";
 const solutions = [
   {
     icon: Code2,
-    title: "Business Systems",
-    description: "Custom business software, CRM systems, dashboards, internal platforms and operational tools.",
+    title: "Sistemas Empresariales",
+    description: "Software empresarial a medida, sistemas CRM, dashboards, plataformas internas y herramientas operativas.",
     href: "#systems",
   },
   {
     icon: Cloud,
-    title: "Cloud Infrastructure",
-    description: "Google Workspace setup, data migrations, secure hosting, VPS infrastructure and cloud management.",
+    title: "Infraestructura Cloud",
+    description: "Configuración de Google Workspace, migraciones de datos, hosting seguro, infraestructura VPS y gestión en la nube.",
     href: "#cloud",
   },
   {
     icon: TrendingUp,
-    title: "Growth Marketing",
-    description: "SEO strategies, Google Ads campaigns and performance analytics.",
+    title: "Marketing de Crecimiento",
+    description: "Estrategias de SEO, campañas de Google Ads y analítica de rendimiento.",
     href: "#growth",
   },
 ];
@@ -35,12 +35,12 @@ const SolutionsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">What We Do</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Lo Que Hacemos</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5">
-          Our Core <span className="gradient-text">Solutions</span>
+          Nuestras <span className="gradient-text">Soluciones</span> Principales
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          End-to-end technology solutions designed to accelerate your business growth.
+          Soluciones tecnológicas integrales diseñadas para acelerar el crecimiento de tu negocio.
         </p>
       </motion.div>
 
@@ -61,7 +61,7 @@ const SolutionsSection = () => (
             <h3 className="text-xl font-bold mb-3 tracking-tight">{s.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.description}</p>
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
-              Learn More <ArrowRight size={14} />
+              Más Información <ArrowRight size={14} />
             </span>
           </motion.a>
         ))}

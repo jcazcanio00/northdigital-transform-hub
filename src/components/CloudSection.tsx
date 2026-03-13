@@ -2,27 +2,25 @@ import { motion } from "framer-motion";
 import { Shield, Server, Database, RefreshCw, Globe, Lock, HardDrive, Activity } from "lucide-react";
 
 const features = [
-  { icon: Globe, title: "Google Workspace", desc: "Full implementation, migration and team onboarding" },
-  { icon: Server, title: "Secure Hosting & VPS", desc: "High-performance infrastructure management" },
-  { icon: Database, title: "Data Migrations", desc: "Safe, zero-downtime migration services" },
-  { icon: RefreshCw, title: "Backups & Monitoring", desc: "24/7 monitoring and automated backups" },
+  { icon: Globe, title: "Google Workspace", desc: "Implementación completa, migración y capacitación de equipos" },
+  { icon: Server, title: "Hosting Seguro y VPS", desc: "Gestión de infraestructura de alto rendimiento" },
+  { icon: Database, title: "Migración de Datos", desc: "Servicios de migración seguros y sin tiempo de inactividad" },
+  { icon: RefreshCw, title: "Respaldos y Monitoreo", desc: "Monitoreo 24/7 y respaldos automatizados" },
 ];
 
-/* Inline cloud mockup */
 const CloudMockup = () => (
   <div className="glass-card rounded-2xl p-5 space-y-4">
     <div className="flex items-center gap-2 mb-2">
       <Activity size={14} className="text-primary" />
-      <span className="text-xs font-bold uppercase tracking-wider">Infrastructure Status</span>
+      <span className="text-xs font-bold uppercase tracking-wider">Estado de Infraestructura</span>
       <span className="ml-auto w-2 h-2 rounded-full bg-primary animate-pulse" />
     </div>
 
-    {/* Servers */}
     <div className="space-y-2">
       {[
-        { name: "Primary Server", status: "Running", cpu: 34, mem: 62 },
-        { name: "Database Cluster", status: "Running", cpu: 28, mem: 45 },
-        { name: "CDN Edge", status: "Running", cpu: 12, mem: 31 },
+        { name: "Servidor Principal", status: "Activo", cpu: 34, mem: 62 },
+        { name: "Clúster de Base de Datos", status: "Activo", cpu: 28, mem: 45 },
+        { name: "CDN Edge", status: "Activo", cpu: 12, mem: 31 },
       ].map((srv) => (
         <div key={srv.name} className="glass-card rounded-xl p-3">
           <div className="flex items-center justify-between mb-2">
@@ -48,7 +46,7 @@ const CloudMockup = () => (
               </div>
             </div>
             <div>
-              <div className="text-[10px] text-muted-foreground mb-1">Memory {srv.mem}%</div>
+              <div className="text-[10px] text-muted-foreground mb-1">Memoria {srv.mem}%</div>
               <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
@@ -64,12 +62,11 @@ const CloudMockup = () => (
       ))}
     </div>
 
-    {/* Security badges */}
     <div className="flex gap-2 flex-wrap">
       {[
-        { icon: Shield, label: "SSL Active" },
+        { icon: Shield, label: "SSL Activo" },
         { icon: Lock, label: "Firewall On" },
-        { icon: Database, label: "Backup OK" },
+        { icon: Database, label: "Respaldo OK" },
       ].map((badge) => (
         <div key={badge.label} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary/5 border border-primary/10">
           <badge.icon size={10} className="text-primary" />
@@ -103,14 +100,14 @@ const CloudSection = () => (
           viewport={{ once: true }}
           className="order-1 lg:order-2"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Cloud Infrastructure</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Infraestructura Cloud</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
-            Secure and Scalable{" "}
-            <span className="gradient-text">Cloud Infrastructure</span>
+            Infraestructura Cloud{" "}
+            <span className="gradient-text">Segura y Escalable</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-            From Google Workspace implementation to VPS management, we build and maintain the cloud
-            infrastructure your business needs to operate securely and scale effortlessly.
+            Desde la implementación de Google Workspace hasta la gestión de VPS, construimos y mantenemos la infraestructura
+            en la nube que tu negocio necesita para operar de forma segura y escalar sin esfuerzo.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {features.map((f) => (
