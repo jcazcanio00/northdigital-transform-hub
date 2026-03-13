@@ -40,6 +40,10 @@
     --glow-primary: 0 0 80px -12px hsl(215 90% 50% / 0.25);
     --glow-accent: 0 0 60px -10px hsl(190 90% 48% / 0.2);
     --glow-card: 0 8px 40px -8px hsl(215 90% 50% / 0.08);
+    --glow-soft: 0 4px 60px -15px hsl(215 90% 50% / 0.12);
+    --mesh-gradient: radial-gradient(at 20% 30%, hsl(215 90% 50% / 0.04) 0%, transparent 50%),
+                     radial-gradient(at 80% 70%, hsl(190 90% 48% / 0.03) 0%, transparent 50%),
+                     radial-gradient(at 50% 50%, hsl(260 80% 60% / 0.02) 0%, transparent 60%);
 
     --glass-bg: hsl(0 0% 100% / 0.65);
     --glass-border: hsl(220 20% 90% / 0.7);
@@ -95,6 +99,10 @@
     --glow-primary: 0 0 100px -15px hsl(200 95% 55% / 0.35);
     --glow-accent: 0 0 80px -12px hsl(190 100% 48% / 0.3);
     --glow-card: 0 8px 50px -10px hsl(200 95% 55% / 0.12);
+    --glow-soft: 0 4px 80px -15px hsl(200 95% 55% / 0.2);
+    --mesh-gradient: radial-gradient(at 20% 30%, hsl(200 95% 55% / 0.08) 0%, transparent 50%),
+                     radial-gradient(at 80% 70%, hsl(190 100% 48% / 0.06) 0%, transparent 50%),
+                     radial-gradient(at 50% 50%, hsl(260 80% 60% / 0.04) 0%, transparent 60%);
 
     --glass-bg: hsl(225 45% 8% / 0.55);
     --glass-border: hsl(225 30% 18% / 0.5);
@@ -226,6 +234,52 @@
     background-image: 
       linear-gradient(hsl(var(--primary) / 0.06) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--primary) / 0.06) 1px, transparent 1px);
+  }
+
+  .bg-mesh {
+    background: var(--mesh-gradient);
+  }
+
+  .glow-line {
+    position: relative;
+  }
+  .glow-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: var(--divider-glow);
+    filter: blur(0.5px);
+  }
+
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 180deg, transparent 0%, transparent 70%, hsl(var(--primary) / 0.03) 80%, transparent 100%);
+    animation: spin-slow 12s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  .floating-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: pulse-glow 6s ease-in-out infinite;
   }
 
   .noise-overlay::after {
