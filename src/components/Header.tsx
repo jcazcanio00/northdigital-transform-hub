@@ -29,36 +29,36 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-card shadow-lg border-b border-border/50" : "bg-transparent"
+        scrolled ? "glass-card border-b border-border/50" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#home" className="text-lg font-bold tracking-tight relative z-10">
+        <a href="#home" className="text-lg font-bold tracking-tight font-display relative z-10">
           <span className="gradient-text">North</span>{" "}
-          <span className="text-foreground">Digital Solutions</span>
+          <span className="text-foreground">Digital</span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="px-3.5 py-2 text-sm text-muted-foreground hover:text-foreground transition-all duration-200 rounded-lg hover:bg-secondary/60 relative z-10"
+              className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-secondary/60"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 relative z-10">
+        <div className="flex items-center gap-2 relative z-10">
           <button
             onClick={toggleTheme}
-            className="w-9 h-9 rounded-xl flex items-center justify-center hover:bg-secondary/80 transition-all duration-200 border border-transparent hover:border-border"
+            className="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition-colors duration-200"
             aria-label="Cambiar tema"
           >
             {isDark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <Button variant="gradient" size="sm" className="hidden sm:inline-flex">
+          <Button variant="gradient" size="sm" className="hidden sm:inline-flex text-xs">
             Agendar Consulta
           </Button>
           <button
