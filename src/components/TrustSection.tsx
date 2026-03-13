@@ -17,13 +17,13 @@ const technologies = [
   { name: "Make", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/integromat.svg" },
 ];
 
-// Predefined positions for an organic floating cloud layout
+// Organic cloud positions spread across the container
 const positions = [
-  { x: 0, y: 0 }, { x: 55, y: -10 }, { x: 110, y: 15 },
-  { x: 165, y: -5 }, { x: 220, y: 10 }, { x: 30, y: 70 },
-  { x: 85, y: 55 }, { x: 140, y: 75 }, { x: 195, y: 50 },
-  { x: 250, y: 65 }, { x: 10, y: 130 }, { x: 70, y: 120 },
-  { x: 130, y: 140 }, { x: 200, y: 125 },
+  { x: "5%", y: "5%" },   { x: "30%", y: "0%" },   { x: "55%", y: "8%" },
+  { x: "80%", y: "2%" },  { x: "0%", y: "35%" },    { x: "22%", y: "30%" },
+  { x: "48%", y: "38%" }, { x: "72%", y: "32%" },   { x: "10%", y: "62%" },
+  { x: "35%", y: "58%" }, { x: "60%", y: "65%" },   { x: "85%", y: "55%" },
+  { x: "18%", y: "85%" }, { x: "55%", y: "88%" },
 ];
 
 const TrustSection = () => (
@@ -66,13 +66,13 @@ const TrustSection = () => (
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative min-h-[280px] flex items-center justify-center"
+          className="relative min-h-[320px] flex items-center justify-center"
         >
-          <div className="relative w-full max-w-[380px] h-[220px] mx-auto">
+          <div className="relative w-full h-[320px]">
             {technologies.map((tech, i) => {
               const pos = positions[i];
-              const floatDelay = i * 0.4;
               const floatDuration = 4 + (i % 3) * 1.5;
+              const floatDelay = i * 0.3;
 
               return (
                 <motion.div
@@ -83,24 +83,12 @@ const TrustSection = () => (
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05, duration: 0.4 }}
-                  animate={{
-                    y: [0, -8, 0, 5, 0],
-                  }}
-                  // @ts-ignore
-                  transition2={{
-                    y: {
-                      duration: floatDuration,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: floatDelay,
-                    },
-                  }}
                 >
                   <motion.div
-                    className="w-12 h-12 rounded-xl bg-card border border-border/40 flex items-center justify-center
+                    className="w-14 h-14 rounded-xl bg-card border border-border/40 flex items-center justify-center
                       transition-all duration-300
-                      group-hover:border-primary/30 group-hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.3)]
-                      group-hover:scale-110 group-hover:-translate-y-1"
+                      group-hover:border-primary/30 group-hover:shadow-[0_0_25px_-4px_hsl(var(--primary)/0.4)]
+                      group-hover:scale-110"
                     animate={{
                       y: [0, -6 - (i % 3) * 3, 0],
                     }}
@@ -114,13 +102,10 @@ const TrustSection = () => (
                     <img
                       src={tech.icon}
                       alt={tech.name}
-                      className="w-6 h-6 opacity-60 group-hover:opacity-100 transition-opacity duration-300 dark:invert dark:brightness-200"
+                      className="w-7 h-7 opacity-60 group-hover:opacity-100 transition-opacity duration-300 dark:invert dark:brightness-200"
                       loading="lazy"
                     />
                   </motion.div>
-                  <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] font-medium text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    {tech.name}
-                  </span>
                 </motion.div>
               );
             })}

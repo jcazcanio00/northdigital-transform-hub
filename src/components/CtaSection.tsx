@@ -30,13 +30,11 @@ const CtaSection = () => (
           <Button variant="gradient" size="lg" className="text-base px-8 py-6">
             Agendar Consulta <ArrowRight size={16} className="ml-1" />
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="text-base px-8 py-6 border-white/20 text-white/80 hover:bg-white/5 hover:border-white/30 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500"
+          <button
+            className="inline-flex items-center justify-center gap-2 text-base px-8 py-3 rounded-lg border border-white/30 text-white bg-transparent font-medium transition-all duration-300 hover:bg-white hover:text-[hsl(220,50%,10%)] hover:border-white"
           >
-            <MessageCircle size={16} className="mr-1" /> Contactar Equipo
-          </Button>
+            <MessageCircle size={16} /> Contactar Equipo
+          </button>
         </div>
       </motion.div>
     </div>

@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle } from "lucide-react";
+import { Send, MessageCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+
+const trustItems = [
+  "Respuesta en menos de 24h",
+  "+150 proyectos implementados",
+  "Infraestructura cloud segura",
+];
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
@@ -14,8 +20,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative">
+    <section id="contact" className="py-24 relative overflow-hidden">
       <div className="section-divider" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-primary/[0.03] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/4 blur-[120px] pointer-events-none" />
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <motion.div
@@ -30,17 +39,29 @@ const ContactSection = () => {
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Cuéntanos qué necesitas y te ayudamos a encontrar la mejor solución tecnológica para tu empresa.
             </p>
+
+            {/* Trust indicators */}
+            <div className="space-y-3 mb-8">
+              {trustItems.map((item) => (
+                <div key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            {/* WhatsApp card */}
             <a
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 glass-card glass-card-hover rounded-xl px-5 py-4"
+              className="inline-flex items-center gap-4 glass-card rounded-xl px-6 py-5 border-green-500/20 hover:border-green-500/40 hover:shadow-[0_0_30px_-8px_rgba(34,197,94,0.3)] transition-all duration-500 group"
             >
-              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                <MessageCircle size={20} className="text-green-500" />
+              <div className="w-12 h-12 rounded-xl bg-green-500/15 flex items-center justify-center group-hover:bg-green-500/25 transition-all duration-300">
+                <MessageCircle size={22} className="text-green-500" />
               </div>
               <div>
-                <div className="text-sm font-semibold">Chat por WhatsApp</div>
+                <div className="text-sm font-bold">Chat por WhatsApp</div>
                 <div className="text-xs text-muted-foreground">Respuesta en minutos</div>
               </div>
             </a>
@@ -60,6 +81,7 @@ const ContactSection = () => {
                   placeholder="Tu nombre"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                 />
               </div>
               <div>
@@ -69,6 +91,7 @@ const ContactSection = () => {
                   placeholder="tu@email.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                 />
               </div>
             </div>
@@ -78,6 +101,7 @@ const ContactSection = () => {
                 placeholder="Nombre de tu empresa"
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
+                className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
               />
             </div>
             <div>
@@ -87,10 +111,11 @@ const ContactSection = () => {
                 rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
               />
             </div>
-            <Button variant="gradient" size="lg" type="submit" className="w-full">
-              Enviar Mensaje <Send size={16} className="ml-1" />
+            <Button variant="gradient" size="lg" type="submit" className="w-full group">
+              Enviar Mensaje <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
             </Button>
           </motion.form>
         </div>

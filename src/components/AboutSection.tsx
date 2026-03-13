@@ -56,11 +56,11 @@ const AboutSection = () => (
             transition={{ delay: i * 0.12 }}
             className="relative group cursor-default"
           >
-            <div className="glass-card rounded-2xl p-8 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
-                <block.icon size={30} className="text-primary" />
+            <div className="glass-card rounded-2xl p-10 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
+                <block.icon size={36} className="text-primary" />
               </div>
-              <h3 className="text-lg font-bold font-display mb-3 group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-xl font-bold font-display mb-3 group-hover:text-primary transition-colors duration-300">
                 {block.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
