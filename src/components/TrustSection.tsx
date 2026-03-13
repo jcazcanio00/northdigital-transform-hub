@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 
-const companies = [
-  "TechCorp", "DataFlow", "CloudBase", "ScaleUp", "InnovateCo", "GrowthLab"
-];
+const companies = ["TechCorp", "DataFlow", "CloudBase", "ScaleUp", "InnovateCo", "GrowthLab"];
 
 const TrustSection = () => (
-  <section className="relative py-16 overflow-hidden">
-    <div className="section-divider" />
-    <div className="container mx-auto px-4 lg:px-8 py-10">
+  <section className="py-16">
+    <div className="container mx-auto px-4 lg:px-8">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -24,14 +21,13 @@ const TrustSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
-            className="text-lg font-bold font-display text-muted-foreground/20 select-none hover:text-primary/40 transition-all duration-500 cursor-default"
+            className="text-lg font-bold font-display text-muted-foreground/25 select-none hover:text-primary/40 transition-all duration-500 cursor-default"
           >
             {name}
           </motion.div>
         ))}
       </div>
     </div>
-    <div className="section-divider" />
   </section>
 );
 
