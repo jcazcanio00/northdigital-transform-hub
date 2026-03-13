@@ -1,94 +1,99 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Send } from "lucide-react";
+import { Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Lead enviado:", form);
+    console.log("Form submitted:", form);
   };
 
   return (
-    <section id="contact" className="relative py-28">
+    <section id="contact" className="py-24 relative">
       <div className="section-divider" />
-      <div className="container mx-auto px-4 lg:px-8 py-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Contacto</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-            Ponte en <span className="gradient-text">Contacto</span>
-          </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            ¿Listo para comenzar? Nuestro equipo te responderá en 24 horas.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto"
-        >
-          <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-4">
-            <Input
-              placeholder="Nombre"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
-              maxLength={100}
-              className="bg-secondary/30 border-border/30 focus:border-primary/40 transition-all"
-            />
-            <Input
-              type="email"
-              placeholder="Correo electrónico"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
-              maxLength={255}
-              className="bg-secondary/30 border-border/30 focus:border-primary/40 transition-all"
-            />
-            <Input
-              placeholder="Empresa"
-              value={form.company}
-              onChange={(e) => setForm({ ...form, company: e.target.value })}
-              maxLength={100}
-              className="bg-secondary/30 border-border/30 focus:border-primary/40 transition-all"
-            />
-            <Textarea
-              placeholder="Cuéntanos sobre tu proyecto..."
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              required
-              maxLength={1000}
-              rows={4}
-              className="bg-secondary/30 border-border/30 focus:border-primary/40 transition-all"
-            />
-            <Button type="submit" variant="gradient" className="w-full" size="lg">
-              <Send size={16} className="mr-2" /> Enviar Mensaje
-            </Button>
-          </form>
-
-          <div className="text-center mt-6">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Contacto</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 font-display">
+              Hablemos de tu <span className="gradient-text">Proyecto</span>
+            </h2>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Cuéntanos qué necesitas y te ayudamos a encontrar la mejor solución tecnológica para tu empresa.
+            </p>
             <a
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors glass-card rounded-full px-5 py-2"
+              className="inline-flex items-center gap-3 glass-card glass-card-hover rounded-xl px-5 py-4"
             >
-              <MessageCircle size={14} className="text-primary" />
-              Chatea por WhatsApp
+              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                <MessageCircle size={20} className="text-green-500" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold">Chat por WhatsApp</div>
+                <div className="text-xs text-muted-foreground">Respuesta en minutos</div>
+              </div>
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="glass-card rounded-2xl p-8 space-y-5"
+          >
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Nombre</label>
+                <Input
+                  placeholder="Tu nombre"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="text-xs font-medium mb-1.5 block">Email</label>
+                <Input
+                  type="email"
+                  placeholder="tu@email.com"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                />
+              </div>
+            </div>
+            <div>
+              <label className="text-xs font-medium mb-1.5 block">Empresa</label>
+              <Input
+                placeholder="Nombre de tu empresa"
+                value={form.company}
+                onChange={(e) => setForm({ ...form, company: e.target.value })}
+              />
+            </div>
+            <div>
+              <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
+              <Textarea
+                placeholder="Cuéntanos sobre tu proyecto..."
+                rows={4}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+              />
+            </div>
+            <Button variant="gradient" size="lg" type="submit" className="w-full">
+              Enviar Mensaje <Send size={16} className="ml-1" />
+            </Button>
+          </motion.form>
+        </div>
       </div>
     </section>
   );

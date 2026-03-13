@@ -5,31 +5,32 @@ const solutions = [
   {
     icon: Code2,
     title: "Sistemas Empresariales",
-    description: "Software empresarial a medida, CRM, dashboards y herramientas operativas internas.",
+    description: "Desarrollo de software empresarial, CRM, dashboards y automatización de procesos internos.",
     href: "#systems",
   },
   {
     icon: Cloud,
     title: "Infraestructura Cloud",
-    description: "Google Workspace, migraciones, hosting seguro, VPS y gestión en la nube.",
+    description: "Google Workspace, hosting empresarial, VPS, migración de datos y gestión en la nube.",
     href: "#cloud",
   },
   {
     icon: TrendingUp,
     title: "Marketing de Crecimiento",
-    description: "SEO, Google Ads, analítica de rendimiento y landing pages optimizadas.",
+    description: "SEO, Google Ads, analítica avanzada y landing pages optimizadas para conversión.",
     href: "#growth",
   },
 ];
 
 const SolutionsSection = () => (
-  <section id="solutions" className="relative py-28">
-    <div className="container mx-auto px-4 lg:px-8 relative z-10">
+  <section id="solutions" className="py-24 relative">
+    <div className="section-divider" />
+    <div className="container mx-auto px-4 lg:px-8 py-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-14"
       >
         <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Lo Que Hacemos</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
@@ -65,6 +66,7 @@ const SolutionsSection = () => (
         ))}
       </div>
     </div>
+    <div className="section-divider mt-8" />
   </section>
 );
 

@@ -1,40 +1,23 @@
-const footerLinks = {
-  Empresa: ["Nosotros", "Carreras", "Blog", "Contacto"],
-  Soluciones: ["Sistemas", "Cloud", "Marketing"],
-  Recursos: ["Casos de Éxito", "Docs", "Soporte", "FAQ"],
-  Contacto: ["hola@northdigital.com", "+1 (555) 123-4567"],
-};
-
 const Footer = () => (
-  <footer className="relative border-t border-border/30 py-14">
-    <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
-        <div className="lg:col-span-2">
-          <span className="text-base font-bold font-display">
-            <span className="gradient-text">North</span> Digital
-          </span>
-          <p className="text-sm text-muted-foreground mt-3 max-w-xs leading-relaxed">
-            Transformación digital a través de sistemas, cloud y marketing de crecimiento.
-          </p>
-        </div>
-        {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title}>
-            <p className="font-semibold text-xs mb-3 font-display">{title}</p>
-            <ul className="space-y-2">
-              {links.map((l) => (
-                <li key={l}>
-                  <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
-                    {l}
-                  </span>
-                </li>
-              ))}
-            </ul>
+  <footer className="border-t border-border/30 py-12">
+    <div className="container mx-auto px-4 lg:px-8">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-xs font-display">N</span>
           </div>
-        ))}
-      </div>
-      <div className="section-divider mb-6" />
-      <div className="text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} North Digital Solutions. Todos los derechos reservados.
+          <span className="text-sm font-bold font-display">North Digital Solutions</span>
+        </div>
+        <nav className="flex flex-wrap gap-6">
+          {["Soluciones", "Servicios", "Proceso", "Contacto"].map((l) => (
+            <a key={l} href={`#${l.toLowerCase()}`} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              {l}
+            </a>
+          ))}
+        </nav>
+        <p className="text-xs text-muted-foreground">
+          © 2026 North Digital Solutions
+        </p>
       </div>
     </div>
   </footer>
