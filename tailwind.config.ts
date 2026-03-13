@@ -113,6 +113,10 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "marquee-slow": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-33.333%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -126,6 +130,7 @@ export default {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "shimmer": "shimmer 2.5s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
+        "marquee-slow": "marquee-slow 60s linear infinite",
       },
     },
   },

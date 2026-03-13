@@ -1,120 +1,124 @@
 import { motion } from "framer-motion";
-import { Shield, Server, Database, RefreshCw, Globe, Lock, HardDrive, Activity } from "lucide-react";
+import { Server, Shield, Database, Cloud, CheckCircle2 } from "lucide-react";
 
 const features = [
-  { icon: Globe, title: "Google Workspace", desc: "Implementación, migración y capacitación" },
-  { icon: Server, title: "Hosting y VPS", desc: "Infraestructura de alto rendimiento" },
-  { icon: Database, title: "Migración de Datos", desc: "Migraciones seguras sin downtime" },
-  { icon: RefreshCw, title: "Respaldos 24/7", desc: "Monitoreo y respaldos automatizados" },
+  { icon: Server, title: "Servidores Optimizados", desc: "Infraestructura de alto rendimiento" },
+  { icon: Shield, title: "Seguridad Avanzada", desc: "Firewalls, SSL, monitoreo 24/7" },
+  { icon: Database, title: "Datos Protegidos", desc: "Backups automáticos y encriptados" },
 ];
 
-const CloudMockup = () => (
-  <div className="glass-card rounded-2xl p-5 space-y-3">
-    <div className="flex items-center gap-2 mb-1">
-      <Activity size={12} className="text-primary" />
-      <span className="text-[10px] font-bold uppercase tracking-wider font-display">Estado de Infraestructura</span>
-      <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+const InfraMockup = () => (
+  <div className="glass-card rounded-2xl border border-border/40 overflow-hidden shadow-2xl">
+    <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/20 bg-muted/10">
+      <div className="flex gap-1.5">
+        <div className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
+        <div className="w-2.5 h-2.5 rounded-full bg-accent/30" />
+        <div className="w-2.5 h-2.5 rounded-full bg-primary/20" />
+      </div>
+      <div className="flex-1 text-center text-[9px] text-muted-foreground">cloud.northdigital.io/infrastructure</div>
     </div>
-
-    <div className="space-y-2">
+    <div className="p-5 space-y-4">
       {[
-        { name: "Servidor Principal", cpu: 34, mem: 62 },
-        { name: "Clúster de BD", cpu: 28, mem: 45 },
-        { name: "CDN Edge", cpu: 12, mem: 31 },
+        { name: "Producción US-East", cpu: 34, mem: 62, status: "Online" },
+        { name: "Staging EU-West", cpu: 18, mem: 41, status: "Online" },
+        { name: "DB Primary", cpu: 52, mem: 78, status: "Online" },
       ].map((srv) => (
-        <div key={srv.name} className="rounded-xl bg-muted/20 border border-border/20 p-3">
+        <div key={srv.name} className="rounded-lg bg-muted/10 border border-border/15 p-3">
           <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-1.5">
-              <HardDrive size={10} className="text-primary" />
+            <div className="flex items-center gap-2">
+              <Server size={11} className="text-primary" />
               <span className="text-[10px] font-semibold">{srv.name}</span>
             </div>
-            <span className="text-[8px] text-primary flex items-center gap-1">
-              <span className="w-1 h-1 rounded-full bg-primary" /> Activo
+            <span className="flex items-center gap-1 text-[9px] text-primary">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
+              {srv.status}
             </span>
           </div>
-          <div className="grid grid-cols-2 gap-2">
-            <div>
-              <div className="text-[8px] text-muted-foreground mb-0.5">CPU {srv.cpu}%</div>
-              <div className="h-1 rounded-full bg-secondary/50 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${srv.cpu}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="h-full rounded-full bg-primary/50"
-                />
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { label: "CPU", val: srv.cpu },
+              { label: "MEM", val: srv.mem },
+            ].map((m) => (
+              <div key={m.label}>
+                <div className="flex justify-between text-[8px] text-muted-foreground mb-1">
+                  <span>{m.label}</span>
+                  <span>{m.val}%</span>
+                </div>
+                <div className="w-full h-1 rounded-full bg-secondary/50">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${m.val}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className={`h-full rounded-full ${m.val > 70 ? "bg-accent" : "bg-primary"}`}
+                  />
+                </div>
               </div>
-            </div>
-            <div>
-              <div className="text-[8px] text-muted-foreground mb-0.5">Mem {srv.mem}%</div>
-              <div className="h-1 rounded-full bg-secondary/50 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${srv.mem}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="h-full rounded-full bg-accent/50"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       ))}
-    </div>
-
-    <div className="flex gap-2 flex-wrap">
-      {[
-        { icon: Shield, label: "SSL Activo" },
-        { icon: Lock, label: "Firewall On" },
-        { icon: Database, label: "Respaldo OK" },
-      ].map((badge) => (
-        <div key={badge.label} className="flex items-center gap-1 px-2 py-1 rounded-lg bg-primary/5 border border-primary/10">
-          <badge.icon size={8} className="text-primary" />
-          <span className="text-[8px] font-medium text-primary">{badge.label}</span>
-        </div>
-      ))}
+      <div className="flex gap-2">
+        {["SSL Activo", "Firewall On", "DDoS Protected"].map((badge) => (
+          <div key={badge} className="flex items-center gap-1 text-[8px] text-primary bg-primary/5 rounded-full px-2.5 py-1">
+            <CheckCircle2 size={8} />
+            {badge}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
 
 const CloudSection = () => (
-  <section id="cloud" className="relative py-28">
-    <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <section id="cloud" className="relative py-28 overflow-hidden">
+    <div className="absolute top-[20%] left-[5%] w-[400px] h-[400px] rounded-full bg-accent/[0.03] blur-[100px] pointer-events-none" />
+    <div className="section-divider" />
+    <div className="container mx-auto px-4 lg:px-8 py-4 relative z-10">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="order-2 lg:order-1"
         >
-          <CloudMockup />
+          <InfraMockup />
         </motion.div>
-
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="order-1 lg:order-2"
         >
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Infraestructura Cloud</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 font-display">
-            Cloud{" "}
-            <span className="gradient-text">Segura y Escalable</span>
+            Cloud Segura y{" "}
+            <span className="gradient-text">Escalable</span>
           </h2>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            Construimos y mantenemos la infraestructura en la nube que tu negocio necesita para operar de forma segura y escalar.
+          <p className="text-muted-foreground mb-8 leading-relaxed">
+            Migramos y optimizamos tu infraestructura con las mejores prácticas de 
+            seguridad, rendimiento y escalabilidad.
           </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {features.map((f) => (
-              <div key={f.title} className="glass-card glass-card-hover rounded-xl p-4 flex items-start gap-3">
-                <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
-                  <f.icon size={16} className="text-primary" />
+          <div className="grid sm:grid-cols-1 gap-4">
+            {features.map((f, i) => (
+              <motion.div
+                key={f.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+                className="flex items-start gap-3 group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                  <f.icon size={18} className="text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm">{f.title}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{f.desc}</p>
+                  <h3 className="text-sm font-bold font-display mb-0.5">{f.title}</h3>
+                  <p className="text-xs text-muted-foreground">{f.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
