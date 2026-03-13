@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import MarqueeText from "@/components/MarqueeText";
 import TrustSection from "@/components/TrustSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import SystemsSection from "@/components/SystemsSection";
 import InlineCta from "@/components/InlineCta";
 import CloudSection from "@/components/CloudSection";
 import GrowthSection from "@/components/GrowthSection";
+import StatsSection from "@/components/StatsSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
@@ -36,11 +38,12 @@ const Index = () => {
       <div className="relative z-10">
         <Header isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
         <HeroSection />
+        <MarqueeText />
         <TrustSection />
         <SolutionsSection />
         <SystemsSection />
         <InlineCta
-          headline="¿Quieres automatizar tu negocio?"
+          headline="Automatiza tus procesos empresariales"
           primaryLabel="Solicitar Consulta"
           secondaryLabel="Ver Soluciones"
           primaryHref="#contact"
@@ -48,13 +51,14 @@ const Index = () => {
         />
         <CloudSection />
         <InlineCta
-          headline="Migra tu empresa al cloud con seguridad."
+          headline="Lleva tu empresa a una infraestructura cloud segura"
           primaryLabel="Hablar con un Experto"
           secondaryLabel="Agendar Diagnóstico"
           primaryHref="#contact"
           secondaryHref="#cloud"
         />
         <GrowthSection />
+        <StatsSection />
         <TestimonialSection />
         <ProcessSection />
         <CtaSection />
