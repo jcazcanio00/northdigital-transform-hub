@@ -1,41 +1,22 @@
 import { motion } from "framer-motion";
-import { Brain, Cloud, Zap } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Brain, Cloud, Zap, Cpu, Shield, Network } from "lucide-react";
 
-const technologies = [
-  { name: "ChatGPT", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg", color: "#10A37F" },
-  { name: "Claude", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/anthropic.svg", color: "#D4A574" },
-  { name: "Gemini", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlegemini.svg", color: "#8E75B2" },
-  { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", color: "#FF9900" },
-  { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg", color: "#4285F4" },
-  { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg", color: "#0078D4" },
-  { name: "Google Workspace", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg", color: "#4285F4" },
-  { name: "Microsoft 365", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoft.svg", color: "#F25022" },
-  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", color: "#2496ED" },
-  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", color: "#000000" },
-  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", color: "#339933" },
-  { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/supabase.svg", color: "#3FCF8E" },
-  { name: "Zapier", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zapier.svg", color: "#FF4F00" },
-  { name: "Make", icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/integromat.svg", color: "#6D00CC" },
-];
-
-const positions = [
-  { x: "5%", y: "5%" },   { x: "30%", y: "0%" },   { x: "55%", y: "8%" },
-  { x: "80%", y: "2%" },  { x: "0%", y: "35%" },    { x: "22%", y: "30%" },
-  { x: "48%", y: "38%" }, { x: "72%", y: "32%" },   { x: "10%", y: "62%" },
-  { x: "35%", y: "58%" }, { x: "60%", y: "65%" },   { x: "85%", y: "55%" },
-  { x: "18%", y: "85%" }, { x: "55%", y: "88%" },
-];
-
-const highlights = [
-  { icon: Brain, text: "Inteligencia Artificial avanzada" },
-  { icon: Cloud, text: "Infraestructura cloud empresarial" },
-  { icon: Zap, text: "Automatización y APIs modernas" },
+const features = [
+  {
+    icon: Brain,
+    title: "Inteligencia Artificial avanzada",
+    desc: "Modelos y herramientas para asistentes, análisis y automatización.",
+  },
+  {
+    icon: Cloud,
+    title: "Infraestructura cloud empresarial",
+    desc: "Arquitectura segura y escalable para sistemas críticos.",
+  },
+  {
+    icon: Zap,
+    title: "Automatización y APIs modernas",
+    desc: "Integraciones, procesos inteligentes y flujos conectados.",
+  },
 ];
 
 const TrustSection = () => (
@@ -63,94 +44,75 @@ const TrustSection = () => (
           viewport={{ once: true }}
           className="max-w-lg"
         >
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Construimos soluciones sobre tecnologías líderes de la industria para garantizar rendimiento, seguridad y escalabilidad.
+          <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+            Construimos soluciones tecnológicas sobre plataformas líderes para garantizar seguridad, escalabilidad y rendimiento empresarial.
           </p>
-          <div className="space-y-4">
-            {highlights.map((h, i) => (
+          <div className="space-y-5">
+            {features.map((f, i) => (
               <motion.div
-                key={h.text}
+                key={f.title}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-4 group"
+                className="flex gap-4 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] transition-all duration-300">
-                  <h.icon size={18} className="text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] transition-all duration-300">
+                  <f.icon size={22} className="text-primary" />
                 </div>
-                <span className="text-sm font-medium">{h.text}</span>
+                <div>
+                  <h4 className="text-sm font-bold mb-1 group-hover:text-primary transition-colors">{f.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Right column - Floating cloud */}
-        <TooltipProvider delayDuration={100}>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative min-h-[320px] flex items-center justify-center"
-          >
-            <div className="relative w-full h-[320px]">
-              {technologies.map((tech, i) => {
-                const pos = positions[i];
-                const floatDuration = 4 + (i % 3) * 1.5;
-                const floatDelay = i * 0.3;
+        {/* Right column - Abstract tech visual */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="relative min-h-[360px] flex items-center justify-center"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-primary/[0.08] rounded-3xl" />
+          <div className="absolute inset-0 bg-dot-grid opacity-20 rounded-3xl pointer-events-none" />
 
-                return (
-                  <motion.div
-                    key={tech.name}
-                    className="absolute group cursor-default"
-                    style={{ left: pos.x, top: pos.y }}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05, duration: 0.4 }}
-                  >
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <motion.div
-                          className="w-14 h-14 rounded-xl bg-card border border-border/40 flex items-center justify-center transition-all duration-300 group-hover:border-primary/30 group-hover:shadow-[0_0_25px_-4px_hsl(var(--primary)/0.4)] group-hover:scale-110"
-                          animate={{ y: [0, -6 - (i % 3) * 3, 0] }}
-                          transition={{
-                            duration: floatDuration,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: floatDelay,
-                          }}
-                        >
-                          <img
-                            src={tech.icon}
-                            alt={tech.name}
-                            className="w-7 h-7 transition-opacity duration-300"
-                            style={{
-                              filter: `brightness(0) saturate(100%)`,
-                              opacity: 0.5,
-                            }}
-                            loading="lazy"
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.filter = "none";
-                              e.currentTarget.style.opacity = "1";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.filter = "brightness(0) saturate(100%)";
-                              e.currentTarget.style.opacity = "0.5";
-                            }}
-                          />
-                        </motion.div>
-                      </TooltipTrigger>
-                      <TooltipContent side="top" className="text-xs font-medium">
-                        {tech.name}
-                      </TooltipContent>
-                    </Tooltip>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </TooltipProvider>
+          {/* Glowing nodes */}
+          {[
+            { x: "20%", y: "20%", icon: Cpu, size: 48 },
+            { x: "65%", y: "15%", icon: Cloud, size: 44 },
+            { x: "45%", y: "50%", icon: Shield, size: 52 },
+            { x: "15%", y: "70%", icon: Zap, size: 40 },
+            { x: "75%", y: "65%", icon: Network, size: 44 },
+            { x: "45%", y: "85%", icon: Brain, size: 40 },
+          ].map((node, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{ left: node.x, top: node.y }}
+              animate={{ y: [0, -8 - (i % 3) * 4, 0] }}
+              transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+            >
+              <div
+                className="rounded-2xl bg-card/80 border border-border/40 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_-6px_hsl(var(--primary)/0.4)] hover:scale-110"
+                style={{ width: node.size, height: node.size }}
+              >
+                <node.icon size={node.size * 0.4} className="text-primary/60" />
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Connection lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="25" y1="25" x2="50" y2="55" stroke="hsl(var(--primary))" strokeOpacity="0.08" strokeWidth="0.3" />
+            <line x1="70" y1="20" x2="50" y2="55" stroke="hsl(var(--primary))" strokeOpacity="0.08" strokeWidth="0.3" />
+            <line x1="50" y1="55" x2="20" y2="75" stroke="hsl(var(--primary))" strokeOpacity="0.08" strokeWidth="0.3" />
+            <line x1="50" y1="55" x2="80" y2="70" stroke="hsl(var(--primary))" strokeOpacity="0.08" strokeWidth="0.3" />
+            <line x1="50" y1="55" x2="50" y2="90" stroke="hsl(var(--primary))" strokeOpacity="0.08" strokeWidth="0.3" />
+          </svg>
+        </motion.div>
       </div>
     </div>
   </section>

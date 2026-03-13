@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SolutionsSection from "@/components/SolutionsSection";
+import LogoSlider from "@/components/LogoSlider";
 import TrustSection from "@/components/TrustSection";
 import BlueCta from "@/components/BlueCta";
 import AboutSection from "@/components/AboutSection";
@@ -35,6 +36,7 @@ const Index = () => {
       <Header isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
       <HeroSection />
       <SolutionsSection />
+      <LogoSlider />
       <TrustSection />
       <BlueCta />
       <AboutSection />

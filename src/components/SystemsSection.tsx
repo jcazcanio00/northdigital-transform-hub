@@ -3,10 +3,10 @@ import { Users, Zap, BarChart3, Puzzle, ArrowRight, TrendingUp, Bell, CheckCircl
 import { Button } from "@/components/ui/button";
 
 const capabilities = [
-  { icon: Users, title: "CRM Inteligente", desc: "Gestión de clientes y pipelines de ventas." },
-  { icon: Zap, title: "Automatización", desc: "Workflows automáticos que eliminan tareas manuales." },
-  { icon: BarChart3, title: "Dashboards", desc: "Visualización de métricas y datos en tiempo real." },
-  { icon: Puzzle, title: "Integraciones", desc: "Conexión con ERP, APIs y herramientas existentes." },
+  { icon: Users, title: "CRM Empresarial", desc: "Gestión de clientes, oportunidades y seguimiento comercial." },
+  { icon: Zap, title: "Automatización de Procesos", desc: "Workflows internos para eliminar tareas manuales." },
+  { icon: BarChart3, title: "Dashboards en Tiempo Real", desc: "Visualización de métricas y operación del negocio." },
+  { icon: Puzzle, title: "Integraciones con APIs", desc: "Conecta tu sistema con herramientas externas, ERPs y servicios cloud." },
 ];
 
 const SystemsSection = () => (
@@ -15,19 +15,17 @@ const SystemsSection = () => (
     <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left: capability cards */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Sistemas</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 font-display leading-tight">
-            Software a Medida para la <span className="gradient-text">Eficiencia</span>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Plataforma</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 font-display leading-tight">
+            Software Empresarial que <span className="gradient-text">Automatiza tu Negocio</span>
           </h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">
-            Desarrollamos sistemas empresariales que automatizan operaciones, centralizan datos
-            y potencian la toma de decisiones.
+            Diseñamos plataformas digitales que centralizan información, automatizan procesos y permiten tomar decisiones con datos en tiempo real.
           </p>
 
           <div className="grid grid-cols-2 gap-4 mb-8">
@@ -54,7 +52,7 @@ const SystemsSection = () => (
           </Button>
         </motion.div>
 
-        {/* Right: SaaS dashboard mockup */}
+        {/* SaaS dashboard mockup */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +61,6 @@ const SystemsSection = () => (
         >
           <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
           <div className="glass-card rounded-2xl p-5 relative">
-            {/* Top bar */}
             <div className="flex items-center justify-between mb-4">
               <div className="text-[11px] font-bold font-display">Panel Empresarial</div>
               <div className="flex items-center gap-2">
@@ -74,7 +71,6 @@ const SystemsSection = () => (
               </div>
             </div>
 
-            {/* Metrics row */}
             <div className="grid grid-cols-3 gap-2 mb-4">
               {[
                 { icon: Users, label: "Clientes", val: "1,284", change: "+12%" },
@@ -92,7 +88,6 @@ const SystemsSection = () => (
               ))}
             </div>
 
-            {/* Chart */}
             <div className="rounded-xl bg-muted/10 border border-border/20 p-4 mb-3">
               <div className="text-[11px] font-semibold mb-3">Rendimiento Semanal</div>
               <div className="flex items-end gap-1 h-24">
@@ -109,7 +104,6 @@ const SystemsSection = () => (
               </div>
             </div>
 
-            {/* Bottom row */}
             <div className="grid grid-cols-2 gap-2">
               <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
                 <div className="text-[10px] font-semibold mb-2 flex items-center gap-1">
