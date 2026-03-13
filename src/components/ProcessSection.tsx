@@ -9,18 +9,23 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section className="py-24">
-    <div className="container mx-auto px-4 lg:px-8">
+  <section className="relative py-28 noise-overlay">
+    <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-primary/5 blur-[140px]" />
+    </div>
+
+    <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">How We Work</p>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5">
           Our <span className="gradient-text">Process</span>
         </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto">
+        <p className="text-muted-foreground max-w-xl mx-auto text-lg">
           A proven methodology that takes you from idea to impact.
         </p>
       </motion.div>
@@ -29,21 +34,21 @@ const ProcessSection = () => (
         {steps.map((s, i) => (
           <motion.div
             key={s.title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="text-center"
+            transition={{ delay: i * 0.12 }}
+            className="glass-card glass-card-hover rounded-2xl p-6 text-center"
           >
-            <div className="relative mx-auto mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto glow-primary">
+            <div className="relative mx-auto mb-5 w-16 h-16">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <s.icon size={28} className="text-primary" />
               </div>
-              <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full gradient-btn text-xs font-bold flex items-center justify-center">
                 {i + 1}
               </span>
             </div>
-            <h3 className="font-bold text-lg mb-2">{s.title}</h3>
+            <h3 className="font-bold text-lg mb-2 tracking-tight">{s.title}</h3>
             <p className="text-sm text-muted-foreground">{s.desc}</p>
           </motion.div>
         ))}

@@ -5,31 +5,33 @@ const companies = [
 ];
 
 const TrustSection = () => (
-  <section className="py-16 border-y border-border">
-    <div className="container mx-auto px-4 lg:px-8">
+  <section className="relative py-16">
+    <div className="section-divider" />
+    <div className="container mx-auto px-4 lg:px-8 py-12">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-widest"
+        className="text-center text-xs text-muted-foreground mb-10 uppercase tracking-[0.2em] font-medium"
       >
         Trusted by Modern Businesses
       </motion.p>
-      <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+      <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
         {companies.map((name, i) => (
           <motion.div
             key={name}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="text-xl font-bold text-muted-foreground/40 select-none"
+            transition={{ delay: i * 0.08 }}
+            className="text-xl font-bold text-muted-foreground/30 select-none hover:text-muted-foreground/50 transition-colors duration-300"
           >
             {name}
           </motion.div>
         ))}
       </div>
     </div>
+    <div className="section-divider" />
   </section>
 );
 
