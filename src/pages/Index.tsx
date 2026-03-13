@@ -4,8 +4,10 @@ import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import SystemsSection from "@/components/SystemsSection";
+import InlineCta from "@/components/InlineCta";
 import CloudSection from "@/components/CloudSection";
 import GrowthSection from "@/components/GrowthSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
@@ -27,10 +29,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
-      {/* Subtle dot grid overlay */}
       <div className="fixed inset-0 bg-dot-grid pointer-events-none z-0" />
-
-      {/* Ambient glow orbs */}
       <div className="fixed top-[10%] left-[15%] w-[600px] h-[600px] floating-orb bg-primary/4 z-0" />
       <div className="fixed top-[50%] right-[10%] w-[500px] h-[500px] floating-orb bg-accent/3 z-0" style={{ animationDelay: "3s" }} />
 
@@ -40,8 +39,23 @@ const Index = () => {
         <TrustSection />
         <SolutionsSection />
         <SystemsSection />
+        <InlineCta
+          headline="¿Quieres automatizar tu negocio?"
+          primaryLabel="Solicitar Consulta"
+          secondaryLabel="Ver Soluciones"
+          primaryHref="#contact"
+          secondaryHref="#solutions"
+        />
         <CloudSection />
+        <InlineCta
+          headline="Migra tu empresa al cloud con seguridad."
+          primaryLabel="Hablar con un Experto"
+          secondaryLabel="Agendar Diagnóstico"
+          primaryHref="#contact"
+          secondaryHref="#cloud"
+        />
         <GrowthSection />
+        <TestimonialSection />
         <ProcessSection />
         <CtaSection />
         <ContactSection />
