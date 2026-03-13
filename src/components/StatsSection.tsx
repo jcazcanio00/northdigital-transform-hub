@@ -64,12 +64,12 @@ const StatsSection = () => (
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12, type: "spring", stiffness: 80 }}
-            className="glass-card rounded-2xl p-8 lg:p-10 text-center group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/25"
+            className="glass-card rounded-2xl p-8 lg:p-12 text-center group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/25"
           >
-            <div className="w-14 h-14 rounded-2xl bg-primary/8 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.4)] transition-all duration-500">
-              <s.icon size={26} className="text-primary" />
+            <div className="w-16 h-16 rounded-2xl bg-primary/8 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.4)] transition-all duration-500">
+              <s.icon size={30} className="text-primary" />
             </div>
-            <div className="text-4xl sm:text-5xl font-extrabold font-display mb-3 gradient-text">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display mb-3 gradient-text">
               <CountUp target={s.value} suffix={s.suffix} />
             </div>
             <p className="text-sm text-muted-foreground leading-snug">{s.label}</p>

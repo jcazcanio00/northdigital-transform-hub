@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import SolutionsSection from "@/components/SolutionsSection";
 import TrustSection from "@/components/TrustSection";
 import AboutSection from "@/components/AboutSection";
-import SolutionsSection from "@/components/SolutionsSection";
 import SystemsSection from "@/components/SystemsSection";
 import CloudSection from "@/components/CloudSection";
 import GrowthSection from "@/components/GrowthSection";
