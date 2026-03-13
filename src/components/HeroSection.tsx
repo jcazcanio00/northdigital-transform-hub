@@ -2,12 +2,55 @@ import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const FloatingParticles = () => (
+  <>
+    {[...Array(6)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute rounded-full bg-primary/10 pointer-events-none"
+        style={{
+          width: 4 + Math.random() * 8,
+          height: 4 + Math.random() * 8,
+          left: `${10 + Math.random() * 80}%`,
+          top: `${10 + Math.random() * 80}%`,
+        }}
+        animate={{
+          y: [0, -20 - Math.random() * 30, 0],
+          x: [0, (Math.random() - 0.5) * 20, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{
+          duration: 4 + Math.random() * 4,
+          repeat: Infinity,
+          delay: i * 0.8,
+          ease: "easeInOut",
+        }}
+      />
+    ))}
+  </>
+);
+
 const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
     {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
+    {/* Radial blue glow behind dashboard */}
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
     <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none" />
+    {/* Subtle gradient motion orbs */}
+    <motion.div
+      className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute bottom-[20%] left-[20%] w-[250px] h-[250px] rounded-full bg-primary/4 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+    />
+
+    <FloatingParticles />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       {/* Text content */}
@@ -54,7 +97,9 @@ const HeroSection = () => (
         transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
         className="relative max-w-5xl mx-auto"
       >
-        <div className="absolute -inset-8 bg-primary/5 rounded-3xl blur-3xl pointer-events-none" />
+        {/* Stronger radial glow behind dashboard */}
+        <div className="absolute -inset-12 bg-primary/8 rounded-[40px] blur-[60px] pointer-events-none" />
+        <div className="absolute -inset-20 bg-primary/4 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative glass-card rounded-2xl border border-border/60 overflow-hidden shadow-2xl">
           {/* Chrome */}

@@ -11,7 +11,9 @@ const features = [
 
 const SystemsSection = () => (
   <section id="systems" className="py-24 relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-transparent pointer-events-none" />
+    {/* Light background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background pointer-events-none" />
+    <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -29,8 +31,8 @@ const SystemsSection = () => (
           </p>
           <ul className="space-y-3 mb-8">
             {features.map((f) => (
-              <li key={f} className="flex items-center gap-3 text-sm">
-                <CheckCircle2 size={16} className="text-primary shrink-0" />
+              <li key={f} className="flex items-center gap-3 text-sm group">
+                <CheckCircle2 size={16} className="text-primary shrink-0 group-hover:scale-110 transition-transform" />
                 <span>{f}</span>
               </li>
             ))}
@@ -54,7 +56,7 @@ const SystemsSection = () => (
                 { icon: Zap, label: "Automations", val: "56" },
                 { icon: BarChart3, label: "Revenue", val: "$128K" },
               ].map((m) => (
-                <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-3 text-center">
+                <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-3 text-center transition-all duration-300 hover:border-primary/20 hover:bg-muted/30">
                   <m.icon size={16} className="text-primary mx-auto mb-1" />
                   <div className="text-xs font-bold">{m.val}</div>
                   <div className="text-[9px] text-muted-foreground">{m.label}</div>
