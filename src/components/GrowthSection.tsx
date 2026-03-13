@@ -3,8 +3,7 @@ import { TrendingUp, Search, Target, BarChart3, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button";
 
 const GrowthSection = () => (
-  <section id="growth" className="py-24 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[var(--gradient-cta)]" />
+  <section id="growth" className="py-24 relative overflow-hidden bg-card">
     <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -15,10 +14,10 @@ const GrowthSection = () => (
         className="text-center mb-14"
       >
         <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Marketing</p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display text-white">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
           Marketing que Impulsa <span className="gradient-text">Resultados</span>
         </h2>
-        <p className="text-white/60 max-w-xl mx-auto">
+        <p className="text-muted-foreground max-w-xl mx-auto">
           SEO, Google Ads y analítica avanzada para generar leads cualificados y escalar tu negocio.
         </p>
       </motion.div>
@@ -36,13 +35,13 @@ const GrowthSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group"
+            className="glass-card glass-card-hover rounded-2xl p-6 group"
           >
             <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center mb-4 group-hover:bg-primary/25 transition-colors">
               <item.icon size={20} className="text-primary" />
             </div>
-            <h3 className="text-sm font-bold font-display mb-2 text-white">{item.title}</h3>
-            <p className="text-xs text-white/50 leading-relaxed">{item.desc}</p>
+            <h3 className="text-sm font-bold font-display mb-2">{item.title}</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
           </motion.div>
         ))}
       </div>
@@ -53,9 +52,9 @@ const GrowthSection = () => (
         viewport={{ once: true }}
         className="max-w-3xl mx-auto"
       >
-        <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+        <div className="glass-card rounded-2xl p-6">
           <div className="flex items-center justify-between mb-4">
-            <div className="text-sm font-semibold text-white font-display">Tráfico Orgánico</div>
+            <div className="text-sm font-semibold font-display">Tráfico Orgánico</div>
             <div className="flex items-center gap-1 text-[10px] text-primary font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" /> +67% este mes
             </div>
