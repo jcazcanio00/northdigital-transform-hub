@@ -14,7 +14,7 @@ const TrustSection = () => (
         viewport={{ once: true }}
         className="text-center text-xs text-muted-foreground mb-10 uppercase tracking-[0.2em] font-medium"
       >
-        Trusted by Modern Businesses
+        Empresas que Confían en Nosotros
       </motion.p>
       <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
         {companies.map((name, i) => (

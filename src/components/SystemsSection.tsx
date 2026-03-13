@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, BarChart3, Users, Settings, Workflow } from "lucide-react";
+import { CheckCircle2, BarChart3, Users, Workflow } from "lucide-react";
 
 const bullets = [
-  "Custom CRM platforms tailored to your workflow",
-  "Internal operational dashboards and reporting tools",
-  "Business process automation and integrations",
-  "Scalable web applications and SaaS products",
-  "API development and third-party integrations",
+  "Plataformas CRM personalizadas para tu flujo de trabajo",
+  "Dashboards operativos internos y herramientas de reportes",
+  "Automatización de procesos empresariales e integraciones",
+  "Aplicaciones web escalables y productos SaaS",
+  "Desarrollo de APIs e integraciones con terceros",
 ];
 
-/* Inline dashboard mockup */
 const DashboardMockup = () => (
   <div className="glass-card rounded-2xl p-5 space-y-4">
-    {/* Top bar */}
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-destructive/60" />
@@ -22,12 +20,11 @@ const DashboardMockup = () => (
       <div className="h-5 w-32 rounded bg-secondary" />
     </div>
 
-    {/* Stats row */}
     <div className="grid grid-cols-3 gap-3">
       {[
-        { icon: Users, label: "Active Users", value: "2,847", change: "+12%" },
-        { icon: BarChart3, label: "Revenue", value: "$48.2K", change: "+24%" },
-        { icon: Workflow, label: "Automations", value: "156", change: "+8%" },
+        { icon: Users, label: "Usuarios Activos", value: "2,847", change: "+12%" },
+        { icon: BarChart3, label: "Ingresos", value: "$48.2K", change: "+24%" },
+        { icon: Workflow, label: "Automatizaciones", value: "156", change: "+8%" },
       ].map((stat) => (
         <div key={stat.label} className="glass-card rounded-xl p-3">
           <div className="flex items-center gap-1.5 mb-1">
@@ -40,10 +37,9 @@ const DashboardMockup = () => (
       ))}
     </div>
 
-    {/* Chart area */}
     <div className="glass-card rounded-xl p-4">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold">Performance</span>
+        <span className="text-xs font-semibold">Rendimiento</span>
         <div className="flex gap-2">
           {["7D", "30D", "90D"].map((p) => (
             <span key={p} className={`text-[10px] px-2 py-0.5 rounded-md ${p === "30D" ? "bg-primary/10 text-primary" : "text-muted-foreground"}`}>{p}</span>
@@ -64,13 +60,12 @@ const DashboardMockup = () => (
       </div>
     </div>
 
-    {/* Pipeline */}
     <div className="grid grid-cols-4 gap-2">
       {[
-        { label: "Lead", count: 48, color: "bg-primary/30" },
-        { label: "Qualified", count: 32, color: "bg-primary/50" },
-        { label: "Proposal", count: 18, color: "bg-accent/50" },
-        { label: "Closed", count: 12, color: "bg-primary/70" },
+        { label: "Prospecto", count: 48, color: "bg-primary/30" },
+        { label: "Calificado", count: 32, color: "bg-primary/50" },
+        { label: "Propuesta", count: 18, color: "bg-accent/50" },
+        { label: "Cerrado", count: 12, color: "bg-primary/70" },
       ].map((stage) => (
         <div key={stage.label} className="text-center">
           <div className={`h-1.5 rounded-full ${stage.color} mb-1.5`} />
@@ -92,14 +87,14 @@ const SystemsSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Business Systems</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Sistemas Empresariales</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
-            Custom Business Systems Built for{" "}
-            <span className="gradient-text">Efficiency</span>
+            Sistemas Empresariales a Medida para la{" "}
+            <span className="gradient-text">Eficiencia</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-            We design and develop internal systems, CRM platforms, operational dashboards and automation tools
-            that streamline your business operations and help you scale with confidence.
+            Diseñamos y desarrollamos sistemas internos, plataformas CRM, dashboards operativos y herramientas de automatización
+            que optimizan las operaciones de tu negocio y te ayudan a escalar con confianza.
           </p>
           <ul className="space-y-4">
             {bullets.map((b) => (

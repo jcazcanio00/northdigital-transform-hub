@@ -1,8 +1,8 @@
 const footerLinks = {
-  Company: ["About", "Careers", "Blog", "Contact"],
-  Solutions: ["Business Systems", "Cloud Infrastructure", "Growth Marketing"],
-  Resources: ["Case Studies", "Documentation", "Support", "FAQ"],
-  Contact: ["hello@northdigital.com", "+1 (555) 123-4567"],
+  Empresa: ["Nosotros", "Carreras", "Blog", "Contacto"],
+  Soluciones: ["Sistemas Empresariales", "Infraestructura Cloud", "Marketing de Crecimiento"],
+  Recursos: ["Casos de Éxito", "Documentación", "Soporte", "Preguntas Frecuentes"],
+  Contacto: ["hola@northdigital.com", "+1 (555) 123-4567"],
 };
 
 const Footer = () => (
@@ -14,7 +14,7 @@ const Footer = () => (
             <span className="gradient-text">North</span> Digital Solutions
           </span>
           <p className="text-sm text-muted-foreground mt-4 max-w-xs leading-relaxed">
-            Digital transformation through systems, cloud infrastructure and growth marketing.
+            Transformación digital a través de sistemas, infraestructura cloud y marketing de crecimiento.
           </p>
         </div>
         {Object.entries(footerLinks).map(([title, links]) => (
@@ -34,7 +34,7 @@ const Footer = () => (
       </div>
       <div className="section-divider mb-8" />
       <div className="text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} North Digital Solutions. All rights reserved.
+        © {new Date().getFullYear()} North Digital Solutions. Todos los derechos reservados.
       </div>
     </div>
   </footer>

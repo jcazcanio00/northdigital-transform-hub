@@ -2,26 +2,24 @@ import { motion } from "framer-motion";
 import { Search, BarChart3, MousePointerClick, Gauge, TrendingUp, Eye, Target } from "lucide-react";
 
 const services = [
-  { icon: Search, title: "SEO Strategy", desc: "Technical SEO, content optimization and organic growth." },
-  { icon: MousePointerClick, title: "Google Ads", desc: "High-performance paid campaigns with measurable ROI." },
-  { icon: BarChart3, title: "Analytics", desc: "Data-driven insights and conversion tracking." },
-  { icon: Gauge, title: "Landing Pages", desc: "Conversion-optimized pages designed for performance." },
+  { icon: Search, title: "Estrategia SEO", desc: "SEO técnico, optimización de contenido y crecimiento orgánico." },
+  { icon: MousePointerClick, title: "Google Ads", desc: "Campañas de pago de alto rendimiento con ROI medible." },
+  { icon: BarChart3, title: "Analítica", desc: "Insights basados en datos y seguimiento de conversiones." },
+  { icon: Gauge, title: "Landing Pages", desc: "Páginas optimizadas para la conversión y el rendimiento." },
 ];
 
-/* Inline marketing mockup */
 const MarketingMockup = () => (
   <div className="glass-card rounded-2xl p-5 space-y-4">
     <div className="flex items-center gap-2 mb-1">
       <Target size={14} className="text-primary" />
-      <span className="text-xs font-bold uppercase tracking-wider">Marketing Dashboard</span>
+      <span className="text-xs font-bold uppercase tracking-wider">Dashboard de Marketing</span>
     </div>
 
-    {/* KPI row */}
     <div className="grid grid-cols-3 gap-3">
       {[
-        { icon: Eye, label: "Impressions", value: "124K", change: "+32%" },
-        { icon: MousePointerClick, label: "Clicks", value: "8.4K", change: "+18%" },
-        { icon: TrendingUp, label: "Conversions", value: "642", change: "+24%" },
+        { icon: Eye, label: "Impresiones", value: "124K", change: "+32%" },
+        { icon: MousePointerClick, label: "Clics", value: "8.4K", change: "+18%" },
+        { icon: TrendingUp, label: "Conversiones", value: "642", change: "+24%" },
       ].map((kpi) => (
         <div key={kpi.label} className="glass-card rounded-xl p-3">
           <kpi.icon size={12} className="text-primary mb-1" />
@@ -34,9 +32,8 @@ const MarketingMockup = () => (
       ))}
     </div>
 
-    {/* Line chart */}
     <div className="glass-card rounded-xl p-4">
-      <div className="text-xs font-semibold mb-3">Organic Traffic</div>
+      <div className="text-xs font-semibold mb-3">Tráfico Orgánico</div>
       <svg viewBox="0 0 200 60" className="w-full h-16" preserveAspectRatio="none">
         <defs>
           <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
@@ -58,12 +55,11 @@ const MarketingMockup = () => (
       </svg>
     </div>
 
-    {/* Keywords table */}
     <div className="space-y-1.5">
       {[
-        { keyword: "business consulting", pos: 3, change: "↑2" },
-        { keyword: "digital transformation", pos: 5, change: "↑4" },
-        { keyword: "cloud migration", pos: 8, change: "↑1" },
+        { keyword: "consultoría empresarial", pos: 3, change: "↑2" },
+        { keyword: "transformación digital", pos: 5, change: "↑4" },
+        { keyword: "migración cloud", pos: 8, change: "↑1" },
       ].map((kw) => (
         <div key={kw.keyword} className="flex items-center justify-between text-xs px-2 py-1.5 rounded-lg bg-secondary/40">
           <span className="text-muted-foreground">{kw.keyword}</span>
@@ -87,14 +83,14 @@ const GrowthSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Growth Marketing</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Marketing de Crecimiento</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
-            Performance Marketing That{" "}
-            <span className="gradient-text">Drives Growth</span>
+            Marketing de Rendimiento que{" "}
+            <span className="gradient-text">Impulsa el Crecimiento</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-            Our growth marketing team combines SEO, Google Ads and analytics to deliver
-            measurable results. From strategy to execution, we help you acquire and convert customers.
+            Nuestro equipo de marketing de crecimiento combina SEO, Google Ads y analítica para entregar
+            resultados medibles. Desde la estrategia hasta la ejecución, te ayudamos a adquirir y convertir clientes.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {services.map((s) => (

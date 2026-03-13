@@ -10,7 +10,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Lead submitted:", form);
+    console.log("Lead enviado:", form);
   };
 
   return (
@@ -27,12 +27,12 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Contact</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Contacto</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5">
-            Get In <span className="gradient-text">Touch</span>
+            Ponte en <span className="gradient-text">Contacto</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            Ready to start your project? Fill out the form and our team will get back to you within 24 hours.
+            ¿Listo para comenzar tu proyecto? Completa el formulario y nuestro equipo te responderá en 24 horas.
           </p>
         </motion.div>
 
@@ -44,7 +44,7 @@ const ContactSection = () => {
         >
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-5">
             <Input
-              placeholder="Name"
+              placeholder="Nombre"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
@@ -53,7 +53,7 @@ const ContactSection = () => {
             />
             <Input
               type="email"
-              placeholder="Email"
+              placeholder="Correo electrónico"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
@@ -61,14 +61,14 @@ const ContactSection = () => {
               className="bg-secondary/50 border-border/50 focus:border-primary/50 transition-colors"
             />
             <Input
-              placeholder="Company"
+              placeholder="Empresa"
               value={form.company}
               onChange={(e) => setForm({ ...form, company: e.target.value })}
               maxLength={100}
               className="bg-secondary/50 border-border/50 focus:border-primary/50 transition-colors"
             />
             <Textarea
-              placeholder="Tell us about your project..."
+              placeholder="Cuéntanos sobre tu proyecto..."
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
@@ -77,7 +77,7 @@ const ContactSection = () => {
               className="bg-secondary/50 border-border/50 focus:border-primary/50 transition-colors"
             />
             <Button type="submit" variant="gradient" className="w-full" size="lg">
-              <Send size={16} className="mr-2" /> Send Message
+              <Send size={16} className="mr-2" /> Enviar Mensaje
             </Button>
           </form>
 
@@ -89,7 +89,7 @@ const ContactSection = () => {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-all duration-200 glass-card rounded-full px-5 py-2.5"
             >
               <MessageCircle size={16} className="text-primary" />
-              Chat with us on WhatsApp
+              Chatea con nosotros por WhatsApp
             </a>
           </div>
         </motion.div>

@@ -8,12 +8,12 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Systems", href: "#systems" },
+  { label: "Inicio", href: "#home" },
+  { label: "Soluciones", href: "#solutions" },
+  { label: "Sistemas", href: "#systems" },
   { label: "Cloud", href: "#cloud" },
-  { label: "Growth", href: "#growth" },
-  { label: "Contact", href: "#contact" },
+  { label: "Crecimiento", href: "#growth" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 const Header = ({ isDark, toggleTheme }: HeaderProps) => {
@@ -54,17 +54,17 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
           <button
             onClick={toggleTheme}
             className="w-9 h-9 rounded-xl flex items-center justify-center hover:bg-secondary/80 transition-all duration-200 border border-transparent hover:border-border"
-            aria-label="Toggle theme"
+            aria-label="Cambiar tema"
           >
             {isDark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex">
-            Schedule a Consultation
+            Agendar Consulta
           </Button>
           <button
             className="lg:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
+            aria-label="Menú"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -85,7 +85,7 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
               </a>
             ))}
             <Button variant="gradient" size="sm" className="mt-3">
-              Schedule a Consultation
+              Agendar Consulta
             </Button>
           </nav>
         </div>

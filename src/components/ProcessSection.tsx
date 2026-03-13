@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Compass, Target, Code2, Rocket } from "lucide-react";
 
 const steps = [
-  { icon: Compass, title: "Discovery", desc: "We analyze your business, goals and challenges." },
-  { icon: Target, title: "Strategy", desc: "We design a tailored technology roadmap." },
-  { icon: Code2, title: "Development", desc: "We build, test and deploy your solution." },
-  { icon: Rocket, title: "Growth", desc: "We optimize, scale and measure results." },
+  { icon: Compass, title: "Descubrimiento", desc: "Analizamos tu negocio, objetivos y desafíos." },
+  { icon: Target, title: "Estrategia", desc: "Diseñamos una hoja de ruta tecnológica a medida." },
+  { icon: Code2, title: "Desarrollo", desc: "Construimos, probamos y desplegamos tu solución." },
+  { icon: Rocket, title: "Crecimiento", desc: "Optimizamos, escalamos y medimos resultados." },
 ];
 
 const ProcessSection = () => (
@@ -21,12 +21,12 @@ const ProcessSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">How We Work</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-primary font-medium mb-4">Cómo Trabajamos</p>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5">
-          Our <span className="gradient-text">Process</span>
+          Nuestro <span className="gradient-text">Proceso</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-          A proven methodology that takes you from idea to impact.
+          Una metodología probada que te lleva de la idea al impacto.
         </p>
       </motion.div>
 
