@@ -37,9 +37,9 @@ const AboutSection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card glass-card-hover rounded-2xl p-6 text-center"
+              className="glass-card rounded-2xl p-6 text-center group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/25"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.4)] transition-all duration-500">
                 <item.icon size={22} className="text-primary" />
               </div>
               <h3 className="text-sm font-bold font-display mb-2">{item.title}</h3>

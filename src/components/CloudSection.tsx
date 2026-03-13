@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 const CloudSection = () => (
   <section id="cloud" className="py-24 relative overflow-hidden">
     <div className="section-divider" />
-    <div className="absolute inset-0 bg-gradient-to-bl from-accent/[0.02] to-transparent pointer-events-none" />
+    {/* Blue gradient background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-primary/[0.08] to-accent/[0.04] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
+    <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
+
     <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
@@ -14,7 +18,7 @@ const CloudSection = () => (
           viewport={{ once: true }}
           className="relative order-2 lg:order-1"
         >
-          <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl pointer-events-none" />
+          <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
           <div className="glass-card rounded-2xl p-6 relative">
             <div className="text-[11px] font-semibold mb-4 font-display">Infraestructura Cloud</div>
             <div className="space-y-3">
@@ -23,8 +27,15 @@ const CloudSection = () => (
                 { icon: Database, label: "Base de Datos", uptime: "99.97%" },
                 { icon: Shield, label: "Firewall", uptime: "100%" },
                 { icon: Globe, label: "CDN Global", uptime: "99.98%" },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center justify-between rounded-xl bg-muted/15 border border-border/20 p-3">
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center justify-between rounded-xl bg-muted/15 border border-border/20 p-3 transition-all duration-300 hover:border-primary/20 hover:bg-muted/25"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center">
                       <item.icon size={14} className="text-primary" />
@@ -38,7 +49,7 @@ const CloudSection = () => (
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
                     Activo
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -60,8 +71,8 @@ const CloudSection = () => (
           </p>
           <ul className="space-y-3 mb-8">
             {["Google Workspace empresarial", "Hosting y VPS de alto rendimiento", "Migración de datos segura", "Monitoreo y soporte continuo"].map((f) => (
-              <li key={f} className="flex items-center gap-3 text-sm">
-                <CheckCircle2 size={16} className="text-primary shrink-0" />
+              <li key={f} className="flex items-center gap-3 text-sm group">
+                <CheckCircle2 size={16} className="text-primary shrink-0 group-hover:scale-110 transition-transform" />
                 <span>{f}</span>
               </li>
             ))}

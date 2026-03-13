@@ -50,13 +50,13 @@ const SolutionsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="glass-card glass-card-hover rounded-2xl p-8 group cursor-pointer"
+            className="glass-card rounded-2xl p-8 group cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)] hover:border-primary/25"
           >
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500">
+              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)] transition-all duration-500">
                 <s.icon size={22} className="text-primary" />
               </div>
-              <h3 className="text-lg font-bold mb-3 font-display">{s.title}</h3>
+              <h3 className="text-lg font-bold mb-3 font-display transition-colors duration-300 group-hover:text-primary">{s.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.description}</p>
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
                 Más Información <ArrowRight size={14} />
