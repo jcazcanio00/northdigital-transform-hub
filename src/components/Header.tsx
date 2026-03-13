@@ -52,12 +52,33 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
         </nav>
 
         <div className="flex items-center gap-3">
+          {/* iOS-style theme toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-muted transition-colors"
+            className={`relative w-14 h-7 rounded-full transition-all duration-300 flex items-center ${
+              isDark
+                ? "bg-gradient-to-r from-primary to-primary/80"
+                : "bg-muted/60 border border-border/40"
+            }`}
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            <span className="absolute left-1.5 flex items-center justify-center">
+              <Sun size={12} className={`transition-opacity duration-300 ${isDark ? "opacity-40 text-white/60" : "opacity-0"}`} />
+            </span>
+            <span className="absolute right-1.5 flex items-center justify-center">
+              <Moon size={12} className={`transition-opacity duration-300 ${isDark ? "opacity-0" : "opacity-40 text-foreground/60"}`} />
+            </span>
+            <span
+              className={`w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center transition-all duration-300 ${
+                isDark ? "translate-x-[30px]" : "translate-x-[3px]"
+              }`}
+            >
+              {isDark ? (
+                <Moon size={10} className="text-primary" />
+              ) : (
+                <Sun size={10} className="text-amber-500" />
+              )}
+            </span>
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex">
             Agendar Consulta

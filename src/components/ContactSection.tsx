@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, CheckCircle2, User, Mail, Building2, Phone, FileText } from "lucide-react";
+import { Send, MessageCircle, User, Mail, Building2, Phone, FileText, Layers, Bot, Cloud, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,16 +12,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const trustItems = [
-  "Respuesta en menos de 24h",
-  "+150 proyectos implementados",
-  "Infraestructura cloud segura",
-];
-
 const projectTypes = [
   "Desarrollo Web",
   "Sistema / CRM",
-  "Automatización",
+  "Automatización de Procesos",
   "Infraestructura Cloud",
   "Marketing Digital",
   "Integraciones / APIs",
@@ -29,18 +23,42 @@ const projectTypes = [
 ];
 
 const budgets = [
-  "Menos de $2,000",
-  "$2,000 – $5,000",
-  "$5,000 – $10,000",
-  "$10,000 – $25,000",
-  "$25,000+",
+  "$5,000 – $10,000 USD",
+  "$10,000 – $25,000 USD",
+  "$25,000 – $50,000 USD",
+  "$50,000 – $100,000 USD",
+  "$100,000+ USD",
 ];
 
 const timelines = [
   "Lo antes posible",
-  "1-2 meses",
-  "3-6 meses",
+  "1–2 meses",
+  "3–6 meses",
   "Explorando opciones",
+];
+
+const highlights = [
+  {
+    icon: Layers,
+    title: "Arquitectura de Sistemas",
+    desc: "Diseño de plataformas digitales seguras y escalables.",
+  },
+  {
+    icon: Bot,
+    title: "Automatización Empresarial",
+    desc: "Eliminamos procesos manuales mediante tecnología inteligente.",
+  },
+  {
+    icon: Cloud,
+    title: "Infraestructura Cloud",
+    desc: "Implementamos entornos estables, monitoreados y de alto rendimiento.",
+  },
+];
+
+const trustMetrics = [
+  "150+ proyectos implementados",
+  "Empresas en múltiples industrias",
+  "Infraestructura cloud segura",
 ];
 
 const ContactSection = () => {
@@ -59,28 +77,50 @@ const ContactSection = () => {
       <div className="section-divider" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.04] pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/4 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-[10%] w-[300px] h-[300px] rounded-full bg-accent/3 blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left column */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
             <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Contacto</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 font-display">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 font-display">
               Hablemos de tu <span className="gradient-text">Proyecto</span>
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Cuéntanos qué quieres construir y te ayudaremos a diseñar la mejor solución tecnológica para tu empresa.
+              Nuestro equipo diseña soluciones tecnológicas para empresas que buscan automatizar procesos, escalar operaciones y tomar decisiones basadas en datos.
             </p>
 
-            {/* Trust indicators */}
-            <div className="space-y-3 mb-8">
-              {trustItems.map((item) => (
-                <div key={item} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+            {/* Highlight blocks */}
+            <div className="space-y-4 mb-8">
+              {highlights.map((h, i) => (
+                <motion.div
+                  key={h.title}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex gap-4 group"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300">
+                    <h.icon size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold mb-0.5 group-hover:text-primary transition-colors">{h.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{h.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Trust metrics */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2 mb-8">
+              {trustMetrics.map((item) => (
+                <div key={item} className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <CheckCircle2 size={13} className="text-primary shrink-0" />
                   {item}
                 </div>
               ))}
@@ -93,22 +133,23 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-4 glass-card rounded-xl px-6 py-5 border-green-500/20 hover:border-green-500/40 hover:shadow-[0_0_30px_-8px_rgba(34,197,94,0.3)] transition-all duration-500 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-green-500/15 flex items-center justify-center group-hover:bg-green-500/25 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-green-500/15 flex items-center justify-center group-hover:bg-green-500/25 group-hover:shadow-[0_0_20px_-4px_rgba(34,197,94,0.4)] transition-all duration-300">
                 <MessageCircle size={22} className="text-green-500" />
               </div>
               <div>
                 <div className="text-sm font-bold">Chat por WhatsApp</div>
-                <div className="text-xs text-muted-foreground">Respuesta en minutos</div>
+                <div className="text-xs text-muted-foreground">Respuesta inmediata · Soporte directo</div>
               </div>
             </a>
           </motion.div>
 
+          {/* Right column - Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-8 space-y-4 shadow-xl"
+            className="glass-card rounded-2xl p-8 space-y-4 shadow-xl border-border/40"
           >
             {/* Name & Email */}
             <div className="grid sm:grid-cols-2 gap-4">
