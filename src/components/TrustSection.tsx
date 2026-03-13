@@ -5,14 +5,14 @@ const companies = [
 ];
 
 const TrustSection = () => (
-  <section className="relative py-16">
+  <section className="relative py-20 overflow-hidden">
     <div className="section-divider" />
     <div className="container mx-auto px-4 lg:px-8 py-12">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-center text-xs text-muted-foreground mb-10 uppercase tracking-[0.2em] font-medium"
+        className="text-center text-xs text-muted-foreground mb-12 uppercase tracking-[0.25em] font-medium"
       >
         Empresas que Confían en Nosotros
       </motion.p>
@@ -24,7 +24,7 @@ const TrustSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="text-xl font-bold text-muted-foreground/30 select-none hover:text-muted-foreground/50 transition-colors duration-300"
+            className="text-xl font-bold text-muted-foreground/25 select-none hover:text-primary/50 transition-all duration-500 cursor-default hover:scale-105"
           >
             {name}
           </motion.div>
