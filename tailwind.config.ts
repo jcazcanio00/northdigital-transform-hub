@@ -130,6 +130,7 @@ export default {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "shimmer": "shimmer 2.5s ease-in-out infinite",
         "marquee": "marquee 30s linear infinite",
+        "marquee-slow": "marquee-slow 60s linear infinite",
       },
     },
   },
