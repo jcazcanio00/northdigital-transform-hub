@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import MarqueeText from "@/components/MarqueeText";
 import TrustSection from "@/components/TrustSection";
 import AboutSection from "@/components/AboutSection";
 import SolutionsSection from "@/components/SolutionsSection";
@@ -13,6 +12,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
+import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -33,7 +33,6 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
       <HeroSection />
-      <MarqueeText />
       <TrustSection />
       <AboutSection />
       <SolutionsSection />
@@ -45,6 +44,7 @@ const Index = () => {
       <ProcessSection />
       <CtaSection />
       <ContactSection />
+      <MarqueeText />
       <Footer />
     </div>
   );
