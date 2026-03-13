@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Search, Target, BarChart3, ArrowRight, Eye, MousePointerClick, Users, Globe, ArrowUpRight } from "lucide-react";
+import { TrendingUp, Search, Target, BarChart3, ArrowRight, Eye, MousePointerClick, Users, Globe, ArrowUpRight, DollarSign, Clock, Percent } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const GrowthSection = () => (
   <section id="growth" className="py-24 relative overflow-hidden">
-    {/* Darker gradient background */}
     <div className="absolute inset-0 bg-gradient-to-br from-card via-muted/80 to-card pointer-events-none" />
     <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
     <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/4 blur-[150px] pointer-events-none" />
@@ -54,19 +53,36 @@ const GrowthSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto relative"
       >
         <div className="absolute -inset-8 bg-primary/3 rounded-3xl blur-3xl pointer-events-none" />
-        <div className="glass-card rounded-2xl p-6 relative">
-          {/* Top metrics row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+        <div className="glass-card rounded-2xl p-5 relative">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-4 pb-3 border-b border-border/20">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                <BarChart3 size={14} className="text-primary" />
+              </div>
+              <div>
+                <div className="text-xs font-bold font-display">Analytics Dashboard</div>
+                <div className="text-[9px] text-muted-foreground">Marzo 2026 · En vivo</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
+              <span className="text-[9px] text-primary font-medium">Live</span>
+            </div>
+          </div>
+
+          {/* Top metrics */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
             {[
               { icon: Eye, label: "Sesiones", value: "48.2K", change: "+24%", up: true },
               { icon: Users, label: "Usuarios", value: "12.8K", change: "+18%", up: true },
               { icon: MousePointerClick, label: "Conv. Rate", value: "3.42%", change: "+0.8%", up: true },
               { icon: Globe, label: "Tráfico Org.", value: "67%", change: "+12%", up: true },
             ].map((m) => (
-              <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-4 transition-all duration-300 hover:border-primary/15">
+              <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-3.5 transition-all duration-300 hover:border-primary/15">
                 <div className="flex items-center justify-between mb-2">
                   <m.icon size={14} className="text-muted-foreground" />
                   <span className="flex items-center gap-0.5 text-[10px] font-medium text-primary">
@@ -98,7 +114,7 @@ const GrowthSection = () => (
                     whileInView={{ height: `${h}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.02 }}
-                    className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60 relative group/bar"
+                    className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60 relative"
                   >
                     <motion.div
                       initial={{ height: 0 }}
@@ -143,15 +159,18 @@ const GrowthSection = () => (
           </div>
 
           {/* Bottom widgets */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-3">
             {[
-              { label: "Bounce Rate", value: "32.1%", trend: "-4.2%", good: true },
-              { label: "Avg. Session", value: "4m 12s", trend: "+18%", good: true },
-              { label: "Pages/Session", value: "3.8", trend: "+0.6", good: true },
-              { label: "CPC Promedio", value: "$0.42", trend: "-12%", good: true },
+              { icon: Percent, label: "Bounce Rate", value: "32.1%", trend: "-4.2%" },
+              { icon: Clock, label: "Avg. Session", value: "4m 12s", trend: "+18%" },
+              { icon: Eye, label: "Pages/Session", value: "3.8", trend: "+0.6" },
+              { icon: DollarSign, label: "CPC Promedio", value: "$0.42", trend: "-12%" },
+              { icon: Target, label: "CTR", value: "4.8%", trend: "+1.2%" },
+              { icon: TrendingUp, label: "ROAS", value: "5.2x", trend: "+0.8x" },
             ].map((w) => (
               <div key={w.label} className="rounded-xl bg-muted/15 border border-border/15 p-3 transition-all duration-300 hover:border-primary/15">
-                <div className="text-[9px] text-muted-foreground mb-1">{w.label}</div>
+                <w.icon size={11} className="text-muted-foreground mb-1.5" />
+                <div className="text-[9px] text-muted-foreground mb-0.5">{w.label}</div>
                 <div className="text-sm font-bold">{w.value}</div>
                 <div className="text-[9px] font-medium text-primary">{w.trend}</div>
               </div>
