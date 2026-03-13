@@ -40,6 +40,10 @@
     --glow-primary: 0 0 80px -12px hsl(215 90% 50% / 0.25);
     --glow-accent: 0 0 60px -10px hsl(190 90% 48% / 0.2);
     --glow-card: 0 8px 40px -8px hsl(215 90% 50% / 0.08);
+    --glow-soft: 0 4px 60px -15px hsl(215 90% 50% / 0.12);
+    --mesh-gradient: radial-gradient(at 20% 30%, hsl(215 90% 50% / 0.04) 0%, transparent 50%),
+                     radial-gradient(at 80% 70%, hsl(190 90% 48% / 0.03) 0%, transparent 50%),
+                     radial-gradient(at 50% 50%, hsl(260 80% 60% / 0.02) 0%, transparent 60%);
 
     --glass-bg: hsl(0 0% 100% / 0.65);
     --glass-border: hsl(220 20% 90% / 0.7);
