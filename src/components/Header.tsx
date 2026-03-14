@@ -78,6 +78,13 @@ const Header = () => {
             Inicio
           </Link>
 
+          <Link
+            to="/acerca"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
+            Acerca de
+          </Link>
+
           {/* Soluciones dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
@@ -103,13 +110,6 @@ const Header = () => {
               </div>
             )}
           </div>
-
-          <Link
-            to="/acerca"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
-          >
-            Acerca de
-          </Link>
 
           {/* Legal dropdown */}
           <div ref={legalDropdownRef} className="relative">
