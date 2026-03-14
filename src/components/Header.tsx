@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoNorth from "@/assets/logo-north.png";
+import logoNorthDark from "@/assets/logo-north-dark.webp";
+import logoNorthLight from "@/assets/logo-north-light.webp";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
@@ -56,7 +57,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logoNorth} alt="North Digital" className="h-7 w-auto" />
+          <img src={isDark ? logoNorthLight : logoNorthDark} alt="North Digital" className="h-7 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
