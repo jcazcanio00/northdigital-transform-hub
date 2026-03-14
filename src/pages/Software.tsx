@@ -431,6 +431,7 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
+      <BrandStrip />
 
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-16 overflow-hidden">

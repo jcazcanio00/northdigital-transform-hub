@@ -74,6 +74,7 @@ const Contacto = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
+      <BrandStrip />
 
       {/* Hero */}
       <section className="pt-32 pb-16 relative overflow-hidden">

@@ -225,6 +225,7 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
+      <BrandStrip />
 
       {/* HERO */}
       <section className="pt-32 pb-20 relative">
