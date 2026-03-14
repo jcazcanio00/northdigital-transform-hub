@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Send, MessageCircle, User, Mail, Building2, Phone, FileText, Layers, Bot, Cloud, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
