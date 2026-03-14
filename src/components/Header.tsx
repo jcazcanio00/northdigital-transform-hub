@@ -9,6 +9,7 @@ const solutions = [
   { label: "Software Empresarial", href: "/software" },
   { label: "Cloud Services", href: "/cloud" },
   { label: "Marketing de Crecimiento", href: "/marketing" },
+  { label: "Marketing Digital Cancún", href: "/marketing-digital-cancun" },
 ];
 
 
