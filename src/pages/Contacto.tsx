@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Send, Mail, Phone, User, Building2, FileText, MessageCircle } from "lucide-react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
-import BrandStrip from "@/components/BrandStrip";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
