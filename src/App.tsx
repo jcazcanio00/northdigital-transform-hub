@@ -8,6 +8,7 @@ import Software from "./pages/Software.tsx";
 import Cloud from "./pages/Cloud.tsx";
 import Marketing from "./pages/Marketing.tsx";
 import Contacto from "./pages/Contacto.tsx";
+import Acerca from "./pages/Acerca.tsx";
 import Terminos from "./pages/Terminos.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/cloud" element={<Cloud />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/acerca" element={<Acerca />} />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
