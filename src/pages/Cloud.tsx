@@ -351,7 +351,7 @@ const CloudPage = () => {
               Servicios de <span className="gradient-text">Infraestructura Cloud</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Soluciones integrales para cada etapa de tu infraestructura cloud.
+              Desde la arquitectura inicial hasta la operación continua, cubrimos cada capa de tu ecosistema cloud.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
