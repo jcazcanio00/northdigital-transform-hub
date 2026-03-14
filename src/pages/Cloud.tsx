@@ -326,7 +326,7 @@ const CloudPage = () => {
                   <a href="#architecture">Arquitectura Cloud <ArrowDown size={16} className="ml-2" /></a>
                 </Button>
                 <Button variant="outline" size="lg" className="gradient-btn-outline" asChild>
-                  <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+                  <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
                 </Button>
               </div>
             </motion.div>
