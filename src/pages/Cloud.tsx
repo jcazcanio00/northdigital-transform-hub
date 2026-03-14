@@ -574,6 +574,7 @@ const CloudPage = () => {
         </div>
       </section>
 
+      <MarqueeText />
       <Footer />
     </div>
   );

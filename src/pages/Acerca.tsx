@@ -529,6 +529,7 @@ const Acerca = () => (
       </div>
     </section>
 
+    <MarqueeText />
     <Footer />
   </div>
 );

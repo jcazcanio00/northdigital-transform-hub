@@ -271,6 +271,7 @@ const Contacto = () => {
         </div>
       </section>
 
+      <MarqueeText />
       <Footer />
     </div>
   );

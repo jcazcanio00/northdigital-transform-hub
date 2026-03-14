@@ -799,6 +799,7 @@ const Software = () => {
         </div>
       </section>
 
+      <MarqueeText />
       <Footer />
     </div>
   );

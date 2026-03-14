@@ -574,6 +574,7 @@ const MarketingPage = () => {
         </div>
       </section>
 
+      <MarqueeText />
       <Footer />
     </div>
   );
