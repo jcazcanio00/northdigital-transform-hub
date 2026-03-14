@@ -49,7 +49,10 @@ const TrustSection = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Stack Tecnológico</p>
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+          <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+          Stack Tecnológico
+        </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5">
           La Plataforma Tecnológica que{" "}
           <span className="gradient-text">Utilizamos</span>

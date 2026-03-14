@@ -569,7 +569,10 @@ const Software = () => {
       <section id="capabilities" className="py-20 relative">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Plataforma</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Plataforma
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Capacidades de la <span className="gradient-text">Plataforma</span>
             </h2>
@@ -649,7 +652,10 @@ const Software = () => {
       <section className="py-20 surface-sunken relative">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Soluciones</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Soluciones
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Plataformas Empresariales que <span className="gradient-text">Desarrollamos</span>
             </h2>
@@ -678,7 +684,10 @@ const Software = () => {
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Arquitectura</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Arquitectura
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Flujo de <span className="gradient-text">Arquitectura</span>
             </h2>
@@ -745,7 +754,10 @@ const Software = () => {
       <section className="py-20 surface-sunken relative">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Beneficios</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Beneficios
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Resultados de <span className="gradient-text">Negocio</span>
             </h2>
@@ -775,7 +787,10 @@ const Software = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Casos de uso</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Casos de uso
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Casos de <span className="gradient-text">Uso</span>
             </h2>
@@ -803,7 +818,10 @@ const Software = () => {
       <section id="process" className="py-20 surface-sunken relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Proceso</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Proceso
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Proceso de <span className="gradient-text">Desarrollo</span>
             </h2>
