@@ -190,7 +190,7 @@ const Acerca = () => (
                 Con el tiempo, las necesidades de nuestros clientes evolucionaron. Ya no bastaba con una página web o una campaña de ads — necesitaban <strong className="text-foreground">sistemas internos, infraestructura cloud segura y estrategias de crecimiento basadas en datos.</strong>
               </p>
               <p>
-                Esa demanda nos llevó a evolucionar. Hoy somos una empresa de tecnología que combina desarrollo de software, infraestructura cloud y growth marketing para ayudar a empresas a operar mejor, crecer más rápido y tomar decisiones inteligentes.
+                Esa demanda nos llevó a evolucionar. Hoy somos una empresa de tecnología que combina desarrollo de software, cloud services y growth marketing para ayudar a empresas a operar mejor, crecer más rápido y tomar decisiones inteligentes.
               </p>
             </div>
           </motion.div>
