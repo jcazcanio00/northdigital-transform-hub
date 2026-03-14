@@ -13,6 +13,7 @@ import Terminos from "./pages/Terminos.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppFloatingButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

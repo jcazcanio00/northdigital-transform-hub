@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
 const FloatingParticles = () => (
   <>
@@ -81,7 +82,7 @@ const HeroSection = () => (
           Somos una agencia de marketing digital en Cancún que combina software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center items-center">
           <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
             <Link to="/contacto">Iniciar un Proyecto <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
@@ -98,6 +99,7 @@ const HeroSection = () => (
           >
             Explorar Soluciones
           </Button>
+          <WhatsAppHeroButton />
         </div>
       </motion.div>
 
