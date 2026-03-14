@@ -73,13 +73,13 @@ const HeroSection = () => (
         </motion.div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
-          Tu Socio en Software Empresarial,{" "}
-          <span className="gradient-text">Cloud</span>{" "}
-          y Marketing de Crecimiento
+          Automatiza, Escala y{" "}
+          <span className="gradient-text">Crece</span>{" "}
+          con Tecnología.
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Combinamos software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
+          Somos una agencia de marketing digital en Cancún que combina software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center items-center">
