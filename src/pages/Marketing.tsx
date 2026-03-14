@@ -347,7 +347,7 @@ const MarketingPage = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: "easeOut" }}
               className="absolute top-[60px] left-[12%] right-[12%] h-[3px] rounded-full origin-left"
-              style={{ background: "linear-gradient(90deg, hsl(210 100% 55%), hsl(var(--primary)), hsl(198 93% 55%), hsl(var(--primary)))" }}
+              style={{ background: "linear-gradient(90deg, hsl(185 85% 50%), hsl(var(--primary)), hsl(268 65% 52%), hsl(var(--primary)))" }}
             />
             {/* Glow effect on line */}
             <motion.div
@@ -436,7 +436,7 @@ const MarketingPage = () => {
 
       {/* ═══ MID-PAGE CTA ═══ */}
       <section className="py-28 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(220 60% 8%), hsl(220 70% 14%), hsl(220 60% 8%))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(240 30% 6%), hsl(260 45% 12%), hsl(240 30% 6%))" }} />
         {/* Data lines */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[8, 22, 38, 54, 70, 86].map((top, i) => (
@@ -449,8 +449,8 @@ const MarketingPage = () => {
             </div>
           ))}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,60%,8%)] via-transparent to-[hsl(220,60%,8%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,60%,8%)]/60 via-transparent to-[hsl(220,60%,8%)]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(250,40%,7%)] via-transparent to-[hsl(250,40%,7%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(250,40%,7%)]/60 via-transparent to-[hsl(250,40%,7%)]/60 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">

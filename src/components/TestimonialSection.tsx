@@ -10,7 +10,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ t }: { t: typeof testimonials[0] }) => (
-  <div className="w-[340px] shrink-0 rounded-2xl p-6 mx-3 border border-white/10 bg-gradient-to-br from-[hsl(220,50%,14%)] to-[hsl(220,50%,10%)] shadow-lg hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/20">
+  <div className="w-[340px] shrink-0 rounded-2xl p-6 mx-3 border border-white/10 bg-gradient-to-br from-[hsl(250,35%,14%)] to-[hsl(240,30%,10%)] shadow-lg hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_-8px_hsl(var(--brand-purple)/0.3)] hover:border-brand-purple/20">
     <div className="flex gap-0.5 mb-3">
       {[...Array(5)].map((_, i) => (
         <Star key={i} size={12} className="text-primary fill-primary" />
@@ -33,9 +33,9 @@ const TestimonialCard = ({ t }: { t: typeof testimonials[0] }) => (
 const TestimonialSection = () => (
   <section className="py-24 relative overflow-hidden">
     {/* Dark blue gradient background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(240,30%,5%)] via-[hsl(260,35%,8%)] to-[hsl(240,30%,4%)]" />
     <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[150px] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-brand-purple/8 blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-12">
       <motion.div
@@ -55,8 +55,8 @@ const TestimonialSection = () => (
     </div>
 
     <div className="relative">
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[hsl(228,40%,6%)] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[hsl(228,45%,5%)] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[hsl(240,30%,5%)] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[hsl(240,30%,4%)] to-transparent z-10 pointer-events-none" />
       <div className="flex animate-marquee hover:[animation-play-state:paused]">
         {[...testimonials, ...testimonials, ...testimonials].map((t, i) => (
           <TestimonialCard key={i} t={t} />
