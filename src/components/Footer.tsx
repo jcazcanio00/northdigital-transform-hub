@@ -70,15 +70,6 @@ const Footer = () => (
               <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Contacto</Link>
             </li>
           </ul>
-          <h4 className="text-sm font-bold font-display mb-3 mt-6">Legal</h4>
-          <ul className="space-y-2.5">
-            <li>
-              <Link to="/terminos" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Términos y Condiciones</Link>
-            </li>
-            <li>
-              <Link to="/privacidad" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Aviso de Privacidad</Link>
-            </li>
-          </ul>
         </div>
 
         {/* Contacto */}
