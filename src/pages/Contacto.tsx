@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, User, Building2, FileText, MessageCircle } from "lucide-react";
+import { Send, Mail, Phone, User, Building2, FileText, MessageCircle, Loader2 } from "lucide-react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
@@ -15,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { useContactForm } from "@/hooks/useContactForm";
 
 const projectTypes = [
   "Desarrollo Web",
@@ -48,21 +47,7 @@ const socials = [
 ];
 
 const Contacto = () => {
-  const { toast } = useToast();
-  const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "",
-    projectType: "", budget: "", timeline: "", message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Nuevo contacto: ${form.name} – ${form.projectType || "Sin especificar"}`);
-    const body = encodeURIComponent(
-      `Nombre: ${form.name}\nEmpresa: ${form.company}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nTipo de proyecto: ${form.projectType}\nPresupuesto: ${form.budget}\nTiempo estimado: ${form.timeline}\n\nMensaje:\n${form.message}`
-    );
-    window.open(`mailto:info@northmkt.com.mx?subject=${subject}&body=${body}`, "_self");
-    toast({ title: "¡Gracias!", description: "Se abrirá tu cliente de correo para enviar el mensaje." });
-  };
+  const { form, loading, updateField, handleSubmit } = useContactForm();
 
   const fade = (delay = 0) => ({
     initial: { opacity: 0, y: 20 },
@@ -112,14 +97,14 @@ const Contacto = () => {
                   <label className="text-xs font-medium mb-1.5 block">Nombre</label>
                   <div className="relative">
                     <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input placeholder="Tu nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input placeholder="Tu nombre" value={form.name} onChange={(e) => updateField("name", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Email</label>
                   <div className="relative">
                     <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => updateField("email", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
               </div>
@@ -130,14 +115,14 @@ const Contacto = () => {
                   <label className="text-xs font-medium mb-1.5 block">Empresa</label>
                   <div className="relative">
                     <Building2 size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input placeholder="Nombre de tu empresa" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input placeholder="Nombre de tu empresa" value={form.company} onChange={(e) => updateField("company", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Teléfono / WhatsApp</label>
                   <div className="relative">
                     <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => updateField("phone", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
               </div>
@@ -146,7 +131,7 @@ const Contacto = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
-                  <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
+                  <Select onValueChange={(v) => updateField("projectType", v)}>
                     <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                       <SelectValue placeholder="Seleccionar..." />
                     </SelectTrigger>
@@ -159,7 +144,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Presupuesto Estimado</label>
-                  <Select onValueChange={(v) => setForm({ ...form, budget: v })}>
+                  <Select onValueChange={(v) => updateField("budget", v)}>
                     <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                       <SelectValue placeholder="Seleccionar..." />
                     </SelectTrigger>
@@ -175,7 +160,7 @@ const Contacto = () => {
               {/* Timeline */}
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Tiempo Estimado</label>
-                <Select onValueChange={(v) => setForm({ ...form, timeline: v })}>
+                <Select onValueChange={(v) => updateField("timeline", v)}>
                   <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
@@ -192,12 +177,16 @@ const Contacto = () => {
                 <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
                 <div className="relative">
                   <FileText size={14} className="absolute left-3 top-3 text-muted-foreground" />
-                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={3} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={3} value={form.message} onChange={(e) => updateField("message", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                 </div>
               </div>
 
-              <Button variant="gradient" size="lg" type="submit" className="w-full group">
-                Enviar solicitud <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
+              <Button variant="gradient" size="lg" type="submit" className="w-full group" disabled={loading}>
+                {loading ? (
+                  <><Loader2 size={16} className="mr-1 animate-spin" /> Enviando...</>
+                ) : (
+                  <>Enviar solicitud <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></>
+                )}
               </Button>
             </motion.form>
 

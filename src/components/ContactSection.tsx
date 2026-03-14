@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, User, Mail, Building2, Phone, FileText, Layers, Bot, Cloud, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Send, MessageCircle, User, Mail, Building2, Phone, FileText, Layers, Bot, Cloud, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useContactForm } from "@/hooks/useContactForm";
 
 const projectTypes = [
   "Desarrollo Web",
@@ -62,21 +61,7 @@ const trustMetrics = [
 ];
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [form, setForm] = useState({
-    name: "", email: "", company: "", phone: "", message: "",
-    projectType: "", budget: "", timeline: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Nuevo contacto: ${form.name} – ${form.projectType || "Sin especificar"}`);
-    const body = encodeURIComponent(
-      `Nombre: ${form.name}\nEmpresa: ${form.company}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nTipo de proyecto: ${form.projectType}\nPresupuesto: ${form.budget}\nTiempo estimado: ${form.timeline}\n\nMensaje:\n${form.message}`
-    );
-    window.open(`mailto:info@northmkt.com.mx?subject=${subject}&body=${body}`, "_self");
-    toast({ title: "¡Gracias!", description: "Se abrirá tu cliente de correo para enviar el mensaje." });
-  };
+  const { form, loading, updateField, handleSubmit } = useContactForm();
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
@@ -169,7 +154,7 @@ const ContactSection = () => {
                   <Input
                     placeholder="Tu nombre"
                     value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    onChange={(e) => updateField("name", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
@@ -182,7 +167,7 @@ const ContactSection = () => {
                     type="email"
                     placeholder="tu@email.com"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) => updateField("email", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
@@ -198,7 +183,7 @@ const ContactSection = () => {
                   <Input
                     placeholder="Nombre de tu empresa"
                     value={form.company}
-                    onChange={(e) => setForm({ ...form, company: e.target.value })}
+                    onChange={(e) => updateField("company", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
@@ -211,7 +196,7 @@ const ContactSection = () => {
                     type="tel"
                     placeholder="+1 234 567 890"
                     value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    onChange={(e) => updateField("phone", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
@@ -222,7 +207,7 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
-                <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
+                <Select onValueChange={(v) => updateField("projectType", v)}>
                   <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
@@ -235,7 +220,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Presupuesto Estimado</label>
-                <Select onValueChange={(v) => setForm({ ...form, budget: v })}>
+                <Select onValueChange={(v) => updateField("budget", v)}>
                   <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
@@ -251,7 +236,7 @@ const ContactSection = () => {
             {/* Timeline */}
             <div>
               <label className="text-xs font-medium mb-1.5 block">Tiempo Estimado</label>
-              <Select onValueChange={(v) => setForm({ ...form, timeline: v })}>
+              <Select onValueChange={(v) => updateField("timeline", v)}>
                 <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                   <SelectValue placeholder="Seleccionar..." />
                 </SelectTrigger>
@@ -272,14 +257,18 @@ const ContactSection = () => {
                   placeholder="Cuéntanos sobre tu proyecto..."
                   rows={3}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) => updateField("message", e.target.value)}
                   className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                 />
               </div>
             </div>
 
-            <Button variant="gradient" size="lg" type="submit" className="w-full group">
-              Enviar Mensaje <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
+            <Button variant="gradient" size="lg" type="submit" className="w-full group" disabled={loading}>
+              {loading ? (
+                <><Loader2 size={16} className="mr-1 animate-spin" /> Enviando...</>
+              ) : (
+                <>Enviar Mensaje <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></>
+              )}
             </Button>
           </motion.form>
         </div>
