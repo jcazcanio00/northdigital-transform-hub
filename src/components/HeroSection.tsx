@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FloatingParticles = () => (
   <>
@@ -81,10 +82,20 @@ const HeroSection = () => (
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button variant="gradient" size="lg" className="text-base px-8 py-6">
-            Iniciar un Proyecto <ArrowRight size={16} className="ml-1" />
+          <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+            <Link to="/contacto">Iniciar un Proyecto <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
-          <Button variant="gradient-outline" size="lg" className="text-base px-8 py-6">
+          <Button
+            variant="gradient-outline"
+            size="lg"
+            className="text-base px-8 py-6"
+            onClick={() => {
+              const el = document.getElementById("solutions");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
             Explorar Soluciones
           </Button>
         </div>
