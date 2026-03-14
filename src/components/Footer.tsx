@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import logoNorth from "@/assets/logo-north.png";
 
 const socials = [
   { icon: Facebook, href: "https://www.facebook.com/northmkt?mibextid=LQQJ4d", label: "Facebook" },
