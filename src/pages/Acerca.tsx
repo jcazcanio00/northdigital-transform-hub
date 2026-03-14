@@ -200,7 +200,7 @@ const Acerca = () => (
               {[
                 { year: "2018", text: "Fundación como agencia de marketing digital y desarrollo web." },
                 { year: "2020", text: "Primeros proyectos de software empresarial y CRMs internos." },
-                { year: "2022", text: "Expansión hacia infraestructura cloud y Google Workspace." },
+                { year: "2022", text: "Expansión hacia cloud services y Google Workspace." },
                 { year: "2024", text: "Consolidación como empresa de tecnología y crecimiento digital." },
               ].map((item, i) => (
                 <div key={item.year} className="flex gap-4">
