@@ -280,7 +280,21 @@ const MarketingPage = () => {
                   <a href="#channels">Canales de Crecimiento <ArrowDown size={16} className="ml-2" /></a>
                 </Button>
                 <Button variant="outline" size="lg" className="gradient-btn-outline" asChild>
-                  <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
+                  <a
+                    href="https://wa.me/529983513337"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => {
+                      if (typeof window !== "undefined" && (window as any).gtag) {
+                        (window as any).gtag("event", "whatsapp_click", {
+                          contact_method: "whatsapp",
+                          page_location: window.location.href,
+                          page_path: window.location.pathname,
+                          cta_location: "hero_section_marketing",
+                        });
+                      }
+                    }}
+                  >Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
                 </Button>
               </div>
             </motion.div>
