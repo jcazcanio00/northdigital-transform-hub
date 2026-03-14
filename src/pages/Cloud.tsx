@@ -274,11 +274,11 @@ const devopsTools = [
 ];
 
 const useCases = [
-  { icon: Server, title: "Sistemas empresariales", desc: "Infraestructura robusta para aplicaciones de misión crítica." },
-  { icon: Globe, title: "Plataformas SaaS", desc: "Arquitectura multi-tenant con escalabilidad global." },
-  { icon: BarChart3, title: "Dashboards analíticos", desc: "Procesamiento de datos en tiempo real con visualización avanzada." },
-  { icon: Workflow, title: "Automatización de procesos", desc: "Pipelines de datos y workflows automatizados." },
-  { icon: Terminal, title: "APIs empresariales", desc: "APIs de alto rendimiento con documentación y versionado." },
+  { icon: Server, title: "Sistemas empresariales", desc: "Infraestructura robusta para aplicaciones críticas como ERP, CRM y plataformas operativas." },
+  { icon: Globe, title: "Plataformas SaaS", desc: "Arquitectura cloud diseñada para escalar usuarios, servicios y tráfico global." },
+  { icon: BarChart3, title: "Dashboards analíticos", desc: "Procesamiento de datos en tiempo real para plataformas de análisis e inteligencia de negocio." },
+  { icon: Workflow, title: "Automatización de procesos", desc: "Workflows y microservicios que integran sistemas y eliminan tareas manuales." },
+  { icon: Terminal, title: "APIs empresariales", desc: "Infraestructura preparada para exponer APIs seguras, rápidas y escalables." },
 ];
 
 /* ─── Main Page ─── */
