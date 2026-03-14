@@ -33,9 +33,9 @@ const TestimonialCard = ({ t }: { t: typeof testimonials[0] }) => (
 const TestimonialSection = () => (
   <section className="py-24 relative overflow-hidden">
     {/* Dark blue gradient background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(240,30%,5%)] via-[hsl(260,35%,8%)] to-[hsl(240,30%,4%)]" />
     <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[150px] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-brand-purple/8 blur-[150px] pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-12">
       <motion.div
