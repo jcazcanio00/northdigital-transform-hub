@@ -347,7 +347,7 @@ const MarketingPage = () => {
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: "easeOut" }}
               className="absolute top-[58px] left-[12%] right-[12%] h-[7px] rounded-full origin-left blur-sm opacity-40"
               style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.5), hsl(var(--primary)), hsl(var(--primary)/0.5))" }}
