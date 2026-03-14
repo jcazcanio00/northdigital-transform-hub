@@ -393,7 +393,7 @@ const CloudPage = () => {
               Por qué usar infraestructura <span className="gradient-text">cloud moderna</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Ventajas competitivas que transforman la operación de tu empresa.
+              Reducir costos, eliminar caídas y escalar sin fricciones: esto es lo que una infraestructura bien diseñada hace por tu negocio.
             </p>
           </motion.div>
 
