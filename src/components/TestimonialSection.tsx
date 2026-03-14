@@ -10,7 +10,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ t }: { t: typeof testimonials[0] }) => (
-  <div className="w-[340px] shrink-0 rounded-2xl p-6 mx-3 border border-white/10 bg-gradient-to-br from-[hsl(250,35%,14%)] to-[hsl(240,30%,10%)] shadow-lg hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_-8px_hsl(var(--brand-purple)/0.3)] hover:border-brand-purple/20">
+  <div className="w-[340px] shrink-0 rounded-2xl p-6 mx-3 border border-white/10 bg-gradient-to-br from-[hsl(220,50%,14%)] to-[hsl(220,50%,10%)] shadow-lg hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/20">
     <div className="flex gap-0.5 mb-3">
       {[...Array(5)].map((_, i) => (
         <Star key={i} size={12} className="text-primary fill-primary" />
