@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Search, Target, BarChart3, ArrowRight, Eye, MousePointerClick, Users, Globe, ArrowUpRight, DollarSign, Clock, Percent } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const GrowthSection = () => (
   <section id="growth" className="py-24 relative overflow-hidden">
