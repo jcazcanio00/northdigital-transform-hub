@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 const CtaSection = () => (
   <section className="py-24 relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(240,30%,5%)] via-[hsl(260,35%,8%)] to-[hsl(240,30%,4%)]" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
     <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-brand-purple/8 blur-[180px] pointer-events-none" />
-    <div className="absolute top-0 left-1/4 w-[400px] h-[300px] rounded-full bg-brand-cyan/5 blur-[120px] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
+    <div className="absolute top-0 left-1/4 w-[400px] h-[300px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
     <div className="absolute bottom-0 right-1/4 w-[300px] h-[200px] rounded-full bg-primary/6 blur-[100px] pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">

@@ -384,8 +384,8 @@ const CloudPage = () => {
         </div>
 
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(250,40%,7%)] via-transparent to-[hsl(250,40%,7%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(250,40%,7%)]/60 via-transparent to-[hsl(250,40%,7%)]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,60%,8%)] via-transparent to-[hsl(220,60%,8%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,60%,8%)]/60 via-transparent to-[hsl(220,60%,8%)]/60 pointer-events-none" />
         
         {/* Glow orb */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
