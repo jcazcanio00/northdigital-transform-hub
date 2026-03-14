@@ -421,6 +421,70 @@ const CloudPage = () => {
         </div>
       </section>
 
+      {/* MID-PAGE CTA — Binary Data Flow */}
+      <section className="py-28 relative overflow-hidden">
+        {/* Dark gradient background */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(220 60% 8%), hsl(220 70% 14%), hsl(220 60% 8%))" }} />
+        
+        {/* Binary stream layer */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Row 1 */}
+          <div className="absolute top-[8%] left-0 whitespace-nowrap text-[11px] font-mono tracking-[0.3em] opacity-[0.04] text-primary animate-[scroll_40s_linear_infinite]">
+            {"01001011 10110100 01101001 11001010 00101101 10011100 01110010 10101011 01001110 11010010 00110101 10100111 01011010 11001001 00101110 10110101 01001011 10110100 01101001 11001010 00101101 10011100 01110010 10101011 01001110 11010010 00110101 10100111 01011010 11001001 00101110 10110101 "}
+          </div>
+          <div className="absolute top-[18%] left-0 whitespace-nowrap text-[10px] font-mono tracking-[0.25em] opacity-[0.03] text-primary animate-[scroll_55s_linear_infinite_reverse]">
+            {"10110010 01001101 11010110 00101011 10011001 01110100 11001011 00100110 10101100 01011011 10010111 01101010 11000101 00110100 10111001 01010010 10110010 01001101 11010110 00101011 10011001 01110100 11001011 00100110 10101100 01011011 10010111 01101010 11000101 00110100 10111001 01010010 "}
+          </div>
+          <div className="absolute top-[30%] left-0 whitespace-nowrap text-[13px] font-mono tracking-[0.35em] opacity-[0.035] text-primary animate-[scroll_45s_linear_infinite]">
+            {"00101101 10100110 01011001 11010011 00110100 10011010 01101011 10101100 01001011 11010010 10010110 01100101 11001011 00101010 10110100 01010011 00101101 10100110 01011001 11010011 00110100 10011010 01101011 10101100 01001011 11010010 10010110 01100101 11001011 00101010 10110100 01010011 "}
+          </div>
+          <div className="absolute top-[44%] left-0 whitespace-nowrap text-[9px] font-mono tracking-[0.2em] opacity-[0.025] text-primary animate-[scroll_60s_linear_infinite_reverse]">
+            {"11001010 00110101 10101001 01010110 11001101 00101010 10010011 01101100 11010101 00100110 10110011 01011010 11001001 00101110 10100101 01010010 11001010 00110101 10101001 01010110 11001101 00101010 10010011 01101100 11010101 00100110 10110011 01011010 11001001 00101110 10100101 01010010 "}
+          </div>
+          <div className="absolute top-[58%] left-0 whitespace-nowrap text-[12px] font-mono tracking-[0.3em] opacity-[0.04] text-primary animate-[scroll_50s_linear_infinite]">
+            {"01101001 10010110 11010100 00101011 10110010 01001101 11001010 00110101 10011001 01100100 11010011 00101110 10101001 01011010 10010100 01101011 01101001 10010110 11010100 00101011 10110010 01001101 11001010 00110101 10011001 01100100 11010011 00101110 10101001 01011010 10010100 01101011 "}
+          </div>
+          <div className="absolute top-[72%] left-0 whitespace-nowrap text-[10px] font-mono tracking-[0.25em] opacity-[0.03] text-primary animate-[scroll_65s_linear_infinite_reverse]">
+            {"10011100 01100101 11010010 00101101 10110100 01001011 10101010 00110011 11001001 01010110 10010100 01101011 11010110 00101001 10011010 01010101 10011100 01100101 11010010 00101101 10110100 01001011 10101010 00110011 11001001 01010110 10010100 01101011 11010110 00101001 10011010 01010101 "}
+          </div>
+          <div className="absolute top-[85%] left-0 whitespace-nowrap text-[11px] font-mono tracking-[0.3em] opacity-[0.035] text-primary animate-[scroll_42s_linear_infinite]">
+            {"01010011 10101100 00110010 11001011 01101010 10010101 11010100 00101011 10110001 01001110 11001010 00110101 10011001 01100100 11010011 00101110 01010011 10101100 00110010 11001011 01101010 10010101 11010100 00101011 10110001 01001110 11001010 00110101 10011001 01100100 11010011 00101110 "}
+          </div>
+        </div>
+
+        {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,60%,8%)] via-transparent to-[hsl(220,60%,8%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,60%,8%)]/60 via-transparent to-[hsl(220,60%,8%)]/60 pointer-events-none" />
+        
+        {/* Glow orb */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
+
+        {/* Content */}
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
+          <motion.div {...fade()}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/50 mb-6 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Infraestructura Cloud
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white leading-tight">
+              Construyamos la infraestructura que tu empresa{" "}
+              <span className="gradient-text">necesita</span>
+            </h2>
+            <p className="text-base sm:text-lg text-white/50 mb-10 max-w-xl mx-auto leading-relaxed">
+              Diseñamos plataformas cloud modernas preparadas para escalar, seguras y optimizadas para operaciones críticas.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="gradient" size="lg" asChild>
+                <a href="#architecture">Arquitectura Cloud <ArrowRight size={16} className="ml-2" /></a>
+              </Button>
+              <Button size="lg" className="bg-white/[0.07] hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300" asChild>
+                <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* PROCESS TIMELINE */}
       <section id="architecture" className="py-24 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
