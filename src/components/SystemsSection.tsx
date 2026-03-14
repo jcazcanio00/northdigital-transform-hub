@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Users, Zap, BarChart3, Puzzle, ArrowRight, TrendingUp, Bell, CheckCircle2, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const capabilities = [
   { icon: Users, title: "CRM Empresarial", desc: "Gestión de clientes, oportunidades y seguimiento comercial." },
