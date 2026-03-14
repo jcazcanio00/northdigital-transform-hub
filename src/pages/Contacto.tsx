@@ -177,7 +177,7 @@ const Contacto = () => {
                 <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
                 <div className="relative">
                   <FileText size={14} className="absolute left-3 top-3 text-muted-foreground" />
-                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={3} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={3} value={form.message} onChange={(e) => updateField("message", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                 </div>
               </div>
 
