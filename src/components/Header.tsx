@@ -139,7 +139,7 @@ const Header = () => {
             </span>
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
-            <Link to="/contacto">Agendar Consulta</Link>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
