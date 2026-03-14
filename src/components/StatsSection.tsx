@@ -65,7 +65,7 @@ const StatsSection = () => (
             key={s.label}
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: i * 0.12, type: "spring", stiffness: 80 }}
             className="glass-card rounded-2xl p-8 lg:p-12 text-center group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.3)] hover:border-primary/25"
           >

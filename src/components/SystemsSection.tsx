@@ -126,7 +126,7 @@ const SystemsSection = () => (
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${item.pct}%` }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary"
                       />

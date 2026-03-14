@@ -96,7 +96,7 @@ const TrustSection = () => (
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative min-h-[400px] flex items-center justify-center"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-primary/[0.08] rounded-3xl" />

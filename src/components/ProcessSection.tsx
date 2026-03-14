@@ -36,7 +36,7 @@ const ProcessSection = () => (
               key={step.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.15 }}
               className={`flex items-start gap-6 md:gap-12 group ${
                 i % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""

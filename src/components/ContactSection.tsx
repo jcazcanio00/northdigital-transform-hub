@@ -143,7 +143,7 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="glass-card rounded-2xl p-8 space-y-4 shadow-xl border-border/40"
           >
             {/* Name & Email */}
