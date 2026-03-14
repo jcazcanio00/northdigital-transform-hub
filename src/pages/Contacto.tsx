@@ -14,12 +14,30 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 const projectTypes = [
-  "Software Empresarial",
+  "Desarrollo Web",
+  "Sistema / CRM",
+  "Automatización de Procesos",
   "Infraestructura Cloud",
-  "Marketing de Crecimiento",
+  "Marketing Digital",
+  "Integraciones / APIs",
   "Otro",
+];
+
+const budgets = [
+  "$100,000 – $250,000 MXN",
+  "$250,000 – $500,000 MXN",
+  "$500,000 – $1,000,000 MXN",
+  "$1,000,000+ MXN",
+];
+
+const timelines = [
+  "Lo antes posible",
+  "1–2 meses",
+  "3–6 meses",
+  "Explorando opciones",
 ];
 
 const socials = [
@@ -29,13 +47,20 @@ const socials = [
 ];
 
 const Contacto = () => {
+  const { toast } = useToast();
   const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "", projectType: "", message: "",
+    name: "", company: "", email: "", phone: "",
+    projectType: "", budget: "", timeline: "", message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
+    const subject = encodeURIComponent(`Nuevo contacto: ${form.name} – ${form.projectType || "Sin especificar"}`);
+    const body = encodeURIComponent(
+      `Nombre: ${form.name}\nEmpresa: ${form.company}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nTipo de proyecto: ${form.projectType}\nPresupuesto: ${form.budget}\nTiempo estimado: ${form.timeline}\n\nMensaje:\n${form.message}`
+    );
+    window.open(`mailto:info@northmkt.com.mx?subject=${subject}&body=${body}`, "_self");
+    toast({ title: "¡Gracias!", description: "Se abrirá tu cliente de correo para enviar el mensaje." });
   };
 
   const fade = (delay = 0) => ({
@@ -77,61 +102,95 @@ const Contacto = () => {
             <motion.form
               onSubmit={handleSubmit}
               {...fade(0.1)}
-              className="lg:col-span-3 glass-card rounded-2xl p-8 space-y-5 shadow-xl border-border/40"
+              className="lg:col-span-3 glass-card rounded-2xl p-8 space-y-4 shadow-xl border-border/40"
             >
+              {/* Name & Email */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Nombre</label>
                   <div className="relative">
                     <User size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input placeholder="Tu nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="pl-9" />
+                    <Input placeholder="Tu nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
+                <div>
+                  <label className="text-xs font-medium mb-1.5 block">Email</label>
+                  <div className="relative">
+                    <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Company & Phone */}
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Empresa</label>
                   <div className="relative">
                     <Building2 size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input placeholder="Tu empresa" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="pl-9" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs font-medium mb-1.5 block">Correo electrónico</label>
-                  <div className="relative">
-                    <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="pl-9" />
+                    <Input placeholder="Nombre de tu empresa" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs font-medium mb-1.5 block">Teléfono</label>
+                  <label className="text-xs font-medium mb-1.5 block">Teléfono / WhatsApp</label>
                   <div className="relative">
                     <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="pl-9" />
+                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
               </div>
 
+              {/* Project Type & Budget */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
+                  <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
+                    <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                      <SelectValue placeholder="Seleccionar..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {projectTypes.map((t) => (
+                        <SelectItem key={t} value={t}>{t}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-xs font-medium mb-1.5 block">Presupuesto Estimado</label>
+                  <Select onValueChange={(v) => setForm({ ...form, budget: v })}>
+                    <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                      <SelectValue placeholder="Seleccionar..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {budgets.map((b) => (
+                        <SelectItem key={b} value={b}>{b}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Timeline */}
               <div>
-                <label className="text-xs font-medium mb-1.5 block">Tipo de proyecto</label>
-                <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
-                  <SelectTrigger>
+                <label className="text-xs font-medium mb-1.5 block">Tiempo Estimado</label>
+                <Select onValueChange={(v) => setForm({ ...form, timeline: v })}>
+                  <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
                   <SelectContent>
-                    {projectTypes.map((t) => (
+                    {timelines.map((t) => (
                       <SelectItem key={t} value={t}>{t}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
 
+              {/* Message */}
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Mensaje</label>
                 <div className="relative">
                   <FileText size={14} className="absolute left-3 top-3 text-muted-foreground" />
-                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="pl-9" />
+                  <Textarea placeholder="Cuéntanos sobre tu proyecto..." rows={3} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                 </div>
               </div>
 
