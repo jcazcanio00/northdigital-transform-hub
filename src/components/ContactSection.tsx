@@ -16,7 +16,7 @@ const projectTypes = [
   "Desarrollo Web",
   "Sistema / CRM",
   "Automatización de Procesos",
-  "Infraestructura Cloud",
+  "Cloud Services",
   "Marketing Digital",
   "Integraciones / APIs",
   "Otro",
