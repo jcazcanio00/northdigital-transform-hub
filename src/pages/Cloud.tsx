@@ -338,9 +338,92 @@ const CloudPage = () => {
       {/* TECH SLIDER */}
       <CloudSlider />
 
+      {/* SERVICES — Premium Cards */}
+      <section id="services" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-transparent to-muted/30 pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div {...fade()} className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Servicios
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+              Servicios de <span className="gradient-text">Infraestructura Cloud</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Soluciones integrales para cada etapa de tu infraestructura cloud.
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.title}
+                {...fade(i * 0.07)}
+                className="group relative rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:scale-110 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                    <s.icon size={26} className="text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold font-display mb-3 group-hover:text-primary transition-colors duration-300">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
+                  <div className="flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
+                    Activo
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFITS — 3x2 Grid */}
+      <section className="py-24 surface-sunken relative">
+        <div className="absolute inset-0 bg-mesh pointer-events-none opacity-50" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div {...fade()} className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Beneficios
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+              Por qué usar infraestructura <span className="gradient-text">cloud moderna</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Ventajas competitivas que transforman la operación de tu empresa.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {benefits.map((b, i) => (
+              <motion.div
+                key={b.title}
+                {...fade(i * 0.08)}
+                className="group relative rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_15px_50px_-12px_hsl(var(--primary)/0.2)] hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-primary/[0.04] via-transparent to-accent/[0.02]" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:border-primary/25 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                      <b.icon size={22} className="text-primary" />
+                    </div>
+                    <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent group-hover:from-primary/20 transition-colors duration-500" />
+                  </div>
+                  <h3 className="text-base font-bold font-display mb-2 group-hover:text-primary transition-colors duration-300">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROCESS TIMELINE */}
       <section id="architecture" className="py-24 relative">
-        <div className="absolute inset-0 bg-mesh pointer-events-none" />
+        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
@@ -357,32 +440,39 @@ const CloudPage = () => {
 
           {/* Desktop timeline */}
           <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Connecting line */}
-            <div className="absolute top-10 left-[8%] right-[8%] h-px bg-border" />
+            {/* Background line */}
+            <div className="absolute top-[52px] left-[7%] right-[7%] h-[2px] bg-border/50 rounded-full" />
+            {/* Animated progress line */}
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="absolute top-10 left-[8%] right-[8%] h-px bg-primary/40 origin-left"
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="absolute top-[52px] left-[7%] right-[7%] h-[2px] rounded-full origin-left"
+              style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.6), hsl(var(--primary)), hsl(var(--primary)/0.6))" }}
             />
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-7 gap-3">
               {processSteps.map((step, i) => (
                 <motion.div
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="flex flex-col items-center text-center"
+                  transition={{ delay: 0.2 + i * 0.12, duration: 0.5 }}
+                  className="flex flex-col items-center text-center group"
                 >
-                  {/* Node */}
-                  <div className="relative z-10 w-20 h-20 rounded-2xl border-2 border-primary/20 bg-card flex flex-col items-center justify-center shadow-lg hover:border-primary/50 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500 group cursor-default">
-                    <span className="text-[10px] font-bold text-primary/50 mb-0.5 group-hover:text-primary transition-colors">{String(i + 1).padStart(2, "0")}</span>
-                    <step.icon size={20} className="text-primary group-hover:scale-110 transition-transform" />
+                  {/* Step number */}
+                  <span className="text-[10px] font-bold text-primary/40 mb-2 group-hover:text-primary transition-colors">{String(i + 1).padStart(2, "0")}</span>
+                  {/* Node with connector dot */}
+                  <div className="relative z-10">
+                    <div className="w-[72px] h-[72px] rounded-2xl border-2 border-border bg-card flex items-center justify-center shadow-md group-hover:border-primary/40 group-hover:shadow-[0_0_35px_-8px_hsl(var(--primary)/0.35)] transition-all duration-500">
+                      <step.icon size={24} className="text-primary group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    {/* Dot on the line */}
+                    <div className="absolute -bottom-[3px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/40 border-2 border-card group-hover:bg-primary transition-colors duration-300" />
                   </div>
-                  <h4 className="text-xs font-bold font-display mt-3 mb-1">{step.title}</h4>
-                  <p className="text-[10px] text-muted-foreground leading-snug max-w-[110px]">{step.desc}</p>
+                  <h4 className="text-xs font-bold font-display mt-4 mb-1 group-hover:text-primary transition-colors duration-300">{step.title}</h4>
+                  <p className="text-[10px] text-muted-foreground leading-snug max-w-[120px]">{step.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -390,7 +480,7 @@ const CloudPage = () => {
 
           {/* Mobile timeline (vertical) */}
           <div className="lg:hidden relative max-w-md mx-auto">
-            <div className="absolute left-5 top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
             {processSteps.map((step, i) => (
               <motion.div
                 key={step.title}
@@ -398,14 +488,14 @@ const CloudPage = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex gap-4 mb-6 last:mb-0 relative"
+                className="flex gap-5 mb-8 last:mb-0 relative group"
               >
-                <div className="relative z-10 w-10 h-10 rounded-xl border-2 border-primary/20 bg-card flex items-center justify-center shrink-0 shadow-sm">
+                <div className="relative z-10 w-10 h-10 rounded-xl border-2 border-primary/20 bg-card flex items-center justify-center shrink-0 shadow-sm group-hover:border-primary/40 transition-colors">
                   <step.icon size={16} className="text-primary" />
                 </div>
-                <div className="pt-1">
+                <div className="pt-0.5">
                   <span className="text-[9px] font-bold text-primary/50">{String(i + 1).padStart(2, "0")}</span>
-                  <h4 className="text-sm font-bold font-display">{step.title}</h4>
+                  <h4 className="text-sm font-bold font-display group-hover:text-primary transition-colors">{step.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
@@ -414,148 +504,10 @@ const CloudPage = () => {
         </div>
       </section>
 
-      {/* SERVICES — Premium Cards */}
-      <section id="services" className="py-24 surface-sunken">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div {...fade()} className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-              Servicios
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Servicios de <span className="gradient-text">Infraestructura Cloud</span>
-            </h2>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.title}
-                {...fade(i * 0.07)}
-                className="group relative rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-1"
-              >
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-500">
-                    <s.icon size={26} className="text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold font-display mb-3">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
-                  <div className="flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
-                    Activo
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BENEFITS — Hub Diagram */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div {...fade()} className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-              Beneficios
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Por qué usar infraestructura <span className="gradient-text">cloud moderna</span>
-            </h2>
-          </motion.div>
-
-          {/* Desktop hub diagram */}
-          <div className="hidden lg:block relative max-w-4xl mx-auto" style={{ height: 480 }}>
-            {/* Central hub */}
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-2 border-primary/30 bg-card flex flex-col items-center justify-center shadow-[0_0_60px_-10px_hsl(var(--primary)/0.25)] z-20"
-            >
-              <Cloud size={32} className="text-primary mb-1" />
-              <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">Cloud</span>
-            </motion.div>
-
-            {/* Orbiting ring */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-dashed border-primary/10 pointer-events-none" />
-
-            {/* Benefit nodes positioned around the hub */}
-            {benefits.map((b, i) => {
-              const angle = (i * 360) / benefits.length - 90;
-              const rad = (angle * Math.PI) / 180;
-              const radius = 190;
-              const x = Math.cos(rad) * radius;
-              const y = Math.sin(rad) * radius;
-              return (
-                <motion.div
-                  key={b.title}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.15 + i * 0.1, type: "spring", stiffness: 200 }}
-                  className="absolute z-10"
-                  style={{
-                    left: `calc(50% + ${x}px - 80px)`,
-                    top: `calc(50% + ${y}px - 50px)`,
-                    width: 160,
-                  }}
-                >
-                  {/* Connector line (SVG overlay would be complex, use a simple dot connector) */}
-                  <div className="group p-4 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.2)] transition-all duration-500 cursor-default text-center">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/15 transition-colors">
-                      <b.icon size={18} className="text-primary" />
-                    </div>
-                    <h4 className="text-xs font-bold font-display mb-1">{b.title}</h4>
-                    <p className="text-[10px] text-muted-foreground leading-snug">{b.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-
-            {/* SVG connector lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-              {benefits.map((_, i) => {
-                const angle = (i * 360) / benefits.length - 90;
-                const rad = (angle * Math.PI) / 180;
-                const endX = 50 + Math.cos(rad) * 22;
-                const endY = 50 + Math.sin(rad) * 22;
-                return (
-                  <line
-                    key={i}
-                    x1="50" y1="50"
-                    x2={endX} y2={endY}
-                    stroke="hsl(var(--primary) / 0.15)"
-                    strokeWidth="0.3"
-                    strokeDasharray="1 1"
-                  />
-                );
-              })}
-            </svg>
-          </div>
-
-          {/* Mobile fallback — stacked cards */}
-          <div className="lg:hidden space-y-4 max-w-md mx-auto">
-            {benefits.map((b, i) => (
-              <motion.div key={b.title} {...fade(i * 0.07)} className="flex gap-4 items-start p-5 rounded-2xl border border-border bg-card">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <b.icon size={18} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold font-display mb-1">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* DEVOPS STACK */}
-      <section className="py-24 surface-sunken">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-24 surface-sunken relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] via-transparent to-accent/[0.02] pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-14">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
@@ -565,11 +517,11 @@ const CloudPage = () => {
               Stack <span className="gradient-text">DevOps y Cloud</span>
             </h2>
           </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 max-w-4xl mx-auto">
             {devopsTools.map((t, i) => (
-              <motion.div key={t.name} {...fade(i * 0.05)} className="flex flex-col items-center gap-3 p-5 rounded-2xl border border-border bg-card glass-card glass-card-hover">
-                <img src={t.icon} alt={t.name} className="w-10 h-10 object-contain dark:invert dark:brightness-200 dark:contrast-200" loading="lazy" />
-                <span className="text-xs font-medium text-muted-foreground">{t.name}</span>
+              <motion.div key={t.name} {...fade(i * 0.05)} className="group flex flex-col items-center gap-3 p-5 rounded-2xl border border-border bg-card hover:border-primary/25 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.15)] hover:-translate-y-1 transition-all duration-400">
+                <img src={t.icon} alt={t.name} className="w-10 h-10 object-contain dark:invert dark:brightness-200 dark:contrast-200 group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">{t.name}</span>
               </motion.div>
             ))}
           </div>
@@ -577,8 +529,9 @@ const CloudPage = () => {
       </section>
 
       {/* USE CASES */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-muted/20 via-transparent to-muted/20 pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-14">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
@@ -587,12 +540,19 @@ const CloudPage = () => {
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Casos de <span className="gradient-text">Uso</span>
             </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Infraestructura cloud adaptada a distintos escenarios empresariales.
+            </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {useCases.map((u, i) => (
-              <motion.div key={u.title} {...fade(i * 0.07)} className="rounded-2xl border border-border bg-card p-6 glass-card glass-card-hover">
-                <u.icon size={22} className="text-primary mb-3" />
-                <h3 className="font-bold font-display mb-2">{u.title}</h3>
+              <motion.div key={u.title} {...fade(i * 0.07)} className="group rounded-2xl border border-border bg-card p-7 hover:border-primary/25 hover:shadow-[0_15px_50px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1 transition-all duration-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                    <u.icon size={20} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold font-display group-hover:text-primary transition-colors">{u.title}</h3>
+                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{u.desc}</p>
               </motion.div>
             ))}
@@ -603,6 +563,7 @@ const CloudPage = () => {
       {/* CTA */}
       <section className="py-24 relative overflow-hidden" style={{ background: "var(--gradient-cta)" }}>
         <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[200px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.div {...fade()}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white">
