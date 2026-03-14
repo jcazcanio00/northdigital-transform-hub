@@ -27,7 +27,7 @@ const CloudSection = () => (
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
           <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
