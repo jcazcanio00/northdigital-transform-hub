@@ -1,6 +1,7 @@
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import SeoIntroSection from "@/components/SeoIntroSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import LogoSlider from "@/components/LogoSlider";
 import TrustSection from "@/components/TrustSection";
