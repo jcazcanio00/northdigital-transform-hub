@@ -13,6 +13,17 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
+
+const softwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Software Empresarial a Medida",
+  "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+  "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
+  "url": "https://northmkt.com.mx/software",
+  "areaServed": { "@type": "Country", "name": "México" },
+  "serviceType": "Software empresarial"
+};
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 

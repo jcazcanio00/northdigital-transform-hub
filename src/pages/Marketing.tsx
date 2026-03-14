@@ -239,9 +239,19 @@ const MarketingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Growth Marketing para empresas | North Digital"
-        description="SEO, Google Ads y estrategias de crecimiento basadas en datos para generar leads y escalar ingresos."
+        title="Marketing de Crecimiento | Agencia de Marketing Digital | North Digital"
+        description="Estrategias de marketing de crecimiento: SEO, Google Ads, CRO y analítica avanzada. Agencia de marketing digital en Cancún que genera leads y escala ingresos con datos."
         url="https://northmkt.com.mx/marketing"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Marketing de Crecimiento",
+          "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+          "description": "SEO estratégico, Google Ads, CRO y analítica avanzada para generar leads cualificados y escalar ingresos de forma predecible.",
+          "url": "https://northmkt.com.mx/marketing",
+          "areaServed": { "@type": "Country", "name": "México" },
+          "serviceType": "Marketing de crecimiento"
+        }}
       />
       <Header />
       
