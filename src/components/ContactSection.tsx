@@ -50,7 +50,7 @@ const highlights = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Implementamos entornos estables, monitoreados y de alto rendimiento.",
   },
 ];
