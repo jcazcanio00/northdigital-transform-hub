@@ -42,7 +42,6 @@ const Header = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setSolOpen(false);
       }
-      }
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
