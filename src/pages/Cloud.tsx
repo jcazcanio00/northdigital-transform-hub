@@ -319,7 +319,7 @@ const CloudPage = () => {
                 <span className="gradient-text">Segura y Escalable</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Diseñamos, implementamos y gestionamos infraestructura cloud moderna para empresas que necesitan rendimiento, seguridad y escalabilidad.
+                Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
