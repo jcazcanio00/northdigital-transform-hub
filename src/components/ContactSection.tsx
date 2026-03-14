@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, MessageCircle, User, Mail, Building2, Phone, FileText, Layers, Bot, Cloud, CheckCircle2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -61,6 +62,7 @@ const trustMetrics = [
 ];
 
 const ContactSection = () => {
+  const { toast } = useToast();
   const [form, setForm] = useState({
     name: "", email: "", company: "", phone: "", message: "",
     projectType: "", budget: "", timeline: "",
@@ -68,7 +70,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+    const subject = encodeURIComponent(`Nuevo contacto: ${form.name} – ${form.projectType || "Sin especificar"}`);
+    const body = encodeURIComponent(
+      `Nombre: ${form.name}\nEmpresa: ${form.company}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nTipo de proyecto: ${form.projectType}\nPresupuesto: ${form.budget}\nTiempo estimado: ${form.timeline}\n\nMensaje:\n${form.message}`
+    );
+    window.open(`mailto:info@northmkt.com.mx?subject=${subject}&body=${body}`, "_self");
+    toast({ title: "¡Gracias!", description: "Se abrirá tu cliente de correo para enviar el mensaje." });
   };
 
   return (
