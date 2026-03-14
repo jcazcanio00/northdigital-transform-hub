@@ -57,7 +57,7 @@ const CodeBlock = ({ code, language = "json" }: { code: string; language?: strin
         <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
         <span className="ml-2 text-[10px] uppercase tracking-wider text-white/40 font-mono">{language}</span>
       </div>
-      <pre className="p-5 overflow-x-auto leading-relaxed text-sm font-mono bg-[hsl(250,35%,8%)] text-white/80">
+      <pre className="p-5 overflow-x-auto leading-relaxed text-sm font-mono bg-[hsl(228,45%,8%)] text-white/80">
         <code className="flex flex-col gap-0.5">
           {lines.map((line, i) => (
             <span key={i} className="flex">
