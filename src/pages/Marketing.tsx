@@ -347,7 +347,7 @@ const MarketingPage = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: "easeOut" }}
               className="absolute top-[60px] left-[12%] right-[12%] h-[3px] rounded-full origin-left"
-              style={{ background: "linear-gradient(90deg, hsl(185 85% 50%), hsl(var(--primary)), hsl(268 65% 52%), hsl(var(--primary)))" }}
+              style={{ background: "linear-gradient(90deg, hsl(210 100% 55%), hsl(var(--primary)), hsl(198 93% 55%), hsl(var(--primary)))" }}
             />
             {/* Glow effect on line */}
             <motion.div
