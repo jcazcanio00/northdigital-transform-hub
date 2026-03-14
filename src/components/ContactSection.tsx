@@ -58,7 +58,7 @@ const highlights = [
 const trustMetrics = [
   "150+ proyectos implementados",
   "Empresas en múltiples industrias",
-  "Infraestructura cloud segura",
+  "Cloud services segura",
 ];
 
 const ContactSection = () => {

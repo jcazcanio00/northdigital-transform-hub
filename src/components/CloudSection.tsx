@@ -103,7 +103,7 @@ const CloudSection = () => (
           </div>
 
           <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
-            Implementamos y gestionamos infraestructura cloud empresarial con Google Workspace,
+            Implementamos y gestionamos cloud services empresariales con Google Workspace,
             hosting dedicado, VPS y migraciones seguras con monitoreo continuo.
           </p>
 

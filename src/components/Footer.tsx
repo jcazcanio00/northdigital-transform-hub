@@ -44,7 +44,7 @@ const Footer = () => (
           <ul className="space-y-2.5">
             {[
               { label: "Software Empresarial", href: "/software" },
-              { label: "Infraestructura Cloud", href: "/cloud" },
+              { label: "Cloud Services", href: "/cloud" },
               { label: "Marketing de Crecimiento", href: "/marketing" },
             ].map((l) => (
               <li key={l.label}>

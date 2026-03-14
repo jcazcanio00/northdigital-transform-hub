@@ -9,7 +9,7 @@ const features = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura cloud empresarial",
+    title: "Cloud services empresarial",
     desc: "Arquitectura segura y escalable para sistemas críticos.",
   },
   {

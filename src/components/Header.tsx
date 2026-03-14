@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const solutions = [
   { label: "Software Empresarial", href: "/software" },
-  { label: "Infraestructura Cloud", href: "/cloud" },
+  { label: "Cloud Services", href: "/cloud" },
   { label: "Marketing de Crecimiento", href: "/marketing" },
 ];
 
