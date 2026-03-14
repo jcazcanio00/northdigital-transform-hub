@@ -194,6 +194,17 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
+          <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Legal</p>
+          {legal.map((s) => (
+            <Link
+              key={s.href}
+              to={s.href}
+              onClick={() => setMobileOpen(false)}
+              className="block py-2 pl-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {s.label}
+            </Link>
+          ))}
           <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Contacto
           </Link>
