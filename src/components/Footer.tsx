@@ -100,8 +100,8 @@ const Footer = () => (
           © 2026 North Digital Solutions. Todos los derechos reservados.
         </p>
         <div className="flex gap-5">
-          <Link to="/privacidad" className="text-xs text-muted-foreground hover:text-primary transition-colors">Privacidad</Link>
-          <Link to="/terminos" className="text-xs text-muted-foreground hover:text-primary transition-colors">Términos</Link>
+          <Link to="/terminos" className="text-xs text-muted-foreground hover:text-primary transition-colors">Términos y Condiciones</Link>
+          <Link to="/privacidad" className="text-xs text-muted-foreground hover:text-primary transition-colors">Aviso de Privacidad</Link>
         </div>
       </div>
     </div>
