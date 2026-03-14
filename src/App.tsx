@@ -7,6 +7,9 @@ import Index from "./pages/Index.tsx";
 import Software from "./pages/Software.tsx";
 import Cloud from "./pages/Cloud.tsx";
 import Marketing from "./pages/Marketing.tsx";
+import Contacto from "./pages/Contacto.tsx";
+import Terminos from "./pages/Terminos.tsx";
+import Privacidad from "./pages/Privacidad.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
