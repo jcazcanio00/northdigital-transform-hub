@@ -23,8 +23,8 @@ const LogoSlider = () => (
   <section className="py-10 relative overflow-hidden border-y border-border/10">
     <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/20 to-background pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-6">
-      <p className="text-center text-xs text-muted-foreground tracking-widest uppercase">
-        Construido sobre tecnología líder
+      <p className="text-center text-[10px] text-muted-foreground tracking-[0.25em] uppercase font-medium">
+        Tecnologías que usamos para construir software
       </p>
     </div>
     <div className="relative">
