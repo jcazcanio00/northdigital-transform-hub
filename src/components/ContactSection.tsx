@@ -168,7 +168,7 @@ const ContactSection = () => {
                     type="email"
                     placeholder="tu@email.com"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) => updateField("email", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
