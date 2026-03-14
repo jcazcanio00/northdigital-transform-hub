@@ -187,7 +187,7 @@ const Acerca = () => (
                 North nació como una agencia de marketing digital y desarrollo web, ayudando a empresas a construir su presencia en línea y generar sus primeros clientes digitales.
               </p>
               <p>
-                Con el tiempo, las necesidades de nuestros clientes evolucionaron. Ya no bastaba con una página web o una campaña de ads — necesitaban <strong className="text-foreground">sistemas internos, infraestructura cloud segura y estrategias de crecimiento basadas en datos.</strong>
+                Con el tiempo, las necesidades de nuestros clientes evolucionaron. Ya no bastaba con una página web o una campaña de ads — necesitaban <strong className="text-foreground">sistemas internos, cloud services segura y estrategias de crecimiento basadas en datos.</strong>
               </p>
               <p>
                 Esa demanda nos llevó a evolucionar. Hoy somos una empresa de tecnología que combina desarrollo de software, cloud services y growth marketing para ayudar a empresas a operar mejor, crecer más rápido y tomar decisiones inteligentes.
