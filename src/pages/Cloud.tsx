@@ -252,6 +252,16 @@ const benefits = [
   { icon: Monitor, title: "Monitoreo continuo", desc: "Observabilidad completa del sistema con métricas, logs y alertas en tiempo real." },
 ];
 
+const processSteps = [
+  { icon: Search, title: "Descubrimiento", desc: "Análisis de requerimientos y auditoría de infraestructura actual." },
+  { icon: Layers, title: "Arquitectura", desc: "Diseño de la arquitectura cloud óptima para el proyecto." },
+  { icon: Palette, title: "Diseño UX/UI", desc: "Interfaces de monitoreo y dashboards operativos." },
+  { icon: Code2, title: "Desarrollo", desc: "Implementación de servicios, APIs y automatización." },
+  { icon: Bug, title: "QA", desc: "Testing de carga, seguridad y rendimiento." },
+  { icon: Rocket, title: "Lanzamiento", desc: "Deploy progresivo con zero-downtime." },
+  { icon: Headphones, title: "Soporte Evolutivo", desc: "Monitoreo continuo y mejoras iterativas." },
+];
+
 const archSteps = [
   { label: "Usuarios", icon: Globe },
   { label: "Load Balancer", icon: Workflow },
