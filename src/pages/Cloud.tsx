@@ -273,7 +273,7 @@ const CloudPage = () => {
               Servicios
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Servicios de <span className="gradient-text">Infraestructura Cloud</span>
+              Servicios de <span className="gradient-text">Cloud Services</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Desde la arquitectura inicial hasta la operación continua, cubrimos cada capa de tu ecosistema cloud.
