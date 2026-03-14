@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, User, Building2, FileText, MessageCircle } from "lucide-react";
+import { Send, Mail, Phone, User, Building2, FileText, MessageCircle, Loader2 } from "lucide-react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
@@ -15,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
+import { useContactForm } from "@/hooks/useContactForm";
 
 const projectTypes = [
   "Desarrollo Web",
