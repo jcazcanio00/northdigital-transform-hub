@@ -158,11 +158,11 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
-          <a href="/#contact" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Contacto
-          </a>
+          </Link>
           <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
-            <a href="/#contact">Agendar Consulta</a>
+            <Link to="/contacto">Agendar Consulta</Link>
           </Button>
         </div>
       )}

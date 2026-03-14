@@ -130,7 +130,7 @@ const ContactSection = () => {
 
             {/* WhatsApp card */}
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/529983513337"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-4 glass-card rounded-xl px-6 py-5 border-green-500/20 hover:border-green-500/40 hover:shadow-[0_0_30px_-8px_rgba(34,197,94,0.3)] transition-all duration-500 group"
