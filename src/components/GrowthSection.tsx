@@ -55,7 +55,7 @@ const GrowthSection = () => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         className="max-w-5xl mx-auto relative"
       >
         <div className="absolute -inset-8 bg-primary/3 rounded-3xl blur-3xl pointer-events-none" />
