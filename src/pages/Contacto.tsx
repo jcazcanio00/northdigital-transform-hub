@@ -115,7 +115,7 @@ const Contacto = () => {
                   <label className="text-xs font-medium mb-1.5 block">Empresa</label>
                   <div className="relative">
                     <Building2 size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input placeholder="Nombre de tu empresa" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input placeholder="Nombre de tu empresa" value={form.company} onChange={(e) => updateField("company", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
                 <div>
