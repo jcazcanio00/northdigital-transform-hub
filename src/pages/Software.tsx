@@ -652,7 +652,10 @@ const Software = () => {
       <section className="py-20 surface-sunken relative">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Soluciones</p>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Soluciones
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Plataformas Empresariales que <span className="gradient-text">Desarrollamos</span>
             </h2>
