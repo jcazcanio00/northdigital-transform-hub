@@ -197,7 +197,7 @@ const ContactSection = () => {
                     type="tel"
                     placeholder="+1 234 567 890"
                     value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    onChange={(e) => updateField("phone", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
