@@ -88,7 +88,7 @@ const CloudSection = () => (
             Cloud
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 font-display leading-tight">
-            Cloud Segura y <span className="gradient-text">Escalable</span>
+            Tecnología, Cloud y <span className="gradient-text">Marketing de Crecimiento</span>
           </h2>
 
           <div className="flex flex-wrap gap-2 mb-4">
@@ -120,7 +120,7 @@ const CloudSection = () => (
                 >
                   <img
                     src={logo.icon}
-                    alt={logo.name}
+                    alt={`${logo.name} - Infraestructura cloud para empresas en Cancún`}
                     className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity duration-300"
                     loading="lazy"
                   />
