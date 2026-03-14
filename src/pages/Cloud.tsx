@@ -140,7 +140,7 @@ const CloudSlider = () => (
     <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/20 to-background pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-6">
       <p className="text-center text-[10px] text-muted-foreground tracking-[0.25em] uppercase font-medium">
-        Tecnologías que utilizamos para construir infraestructura cloud moderna
+        Tecnologías que utilizamos para construir cloud services moderna
       </p>
     </div>
     <div className="relative">
