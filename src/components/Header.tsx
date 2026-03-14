@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoNorthDark from "@/assets/logo-north-dark.webp";
-import logoNorthLight from "@/assets/logo-north-light.webp";
+import logoNorthDark from "@/assets/logo-north-dark-new.png";
+import logoNorthLight from "@/assets/logo-north-light-new.png";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
