@@ -27,7 +27,9 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [solOpen, setSolOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const legalDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
