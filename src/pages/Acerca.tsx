@@ -88,7 +88,7 @@ const solutions = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Entornos seguros, monitoreados y de alto rendimiento con Google Workspace, hosting y migraciones.",
     href: "/cloud",
     highlights: [
