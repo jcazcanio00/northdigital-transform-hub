@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoNorth from "@/assets/logo-north.png";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
@@ -55,10 +56,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm font-display">N</span>
-          </div>
-          <span className="text-lg font-bold font-display">North Digital</span>
+          <img src={logoNorth} alt="North Digital" className="h-7 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
