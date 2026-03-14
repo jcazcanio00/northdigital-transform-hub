@@ -55,8 +55,8 @@ const TestimonialSection = () => (
     </div>
 
     <div className="relative">
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[hsl(228,40%,6%)] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[hsl(228,45%,5%)] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[hsl(240,30%,5%)] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[hsl(240,30%,4%)] to-transparent z-10 pointer-events-none" />
       <div className="flex animate-marquee hover:[animation-play-state:paused]">
         {[...testimonials, ...testimonials, ...testimonials].map((t, i) => (
           <TestimonialCard key={i} t={t} />
