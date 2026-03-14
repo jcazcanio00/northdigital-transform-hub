@@ -38,7 +38,7 @@ const LogoSlider = () => (
           >
             <img
               src={logo.icon}
-              alt={logo.name}
+              alt={`${logo.name} - Tecnología utilizada por agencia de marketing digital North Digital`}
               className="w-6 h-6 opacity-40 hover:opacity-90 transition-opacity duration-300"
               style={{ filter: "grayscale(100%)" }}
               loading="lazy"

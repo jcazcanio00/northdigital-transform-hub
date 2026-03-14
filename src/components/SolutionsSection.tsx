@@ -41,7 +41,7 @@ const SolutionsSection = () => (
           Lo Que Hacemos
         </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-          Nuestras <span className="gradient-text">Soluciones</span>
+          Servicios de Agencia de <span className="gradient-text">Marketing Digital</span> para Empresas
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           Tecnología integral para acelerar tu negocio.

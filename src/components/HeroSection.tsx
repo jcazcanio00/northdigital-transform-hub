@@ -73,9 +73,9 @@ const HeroSection = () => (
         </motion.div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
-          Automatiza, Escala y{" "}
-          <span className="gradient-text">Crece</span>{" "}
-          con Tecnología.
+          Agencia de Marketing Digital, Software y{" "}
+          <span className="gradient-text">Cloud</span>{" "}
+          para Empresas en Cancún, Playa del Carmen y Tulum
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
