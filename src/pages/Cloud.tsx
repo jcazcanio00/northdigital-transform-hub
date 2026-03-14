@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
+import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
