@@ -122,7 +122,7 @@ const Contacto = () => {
                   <label className="text-xs font-medium mb-1.5 block">Teléfono / WhatsApp</label>
                   <div className="relative">
                     <Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input type="tel" placeholder="+52 998 351 3337" value={form.phone} onChange={(e) => updateField("phone", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
               </div>
