@@ -16,7 +16,7 @@ const sections = [
   {
     title: "Servicios Ofrecidos",
     content: (
-      <p>North Digital Solutions ofrece servicios de desarrollo de software empresarial, infraestructura cloud y marketing de crecimiento. Las características, alcance y condiciones específicas de cada servicio se definen en los contratos individuales celebrados con cada cliente. La información presentada en el Sitio es de carácter informativo y no constituye una oferta vinculante.</p>
+      <p>North Digital Solutions ofrece servicios de desarrollo de software empresarial, cloud services y marketing de crecimiento. Las características, alcance y condiciones específicas de cada servicio se definen en los contratos individuales celebrados con cada cliente. La información presentada en el Sitio es de carácter informativo y no constituye una oferta vinculante.</p>
     ),
   },
   {
