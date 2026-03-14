@@ -498,7 +498,7 @@ const CloudPage = () => {
               Proceso de <span className="gradient-text">Desarrollo</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Cada proyecto sigue un proceso estructurado para garantizar calidad, seguridad y escalabilidad.
+              De la idea al despliegue: siete etapas que aseguran una entrega sólida, probada y lista para producción.
             </p>
           </motion.div>
 
