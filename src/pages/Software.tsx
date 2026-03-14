@@ -742,7 +742,7 @@ const Software = () => {
                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-accent to-primary rounded-full"
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
               />
             </div>

@@ -475,7 +475,7 @@ const CloudPage = () => {
                 key={step.title}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 className="flex gap-5 mb-8 last:mb-0 relative group"
               >
