@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
-import logoNorthDark from "@/assets/logo-north-dark.webp";
-import logoNorthLight from "@/assets/logo-north-light.webp";
+import logoNorthDark from "@/assets/logo-north-dark-new.png";
+import logoNorthLight from "@/assets/logo-north-light-new.png";
 
 const socials = [
   { icon: Facebook, href: "https://www.facebook.com/northmkt?mibextid=LQQJ4d", label: "Facebook" },
