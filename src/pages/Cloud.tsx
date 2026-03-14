@@ -247,9 +247,10 @@ const services = [
 const benefits = [
   { icon: Activity, title: "Alta disponibilidad", desc: "Arquitectura redundante con balanceo de carga y failover automático para mantener los sistemas siempre activos." },
   { icon: Zap, title: "Escalabilidad automática", desc: "La infraestructura se adapta dinámicamente al tráfico y crecimiento del sistema sin intervención manual." },
-  { icon: Lock, title: "Seguridad avanzada", desc: "Protección multicapa con firewalls, cifrado, control de accesos y monitoreo continuo de amenazas." },
-  { icon: BarChart3, title: "Optimización de costos", desc: "Uso eficiente de recursos cloud que permite escalar infraestructura sin desperdicio de capacidad." },
-  { icon: Monitor, title: "Monitoreo continuo", desc: "Observabilidad completa del sistema con métricas, logs y alertas en tiempo real." },
+  { icon: Lock, title: "Seguridad avanzada", desc: "Protección multicapa con cifrado, firewalls y control de accesos." },
+  { icon: BarChart3, title: "Optimización de costos", desc: "Uso eficiente de recursos cloud sin desperdicio de capacidad." },
+  { icon: Monitor, title: "Monitoreo continuo", desc: "Métricas, logs y alertas en tiempo real." },
+  { icon: RefreshCw, title: "Recuperación ante desastres", desc: "Backups automatizados y planes de recuperación rápida." },
 ];
 
 const processSteps = [
