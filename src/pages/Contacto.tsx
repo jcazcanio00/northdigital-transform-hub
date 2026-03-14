@@ -181,8 +181,12 @@ const Contacto = () => {
                 </div>
               </div>
 
-              <Button variant="gradient" size="lg" type="submit" className="w-full group">
-                Enviar solicitud <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
+              <Button variant="gradient" size="lg" type="submit" className="w-full group" disabled={loading}>
+                {loading ? (
+                  <><Loader2 size={16} className="mr-1 animate-spin" /> Enviando...</>
+                ) : (
+                  <>Enviar solicitud <Send size={16} className="ml-1 group-hover:translate-x-0.5 transition-transform" /></>
+                )}
               </Button>
             </motion.form>
 
