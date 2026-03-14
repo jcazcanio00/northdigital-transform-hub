@@ -27,10 +27,11 @@ const projectTypes = [
 ];
 
 const budgets = [
-  "$100,000 – $250,000 MXN",
-  "$250,000 – $500,000 MXN",
+  "Menos de $50,000 MXN",
+  "$50,000 – $100,000 MXN",
+  "$100,000 – $500,000 MXN",
   "$500,000 – $1,000,000 MXN",
-  "$1,000,000+ MXN",
+  "Más de $1,000,000 MXN",
 ];
 
 const timelines = [
