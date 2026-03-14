@@ -207,7 +207,7 @@
     pointer-events: none;
   }
   .gradient-btn:hover {
-    box-shadow: 0 0 40px -5px hsl(210 100% 60% / 0.5);
+    box-shadow: 0 0 40px -5px hsl(268 65% 52% / 0.45), 0 0 20px -5px hsl(225 75% 56% / 0.3);
     transform: translateY(-1px);
   }
 
