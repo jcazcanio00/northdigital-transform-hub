@@ -15,8 +15,9 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand */}
         <div className="lg:col-span-2">
-          <Link to="/" className="flex items-center gap-2.5 mb-4">
-            <img src={logoNorth} alt="North Digital" className="h-8 w-auto" />
+        <Link to="/" className="flex items-center gap-2.5 mb-4">
+            <img src={logoNorthDark} alt="North Digital" className="h-8 w-auto dark:hidden" />
+            <img src={logoNorthLight} alt="North Digital" className="h-8 w-auto hidden dark:block" />
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed mb-5">
             Software empresarial, cloud services y marketing de crecimiento para empresas modernas.
