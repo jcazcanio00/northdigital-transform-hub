@@ -184,8 +184,8 @@ const GrowthSection = () => (
       </motion.div>
 
       <div className="text-center mt-10">
-        <Button variant="gradient" size="lg">
-          Ver Estrategias <ArrowRight size={16} className="ml-1" />
+        <Button variant="gradient" size="lg" asChild>
+          <Link to="/marketing">Ver Estrategias <ArrowRight size={16} className="ml-1" /></Link>
         </Button>
       </div>
     </div>

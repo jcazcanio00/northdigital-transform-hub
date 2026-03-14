@@ -26,12 +26,12 @@ const CtaSection = () => (
           Agenda una consulta gratuita y descubre cómo podemos impulsar tu empresa al siguiente nivel.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button variant="gradient" size="lg" className="text-base px-8 py-6">
-            Agendar Consulta <ArrowRight size={16} className="ml-1" />
+          <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+            <Link to="/contacto">Agendar Consulta <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
-          <button className="inline-flex items-center justify-center gap-2 text-base px-8 py-3 rounded-lg border border-white/40 text-white bg-transparent font-medium transition-all duration-300 hover:bg-white hover:text-[hsl(220,50%,10%)] hover:border-white">
+          <Link to="/contacto" className="inline-flex items-center justify-center gap-2 text-base px-8 py-3 rounded-lg border border-white/40 text-white bg-transparent font-medium transition-all duration-300 hover:bg-white hover:text-[hsl(220,50%,10%)] hover:border-white">
             <MessageCircle size={16} /> Contactar Equipo
-          </button>
+          </Link>
         </div>
       </motion.div>
     </div>

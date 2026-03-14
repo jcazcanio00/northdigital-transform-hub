@@ -50,9 +50,9 @@ const SolutionsSection = () => (
 
       <div className="grid md:grid-cols-3 gap-5">
         {solutions.map((s, i) => (
-          <motion.a
+          <motion(Link)
             key={s.title}
-            href={s.href}
+            to={s.href}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

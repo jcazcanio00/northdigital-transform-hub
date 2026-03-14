@@ -51,8 +51,8 @@ const SystemsSection = () => (
             ))}
           </div>
 
-          <Button variant="gradient" size="lg">
-            Ver Más <ArrowRight size={16} className="ml-1" />
+          <Button variant="gradient" size="lg" asChild>
+            <Link to="/software">Ver Más <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
         </motion.div>
 

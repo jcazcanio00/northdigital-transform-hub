@@ -129,8 +129,8 @@ const CloudSection = () => (
             </div>
           </div>
 
-          <Button variant="gradient" size="lg" className="self-start">
-            Conocer Más <ArrowRight size={16} className="ml-1" />
+          <Button variant="gradient" size="lg" className="self-start" asChild>
+            <Link to="/cloud">Conocer Más <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
         </motion.div>
       </div>
