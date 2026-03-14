@@ -104,7 +104,7 @@ const Contacto = () => {
                   <label className="text-xs font-medium mb-1.5 block">Email</label>
                   <div className="relative">
                     <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
+                    <Input type="email" placeholder="tu@email.com" value={form.email} onChange={(e) => updateField("email", e.target.value)} className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]" />
                   </div>
                 </div>
               </div>
