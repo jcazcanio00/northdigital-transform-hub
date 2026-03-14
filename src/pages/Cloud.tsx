@@ -224,6 +224,11 @@ const CloudPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SEO
+        title="Cloud Services para empresas | North Digital"
+        description="Infraestructura cloud, hosting empresarial, Google Workspace y plataformas escalables para empresas modernas."
+        url="https://northmkt.com.mx/cloud"
+      />
       <Header />
       
 

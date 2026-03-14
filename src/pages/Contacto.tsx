@@ -59,6 +59,11 @@ const Contacto = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO
+        title="Contacto | North Digital"
+        description="Habla con nuestro equipo para desarrollar software empresarial, implementar cloud services o escalar tu marketing digital."
+        url="https://northmkt.com.mx/contacto"
+      />
       <Header />
       
 

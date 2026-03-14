@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SolutionsSection from "@/components/SolutionsSection";
@@ -19,6 +20,11 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO
+        title="North Digital | Software empresarial, cloud services y growth marketing"
+        description="Desarrollo de software empresarial, cloud services y estrategias de growth marketing para empresas que buscan escalar con tecnología y datos."
+        url="https://northmkt.com.mx"
+      />
       <Header />
       <HeroSection />
       <LogoSlider />

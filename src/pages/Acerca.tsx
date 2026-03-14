@@ -135,6 +135,11 @@ const connectionSteps = [
 
 const Acerca = () => (
   <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <SEO
+      title="Acerca de North Digital | Consultora tecnológica"
+      description="Conoce North Digital, una consultora especializada en software empresarial, cloud services y estrategias de crecimiento digital."
+      url="https://northmkt.com.mx/acerca"
+    />
     <Header />
     
 

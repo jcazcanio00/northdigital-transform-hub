@@ -431,6 +431,11 @@ const flowSteps = [
 const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO
+        title="Desarrollo de Software Empresarial | North Digital"
+        description="Desarrollo de CRM, dashboards y sistemas empresariales a medida para automatizar procesos y escalar operaciones."
+        url="https://northmkt.com.mx/software"
+      />
       <Header />
       
 
