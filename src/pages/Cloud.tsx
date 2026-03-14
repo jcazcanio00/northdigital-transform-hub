@@ -240,7 +240,7 @@ const CloudPage = () => {
                 CLOUD EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Infraestructura Cloud{" "}
+                Cloud Services{" "}
                 <span className="gradient-text">Segura y Escalable</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
