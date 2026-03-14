@@ -1,4 +1,5 @@
-import { Globe, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => (
   <footer className="border-t border-border/30 bg-card">
@@ -6,37 +7,30 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-2.5 mb-4">
+          <Link to="/" className="flex items-center gap-2.5 mb-4">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm font-display">N</span>
             </div>
             <span className="text-base font-bold font-display">North Digital</span>
-          </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-            Automatización, infraestructura cloud y estrategias de crecimiento para empresas modernas.
+          </Link>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
           </p>
-          <div className="flex gap-3">
-            {[Globe, Mail].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-9 h-9 rounded-lg bg-muted/50 border border-border/30 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
-              >
-                <Icon size={15} />
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Soluciones */}
         <div>
           <h4 className="text-sm font-bold font-display mb-4">Soluciones</h4>
           <ul className="space-y-2.5">
-            {["Sistemas Empresariales", "Infraestructura Cloud", "Marketing Digital", "Automatización"].map((l) => (
-              <li key={l}>
-                <a href="#solutions" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                  {l}
-                </a>
+            {[
+              { label: "Software Empresarial", href: "/software" },
+              { label: "Infraestructura Cloud", href: "/cloud" },
+              { label: "Marketing de Crecimiento", href: "/marketing" },
+            ].map((l) => (
+              <li key={l.label}>
+                <Link to={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -47,15 +41,20 @@ const Footer = () => (
           <h4 className="text-sm font-bold font-display mb-4">Empresa</h4>
           <ul className="space-y-2.5">
             {[
-              { label: "Sobre Nosotros", href: "#about" },
-              { label: "Proceso", href: "#process" },
-              { label: "Testimonios", href: "#" },
-              { label: "Contacto", href: "#contact" },
+              { label: "Inicio", href: "/" },
+              { label: "Proceso", href: "/#process" },
+              { label: "Contacto", href: "/#contact" },
             ].map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
-                  {l.label}
-                </a>
+                {l.href.includes("#") ? (
+                  <a href={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link to={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
+                    {l.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

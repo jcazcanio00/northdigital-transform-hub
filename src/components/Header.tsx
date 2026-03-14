@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
@@ -8,22 +9,27 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { label: "Inicio", href: "#home" },
-  { label: "Soluciones", href: "#solutions" },
-  { label: "Servicios", href: "#systems" },
-  { label: "Proceso", href: "#process" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Software Empresarial", href: "/software" },
+  { label: "Infraestructura Cloud", href: "/cloud" },
+  { label: "Marketing de Crecimiento", href: "/marketing" },
+  { label: "Proceso", href: "/#process" },
+  { label: "Contacto", href: "/#contact" },
 ];
 
 const Header = ({ isDark, toggleTheme }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isHashLink = (href: string) => href.includes("#");
+  const isRouteLink = (href: string) => !href.includes("#");
 
   return (
     <header
@@ -32,27 +38,36 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm font-display">N</span>
           </div>
           <span className="text-lg font-bold font-display">North Digital</span>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) =>
+            isRouteLink(l.href) ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* iOS-style theme toggle */}
           <button
             onClick={toggleTheme}
             className={`relative w-14 h-7 rounded-full transition-all duration-300 flex items-center ${
@@ -80,8 +95,8 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
               )}
             </span>
           </button>
-          <Button variant="gradient" size="sm" className="hidden sm:inline-flex">
-            Agendar Consulta
+          <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
+            <a href="/#contact">Agendar Consulta</a>
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -94,18 +109,29 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
 
       {mobileOpen && (
         <div className="lg:hidden glass-card border-t border-border mt-2 p-4 space-y-3">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-          <Button variant="gradient" size="sm" className="w-full mt-2">
-            Agendar Consulta
+          {navLinks.map((l) =>
+            isRouteLink(l.href) ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            )
+          )}
+          <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
+            <a href="/#contact">Agendar Consulta</a>
           </Button>
         </div>
       )}
