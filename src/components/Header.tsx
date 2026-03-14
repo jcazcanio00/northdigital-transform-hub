@@ -94,12 +94,12 @@ const Header = () => {
             )}
           </div>
 
-          <a
-            href="/#contact"
+          <Link
+            to="/contacto"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
           >
             Contacto
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ const Header = () => {
             </span>
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
-            <a href="/#contact">Agendar Consulta</a>
+            <Link to="/contacto">Agendar Consulta</Link>
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,11 +158,11 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
-          <a href="/#contact" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Contacto
-          </a>
+          </Link>
           <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
-            <a href="/#contact">Agendar Consulta</a>
+            <Link to="/contacto">Agendar Consulta</Link>
           </Button>
         </div>
       )}
