@@ -13,6 +13,16 @@ import {
   Zap,
   Target,
   Database,
+  CheckCircle2,
+  LayoutDashboard,
+  LineChart,
+  Cog,
+  Globe,
+  Server,
+  Layers,
+  Search,
+  Megaphone,
+  MousePointerClick,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,25 +72,40 @@ const Counter = ({ end, suffix = "", prefix = "" }: { end: number; suffix?: stri
   );
 };
 
-/* ─── Solutions ─── */
+/* ─── Solutions (enhanced) ─── */
 const solutions = [
   {
     icon: Code2,
     title: "Software Empresarial",
     desc: "Plataformas, CRMs y sistemas internos diseñados para automatizar operaciones y escalar tu negocio.",
     href: "/software",
+    highlights: [
+      { icon: LayoutDashboard, text: "Desarrollo de CRM" },
+      { icon: LineChart, text: "Dashboards y analítica" },
+      { icon: Cog, text: "Automatización de procesos" },
+    ],
   },
   {
     icon: Cloud,
     title: "Infraestructura Cloud",
     desc: "Entornos seguros, monitoreados y de alto rendimiento con Google Workspace, hosting y migraciones.",
     href: "/cloud",
+    highlights: [
+      { icon: Globe, text: "Google Workspace" },
+      { icon: Server, text: "Hosting empresarial" },
+      { icon: Layers, text: "Arquitectura escalable" },
+    ],
   },
   {
     icon: TrendingUp,
     title: "Marketing de Crecimiento",
     desc: "SEO, Google Ads y analítica avanzada para generar demanda cualificada y escalar ingresos.",
     href: "/marketing",
+    highlights: [
+      { icon: Search, text: "SEO estratégico" },
+      { icon: Megaphone, text: "Google Ads" },
+      { icon: MousePointerClick, text: "Optimización de conversiones" },
+    ],
   },
 ];
 
@@ -94,9 +119,17 @@ const process = [
 
 /* ─── Metrics ─── */
 const metrics = [
-  { value: 8, suffix: "+", label: "Años de experiencia", prefix: "" },
-  { value: 8, suffix: "M+", label: "Pesos gestionados en campañas", prefix: "$" },
-  { value: 24, suffix: "M+", label: "Pesos generados para clientes", prefix: "$" },
+  { value: 8, suffix: "+", label: "Años creando soluciones digitales", prefix: "", sub: "Desde 2018" },
+  { value: 8, suffix: "M+", label: "Pesos gestionados en campañas digitales", prefix: "$", sub: "Google Ads, SEO, Social" },
+  { value: 24, suffix: "M+", label: "Pesos generados en ingresos para clientes", prefix: "$", sub: "ROI comprobado" },
+];
+
+/* ─── Connection Diagram ─── */
+const connectionSteps = [
+  { icon: Zap, title: "Tecnología", desc: "Construimos la infraestructura digital que soporta tu operación." },
+  { icon: Database, title: "Datos", desc: "Capturamos, procesamos y transformamos datos en insights accionables." },
+  { icon: Target, title: "Estrategia", desc: "Definimos el camino óptimo para alcanzar tus objetivos de negocio." },
+  { icon: TrendingUp, title: "Crecimiento", desc: "Ejecutamos, medimos y escalamos los resultados de forma predecible." },
 ];
 
 const Acerca = () => (
@@ -107,7 +140,6 @@ const Acerca = () => (
     <section className="pt-32 pb-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[image:var(--gradient-hero)] pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-primary/6 blur-[140px] pointer-events-none" />
-      {/* Grid dots */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-4xl text-center">
@@ -186,8 +218,11 @@ const Acerca = () => (
       </div>
     </section>
 
-    {/* ═══ QUÉ HACEMOS ═══ */}
+    {/* ═══ QUÉ HACEMOS (Enhanced) ═══ */}
     <section className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] via-transparent to-primary/[0.02] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
@@ -198,21 +233,40 @@ const Acerca = () => (
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {solutions.map((s, i) => (
-            <motion.div key={s.title} {...fade(i * 0.08)}>
+            <motion.div key={s.title} {...fade(i * 0.1)}>
               <Link
                 to={s.href}
-                className="group glass-card rounded-2xl p-7 border-border/40 block h-full hover:border-primary/30 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                className="group glass-card rounded-2xl p-8 border-border/40 block h-full hover:border-primary/30 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.2)] transition-all duration-500 relative overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-300">
-                  <s.icon size={22} className="text-primary" />
+                {/* Subtle gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.35)] transition-all duration-300">
+                    <s.icon size={26} className="text-primary" />
+                  </div>
+
+                  <h3 className="text-xl font-bold font-display mb-3 group-hover:text-primary transition-colors">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{s.desc}</p>
+
+                  {/* Bullet highlights */}
+                  <div className="space-y-3 pt-4 border-t border-border/30">
+                    {s.highlights.map((h) => (
+                      <div key={h.text} className="flex items-center gap-3">
+                        <div className="w-7 h-7 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
+                          <h.icon size={14} className="text-primary" />
+                        </div>
+                        <span className="text-sm text-muted-foreground">{h.text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary mt-6 group-hover:gap-2.5 transition-all duration-300">
+                    Conocer más <ArrowRight size={13} />
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold font-display mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-primary mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Ver más <ArrowRight size={12} />
-                </span>
               </Link>
             </motion.div>
           ))}
@@ -220,34 +274,58 @@ const Acerca = () => (
       </div>
     </section>
 
-    {/* ═══ RESULTADOS ═══ */}
-    <section className="py-24 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/5 pointer-events-none" />
+    {/* ═══ IMPACTO Y EXPERIENCIA ═══ */}
+    <section className="py-28 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-primary/8 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/60 mb-5">
-            Resultados
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-white">
-            Números que respaldan nuestro trabajo
-          </h2>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          {/* Left — text */}
+          <motion.div {...fade()}>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/60 mb-5">
+              Impacto y Experiencia
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-white mb-6">
+              Resultados que hablan por nuestro{" "}
+              <span className="gradient-text">trabajo</span>
+            </h2>
+            <p className="text-white/50 leading-relaxed mb-6">
+              Cada proyecto que emprendemos está orientado a generar impacto real y medible. Desde campañas digitales de alto rendimiento hasta sistemas empresariales que transforman operaciones completas.
+            </p>
+            <div className="space-y-3">
+              {[
+                "Empresas en múltiples industrias",
+                "Infraestructura cloud segura y escalable",
+                "Estrategias de crecimiento basadas en datos",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5 text-sm text-white/40">
+                  <CheckCircle2 size={14} className="text-primary shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {metrics.map((m, i) => (
-            <motion.div
-              key={m.label}
-              {...fade(i * 0.1)}
-              className="text-center glass-card rounded-2xl p-8 border-white/10 bg-white/[0.03]"
-            >
-              <p className="text-4xl sm:text-5xl font-extrabold font-display text-white mb-2">
-                <Counter end={m.value} suffix={m.suffix} prefix={m.prefix} />
-              </p>
-              <p className="text-sm text-white/50">{m.label}</p>
-            </motion.div>
-          ))}
+          {/* Right — metric cards */}
+          <div className="grid gap-5">
+            {metrics.map((m, i) => (
+              <motion.div
+                key={m.label}
+                {...fade(i * 0.1)}
+                className="glass-card rounded-2xl p-6 border-white/10 bg-white/[0.04] flex items-center gap-6 hover:bg-white/[0.07] hover:border-white/15 transition-all duration-500"
+              >
+                <p className="text-3xl sm:text-4xl font-extrabold font-display text-white shrink-0 min-w-[100px]">
+                  <Counter end={m.value} suffix={m.suffix} prefix={m.prefix} />
+                </p>
+                <div className="border-l border-white/10 pl-6">
+                  <p className="text-sm text-white/80 font-medium">{m.label}</p>
+                  <p className="text-xs text-white/35 mt-0.5">{m.sub}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -267,9 +345,7 @@ const Acerca = () => (
         <div className="max-w-5xl mx-auto">
           {/* Desktop horizontal */}
           <div className="hidden md:grid grid-cols-4 gap-0 relative">
-            {/* Connection line */}
             <div className="absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
-
             {process.map((step, i) => (
               <motion.div key={step.title} {...fade(i * 0.1)} className="text-center relative px-4">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 relative z-10 border-4 border-background">
@@ -304,30 +380,123 @@ const Acerca = () => (
       </div>
     </section>
 
-    {/* ═══ FILOSOFÍA ═══ */}
+    {/* ═══ CÓMO CONECTAMOS (Creative Visual Section) ═══ */}
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
-      <div className="container mx-auto px-4 lg:px-8 max-w-3xl relative z-10 text-center">
-        <motion.div {...fade()}>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-primary/[0.01] to-primary/[0.03] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+            Nuestro Enfoque
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display">
+            Cómo conectamos tecnología y{" "}
+            <span className="gradient-text">crecimiento</span>
+          </h2>
+        </motion.div>
+
+        {/* Desktop horizontal diagram */}
+        <div className="hidden md:block max-w-5xl mx-auto">
+          <div className="grid grid-cols-4 gap-0 relative">
+            {/* Connection lines */}
+            <div className="absolute top-[60px] left-[12.5%] right-[12.5%] h-[2px] overflow-hidden">
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                className="h-full bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 origin-left"
+              />
+            </div>
+            {/* Animated dots on line */}
+            {[1, 2].map((dot) => (
+              <motion.div
+                key={dot}
+                className="absolute top-[57px] w-2 h-2 rounded-full bg-primary/50"
+                style={{ left: `${25 * dot}%` }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + dot * 0.2 }}
+              />
+            ))}
+
+            {connectionSteps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                {...fade(i * 0.12)}
+                className="text-center px-5 group"
+              >
+                <div className="w-[120px] h-[120px] mx-auto mb-6 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/15 flex items-center justify-center relative group-hover:from-primary/15 group-hover:to-primary/10 group-hover:border-primary/25 group-hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.25)] transition-all duration-500">
+                  <step.icon size={36} className="text-primary" />
+                  <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-lg bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary font-display">
+                    {i + 1}
+                  </div>
+                </div>
+                <h3 className="text-base font-bold font-display mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed max-w-[200px] mx-auto">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile vertical */}
+        <div className="md:hidden max-w-sm mx-auto space-y-0">
+          {connectionSteps.map((step, i) => (
+            <motion.div key={step.title} {...fade(i * 0.08)} className="flex gap-5">
+              <div className="flex flex-col items-center">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/15 flex items-center justify-center shrink-0 relative">
+                  <step.icon size={24} className="text-primary" />
+                  <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-md bg-primary/20 text-[9px] font-bold text-primary flex items-center justify-center font-display">{i + 1}</span>
+                </div>
+                {i < 3 && (
+                  <div className="w-px flex-1 min-h-[24px] bg-gradient-to-b from-primary/30 to-primary/10 mt-2" />
+                )}
+              </div>
+              <div className="pb-8 pt-1">
+                <h3 className="text-sm font-bold font-display mb-1">{step.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ═══ FILOSOFÍA ═══ */}
+    <section className="py-24 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/6 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-primary/8 blur-[140px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10 text-center">
+        <motion.div {...fade()}>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/60 mb-5">
             Filosofía
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-6">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-white mb-6">
             Tecnología + Datos + <span className="gradient-text">Estrategia</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-2xl mx-auto">
             Creemos que el crecimiento real no viene de una sola táctica — viene de combinar tecnología sólida, datos accionables y una estrategia clara de negocio. Cada solución que construimos integra estos tres pilares para generar impacto medible y sostenible.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { icon: Database, label: "Datos accionables" },
-              { icon: Zap, label: "Tecnología sólida" },
-              { icon: Target, label: "Estrategia clara" },
-            ].map((p) => (
-              <div key={p.label} className="flex items-center gap-2.5 glass-card rounded-xl px-5 py-3 border-border/40">
-                <p.icon size={18} className="text-primary" />
-                <span className="text-sm font-medium">{p.label}</span>
-              </div>
+              { icon: Database, label: "Datos accionables", desc: "Decisiones basadas en evidencia" },
+              { icon: Zap, label: "Tecnología sólida", desc: "Infraestructura que escala contigo" },
+              { icon: Target, label: "Estrategia clara", desc: "Objetivos medibles y alcanzables" },
+            ].map((p, i) => (
+              <motion.div
+                key={p.label}
+                {...fade(i * 0.1)}
+                className="glass-card rounded-2xl px-6 py-5 border-white/10 bg-white/[0.04] text-left min-w-[200px] hover:bg-white/[0.07] hover:border-white/15 transition-all duration-500"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center mb-3">
+                  <p.icon size={20} className="text-primary" />
+                </div>
+                <span className="text-sm font-bold text-white block mb-1">{p.label}</span>
+                <span className="text-xs text-white/40">{p.desc}</span>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -335,12 +504,11 @@ const Acerca = () => (
     </section>
 
     {/* ═══ FINAL CTA ═══ */}
-    <section className="py-28 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-primary/10 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[160px] pointer-events-none" />
+    <section className="py-28 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
-        <motion.h2 {...fade()} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white leading-[1.15] mb-8">
+        <motion.h2 {...fade()} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-[1.15] mb-8">
           Construyamos la infraestructura digital que tu empresa{" "}
           <span className="gradient-text">necesita</span>
         </motion.h2>
@@ -350,7 +518,7 @@ const Acerca = () => (
               Hablar con un especialista <ArrowRight size={16} className="ml-1" />
             </Link>
           </Button>
-          <Button size="lg" className="border-white/20 text-white hover:bg-white/10 bg-transparent border" asChild>
+          <Button size="lg" variant="outline" asChild>
             <a href="https://wa.me/529983513337" target="_blank" rel="noopener noreferrer">
               Agendar consulta
             </a>
