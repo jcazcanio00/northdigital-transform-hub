@@ -88,7 +88,7 @@ const CloudSection = () => (
             Cloud
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 font-display leading-tight">
-            Tecnología, Cloud y <span className="gradient-text">Marketing de Crecimiento</span>
+            Infraestructura <span className="gradient-text">Cloud</span> Empresarial
           </h2>
 
           <div className="flex flex-wrap gap-2 mb-4">
