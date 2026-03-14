@@ -291,6 +291,7 @@ const useCases = [
   { icon: BarChart3, title: "Dashboards analíticos", desc: "Procesamiento de datos en tiempo real para plataformas de análisis e inteligencia de negocio." },
   { icon: Workflow, title: "Automatización de procesos", desc: "Workflows y microservicios que integran sistemas y eliminan tareas manuales." },
   { icon: Terminal, title: "APIs empresariales", desc: "Infraestructura preparada para exponer APIs seguras, rápidas y escalables." },
+  { icon: Cpu, title: "Plataformas de datos y AI", desc: "Infraestructura optimizada para procesamiento de datos, machine learning y pipelines analíticos." },
 ];
 
 /* ─── Main Page ─── */
