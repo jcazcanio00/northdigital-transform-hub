@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import {
   Users, Zap, BarChart3, Plug, ArrowRight, CheckCircle2,
   Database, Workflow, Monitor, FileCode2, Shield, TrendingUp,
   Layers, Settings, LineChart, Globe, Building2, GraduationCap,
   Search, PenTool, Code2, TestTube2, Rocket, Headphones, ArrowDown,
-  Sun, Moon, Menu, X, Activity, Bell, Clock, GitBranch, Server,
+  Activity, Bell, Clock, GitBranch, Server,
   Table2, Eye, Cpu, MessageSquare, Calendar, ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
@@ -21,100 +21,6 @@ const fade = (delay = 0) => ({
   viewport: { once: true },
   transition: { duration: 0.5, delay },
 });
-
-/* ─── Header ─── */
-const SoftwareHeader = () => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      );
-    }
-    return false;
-  });
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const navLinks = [
-    { label: "Inicio", href: "/" },
-    { label: "Capacidades", href: "#capabilities" },
-    { label: "Proceso", href: "#process" },
-    { label: "Contacto", href: "/#contact" },
-  ];
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-card py-3 shadow-lg" : "py-5 bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm font-display">N</span>
-          </div>
-          <span className="text-lg font-bold font-display">North Digital</span>
-        </Link>
-
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((l) =>
-            l.href.startsWith("/") && !l.href.includes("#") ? (
-              <Link key={l.href} to={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</Link>
-            ) : (
-              <a key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</a>
-            )
-          )}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className={`relative w-14 h-7 rounded-full transition-all duration-300 flex items-center ${isDark ? "bg-gradient-to-r from-primary to-primary/80" : "bg-muted/60 border border-border/40"}`}
-            aria-label="Toggle theme"
-          >
-            <span className="absolute left-1.5 flex items-center justify-center">
-              <Sun size={12} className={`transition-opacity duration-300 ${isDark ? "opacity-40 text-white/60" : "opacity-0"}`} />
-            </span>
-            <span className="absolute right-1.5 flex items-center justify-center">
-              <Moon size={12} className={`transition-opacity duration-300 ${isDark ? "opacity-0" : "opacity-40 text-foreground/60"}`} />
-            </span>
-            <span className={`w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center transition-all duration-300 ${isDark ? "translate-x-[30px]" : "translate-x-[3px]"}`}>
-              {isDark ? <Moon size={10} className="text-primary" /> : <Sun size={10} className="text-amber-500" />}
-            </span>
-          </button>
-          <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
-            <a href="/#contact">Agendar Consulta</a>
-          </Button>
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2">
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </div>
-
-      {mobileOpen && (
-        <div className="lg:hidden glass-card border-t border-border mt-2 p-4 space-y-3">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">{l.label}</a>
-          ))}
-        </div>
-      )}
-    </header>
-  );
-};
-
 /* ─── Syntax-highlighted Code Block ─── */
 const CodeBlock = ({ code, language = "json" }: { code: string; language?: string }) => {
   const highlightJSON = (raw: string) => {
