@@ -104,6 +104,32 @@ const Header = () => {
             )}
           </div>
 
+          {/* Legal dropdown */}
+          <div ref={legalDropdownRef} className="relative">
+            <button
+              onClick={() => setLegalOpen(!legalOpen)}
+              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+            >
+              Legal
+              <ChevronDown size={14} className={`transition-transform duration-200 ${legalOpen ? "rotate-180" : ""}`} />
+            </button>
+            {legalOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl border border-border bg-card shadow-xl p-2 space-y-0.5">
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border-l border-t border-border bg-card" />
+                {legal.map((s) => (
+                  <Link
+                    key={s.href}
+                    to={s.href}
+                    onClick={() => setLegalOpen(false)}
+                    className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <Link
             to="/contacto"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
