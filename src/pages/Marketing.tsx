@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Search, Target, BarChart3, TrendingUp, Zap, ArrowRight, ArrowDown,

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Cloud, Server, Shield, Activity, Database, Cpu, Globe, Zap,

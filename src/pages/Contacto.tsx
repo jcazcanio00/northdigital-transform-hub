@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import { Send, Mail, Phone, User, Building2, FileText, MessageCircle, Loader2 } from "lucide-react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
