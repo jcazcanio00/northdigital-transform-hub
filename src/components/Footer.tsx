@@ -15,10 +15,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="lg:col-span-2">
           <Link to="/" className="flex items-center gap-2.5 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm font-display">N</span>
-            </div>
-            <span className="text-base font-bold font-display">North Digital</span>
+            <img src={logoNorth} alt="North Digital" className="h-8 w-auto" />
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed mb-5">
             Software empresarial, cloud services y marketing de crecimiento para empresas modernas.
