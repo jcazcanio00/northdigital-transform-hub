@@ -299,7 +299,7 @@ const Acerca = () => (
             <div className="space-y-3">
               {[
                 "Empresas en múltiples industrias",
-                "Infraestructura cloud segura y escalable",
+                "Cloud services segura y escalable",
                 "Estrategias de crecimiento basadas en datos",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-white/40">
