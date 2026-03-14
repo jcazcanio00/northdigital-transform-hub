@@ -51,7 +51,7 @@ const CodeBlock = ({ code, language = "json" }: { code: string; language?: strin
 
   return (
     <div className="rounded-xl overflow-hidden border border-primary/20 shadow-[0_0_40px_-12px_hsl(var(--primary)/0.2)]">
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-[hsl(228,45%,12%)]">
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-[hsl(250,35%,12%)]">
         <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
         <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
