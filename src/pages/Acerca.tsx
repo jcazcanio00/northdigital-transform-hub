@@ -406,7 +406,7 @@ const Acerca = () => (
               <motion.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
                 className="h-full bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 origin-left"
               />
