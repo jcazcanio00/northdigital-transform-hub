@@ -5,9 +5,16 @@ interface SEOProps {
   description: string;
   url?: string;
   image?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SEO = ({ title, description, url = "https://northmkt.com.mx", image = "https://northmkt.com.mx/og-image.png" }: SEOProps) => (
+const SEO = ({
+  title,
+  description,
+  url = "https://northmkt.com.mx",
+  image = "https://northmkt.com.mx/og-image.png",
+  jsonLd,
+}: SEOProps) => (
   <Helmet>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -17,10 +24,17 @@ const SEO = ({ title, description, url = "https://northmkt.com.mx", image = "htt
     <meta property="og:type" content="website" />
     <meta property="og:url" content={url} />
     <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="North Digital" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+    {jsonLd && (
+      <script type="application/ld+json">
+        {JSON.stringify(Array.isArray(jsonLd) ? jsonLd : jsonLd)}
+      </script>
+    )}
   </Helmet>
 );
 

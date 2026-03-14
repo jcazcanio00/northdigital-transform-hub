@@ -13,6 +13,17 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
+
+const softwareJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Software Empresarial a Medida",
+  "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+  "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
+  "url": "https://northmkt.com.mx/software",
+  "areaServed": { "@type": "Country", "name": "México" },
+  "serviceType": "Software empresarial"
+};
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
@@ -432,9 +443,10 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Desarrollo de Software Empresarial | North Digital"
-        description="Desarrollo de CRM, dashboards y sistemas empresariales a medida para automatizar procesos y escalar operaciones."
+        title="Software Empresarial a Medida | North Digital"
+        description="Desarrollo de CRM, dashboards, automatización de procesos y sistemas empresariales a medida. Plataformas internas con integraciones API para escalar operaciones."
         url="https://northmkt.com.mx/software"
+        jsonLd={softwareJsonLd}
       />
       <Header />
       

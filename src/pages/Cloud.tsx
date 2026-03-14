@@ -226,9 +226,19 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Cloud Services para empresas | North Digital"
-        description="Infraestructura cloud, hosting empresarial, Google Workspace y plataformas escalables para empresas modernas."
+        title="Infraestructura Cloud para Empresas | North Digital"
+        description="Diseño, implementación y operación de infraestructura cloud segura y escalable. Hosting empresarial, migraciones, monitoreo y Google Workspace para operaciones críticas."
         url="https://northmkt.com.mx/cloud"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Infraestructura Cloud Empresarial",
+          "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+          "description": "Infraestructura cloud segura y escalable, hosting empresarial, migraciones y monitoreo para empresas con operaciones críticas.",
+          "url": "https://northmkt.com.mx/cloud",
+          "areaServed": { "@type": "Country", "name": "México" },
+          "serviceType": "Infraestructura cloud"
+        }}
       />
       <Header />
       
