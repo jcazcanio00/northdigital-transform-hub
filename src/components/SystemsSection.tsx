@@ -37,7 +37,7 @@ const SystemsSection = () => (
                 key={c.title}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 className="glass-card rounded-xl p-5 group transition-all duration-400 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_0_25px_-8px_hsl(var(--primary)/0.25)]"
               >
