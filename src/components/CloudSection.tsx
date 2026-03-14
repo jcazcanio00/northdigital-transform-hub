@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Server, Database, Globe, ArrowRight, Activity, Wifi, HardDrive, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const statusRows = [
   { icon: Globe, label: "Google Workspace", status: "Configurado" },
