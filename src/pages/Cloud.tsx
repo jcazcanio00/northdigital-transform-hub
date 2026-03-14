@@ -478,7 +478,7 @@ const CloudPage = () => {
                 <a href="#architecture">Arquitectura Cloud <ArrowRight size={16} className="ml-2" /></a>
               </Button>
               <Button size="lg" className="bg-white/[0.07] hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300" asChild>
-                <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
               </Button>
             </div>
           </motion.div>
