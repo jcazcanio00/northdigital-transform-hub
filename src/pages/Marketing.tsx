@@ -227,7 +227,7 @@ const MarketingPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <MarketingHeader />
+      <Header />
 
       {/* ═══ HERO ═══ */}
       <section className="pt-32 pb-20 relative">
