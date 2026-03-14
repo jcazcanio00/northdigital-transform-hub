@@ -11,6 +11,7 @@ import Contacto from "./pages/Contacto.tsx";
 import Acerca from "./pages/Acerca.tsx";
 import Terminos from "./pages/Terminos.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
+import MarketingDigitalCancun from "./pages/MarketingDigitalCancun.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
