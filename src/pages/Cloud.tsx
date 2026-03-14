@@ -319,7 +319,7 @@ const CloudPage = () => {
                 <span className="gradient-text">Segura y Escalable</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Diseñamos, implementamos y gestionamos infraestructura cloud moderna para empresas que necesitan rendimiento, seguridad y escalabilidad.
+                Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
@@ -351,7 +351,7 @@ const CloudPage = () => {
               Servicios de <span className="gradient-text">Infraestructura Cloud</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Soluciones integrales para cada etapa de tu infraestructura cloud.
+              Desde la arquitectura inicial hasta la operación continua, cubrimos cada capa de tu ecosistema cloud.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -393,7 +393,7 @@ const CloudPage = () => {
               Por qué usar infraestructura <span className="gradient-text">cloud moderna</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Ventajas competitivas que transforman la operación de tu empresa.
+              Reducir costos, eliminar caídas y escalar sin fricciones: esto es lo que una infraestructura bien diseñada hace por tu negocio.
             </p>
           </motion.div>
 
@@ -429,25 +429,25 @@ const CloudPage = () => {
         {/* Binary stream layer */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Row 1 */}
-          <div className="absolute top-[8%] left-0 whitespace-nowrap text-[11px] font-mono tracking-[0.3em] opacity-[0.04] text-primary animate-[scroll_40s_linear_infinite]">
+          <div className="absolute top-[6%] left-0 whitespace-nowrap text-[12px] font-mono tracking-[0.3em] opacity-[0.07] text-blue-400 animate-[scroll_40s_linear_infinite]">
             {"01001011 10110100 01101001 11001010 00101101 10011100 01110010 10101011 01001110 11010010 00110101 10100111 01011010 11001001 00101110 10110101 01001011 10110100 01101001 11001010 00101101 10011100 01110010 10101011 01001110 11010010 00110101 10100111 01011010 11001001 00101110 10110101 "}
           </div>
-          <div className="absolute top-[18%] left-0 whitespace-nowrap text-[10px] font-mono tracking-[0.25em] opacity-[0.03] text-primary animate-[scroll_55s_linear_infinite_reverse]">
+          <div className="absolute top-[16%] left-0 whitespace-nowrap text-[10px] font-mono tracking-[0.25em] opacity-[0.05] text-blue-300 animate-[scroll_55s_linear_infinite_reverse]">
             {"10110010 01001101 11010110 00101011 10011001 01110100 11001011 00100110 10101100 01011011 10010111 01101010 11000101 00110100 10111001 01010010 10110010 01001101 11010110 00101011 10011001 01110100 11001011 00100110 10101100 01011011 10010111 01101010 11000101 00110100 10111001 01010010 "}
           </div>
-          <div className="absolute top-[30%] left-0 whitespace-nowrap text-[13px] font-mono tracking-[0.35em] opacity-[0.035] text-primary animate-[scroll_45s_linear_infinite]">
+          <div className="absolute top-[28%] left-0 whitespace-nowrap text-[14px] font-mono tracking-[0.35em] opacity-[0.06] text-blue-400 animate-[scroll_45s_linear_infinite]">
             {"00101101 10100110 01011001 11010011 00110100 10011010 01101011 10101100 01001011 11010010 10010110 01100101 11001011 00101010 10110100 01010011 00101101 10100110 01011001 11010011 00110100 10011010 01101011 10101100 01001011 11010010 10010110 01100101 11001011 00101010 10110100 01010011 "}
           </div>
-          <div className="absolute top-[44%] left-0 whitespace-nowrap text-[9px] font-mono tracking-[0.2em] opacity-[0.025] text-primary animate-[scroll_60s_linear_infinite_reverse]">
+          <div className="absolute top-[42%] left-0 whitespace-nowrap text-[9px] font-mono tracking-[0.2em] opacity-[0.04] text-blue-300 animate-[scroll_60s_linear_infinite_reverse]">
             {"11001010 00110101 10101001 01010110 11001101 00101010 10010011 01101100 11010101 00100110 10110011 01011010 11001001 00101110 10100101 01010010 11001010 00110101 10101001 01010110 11001101 00101010 10010011 01101100 11010101 00100110 10110011 01011010 11001001 00101110 10100101 01010010 "}
           </div>
-          <div className="absolute top-[58%] left-0 whitespace-nowrap text-[12px] font-mono tracking-[0.3em] opacity-[0.04] text-primary animate-[scroll_50s_linear_infinite]">
+          <div className="absolute top-[56%] left-0 whitespace-nowrap text-[13px] font-mono tracking-[0.3em] opacity-[0.07] text-blue-400 animate-[scroll_50s_linear_infinite]">
             {"01101001 10010110 11010100 00101011 10110010 01001101 11001010 00110101 10011001 01100100 11010011 00101110 10101001 01011010 10010100 01101011 01101001 10010110 11010100 00101011 10110010 01001101 11001010 00110101 10011001 01100100 11010011 00101110 10101001 01011010 10010100 01101011 "}
           </div>
-          <div className="absolute top-[72%] left-0 whitespace-nowrap text-[10px] font-mono tracking-[0.25em] opacity-[0.03] text-primary animate-[scroll_65s_linear_infinite_reverse]">
+          <div className="absolute top-[70%] left-0 whitespace-nowrap text-[11px] font-mono tracking-[0.25em] opacity-[0.05] text-blue-300 animate-[scroll_65s_linear_infinite_reverse]">
             {"10011100 01100101 11010010 00101101 10110100 01001011 10101010 00110011 11001001 01010110 10010100 01101011 11010110 00101001 10011010 01010101 10011100 01100101 11010010 00101101 10110100 01001011 10101010 00110011 11001001 01010110 10010100 01101011 11010110 00101001 10011010 01010101 "}
           </div>
-          <div className="absolute top-[85%] left-0 whitespace-nowrap text-[11px] font-mono tracking-[0.3em] opacity-[0.035] text-primary animate-[scroll_42s_linear_infinite]">
+          <div className="absolute top-[84%] left-0 whitespace-nowrap text-[12px] font-mono tracking-[0.3em] opacity-[0.06] text-blue-400 animate-[scroll_42s_linear_infinite]">
             {"01010011 10101100 00110010 11001011 01101010 10010101 11010100 00101011 10110001 01001110 11001010 00110101 10011001 01100100 11010011 00101110 01010011 10101100 00110010 11001011 01101010 10010101 11010100 00101011 10110001 01001110 11001010 00110101 10011001 01100100 11010011 00101110 "}
           </div>
         </div>
@@ -478,7 +478,7 @@ const CloudPage = () => {
                 <a href="#architecture">Arquitectura Cloud <ArrowRight size={16} className="ml-2" /></a>
               </Button>
               <Button size="lg" className="bg-white/[0.07] hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300" asChild>
-                <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
               </Button>
             </div>
           </motion.div>
@@ -498,7 +498,7 @@ const CloudPage = () => {
               Proceso de <span className="gradient-text">Desarrollo</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Cada proyecto sigue un proceso estructurado para garantizar calidad, seguridad y escalabilidad.
+              De la idea al despliegue: siete etapas que aseguran una entrega sólida, probada y lista para producción.
             </p>
           </motion.div>
 
@@ -605,7 +605,7 @@ const CloudPage = () => {
               Casos de <span className="gradient-text">Uso</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Infraestructura cloud adaptada a distintos escenarios empresariales.
+              Proyectos reales donde la infraestructura cloud marca la diferencia operativa y competitiva.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -631,18 +631,18 @@ const CloudPage = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.div {...fade()}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white">
-              Construyamos la infraestructura que tu empresa{" "}
-              <span className="gradient-text">necesita</span>
+              Tu próximo paso hacia una operación{" "}
+              <span className="gradient-text">más eficiente</span>
             </h2>
             <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
-              Diseñamos plataformas cloud modernas preparadas para escalar.
+              Agenda una sesión técnica sin compromiso y recibe un diagnóstico de tu infraestructura actual.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="gradient" size="lg" asChild>
-                <a href="/#contact">Arquitectura Cloud <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Solicitar diagnóstico <ArrowRight size={16} className="ml-2" /></a>
               </Button>
               <Button size="lg" className="bg-white/10 hover:bg-white hover:text-foreground text-white border border-white/20 transition-all" asChild>
-                <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
               </Button>
             </div>
           </motion.div>
