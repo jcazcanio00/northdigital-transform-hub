@@ -38,7 +38,7 @@ const GrowthSection = () => (
             key={item.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: i * 0.1 }}
             className="glass-card rounded-2xl p-6 group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.25)] hover:border-primary/20"
           >
