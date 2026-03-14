@@ -5,7 +5,8 @@ import {
   Cloud, Server, Shield, Activity, Database, Cpu, Globe, Zap,
   ArrowRight, CheckCircle2, BarChart3, Lock, RefreshCw, Eye,
   HardDrive, Layers, GitBranch, Terminal, Workflow, Monitor,
-  Sun, Moon, Menu, X, ChevronRight, ArrowDown
+  Sun, Moon, Menu, X, ChevronRight, ArrowDown,
+  Search, Palette, Code2, Bug, Rocket, Headphones
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
