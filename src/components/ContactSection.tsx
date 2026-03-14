@@ -258,7 +258,7 @@ const ContactSection = () => {
                   placeholder="Cuéntanos sobre tu proyecto..."
                   rows={3}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) => updateField("message", e.target.value)}
                   className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                 />
               </div>
