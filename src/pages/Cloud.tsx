@@ -336,43 +336,83 @@ const CloudPage = () => {
       {/* TECH SLIDER */}
       <CloudSlider />
 
-      {/* ARCHITECTURE */}
+      {/* PROCESS TIMELINE */}
       <section id="architecture" className="py-24 relative">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-              Arquitectura
+              Proceso
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Arquitectura diseñada para <span className="gradient-text">escalar</span>
+              Proceso de <span className="gradient-text">Desarrollo</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Cada sistema se construye sobre una arquitectura cloud diseñada para alta disponibilidad, rendimiento y resiliencia.
+              Cada proyecto sigue un proceso estructurado para garantizar calidad, seguridad y escalabilidad.
             </p>
           </motion.div>
 
-          {/* Architecture flow */}
-          <motion.div {...fade(0.15)} className="flex flex-wrap justify-center items-center gap-2 sm:gap-0 mb-8">
-            {archSteps.map((step, i) => (
-              <div key={step.label} className="flex items-center">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border border-border bg-card flex items-center justify-center shadow-sm glass-card-hover cursor-default">
-                    <step.icon size={28} className="text-primary" />
+          {/* Desktop timeline */}
+          <div className="hidden lg:block relative max-w-6xl mx-auto">
+            {/* Connecting line */}
+            <div className="absolute top-10 left-[8%] right-[8%] h-px bg-border" />
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="absolute top-10 left-[8%] right-[8%] h-px bg-primary/40 origin-left"
+            />
+            <div className="grid grid-cols-7 gap-2">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={step.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="flex flex-col items-center text-center"
+                >
+                  {/* Node */}
+                  <div className="relative z-10 w-20 h-20 rounded-2xl border-2 border-primary/20 bg-card flex flex-col items-center justify-center shadow-lg hover:border-primary/50 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500 group cursor-default">
+                    <span className="text-[10px] font-bold text-primary/50 mb-0.5 group-hover:text-primary transition-colors">{String(i + 1).padStart(2, "0")}</span>
+                    <step.icon size={20} className="text-primary group-hover:scale-110 transition-transform" />
                   </div>
-                  <span className="text-[10px] sm:text-xs font-medium text-foreground/80 text-center max-w-[80px]">{step.label}</span>
+                  <h4 className="text-xs font-bold font-display mt-3 mb-1">{step.title}</h4>
+                  <p className="text-[10px] text-muted-foreground leading-snug max-w-[110px]">{step.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile timeline (vertical) */}
+          <div className="lg:hidden relative max-w-md mx-auto">
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-border" />
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex gap-4 mb-6 last:mb-0 relative"
+              >
+                <div className="relative z-10 w-10 h-10 rounded-xl border-2 border-primary/20 bg-card flex items-center justify-center shrink-0 shadow-sm">
+                  <step.icon size={16} className="text-primary" />
                 </div>
-                {i < archSteps.length - 1 && (
-                  <ChevronRight size={18} className="text-primary/40 mx-1 sm:mx-3 shrink-0" />
-                )}
-              </div>
+                <div className="pt-1">
+                  <span className="text-[9px] font-bold text-primary/50">{String(i + 1).padStart(2, "0")}</span>
+                  <h4 className="text-sm font-bold font-display">{step.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES — Premium Cards */}
       <section id="services" className="py-24 surface-sunken">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
@@ -384,25 +424,33 @@ const CloudPage = () => {
               Servicios de <span className="gradient-text">Infraestructura Cloud</span>
             </h2>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
                 {...fade(i * 0.07)}
-                className="rounded-2xl border border-border bg-card p-6 glass-card glass-card-hover"
+                className="group relative rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-1"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <s.icon size={20} className="text-primary" />
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-500">
+                    <s.icon size={26} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold font-display mb-3">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
+                  <div className="flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
+                    Activo
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold font-display mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BENEFITS */}
+      {/* BENEFITS — Hub Diagram */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div {...fade()} className="text-center mb-14">
@@ -414,10 +462,83 @@ const CloudPage = () => {
               Por qué usar infraestructura <span className="gradient-text">cloud moderna</span>
             </h2>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+          {/* Desktop hub diagram */}
+          <div className="hidden lg:block relative max-w-4xl mx-auto" style={{ height: 480 }}>
+            {/* Central hub */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-2 border-primary/30 bg-card flex flex-col items-center justify-center shadow-[0_0_60px_-10px_hsl(var(--primary)/0.25)] z-20"
+            >
+              <Cloud size={32} className="text-primary mb-1" />
+              <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">Cloud</span>
+            </motion.div>
+
+            {/* Orbiting ring */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-dashed border-primary/10 pointer-events-none" />
+
+            {/* Benefit nodes positioned around the hub */}
+            {benefits.map((b, i) => {
+              const angle = (i * 360) / benefits.length - 90;
+              const rad = (angle * Math.PI) / 180;
+              const radius = 190;
+              const x = Math.cos(rad) * radius;
+              const y = Math.sin(rad) * radius;
+              return (
+                <motion.div
+                  key={b.title}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.15 + i * 0.1, type: "spring", stiffness: 200 }}
+                  className="absolute z-10"
+                  style={{
+                    left: `calc(50% + ${x}px - 80px)`,
+                    top: `calc(50% + ${y}px - 50px)`,
+                    width: 160,
+                  }}
+                >
+                  {/* Connector line (SVG overlay would be complex, use a simple dot connector) */}
+                  <div className="group p-4 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.2)] transition-all duration-500 cursor-default text-center">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 group-hover:bg-primary/15 transition-colors">
+                      <b.icon size={18} className="text-primary" />
+                    </div>
+                    <h4 className="text-xs font-bold font-display mb-1">{b.title}</h4>
+                    <p className="text-[10px] text-muted-foreground leading-snug">{b.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+
+            {/* SVG connector lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              {benefits.map((_, i) => {
+                const angle = (i * 360) / benefits.length - 90;
+                const rad = (angle * Math.PI) / 180;
+                const endX = 50 + Math.cos(rad) * 22;
+                const endY = 50 + Math.sin(rad) * 22;
+                return (
+                  <line
+                    key={i}
+                    x1="50" y1="50"
+                    x2={endX} y2={endY}
+                    stroke="hsl(var(--primary) / 0.15)"
+                    strokeWidth="0.3"
+                    strokeDasharray="1 1"
+                  />
+                );
+              })}
+            </svg>
+          </div>
+
+          {/* Mobile fallback — stacked cards */}
+          <div className="lg:hidden space-y-4 max-w-md mx-auto">
             {benefits.map((b, i) => (
-              <motion.div key={b.title} {...fade(i * 0.07)} className="flex gap-4 items-start p-5 rounded-2xl border border-border bg-card glass-card glass-card-hover">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <motion.div key={b.title} {...fade(i * 0.07)} className="flex gap-4 items-start p-5 rounded-2xl border border-border bg-card">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <b.icon size={18} className="text-primary" />
                 </div>
                 <div>
