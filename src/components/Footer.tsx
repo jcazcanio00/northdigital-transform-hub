@@ -64,6 +64,9 @@ const Footer = () => (
               <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Inicio</Link>
             </li>
             <li>
+              <Link to="/acerca" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Acerca de</Link>
+            </li>
+            <li>
               <a href="/#process" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Proceso</a>
             </li>
             <li>
