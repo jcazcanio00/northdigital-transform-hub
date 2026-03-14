@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
 import Header from "@/components/Header";
+import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
