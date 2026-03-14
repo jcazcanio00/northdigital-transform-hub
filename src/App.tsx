@@ -10,7 +10,6 @@ import Marketing from "./pages/Marketing.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import Acerca from "./pages/Acerca.tsx";
 import Terminos from "./pages/Terminos.tsx";
-import Terminos from "./pages/Terminos.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
