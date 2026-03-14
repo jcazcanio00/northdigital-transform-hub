@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/cloud" element={<Cloud />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/acerca" element={<Acerca />} />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
