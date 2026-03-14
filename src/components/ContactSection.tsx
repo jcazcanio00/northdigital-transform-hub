@@ -155,7 +155,7 @@ const ContactSection = () => {
                   <Input
                     placeholder="Tu nombre"
                     value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    onChange={(e) => updateField("name", e.target.value)}
                     className="pl-9 transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]"
                   />
                 </div>
