@@ -605,7 +605,7 @@ const CloudPage = () => {
               Casos de <span className="gradient-text">Uso</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Infraestructura cloud adaptada a distintos escenarios empresariales.
+              Proyectos reales donde la infraestructura cloud marca la diferencia operativa y competitiva.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
