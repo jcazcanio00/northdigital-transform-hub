@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-import BrandStrip from "@/components/BrandStrip";
+import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
@@ -238,7 +238,7 @@ const MarketingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
-      <BrandStrip />
+      
 
       {/* ═══ HERO ═══ */}
       <section className="pt-32 pb-20 relative">
@@ -574,6 +574,7 @@ const MarketingPage = () => {
         </div>
       </section>
 
+      <MarqueeText />
       <Footer />
     </div>
   );

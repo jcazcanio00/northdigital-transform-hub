@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import BrandStrip from "@/components/BrandStrip";
 import HeroSection from "@/components/HeroSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import LogoSlider from "@/components/LogoSlider";
@@ -21,7 +20,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
-      <BrandStrip />
       <HeroSection />
       <LogoSlider />
       <SolutionsSection />
