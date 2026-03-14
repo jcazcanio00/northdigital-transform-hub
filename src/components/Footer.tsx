@@ -67,20 +67,6 @@ const Footer = () => (
               <Link to="/acerca" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Acerca de</Link>
             </li>
             <li>
-              <Link
-                to="/"
-                onClick={() => {
-                  setTimeout(() => {
-                    const el = document.getElementById("process");
-                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }, 100);
-                }}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                Proceso
-              </Link>
-            </li>
-            <li>
               <Link to="/contacto" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">Contacto</Link>
             </li>
           </ul>
