@@ -25,6 +25,7 @@ import {
   MousePointerClick,
 } from "lucide-react";
 import Header from "@/components/Header";
+import BrandStrip from "@/components/BrandStrip";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
@@ -135,6 +136,7 @@ const connectionSteps = [
 const Acerca = () => (
   <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
     <Header />
+    <BrandStrip />
 
     {/* ═══ HERO ═══ */}
     <section className="pt-32 pb-24 relative overflow-hidden">

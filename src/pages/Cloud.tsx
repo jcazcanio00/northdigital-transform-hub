@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
+import BrandStrip from "@/components/BrandStrip";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
@@ -224,6 +225,7 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
+      <BrandStrip />
 
       {/* HERO */}
       <section className="pt-32 pb-20 relative">

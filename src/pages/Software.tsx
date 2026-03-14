@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
 import Header from "@/components/Header";
+import BrandStrip from "@/components/BrandStrip";
 import Footer from "@/components/Footer";
 
 /* ─── Fade helper ─── */
@@ -430,6 +431,7 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
+      <BrandStrip />
 
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
