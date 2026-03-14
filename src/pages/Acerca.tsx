@@ -25,7 +25,6 @@ import {
   MousePointerClick,
 } from "lucide-react";
 import Header from "@/components/Header";
-import BrandStrip from "@/components/BrandStrip";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
