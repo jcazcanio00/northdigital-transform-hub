@@ -144,7 +144,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <label className="text-xs font-medium mb-1.5 block">Presupuesto Estimado</label>
-                  <Select onValueChange={(v) => setForm({ ...form, budget: v })}>
+                  <Select onValueChange={(v) => updateField("budget", v)}>
                     <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                       <SelectValue placeholder="Seleccionar..." />
                     </SelectTrigger>
