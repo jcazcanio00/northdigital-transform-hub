@@ -631,18 +631,18 @@ const CloudPage = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.div {...fade()}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white">
-              Construyamos la infraestructura que tu empresa{" "}
-              <span className="gradient-text">necesita</span>
+              Tu próximo paso hacia una operación{" "}
+              <span className="gradient-text">más eficiente</span>
             </h2>
             <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
-              Diseñamos plataformas cloud modernas preparadas para escalar.
+              Agenda una sesión técnica sin compromiso y recibe un diagnóstico de tu infraestructura actual.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="gradient" size="lg" asChild>
-                <a href="/#contact">Arquitectura Cloud <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Solicitar diagnóstico <ArrowRight size={16} className="ml-2" /></a>
               </Button>
               <Button size="lg" className="bg-white/10 hover:bg-white hover:text-foreground text-white border border-white/20 transition-all" asChild>
-                <a href="/#contact">Hablar con un Ingeniero <ArrowRight size={16} className="ml-2" /></a>
+                <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
               </Button>
             </div>
           </motion.div>
