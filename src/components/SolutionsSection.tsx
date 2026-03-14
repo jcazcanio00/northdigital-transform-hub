@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Code2, Cloud, TrendingUp, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const solutions = [
   {
