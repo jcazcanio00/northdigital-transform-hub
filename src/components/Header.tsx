@@ -190,6 +190,9 @@ const Header = () => {
           <Link to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Inicio
           </Link>
+          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Acerca de
+          </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Soluciones</p>
           {solutions.map((s) => (
             <Link
@@ -201,9 +204,6 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
-          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Acerca de
-          </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Legal</p>
           {legal.map((s) => (
             <Link
