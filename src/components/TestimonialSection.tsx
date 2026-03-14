@@ -44,7 +44,10 @@ const TestimonialSection = () => (
         viewport={{ once: true }}
         className="text-center"
       >
-        <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-4">Testimonios</p>
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+          <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+          Testimonios
+        </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display text-white">
           Lo que Dicen Nuestros <span className="gradient-text">Clientes</span>
         </h2>

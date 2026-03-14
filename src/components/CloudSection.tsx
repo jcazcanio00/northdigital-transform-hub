@@ -82,7 +82,10 @@ const CloudSection = () => (
           viewport={{ once: true }}
           className="flex flex-col"
         >
-          <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-3">Cloud</p>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-3">
+            <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+            Cloud
+          </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 font-display leading-tight">
             Cloud Segura y <span className="gradient-text">Escalable</span>
           </h2>
