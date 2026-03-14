@@ -244,11 +244,11 @@ const services = [
 ];
 
 const benefits = [
-  { icon: Activity, title: "Alta disponibilidad", desc: "Infraestructura redundante con uptime superior a 99.9%." },
-  { icon: Zap, title: "Escalabilidad automática", desc: "Capacidad de crecer según demanda sin intervención manual." },
-  { icon: Lock, title: "Seguridad avanzada", desc: "Protección a nivel de red, aplicación y datos." },
-  { icon: BarChart3, title: "Optimización de costos", desc: "Arquitectura diseñada para máxima eficiencia operativa." },
-  { icon: Monitor, title: "Monitoreo continuo", desc: "Visibilidad completa del sistema en tiempo real." },
+  { icon: Activity, title: "Alta disponibilidad", desc: "Arquitectura redundante con balanceo de carga y failover automático para mantener los sistemas siempre activos." },
+  { icon: Zap, title: "Escalabilidad automática", desc: "La infraestructura se adapta dinámicamente al tráfico y crecimiento del sistema sin intervención manual." },
+  { icon: Lock, title: "Seguridad avanzada", desc: "Protección multicapa con firewalls, cifrado, control de accesos y monitoreo continuo de amenazas." },
+  { icon: BarChart3, title: "Optimización de costos", desc: "Uso eficiente de recursos cloud que permite escalar infraestructura sin desperdicio de capacidad." },
+  { icon: Monitor, title: "Monitoreo continuo", desc: "Observabilidad completa del sistema con métricas, logs y alertas en tiempo real." },
 ];
 
 const archSteps = [
@@ -274,11 +274,11 @@ const devopsTools = [
 ];
 
 const useCases = [
-  { icon: Server, title: "Sistemas empresariales", desc: "Infraestructura robusta para aplicaciones de misión crítica." },
-  { icon: Globe, title: "Plataformas SaaS", desc: "Arquitectura multi-tenant con escalabilidad global." },
-  { icon: BarChart3, title: "Dashboards analíticos", desc: "Procesamiento de datos en tiempo real con visualización avanzada." },
-  { icon: Workflow, title: "Automatización de procesos", desc: "Pipelines de datos y workflows automatizados." },
-  { icon: Terminal, title: "APIs empresariales", desc: "APIs de alto rendimiento con documentación y versionado." },
+  { icon: Server, title: "Sistemas empresariales", desc: "Infraestructura robusta para aplicaciones críticas como ERP, CRM y plataformas operativas." },
+  { icon: Globe, title: "Plataformas SaaS", desc: "Arquitectura cloud diseñada para escalar usuarios, servicios y tráfico global." },
+  { icon: BarChart3, title: "Dashboards analíticos", desc: "Procesamiento de datos en tiempo real para plataformas de análisis e inteligencia de negocio." },
+  { icon: Workflow, title: "Automatización de procesos", desc: "Workflows y microservicios que integran sistemas y eliminan tareas manuales." },
+  { icon: Terminal, title: "APIs empresariales", desc: "Infraestructura preparada para exponer APIs seguras, rápidas y escalables." },
 ];
 
 /* ─── Main Page ─── */
