@@ -143,7 +143,7 @@ const DashboardMockup = () => (
                   className="flex-1 rounded-sm bg-gradient-to-t from-primary to-primary/40"
                   initial={{ height: 0 }}
                   whileInView={{ height: `${h}%` }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: i * 0.03, duration: 0.4 }}
                 />
               ))}
