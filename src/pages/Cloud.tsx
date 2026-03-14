@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
+  viewport: { once: true, margin: "-100px" },
   transition: { duration: 0.5, delay },
 });
 
@@ -435,7 +435,7 @@ const CloudPage = () => {
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
               className="absolute top-[52px] left-[7%] right-[7%] h-[2px] rounded-full origin-left"
               style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.6), hsl(var(--primary)), hsl(var(--primary)/0.6))" }}
@@ -446,7 +446,7 @@ const CloudPage = () => {
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.2 + i * 0.12, duration: 0.5 }}
                   className="flex flex-col items-center text-center group"
                 >
@@ -475,7 +475,7 @@ const CloudPage = () => {
                 key={step.title}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 className="flex gap-5 mb-8 last:mb-0 relative group"
               >

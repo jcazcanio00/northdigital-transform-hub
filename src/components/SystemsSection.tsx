@@ -18,7 +18,7 @@ const SystemsSection = () => (
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
             <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
@@ -37,7 +37,7 @@ const SystemsSection = () => (
                 key={c.title}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 className="glass-card rounded-xl p-5 group transition-all duration-400 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_0_25px_-8px_hsl(var(--primary)/0.25)]"
               >
@@ -59,7 +59,7 @@ const SystemsSection = () => (
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
           <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
@@ -99,7 +99,7 @@ const SystemsSection = () => (
                     key={i}
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                     className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60"
                   />
@@ -126,7 +126,7 @@ const SystemsSection = () => (
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${item.pct}%` }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary"
                       />

@@ -19,7 +19,7 @@ interface LegalPageProps {
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 16 } as const,
   whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true } as const,
+  viewport: { once: true, margin: "-100px" } as const,
   transition: { duration: 0.45, delay },
 });
 

@@ -27,7 +27,7 @@ const CloudSection = () => (
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
           <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
@@ -57,7 +57,7 @@ const CloudSection = () => (
                   key={item.label}
                   initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: i * 0.06 }}
                   className="flex items-center justify-between rounded-lg bg-muted/10 border border-border/15 px-3 py-2.5 transition-all duration-300 hover:border-primary/20"
                 >
@@ -79,7 +79,7 @@ const CloudSection = () => (
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="flex flex-col"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-3 self-start">

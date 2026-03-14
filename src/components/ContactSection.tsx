@@ -76,7 +76,7 @@ const ContactSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
@@ -96,7 +96,7 @@ const ContactSection = () => {
                   key={h.title}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: i * 0.1 }}
                   className="flex gap-4 group"
                 >
@@ -143,7 +143,7 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="glass-card rounded-2xl p-8 space-y-4 shadow-xl border-border/40"
           >
             {/* Name & Email */}

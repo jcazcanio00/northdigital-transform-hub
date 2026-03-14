@@ -12,7 +12,7 @@ const GrowthSection = () => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         className="text-center mb-14"
       >
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
@@ -38,7 +38,7 @@ const GrowthSection = () => (
             key={item.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: i * 0.1 }}
             className="glass-card rounded-2xl p-6 group cursor-default transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.25)] hover:border-primary/20"
           >
@@ -55,7 +55,7 @@ const GrowthSection = () => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
         className="max-w-5xl mx-auto relative"
       >
         <div className="absolute -inset-8 bg-primary/3 rounded-3xl blur-3xl pointer-events-none" />
@@ -115,14 +115,14 @@ const GrowthSection = () => (
                     key={i}
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.4, delay: i * 0.02 }}
                     className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60 relative"
                   >
                     <motion.div
                       initial={{ height: 0 }}
                       whileInView={{ height: `${h * 0.35}%` }}
-                      viewport={{ once: true }}
+                      viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.4, delay: 0.5 + i * 0.02 }}
                       className="absolute bottom-0 left-0 right-0 rounded-t-sm bg-accent/50"
                     />
@@ -150,7 +150,7 @@ const GrowthSection = () => (
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${c.pct}%` }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                         className={`h-full rounded-full bg-gradient-to-r ${c.color}`}
                       />

@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
+  viewport: { once: true, margin: "-100px" },
   transition: { duration: 0.5, delay },
 });
 
@@ -338,7 +338,7 @@ const MarketingPage = () => {
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: "easeOut" }}
               className="absolute top-[60px] left-[12%] right-[12%] h-[3px] rounded-full origin-left"
               style={{ background: "linear-gradient(90deg, hsl(210 100% 55%), hsl(var(--primary)), hsl(198 93% 55%), hsl(var(--primary)))" }}
@@ -347,7 +347,7 @@ const MarketingPage = () => {
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: "easeOut" }}
               className="absolute top-[58px] left-[12%] right-[12%] h-[7px] rounded-full origin-left blur-sm opacity-40"
               style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.5), hsl(var(--primary)), hsl(var(--primary)/0.5))" }}
@@ -359,7 +359,7 @@ const MarketingPage = () => {
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
                   className="flex flex-col items-center text-center group"
                 >
@@ -387,7 +387,7 @@ const MarketingPage = () => {
                 key={step.title}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 className="flex gap-5 mb-8 last:mb-0 relative group"
               >
