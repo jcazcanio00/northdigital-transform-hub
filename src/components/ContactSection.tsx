@@ -208,7 +208,7 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
-                <Select onValueChange={(v) => setForm({ ...form, projectType: v })}>
+                <Select onValueChange={(v) => updateField("projectType", v)}>
                   <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
