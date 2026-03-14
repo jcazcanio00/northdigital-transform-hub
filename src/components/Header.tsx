@@ -42,8 +42,6 @@ const Header = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setSolOpen(false);
       }
-      if (legalDropdownRef.current && !legalDropdownRef.current.contains(e.target as Node)) {
-        setLegalOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
