@@ -9,10 +9,6 @@ const solutions = [
   { label: "Marketing de Crecimiento", href: "/marketing" },
 ];
 
-const legal = [
-  { label: "Términos y Condiciones", href: "/terminos" },
-  { label: "Aviso de Privacidad", href: "/privacidad" },
-];
 
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -27,9 +23,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [solOpen, setSolOpen] = useState(false);
-  const [legalOpen, setLegalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const legalDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -47,9 +41,6 @@ const Header = () => {
     const handleClick = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setSolOpen(false);
-      }
-      if (legalDropdownRef.current && !legalDropdownRef.current.contains(e.target as Node)) {
-        setLegalOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
@@ -102,32 +93,6 @@ const Header = () => {
                     key={s.href}
                     to={s.href}
                     onClick={() => setSolOpen(false)}
-                    className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Legal dropdown */}
-          <div ref={legalDropdownRef} className="relative">
-            <button
-              onClick={() => setLegalOpen(!legalOpen)}
-              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
-            >
-              Legal
-              <ChevronDown size={14} className={`transition-transform duration-200 ${legalOpen ? "rotate-180" : ""}`} />
-            </button>
-            {legalOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl border border-border bg-card shadow-xl p-2 space-y-0.5">
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border-l border-t border-border bg-card" />
-                {legal.map((s) => (
-                  <Link
-                    key={s.href}
-                    to={s.href}
-                    onClick={() => setLegalOpen(false)}
                     className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                   >
                     {s.label}
@@ -195,17 +160,6 @@ const Header = () => {
           </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Soluciones</p>
           {solutions.map((s) => (
-            <Link
-              key={s.href}
-              to={s.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-2 pl-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {s.label}
-            </Link>
-          ))}
-          <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Legal</p>
-          {legal.map((s) => (
             <Link
               key={s.href}
               to={s.href}
