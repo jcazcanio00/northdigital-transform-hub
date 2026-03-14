@@ -16,7 +16,7 @@ const blocks = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Implementamos entornos seguros, estables y preparados para crecer. Alta disponibilidad garantizada.",
     num: "03",
   },
