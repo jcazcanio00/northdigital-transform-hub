@@ -21,7 +21,7 @@ const solutions = [
     icon: TrendingUp,
     title: "Marketing de Crecimiento",
     description: "SEO, Google Ads, analítica avanzada y landing pages optimizadas.",
-    href: "#growth",
+    href: "/marketing",
     tag: "Marketing",
   },
 ];
