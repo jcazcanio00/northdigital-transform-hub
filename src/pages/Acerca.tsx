@@ -156,7 +156,7 @@ const Acerca = () => (
         </motion.h1>
 
         <motion.p {...fade(0.1)} className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-          Nos especializamos en software empresarial, infraestructura cloud y estrategias de crecimiento digital para empresas que necesitan tecnología real, no promesas.
+          Nos especializamos en software empresarial, cloud services y estrategias de crecimiento digital para empresas que necesitan tecnología real, no promesas.
         </motion.p>
 
         <motion.div {...fade(0.15)}>
