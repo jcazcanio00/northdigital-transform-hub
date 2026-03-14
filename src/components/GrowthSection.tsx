@@ -122,7 +122,7 @@ const GrowthSection = () => (
                     <motion.div
                       initial={{ height: 0 }}
                       whileInView={{ height: `${h * 0.35}%` }}
-                      viewport={{ once: true }}
+                      viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.4, delay: 0.5 + i * 0.02 }}
                       className="absolute bottom-0 left-0 right-0 rounded-t-sm bg-accent/50"
                     />
