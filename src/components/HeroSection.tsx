@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const FloatingParticles = () => (
   <>
