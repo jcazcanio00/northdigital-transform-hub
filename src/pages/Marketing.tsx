@@ -5,7 +5,8 @@ import {
   Search, Target, BarChart3, TrendingUp, Zap, ArrowRight, ArrowDown,
   MousePointerClick, LineChart, Globe, Eye, Users, DollarSign,
   Sun, Moon, Menu, X, ChevronRight, Layers, Megaphone,
-  PieChart, Gauge, ShoppingCart, FileText, Mail, Repeat
+  PieChart, Gauge, ShoppingCart, FileText, Mail, Repeat,
+  Activity, ArrowUpRight, Filter, Percent
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
@@ -95,94 +96,182 @@ const MarketingHeader = () => {
   );
 };
 
-/* ─── Growth Dashboard Mockup ─── */
-const GrowthMockup = () => (
-  <motion.div
-    initial={{ opacity: 0, y: 30, scale: 0.97 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.7, delay: 0.2 }}
-    className="rounded-2xl border border-border overflow-hidden bg-card shadow-xl"
-  >
-    <div className="flex items-center gap-2 px-4 py-2.5 bg-muted/50 border-b border-border">
-      <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
-      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
-      <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
-      <span className="ml-2 text-[10px] text-muted-foreground font-mono">growth-analytics.north.dev</span>
-    </div>
-    <div className="p-4 space-y-4">
-      {/* KPIs */}
-      <div className="grid grid-cols-4 gap-3">
-        {[
-          { label: "Conversiones", value: "1,247", change: "+18%", icon: Target, color: "text-green-500" },
-          { label: "CTR", value: "4.8%", change: "+0.6%", icon: MousePointerClick, color: "text-primary" },
-          { label: "ROAS", value: "5.2x", change: "+1.1x", icon: DollarSign, color: "text-yellow-500" },
-          { label: "Tráfico", value: "84.3K", change: "+22%", icon: TrendingUp, color: "text-accent" },
-        ].map((m) => (
-          <div key={m.label} className="rounded-lg border border-border bg-muted/30 p-3 text-center">
-            <m.icon size={14} className={`mx-auto mb-1.5 ${m.color}`} />
-            <p className="text-lg font-bold font-display">{m.value}</p>
-            <p className="text-[9px] text-green-500 font-medium">{m.change}</p>
-            <p className="text-[8px] text-muted-foreground uppercase tracking-wider mt-0.5">{m.label}</p>
-          </div>
-        ))}
-      </div>
+/* ─── Premium Growth Dashboard ─── */
+const GrowthMockup = () => {
+  const funnelData = [
+    { stage: "Visitors", value: "84,320", pct: 100, color: "bg-primary" },
+    { stage: "Leads", value: "6,218", pct: 74, color: "bg-primary/80" },
+    { stage: "MQLs", value: "2,847", pct: 52, color: "bg-accent" },
+    { stage: "Opportunities", value: "892", pct: 34, color: "bg-accent/80" },
+    { stage: "Closed", value: "247", pct: 18, color: "bg-green-500" },
+  ];
 
-      {/* Mini chart representation */}
-      <div className="rounded-lg border border-border p-3">
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-[9px] text-muted-foreground uppercase tracking-wider font-semibold">Revenue Growth</p>
-          <span className="text-[9px] text-green-500 font-medium">+34% YoY</span>
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      className="rounded-2xl border border-border overflow-hidden bg-card shadow-2xl"
+    >
+      {/* Title bar */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-muted/50 border-b border-border">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+          <span className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+          <span className="ml-2 text-[10px] text-muted-foreground font-mono">growth-analytics.north.dev</span>
         </div>
-        <div className="flex items-end gap-1 h-16">
-          {[30, 35, 28, 42, 38, 52, 48, 58, 55, 68, 62, 78].map((h, i) => (
-            <div key={i} className="flex-1 rounded-t bg-primary/20 hover:bg-primary/40 transition-colors" style={{ height: `${h}%` }} />
-          ))}
-        </div>
-        <div className="flex justify-between mt-1">
-          <span className="text-[7px] text-muted-foreground">Ene</span>
-          <span className="text-[7px] text-muted-foreground">Dic</span>
+        <div className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-status-pulse" />
+          <span className="text-[8px] text-green-500 font-medium uppercase tracking-wider">Live</span>
         </div>
       </div>
 
-      {/* Channel breakdown */}
-      <div className="rounded-lg border border-border p-3">
-        <p className="text-[9px] text-muted-foreground uppercase tracking-wider mb-2 font-semibold">Top Channels</p>
-        <div className="space-y-2">
+      <div className="p-3 space-y-3">
+        {/* Row 1: Primary KPIs */}
+        <div className="grid grid-cols-4 gap-2">
           {[
-            { name: "Google Ads", pct: 42, color: "bg-primary" },
-            { name: "SEO Orgánico", pct: 31, color: "bg-green-500" },
-            { name: "Landing Pages", pct: 18, color: "bg-accent" },
-            { name: "Email", pct: 9, color: "bg-yellow-500" },
-          ].map((ch) => (
-            <div key={ch.name} className="flex items-center gap-2">
-              <span className="text-[9px] text-foreground/70 w-20 shrink-0">{ch.name}</span>
-              <div className="flex-1 h-1.5 rounded-full bg-muted/50 overflow-hidden">
-                <div className={`h-full rounded-full ${ch.color}`} style={{ width: `${ch.pct}%` }} />
+            { label: "Revenue", value: "$148K", change: "+24%", icon: DollarSign, color: "text-green-500" },
+            { label: "ROAS", value: "5.2x", change: "+1.1x", icon: TrendingUp, color: "text-primary" },
+            { label: "Conv. Rate", value: "4.8%", change: "+0.6%", icon: Target, color: "text-accent" },
+            { label: "CAC", value: "$32", change: "-18%", icon: Users, color: "text-yellow-500" },
+          ].map((m) => (
+            <div key={m.label} className="rounded-lg border border-border bg-muted/20 p-2.5">
+              <div className="flex items-center justify-between mb-1">
+                <m.icon size={11} className={m.color} />
+                <span className="text-[8px] text-green-500 font-semibold flex items-center gap-0.5">
+                  <ArrowUpRight size={7} />{m.change}
+                </span>
               </div>
-              <span className="text-[9px] text-muted-foreground font-mono w-8 text-right">{ch.pct}%</span>
+              <p className="text-base font-bold font-display leading-none">{m.value}</p>
+              <p className="text-[7px] text-muted-foreground uppercase tracking-wider mt-1">{m.label}</p>
             </div>
           ))}
         </div>
+
+        {/* Row 2: Chart + Channel Performance side by side */}
+        <div className="grid grid-cols-5 gap-2">
+          {/* Revenue chart - 3 cols */}
+          <div className="col-span-3 rounded-lg border border-border p-2.5">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[8px] text-muted-foreground uppercase tracking-wider font-semibold">Monthly Revenue</p>
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1 text-[7px] text-muted-foreground"><span className="w-1.5 h-1.5 rounded-sm bg-primary/30" />2024</span>
+                <span className="flex items-center gap-1 text-[7px] text-primary font-medium"><span className="w-1.5 h-1.5 rounded-sm bg-primary" />2025</span>
+              </div>
+            </div>
+            <div className="flex items-end gap-[3px] h-20">
+              {[
+                { prev: 35, curr: 42 }, { prev: 38, curr: 48 }, { prev: 32, curr: 45 },
+                { prev: 42, curr: 55 }, { prev: 40, curr: 58 }, { prev: 48, curr: 62 },
+                { prev: 45, curr: 65 }, { prev: 52, curr: 72 }, { prev: 50, curr: 68 },
+                { prev: 55, curr: 78 }, { prev: 58, curr: 82 }, { prev: 60, curr: 90 },
+              ].map((d, i) => (
+                <div key={i} className="flex-1 flex gap-[1px] items-end h-full">
+                  <div className="flex-1 rounded-t-sm bg-primary/15" style={{ height: `${d.prev}%` }} />
+                  <div className="flex-1 rounded-t-sm bg-primary hover:bg-primary/80 transition-colors" style={{ height: `${d.curr}%` }} />
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between mt-1">
+              {["E", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"].map((m) => (
+                <span key={m} className="text-[6px] text-muted-foreground flex-1 text-center">{m}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Channel performance - 2 cols */}
+          <div className="col-span-2 rounded-lg border border-border p-2.5">
+            <p className="text-[8px] text-muted-foreground uppercase tracking-wider font-semibold mb-2">Channel ROAS</p>
+            <div className="space-y-2">
+              {[
+                { name: "Google Ads", roas: "6.1x", pct: 85, color: "bg-primary" },
+                { name: "SEO", roas: "12.4x", pct: 100, color: "bg-green-500" },
+                { name: "Landing Pages", roas: "4.8x", pct: 68, color: "bg-accent" },
+                { name: "Email", roas: "8.2x", pct: 92, color: "bg-yellow-500" },
+              ].map((ch) => (
+                <div key={ch.name}>
+                  <div className="flex items-center justify-between mb-0.5">
+                    <span className="text-[8px] text-foreground/70">{ch.name}</span>
+                    <span className="text-[8px] font-bold text-foreground">{ch.roas}</span>
+                  </div>
+                  <div className="h-1 rounded-full bg-muted/50 overflow-hidden">
+                    <div className={`h-full rounded-full ${ch.color}`} style={{ width: `${ch.pct}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Row 3: Funnel + Recent Activity */}
+        <div className="grid grid-cols-2 gap-2">
+          {/* Conversion Funnel */}
+          <div className="rounded-lg border border-border p-2.5">
+            <p className="text-[8px] text-muted-foreground uppercase tracking-wider font-semibold mb-2">Conversion Funnel</p>
+            <div className="space-y-1">
+              {funnelData.map((f) => (
+                <div key={f.stage} className="flex items-center gap-2">
+                  <div className="w-full max-w-[100px] h-[6px] rounded-full bg-muted/30 overflow-hidden">
+                    <div className={`h-full rounded-full ${f.color}`} style={{ width: `${f.pct}%` }} />
+                  </div>
+                  <span className="text-[8px] font-bold text-foreground shrink-0 w-10 text-right">{f.value}</span>
+                  <span className="text-[7px] text-muted-foreground shrink-0">{f.stage}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Performance Feed */}
+          <div className="rounded-lg border border-border p-2.5">
+            <p className="text-[8px] text-muted-foreground uppercase tracking-wider font-semibold mb-2">Performance Feed</p>
+            <div className="space-y-1.5">
+              {[
+                { msg: "SEO: +14 keywords top 3", type: "success" },
+                { msg: "Google Ads: CPA ↓ 22%", type: "success" },
+                { msg: "Landing B: CVR +1.2%", type: "info" },
+                { msg: "Email: 42% open rate", type: "success" },
+                { msg: "Retargeting: ROAS 8.4x", type: "info" },
+              ].map((l, i) => (
+                <div key={i} className="flex items-center gap-1.5 text-[8px]">
+                  <span className={`w-1 h-1 rounded-full shrink-0 ${l.type === "success" ? "bg-green-500" : "bg-primary/60"}`} />
+                  <span className="text-foreground/70 truncate">{l.msg}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Status bar */}
+        <div className="flex items-center justify-between text-[7px] text-muted-foreground pt-1 border-t border-border/50">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-green-500" /> GA4</span>
+            <span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-green-500" /> Ads</span>
+            <span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-green-500" /> CRM</span>
+            <span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-green-500" /> Tag Mgr</span>
+          </div>
+          <span className="font-mono">Updated: 2m ago</span>
+        </div>
       </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 /* ─── Data ─── */
 const channels = [
-  { icon: Search, title: "SEO Estratégico", desc: "Posicionamiento orgánico basado en análisis de keywords, arquitectura web y contenido técnico optimizado." },
-  { icon: Target, title: "Google Ads", desc: "Campañas de búsqueda, display y remarketing con optimización continua de ROAS y coste por conversión." },
-  { icon: Layers, title: "Landing Pages Optimizadas", desc: "Diseño y desarrollo de páginas de aterrizaje con A/B testing y optimización de conversión." },
-  { icon: LineChart, title: "Analítica Avanzada", desc: "Configuración de GA4, tag management, dashboards personalizados y atribución multicanal." },
-  { icon: MousePointerClick, title: "Optimización de Conversiones", desc: "CRO basado en datos: heatmaps, tests A/B, análisis de embudos y mejoras iterativas." },
-  { icon: Mail, title: "Automatización de Marketing", desc: "Secuencias de email, lead nurturing y workflows que convierten prospectos en clientes." },
+  { icon: Search, title: "SEO Estratégico", desc: "Arquitectura técnica, keyword research avanzado y contenido optimizado para dominar posiciones orgánicas en mercados competitivos.", tag: "Orgánico" },
+  { icon: Target, title: "Google Ads & SEM", desc: "Campañas de búsqueda, shopping y performance max con optimización de bidding, audiencias y creativos para maximizar ROAS.", tag: "Paid" },
+  { icon: Layers, title: "Landing Pages de Alto Impacto", desc: "Páginas de conversión diseñadas con frameworks CRO, A/B testing y personalización para cada segmento de audiencia.", tag: "Conversión" },
+  { icon: LineChart, title: "Analítica y Atribución", desc: "GA4, server-side tracking, modelos de atribución multicanal y dashboards ejecutivos para decisiones basadas en datos.", tag: "Data" },
+  { icon: MousePointerClick, title: "CRO & Experimentación", desc: "Programa de experimentación con heatmaps, session recordings, tests A/B multivariados y análisis de embudo.", tag: "Optimización" },
+  { icon: Mail, title: "Email & Marketing Automation", desc: "Secuencias de nurturing, lead scoring, segmentación predictiva y workflows que aceleran el pipeline de ventas.", tag: "Automation" },
 ];
 
 const frameworkSteps = [
-  { icon: Megaphone, title: "Adquisición", desc: "Atraer tráfico cualificado a través de SEO, SEM y canales pagados.", color: "text-blue-500" },
-  { icon: MousePointerClick, title: "Conversión", desc: "Optimizar cada punto de contacto para maximizar la tasa de conversión.", color: "text-green-500" },
-  { icon: Repeat, title: "Retención", desc: "Estrategias de engagement y nurturing para retener y fidelizar clientes.", color: "text-yellow-500" },
-  { icon: TrendingUp, title: "Escala", desc: "Amplificar los canales rentables y escalar la inversión de forma predecible.", color: "text-primary" },
+  { icon: Megaphone, title: "Adquisición", desc: "SEO, SEM y canales pagados para captar tráfico cualificado con intención de compra.", color: "text-blue-500", metric: "84K visits/mo" },
+  { icon: MousePointerClick, title: "Conversión", desc: "Landing pages, CRO y experimentación para convertir visitantes en leads y clientes.", color: "text-green-500", metric: "4.8% CVR" },
+  { icon: Repeat, title: "Retención", desc: "Email automation, nurturing y engagement para maximizar el lifetime value del cliente.", color: "text-yellow-500", metric: "42% retention" },
+  { icon: TrendingUp, title: "Escala", desc: "Amplificar los canales rentables con modelos predictivos y expansión multicanal.", color: "text-primary", metric: "5.2x ROAS" },
 ];
 
 const marketingLogos = [
@@ -201,21 +290,21 @@ const marketingLogos = [
 ];
 
 const metrics = [
-  { icon: DollarSign, title: "ROAS", desc: "Retorno sobre inversión publicitaria: cada dólar invertido genera resultados medibles.", value: "5.2x" },
-  { icon: MousePointerClick, title: "Tasa de conversión", desc: "Porcentaje de visitantes que completan la acción objetivo en cada canal.", value: "4.8%" },
-  { icon: Eye, title: "CTR", desc: "Click-through rate en campañas de búsqueda, display y redes sociales.", value: "+62%" },
-  { icon: Users, title: "Coste por Lead", desc: "Optimización continua del costo de adquisición por lead cualificado.", value: "-34%" },
-  { icon: TrendingUp, title: "Tráfico orgánico", desc: "Crecimiento sostenido de visitas desde búsqueda orgánica sin dependencia de pauta.", value: "+120%" },
-  { icon: Gauge, title: "Velocidad de carga", desc: "Optimización de Core Web Vitals para mejorar posicionamiento y experiencia.", value: "<1.5s" },
+  { icon: DollarSign, title: "ROAS", desc: "Cada dólar invertido en pauta genera un retorno medible y optimizado mes a mes.", value: "5.2x", sub: "promedio" },
+  { icon: Percent, title: "Tasa de conversión", desc: "Optimización continua de landing pages y embudos para maximizar cada visita.", value: "4.8%", sub: "avg. CVR" },
+  { icon: Eye, title: "CTR en campañas", desc: "Creativos y copy optimizados que superan benchmarks de industria consistentemente.", value: "+62%", sub: "vs. industry" },
+  { icon: Users, title: "Coste por Lead", desc: "Reducción progresiva del CAC mediante optimización de audiencias y bidding.", value: "-34%", sub: "reducción" },
+  { icon: TrendingUp, title: "Tráfico orgánico", desc: "Crecimiento sostenido de visitas orgánicas sin dependencia de inversión publicitaria.", value: "+120%", sub: "YoY growth" },
+  { icon: Gauge, title: "Core Web Vitals", desc: "Páginas rápidas que mejoran posicionamiento, Quality Score y experiencia de usuario.", value: "<1.5s", sub: "LCP target" },
 ];
 
 const useCases = [
-  { icon: ShoppingCart, title: "E-commerce y retail", desc: "Estrategias de adquisición y retención para tiendas online con optimización de embudo completo." },
-  { icon: Globe, title: "SaaS y plataformas", desc: "Growth loops, onboarding optimizado y estrategias de activación para productos digitales." },
-  { icon: FileText, title: "Generación de leads B2B", desc: "Campañas de búsqueda y contenido técnico para capturar leads cualificados en mercados B2B." },
-  { icon: Users, title: "Servicios profesionales", desc: "Posicionamiento local, Google Ads y landing pages para firmas de consultoría y servicios." },
-  { icon: PieChart, title: "Startups en crecimiento", desc: "Frameworks de growth para startups que necesitan validar canales y escalar rápidamente." },
-  { icon: BarChart3, title: "Empresas con equipos internos", desc: "Consultoría y ejecución especializada para potenciar equipos de marketing existentes." },
+  { icon: ShoppingCart, title: "E-commerce & D2C", desc: "Estrategias full-funnel para tiendas online: desde adquisición con Google Shopping hasta retención con email y retargeting dinámico." },
+  { icon: Globe, title: "SaaS & Productos Digitales", desc: "Growth loops, PLG strategies, onboarding optimizado y métricas de activación para escalar ARR de forma predecible." },
+  { icon: FileText, title: "Lead Generation B2B", desc: "Campañas de búsqueda de alta intención, contenido técnico y nurturing automatizado para llenar pipelines de ventas." },
+  { icon: Users, title: "Servicios Profesionales", desc: "SEO local, Google Ads y landing pages especializadas para firmas de consultoría, legal y servicios técnicos." },
+  { icon: PieChart, title: "Startups & Scale-ups", desc: "Validación rápida de canales, unit economics y frameworks de growth para encontrar product-market fit y escalar." },
+  { icon: BarChart3, title: "Enterprise Marketing", desc: "Consultoría estratégica y ejecución para equipos internos que necesitan expertise en analytics, CRO y paid media." },
 ];
 
 /* ─── Main Page ─── */
@@ -272,7 +361,7 @@ const MarketingPage = () => {
               Canales de <span className="gradient-text">Crecimiento</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Cada canal está optimizado para generar tráfico cualificado, leads y conversiones medibles.
+              Cada canal está diseñado para generar tráfico cualificado, leads y revenue medible.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -280,13 +369,16 @@ const MarketingPage = () => {
               <motion.div
                 key={s.title}
                 {...fade(i * 0.07)}
-                className="group relative rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
+                className="group relative rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-2"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:scale-110 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                    <s.icon size={26} className="text-primary" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:scale-110 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                      <s.icon size={26} className="text-primary" />
+                    </div>
+                    <span className="text-[9px] font-semibold uppercase tracking-wider text-primary/60 px-2.5 py-1 rounded-full border border-primary/15 bg-primary/5">{s.tag}</span>
                   </div>
                   <h3 className="text-lg font-bold font-display mb-3 group-hover:text-primary transition-colors duration-300">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
@@ -310,21 +402,32 @@ const MarketingPage = () => {
               Framework de <span className="gradient-text">Crecimiento</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Un sistema probado que cubre cada etapa del funnel: desde atraer visitantes hasta escalar los canales más rentables.
+              Un sistema probado de cuatro fases que cubre cada etapa del funnel — desde la primera visita hasta la expansión predecible de ingresos.
             </p>
           </motion.div>
 
           {/* Desktop pipeline */}
           <div className="hidden lg:block relative max-w-4xl mx-auto">
-            <div className="absolute top-[56px] left-[12%] right-[12%] h-[2px] bg-border/50 rounded-full" />
+            {/* Connecting lines */}
+            <div className="absolute top-[60px] left-[12%] right-[12%] h-[3px] bg-border/40 rounded-full" />
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="absolute top-[56px] left-[12%] right-[12%] h-[2px] rounded-full origin-left"
-              style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.6), hsl(var(--primary)), hsl(var(--primary)/0.6))" }}
+              transition={{ duration: 1.8, ease: "easeOut" }}
+              className="absolute top-[60px] left-[12%] right-[12%] h-[3px] rounded-full origin-left"
+              style={{ background: "linear-gradient(90deg, hsl(210 100% 55%), hsl(var(--primary)), hsl(198 93% 55%), hsl(var(--primary)))" }}
             />
+            {/* Glow effect on line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: "easeOut" }}
+              className="absolute top-[58px] left-[12%] right-[12%] h-[7px] rounded-full origin-left blur-sm opacity-40"
+              style={{ background: "linear-gradient(90deg, hsl(var(--primary)/0.5), hsl(var(--primary)), hsl(var(--primary)/0.5))" }}
+            />
+
             <div className="grid grid-cols-4 gap-6">
               {frameworkSteps.map((step, i) => (
                 <motion.div
@@ -332,18 +435,20 @@ const MarketingPage = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
+                  transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
                   className="flex flex-col items-center text-center group"
                 >
                   <span className="text-[10px] font-bold text-primary/40 mb-2 group-hover:text-primary transition-colors">{String(i + 1).padStart(2, "0")}</span>
                   <div className="relative z-10">
-                    <div className="w-[80px] h-[80px] rounded-2xl border-2 border-border bg-card flex items-center justify-center shadow-md group-hover:border-primary/40 group-hover:shadow-[0_0_35px_-8px_hsl(var(--primary)/0.35)] transition-all duration-500">
-                      <step.icon size={28} className={`${step.color} group-hover:scale-110 transition-transform duration-300`} />
+                    <div className="w-[88px] h-[88px] rounded-2xl border-2 border-border bg-card flex items-center justify-center shadow-lg group-hover:border-primary/50 group-hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.4)] transition-all duration-500">
+                      <step.icon size={30} className={`${step.color} group-hover:scale-110 transition-transform duration-300`} />
                     </div>
-                    <div className="absolute -bottom-[3px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/40 border-2 border-card group-hover:bg-primary transition-colors duration-300" />
+                    {/* Connector dot */}
+                    <div className="absolute -bottom-[4px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-primary/50 border-2 border-card group-hover:bg-primary group-hover:shadow-[0_0_12px_hsl(var(--primary)/0.5)] transition-all duration-300" />
                   </div>
-                  <h4 className="text-sm font-bold font-display mt-5 mb-2 group-hover:text-primary transition-colors duration-300">{step.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed max-w-[180px]">{step.desc}</p>
+                  <h4 className="text-sm font-bold font-display mt-5 mb-1 group-hover:text-primary transition-colors duration-300">{step.title}</h4>
+                  <p className="text-[11px] text-muted-foreground leading-relaxed max-w-[180px] mb-2">{step.desc}</p>
+                  <span className="text-[9px] font-bold text-primary/70 px-2.5 py-0.5 rounded-full bg-primary/5 border border-primary/10">{step.metric}</span>
                 </motion.div>
               ))}
             </div>
@@ -367,7 +472,8 @@ const MarketingPage = () => {
                 <div className="pt-0.5">
                   <span className="text-[9px] font-bold text-primary/50">{String(i + 1).padStart(2, "0")}</span>
                   <h4 className="text-sm font-bold font-display group-hover:text-primary transition-colors">{step.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-1">{step.desc}</p>
+                  <span className="text-[9px] font-bold text-primary/70">{step.metric}</span>
                 </div>
               </motion.div>
             ))}
@@ -397,6 +503,50 @@ const MarketingPage = () => {
         </div>
       </section>
 
+      {/* ═══ MID-PAGE CTA ═══ */}
+      <section className="py-28 relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(220 60% 8%), hsl(220 70% 14%), hsl(220 60% 8%))" }} />
+        {/* Data lines */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[8, 22, 38, 54, 70, 86].map((top, i) => (
+            <div
+              key={i}
+              className={`absolute left-0 whitespace-nowrap text-[${10 + (i % 3)}px] font-mono tracking-[0.3em] text-blue-400 animate-[scroll_${40 + i * 8}s_linear_infinite${i % 2 ? '_reverse' : ''}]`}
+              style={{ top: `${top}%`, opacity: i % 2 === 0 ? 0.06 : 0.04 }}
+            >
+              {"▸ acquisition ▸ conversion ▸ retention ▸ scale ▸ ROAS ▸ CTR ▸ CVR ▸ CAC ▸ LTV ▸ MRR ▸ pipeline ▸ funnel ▸ growth ▸ analytics ▸ attribution ▸ acquisition ▸ conversion ▸ retention ▸ scale ▸ ROAS ▸ CTR ▸ CVR ▸ CAC ▸ LTV ▸ MRR ▸ pipeline ▸ funnel ▸ growth ▸ analytics ▸ attribution "}
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,60%,8%)] via-transparent to-[hsl(220,60%,8%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,60%,8%)]/60 via-transparent to-[hsl(220,60%,8%)]/60 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
+          <motion.div {...fade()}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/50 mb-6 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Growth Strategy
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white leading-tight">
+              Diseñemos una estrategia de crecimiento{" "}
+              <span className="gradient-text">basada en datos</span>
+            </h2>
+            <p className="text-base sm:text-lg text-white/50 mb-10 max-w-xl mx-auto leading-relaxed">
+              Combinamos adquisición, optimización y analítica para ayudarte a escalar ingresos de forma predecible.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button variant="gradient" size="lg" asChild>
+                <a href="/#contact">Solicitar Estrategia <ArrowRight size={16} className="ml-2" /></a>
+              </Button>
+              <Button size="lg" className="bg-white/[0.07] hover:bg-white/15 text-white border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-300" asChild>
+                <a href="/#contact">Hablar con un especialista <ArrowRight size={16} className="ml-2" /></a>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══ MÉTRICAS ═══ */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-mesh pointer-events-none opacity-50" />
@@ -419,15 +569,19 @@ const MarketingPage = () => {
               <motion.div
                 key={m.title}
                 {...fade(i * 0.08)}
-                className="group relative rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_15px_50px_-12px_hsl(var(--primary)/0.2)] hover:-translate-y-1"
+                className="group relative rounded-2xl border border-border bg-card p-7 transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.2)] hover:-translate-y-1.5"
               >
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-primary/[0.04] via-transparent to-accent/[0.02]" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-start justify-between mb-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:border-primary/25 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
                       <m.icon size={22} className="text-primary" />
                     </div>
-                    <span className="text-xl font-extrabold font-display gradient-text">{m.value}</span>
+                    <div className="text-right">
+                      <span className="text-2xl font-extrabold font-display gradient-text leading-none">{m.value}</span>
+                      <p className="text-[8px] text-muted-foreground uppercase tracking-wider mt-0.5">{m.sub}</p>
+                    </div>
                   </div>
                   <h3 className="text-base font-bold font-display mb-2 group-hover:text-primary transition-colors duration-300">{m.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
@@ -451,14 +605,14 @@ const MarketingPage = () => {
               Growth marketing <span className="gradient-text">en acción</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Estrategias adaptadas a cada tipo de negocio para maximizar el retorno de cada canal.
+              Estrategias especializadas por vertical para maximizar el impacto de cada inversión.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {useCases.map((u, i) => (
-              <motion.div key={u.title} {...fade(i * 0.07)} className="group rounded-2xl border border-border bg-card p-7 hover:border-primary/25 hover:shadow-[0_15px_50px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1 transition-all duration-500">
+              <motion.div key={u.title} {...fade(i * 0.07)} className="group rounded-2xl border border-border bg-card p-7 hover:border-primary/25 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-all duration-500">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.25)] transition-all duration-500">
                     <u.icon size={20} className="text-primary" />
                   </div>
                   <h3 className="font-bold font-display group-hover:text-primary transition-colors">{u.title}</h3>
