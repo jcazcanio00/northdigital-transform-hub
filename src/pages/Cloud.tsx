@@ -389,7 +389,7 @@ const CloudPage = () => {
           <motion.div {...fade()}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/50 mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-              Infraestructura Cloud
+              Cloud Services
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white leading-tight">
               Construyamos la infraestructura que tu empresa{" "}
