@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import LegalPage from "@/components/LegalPage";
 
 const sections = [
@@ -89,11 +90,18 @@ const sections = [
 ];
 
 const Privacidad = () => (
-  <LegalPage
-    title="Aviso de Privacidad"
-    lastUpdated="marzo 2026"
-    sections={sections}
-  />
+  <>
+    <SEO
+      title="Aviso de Privacidad | North Digital"
+      description="Aviso de privacidad de North Digital. Conoce cómo recopilamos, usamos y protegemos tus datos personales conforme a la ley mexicana."
+      url="https://northmkt.com.mx/privacidad"
+    />
+    <LegalPage
+      title="Aviso de Privacidad"
+      lastUpdated="marzo 2026"
+      sections={sections}
+    />
+  </>
 );
 
 export default Privacidad;
