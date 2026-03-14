@@ -10,6 +10,15 @@ import {
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+/* ─── Fade helper ─── */
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, delay },
+});
+
 /* ─── Premium Growth Dashboard ─── */
 const GrowthMockup = () => {
   const funnelData = [
