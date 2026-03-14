@@ -78,6 +78,13 @@ const Header = () => {
             Inicio
           </Link>
 
+          <Link
+            to="/acerca"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
+            Acerca de
+          </Link>
+
           {/* Soluciones dropdown */}
           <div ref={dropdownRef} className="relative">
             <button
@@ -103,13 +110,6 @@ const Header = () => {
               </div>
             )}
           </div>
-
-          <Link
-            to="/acerca"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
-          >
-            Acerca de
-          </Link>
 
           {/* Legal dropdown */}
           <div ref={legalDropdownRef} className="relative">
@@ -190,6 +190,9 @@ const Header = () => {
           <Link to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Inicio
           </Link>
+          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Acerca de
+          </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Soluciones</p>
           {solutions.map((s) => (
             <Link
@@ -201,9 +204,6 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
-          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Acerca de
-          </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Legal</p>
           {legal.map((s) => (
             <Link
