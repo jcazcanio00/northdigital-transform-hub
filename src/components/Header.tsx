@@ -9,10 +9,6 @@ const solutions = [
   { label: "Marketing de Crecimiento", href: "/marketing" },
 ];
 
-const legal = [
-  { label: "Términos y Condiciones", href: "/terminos" },
-  { label: "Aviso de Privacidad", href: "/privacidad" },
-];
 
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
