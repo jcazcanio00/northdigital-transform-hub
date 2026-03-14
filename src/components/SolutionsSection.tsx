@@ -7,7 +7,7 @@ const solutions = [
     icon: Code2,
     title: "Software Empresarial",
     description: "Desarrollo de CRM, dashboards y automatización de procesos internos a medida.",
-    href: "#systems",
+    href: "/software",
     tag: "Desarrollo",
   },
   {
