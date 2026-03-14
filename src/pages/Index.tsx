@@ -17,13 +17,79 @@ import ContactSection from "@/components/ContactSection";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
+const indexJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "North Digital",
+    "url": "https://northmkt.com.mx",
+    "logo": "https://northmkt.com.mx/favicon.webp",
+    "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cancún",
+      "addressRegion": "Quintana Roo",
+      "addressCountry": "MX"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+52-998-351-3337",
+      "contactType": "sales",
+      "availableLanguage": ["Spanish", "English"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/northmkt",
+      "https://www.instagram.com/northmkt",
+      "https://www.linkedin.com/company/north-marketing/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "North Digital",
+    "url": "https://northmkt.com.mx",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://northmkt.com.mx/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "North Digital",
+    "image": "https://northmkt.com.mx/og-image.png",
+    "url": "https://northmkt.com.mx",
+    "telephone": "+52-998-351-3337",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cancún",
+      "addressRegion": "Quintana Roo",
+      "addressCountry": "MX"
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "México"
+    },
+    "serviceType": ["Software empresarial", "Infraestructura cloud", "Marketing de crecimiento", "Marketing digital"]
+  }
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="North Digital | Software empresarial, cloud services y growth marketing"
-        description="Desarrollo de software empresarial, cloud services y estrategias de growth marketing para empresas que buscan escalar con tecnología y datos."
+        title="North Digital | Software empresarial, infraestructura cloud y marketing de crecimiento"
+        description="Agencia de marketing digital en Cancún especializada en software empresarial, infraestructura cloud y estrategias de crecimiento basadas en datos para escalar tu negocio."
         url="https://northmkt.com.mx"
+        jsonLd={indexJsonLd}
       />
       <Header />
       <HeroSection />
