@@ -64,7 +64,7 @@ const TrustSection = () => (
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="lg:pl-4"
         >
           <p className="text-base text-muted-foreground leading-relaxed mb-8">
