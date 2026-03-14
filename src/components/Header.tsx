@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoNorth from "@/assets/logo-north.png";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
