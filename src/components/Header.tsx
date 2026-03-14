@@ -131,7 +131,7 @@ const Header = () => {
             </span>
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
-            <a href="/#contact">Agendar Consulta</a>
+            <Link to="/contacto">Agendar Consulta</Link>
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
