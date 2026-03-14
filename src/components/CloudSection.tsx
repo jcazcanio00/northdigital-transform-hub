@@ -3,10 +3,16 @@ import { Shield, Server, Database, Globe, ArrowRight, Activity, Wifi, HardDrive,
 import { Button } from "@/components/ui/button";
 
 const statusRows = [
-  { icon: Globe, label: "Google Workspace", status: "Configurado", color: "text-primary" },
-  { icon: Server, label: "VPS Principal", status: "Monitoreado", color: "text-primary" },
-  { icon: HardDrive, label: "Backups", status: "Activos", color: "text-primary" },
-  { icon: RefreshCw, label: "Migraciones", status: "Seguras", color: "text-primary" },
+  { icon: Globe, label: "Google Workspace", status: "Configurado" },
+  { icon: Server, label: "VPS Principal", status: "Monitoreado" },
+  { icon: HardDrive, label: "Backups", status: "Activos" },
+  { icon: RefreshCw, label: "Migraciones", status: "Seguras" },
+];
+
+const providerLogos = [
+  { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+  { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
 ];
 
 const CloudSection = () => (
@@ -31,7 +37,6 @@ const CloudSection = () => (
               Infraestructura Cloud
             </div>
 
-            {/* Server metrics */}
             <div className="grid grid-cols-3 gap-2 mb-4">
               {[
                 { icon: Server, label: "VPS", uptime: "99.99%" },
@@ -46,7 +51,6 @@ const CloudSection = () => (
               ))}
             </div>
 
-            {/* Status rows */}
             <div className="space-y-2">
               {statusRows.map((item, i) => (
                 <motion.div
@@ -76,14 +80,14 @@ const CloudSection = () => (
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          className="flex flex-col"
         >
           <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium mb-3">Cloud</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 font-display leading-tight">
             Cloud Segura y <span className="gradient-text">Escalable</span>
           </h2>
 
-          {/* Metric chips */}
-          <div className="flex flex-wrap gap-2 mb-5">
+          <div className="flex flex-wrap gap-2 mb-4">
             {[
               { icon: Activity, label: "Uptime 99.99%" },
               { icon: Wifi, label: "Monitoreo 24/7" },
@@ -100,7 +104,28 @@ const CloudSection = () => (
             hosting dedicado, VPS y migraciones seguras con monitoreo continuo.
           </p>
 
-          <Button variant="gradient" size="lg">
+          {/* Provider logos */}
+          <div className="mb-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">Infraestructura soportada por</p>
+            <div className="flex items-center gap-4">
+              {providerLogos.map((logo) => (
+                <div
+                  key={logo.name}
+                  className="w-11 h-11 rounded-xl bg-card border border-border/30 flex items-center justify-center transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.3)] hover:scale-110"
+                  title={logo.name}
+                >
+                  <img
+                    src={logo.icon}
+                    alt={logo.name}
+                    className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Button variant="gradient" size="lg" className="self-start">
             Conocer Más <ArrowRight size={16} className="ml-1" />
           </Button>
         </motion.div>
