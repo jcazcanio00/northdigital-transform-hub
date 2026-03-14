@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, Search, Target, BarChart3, ArrowRight, Eye, MousePointerClick, Users, Globe, ArrowUpRight, DollarSign, Clock, Percent } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const GrowthSection = () => (
   <section id="growth" className="py-24 relative overflow-hidden">
@@ -183,8 +184,8 @@ const GrowthSection = () => (
       </motion.div>
 
       <div className="text-center mt-10">
-        <Button variant="gradient" size="lg">
-          Ver Estrategias <ArrowRight size={16} className="ml-1" />
+        <Button variant="gradient" size="lg" asChild>
+          <Link to="/marketing">Ver Estrategias <ArrowRight size={16} className="ml-1" /></Link>
         </Button>
       </div>
     </div>

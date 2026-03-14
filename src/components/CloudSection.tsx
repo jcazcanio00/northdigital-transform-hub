@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Server, Database, Globe, ArrowRight, Activity, Wifi, HardDrive, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const statusRows = [
   { icon: Globe, label: "Google Workspace", status: "Configurado" },
@@ -128,8 +129,8 @@ const CloudSection = () => (
             </div>
           </div>
 
-          <Button variant="gradient" size="lg" className="self-start">
-            Conocer Más <ArrowRight size={16} className="ml-1" />
+          <Button variant="gradient" size="lg" className="self-start" asChild>
+            <Link to="/cloud">Conocer Más <ArrowRight size={16} className="ml-1" /></Link>
           </Button>
         </motion.div>
       </div>
