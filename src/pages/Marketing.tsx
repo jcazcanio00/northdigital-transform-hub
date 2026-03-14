@@ -436,7 +436,7 @@ const MarketingPage = () => {
 
       {/* ═══ MID-PAGE CTA ═══ */}
       <section className="py-28 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(240 30% 6%), hsl(260 45% 12%), hsl(240 30% 6%))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(220 60% 8%), hsl(220 70% 14%), hsl(220 60% 8%))" }} />
         {/* Data lines */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[8, 22, 38, 54, 70, 86].map((top, i) => (
