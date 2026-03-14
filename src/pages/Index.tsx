@@ -25,7 +25,7 @@ const indexJsonLd = [
     "name": "North Digital",
     "url": "https://northmkt.com.mx",
     "logo": "https://northmkt.com.mx/favicon.webp",
-    "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
+    "description": "Agencia de marketing digital en Cancún, Playa del Carmen y Tulum. Especialistas en software empresarial, infraestructura cloud y marketing de crecimiento para empresas en Quintana Roo.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Cancún",
@@ -42,6 +42,12 @@ const indexJsonLd = [
       "https://www.facebook.com/northmkt",
       "https://www.instagram.com/northmkt",
       "https://www.linkedin.com/company/north-marketing/"
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Cancún" },
+      { "@type": "City", "name": "Playa del Carmen" },
+      { "@type": "City", "name": "Tulum" },
+      { "@type": "State", "name": "Quintana Roo" }
     ]
   },
   {
@@ -75,11 +81,44 @@ const indexJsonLd = [
       "opens": "09:00",
       "closes": "18:00"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "México"
+    "areaServed": [
+      { "@type": "City", "name": "Cancún" },
+      { "@type": "City", "name": "Playa del Carmen" },
+      { "@type": "City", "name": "Tulum" },
+      { "@type": "State", "name": "Quintana Roo" },
+      { "@type": "Country", "name": "México" }
+    ],
+    "serviceType": ["Agencia de marketing digital", "Software empresarial", "Infraestructura cloud", "Marketing de crecimiento", "Marketing digital en Cancún", "Marketing digital en Playa del Carmen", "Marketing digital en Tulum"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "North Digital",
+    "image": "https://northmkt.com.mx/og-image.png",
+    "url": "https://northmkt.com.mx",
+    "telephone": "+52-998-351-3337",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cancún",
+      "addressRegion": "Quintana Roo",
+      "addressCountry": "MX"
     },
-    "serviceType": ["Software empresarial", "Infraestructura cloud", "Marketing de crecimiento", "Marketing digital"]
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 21.1619,
+      "longitude": -86.8515
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Cancún" },
+      { "@type": "City", "name": "Playa del Carmen" },
+      { "@type": "City", "name": "Tulum" }
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/northmkt",
+      "https://www.instagram.com/northmkt",
+      "https://www.linkedin.com/company/north-marketing/"
+    ]
   }
 ];
 
