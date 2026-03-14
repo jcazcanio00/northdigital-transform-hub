@@ -79,7 +79,7 @@ const HeroSection = () => (
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Somos una agencia de marketing digital en Cancún que combina software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
+          Combinamos software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center items-center">

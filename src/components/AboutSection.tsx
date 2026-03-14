@@ -37,8 +37,7 @@ const AboutSection = () => (
           Cómo Ayudamos
         </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
-          Soluciones de Marketing Digital en{" "}
-          <span className="gradient-text">Cancún, Playa del Carmen y Tulum</span>
+          Socio en <span className="gradient-text">Transformación Digital</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
           Transformamos operaciones empresariales mediante sistemas inteligentes, automatización de procesos y cloud services.

@@ -21,7 +21,7 @@ const GrowthSection = () => (
           Marketing
         </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-          Estrategias Digitales para Empresas en <span className="gradient-text">Quintana Roo</span>
+          Marketing de <span className="gradient-text">Crecimiento</span>
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           SEO, Google Ads y analítica avanzada para generar leads cualificados y escalar tu negocio.
