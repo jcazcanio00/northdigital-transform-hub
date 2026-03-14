@@ -11,8 +11,8 @@ const solutions = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
-    description: "Google Workspace, hosting empresarial, VPS y gestión completa en la nube.",
+    title: "Cloud Services",
+    description: "Implementación y gestión de servicios en la nube incluyendo hosting empresarial, Google Workspace, infraestructura escalable y plataformas cloud seguras.",
     href: "#cloud",
     tag: "Cloud",
   },

@@ -20,7 +20,7 @@ const Footer = () => (
             <span className="text-base font-bold font-display">North Digital</span>
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-            Software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
+            Software empresarial, cloud services y marketing de crecimiento para empresas modernas.
           </p>
           <div className="flex gap-2.5">
             {socials.map((s) => (
@@ -44,7 +44,7 @@ const Footer = () => (
           <ul className="space-y-2.5">
             {[
               { label: "Software Empresarial", href: "/software" },
-              { label: "Infraestructura Cloud", href: "/cloud" },
+              { label: "Cloud Services", href: "/cloud" },
               { label: "Marketing de Crecimiento", href: "/marketing" },
             ].map((l) => (
               <li key={l.label}>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import { Send, Mail, Phone, User, Building2, FileText, MessageCircle, Loader2 } from "lucide-react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
@@ -20,7 +21,7 @@ const projectTypes = [
   "Desarrollo Web",
   "Sistema / CRM",
   "Automatización de Procesos",
-  "Infraestructura Cloud",
+  "Cloud Services",
   "Marketing Digital",
   "Integraciones / APIs",
   "Otro",
@@ -59,6 +60,11 @@ const Contacto = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO
+        title="Contacto | North Digital"
+        description="Habla con nuestro equipo para desarrollar software empresarial, implementar cloud services o escalar tu marketing digital."
+        url="https://northmkt.com.mx/contacto"
+      />
       <Header />
       
 

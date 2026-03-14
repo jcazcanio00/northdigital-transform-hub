@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -88,7 +89,7 @@ const solutions = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Entornos seguros, monitoreados y de alto rendimiento con Google Workspace, hosting y migraciones.",
     href: "/cloud",
     highlights: [
@@ -135,6 +136,11 @@ const connectionSteps = [
 
 const Acerca = () => (
   <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <SEO
+      title="Acerca de North Digital | Consultora tecnológica"
+      description="Conoce North Digital, una consultora especializada en software empresarial, cloud services y estrategias de crecimiento digital."
+      url="https://northmkt.com.mx/acerca"
+    />
     <Header />
     
 
@@ -156,7 +162,7 @@ const Acerca = () => (
         </motion.h1>
 
         <motion.p {...fade(0.1)} className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-          Nos especializamos en software empresarial, infraestructura cloud y estrategias de crecimiento digital para empresas que necesitan tecnología real, no promesas.
+          Nos especializamos en software empresarial, cloud services y estrategias de crecimiento digital para empresas que necesitan tecnología real, no promesas.
         </motion.p>
 
         <motion.div {...fade(0.15)}>
@@ -187,10 +193,10 @@ const Acerca = () => (
                 North nació como una agencia de marketing digital y desarrollo web, ayudando a empresas a construir su presencia en línea y generar sus primeros clientes digitales.
               </p>
               <p>
-                Con el tiempo, las necesidades de nuestros clientes evolucionaron. Ya no bastaba con una página web o una campaña de ads — necesitaban <strong className="text-foreground">sistemas internos, infraestructura cloud segura y estrategias de crecimiento basadas en datos.</strong>
+                Con el tiempo, las necesidades de nuestros clientes evolucionaron. Ya no bastaba con una página web o una campaña de ads — necesitaban <strong className="text-foreground">sistemas internos, cloud services segura y estrategias de crecimiento basadas en datos.</strong>
               </p>
               <p>
-                Esa demanda nos llevó a evolucionar. Hoy somos una empresa de tecnología que combina desarrollo de software, infraestructura cloud y growth marketing para ayudar a empresas a operar mejor, crecer más rápido y tomar decisiones inteligentes.
+                Esa demanda nos llevó a evolucionar. Hoy somos una empresa de tecnología que combina desarrollo de software, cloud services y growth marketing para ayudar a empresas a operar mejor, crecer más rápido y tomar decisiones inteligentes.
               </p>
             </div>
           </motion.div>
@@ -200,7 +206,7 @@ const Acerca = () => (
               {[
                 { year: "2018", text: "Fundación como agencia de marketing digital y desarrollo web." },
                 { year: "2020", text: "Primeros proyectos de software empresarial y CRMs internos." },
-                { year: "2022", text: "Expansión hacia infraestructura cloud y Google Workspace." },
+                { year: "2022", text: "Expansión hacia cloud services y Google Workspace." },
                 { year: "2024", text: "Consolidación como empresa de tecnología y crecimiento digital." },
               ].map((item, i) => (
                 <div key={item.year} className="flex gap-4">
@@ -299,7 +305,7 @@ const Acerca = () => (
             <div className="space-y-3">
               {[
                 "Empresas en múltiples industrias",
-                "Infraestructura cloud segura y escalable",
+                "Cloud services segura y escalable",
                 "Estrategias de crecimiento basadas en datos",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-sm text-white/40">

@@ -16,7 +16,7 @@ const projectTypes = [
   "Desarrollo Web",
   "Sistema / CRM",
   "Automatización de Procesos",
-  "Infraestructura Cloud",
+  "Cloud Services",
   "Marketing Digital",
   "Integraciones / APIs",
   "Otro",
@@ -50,7 +50,7 @@ const highlights = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Implementamos entornos estables, monitoreados y de alto rendimiento.",
   },
 ];
@@ -58,7 +58,7 @@ const highlights = [
 const trustMetrics = [
   "150+ proyectos implementados",
   "Empresas en múltiples industrias",
-  "Infraestructura cloud segura",
+  "Cloud services segura",
 ];
 
 const ContactSection = () => {

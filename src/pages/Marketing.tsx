@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Search, Target, BarChart3, TrendingUp, Zap, ArrowRight, ArrowDown,
@@ -237,6 +238,11 @@ const MarketingPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SEO
+        title="Growth Marketing para empresas | North Digital"
+        description="SEO, Google Ads y estrategias de crecimiento basadas en datos para generar leads y escalar ingresos."
+        url="https://northmkt.com.mx/marketing"
+      />
       <Header />
       
 

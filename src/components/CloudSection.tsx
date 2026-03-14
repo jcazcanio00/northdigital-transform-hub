@@ -34,7 +34,7 @@ const CloudSection = () => (
           <div className="glass-card rounded-2xl p-5 relative">
             <div className="text-[11px] font-semibold mb-4 font-display flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-status-pulse" />
-              Infraestructura Cloud
+              Cloud Services
             </div>
 
             <div className="grid grid-cols-3 gap-2 mb-4">
@@ -103,7 +103,7 @@ const CloudSection = () => (
           </div>
 
           <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
-            Implementamos y gestionamos infraestructura cloud empresarial con Google Workspace,
+            Implementamos y gestionamos cloud services empresariales con Google Workspace,
             hosting dedicado, VPS y migraciones seguras con monitoreo continuo.
           </p>
 

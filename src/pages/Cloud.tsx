@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
   Cloud, Server, Shield, Activity, Database, Cpu, Globe, Zap,
@@ -140,7 +141,7 @@ const CloudSlider = () => (
     <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/20 to-background pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-6">
       <p className="text-center text-[10px] text-muted-foreground tracking-[0.25em] uppercase font-medium">
-        Tecnologías que utilizamos para construir infraestructura cloud moderna
+        Tecnologías que utilizamos para construir cloud services moderna
       </p>
     </div>
     <div className="relative">
@@ -224,6 +225,11 @@ const CloudPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SEO
+        title="Cloud Services para empresas | North Digital"
+        description="Infraestructura cloud, hosting empresarial, Google Workspace y plataformas escalables para empresas modernas."
+        url="https://northmkt.com.mx/cloud"
+      />
       <Header />
       
 
@@ -240,7 +246,7 @@ const CloudPage = () => {
                 CLOUD EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Infraestructura Cloud{" "}
+                Cloud Services{" "}
                 <span className="gradient-text">Segura y Escalable</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
@@ -273,7 +279,7 @@ const CloudPage = () => {
               Servicios
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Servicios de <span className="gradient-text">Infraestructura Cloud</span>
+              Servicios de <span className="gradient-text">Cloud Services</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Desde la arquitectura inicial hasta la operación continua, cubrimos cada capa de tu ecosistema cloud.
@@ -389,7 +395,7 @@ const CloudPage = () => {
           <motion.div {...fade()}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/50 mb-6 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-              Infraestructura Cloud
+              Cloud Services
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white leading-tight">
               Construyamos la infraestructura que tu empresa{" "}
@@ -530,7 +536,7 @@ const CloudPage = () => {
               Casos de <span className="gradient-text">Uso</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Proyectos reales donde la infraestructura cloud marca la diferencia operativa y competitiva.
+              Proyectos reales donde los cloud services marcan la diferencia operativa y competitiva.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">

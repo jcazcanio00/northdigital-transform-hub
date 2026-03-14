@@ -16,7 +16,7 @@ const blocks = [
   },
   {
     icon: Cloud,
-    title: "Infraestructura Cloud",
+    title: "Cloud Services",
     desc: "Implementamos entornos seguros, estables y preparados para crecer. Alta disponibilidad garantizada.",
     num: "03",
   },
@@ -41,7 +41,7 @@ const AboutSection = () => (
           <span className="gradient-text">Escalar con Tecnología</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-          Transformamos operaciones empresariales mediante sistemas inteligentes, automatización de procesos e infraestructura cloud.
+          Transformamos operaciones empresariales mediante sistemas inteligentes, automatización de procesos y cloud services.
         </p>
       </motion.div>
 

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import LogoSlider from "@/components/LogoSlider";
 import Header from "@/components/Header";
+import SEO from "@/components/SEO";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
@@ -430,6 +431,11 @@ const flowSteps = [
 const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <SEO
+        title="Desarrollo de Software Empresarial | North Digital"
+        description="Desarrollo de CRM, dashboards y sistemas empresariales a medida para automatizar procesos y escalar operaciones."
+        url="https://northmkt.com.mx/software"
+      />
       <Header />
       
 

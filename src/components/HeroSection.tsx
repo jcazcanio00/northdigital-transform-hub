@@ -77,7 +77,7 @@ const HeroSection = () => (
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Sistemas empresariales, infraestructura cloud y estrategias de crecimiento para empresas modernas.
+          Sistemas empresariales, cloud services y estrategias de crecimiento para empresas modernas.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center">
