@@ -115,7 +115,7 @@ const GrowthSection = () => (
                     key={i}
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.4, delay: i * 0.02 }}
                     className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60 relative"
                   >
