@@ -576,7 +576,7 @@ const CrmEmpresas = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
                 <Link to="/contacto">
-                  Solicitar diagnóstico <ArrowRight size={16} className="ml-1" />
+                  Solicitar diagnóstico CRM <ArrowRight size={16} className="ml-1" />
                 </Link>
               </Button>
               <a
