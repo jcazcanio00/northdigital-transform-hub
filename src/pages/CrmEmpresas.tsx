@@ -6,7 +6,7 @@ import {
   Activity, Bell, MessageSquare, Calendar,
   Target, AlertTriangle, FileSpreadsheet,
   PieChart, UserCheck, Briefcase, Home, Headphones, Layers,
-  TrendingUp, CheckCircle2, ArrowUpRight
+  TrendingUp, CheckCircle2, ArrowUpRight, Clock
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -57,17 +57,27 @@ const SectionBadge = ({ children, variant = "primary" }: { children: React.React
 const CrmMockup = () => (
   <div className="relative rounded-2xl border border-border bg-white shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
     {/* Title bar */}
-    <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-[hsl(220,20%,98%)]">
-      <div className="flex gap-1.5">
-        <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-        <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
+    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-[hsl(220,20%,98%)]">
+      <div className="flex items-center gap-2">
+        <div className="flex gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-red-400/60" />
+          <span className="w-2 h-2 rounded-full bg-yellow-400/60" />
+          <span className="w-2 h-2 rounded-full bg-green-400/60" />
+        </div>
+        <span className="text-[9px] text-muted-foreground/50 ml-1 font-mono">crm.northmkt.com</span>
       </div>
-      <span className="text-[10px] text-muted-foreground/60 ml-2 font-mono">crm.northmkt.com</span>
+      <div className="flex items-center gap-1.5">
+        <div className="w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center">
+          <Bell size={8} className="text-primary" />
+        </div>
+        <div className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center">
+          <span className="text-[7px] font-bold text-primary">N</span>
+        </div>
+      </div>
     </div>
     <div className="flex">
       {/* Sidebar */}
-      <div className="w-44 border-r border-border/40 p-3 space-y-0.5 hidden md:block bg-[hsl(220,20%,98%)]">
+      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-[hsl(220,20%,98%)]">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
           { icon: Users, label: "Contactos" },
@@ -76,74 +86,137 @@ const CrmMockup = () => (
           { icon: BarChart3, label: "Reportes" },
           { icon: Settings, label: "Config" },
         ].map((item, i) => (
-          <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/60 hover:text-foreground"}`}>
-            <item.icon size={14} />
+          <div key={i} className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[10px] font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/50"}`}>
+            <item.icon size={12} />
             {item.label}
           </div>
         ))}
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-4 space-y-3 bg-[hsl(220,14%,97%)]">
-        {/* Top metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+      <div className="flex-1 p-3 space-y-2.5 bg-[hsl(220,14%,97%)]">
+        {/* Metrics row */}
+        <div className="grid grid-cols-4 gap-2">
           {[
-            { label: "Leads Activos", value: "247", change: "+18%", color: "text-primary" },
-            { label: "Oportunidades", value: "$1.2M", change: "+24%", color: "text-emerald-500" },
-            { label: "Tasa Cierre", value: "32%", change: "+5%", color: "text-accent" },
-            { label: "Tiempo Resp.", value: "2.4h", change: "-15%", color: "text-amber-500" },
+            { label: "Leads Activos", value: "247", change: "+18%", icon: Users, color: "text-primary" },
+            { label: "Oportunidades", value: "$1.2M", change: "+24%", icon: TrendingUp, color: "text-emerald-500" },
+            { label: "Tasa Cierre", value: "32%", change: "+5%", icon: Target, color: "text-accent" },
+            { label: "Resp. Promedio", value: "2.4h", change: "-15%", icon: Clock, color: "text-amber-500" },
           ].map((m, i) => (
-            <div key={i} className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
-              <p className="text-[10px] text-muted-foreground/60 font-medium">{m.label}</p>
-              <p className={`text-base font-bold ${m.color}`}>{m.value}</p>
-              <p className="text-[9px] text-emerald-500 font-medium">{m.change}</p>
+            <div key={i} className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[8px] text-muted-foreground/50 font-medium">{m.label}</p>
+                <m.icon size={10} className="text-muted-foreground/30" />
+              </div>
+              <p className={`text-sm font-bold ${m.color} leading-none`}>{m.value}</p>
+              <p className="text-[8px] text-emerald-500 font-medium mt-0.5">{m.change}</p>
             </div>
           ))}
         </div>
 
-        {/* Pipeline */}
-        <div className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
-          <p className="text-[10px] text-muted-foreground/60 font-medium mb-3">Pipeline de Ventas</p>
-          <div className="flex gap-2">
-            {[
-              { stage: "Prospecto", count: 84, width: "100%" },
-              { stage: "Calificado", count: 52, width: "62%" },
-              { stage: "Propuesta", count: 31, width: "37%" },
-              { stage: "Negociación", count: 18, width: "21%" },
-              { stage: "Cerrado", count: 12, width: "14%" },
-            ].map((s, i) => (
-              <div key={i} className="flex-1 space-y-1">
-                <p className="text-[9px] text-muted-foreground/50 text-center font-medium">{s.stage}</p>
-                <div className="h-14 bg-primary/[0.04] rounded-lg relative overflow-hidden border border-primary/[0.06]">
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/30 to-primary/10 rounded-lg"
-                    initial={{ height: 0 }}
-                    whileInView={{ height: s.width }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: i * 0.1 }}
-                  />
+        {/* Two-column: Pipeline + Lead Cards */}
+        <div className="grid grid-cols-5 gap-2">
+          {/* Pipeline Kanban */}
+          <div className="col-span-3 rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[9px] text-muted-foreground/60 font-semibold">Pipeline de Ventas</p>
+              <span className="text-[7px] px-1.5 py-0.5 rounded-full bg-primary/8 text-primary font-medium">$1.2M total</span>
+            </div>
+            <div className="flex gap-1.5">
+              {[
+                { stage: "Prospecto", count: 84, pct: "100%", deals: ["Grupo MX", "Tech Corp"] },
+                { stage: "Calificado", count: 52, pct: "62%", deals: ["Inmob. Sur", "LogiPack"] },
+                { stage: "Propuesta", count: 31, pct: "37%", deals: ["Farma+"] },
+                { stage: "Cierre", count: 12, pct: "14%", deals: ["RetailPro"] },
+              ].map((s, i) => (
+                <div key={i} className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <p className="text-[7px] text-muted-foreground/40 font-medium">{s.stage}</p>
+                    <p className="text-[7px] font-semibold text-foreground/50">{s.count}</p>
+                  </div>
+                  <div className="h-1 bg-primary/[0.06] rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-primary/30 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: s.pct }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: i * 0.1 }}
+                    />
+                  </div>
+                  {/* Mini deal cards */}
+                  <div className="space-y-0.5">
+                    {s.deals.map((d, j) => (
+                      <div key={j} className="rounded bg-[hsl(220,14%,97%)] border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
+                        {d}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-[10px] font-semibold text-center text-foreground/70">{s.count}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Lead Cards */}
+          <div className="col-span-2 space-y-2">
+            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+              <p className="text-[9px] text-muted-foreground/60 font-semibold mb-2">Leads Recientes</p>
+              <div className="space-y-1.5">
+                {[
+                  { name: "María González", company: "Grupo Inmob.", status: "Calificado", statusColor: "bg-emerald-500" },
+                  { name: "Carlos Ruiz", company: "Tech Solutions", status: "Nuevo", statusColor: "bg-primary" },
+                  { name: "Ana Mendoza", company: "LogiPack MX", status: "Propuesta", statusColor: "bg-amber-500" },
+                ].map((lead, i) => (
+                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-[hsl(220,14%,97%)] border border-border/20">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="text-[7px] font-bold text-primary">{lead.name[0]}</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[8px] font-semibold text-foreground/70 truncate">{lead.name}</p>
+                      <p className="text-[7px] text-muted-foreground/40 truncate">{lead.company}</p>
+                    </div>
+                    <span className={`w-1.5 h-1.5 rounded-full ${lead.statusColor} shrink-0`} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Mini chart */}
+            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+              <p className="text-[9px] text-muted-foreground/60 font-semibold mb-1.5">Conversiones</p>
+              <div className="flex items-end gap-[3px] h-10">
+                {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 55, 75].map((h, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex-1 rounded-sm bg-gradient-to-t from-primary/25 to-primary/10"
+                    initial={{ height: 0 }}
+                    whileInView={{ height: `${h}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.04 }}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-between mt-1">
+                <span className="text-[6px] text-muted-foreground/30">Ene</span>
+                <span className="text-[6px] text-muted-foreground/30">Jun</span>
+                <span className="text-[6px] text-muted-foreground/30">Dic</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Recent activity */}
-        <div className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
-          <p className="text-[10px] text-muted-foreground/60 font-medium mb-2">Actividad Reciente</p>
-          <div className="space-y-2">
+        {/* Activity bar */}
+        <div className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+          <div className="flex items-center gap-3">
             {[
-              { icon: UserCheck, text: "Nuevo lead calificado: Grupo Inmobiliario MX", time: "Hace 5 min" },
-              { icon: MessageSquare, text: "Seguimiento automático enviado a 12 contactos", time: "Hace 22 min" },
-              { icon: Bell, text: "Propuesta aceptada: $45,000 MXN", time: "Hace 1 hora" },
+              { icon: UserCheck, text: "Lead calificado: Grupo Inmobiliario", time: "5 min" },
+              { icon: MessageSquare, text: "12 seguimientos enviados", time: "22 min" },
+              { icon: Bell, text: "Propuesta aceptada: $45K", time: "1 hr" },
             ].map((a, i) => (
-              <div key={i} className="flex items-center gap-2 text-[10px]">
-                <div className="w-5 h-5 rounded-md bg-primary/8 flex items-center justify-center">
-                  <a.icon size={10} className="text-primary" />
+              <div key={i} className="flex items-center gap-1.5 flex-1 text-[8px]">
+                <div className="w-4 h-4 rounded bg-primary/8 flex items-center justify-center shrink-0">
+                  <a.icon size={8} className="text-primary" />
                 </div>
-                <span className="text-foreground/60 flex-1">{a.text}</span>
-                <span className="text-muted-foreground/40 whitespace-nowrap">{a.time}</span>
+                <span className="text-foreground/50 truncate">{a.text}</span>
               </div>
             ))}
           </div>
@@ -222,9 +295,24 @@ const CrmEmpresas = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-8 max-w-lg">
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6 max-w-lg">
                 Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
               </p>
+              {/* Benefit highlights */}
+              <div className="flex flex-col gap-2.5 mb-8">
+                {[
+                  { icon: Zap, text: "Seguimiento automático de leads" },
+                  { icon: Target, text: "Control total del pipeline de ventas" },
+                  { icon: BarChart3, text: "Reportes en tiempo real" },
+                ].map((b, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <b.icon size={14} className="text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground/80">{b.text}</span>
+                  </div>
+                ))}
+              </div>
               <div className="flex flex-wrap gap-3">
                 <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
