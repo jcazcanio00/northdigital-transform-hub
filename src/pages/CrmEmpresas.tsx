@@ -55,17 +55,19 @@ const SectionBadge = ({ children, variant = "primary" }: { children: React.React
 
 /* ─── CRM Dashboard Mockup ─── */
 const CrmMockup = () => (
-  <div className="relative rounded-2xl border border-border bg-[hsl(228,45%,8%)] shadow-2xl overflow-hidden">
-    <div className="flex items-center gap-2 px-4 py-3 border-b border-border/30">
+  <div className="relative rounded-2xl border border-border bg-white shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
+    {/* Title bar */}
+    <div className="flex items-center gap-2 px-4 py-3 border-b border-border/60 bg-[hsl(220,20%,98%)]">
       <div className="flex gap-1.5">
-        <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-        <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-        <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+        <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
       </div>
-      <span className="text-[10px] text-muted-foreground ml-2 font-mono">crm.northmkt.com</span>
+      <span className="text-[10px] text-muted-foreground/60 ml-2 font-mono">crm.northmkt.com</span>
     </div>
     <div className="flex">
-      <div className="w-48 border-r border-border/20 p-3 space-y-1 hidden md:block">
+      {/* Sidebar */}
+      <div className="w-44 border-r border-border/40 p-3 space-y-0.5 hidden md:block bg-[hsl(220,20%,98%)]">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
           { icon: Users, label: "Contactos" },
@@ -74,29 +76,34 @@ const CrmMockup = () => (
           { icon: BarChart3, label: "Reportes" },
           { icon: Settings, label: "Config" },
         ].map((item, i) => (
-          <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs ${item.active ? "bg-primary/15 text-primary" : "text-muted-foreground hover:text-foreground"}`}>
+          <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/60 hover:text-foreground"}`}>
             <item.icon size={14} />
             {item.label}
           </div>
         ))}
       </div>
-      <div className="flex-1 p-4 space-y-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+      {/* Main Content */}
+      <div className="flex-1 p-4 space-y-3 bg-[hsl(220,14%,97%)]">
+        {/* Top metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
           {[
             { label: "Leads Activos", value: "247", change: "+18%", color: "text-primary" },
-            { label: "Oportunidades", value: "$1.2M", change: "+24%", color: "text-emerald-400" },
+            { label: "Oportunidades", value: "$1.2M", change: "+24%", color: "text-emerald-500" },
             { label: "Tasa Cierre", value: "32%", change: "+5%", color: "text-accent" },
-            { label: "Tiempo Respuesta", value: "2.4h", change: "-15%", color: "text-amber-400" },
+            { label: "Tiempo Resp.", value: "2.4h", change: "-15%", color: "text-amber-500" },
           ].map((m, i) => (
-            <div key={i} className="rounded-xl bg-muted/10 border border-border/20 p-3">
-              <p className="text-[10px] text-muted-foreground">{m.label}</p>
-              <p className={`text-lg font-bold ${m.color}`}>{m.value}</p>
-              <p className="text-[9px] text-emerald-400">{m.change}</p>
+            <div key={i} className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
+              <p className="text-[10px] text-muted-foreground/60 font-medium">{m.label}</p>
+              <p className={`text-base font-bold ${m.color}`}>{m.value}</p>
+              <p className="text-[9px] text-emerald-500 font-medium">{m.change}</p>
             </div>
           ))}
         </div>
-        <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
-          <p className="text-[10px] text-muted-foreground mb-3">Pipeline de Ventas</p>
+
+        {/* Pipeline */}
+        <div className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
+          <p className="text-[10px] text-muted-foreground/60 font-medium mb-3">Pipeline de Ventas</p>
           <div className="flex gap-2">
             {[
               { stage: "Prospecto", count: 84, width: "100%" },
@@ -106,23 +113,25 @@ const CrmMockup = () => (
               { stage: "Cerrado", count: 12, width: "14%" },
             ].map((s, i) => (
               <div key={i} className="flex-1 space-y-1">
-                <p className="text-[9px] text-muted-foreground text-center">{s.stage}</p>
-                <div className="h-16 bg-primary/5 rounded-lg relative overflow-hidden">
+                <p className="text-[9px] text-muted-foreground/50 text-center font-medium">{s.stage}</p>
+                <div className="h-14 bg-primary/[0.04] rounded-lg relative overflow-hidden border border-primary/[0.06]">
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/40 to-primary/10 rounded-lg"
+                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/30 to-primary/10 rounded-lg"
                     initial={{ height: 0 }}
                     whileInView={{ height: s.width }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: i * 0.1 }}
                   />
                 </div>
-                <p className="text-[10px] font-semibold text-center text-foreground">{s.count}</p>
+                <p className="text-[10px] font-semibold text-center text-foreground/70">{s.count}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
-          <p className="text-[10px] text-muted-foreground mb-2">Actividad Reciente</p>
+
+        {/* Recent activity */}
+        <div className="rounded-xl bg-white border border-border/50 p-3 shadow-sm">
+          <p className="text-[10px] text-muted-foreground/60 font-medium mb-2">Actividad Reciente</p>
           <div className="space-y-2">
             {[
               { icon: UserCheck, text: "Nuevo lead calificado: Grupo Inmobiliario MX", time: "Hace 5 min" },
@@ -130,9 +139,11 @@ const CrmMockup = () => (
               { icon: Bell, text: "Propuesta aceptada: $45,000 MXN", time: "Hace 1 hora" },
             ].map((a, i) => (
               <div key={i} className="flex items-center gap-2 text-[10px]">
-                <a.icon size={12} className="text-primary shrink-0" />
-                <span className="text-foreground/80 flex-1">{a.text}</span>
-                <span className="text-muted-foreground whitespace-nowrap">{a.time}</span>
+                <div className="w-5 h-5 rounded-md bg-primary/8 flex items-center justify-center">
+                  <a.icon size={10} className="text-primary" />
+                </div>
+                <span className="text-foreground/60 flex-1">{a.text}</span>
+                <span className="text-muted-foreground/40 whitespace-nowrap">{a.time}</span>
               </div>
             ))}
           </div>
