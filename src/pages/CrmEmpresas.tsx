@@ -34,6 +34,14 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
+/* ─── Badge Component (matches homepage style) ─── */
+const SectionBadge = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+    <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+    {children}
+  </span>
+);
+
 /* ─── CRM Dashboard Mockup ─── */
 const CrmMockup = () => (
   <div className="relative rounded-2xl border border-border bg-[hsl(228,45%,8%)] shadow-2xl overflow-hidden">
@@ -72,7 +80,6 @@ const CrmMockup = () => (
 
       {/* Main Content */}
       <div className="flex-1 p-4 space-y-4">
-        {/* Top metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { label: "Leads Activos", value: "247", change: "+18%", color: "text-primary" },
@@ -88,7 +95,7 @@ const CrmMockup = () => (
           ))}
         </div>
 
-        {/* Pipeline visualization */}
+        {/* Pipeline */}
         <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
           <p className="text-[10px] text-muted-foreground mb-3">Pipeline de Ventas</p>
           <div className="flex gap-2">
@@ -148,12 +155,12 @@ const problems = [
 ];
 
 const features = [
-  { icon: Database, title: "CRM personalizado para tu empresa", desc: "Configurado según tu modelo de negocio, industria y proceso comercial." },
-  { icon: Layers, title: "Configuración de pipeline de ventas", desc: "Etapas definidas que reflejan tu ciclo de ventas real." },
-  { icon: Zap, title: "Automatización de seguimiento de leads", desc: "Emails, recordatorios y tareas automáticas para no perder ninguna oportunidad." },
-  { icon: Workflow, title: "Integración con marketing y formularios web", desc: "Captura leads desde tu sitio web, landing pages y campañas digitales." },
-  { icon: LineChart, title: "Paneles de control y reportes en tiempo real", desc: "Dashboards con métricas clave para tomar decisiones basadas en datos." },
-  { icon: Users, title: "Capacitación del equipo comercial", desc: "Entrenamiento completo para que tu equipo adopte el CRM desde el día uno." },
+  { icon: Database, title: "CRM personalizado para tu empresa", desc: "Configurado según tu modelo de negocio, industria y proceso comercial.", num: "01" },
+  { icon: Layers, title: "Configuración de pipeline de ventas", desc: "Etapas definidas que reflejan tu ciclo de ventas real.", num: "02" },
+  { icon: Zap, title: "Automatización de seguimiento de leads", desc: "Emails, recordatorios y tareas automáticas para no perder ninguna oportunidad.", num: "03" },
+  { icon: Workflow, title: "Integración con marketing y formularios web", desc: "Captura leads desde tu sitio web, landing pages y campañas digitales.", num: "04" },
+  { icon: LineChart, title: "Paneles de control y reportes en tiempo real", desc: "Dashboards con métricas clave para tomar decisiones basadas en datos.", num: "05" },
+  { icon: Users, title: "Capacitación del equipo comercial", desc: "Entrenamiento completo para que tu equipo adopte el CRM desde el día uno.", num: "06" },
 ];
 
 const benefits = [
@@ -165,10 +172,10 @@ const benefits = [
 ];
 
 const useCases = [
-  { icon: Briefcase, title: "CRM para equipos comerciales", desc: "Organiza vendedores, territorios y metas con visibilidad completa." },
-  { icon: Home, title: "CRM para inmobiliarias", desc: "Gestiona propiedades, prospectos e inventario desde una sola plataforma." },
-  { icon: Headphones, title: "CRM para empresas de servicios", desc: "Controla clientes, proyectos y renovaciones de contratos." },
-  { icon: Activity, title: "CRM para alto volumen de leads", desc: "Automatiza la calificación y distribución de leads a tu equipo." },
+  { icon: Briefcase, title: "CRM para equipos comerciales", desc: "Organiza vendedores, territorios y metas con visibilidad completa.", num: "01" },
+  { icon: Home, title: "CRM para inmobiliarias", desc: "Gestiona propiedades, prospectos e inventario desde una sola plataforma.", num: "02" },
+  { icon: Headphones, title: "CRM para empresas de servicios", desc: "Controla clientes, proyectos y renovaciones de contratos.", num: "03" },
+  { icon: Activity, title: "CRM para alto volumen de leads", desc: "Automatiza la calificación y distribución de leads a tu equipo.", num: "04" },
 ];
 
 const WHATSAPP_LINK =
@@ -193,16 +200,17 @@ const CrmEmpresas = () => {
 
       {/* ──────── HERO ──────── */}
       <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
+        {/* Rich background layers */}
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-primary/6 blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[300px] rounded-full bg-accent/4 blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[140px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fade()}>
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
-                CRM & Automatización de Ventas
-              </span>
+              <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
                 CRM para{" "}
                 <span className="gradient-text">Empresas</span>
@@ -236,18 +244,22 @@ const CrmEmpresas = () => {
 
       <MarqueeText />
 
-      {/* ──────── PROBLEMAS ──────── */}
+      {/* ──────── PROBLEMAS (dark section) ──────── */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(224,47%,6%)] via-[hsl(228,45%,10%)] to-[hsl(224,47%,6%)]" />
+        <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-destructive/5 blur-[160px] pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold rounded-full bg-destructive/10 text-destructive border border-destructive/20 mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-destructive/20 bg-destructive/10 text-xs text-white/60 mb-4">
+              <span className="w-2 h-2 rounded-full bg-destructive animate-status-pulse" />
               Problemas Comunes
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-white">
               Problemas que <span className="gradient-text">Resolvemos</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-white/50">
               Si tu empresa enfrenta alguno de estos retos, un CRM bien implementado puede transformar tu operación comercial.
             </p>
           </motion.div>
@@ -257,27 +269,27 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.08)}
-                className="group glass-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--glow-soft)]"
+                className="group rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.2)]"
               >
-                <div className="w-11 h-11 rounded-xl bg-destructive/10 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+                <div className="w-11 h-11 rounded-xl bg-destructive/15 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
                   <p.icon size={20} className="text-destructive group-hover:text-primary transition-colors" />
                 </div>
-                <h3 className="font-bold text-foreground mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                <h3 className="font-bold text-white mb-2">{p.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{p.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── QUÉ INCLUYE ──────── */}
+      {/* ──────── QUÉ INCLUYE (light section) ──────── */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.015] via-transparent to-primary/[0.015] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
-              Implementación Completa
-            </span>
+            <SectionBadge>Implementación Completa</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Qué incluye nuestra{" "}
               <span className="gradient-text">implementación de CRM</span>
@@ -292,30 +304,40 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.08)}
-                className="group glass-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--glow-soft)] hover:-translate-y-1"
+                className="relative group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                  <f.icon size={22} className="text-primary" />
+                <div className="glass-card rounded-2xl p-8 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 h-full">
+                  <span className="absolute top-4 right-5 text-[10px] font-bold text-primary/30 font-display">{f.num}</span>
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
+                    <f.icon size={26} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2 text-lg group-hover:text-primary transition-colors duration-300">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                 </div>
-                <h3 className="font-bold text-foreground mb-2 text-lg">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── BENEFICIOS ──────── */}
+      {/* ──────── BENEFICIOS (dark section) ──────── */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/10 via-background to-background pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(224,47%,6%)] via-[hsl(228,50%,12%)] to-[hsl(224,47%,6%)]" />
+        <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold rounded-full bg-accent/10 text-accent border border-accent/20 mb-4">
-              Beneficios
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/10 text-xs text-white/60 mb-4">
+              <span className="w-2 h-2 rounded-full bg-accent animate-status-pulse" />
+              Resultados
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-white">
               Resultados que puedes <span className="gradient-text">esperar</span>
             </h2>
+            <p className="text-white/50 max-w-lg mx-auto">
+              Un CRM bien implementado transforma la forma en que tu equipo comercial trabaja y genera resultados.
+            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -323,14 +345,16 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.08)}
-                className="flex gap-4 p-5 rounded-2xl glass-card border border-border hover:border-primary/30 transition-all duration-300"
+                className="group rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.2)]"
               >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <b.icon size={18} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                    <b.icon size={22} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-1">{b.title}</h3>
+                    <p className="text-sm text-white/50 leading-relaxed">{b.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -338,16 +362,20 @@ const CrmEmpresas = () => {
         </div>
       </section>
 
-      {/* ──────── CASOS DE USO ──────── */}
+      {/* ──────── CASOS DE USO (light section) ──────── */}
       <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.015] via-transparent to-primary/[0.015] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
-              Casos de Uso
-            </span>
+            <SectionBadge>Casos de Uso</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               CRM adaptado a <span className="gradient-text">tu industria</span>
             </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              Cada negocio es diferente. Implementamos CRM configurados para las necesidades específicas de tu industria.
+            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -355,20 +383,23 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.1)}
-                className="group glass-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-[var(--glow-soft)] hover:-translate-y-1"
+                className="relative group cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                  <u.icon size={22} className="text-primary" />
+                <div className="glass-card rounded-2xl p-8 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 h-full">
+                  <span className="absolute top-4 right-5 text-[10px] font-bold text-primary/30 font-display">{u.num}</span>
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
+                    <u.icon size={26} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2 text-lg group-hover:text-primary transition-colors duration-300">{u.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{u.desc}</p>
                 </div>
-                <h3 className="font-bold text-foreground mb-2 text-lg">{u.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{u.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── CTA FINAL ──────── */}
+      {/* ──────── CTA FINAL (dark premium) ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
