@@ -510,7 +510,7 @@ const CrmEmpresas = () => {
       </section>
 
       {/* ──────── TECNOLOGÍAS ──────── */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+      <section className="py-20 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
             <SectionBadge>Stack Tecnológico</SectionBadge>
