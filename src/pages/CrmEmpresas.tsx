@@ -362,12 +362,12 @@ const CrmEmpresas = () => {
                   {...fade(i * 0.08)}
                   className="group flex items-start gap-5 p-5 rounded-xl border border-border/60 bg-white shadow-sm hover:border-primary/25 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                    <p.icon size={18} className="text-destructive group-hover:text-primary transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-destructive/15 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
+                    <p.icon size={18} className="text-destructive/90 group-hover:text-primary transition-colors" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-foreground mb-1 text-sm">{p.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                    <h3 className="font-semibold text-foreground mb-1 text-[15px] leading-snug">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground/80 leading-relaxed">{p.desc}</p>
                   </div>
                   <ArrowUpRight size={14} className="text-muted-foreground/20 group-hover:text-primary/50 transition-colors shrink-0 mt-1" />
                 </motion.div>
