@@ -158,7 +158,7 @@ const CrmMockup = () => (
 
           {/* Lead Cards */}
           <div className="col-span-2 space-y-2">
-            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+             <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
               <p className="text-[9px] text-muted-foreground/60 font-semibold mb-2">Leads Recientes</p>
               <div className="space-y-1.5">
                 {[
