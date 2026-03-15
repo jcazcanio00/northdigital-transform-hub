@@ -94,7 +94,7 @@ const CrmMockup = () => (
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-3 space-y-2.5 bg-[hsl(220,14%,97%)]">
+      <div className="flex-1 p-3 space-y-2.5 bg-secondary">
         {/* Metrics row */}
         <div className="grid grid-cols-4 gap-2">
           {[
