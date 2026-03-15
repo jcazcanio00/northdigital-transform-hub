@@ -117,7 +117,7 @@ const CrmMockup = () => (
         {/* Two-column: Pipeline + Lead Cards */}
         <div className="grid grid-cols-5 gap-2">
           {/* Pipeline Kanban */}
-          <div className="col-span-3 rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+          <div className="col-span-3 rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
             <div className="flex items-center justify-between mb-2">
               <p className="text-[9px] text-muted-foreground/60 font-semibold">Pipeline de Ventas</p>
               <span className="text-[7px] px-1.5 py-0.5 rounded-full bg-primary/8 text-primary font-medium">$1.2M total</span>
