@@ -12,6 +12,7 @@ import Acerca from "./pages/Acerca.tsx";
 import Terminos from "./pages/Terminos.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
 import MarketingDigitalCancun from "./pages/MarketingDigitalCancun.tsx";
+import CrmEmpresas from "./pages/CrmEmpresas.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
@@ -34,7 +35,8 @@ const App = () => (
           <Route path="/acerca" element={<Acerca />} />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
-          <Route path="/marketing-digital-cancun" element={<MarketingDigitalCancun />} />
+            <Route path="/marketing-digital-cancun" element={<MarketingDigitalCancun />} />
+            <Route path="/crm-empresas" element={<CrmEmpresas />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
