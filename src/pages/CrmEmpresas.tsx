@@ -55,9 +55,9 @@ const SectionBadge = ({ children, variant = "primary" }: { children: React.React
 
 /* ─── CRM Dashboard Mockup ─── */
 const CrmMockup = () => (
-  <div className="relative rounded-2xl border border-border bg-white shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
+  <div className="relative rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
     {/* Title bar */}
-    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-[hsl(220,20%,98%)]">
+    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
           <span className="w-2 h-2 rounded-full bg-red-400/60" />
@@ -77,7 +77,7 @@ const CrmMockup = () => (
     </div>
     <div className="flex">
       {/* Sidebar */}
-      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-[hsl(220,20%,98%)]">
+      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-card">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
           { icon: Users, label: "Contactos" },
@@ -94,7 +94,7 @@ const CrmMockup = () => (
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-3 space-y-2.5 bg-[hsl(220,14%,97%)]">
+      <div className="flex-1 p-3 space-y-2.5 bg-secondary">
         {/* Metrics row */}
         <div className="grid grid-cols-4 gap-2">
           {[
@@ -103,7 +103,7 @@ const CrmMockup = () => (
             { label: "Tasa Cierre", value: "32%", change: "+5%", icon: Target, color: "text-accent" },
             { label: "Resp. Promedio", value: "2.4h", change: "-15%", icon: Clock, color: "text-amber-500" },
           ].map((m, i) => (
-            <div key={i} className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+            <div key={i} className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[8px] text-muted-foreground/50 font-medium">{m.label}</p>
                 <m.icon size={10} className="text-muted-foreground/30" />
@@ -117,7 +117,7 @@ const CrmMockup = () => (
         {/* Two-column: Pipeline + Lead Cards */}
         <div className="grid grid-cols-5 gap-2">
           {/* Pipeline Kanban */}
-          <div className="col-span-3 rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+          <div className="col-span-3 rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
             <div className="flex items-center justify-between mb-2">
               <p className="text-[9px] text-muted-foreground/60 font-semibold">Pipeline de Ventas</p>
               <span className="text-[7px] px-1.5 py-0.5 rounded-full bg-primary/8 text-primary font-medium">$1.2M total</span>
@@ -146,7 +146,7 @@ const CrmMockup = () => (
                   {/* Mini deal cards */}
                   <div className="space-y-0.5">
                     {s.deals.map((d, j) => (
-                      <div key={j} className="rounded bg-[hsl(220,14%,97%)] border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
+                      <div key={j} className="rounded bg-secondary border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
                         {d}
                       </div>
                     ))}
@@ -158,7 +158,7 @@ const CrmMockup = () => (
 
           {/* Lead Cards */}
           <div className="col-span-2 space-y-2">
-            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+             <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
               <p className="text-[9px] text-muted-foreground/60 font-semibold mb-2">Leads Recientes</p>
               <div className="space-y-1.5">
                 {[
@@ -166,7 +166,7 @@ const CrmMockup = () => (
                   { name: "Carlos Ruiz", company: "Tech Solutions", status: "Nuevo", statusColor: "bg-primary" },
                   { name: "Ana Mendoza", company: "LogiPack MX", status: "Propuesta", statusColor: "bg-amber-500" },
                 ].map((lead, i) => (
-                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-[hsl(220,14%,97%)] border border-border/20">
+                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-secondary border border-border/20">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                       <span className="text-[7px] font-bold text-primary">{lead.name[0]}</span>
                     </div>
@@ -181,7 +181,7 @@ const CrmMockup = () => (
             </div>
 
             {/* Mini chart */}
-            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+            <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
               <p className="text-[9px] text-muted-foreground/60 font-semibold mb-1.5">Conversiones</p>
               <div className="flex items-end gap-[3px] h-10">
                 {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 55, 75].map((h, i) => (
@@ -205,7 +205,7 @@ const CrmMockup = () => (
         </div>
 
         {/* Activity bar */}
-        <div className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+        <div className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
           <div className="flex items-center gap-3">
             {[
               { icon: UserCheck, text: "Lead calificado: Grupo Inmobiliario", time: "5 min" },
@@ -336,7 +336,7 @@ const CrmEmpresas = () => {
       {/* spacer — marquee removed */}
 
       {/* ──────── PROBLEMAS — Two-column problem list (light grey) ──────── */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+      <section className="py-24 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -360,7 +360,7 @@ const CrmEmpresas = () => {
                 <motion.div
                   key={i}
                   {...fade(i * 0.08)}
-                  className="group flex items-start gap-5 p-5 rounded-xl border border-border/60 bg-white shadow-sm hover:border-primary/25 hover:shadow-md transition-all duration-300"
+                  className="group flex items-start gap-5 p-5 rounded-xl border border-border/60 bg-background shadow-sm hover:border-primary/25 hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-lg bg-destructive/15 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
                     <p.icon size={18} className="text-destructive/90 group-hover:text-primary transition-colors" />
@@ -510,7 +510,7 @@ const CrmEmpresas = () => {
       </section>
 
       {/* ──────── TECNOLOGÍAS ──────── */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+      <section className="py-20 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
             <SectionBadge>Stack Tecnológico</SectionBadge>
@@ -540,7 +540,7 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.04)}
-                className="group flex flex-col items-center gap-2.5 p-4 rounded-xl bg-white border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300"
+                className="group flex flex-col items-center gap-2.5 p-4 rounded-xl bg-background border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <img
                   src={tech.icon}
