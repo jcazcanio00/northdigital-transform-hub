@@ -4,42 +4,48 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
-const FloatingParticles = () => (
-  <>
-    {[...Array(6)].map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute rounded-full bg-primary/10 pointer-events-none"
-        style={{
-          width: 4 + Math.random() * 8,
-          height: 4 + Math.random() * 8,
-          left: `${10 + Math.random() * 80}%`,
-          top: `${10 + Math.random() * 80}%`,
-        }}
-        animate={{
-          y: [0, -20 - Math.random() * 30, 0],
-          x: [0, (Math.random() - 0.5) * 20, 0],
-          opacity: [0.2, 0.6, 0.2],
-        }}
-        transition={{
-          duration: 4 + Math.random() * 4,
-          repeat: Infinity,
-          delay: i * 0.8,
-          ease: "easeInOut",
-        }}
-      />
-    ))}
-  </>
-);
+const FloatingParticles = () => {
+  // Pre-compute random values to avoid recalculation on re-renders
+  const particles = [
+    { w: 6, l: "15%", t: "20%", dy: -25, dx: 5 },
+    { w: 8, l: "45%", t: "30%", dy: -35, dx: -8 },
+    { w: 5, l: "70%", t: "15%", dy: -20, dx: 3 },
+    { w: 10, l: "30%", t: "60%", dy: -30, dx: -5 },
+    { w: 7, l: "80%", t: "50%", dy: -28, dx: 7 },
+    { w: 4, l: "55%", t: "75%", dy: -22, dx: -4 },
+  ];
+  return (
+    <>
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-primary/10 pointer-events-none"
+          style={{ width: p.w, height: p.w, left: p.l, top: p.t }}
+          animate={{
+            y: [0, p.dy, 0],
+            x: [0, p.dx, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 5 + i,
+            repeat: Infinity,
+            delay: i * 0.8,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </>
+  );
+};
 
 const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
     {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
     {/* Radial blue glow behind dashboard */}
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
-    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none" />
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none will-change-transform" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none will-change-transform" />
+    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none will-change-transform" />
     {/* Subtle gradient motion orbs */}
     <motion.div
       className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"

@@ -1,23 +1,32 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
-import Software from "./pages/Software.tsx";
-import Cloud from "./pages/Cloud.tsx";
-import Marketing from "./pages/Marketing.tsx";
-import Contacto from "./pages/Contacto.tsx";
-import Acerca from "./pages/Acerca.tsx";
-import Terminos from "./pages/Terminos.tsx";
-import Privacidad from "./pages/Privacidad.tsx";
-import MarketingDigitalCancun from "./pages/MarketingDigitalCancun.tsx";
-import CrmEmpresas from "./pages/CrmEmpresas.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
 
+// Lazy load non-homepage routes to reduce initial bundle
+const Software = lazy(() => import("./pages/Software.tsx"));
+const Cloud = lazy(() => import("./pages/Cloud.tsx"));
+const Marketing = lazy(() => import("./pages/Marketing.tsx"));
+const Contacto = lazy(() => import("./pages/Contacto.tsx"));
+const Acerca = lazy(() => import("./pages/Acerca.tsx"));
+const Terminos = lazy(() => import("./pages/Terminos.tsx"));
+const Privacidad = lazy(() => import("./pages/Privacidad.tsx"));
+const MarketingDigitalCancun = lazy(() => import("./pages/MarketingDigitalCancun.tsx"));
+const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
+
 const queryClient = new QueryClient();
+
+const PageFallback = () => (
+  <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -26,20 +35,22 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/software" element={<Software />} />
-          <Route path="/cloud" element={<Cloud />} />
-          <Route path="/marketing" element={<Marketing />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/acerca" element={<Acerca />} />
-          <Route path="/terminos" element={<Terminos />} />
-          <Route path="/privacidad" element={<Privacidad />} />
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/software" element={<Software />} />
+            <Route path="/cloud" element={<Cloud />} />
+            <Route path="/marketing" element={<Marketing />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/acerca" element={<Acerca />} />
+            <Route path="/terminos" element={<Terminos />} />
+            <Route path="/privacidad" element={<Privacidad />} />
             <Route path="/marketing-digital-cancun" element={<MarketingDigitalCancun />} />
             <Route path="/crm-empresas" element={<CrmEmpresas />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
         <WhatsAppFloatingButton />
       </BrowserRouter>
     </TooltipProvider>
