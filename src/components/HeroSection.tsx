@@ -4,33 +4,39 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
-const FloatingParticles = () => (
-  <>
-    {[...Array(6)].map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute rounded-full bg-primary/10 pointer-events-none"
-        style={{
-          width: 4 + Math.random() * 8,
-          height: 4 + Math.random() * 8,
-          left: `${10 + Math.random() * 80}%`,
-          top: `${10 + Math.random() * 80}%`,
-        }}
-        animate={{
-          y: [0, -20 - Math.random() * 30, 0],
-          x: [0, (Math.random() - 0.5) * 20, 0],
-          opacity: [0.2, 0.6, 0.2],
-        }}
-        transition={{
-          duration: 4 + Math.random() * 4,
-          repeat: Infinity,
-          delay: i * 0.8,
-          ease: "easeInOut",
-        }}
-      />
-    ))}
-  </>
-);
+const FloatingParticles = () => {
+  // Pre-compute random values to avoid recalculation on re-renders
+  const particles = [
+    { w: 6, l: "15%", t: "20%", dy: -25, dx: 5 },
+    { w: 8, l: "45%", t: "30%", dy: -35, dx: -8 },
+    { w: 5, l: "70%", t: "15%", dy: -20, dx: 3 },
+    { w: 10, l: "30%", t: "60%", dy: -30, dx: -5 },
+    { w: 7, l: "80%", t: "50%", dy: -28, dx: 7 },
+    { w: 4, l: "55%", t: "75%", dy: -22, dx: -4 },
+  ];
+  return (
+    <>
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-primary/10 pointer-events-none"
+          style={{ width: p.w, height: p.w, left: p.l, top: p.t }}
+          animate={{
+            y: [0, p.dy, 0],
+            x: [0, p.dx, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 5 + i,
+            repeat: Infinity,
+            delay: i * 0.8,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </>
+  );
+};
 
 const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
