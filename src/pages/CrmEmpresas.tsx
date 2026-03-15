@@ -146,7 +146,7 @@ const CrmMockup = () => (
                   {/* Mini deal cards */}
                   <div className="space-y-0.5">
                     {s.deals.map((d, j) => (
-                      <div key={j} className="rounded bg-[hsl(220,14%,97%)] border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
+                      <div key={j} className="rounded bg-secondary border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
                         {d}
                       </div>
                     ))}
