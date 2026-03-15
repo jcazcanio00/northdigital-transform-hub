@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  Users, Zap, BarChart3, ArrowRight, CheckCircle2,
-  Database, Workflow, Monitor, Shield, TrendingUp,
-  Layers, Settings, LineChart, Building2,
-  Activity, Bell, Clock, MessageSquare, Calendar,
-  Target, AlertTriangle, FileSpreadsheet, Search,
-  PieChart, UserCheck, Briefcase, Home, Headphones
+  Users, Zap, BarChart3, ArrowRight,
+  Database, Workflow, Monitor, Settings, LineChart,
+  Activity, Bell, MessageSquare, Calendar,
+  Target, AlertTriangle, FileSpreadsheet,
+  PieChart, UserCheck, Briefcase, Home, Headphones, Layers,
+  TrendingUp, CheckCircle2, ArrowUpRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -34,13 +34,24 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
-/* ─── Badge Component (matches homepage style) ─── */
-const SectionBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-    <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-    {children}
-  </span>
-);
+const SectionBadge = ({ children, variant = "primary" }: { children: React.ReactNode; variant?: "primary" | "destructive" | "accent" }) => {
+  const colors = {
+    primary: "border-primary/20 bg-primary/5 text-muted-foreground",
+    destructive: "border-destructive/20 bg-destructive/10 text-white/60",
+    accent: "border-accent/20 bg-accent/10 text-white/60",
+  };
+  const dotColors = {
+    primary: "bg-primary",
+    destructive: "bg-destructive",
+    accent: "bg-accent",
+  };
+  return (
+    <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs mb-4 ${colors[variant]}`}>
+      <span className={`w-2 h-2 rounded-full animate-status-pulse ${dotColors[variant]}`} />
+      {children}
+    </span>
+  );
+};
 
 /* ─── CRM Dashboard Mockup ─── */
 const CrmMockup = () => (
@@ -54,7 +65,6 @@ const CrmMockup = () => (
       <span className="text-[10px] text-muted-foreground ml-2 font-mono">crm.northmkt.com</span>
     </div>
     <div className="flex">
-      {/* Sidebar */}
       <div className="w-48 border-r border-border/20 p-3 space-y-1 hidden md:block">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
@@ -64,21 +74,12 @@ const CrmMockup = () => (
           { icon: BarChart3, label: "Reportes" },
           { icon: Settings, label: "Config" },
         ].map((item, i) => (
-          <div
-            key={i}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs ${
-              item.active
-                ? "bg-primary/15 text-primary"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
+          <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs ${item.active ? "bg-primary/15 text-primary" : "text-muted-foreground hover:text-foreground"}`}>
             <item.icon size={14} />
             {item.label}
           </div>
         ))}
       </div>
-
-      {/* Main Content */}
       <div className="flex-1 p-4 space-y-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
@@ -94,8 +95,6 @@ const CrmMockup = () => (
             </div>
           ))}
         </div>
-
-        {/* Pipeline */}
         <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
           <p className="text-[10px] text-muted-foreground mb-3">Pipeline de Ventas</p>
           <div className="flex gap-2">
@@ -122,8 +121,6 @@ const CrmMockup = () => (
             ))}
           </div>
         </div>
-
-        {/* Recent activity */}
         <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
           <p className="text-[10px] text-muted-foreground mb-2">Actividad Reciente</p>
           <div className="space-y-2">
@@ -154,34 +151,31 @@ const problems = [
   { icon: Workflow, title: "Procesos manuales", desc: "Seguimientos, recordatorios y tareas que dependen de la memoria del equipo." },
 ];
 
-const features = [
-  { icon: Database, title: "CRM personalizado para tu empresa", desc: "Configurado según tu modelo de negocio, industria y proceso comercial.", num: "01" },
-  { icon: Layers, title: "Configuración de pipeline de ventas", desc: "Etapas definidas que reflejan tu ciclo de ventas real.", num: "02" },
-  { icon: Zap, title: "Automatización de seguimiento de leads", desc: "Emails, recordatorios y tareas automáticas para no perder ninguna oportunidad.", num: "03" },
-  { icon: Workflow, title: "Integración con marketing y formularios web", desc: "Captura leads desde tu sitio web, landing pages y campañas digitales.", num: "04" },
-  { icon: LineChart, title: "Paneles de control y reportes en tiempo real", desc: "Dashboards con métricas clave para tomar decisiones basadas en datos.", num: "05" },
-  { icon: Users, title: "Capacitación del equipo comercial", desc: "Entrenamiento completo para que tu equipo adopte el CRM desde el día uno.", num: "06" },
+const modules = [
+  { icon: Database, title: "CRM Core", desc: "Configurado según tu modelo de negocio, industria y proceso comercial.", items: ["Gestión de contactos", "Historial de interacciones", "Campos personalizados"] },
+  { icon: Layers, title: "Pipeline Engine", desc: "Etapas definidas que reflejan tu ciclo de ventas real.", items: ["Etapas configurables", "Probabilidad de cierre", "Forecasting automático"] },
+  { icon: Zap, title: "Automatización", desc: "Emails, recordatorios y tareas automáticas para no perder ninguna oportunidad.", items: ["Secuencias de email", "Tareas automáticas", "Alertas inteligentes"] },
+  { icon: Workflow, title: "Integraciones", desc: "Captura leads desde tu sitio web, landing pages y campañas digitales.", items: ["Formularios web", "WhatsApp Business", "Google Ads & Meta"] },
+  { icon: LineChart, title: "Analytics & Reportes", desc: "Dashboards con métricas clave para tomar decisiones basadas en datos.", items: ["Reportes en tiempo real", "KPIs de ventas", "Exportación de datos"] },
+  { icon: Users, title: "Capacitación", desc: "Entrenamiento completo para que tu equipo adopte el CRM desde el día uno.", items: ["Onboarding guiado", "Documentación interna", "Soporte post-lanzamiento"] },
 ];
 
-const benefits = [
-  { icon: Target, title: "Mejor control de oportunidades", desc: "Visualiza cada oportunidad en tu pipeline y nunca pierdas un seguimiento." },
-  { icon: Zap, title: "Seguimiento automático de clientes", desc: "Automatiza correos, recordatorios y tareas para cada etapa del proceso." },
-  { icon: PieChart, title: "Visibilidad total del pipeline", desc: "Ve en tiempo real cuántas oportunidades tienes y en qué etapa están." },
-  { icon: TrendingUp, title: "Equipos comerciales más eficientes", desc: "Tus vendedores se enfocan en vender, no en tareas administrativas." },
-  { icon: BarChart3, title: "Decisiones basadas en datos", desc: "Reportes claros que te permiten ajustar estrategias con información real." },
+const impacts = [
+  { value: "3x", label: "más oportunidades gestionadas", desc: "Centraliza y controla cada lead desde el primer contacto hasta el cierre." },
+  { value: "60%", label: "menos tiempo en tareas manuales", desc: "Automatiza seguimientos, recordatorios y asignación de leads." },
+  { value: "100%", label: "visibilidad del pipeline", desc: "Dashboard en tiempo real con el estado de cada oportunidad." },
+  { value: "2.5x", label: "mejor tasa de conversión", desc: "Seguimiento oportuno y procesos estandarizados que cierran más ventas." },
 ];
 
-const useCases = [
-  { icon: Briefcase, title: "CRM para equipos comerciales", desc: "Organiza vendedores, territorios y metas con visibilidad completa.", num: "01" },
-  { icon: Home, title: "CRM para inmobiliarias", desc: "Gestiona propiedades, prospectos e inventario desde una sola plataforma.", num: "02" },
-  { icon: Headphones, title: "CRM para empresas de servicios", desc: "Controla clientes, proyectos y renovaciones de contratos.", num: "03" },
-  { icon: Activity, title: "CRM para alto volumen de leads", desc: "Automatiza la calificación y distribución de leads a tu equipo.", num: "04" },
+const industries = [
+  { icon: Briefcase, title: "Equipos Comerciales", desc: "Organiza vendedores, territorios y metas con visibilidad completa.", color: "from-primary/20 to-primary/5" },
+  { icon: Home, title: "Inmobiliarias", desc: "Gestiona propiedades, prospectos e inventario desde una sola plataforma.", color: "from-accent/20 to-accent/5" },
+  { icon: Headphones, title: "Empresas de Servicios", desc: "Controla clientes, proyectos y renovaciones de contratos.", color: "from-primary/15 to-accent/10" },
+  { icon: Activity, title: "Alto Volumen de Leads", desc: "Automatiza la calificación y distribución de leads a tu equipo.", color: "from-accent/15 to-primary/10" },
 ];
 
-const WHATSAPP_LINK =
-  "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20una%20implementaci%C3%B3n%20de%20CRM%20para%20mi%20empresa";
-const CALENDAR_LINK =
-  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF";
+const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20una%20implementaci%C3%B3n%20de%20CRM%20para%20mi%20empresa";
+const CALENDAR_LINK = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF";
 
 /* ═══════════════════════════════════════════════════════════ */
 
@@ -200,7 +194,6 @@ const CrmEmpresas = () => {
 
       {/* ──────── HERO ──────── */}
       <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
-        {/* Rich background layers */}
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
@@ -234,7 +227,6 @@ const CrmEmpresas = () => {
                 </Button>
               </div>
             </motion.div>
-
             <motion.div {...fade(0.2)}>
               <CrmMockup />
             </motion.div>
@@ -244,154 +236,177 @@ const CrmEmpresas = () => {
 
       <MarqueeText />
 
-      {/* ──────── PROBLEMAS (dark section) ──────── */}
+      {/* ──────── PROBLEMAS — Two-column problem list ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(224,47%,6%)] via-[hsl(228,45%,10%)] to-[hsl(224,47%,6%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-destructive/5 blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-destructive/20 bg-destructive/10 text-xs text-white/60 mb-4">
-              <span className="w-2 h-2 rounded-full bg-destructive animate-status-pulse" />
-              Problemas Comunes
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-white">
-              Problemas que <span className="gradient-text">Resolvemos</span>
-            </h2>
-            <p className="text-white/50">
-              Si tu empresa enfrenta alguno de estos retos, un CRM bien implementado puede transformar tu operación comercial.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left — Title */}
+            <motion.div {...fade()} className="lg:sticky lg:top-32">
+              <SectionBadge variant="destructive">Problemas Comunes</SectionBadge>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-white leading-tight">
+                Problemas que <span className="gradient-text">Resolvemos</span>
+              </h2>
+              <p className="text-white/50 leading-relaxed max-w-md mb-6">
+                Si tu empresa enfrenta alguno de estos retos, un CRM bien implementado puede transformar tu operación comercial.
+              </p>
+              <div className="hidden lg:flex items-center gap-3 mt-4">
+                <div className="w-12 h-px bg-gradient-to-r from-primary/50 to-transparent" />
+                <span className="text-xs text-white/30 uppercase tracking-widest">Diagnóstico</span>
+              </div>
+            </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {problems.map((p, i) => (
-              <motion.div
-                key={i}
-                {...fade(i * 0.08)}
-                className="group rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.2)]"
-              >
-                <div className="w-11 h-11 rounded-xl bg-destructive/15 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                  <p.icon size={20} className="text-destructive group-hover:text-primary transition-colors" />
-                </div>
-                <h3 className="font-bold text-white mb-2">{p.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{p.desc}</p>
-              </motion.div>
-            ))}
+            {/* Right — Problem list */}
+            <div className="space-y-4">
+              {problems.map((p, i) => (
+                <motion.div
+                  key={i}
+                  {...fade(i * 0.08)}
+                  className="group flex items-start gap-5 p-5 rounded-xl border border-white/8 bg-white/[0.03] backdrop-blur-sm hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-destructive/15 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <p.icon size={18} className="text-destructive group-hover:text-primary transition-colors" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-white mb-1 text-sm">{p.title}</h3>
+                    <p className="text-sm text-white/40 leading-relaxed">{p.desc}</p>
+                  </div>
+                  <ArrowUpRight size={14} className="text-white/15 group-hover:text-primary/50 transition-colors shrink-0 mt-1" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ──────── QUÉ INCLUYE (light section) ──────── */}
+      {/* ──────── QUÉ INCLUYE — Module architecture ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.015] via-transparent to-primary/[0.015] pointer-events-none" />
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <SectionBadge>Implementación Completa</SectionBadge>
+            <SectionBadge>Arquitectura del Sistema</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Qué incluye nuestra{" "}
               <span className="gradient-text">implementación de CRM</span>
             </h2>
             <p className="text-muted-foreground">
-              Cada implementación es integral: desde la configuración técnica hasta la capacitación de tu equipo.
+              Cada implementación es integral: módulos conectados que trabajan como un sistema unificado.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f, i) => (
+          {/* Module grid — 2 cols with connected feel */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border/50 rounded-2xl overflow-hidden border border-border">
+            {modules.map((m, i) => (
               <motion.div
                 key={i}
-                {...fade(i * 0.08)}
-                className="relative group cursor-default"
+                {...fade(i * 0.06)}
+                className="group bg-background p-7 hover:bg-primary/[0.02] transition-colors duration-300 relative"
               >
-                <div className="glass-card rounded-2xl p-8 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 h-full">
-                  <span className="absolute top-4 right-5 text-[10px] font-bold text-primary/30 font-display">{f.num}</span>
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
-                    <f.icon size={26} className="text-primary" />
+                {/* Module header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                    <m.icon size={20} className="text-primary" />
                   </div>
-                  <h3 className="font-bold text-foreground mb-2 text-lg group-hover:text-primary transition-colors duration-300">{f.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  <div>
+                    <h3 className="font-bold text-foreground text-sm group-hover:text-primary transition-colors">{m.title}</h3>
+                  </div>
                 </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">{m.desc}</p>
+                {/* Sub-items */}
+                <div className="space-y-1.5">
+                  {m.items.map((item, j) => (
+                    <div key={j} className="flex items-center gap-2 text-xs text-muted-foreground/70">
+                      <CheckCircle2 size={12} className="text-primary/40 shrink-0" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                {/* Connector line hint */}
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── BENEFICIOS (dark section) ──────── */}
+      {/* ──────── RESULTADOS — Impact metrics ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(224,47%,6%)] via-[hsl(228,50%,12%)] to-[hsl(224,47%,6%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/10 text-xs text-white/60 mb-4">
-              <span className="w-2 h-2 rounded-full bg-accent animate-status-pulse" />
-              Resultados
-            </span>
+          <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-20">
+            <SectionBadge variant="accent">Impacto Real</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-white">
               Resultados que puedes <span className="gradient-text">esperar</span>
             </h2>
-            <p className="text-white/50 max-w-lg mx-auto">
-              Un CRM bien implementado transforma la forma en que tu equipo comercial trabaja y genera resultados.
-            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {benefits.map((b, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {impacts.map((item, i) => (
               <motion.div
                 key={i}
-                {...fade(i * 0.08)}
-                className="group rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.2)]"
+                {...fade(i * 0.1)}
+                className="text-center group"
               >
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                    <b.icon size={22} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">{b.title}</h3>
-                    <p className="text-sm text-white/50 leading-relaxed">{b.desc}</p>
-                  </div>
+                <div className="relative mb-5">
+                  <motion.span
+                    className="block text-5xl sm:text-6xl font-extrabold font-display gradient-text"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.12, type: "spring" }}
+                  >
+                    {item.value}
+                  </motion.span>
+                  <div className="absolute -inset-4 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </div>
+                <p className="text-sm font-semibold text-white mb-2">{item.label}</p>
+                <p className="text-xs text-white/40 leading-relaxed max-w-[200px] mx-auto">{item.desc}</p>
+                <div className="w-8 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mx-auto mt-4" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── CASOS DE USO (light section) ──────── */}
+      {/* ──────── INDUSTRIAS — Visual industry grid ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.015] via-transparent to-primary/[0.015] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[300px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
-            <SectionBadge>Casos de Uso</SectionBadge>
+            <SectionBadge>Industrias</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               CRM adaptado a <span className="gradient-text">tu industria</span>
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Cada negocio es diferente. Implementamos CRM configurados para las necesidades específicas de tu industria.
+              Cada negocio es diferente. Implementamos CRM configurados para las necesidades específicas de tu sector.
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {useCases.map((u, i) => (
+            {industries.map((ind, i) => (
               <motion.div
                 key={i}
                 {...fade(i * 0.1)}
-                className="relative group cursor-default"
+                className="group relative rounded-2xl border border-border overflow-hidden hover:border-primary/25 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_-15px_hsl(var(--primary)/0.2)]"
               >
-                <div className="glass-card rounded-2xl p-8 relative transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25 h-full">
-                  <span className="absolute top-4 right-5 text-[10px] font-bold text-primary/30 font-display">{u.num}</span>
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.35)] transition-all duration-500">
-                    <u.icon size={26} className="text-primary" />
+                {/* Gradient background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${ind.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className="relative p-8 flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 group-hover:shadow-[0_0_40px_-8px_hsl(var(--primary)/0.35)] transition-all duration-500">
+                    <ind.icon size={36} className="text-primary" />
                   </div>
-                  <h3 className="font-bold text-foreground mb-2 text-lg group-hover:text-primary transition-colors duration-300">{u.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{u.desc}</p>
+                  <h3 className="font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors duration-300">{ind.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{ind.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -399,7 +414,7 @@ const CrmEmpresas = () => {
         </div>
       </section>
 
-      {/* ──────── CTA FINAL (dark premium) ──────── */}
+      {/* ──────── CTA FINAL ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
