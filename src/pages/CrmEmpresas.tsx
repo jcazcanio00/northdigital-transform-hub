@@ -57,7 +57,7 @@ const SectionBadge = ({ children, variant = "primary" }: { children: React.React
 const CrmMockup = () => (
   <div className="relative rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
     {/* Title bar */}
-    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-[hsl(220,20%,98%)]">
+    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
           <span className="w-2 h-2 rounded-full bg-red-400/60" />
