@@ -43,9 +43,9 @@ const HeroSection = () => (
     {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
     {/* Radial blue glow behind dashboard */}
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
-    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none" />
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none will-change-transform" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none will-change-transform" />
+    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none will-change-transform" />
     {/* Subtle gradient motion orbs */}
     <motion.div
       className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"
