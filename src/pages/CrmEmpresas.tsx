@@ -205,7 +205,7 @@ const CrmMockup = () => (
         </div>
 
         {/* Activity bar */}
-        <div className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+        <div className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
           <div className="flex items-center gap-3">
             {[
               { icon: UserCheck, text: "Lead calificado: Grupo Inmobiliario", time: "5 min" },
