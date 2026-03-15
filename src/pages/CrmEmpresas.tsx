@@ -333,7 +333,7 @@ const CrmEmpresas = () => {
         </div>
       </section>
 
-      <MarqueeText />
+      {/* spacer — marquee removed */}
 
       {/* ──────── PROBLEMAS — Two-column problem list (light grey) ──────── */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
