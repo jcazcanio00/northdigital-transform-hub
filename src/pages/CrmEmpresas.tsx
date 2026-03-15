@@ -6,7 +6,7 @@ import {
   Activity, Bell, MessageSquare, Calendar,
   Target, AlertTriangle, FileSpreadsheet,
   PieChart, UserCheck, Briefcase, Home, Headphones, Layers,
-  TrendingUp, CheckCircle2, ArrowUpRight
+  TrendingUp, CheckCircle2, ArrowUpRight, Clock
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
