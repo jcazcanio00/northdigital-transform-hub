@@ -166,7 +166,7 @@ const CrmMockup = () => (
                   { name: "Carlos Ruiz", company: "Tech Solutions", status: "Nuevo", statusColor: "bg-primary" },
                   { name: "Ana Mendoza", company: "LogiPack MX", status: "Propuesta", statusColor: "bg-amber-500" },
                 ].map((lead, i) => (
-                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-[hsl(220,14%,97%)] border border-border/20">
+                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-secondary border border-border/20">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                       <span className="text-[7px] font-bold text-primary">{lead.name[0]}</span>
                     </div>
