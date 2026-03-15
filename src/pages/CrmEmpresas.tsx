@@ -103,7 +103,7 @@ const CrmMockup = () => (
             { label: "Tasa Cierre", value: "32%", change: "+5%", icon: Target, color: "text-accent" },
             { label: "Resp. Promedio", value: "2.4h", change: "-15%", icon: Clock, color: "text-amber-500" },
           ].map((m, i) => (
-            <div key={i} className="rounded-lg bg-white border border-border/40 p-2 shadow-sm">
+            <div key={i} className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[8px] text-muted-foreground/50 font-medium">{m.label}</p>
                 <m.icon size={10} className="text-muted-foreground/30" />
