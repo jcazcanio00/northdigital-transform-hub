@@ -540,7 +540,7 @@ const CrmEmpresas = () => {
               <motion.div
                 key={i}
                 {...fade(i * 0.04)}
-                className="group flex flex-col items-center gap-2.5 p-4 rounded-xl bg-white border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300"
+                className="group flex flex-col items-center gap-2.5 p-4 rounded-xl bg-background border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <img
                   src={tech.icon}
