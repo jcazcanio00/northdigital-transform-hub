@@ -77,7 +77,7 @@ const CrmMockup = () => (
     </div>
     <div className="flex">
       {/* Sidebar */}
-      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-[hsl(220,20%,98%)]">
+      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-card">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
           { icon: Users, label: "Contactos" },
