@@ -509,6 +509,52 @@ const CrmEmpresas = () => {
         </div>
       </section>
 
+      {/* ──────── TECNOLOGÍAS ──────── */}
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
+            <SectionBadge>Stack Tecnológico</SectionBadge>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
+              Tecnologías que <span className="gradient-text">utilizamos</span>
+            </h2>
+            <p className="text-muted-foreground">
+              Implementamos CRM utilizando tecnologías modernas, seguras y escalables.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+            {[
+              { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+              { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+              { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+              { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+              { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+              { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+              { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+              { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+              { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+              { name: "REST API", icon: "https://cdn.simpleicons.org/fastapi/228BE6" },
+              { name: "Webhooks", icon: "https://cdn.simpleicons.org/webhook/228BE6" },
+              { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+            ].map((tech, i) => (
+              <motion.div
+                key={i}
+                {...fade(i * 0.04)}
+                className="group flex flex-col items-center gap-2.5 p-4 rounded-xl bg-white border border-border/50 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0"
+                  loading="lazy"
+                />
+                <span className="text-[10px] font-medium text-muted-foreground/60 group-hover:text-foreground/80 transition-colors">{tech.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ──────── CTA FINAL ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
