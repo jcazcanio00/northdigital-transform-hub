@@ -295,9 +295,24 @@ const CrmEmpresas = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-8 max-w-lg">
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6 max-w-lg">
                 Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
               </p>
+              {/* Benefit highlights */}
+              <div className="flex flex-col gap-2.5 mb-8">
+                {[
+                  { icon: Zap, text: "Seguimiento automático de leads" },
+                  { icon: Target, text: "Control total del pipeline de ventas" },
+                  { icon: BarChart3, text: "Reportes en tiempo real" },
+                ].map((b, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <b.icon size={14} className="text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground/80">{b.text}</span>
+                  </div>
+                ))}
+              </div>
               <div className="flex flex-wrap gap-3">
                 <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
