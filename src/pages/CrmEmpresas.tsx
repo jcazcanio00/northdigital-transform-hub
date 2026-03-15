@@ -336,7 +336,7 @@ const CrmEmpresas = () => {
       {/* spacer — marquee removed */}
 
       {/* ──────── PROBLEMAS — Two-column problem list (light grey) ──────── */}
-      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+      <section className="py-24 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
