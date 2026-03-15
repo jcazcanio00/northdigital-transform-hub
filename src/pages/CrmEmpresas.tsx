@@ -181,7 +181,7 @@ const CrmMockup = () => (
             </div>
 
             {/* Mini chart */}
-            <div className="rounded-lg bg-white border border-border/40 p-2.5 shadow-sm">
+            <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
               <p className="text-[9px] text-muted-foreground/60 font-semibold mb-1.5">Conversiones</p>
               <div className="flex items-end gap-[3px] h-10">
                 {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 55, 75].map((h, i) => (
