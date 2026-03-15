@@ -247,45 +247,41 @@ const CrmEmpresas = () => {
 
       <MarqueeText />
 
-      {/* ──────── PROBLEMAS — Two-column problem list ──────── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(224,47%,6%)] via-[hsl(228,45%,10%)] to-[hsl(224,47%,6%)]" />
-        <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-destructive/5 blur-[160px] pointer-events-none" />
+      {/* ──────── PROBLEMAS — Two-column problem list (light grey) ──────── */}
+      <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[160px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left — Title */}
             <motion.div {...fade()} className="lg:sticky lg:top-32">
-              <SectionBadge variant="destructive">Problemas Comunes</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-white leading-tight">
+              <SectionBadge>Problemas Comunes</SectionBadge>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-foreground leading-tight">
                 Problemas que <span className="gradient-text">Resolvemos</span>
               </h2>
-              <p className="text-white/50 leading-relaxed max-w-md mb-6">
+              <p className="text-muted-foreground leading-relaxed max-w-md mb-6">
                 Si tu empresa enfrenta alguno de estos retos, un CRM bien implementado puede transformar tu operación comercial.
               </p>
               <div className="hidden lg:flex items-center gap-3 mt-4">
-                <div className="w-12 h-px bg-gradient-to-r from-primary/50 to-transparent" />
-                <span className="text-xs text-white/30 uppercase tracking-widest">Diagnóstico</span>
+                <div className="w-12 h-px bg-gradient-to-r from-primary/40 to-transparent" />
+                <span className="text-xs text-muted-foreground/50 uppercase tracking-widest">Diagnóstico</span>
               </div>
             </motion.div>
 
-            {/* Right — Problem list */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               {problems.map((p, i) => (
                 <motion.div
                   key={i}
                   {...fade(i * 0.08)}
-                  className="group flex items-start gap-5 p-5 rounded-xl border border-white/8 bg-white/[0.03] backdrop-blur-sm hover:border-primary/25 hover:bg-white/[0.06] transition-all duration-300"
+                  className="group flex items-start gap-5 p-5 rounded-xl border border-border/60 bg-white shadow-sm hover:border-primary/25 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-destructive/15 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
                     <p.icon size={18} className="text-destructive group-hover:text-primary transition-colors" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-white mb-1 text-sm">{p.title}</h3>
-                    <p className="text-sm text-white/40 leading-relaxed">{p.desc}</p>
+                    <h3 className="font-bold text-foreground mb-1 text-sm">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                   </div>
-                  <ArrowUpRight size={14} className="text-white/15 group-hover:text-primary/50 transition-colors shrink-0 mt-1" />
+                  <ArrowUpRight size={14} className="text-muted-foreground/20 group-hover:text-primary/50 transition-colors shrink-0 mt-1" />
                 </motion.div>
               ))}
             </div>
