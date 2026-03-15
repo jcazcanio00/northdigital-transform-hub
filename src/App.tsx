@@ -19,6 +19,7 @@ const Terminos = lazy(() => import("./pages/Terminos.tsx"));
 const Privacidad = lazy(() => import("./pages/Privacidad.tsx"));
 const MarketingDigitalCancun = lazy(() => import("./pages/MarketingDigitalCancun.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
+const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 
 const queryClient = new QueryClient();
 
