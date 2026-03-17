@@ -149,6 +149,7 @@ const jsonLd = {
 /* ─── Components ─── */
 
 const FeaturedCard = ({ article, large = false }: { article: typeof articles[0]; large?: boolean }) => (
+  <Link to={`/blog/${article.id}`} className="block">
   <motion.div
     {...fade(0.1)}
     className={`group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-2 ${large ? "md:col-span-2 md:grid md:grid-cols-2" : ""}`}
