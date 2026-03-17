@@ -242,7 +242,7 @@ export const articles: Article[] = [
     slug: "publicidad-en-facebook-cancun",
     url: "/publicidad-en-facebook-cancun",
     title: "Publicidad en Facebook para empresas en Cancún: guía práctica",
-    seoTitle: "Publicidad en Facebook para empresas en Cancún | North Digital",
+    seoTitle: "Publicidad en Facebook para empresas en Cancún | North",
     excerpt: "Aprende a crear campañas de publicidad en Facebook e Instagram efectivas para tu negocio en Cancún. Segmentación, presupuestos, formatos y estrategias que funcionan.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
