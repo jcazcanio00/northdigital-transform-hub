@@ -24,7 +24,6 @@ const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
-const TopAgenciasMarketingCancun = lazy(() => import("./pages/TopAgenciasMarketingCancun.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -55,10 +54,18 @@ const App = () => (
             <Route path="/marketing-digital-playa-del-carmen" element={<MarketingDigitalPlayaDelCarmen />} />
             <Route path="/marketing-digital-tulum" element={<MarketingDigitalTulum />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogArticle />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="/crm-empresas" element={<CrmEmpresas />} />
             <Route path="/automatizacion-empresarial" element={<AutomatizacionEmpresarial />} />
-            <Route path="/top-7-de-agencias-de-marketing-digital-en-cancun" element={<TopAgenciasMarketingCancun />} />
+            {/* ─── Blog articles with root-level SEO URLs ─── */}
+            <Route path="/top-7-de-agencias-de-marketing-digital-en-cancun" element={<BlogArticle slug="top-7-de-agencias-de-marketing-digital-en-cancun" />} />
+            <Route path="/que-es-marketing-digital" element={<BlogArticle slug="que-es-marketing-digital" />} />
+            <Route path="/seo-en-cancun" element={<BlogArticle slug="seo-en-cancun" />} />
+            <Route path="/publicidad-en-facebook-cancun" element={<BlogArticle slug="publicidad-en-facebook-cancun" />} />
+            <Route path="/estrategias-de-marketing-digital-para-empresas" element={<BlogArticle slug="estrategias-de-marketing-digital-para-empresas" />} />
+            <Route path="/crm-para-empresas-en-cancun" element={<BlogArticle slug="crm-para-empresas-en-cancun" />} />
+            <Route path="/automatizacion-de-ventas-para-empresas" element={<BlogArticle slug="automatizacion-de-ventas-para-empresas" />} />
+            <Route path="/como-generar-leads-para-mi-empresa-en-cancun" element={<BlogArticle slug="como-generar-leads-para-mi-empresa-en-cancun" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
