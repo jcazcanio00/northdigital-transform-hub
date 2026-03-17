@@ -382,8 +382,8 @@ export default function BlogArticle() {
             {/* Author + Share */}
             <motion.div {...fade(0.2)} className="flex items-center justify-between pb-8 border-b border-border">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <User className="w-5 h-5 text-primary" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center p-1.5">
+                  <img src={northLogoDark} alt="North Digital" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">{article.author}</p>
