@@ -348,7 +348,7 @@ export const articles: Article[] = [
     slug: "crm-para-empresas-en-cancun",
     url: "/crm-para-empresas-en-cancun",
     title: "CRM para empresas en Cancún: por qué lo necesitas y cómo mejora tus ventas",
-    seoTitle: "CRM para empresas en Cancún | North Digital",
+    seoTitle: "CRM para empresas en Cancún | North",
     excerpt: "Descubre por qué las empresas en Cancún necesitan un CRM, cómo mejora sus ventas y qué considerar al elegir e implementar uno en tu negocio.",
     category: "crm",
     categoryLabel: "CRM & Ventas",
