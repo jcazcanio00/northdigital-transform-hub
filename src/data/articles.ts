@@ -459,7 +459,7 @@ export const articles: Article[] = [
       ]},
       { type: "h2", text: "Resultados reales de automatizar ventas" },
       { type: "paragraph", text: "Las empresas que implementan automatización de ventas correctamente reportan resultados significativos: reducción del 60% en tareas administrativas, aumento del 30% en productividad del equipo de ventas, mejora del 45% en tasas de conversión de lead a cliente, y reducción del 50% en tiempo de respuesta a nuevos leads." },
-      { type: "paragraph", text: "En North Digital diseñamos e implementamos sistemas de automatización que se integran con tu CRM y tu estrategia de marketing digital. El objetivo es crear una máquina de ventas predecible y escalable. Conoce nuestras soluciones de CRM y automatización o agenda una consulta con nuestro equipo." },
+      { type: "paragraph", text: "En North diseñamos e implementamos sistemas de automatización que se integran con tu CRM y tu estrategia de marketing digital. El objetivo es crear una máquina de ventas predecible y escalable. Conoce nuestras soluciones de CRM y automatización o agenda una consulta con nuestro equipo." },
     ],
   },
 
