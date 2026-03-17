@@ -24,6 +24,7 @@ const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
+const TopAgenciasMarketingCancun = lazy(() => import("./pages/TopAgenciasMarketingCancun.tsx"));
 
 const queryClient = new QueryClient();
 
