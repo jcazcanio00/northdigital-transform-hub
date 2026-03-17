@@ -285,7 +285,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "North Digital - Agencia de Marketing Digital en Cancún",
+    "name": "North - Agencia de Marketing Digital en Cancún",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx/marketing-digital-cancun",
     "telephone": "+52-998-351-3337",
