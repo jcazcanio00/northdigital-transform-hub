@@ -133,8 +133,8 @@ export const articles: Article[] = [
       ]},
       { type: "quote", text: "La mejor agencia no es la más grande ni la más barata. Es la que entiende tu modelo de negocio y puede conectar el marketing con resultados comerciales reales." },
       { type: "h2", text: "Conclusión" },
-      { type: "paragraph", text: "El mercado de agencias de marketing digital en Cancún es diverso y competitivo. Desde agencias creativas hasta partners tecnológicos, hay opciones para cada tipo de empresa. Lo importante es evaluar más allá del portafolio visual: pregunta por métricas, procesos y capacidad de escalar contigo." },
-      { type: "paragraph", text: "Si estás buscando un partner que combine marketing digital con tecnología, CRM y automatización para impulsar el crecimiento real de tu empresa, te invitamos a conocer cómo trabajamos en North Digital. Puedes explorar nuestras soluciones de marketing digital en Cancún o agendar una llamada con nuestro equipo." },
+      { type: "paragraph", text: "En 2026, el mercado de agencias de marketing digital en Cancún es más diverso y competitivo que nunca. Desde agencias creativas hasta partners tecnológicos, hay opciones para cada tipo de empresa y presupuesto. Lo importante es evaluar más allá del portafolio visual: pregunta por métricas reales, procesos de conversión, uso de tecnología y capacidad de escalar contigo." },
+      { type: "paragraph", text: "Si estás buscando un partner que combine marketing digital con tecnología, CRM, automatización e inteligencia artificial para impulsar el crecimiento real de tu empresa en 2026, te invitamos a conocer cómo trabajamos en North Digital. Puedes explorar nuestras soluciones de marketing digital en Cancún o agendar una llamada con nuestro equipo." },
     ],
   },
 
