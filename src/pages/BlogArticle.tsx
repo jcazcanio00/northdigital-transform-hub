@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import northPin from "@/assets/logo-north-dark-new.webp";
 import {
-  ArrowLeft, Clock, Calendar, User, BookOpen, Copy, Check,
-  ChevronRight, MessageCircle, ArrowRight, Share2, TrendingUp
+  Clock, Calendar, Copy, Check,
+  ChevronRight, ArrowRight, Share2, BookOpen
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -27,6 +27,7 @@ const articlesData: Record<string, {
   excerpt: string;
   category: string;
   categoryLabel: string;
+  tags: string[];
   date: string;
   readTime: string;
   image: string;
@@ -40,6 +41,7 @@ const articlesData: Record<string, {
     excerpt: "Una guía completa para evaluar, comparar e implementar un CRM que realmente se adapte a tu operación comercial y acelere tus ventas.",
     category: "crm",
     categoryLabel: "CRM & Ventas",
+    tags: ["CRM", "Ventas", "HubSpot", "Salesforce", "Automatización", "B2B"],
     date: "12 Mar 2025",
     readTime: "8 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop",
@@ -150,19 +152,19 @@ function ContentBlock({ block }: { block: ArticleContent }) {
   switch (block.type) {
     case "paragraph":
       return (
-        <p className="text-base sm:text-lg leading-[1.8] text-muted-foreground mb-6">
+        <p className="text-base sm:text-lg leading-[1.85] text-muted-foreground mb-7">
           {block.text}
         </p>
       );
     case "h2":
       return (
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mt-14 mb-5 tracking-tight">
+        <h2 className="font-display text-2xl sm:text-[1.85rem] font-bold text-foreground mt-16 mb-6 tracking-tight leading-tight">
           {block.text}
         </h2>
       );
     case "h3":
       return (
-        <h3 className="font-display text-xl sm:text-2xl font-semibold text-foreground mt-10 mb-4 tracking-tight">
+        <h3 className="font-display text-xl sm:text-[1.4rem] font-semibold text-foreground mt-12 mb-4 tracking-tight leading-snug">
           {block.text}
         </h3>
       );
@@ -176,9 +178,9 @@ function ContentBlock({ block }: { block: ArticleContent }) {
       );
     case "list":
       return (
-        <ul className="my-6 space-y-3 pl-1">
+        <ul className="my-7 space-y-3.5 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.7] text-muted-foreground">
+            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.75] text-muted-foreground">
               <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
               {item}
             </li>
@@ -187,9 +189,9 @@ function ContentBlock({ block }: { block: ArticleContent }) {
       );
     case "ordered-list":
       return (
-        <ol className="my-6 space-y-3 pl-1 counter-reset-list">
+        <ol className="my-7 space-y-3.5 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.7] text-muted-foreground">
+            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.75] text-muted-foreground">
               <span className="mt-0.5 flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0">
                 {i + 1}
               </span>
@@ -221,34 +223,33 @@ function ContentBlock({ block }: { block: ArticleContent }) {
   }
 }
 
-/* ─── Inline CTA ─── */
-function InlineCTA() {
+/* ─── Article Meta / Tags ─── */
+function ArticleMeta({ article }: { article: typeof articlesData[string] }) {
   return (
-    <div className="my-12 p-8 rounded-2xl border border-primary/15 bg-primary/[0.03] text-center">
-      <p className="text-lg sm:text-xl font-semibold text-foreground mb-2">
-        ¿Quieres implementar esto en tu empresa?
-      </p>
-      <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-        Te ayudamos a elegir e implementar la solución perfecta para tu operación.
-      </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Button variant="gradient" size="lg" asChild>
-          <Link to="/contacto">
-            Solicitar diagnóstico
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
-        </Button>
-        <Button variant="gradient-outline" size="lg" asChild>
-          <a
-            href="https://wa.me/529983513337?text=Hola%2C%20quiero%20más%20información"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick("blog_article_inline")}
+    <div className="mt-16 pt-8 border-t border-border/60">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground mb-5">
+        <span className="flex items-center gap-1.5">
+          <Calendar className="w-3.5 h-3.5" />
+          {article.date}
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Clock className="w-3.5 h-3.5" />
+          {article.readTime} lectura
+        </span>
+        <span className="flex items-center gap-1.5">
+          <BookOpen className="w-3.5 h-3.5" />
+          {article.categoryLabel}
+        </span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {article.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium"
           >
-            <WhatsAppIconColored size={16} />
-            Hablar por WhatsApp
-          </a>
-        </Button>
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -326,8 +327,7 @@ export default function BlogArticle() {
     );
   }
 
-  /* insert inline CTA roughly in the middle of content */
-  const midpoint = Math.floor(article.content.length / 2);
+  const articleUrl = `https://northmkt.com.mx/blog/${id}`;
 
   return (
     <>
@@ -335,6 +335,7 @@ export default function BlogArticle() {
         title={`${article.title} | North Blog`}
         description={article.excerpt}
         image={article.image}
+        url={articleUrl}
       />
       <Header />
 
@@ -417,13 +418,13 @@ export default function BlogArticle() {
         <article className="pb-16">
           <div className="max-w-3xl mx-auto px-6">
             {article.content.map((block, i) => (
-              <div key={i}>
-                {i === midpoint && <InlineCTA />}
-                <motion.div {...fade(0)}>
-                  <ContentBlock block={block} />
-                </motion.div>
-              </div>
+              <motion.div key={i} {...fade(0)}>
+                <ContentBlock block={block} />
+              </motion.div>
             ))}
+
+            {/* ─── Article Meta / Tags ─── */}
+            <ArticleMeta article={article} />
           </div>
         </article>
 
