@@ -19,6 +19,7 @@ const Terminos = lazy(() => import("./pages/Terminos.tsx"));
 const Privacidad = lazy(() => import("./pages/Privacidad.tsx"));
 const MarketingDigitalCancun = lazy(() => import("./pages/MarketingDigitalCancun.tsx"));
 const MarketingDigitalPlayaDelCarmen = lazy(() => import("./pages/MarketingDigitalPlayaDelCarmen.tsx"));
+const MarketingDigitalTulum = lazy(() => import("./pages/MarketingDigitalTulum.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/privacidad" element={<Privacidad />} />
             <Route path="/marketing-digital-cancun" element={<MarketingDigitalCancun />} />
             <Route path="/marketing-digital-playa-del-carmen" element={<MarketingDigitalPlayaDelCarmen />} />
+            <Route path="/marketing-digital-tulum" element={<MarketingDigitalTulum />} />
             <Route path="/crm-empresas" element={<CrmEmpresas />} />
             <Route path="/automatizacion-empresarial" element={<AutomatizacionEmpresarial />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
