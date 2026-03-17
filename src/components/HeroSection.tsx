@@ -144,7 +144,7 @@ const HeroSection = () => (
                   <Globe size={14} className="text-primary" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold font-display">North Digital</div>
+                  <div className="text-xs font-bold font-display">North</div>
                   <div className="text-[9px] text-muted-foreground">Panel Principal</div>
                 </div>
               </div>

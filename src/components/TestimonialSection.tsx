@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
-  { quote: "North Digital transformó nuestra infraestructura tecnológica. El equipo es excepcional.", name: "Carlos Méndez", role: "CTO · Fintech Solutions", avatar: "CM" },
+  { quote: "North transformó nuestra infraestructura tecnológica. El equipo es excepcional.", name: "Carlos Méndez", role: "CTO · Fintech Solutions", avatar: "CM" },
   { quote: "La migración al cloud fue impecable. Cero downtime y ahora tenemos una infraestructura de primer nivel.", name: "Ana Rodríguez", role: "CTO · DataFlow", avatar: "AR" },
   { quote: "Nuestro tráfico orgánico creció 200% en 6 meses gracias a su estrategia de marketing digital.", name: "Luis García", role: "CMO · ScaleUp", avatar: "LG" },
   { quote: "El dashboard de analíticas que nos construyeron es increíble. Decisiones basadas en datos reales.", name: "María Torres", role: "VP Ops · InnovateCo", avatar: "MT" },

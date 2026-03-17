@@ -28,7 +28,7 @@ const SEO = ({
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="es_MX" />
-    <meta property="og:site_name" content="North Digital" />
+    <meta property="og:site_name" content="North" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

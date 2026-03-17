@@ -18,7 +18,7 @@ const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Software Empresarial a Medida",
-  "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+  "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
   "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
   "url": "https://northmkt.com.mx/software",
   "areaServed": { "@type": "Country", "name": "México" },
@@ -443,7 +443,7 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Software Empresarial a Medida | North Digital"
+        title="Software Empresarial a Medida | North"
         description="Desarrollo de CRM, dashboards, automatización de procesos y sistemas empresariales a medida. Plataformas internas con integraciones API para escalar operaciones."
         url="https://northmkt.com.mx/software"
         jsonLd={softwareJsonLd}

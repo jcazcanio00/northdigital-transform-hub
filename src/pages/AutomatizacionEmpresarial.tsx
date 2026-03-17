@@ -46,7 +46,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Automatización Empresarial",
-  provider: { "@type": "Organization", name: "North Digital", url: "https://northmkt.com.mx" },
+  provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
   description: "Diseñamos soluciones de automatización empresarial para empresas que buscan optimizar procesos, automatizar ventas, integrar sistemas y escalar con tecnología.",
   url: "https://northmkt.com.mx/automatizacion-empresarial",
   areaServed: { "@type": "Country", name: "México" },

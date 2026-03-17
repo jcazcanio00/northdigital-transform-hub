@@ -61,17 +61,17 @@ const Contacto = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Contacto | North Digital — Software, Cloud y Marketing Digital"
+        title="Contacto | North — Software, Cloud y Marketing Digital"
         description="Habla con nuestro equipo en Cancún para desarrollar software empresarial, implementar infraestructura cloud o escalar tu marketing de crecimiento."
         url="https://northmkt.com.mx/contacto"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contacto — North Digital",
+          "name": "Contacto — North",
           "url": "https://northmkt.com.mx/contacto",
           "mainEntity": {
             "@type": "Organization",
-            "name": "North Digital",
+            "name": "North",
             "email": "info@northmkt.com.mx",
             "telephone": "+52-998-351-3337",
             "address": { "@type": "PostalAddress", "addressLocality": "Cancún", "addressRegion": "Quintana Roo", "addressCountry": "MX" }

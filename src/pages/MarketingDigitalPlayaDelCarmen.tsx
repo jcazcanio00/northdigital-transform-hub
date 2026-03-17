@@ -269,7 +269,7 @@ const jsonLd = [
     "name": "Agencia de Marketing Digital en Playa del Carmen y Riviera Maya",
     "provider": {
       "@type": "Organization",
-      "name": "North Digital",
+      "name": "North",
       "url": "https://northmkt.com.mx",
     },
     "description": "Agencia de marketing digital en Playa del Carmen, Cancún, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
@@ -285,7 +285,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "North Digital - Agencia de Marketing Digital en Playa del Carmen",
+    "name": "North - Agencia de Marketing Digital en Playa del Carmen",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx/marketing-digital-playa-del-carmen",
     "telephone": "+52-998-351-3337",
@@ -382,7 +382,7 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
               <span className="gradient-text">Riviera Maya</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              North Digital ofrece servicios de marketing digital en Playa del Carmen y las principales ciudades de Quintana Roo. Diseñamos estrategias específicas para cada mercado local.
+              North ofrece servicios de marketing digital en Playa del Carmen y las principales ciudades de Quintana Roo. Diseñamos estrategias específicas para cada mercado local.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">

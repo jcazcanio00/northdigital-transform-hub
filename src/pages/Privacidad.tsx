@@ -5,7 +5,7 @@ const sections = [
   {
     title: "Responsable del Tratamiento",
     content: (
-      <p>North Digital Solutions, con domicilio en Cancún, Quintana Roo, México, es responsable del tratamiento de los datos personales que usted nos proporcione a través de este sitio web y nuestros canales de comunicación. Para cualquier consulta puede contactarnos en <a href="mailto:info@northmkt.com.mx">info@northmkt.com.mx</a>.</p>
+      <p>North Solutions, con domicilio en Cancún, Quintana Roo, México, es responsable del tratamiento de los datos personales que usted nos proporcione a través de este sitio web y nuestros canales de comunicación. Para cualquier consulta puede contactarnos en <a href="mailto:info@northmkt.com.mx">info@northmkt.com.mx</a>.</p>
     ),
   },
   {
@@ -92,8 +92,8 @@ const sections = [
 const Privacidad = () => (
   <>
     <SEO
-      title="Aviso de Privacidad | North Digital"
-      description="Aviso de privacidad de North Digital. Conoce cómo recopilamos, usamos y protegemos tus datos personales conforme a la ley mexicana."
+      title="Aviso de Privacidad | North"
+      description="Aviso de privacidad de North. Conoce cómo recopilamos, usamos y protegemos tus datos personales conforme a la ley mexicana."
       url="https://northmkt.com.mx/privacidad"
     />
     <LegalPage

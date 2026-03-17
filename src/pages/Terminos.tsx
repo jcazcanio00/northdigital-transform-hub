@@ -5,25 +5,25 @@ const sections = [
   {
     title: "Uso del Sitio",
     content: (
-      <p>Al acceder y utilizar el sitio web de North Digital Solutions ("el Sitio"), usted acepta cumplir con estos Términos y Condiciones. El uso del Sitio está destinado exclusivamente a fines informativos y de contratación de nuestros servicios tecnológicos. Queda prohibido el uso del Sitio para actividades ilegales, la distribución de contenido malicioso o cualquier acción que pueda dañar la operación del mismo.</p>
+      <p>Al acceder y utilizar el sitio web de North Solutions ("el Sitio"), usted acepta cumplir con estos Términos y Condiciones. El uso del Sitio está destinado exclusivamente a fines informativos y de contratación de nuestros servicios tecnológicos. Queda prohibido el uso del Sitio para actividades ilegales, la distribución de contenido malicioso o cualquier acción que pueda dañar la operación del mismo.</p>
     ),
   },
   {
     title: "Propiedad Intelectual",
     content: (
-      <p>Todo el contenido presente en el Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, íconos, imágenes, código fuente, diseño y software, es propiedad exclusiva de North Digital Solutions o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. Queda estrictamente prohibida la reproducción, distribución, modificación o uso comercial de cualquier contenido sin autorización expresa por escrito.</p>
+      <p>Todo el contenido presente en el Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, íconos, imágenes, código fuente, diseño y software, es propiedad exclusiva de North Solutions o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. Queda estrictamente prohibida la reproducción, distribución, modificación o uso comercial de cualquier contenido sin autorización expresa por escrito.</p>
     ),
   },
   {
     title: "Servicios Ofrecidos",
     content: (
-      <p>North Digital Solutions ofrece servicios de desarrollo de software empresarial, infraestructura cloud y marketing de crecimiento. Las características, alcance y condiciones específicas de cada servicio se definen en los contratos individuales celebrados con cada cliente. La información presentada en el Sitio es de carácter informativo y no constituye una oferta vinculante.</p>
+      <p>North Solutions ofrece servicios de desarrollo de software empresarial, infraestructura cloud y marketing de crecimiento. Las características, alcance y condiciones específicas de cada servicio se definen en los contratos individuales celebrados con cada cliente. La información presentada en el Sitio es de carácter informativo y no constituye una oferta vinculante.</p>
     ),
   },
   {
     title: "Limitación de Responsabilidad",
     content: (
-      <p>North Digital Solutions no será responsable por daños directos, indirectos, incidentales, consecuentes o punitivos que resulten del uso o la imposibilidad de uso del Sitio. No garantizamos que el Sitio esté libre de errores, virus o interrupciones. El uso del Sitio es bajo su propio riesgo. En ningún caso nuestra responsabilidad total excederá el monto pagado por los servicios contratados.</p>
+      <p>North Solutions no será responsable por daños directos, indirectos, incidentales, consecuentes o punitivos que resulten del uso o la imposibilidad de uso del Sitio. No garantizamos que el Sitio esté libre de errores, virus o interrupciones. El uso del Sitio es bajo su propio riesgo. En ningún caso nuestra responsabilidad total excederá el monto pagado por los servicios contratados.</p>
     ),
   },
   {
@@ -55,8 +55,8 @@ const sections = [
 const Terminos = () => (
   <>
     <SEO
-      title="Términos y Condiciones | North Digital"
-      description="Términos y condiciones de uso del sitio web y servicios de North Digital Solutions. Propiedad intelectual, limitaciones y jurisdicción aplicable."
+      title="Términos y Condiciones | North"
+      description="Términos y condiciones de uso del sitio web y servicios de North Solutions. Propiedad intelectual, limitaciones y jurisdicción aplicable."
       url="https://northmkt.com.mx/terminos"
     />
     <LegalPage

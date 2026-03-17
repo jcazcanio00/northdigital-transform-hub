@@ -16,8 +16,8 @@ const Footer = () => (
         {/* Brand */}
         <div className="lg:col-span-2">
         <Link to="/" className="flex items-center gap-2.5 mb-4">
-            <img src={logoNorthDark} alt="North Digital" className="h-8 w-auto dark:hidden" loading="lazy" decoding="async" width={140} height={32} />
-            <img src={logoNorthLight} alt="North Digital" className="h-8 w-auto hidden dark:block" loading="lazy" decoding="async" width={140} height={32} />
+            <img src={logoNorthDark} alt="North" className="h-8 w-auto dark:hidden" loading="lazy" decoding="async" width={140} height={32} />
+            <img src={logoNorthLight} alt="North" className="h-8 w-auto hidden dark:block" loading="lazy" decoding="async" width={140} height={32} />
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed mb-5">
             Software empresarial, cloud services y marketing de crecimiento para empresas modernas.
@@ -97,7 +97,7 @@ const Footer = () => (
     <div className="border-t border-border/30">
       <div className="container mx-auto px-4 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p className="text-xs text-muted-foreground">
-          © 2026 North Digital Solutions. Todos los derechos reservados.
+          © 2026 North Solutions. Todos los derechos reservados.
         </p>
         <div className="flex gap-5">
           <Link to="/terminos" className="text-xs text-muted-foreground hover:text-primary transition-colors">Términos y Condiciones</Link>

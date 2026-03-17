@@ -137,17 +137,17 @@ const connectionSteps = [
 const Acerca = () => (
   <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
     <SEO
-      title="Acerca de North Digital | Agencia de Software y Marketing Digital en Cancún"
-      description="Conoce North Digital: agencia de marketing digital y consultora tecnológica en Cancún especializada en software empresarial, infraestructura cloud y marketing de crecimiento."
+      title="Acerca de North | Agencia de Software y Marketing Digital en Cancún"
+      description="Conoce North: agencia de marketing digital y consultora tecnológica en Cancún especializada en software empresarial, infraestructura cloud y marketing de crecimiento."
       url="https://northmkt.com.mx/acerca"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "Acerca de North Digital",
+        "name": "Acerca de North",
         "url": "https://northmkt.com.mx/acerca",
         "mainEntity": {
           "@type": "Organization",
-          "name": "North Digital",
+          "name": "North",
           "foundingDate": "2018",
           "foundingLocation": { "@type": "Place", "name": "Cancún, Quintana Roo, México" },
           "description": "Agencia de marketing digital y empresa de tecnología especializada en software empresarial, infraestructura cloud y marketing de crecimiento."
@@ -166,7 +166,7 @@ const Acerca = () => (
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-4xl text-center">
         <motion.span {...fade()} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Acerca de North Digital
+          Acerca de North
         </motion.span>
 
         <motion.h1 {...fade(0.05)} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
