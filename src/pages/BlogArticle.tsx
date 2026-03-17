@@ -138,7 +138,7 @@ function CodeBlock({ language, code }: { language: string; code: string }) {
         </button>
       </div>
       <pre className="p-5 overflow-x-auto text-sm leading-relaxed">
-        <code className="font-mono text-[hsl(210_40%_80%)]">{code}</code>
+        <code className="font-mono text-accent">{code}</code>
       </pre>
     </div>
   );
