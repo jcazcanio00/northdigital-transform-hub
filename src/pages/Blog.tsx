@@ -323,7 +323,7 @@ const BlogPage = () => {
             )}
 
             {/* ── Secondary articles (2/5 width, stacked) ── */}
-            <div className="lg:col-span-2 flex flex-col gap-8">
+            <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
                 <motion.div
                   key={article.id}
