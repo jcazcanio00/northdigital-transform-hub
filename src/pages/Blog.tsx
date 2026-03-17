@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
+import { getArticlesMeta, getFeaturedArticles, type ArticleMeta } from "@/data/articles";
 
 /* ─── Fade helper ─── */
 const fade = (delay = 0) => ({
@@ -29,109 +30,6 @@ const categories = [
   { label: "Tecnología Empresarial", value: "tecnologia", icon: Server },
 ];
 
-/* ─── Articles data ─── */
-const articles = [
-  {
-    id: 1,
-    title: "Cómo elegir el CRM correcto para tu empresa en 2025",
-    excerpt: "Una guía completa para evaluar, comparar e implementar un CRM que realmente se adapte a tu operación comercial y acelere tus ventas.",
-    category: "crm",
-    categoryLabel: "CRM & Ventas",
-    date: "12 Mar 2025",
-    readTime: "8 min",
-    featured: true,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop",
-  },
-  {
-    id: 2,
-    title: "SEO local en 2025: estrategias para dominar Google en tu ciudad",
-    excerpt: "Las tácticas de SEO local que realmente funcionan para posicionar tu negocio en Cancún, Playa del Carmen y la Riviera Maya.",
-    category: "marketing",
-    categoryLabel: "Marketing Digital",
-    date: "5 Mar 2025",
-    readTime: "10 min",
-    featured: true,
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Automatización de ventas: de lead a cliente sin fricción",
-    excerpt: "Cómo diseñar flujos automatizados que nutren, califican y convierten leads en clientes de forma consistente.",
-    category: "automatizacion",
-    categoryLabel: "Automatización",
-    date: "28 Feb 2025",
-    readTime: "7 min",
-    featured: true,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
-  },
-  {
-    id: 4,
-    title: "Google Ads para empresas B2B: guía de campañas rentables",
-    excerpt: "Estructura de campañas, bidding strategies y optimización de conversiones para empresas que venden a otras empresas.",
-    category: "marketing",
-    categoryLabel: "Marketing Digital",
-    date: "20 Feb 2025",
-    readTime: "9 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=450&fit=crop",
-  },
-  {
-    id: 5,
-    title: "Migración a la nube: lo que toda empresa debe saber antes de empezar",
-    excerpt: "Errores comunes, mejores prácticas y un roadmap claro para mover tu infraestructura a servicios cloud sin interrupciones.",
-    category: "tecnologia",
-    categoryLabel: "Tecnología Empresarial",
-    date: "14 Feb 2025",
-    readTime: "11 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop",
-  },
-  {
-    id: 6,
-    title: "Lead scoring: cómo priorizar tus prospectos con datos",
-    excerpt: "Implementa un sistema de puntuación de leads que identifique a tus mejores oportunidades de venta automáticamente.",
-    category: "crm",
-    categoryLabel: "CRM & Ventas",
-    date: "8 Feb 2025",
-    readTime: "6 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop",
-  },
-  {
-    id: 7,
-    title: "Email marketing que convierte: secuencias para cada etapa del funnel",
-    excerpt: "Diseña secuencias de email que nutren prospectos fríos, reactivan leads inactivos y fidelizan clientes existentes.",
-    category: "automatizacion",
-    categoryLabel: "Automatización",
-    date: "1 Feb 2025",
-    readTime: "8 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=450&fit=crop",
-  },
-  {
-    id: 8,
-    title: "Arquitectura de software empresarial: monolito vs microservicios",
-    excerpt: "Cuándo tiene sentido cada enfoque y cómo tomar la decisión correcta según el tamaño y madurez de tu empresa.",
-    category: "tecnologia",
-    categoryLabel: "Tecnología Empresarial",
-    date: "25 Ene 2025",
-    readTime: "12 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop",
-  },
-  {
-    id: 9,
-    title: "Métricas de marketing que realmente importan para tu negocio",
-    excerpt: "Olvida las métricas vanidosas. Estas son las KPIs que conectan tu inversión en marketing con ingresos reales.",
-    category: "marketing",
-    categoryLabel: "Marketing Digital",
-    date: "18 Ene 2025",
-    readTime: "7 min",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
-  },
-];
-
 /* ─── JSON-LD ─── */
 const jsonLd = {
   "@context": "https://schema.org",
@@ -147,79 +45,30 @@ const jsonLd = {
 };
 
 /* ─── Components ─── */
-
-const FeaturedCard = ({ article, large = false }: { article: typeof articles[0]; large?: boolean }) => (
-  <Link to={`/blog/${article.id}`} className="block">
-  <motion.div
-    {...fade(0.1)}
-    className={`group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-2 ${large ? "md:col-span-2 md:grid md:grid-cols-2" : ""}`}
-  >
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-    <div className={`relative overflow-hidden ${large ? "md:h-full h-48" : "h-48"}`}>
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-      <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">
-        {article.categoryLabel}
-      </span>
-    </div>
-    <div className="relative z-10 p-6">
-      <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
-        <span className="flex items-center gap-1"><Clock size={11} /> {article.date}</span>
-        <span>·</span>
-        <span className="flex items-center gap-1"><BookOpen size={11} /> {article.readTime} lectura</span>
+const ArticleCard = ({ article }: { article: ArticleMeta }) => (
+  <Link to={article.url} className="block">
+    <motion.div
+      {...fade(0.05)}
+      className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
+    >
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative h-44 overflow-hidden">
+        <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
       </div>
-      <h3 className={`font-bold font-display mb-3 group-hover:text-primary transition-colors duration-300 leading-snug ${large ? "text-xl lg:text-2xl" : "text-lg"}`}>
-        {article.title}
-      </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{article.excerpt}</p>
-      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
-        Leer artículo <ArrowRight size={14} />
-      </span>
-    </div>
-  </motion.div>
-  </Link>
-);
-
-const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
-  <Link to={`/blog/${article.id}`} className="block">
-  <motion.div
-    {...fade(0.05)}
-    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
-  >
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    <div className="relative h-44 overflow-hidden">
-      <img
-        src={article.image}
-        alt={article.title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">
-        {article.categoryLabel}
-      </span>
-    </div>
-    <div className="relative z-10 p-5">
-      <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
-        <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
-        <span>·</span>
-        <span>{article.readTime} lectura</span>
+      <div className="relative z-10 p-5">
+        <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
+          <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+          <span>·</span>
+          <span>{article.readTime} lectura</span>
+        </div>
+        <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer más <ChevronRight size={14} /></span>
       </div>
-      <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
-        {article.title}
-      </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
-      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
-        Leer más <ChevronRight size={14} />
-      </span>
-    </div>
-  </motion.div>
+    </motion.div>
   </Link>
 );
 
@@ -228,10 +77,12 @@ const BlogPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const featured = articles.filter((a) => a.featured);
+  const allArticles = getArticlesMeta();
+  const featured = getFeaturedArticles();
+  const nonFeatured = allArticles.filter((a) => !a.featured);
   const filtered = activeCategory === "all"
-    ? articles.filter((a) => !a.featured)
-    : articles.filter((a) => a.category === activeCategory && !a.featured);
+    ? nonFeatured
+    : nonFeatured.filter((a) => a.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -300,59 +151,58 @@ const BlogPage = () => {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* ── Primary article (3/5 width) ── */}
             {featured[0] && (
-              <Link to={`/blog/${featured[0].id}`} className="lg:col-span-3 block">
-              <motion.div
-                {...fade(0.1)}
-                className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
-                  <img src={featured[0].image} alt={featured[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
-                </div>
-                <div className="relative z-10 p-6 lg:p-8">
-                  <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
-                    <span>·</span>
-                    <span className="flex items-center gap-1"><BookOpen size={11} /> {featured[0].readTime} lectura</span>
-                    <span>·</span>
-                    <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
+              <Link to={featured[0].url} className="lg:col-span-3 block">
+                <motion.div
+                  {...fade(0.1)}
+                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
+                    <img src={featured[0].image} alt={featured[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed mb-2">{featured[0].excerpt}</p>
-                  <p className="text-sm text-muted-foreground/70 leading-relaxed mb-5 max-w-lg">Descubre las mejores prácticas y recomendaciones que pueden transformar la manera en que tu empresa opera y crece en el mercado actual.</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
-                </div>
-              </motion.div>
+                  <div className="relative z-10 p-6 lg:p-8">
+                    <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
+                      <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
+                      <span>·</span>
+                      <span className="flex items-center gap-1"><BookOpen size={11} /> {featured[0].readTime} lectura</span>
+                      <span>·</span>
+                      <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed mb-5">{featured[0].excerpt}</p>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
+                  </div>
+                </motion.div>
               </Link>
             )}
 
             {/* ── Secondary articles (2/5 width, stacked) ── */}
             <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
-                <Link key={article.id} to={`/blog/${article.id}`} className="flex-1 block">
-                <motion.div
-                  {...fade(0.15 + i * 0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="relative h-40 overflow-hidden">
-                    <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                    <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
-                  </div>
-                  <div className="relative z-10 p-5">
-                    <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
-                      <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
-                      <span>·</span>
-                      <span>{article.readTime} lectura</span>
+                <Link key={article.slug} to={article.url} className="flex-1 block">
+                  <motion.div
+                    {...fade(0.15 + i * 0.1)}
+                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
+                  >
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="relative h-40 overflow-hidden">
+                      <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
                     </div>
-                    <h3 className="text-lg font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
-                  </div>
-                </motion.div>
+                    <div className="relative z-10 p-5">
+                      <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
+                        <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+                        <span>·</span>
+                        <span>{article.readTime} lectura</span>
+                      </div>
+                      <h3 className="text-lg font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
+                    </div>
+                  </motion.div>
                 </Link>
               ))}
             </div>
@@ -389,7 +239,7 @@ const BlogPage = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {filtered.length > 0 ? (
               filtered.map((article) => (
-                <ArticleCard key={article.id} article={article} />
+                <ArticleCard key={article.slug} article={article} />
               ))
             ) : (
               <motion.div {...fade()} className="col-span-full text-center py-16">
@@ -424,18 +274,13 @@ const BlogPage = () => {
               { to: "/marketing-digital-cancun", icon: TrendingUp, title: "Marketing Digital", desc: "Estrategias de marketing digital basadas en datos para generar leads y escalar ingresos." },
             ].map((s, i) => (
               <motion.div key={s.to} {...fade(i * 0.1)}>
-                <Link
-                  to={s.to}
-                  className="group block rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-all duration-500 h-full"
-                >
+                <Link to={s.to} className="group block rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-all duration-500 h-full">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
                     <s.icon size={22} className="text-primary" />
                   </div>
                   <h3 className="font-bold font-display mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
-                    Conocer más <ArrowRight size={14} />
-                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Conocer más <ArrowRight size={14} /></span>
                 </Link>
               </motion.div>
             ))}
