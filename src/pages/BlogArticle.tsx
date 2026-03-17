@@ -3,8 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import northPin from "@/assets/logo-north-dark-new.webp";
 import {
-  ArrowLeft, Clock, Calendar, User, BookOpen, Copy, Check,
-  ChevronRight, MessageCircle, ArrowRight, Share2, TrendingUp
+  Clock, Calendar, Copy, Check,
+  ChevronRight, ArrowRight, Share2, BookOpen
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
