@@ -189,9 +189,9 @@ function ContentBlock({ block }: { block: ArticleContent }) {
       );
     case "ordered-list":
       return (
-        <ol className="my-6 space-y-3 pl-1 counter-reset-list">
+        <ol className="my-7 space-y-3.5 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.7] text-muted-foreground">
+            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.75] text-muted-foreground">
               <span className="mt-0.5 flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold shrink-0">
                 {i + 1}
               </span>
