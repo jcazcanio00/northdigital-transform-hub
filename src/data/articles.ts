@@ -278,7 +278,7 @@ export const articles: Article[] = [
         "No tener una landing page optimizada para recibir el tráfico"
       ]},
       { type: "h2", text: "Conectando Facebook Ads con tu CRM" },
-      { type: "paragraph", text: "El verdadero poder de la publicidad en Facebook se desbloquea cuando conectas los leads generados con un CRM y flujos de seguimiento automatizados. Cada lead que entra debe recibir una respuesta inmediata y entrar a una secuencia de nurturing. En North Digital integramos tus campañas con CRM para empresas y automatización, asegurando que ningún lead se pierda." },
+      { type: "paragraph", text: "El verdadero poder de la publicidad en Facebook se desbloquea cuando conectas los leads generados con un CRM y flujos de seguimiento automatizados. Cada lead que entra debe recibir una respuesta inmediata y entrar a una secuencia de nurturing. En North integramos tus campañas con CRM para empresas y automatización, asegurando que ningún lead se pierda." },
       { type: "paragraph", text: "Si necesitas ayuda para crear o escalar tus campañas de publicidad digital en Cancún, conoce nuestros servicios de marketing digital o agenda una llamada con nuestro equipo." },
     ],
   },
