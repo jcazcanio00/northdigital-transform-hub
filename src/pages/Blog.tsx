@@ -264,11 +264,25 @@ const BlogPage = () => {
         </div>
       </section>
 
+      {/* ═══ TOPIC MARQUEE ═══ */}
+      <div className="relative py-4 overflow-hidden select-none pointer-events-none border-y border-border/30 bg-muted/30">
+        <div className="flex whitespace-nowrap animate-marquee-slow items-center h-full">
+          {[...Array(3)].flatMap((_, r) =>
+            ["CRM", "Automatización", "SEO", "Google Ads", "Funnels", "Analytics", "IA", "Software Empresarial", "Growth", "Marketing Digital"].map((t, i) => (
+              <span key={`${r}-${i}`} className="text-sm font-medium text-muted-foreground/60 mx-4 tracking-wide">
+                {t}
+                <span className="text-primary/30 mx-4">✦</span>
+              </span>
+            ))
+          )}
+        </div>
+      </div>
+
       {/* ═══ FEATURED POSTS ═══ */}
       <section className="py-20 lg:py-28 relative">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="mb-14">
+          <motion.div {...fade()} className="mb-14 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/15 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
               Selección recomendada
@@ -297,16 +311,19 @@ const BlogPage = () => {
                     <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
                     <span>·</span>
                     <span className="flex items-center gap-1"><BookOpen size={11} /> {featured[0].readTime} lectura</span>
+                    <span>·</span>
+                    <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed mb-5 max-w-xl">{featured[0].excerpt}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-2">{featured[0].excerpt}</p>
+                  <p className="text-sm text-muted-foreground/70 leading-relaxed mb-5 max-w-lg">Descubre las mejores prácticas y recomendaciones que pueden transformar la manera en que tu empresa opera y crece en el mercado actual.</p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                 </div>
               </motion.div>
             )}
 
             {/* ── Secondary articles (2/5 width, stacked) ── */}
-            <div className="lg:col-span-2 flex flex-col gap-8">
+            <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
                 <motion.div
                   key={article.id}
