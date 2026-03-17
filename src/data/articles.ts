@@ -35,7 +35,7 @@ export const articles: Article[] = [
     slug: "como-elegir-el-crm-correcto",
     url: "/blog/como-elegir-el-crm-correcto",
     title: "Cómo elegir el CRM correcto para tu empresa en 2025",
-    seoTitle: "Cómo elegir el CRM correcto para tu empresa en 2025 | North Digital",
+    seoTitle: "Cómo elegir el CRM correcto para tu empresa en 2025 | North",
     excerpt: "Una guía completa para evaluar, comparar e implementar un CRM que realmente se adapte a tu operación comercial y acelere tus ventas.",
     category: "crm",
     categoryLabel: "CRM & Ventas",
