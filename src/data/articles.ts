@@ -516,7 +516,7 @@ export const articles: Article[] = [
       ]},
       { type: "h2", text: "Un sistema integrado de generación de clientes" },
       { type: "paragraph", text: "La generación de leads más efectiva no depende de un solo canal — es un sistema integrado donde cada pieza trabaja en conjunto. El SEO atrae tráfico orgánico. La publicidad acelera la generación. Los funnels convierten visitantes en leads. El CRM organiza y califica. La automatización da seguimiento. Tu equipo de ventas cierra." },
-      { type: "paragraph", text: "En North Digital diseñamos estos sistemas completos para empresas en Cancún y la Riviera Maya. Desde la estrategia de marketing digital hasta la implementación de CRM y automatización — todo conectado para que cada peso invertido genere el máximo retorno. Agenda una consulta con nuestro equipo para diseñar tu sistema de generación de clientes." },
+      { type: "paragraph", text: "En North diseñamos estos sistemas completos para empresas en Cancún y la Riviera Maya. Desde la estrategia de marketing digital hasta la implementación de CRM y automatización — todo conectado para que cada peso invertido genere el máximo retorno. Agenda una consulta con nuestro equipo para diseñar tu sistema de generación de clientes." },
     ],
   },
 ];
