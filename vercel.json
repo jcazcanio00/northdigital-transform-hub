@@ -4,6 +4,20 @@
     { "source": "/blog/1/", "destination": "/blog/1/index.html" },
     { "source": "/top-7-de-agencias-de-marketing-digital-en-cancun", "destination": "/blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html" },
     { "source": "/top-7-de-agencias-de-marketing-digital-en-cancun/", "destination": "/blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html" },
+    { "source": "/que-es-marketing-digital", "destination": "/blog/que-es-marketing-digital/index.html" },
+    { "source": "/que-es-marketing-digital/", "destination": "/blog/que-es-marketing-digital/index.html" },
+    { "source": "/seo-en-cancun", "destination": "/blog/seo-en-cancun/index.html" },
+    { "source": "/seo-en-cancun/", "destination": "/blog/seo-en-cancun/index.html" },
+    { "source": "/publicidad-en-facebook-cancun", "destination": "/blog/publicidad-en-facebook-cancun/index.html" },
+    { "source": "/publicidad-en-facebook-cancun/", "destination": "/blog/publicidad-en-facebook-cancun/index.html" },
+    { "source": "/estrategias-de-marketing-digital-para-empresas", "destination": "/blog/estrategias-de-marketing-digital-para-empresas/index.html" },
+    { "source": "/estrategias-de-marketing-digital-para-empresas/", "destination": "/blog/estrategias-de-marketing-digital-para-empresas/index.html" },
+    { "source": "/crm-para-empresas-en-cancun", "destination": "/blog/crm-para-empresas-en-cancun/index.html" },
+    { "source": "/crm-para-empresas-en-cancun/", "destination": "/blog/crm-para-empresas-en-cancun/index.html" },
+    { "source": "/automatizacion-de-ventas-para-empresas", "destination": "/blog/automatizacion-de-ventas-para-empresas/index.html" },
+    { "source": "/automatizacion-de-ventas-para-empresas/", "destination": "/blog/automatizacion-de-ventas-para-empresas/index.html" },
+    { "source": "/como-generar-leads-para-mi-empresa-en-cancun", "destination": "/blog/como-generar-leads-para-mi-empresa-en-cancun/index.html" },
+    { "source": "/como-generar-leads-para-mi-empresa-en-cancun/", "destination": "/blog/como-generar-leads-para-mi-empresa-en-cancun/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
