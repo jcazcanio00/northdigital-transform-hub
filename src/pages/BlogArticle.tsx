@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import northLogoDark from "@/assets/logo-north-dark-new.webp";
 import {
   ArrowLeft, Clock, Calendar, User, BookOpen, Copy, Check,
   ChevronRight, MessageCircle, ArrowRight, Share2, TrendingUp
