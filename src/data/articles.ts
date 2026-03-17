@@ -101,26 +101,27 @@ export const articles: Article[] = [
       { type: "h2", text: "Las 7 mejores agencias de marketing digital en Cancún en 2026" },
 
       { type: "h3", text: "1. Starter Marketing" },
-      { type: "paragraph", text: "Una de las agencias con mayor trayectoria en Cancún. Se especializa en marketing para el sector turístico y hotelero, con experiencia en campañas de Google Ads y redes sociales para resorts y tours. Su fortaleza está en el conocimiento profundo del mercado turístico, aunque su enfoque tiende a ser más tradicional en cuanto a tecnología." },
+      { type: "paragraph", text: "Una de las agencias con mayor trayectoria en Cancún. Se han mantenido relevantes gracias a su conocimiento profundo del sector turístico y hotelero. En 2026 siguen siendo una opción sólida para hoteles, tours y experiencias que necesitan campañas de Google Ads y redes sociales con enfoque turístico. Su área de oportunidad sigue siendo la adopción de tecnología más avanzada y automatización." },
 
       { type: "h3", text: "2. North Digital" },
-      { type: "paragraph", text: "North Digital se distingue por su enfoque integrado entre marketing digital, CRM, automatización y tecnología. No es una agencia de marketing tradicional: combina estrategia de crecimiento con implementación de sistemas que permiten a las empresas escalar de forma sostenible. Su modelo conecta la generación de leads con procesos automatizados de seguimiento y conversión, algo que pocas agencias en la región ofrecen." },
-      { type: "list", items: ["Integración nativa entre marketing, CRM y automatización de ventas", "Enfoque basado en datos y métricas de negocio (no solo métricas de vanidad)", "Capacidad de desarrollar software empresarial a medida", "Visión de crecimiento a largo plazo, no solo campañas puntuales", "Especialización en empresas B2B y servicios profesionales"] },
+      { type: "paragraph", text: "North Digital se ha consolidado como una de las agencias más innovadoras de Cancún en 2026. Lo que las diferencia es su modelo híbrido: no solo ejecutan campañas de marketing, sino que integran CRM, automatización de ventas e inteligencia artificial dentro de la estrategia. Esto permite a sus clientes no solo generar leads, sino convertirlos en ventas reales de forma automatizada." },
+      { type: "list", items: ["Integración nativa entre marketing digital, CRM y automatización de ventas", "Uso de inteligencia artificial para optimización de campañas y seguimiento de leads", "Enfoque basado en métricas de negocio reales (ventas, ROI), no solo impresiones o likes", "Capacidad de desarrollar software empresarial a medida para sus clientes", "Ideal para empresas en crecimiento, B2B y servicios profesionales que quieren escalar"] },
+      { type: "paragraph", text: "Si buscas una agencia que piense más allá de las campañas y te ayude a construir un sistema de crecimiento, North Digital es probablemente la opción más completa de la región en 2026." },
 
       { type: "h3", text: "3. Brandkey Media" },
-      { type: "paragraph", text: "Agencia creativa con fuerte presencia en Cancún, enfocada en branding y contenido visual. Destacan en producción audiovisual y gestión de redes sociales para marcas lifestyle. Ideal para empresas que priorizan la imagen de marca y el contenido orgánico sobre la generación de leads directa." },
+      { type: "paragraph", text: "Agencia creativa con fuerte presencia en Cancún, reconocida por su trabajo en branding y producción audiovisual. En 2026 han fortalecido su oferta de contenido para marcas lifestyle, gastronomía y moda. Ideal si tu prioridad es construir una imagen de marca potente y contenido visual de alto nivel, aunque su enfoque en generación de leads y conversión es menos robusto." },
 
       { type: "h3", text: "4. Mktidea" },
-      { type: "paragraph", text: "Agencia de servicios integrales con experiencia en el mercado local. Ofrecen desde diseño web hasta campañas de publicidad digital, con un enfoque generalista que puede funcionar bien para pequeños negocios que buscan un proveedor todo-en-uno sin demasiada complejidad." },
+      { type: "paragraph", text: "Agencia generalista con experiencia en el mercado local de Cancún. Ofrecen desde diseño web hasta campañas de publicidad digital, con paquetes flexibles que se adaptan a distintos presupuestos. En 2026 siguen siendo una opción práctica para pequeños negocios que buscan un proveedor todo-en-uno sin demasiada complejidad técnica." },
 
       { type: "h3", text: "5. Pelicano Marketing" },
-      { type: "paragraph", text: "Especializada en marketing inmobiliario en la Riviera Maya. Si tu negocio es bienes raíces, esta agencia tiene experiencia específica en campañas de generación de prospectos para desarrollos y propiedades. Su nicho les da una ventaja clara en ese sector." },
+      { type: "paragraph", text: "Especializada en marketing inmobiliario en la Riviera Maya. Si tu negocio es bienes raíces — desarrollos, propiedades de inversión o Airbnb — esta agencia tiene experiencia específica en generación de prospectos para ese sector. En 2026 han ampliado sus servicios hacia embudos de conversión inmobiliarios, lo que les da una ventaja en su nicho." },
 
       { type: "h3", text: "6. Netcommerce" },
-      { type: "paragraph", text: "Con oficinas en varias ciudades de México, Netcommerce tiene presencia en Cancún con servicios de e-commerce y marketing digital. Su fortaleza está en tiendas en línea y estrategias de conversión para retail, aunque su enfoque no es tan localizado como agencias nativas de la región." },
+      { type: "paragraph", text: "Con presencia nacional y oficinas en Cancún, Netcommerce ofrece servicios de e-commerce y marketing digital orientados a retail. Su fortaleza está en tiendas en línea, pasarelas de pago y estrategias de conversión. En 2026 son una buena opción si tu negocio vende productos online, aunque su enfoque no es tan localizado como agencias nativas de la región." },
 
       { type: "h3", text: "7. Digital Caribe" },
-      { type: "paragraph", text: "Agencia local enfocada en redes sociales y community management. Ofrecen paquetes accesibles para pequeñas empresas y emprendedores que están dando sus primeros pasos en marketing digital. Una buena opción para negocios con presupuestos limitados que necesitan presencia básica en redes." },
+      { type: "paragraph", text: "Agencia local enfocada en redes sociales y community management. Ofrecen paquetes accesibles para emprendedores y pequeños negocios que están iniciando su presencia digital. En 2026 siguen siendo una opción económica para quienes necesitan gestión básica de redes, aunque su capacidad estratégica y tecnológica es más limitada." },
 
       { type: "h2", text: "¿Qué tipo de agencia necesita tu empresa?" },
       { type: "paragraph", text: "No todas las empresas necesitan el mismo tipo de agencia. Tu elección debe depender de tu etapa de crecimiento, tus objetivos y tu presupuesto:" },
