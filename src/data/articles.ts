@@ -177,7 +177,7 @@ export const articles: Article[] = [
       { type: "quote", text: "No se trata de elegir entre digital y tradicional. Se trata de invertir donde puedas medir el retorno y escalar lo que funciona." },
       { type: "h2", text: "¿Necesitas una agencia o puedes hacerlo internamente?" },
       { type: "paragraph", text: "Depende de tu etapa y recursos. Empresas pequeñas pueden empezar con acciones básicas internamente. Pero cuando buscas resultados serios — posicionamiento SEO competitivo, campañas de publicidad rentables, integración con CRM — trabajar con un equipo especializado acelera los resultados significativamente." },
-      { type: "paragraph", text: "En North Digital combinamos marketing digital con CRM y automatización para que cada lead generado se convierta en una oportunidad real de venta. Conoce nuestras soluciones de marketing digital o explora cómo nuestro software empresarial puede complementar tu estrategia." },
+      { type: "paragraph", text: "En North combinamos marketing digital con CRM y automatización para que cada lead generado se convierta en una oportunidad real de venta. Conoce nuestras soluciones de marketing digital o explora cómo nuestro software empresarial puede complementar tu estrategia." },
     ],
   },
 
