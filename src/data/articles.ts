@@ -145,7 +145,7 @@ export const articles: Article[] = [
     slug: "que-es-marketing-digital",
     url: "/que-es-marketing-digital",
     title: "¿Qué es el marketing digital? Guía completa para empresas",
-    seoTitle: "¿Qué es el marketing digital? Guía completa para empresas | North Digital",
+    seoTitle: "¿Qué es el marketing digital? Guía completa para empresas | North",
     excerpt: "Aprende qué es el marketing digital, cómo funciona, qué canales existen y cómo puede ayudar a tu empresa a crecer de forma medible y escalable.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
