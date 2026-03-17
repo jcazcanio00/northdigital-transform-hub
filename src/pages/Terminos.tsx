@@ -11,7 +11,7 @@ const sections = [
   {
     title: "Propiedad Intelectual",
     content: (
-      <p>Todo el contenido presente en el Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, íconos, imágenes, código fuente, diseño y software, es propiedad exclusiva de North Digital Solutions o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. Queda estrictamente prohibida la reproducción, distribución, modificación o uso comercial de cualquier contenido sin autorización expresa por escrito.</p>
+      <p>Todo el contenido presente en el Sitio, incluyendo pero no limitándose a textos, gráficos, logotipos, íconos, imágenes, código fuente, diseño y software, es propiedad exclusiva de North Solutions o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. Queda estrictamente prohibida la reproducción, distribución, modificación o uso comercial de cualquier contenido sin autorización expresa por escrito.</p>
     ),
   },
   {
