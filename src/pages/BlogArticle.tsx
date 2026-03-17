@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import northLogoDark from "@/assets/logo-north-dark-new.webp";
+import northPin from "@/assets/logo-north-dark-new.webp";
 import {
   ArrowLeft, Clock, Calendar, User, BookOpen, Copy, Check,
   ChevronRight, MessageCircle, ArrowRight, Share2, TrendingUp
@@ -334,7 +334,7 @@ export default function BlogArticle() {
       <SEO
         title={`${article.title} | North Blog`}
         description={article.excerpt}
-        image="https://northmkt.com.mx/og-image.png"
+        image={article.image}
       />
       <Header />
 
@@ -382,8 +382,8 @@ export default function BlogArticle() {
             {/* Author + Share */}
             <motion.div {...fade(0.2)} className="flex items-center justify-between pb-8 border-b border-border">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center p-1.5">
-                  <img src={northLogoDark} alt="North Digital" className="w-full h-full object-contain" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                  <img src="/favicon.webp" alt="North Digital" className="w-6 h-6 object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">{article.author}</p>

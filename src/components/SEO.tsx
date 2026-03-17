@@ -24,6 +24,9 @@ const SEO = ({
     <meta property="og:type" content="website" />
     <meta property="og:url" content={url} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="es_MX" />
     <meta property="og:site_name" content="North Digital" />
     <meta name="twitter:card" content="summary_large_image" />
