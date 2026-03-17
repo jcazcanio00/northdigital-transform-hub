@@ -84,7 +84,7 @@ export const articles: Article[] = [
     category: "marketing",
     categoryLabel: "Marketing Digital",
     tags: ["Marketing Digital", "Cancún", "Agencias", "SEO", "Publicidad Digital", "Estrategia"],
-    date: "15 Mar 2025",
+    date: "17 Mar 2026",
     readTime: "12 min",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop",
     author: "Equipo North",
