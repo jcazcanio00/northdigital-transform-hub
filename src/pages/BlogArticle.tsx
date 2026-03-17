@@ -223,34 +223,33 @@ function ContentBlock({ block }: { block: ArticleContent }) {
   }
 }
 
-/* ─── Inline CTA ─── */
-function InlineCTA() {
+/* ─── Article Meta / Tags ─── */
+function ArticleMeta({ article }: { article: typeof articlesData[string] }) {
   return (
-    <div className="my-12 p-8 rounded-2xl border border-primary/15 bg-primary/[0.03] text-center">
-      <p className="text-lg sm:text-xl font-semibold text-foreground mb-2">
-        ¿Quieres implementar esto en tu empresa?
-      </p>
-      <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-        Te ayudamos a elegir e implementar la solución perfecta para tu operación.
-      </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Button variant="gradient" size="lg" asChild>
-          <Link to="/contacto">
-            Solicitar diagnóstico
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
-        </Button>
-        <Button variant="gradient-outline" size="lg" asChild>
-          <a
-            href="https://wa.me/529983513337?text=Hola%2C%20quiero%20más%20información"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick("blog_article_inline")}
+    <div className="mt-16 pt-8 border-t border-border/60">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground mb-5">
+        <span className="flex items-center gap-1.5">
+          <Calendar className="w-3.5 h-3.5" />
+          {article.date}
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Clock className="w-3.5 h-3.5" />
+          {article.readTime} lectura
+        </span>
+        <span className="flex items-center gap-1.5">
+          <BookOpen className="w-3.5 h-3.5" />
+          {article.categoryLabel}
+        </span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {article.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium"
           >
-            <WhatsAppIconColored size={16} />
-            Hablar por WhatsApp
-          </a>
-        </Button>
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );
