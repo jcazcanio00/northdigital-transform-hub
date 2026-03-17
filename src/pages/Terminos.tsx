@@ -5,7 +5,7 @@ const sections = [
   {
     title: "Uso del Sitio",
     content: (
-      <p>Al acceder y utilizar el sitio web de North Digital Solutions ("el Sitio"), usted acepta cumplir con estos Términos y Condiciones. El uso del Sitio está destinado exclusivamente a fines informativos y de contratación de nuestros servicios tecnológicos. Queda prohibido el uso del Sitio para actividades ilegales, la distribución de contenido malicioso o cualquier acción que pueda dañar la operación del mismo.</p>
+      <p>Al acceder y utilizar el sitio web de North Solutions ("el Sitio"), usted acepta cumplir con estos Términos y Condiciones. El uso del Sitio está destinado exclusivamente a fines informativos y de contratación de nuestros servicios tecnológicos. Queda prohibido el uso del Sitio para actividades ilegales, la distribución de contenido malicioso o cualquier acción que pueda dañar la operación del mismo.</p>
     ),
   },
   {

@@ -166,7 +166,7 @@ const Acerca = () => (
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-4xl text-center">
         <motion.span {...fade()} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Acerca de North Digital
+          Acerca de North
         </motion.span>
 
         <motion.h1 {...fade(0.05)} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">

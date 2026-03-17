@@ -443,7 +443,7 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Software Empresarial a Medida | North Digital"
+        title="Software Empresarial a Medida | North"
         description="Desarrollo de CRM, dashboards, automatización de procesos y sistemas empresariales a medida. Plataformas internas con integraciones API para escalar operaciones."
         url="https://northmkt.com.mx/software"
         jsonLd={softwareJsonLd}
