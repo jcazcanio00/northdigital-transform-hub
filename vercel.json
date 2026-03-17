@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/blog/1", "destination": "/blog/1/index.html" },
     { "source": "/blog/1/", "destination": "/blog/1/index.html" },
+    { "source": "/top-7-de-agencias-de-marketing-digital-en-cancun", "destination": "/blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html" },
+    { "source": "/top-7-de-agencias-de-marketing-digital-en-cancun/", "destination": "/blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

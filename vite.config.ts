@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: path.resolve(__dirname, "index.html"),
         blogArticle1: path.resolve(__dirname, "blog/1/index.html"),
+        topAgencias: path.resolve(__dirname, "blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html"),
       },
     },
   },
