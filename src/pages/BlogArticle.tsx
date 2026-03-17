@@ -335,6 +335,7 @@ export default function BlogArticle() {
         title={`${article.title} | North Blog`}
         description={article.excerpt}
         image={article.image}
+        url={articleUrl}
       />
       <Header />
 
