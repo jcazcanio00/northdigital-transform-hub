@@ -334,7 +334,7 @@ export default function BlogArticle() {
       <SEO
         title={`${article.title} | North Blog`}
         description={article.excerpt}
-        image="https://northmkt.com.mx/og-image.png"
+        image={article.image}
       />
       <Header />
 
