@@ -394,7 +394,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Cómo elegir el CRM correcto" },
       { type: "paragraph", text: "No todos los CRM son iguales. Para empresas en Cancún recomendamos considerar: facilidad de uso (tu equipo debe adoptarlo rápidamente), integraciones con WhatsApp y redes sociales, soporte en español, precio escalable y capacidad de automatización. Puedes profundizar en nuestra guía de cómo elegir el CRM correcto." },
       { type: "h2", text: "La implementación importa tanto como la herramienta" },
-      { type: "paragraph", text: "El 60% de las implementaciones de CRM fallan por falta de estrategia, no por problemas técnicos. Un CRM mal configurado o sin adopción del equipo es dinero perdido. Por eso, en North Digital no solo implementamos la herramienta: diseñamos el proceso de ventas, capacitamos al equipo y configuramos automatizaciones que generan resultados desde el primer mes." },
+      { type: "paragraph", text: "El 60% de las implementaciones de CRM fallan por falta de estrategia, no por problemas técnicos. Un CRM mal configurado o sin adopción del equipo es dinero perdido. Por eso, en North no solo implementamos la herramienta: diseñamos el proceso de ventas, capacitamos al equipo y configuramos automatizaciones que generan resultados desde el primer mes." },
       { type: "paragraph", text: "Si tu empresa en Cancún está lista para profesionalizar sus ventas, explora nuestra solución de CRM para empresas o agenda una consulta gratuita con nuestro equipo." },
     ],
   },
