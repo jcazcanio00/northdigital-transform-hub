@@ -337,7 +337,7 @@ export const articles: Article[] = [
         "ROI por canal: ¿Qué canal genera más ingresos por peso invertido?",
         "Velocidad del pipeline: ¿Cuánto tarda un lead en convertirse en cliente?"
       ]},
-      { type: "paragraph", text: "En North Digital diseñamos e implementamos sistemas de crecimiento que integran marketing, CRM y automatización. Si quieres conocer cómo podemos ayudar a tu empresa a crecer con una estrategia basada en datos, agenda una consulta con nuestro equipo." },
+      { type: "paragraph", text: "En North diseñamos e implementamos sistemas de crecimiento que integran marketing, CRM y automatización. Si quieres conocer cómo podemos ayudar a tu empresa a crecer con una estrategia basada en datos, agenda una consulta con nuestro equipo." },
     ],
   },
 
