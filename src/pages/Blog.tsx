@@ -279,42 +279,62 @@ const BlogPage = () => {
               Artículos <span className="gradient-text">destacados</span>
             </h2>
           </motion.div>
-          <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
-            {featured.map((article, i) => (
+          {/* Editorial layout: primary + secondary */}
+          <div className="grid lg:grid-cols-2 gap-6">
+            {/* Primary featured article */}
+            {featured[0] && (
               <motion.div
-                key={article.id}
-                {...fade(i * 0.1)}
-                className="group relative flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-[0_20px_80px_-15px_hsl(var(--primary)/0.3)] hover:-translate-y-2"
+                {...fade(0.1)}
+                className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-[0_20px_80px_-15px_hsl(var(--primary)/0.3)] hover:-translate-y-2 lg:row-span-2"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="relative h-52 overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">
-                    {article.categoryLabel}
-                  </span>
+                <div className="relative h-56 sm:h-64 lg:h-[55%] overflow-hidden">
+                  <img src={featured[0].image} alt={featured[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
                 </div>
-                <div className="relative z-10 p-6">
+                <div className="relative z-10 p-6 lg:p-8">
                   <div className="flex items-center gap-3 text-[11px] text-white/40 mb-3">
-                    <span className="flex items-center gap-1"><Clock size={11} /> {article.date}</span>
+                    <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
                     <span>·</span>
-                    <span className="flex items-center gap-1"><BookOpen size={11} /> {article.readTime} lectura</span>
+                    <span className="flex items-center gap-1"><BookOpen size={11} /> {featured[0].readTime} lectura</span>
                   </div>
-                  <h3 className="text-xl font-bold font-display mb-3 text-white group-hover:text-primary transition-colors duration-300 leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-white/50 leading-relaxed mb-5 line-clamp-2">{article.excerpt}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
-                    Leer artículo <ArrowRight size={14} />
-                  </span>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 text-white group-hover:text-primary transition-colors duration-300 leading-snug">{featured[0].title}</h3>
+                  <p className="text-sm sm:text-base text-white/50 leading-relaxed mb-5">{featured[0].excerpt}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                 </div>
               </motion.div>
-            ))}
+            )}
+
+            {/* Secondary featured articles */}
+            <div className="flex flex-col gap-6">
+              {featured.slice(1, 3).map((article, i) => (
+                <motion.div
+                  key={article.id}
+                  {...fade(0.15 + i * 0.1)}
+                  className="group relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.25)] hover:-translate-y-1.5 flex-1"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="sm:flex lg:flex h-full">
+                    <div className="relative h-44 sm:h-auto sm:w-2/5 lg:w-2/5 overflow-hidden flex-shrink-0">
+                      <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/40 to-transparent" />
+                      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
+                    </div>
+                    <div className="relative z-10 p-5 sm:p-6 flex flex-col justify-center">
+                      <div className="flex items-center gap-3 text-[10px] text-white/40 mb-2">
+                        <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+                        <span>·</span>
+                        <span>{article.readTime} lectura</span>
+                      </div>
+                      <h3 className="text-lg font-bold font-display mb-2 text-white group-hover:text-primary transition-colors duration-300 leading-snug">{article.title}</h3>
+                      <p className="text-sm text-white/50 leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
