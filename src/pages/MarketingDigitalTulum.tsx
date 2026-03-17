@@ -382,7 +382,7 @@ const MarketingDigitalTulumPage = () => {
               <span className="gradient-text">Riviera Maya</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              North Digital ofrece servicios de marketing digital en Tulum y las principales ciudades de Quintana Roo. Diseñamos estrategias específicas para cada mercado local.
+              North ofrece servicios de marketing digital en Tulum y las principales ciudades de Quintana Roo. Diseñamos estrategias específicas para cada mercado local.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
