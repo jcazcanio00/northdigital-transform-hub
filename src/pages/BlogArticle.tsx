@@ -41,6 +41,7 @@ const articlesData: Record<string, {
     excerpt: "Una guía completa para evaluar, comparar e implementar un CRM que realmente se adapte a tu operación comercial y acelere tus ventas.",
     category: "crm",
     categoryLabel: "CRM & Ventas",
+    tags: ["CRM", "Ventas", "HubSpot", "Salesforce", "Automatización", "B2B"],
     date: "12 Mar 2025",
     readTime: "8 min",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop",
