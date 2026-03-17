@@ -178,9 +178,9 @@ function ContentBlock({ block }: { block: ArticleContent }) {
       );
     case "list":
       return (
-        <ul className="my-6 space-y-3 pl-1">
+        <ul className="my-7 space-y-3.5 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.7] text-muted-foreground">
+            <li key={i} className="flex items-start gap-3 text-base sm:text-lg leading-[1.75] text-muted-foreground">
               <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
               {item}
             </li>
