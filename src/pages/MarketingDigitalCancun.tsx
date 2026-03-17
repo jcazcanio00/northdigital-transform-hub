@@ -6,13 +6,20 @@ import {
   MousePointerClick, LineChart, Globe, Eye, Users, DollarSign,
   ChevronRight, Layers, Megaphone,
   PieChart, Gauge, ShoppingCart, FileText, Mail, Repeat,
-  Activity, ArrowUpRight, Filter, Percent, MapPin
+  Activity, ArrowUpRight, Filter, Percent, MapPin, HelpCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 /* ─── Fade helper ─── */
 const fade = (delay = 0) => ({
@@ -207,11 +214,11 @@ const marketingLogos = [
 ];
 
 const metrics = [
-  { icon: DollarSign, title: "ROAS", desc: "Cada peso invertido en pauta genera un retorno medible y optimizado mes a mes para negocios en Cancún.", value: "5.2x", sub: "promedio" },
-  { icon: Percent, title: "Tasa de conversión", desc: "Optimización continua de landing pages y embudos para maximizar cada visita.", value: "4.8%", sub: "avg. CVR" },
+  { icon: DollarSign, title: "ROAS", desc: "Cada peso invertido en pauta genera un retorno medible y optimizado mes a mes para negocios en Cancún y Playa del Carmen.", value: "5.2x", sub: "promedio" },
+  { icon: Percent, title: "Tasa de conversión", desc: "Optimización continua de landing pages y embudos para maximizar cada visita de usuarios en la Riviera Maya.", value: "4.8%", sub: "avg. CVR" },
   { icon: Eye, title: "CTR en campañas", desc: "Creativos y copy optimizados que superan benchmarks de industria consistentemente.", value: "+62%", sub: "vs. industry" },
-  { icon: Users, title: "Coste por Lead", desc: "Reducción progresiva del CAC mediante optimización de audiencias y bidding.", value: "-34%", sub: "reducción" },
-  { icon: TrendingUp, title: "Tráfico orgánico", desc: "Crecimiento sostenido de visitas orgánicas para empresas en Quintana Roo.", value: "+120%", sub: "YoY growth" },
+  { icon: Users, title: "Coste por Lead", desc: "Reducción progresiva del CAC mediante optimización de audiencias y bidding en Quintana Roo.", value: "-34%", sub: "reducción" },
+  { icon: TrendingUp, title: "Tráfico orgánico", desc: "Crecimiento sostenido de visitas orgánicas para empresas en Cancún, Tulum y Playa del Carmen.", value: "+120%", sub: "YoY growth" },
   { icon: Gauge, title: "Core Web Vitals", desc: "Páginas rápidas que mejoran posicionamiento, Quality Score y experiencia de usuario.", value: "<1.5s", sub: "LCP target" },
 ];
 
@@ -225,10 +232,33 @@ const useCases = [
 ];
 
 const localAreas = [
-  { name: "Cancún", desc: "Zona hotelera, centro, Puerto Cancún y zonas residenciales." },
-  { name: "Playa del Carmen", desc: "Quinta Avenida, Playacar y desarrollos emergentes." },
-  { name: "Tulum", desc: "Zona hotelera, pueblo y la carretera Tulum-Boca Paila." },
-  { name: "Riviera Maya", desc: "Puerto Morelos, Akumal, Puerto Aventuras y más." },
+  { name: "Cancún", desc: "Agencia de marketing digital en Cancún enfocada en crecimiento empresarial, SEO local, generación de leads y campañas de alto rendimiento para negocios en la zona hotelera, centro y Puerto Cancún." },
+  { name: "Playa del Carmen", desc: "Servicios de marketing digital para empresas en Playa del Carmen. Estrategias de posicionamiento, Google Ads y automatización comercial para negocios en Quinta Avenida, Playacar y alrededores." },
+  { name: "Tulum", desc: "Estrategias digitales para negocios en Tulum. SEO, campañas pagadas y presencia digital para empresas turísticas, inmobiliarias y de servicios en la zona hotelera y pueblo." },
+  { name: "Riviera Maya", desc: "Soluciones de marketing digital para empresas en toda la Riviera Maya, incluyendo Puerto Morelos, Akumal y Puerto Aventuras. Cobertura integral con estrategias adaptadas al mercado regional." },
+];
+
+const faqs = [
+  {
+    q: "¿Ofrecen servicios de marketing digital en Playa del Carmen?",
+    a: "Sí. Trabajamos con empresas en Playa del Carmen diseñando estrategias de SEO local, Google Ads, automatización de leads y analítica avanzada. Nuestro equipo conoce el mercado de la zona y adapta cada campaña al contexto local.",
+  },
+  {
+    q: "¿Trabajan con empresas en Tulum?",
+    a: "Absolutamente. Ofrecemos servicios de marketing digital en Tulum enfocados en turismo, hospitalidad, inmobiliarias y servicios profesionales. Diseñamos estrategias que conectan con audiencias locales e internacionales.",
+  },
+  {
+    q: "¿Qué incluye el servicio de marketing digital en Cancún?",
+    a: "Nuestro servicio de marketing digital en Cancún incluye SEO técnico y local, campañas de Google Ads, landing pages de conversión, email marketing, analítica avanzada con GA4 y CRO. Todo orientado a generar leads cualificados y escalar ingresos.",
+  },
+  {
+    q: "¿Cubren toda la Riviera Maya?",
+    a: "Sí. Brindamos cobertura de marketing digital en toda la Riviera Maya: Cancún, Playa del Carmen, Tulum, Puerto Morelos, Akumal y Puerto Aventuras. Adaptamos cada estrategia al mercado y la audiencia de cada zona.",
+  },
+  {
+    q: "¿Pueden integrar el marketing digital con un CRM o software empresarial?",
+    a: "Sí. Integramos las estrategias de marketing digital con soluciones de automatización de ventas, CRM empresarial y software a medida para que cada lead se gestione de forma eficiente desde el primer contacto.",
+  },
 ];
 
 /* ─── JSON-LD ─── */
@@ -236,25 +266,26 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Agencia de Marketing Digital en Cancún",
+    "name": "Agencia de Marketing Digital en Cancún, Playa del Carmen y Riviera Maya",
     "provider": {
       "@type": "Organization",
       "name": "North Digital",
       "url": "https://northmkt.com.mx",
     },
-    "description": "Agencia de marketing digital en Cancún especializada en SEO, Google Ads, CRO y analítica avanzada para empresas en Cancún, Playa del Carmen y Tulum.",
+    "description": "Agencia de marketing digital en Cancún, Playa del Carmen, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
     "url": "https://northmkt.com.mx/marketing-digital-cancun",
     "areaServed": [
       { "@type": "City", "name": "Cancún" },
       { "@type": "City", "name": "Playa del Carmen" },
       { "@type": "City", "name": "Tulum" },
+      { "@type": "Place", "name": "Riviera Maya" },
     ],
     "serviceType": "Marketing Digital",
   },
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "North Digital - Agencia de Marketing Digital",
+    "name": "North Digital - Agencia de Marketing Digital en Cancún",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx/marketing-digital-cancun",
     "telephone": "+52-998-351-3337",
@@ -269,6 +300,7 @@ const jsonLd = [
       { "@type": "City", "name": "Cancún" },
       { "@type": "City", "name": "Playa del Carmen" },
       { "@type": "City", "name": "Tulum" },
+      { "@type": "Place", "name": "Riviera Maya" },
     ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -276,6 +308,18 @@ const jsonLd = [
       "opens": "09:00",
       "closes": "18:00",
     },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a,
+      },
+    })),
   },
 ];
 
@@ -286,8 +330,8 @@ const MarketingDigitalCancunPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Agencia de Marketing Digital en Cancún | SEO, Google Ads & CRO | North Digital"
-        description="Agencia de marketing digital en Cancún, Playa del Carmen y Tulum. Especialistas en SEO local, Google Ads, CRO y analítica avanzada para escalar tu negocio en Quintana Roo."
+        title="Agencia de Marketing Digital en Cancún | SEO y Growth para Empresas"
+        description="Agencia de marketing digital en Cancún, Playa del Carmen y Riviera Maya. Estrategias de crecimiento, SEO, automatización y generación de leads para empresas."
         url="https://northmkt.com.mx/marketing-digital-cancun"
         jsonLd={jsonLd}
       />
@@ -303,14 +347,14 @@ const MarketingDigitalCancunPage = () => {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 <MapPin size={12} className="text-primary" />
-                CANCÚN · PLAYA DEL CARMEN · TULUM
+                CANCÚN · PLAYA DEL CARMEN · RIVIERA MAYA
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
                 Agencia de Marketing{" "}
-                <span className="gradient-text">Digital en Cancún</span>
+                <span className="gradient-text">Digital en Cancún, Playa del Carmen y Riviera Maya</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Estrategias de marketing digital basadas en datos para empresas en Cancún, Playa del Carmen y Tulum. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.
+                Estrategias de marketing digital basadas en datos para empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
@@ -324,32 +368,33 @@ const MarketingDigitalCancunPage = () => {
         </div>
       </section>
 
-      {/* ═══ COBERTURA LOCAL ═══ */}
-      <section className="py-16 border-y border-border/10 relative">
+      {/* ═══ ZONAS DE SERVICIO ═══ */}
+      <section className="py-20 border-y border-border/10 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/20 to-background pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="text-center mb-10">
+          <motion.div {...fade()} className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <MapPin size={12} className="text-primary" />
               Cobertura Regional
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display mb-3">
-              Marketing digital en toda la <span className="gradient-text">Riviera Maya</span>
+              Marketing Digital en Cancún, Playa del Carmen y{" "}
+              <span className="gradient-text">Riviera Maya</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Conocemos el mercado local. Diseñamos estrategias específicas para cada zona de Quintana Roo.
+              North Digital ofrece servicios de marketing digital en las principales ciudades de Quintana Roo. Diseñamos estrategias específicas para cada mercado local.
             </p>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
             {localAreas.map((area, i) => (
               <motion.div
                 key={area.name}
                 {...fade(i * 0.08)}
-                className="rounded-2xl border border-border bg-card p-5 text-center hover:border-primary/30 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                className="rounded-2xl border border-border bg-card p-6 hover:border-primary/30 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.15)] transition-all duration-500"
               >
-                <MapPin size={20} className="text-primary mx-auto mb-2" />
-                <h3 className="font-bold font-display mb-1">{area.name}</h3>
-                <p className="text-xs text-muted-foreground">{area.desc}</p>
+                <MapPin size={20} className="text-primary mb-3" />
+                <h3 className="font-bold font-display mb-2 text-base">{area.name}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{area.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -366,10 +411,10 @@ const MarketingDigitalCancunPage = () => {
               Servicios
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Servicios de Marketing <span className="gradient-text">Digital</span>
+              Servicios de Marketing <span className="gradient-text">Digital en Cancún</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Cada canal está diseñado para generar tráfico cualificado, leads y revenue medible para negocios en Cancún y la Riviera Maya.
+              Cada canal está diseñado para generar tráfico cualificado, leads y revenue medible para negocios en Cancún, Playa del Carmen, Tulum y la Riviera Maya.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -394,6 +439,26 @@ const MarketingDigitalCancunPage = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Internal linking */}
+          <motion.div {...fade(0.3)} className="mt-10 text-center">
+            <p className="text-sm text-muted-foreground mb-3">
+              Complementa tu estrategia digital con nuestras soluciones tecnológicas:
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/crm-empresas" className="text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">
+                Automatización de ventas con CRM
+              </Link>
+              <span className="text-muted-foreground/30">·</span>
+              <Link to="/software" className="text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">
+                Software empresarial a medida
+              </Link>
+              <span className="text-muted-foreground/30">·</span>
+              <Link to="/cloud" className="text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">
+                Soluciones tecnológicas en la nube
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -410,7 +475,7 @@ const MarketingDigitalCancunPage = () => {
               Framework de <span className="gradient-text">Crecimiento</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Un sistema probado de cuatro fases para escalar negocios en Cancún, Playa del Carmen y Tulum.
+              Un sistema probado de cuatro fases para escalar negocios en Cancún, Playa del Carmen, Tulum y la Riviera Maya.
             </p>
           </motion.div>
 
@@ -491,7 +556,7 @@ const MarketingDigitalCancunPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-muted/20 to-background pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 mb-6">
           <p className="text-center text-[10px] text-muted-foreground tracking-[0.25em] uppercase font-medium">
-            Tecnologías y plataformas que utilizamos para marketing digital
+            Tecnologías y plataformas que utilizamos para marketing digital en Cancún y Riviera Maya
           </p>
         </div>
         <div className="relative">
@@ -534,10 +599,10 @@ const MarketingDigitalCancunPage = () => {
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white leading-tight">
               Tu agencia de marketing digital{" "}
-              <span className="gradient-text">en Cancún</span>
+              <span className="gradient-text">en Cancún y Riviera Maya</span>
             </h2>
             <p className="text-base sm:text-lg text-white/50 mb-10 max-w-xl mx-auto leading-relaxed">
-              Combinamos conocimiento local con estrategias de clase mundial para ayudarte a dominar el mercado de Quintana Roo.
+              Combinamos conocimiento local con estrategias de clase mundial para ayudarte a dominar el mercado de Cancún, Playa del Carmen, Tulum y toda la Riviera Maya.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="gradient" size="lg" asChild>
@@ -561,10 +626,10 @@ const MarketingDigitalCancunPage = () => {
               Resultados
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Métricas que <span className="gradient-text">optimizamos</span>
+              Métricas que <span className="gradient-text">optimizamos</span> en Cancún
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Nos enfocamos en los indicadores que realmente impactan el crecimiento y la rentabilidad de tu negocio en Cancún.
+              Nos enfocamos en los indicadores que realmente impactan el crecimiento y la rentabilidad de tu negocio en Cancún, Playa del Carmen y la Riviera Maya.
             </p>
           </motion.div>
 
@@ -606,10 +671,10 @@ const MarketingDigitalCancunPage = () => {
               Industrias
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
-              Marketing digital para <span className="gradient-text">tu industria</span>
+              Marketing digital para <span className="gradient-text">tu industria en Cancún</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Estrategias especializadas por vertical para empresas en Cancún, Playa del Carmen y Tulum.
+              Estrategias de marketing digital especializadas por vertical para empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -628,6 +693,41 @@ const MarketingDigitalCancunPage = () => {
         </div>
       </section>
 
+      {/* ═══ FAQ ═══ */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-mesh pointer-events-none opacity-30" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl">
+          <motion.div {...fade()} className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+              <HelpCircle size={12} className="text-primary" />
+              Preguntas Frecuentes
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold font-display mb-3">
+              Preguntas sobre marketing digital en{" "}
+              <span className="gradient-text">Cancún y Riviera Maya</span>
+            </h2>
+          </motion.div>
+          <motion.div {...fade(0.1)}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`faq-${i}`}
+                  className="rounded-xl border border-border bg-card px-6 data-[state=open]:border-primary/20 transition-colors"
+                >
+                  <AccordionTrigger className="text-sm font-semibold font-display text-left hover:no-underline py-5">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══ CTA FINAL ═══ */}
       <section className="py-24 relative overflow-hidden" style={{ background: "var(--gradient-cta)" }}>
         <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
@@ -639,7 +739,7 @@ const MarketingDigitalCancunPage = () => {
               <span className="gradient-text">marketing digital</span>
             </h2>
             <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
-              La agencia de marketing digital en Quintana Roo que combina datos, tecnología y creatividad para generar resultados medibles.
+              La agencia de marketing digital en Cancún, Playa del Carmen y Riviera Maya que combina datos, tecnología y creatividad para generar resultados medibles.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="gradient" size="lg" asChild>
