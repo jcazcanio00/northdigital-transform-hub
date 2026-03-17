@@ -327,8 +327,7 @@ export default function BlogArticle() {
     );
   }
 
-  /* insert inline CTA roughly in the middle of content */
-  const midpoint = Math.floor(article.content.length / 2);
+  const articleUrl = `https://northmkt.com.mx/blog/${id}`;
 
   return (
     <>
