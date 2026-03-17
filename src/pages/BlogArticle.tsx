@@ -158,7 +158,7 @@ function ContentBlock({ block }: { block: ArticleContent }) {
       );
     case "h2":
       return (
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mt-14 mb-5 tracking-tight">
+        <h2 className="font-display text-2xl sm:text-[1.85rem] font-bold text-foreground mt-16 mb-6 tracking-tight leading-tight">
           {block.text}
         </h2>
       );
