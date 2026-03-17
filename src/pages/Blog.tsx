@@ -34,12 +34,12 @@ const categories = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Blog de North Digital",
+  "name": "Blog de North",
   "description": "Insights, estrategias y guías prácticas sobre marketing digital, automatización, CRM y tecnología para empresas.",
   "url": "https://northmkt.com.mx/blog",
   "publisher": {
     "@type": "Organization",
-    "name": "North Digital",
+    "name": "North",
     "url": "https://northmkt.com.mx",
   },
 };
