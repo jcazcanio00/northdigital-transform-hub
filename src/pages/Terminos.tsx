@@ -23,7 +23,7 @@ const sections = [
   {
     title: "Limitación de Responsabilidad",
     content: (
-      <p>North Digital Solutions no será responsable por daños directos, indirectos, incidentales, consecuentes o punitivos que resulten del uso o la imposibilidad de uso del Sitio. No garantizamos que el Sitio esté libre de errores, virus o interrupciones. El uso del Sitio es bajo su propio riesgo. En ningún caso nuestra responsabilidad total excederá el monto pagado por los servicios contratados.</p>
+      <p>North Solutions no será responsable por daños directos, indirectos, incidentales, consecuentes o punitivos que resulten del uso o la imposibilidad de uso del Sitio. No garantizamos que el Sitio esté libre de errores, virus o interrupciones. El uso del Sitio es bajo su propio riesgo. En ningún caso nuestra responsabilidad total excederá el monto pagado por los servicios contratados.</p>
     ),
   },
   {
