@@ -58,7 +58,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={isDark ? logoNorthLight : logoNorthDark} alt="North Digital" className="h-7 w-auto" width={120} height={28} fetchPriority="high" decoding="async" />
+          <img src={isDark ? logoNorthLight : logoNorthDark} alt="North" className="h-7 w-auto" width={120} height={28} fetchPriority="high" decoding="async" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

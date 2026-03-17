@@ -13,8 +13,8 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
       <SEO
-        title="Página no encontrada | North Digital"
-        description="La página que buscas no existe. Regresa al inicio de North Digital."
+        title="Página no encontrada | North"
+        description="La página que buscas no existe. Regresa al inicio de North."
         url={`https://northmkt.com.mx${location.pathname}`}
       />
       <div className="text-center">
