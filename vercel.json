@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/blog/1", "destination": "/blog/1/index.html" },
+    { "source": "/blog/1/", "destination": "/blog/1/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

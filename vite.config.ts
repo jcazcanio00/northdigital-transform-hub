@@ -12,6 +12,14 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        blogArticle1: path.resolve(__dirname, "blog/1/index.html"),
+      },
+    },
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
