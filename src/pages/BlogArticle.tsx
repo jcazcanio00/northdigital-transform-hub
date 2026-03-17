@@ -418,13 +418,13 @@ export default function BlogArticle() {
         <article className="pb-16">
           <div className="max-w-3xl mx-auto px-6">
             {article.content.map((block, i) => (
-              <div key={i}>
-                {i === midpoint && <InlineCTA />}
-                <motion.div {...fade(0)}>
-                  <ContentBlock block={block} />
-                </motion.div>
-              </div>
+              <motion.div key={i} {...fade(0)}>
+                <ContentBlock block={block} />
+              </motion.div>
             ))}
+
+            {/* ─── Article Meta / Tags ─── */}
+            <ArticleMeta article={article} />
           </div>
         </article>
 
