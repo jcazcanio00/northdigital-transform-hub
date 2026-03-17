@@ -27,6 +27,7 @@ const articlesData: Record<string, {
   excerpt: string;
   category: string;
   categoryLabel: string;
+  tags: string[];
   date: string;
   readTime: string;
   image: string;
