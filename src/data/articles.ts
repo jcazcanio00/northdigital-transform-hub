@@ -290,7 +290,7 @@ export const articles: Article[] = [
     slug: "estrategias-de-marketing-digital-para-empresas",
     url: "/estrategias-de-marketing-digital-para-empresas",
     title: "Estrategias de marketing digital para empresas que quieren crecer",
-    seoTitle: "Estrategias de marketing digital para empresas | North Digital",
+    seoTitle: "Estrategias de marketing digital para empresas | North",
     excerpt: "Las estrategias de marketing digital más efectivas para empresas en crecimiento. SEO, publicidad, contenido, email marketing y automatización para generar resultados.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
