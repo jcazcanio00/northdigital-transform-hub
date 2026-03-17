@@ -470,7 +470,7 @@ export const articles: Article[] = [
     slug: "como-generar-leads-para-mi-empresa-en-cancun",
     url: "/como-generar-leads-para-mi-empresa-en-cancun",
     title: "Cómo generar leads para tu empresa en Cancún: estrategias prácticas",
-    seoTitle: "Cómo generar leads para tu empresa en Cancún | North Digital",
+    seoTitle: "Cómo generar leads para tu empresa en Cancún | North",
     excerpt: "Estrategias probadas para generar clientes potenciales en Cancún: SEO, publicidad, funnels, CRM y automatización para convertir visitantes en ventas.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
