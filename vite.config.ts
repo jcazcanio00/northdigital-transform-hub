@@ -13,6 +13,21 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
+        // Page-specific HTML entry points (OG metadata for crawlers)
+        pageBlog: path.resolve(__dirname, "pages/blog/index.html"),
+        pageSoftware: path.resolve(__dirname, "pages/software/index.html"),
+        pageCloud: path.resolve(__dirname, "pages/cloud/index.html"),
+        pageMarketing: path.resolve(__dirname, "pages/marketing/index.html"),
+        pageContacto: path.resolve(__dirname, "pages/contacto/index.html"),
+        pageAcerca: path.resolve(__dirname, "pages/acerca/index.html"),
+        pageMdCancun: path.resolve(__dirname, "pages/marketing-digital-cancun/index.html"),
+        pageMdPlaya: path.resolve(__dirname, "pages/marketing-digital-playa-del-carmen/index.html"),
+        pageMdTulum: path.resolve(__dirname, "pages/marketing-digital-tulum/index.html"),
+        pageCrm: path.resolve(__dirname, "pages/crm-empresas/index.html"),
+        pageAutomatizacion: path.resolve(__dirname, "pages/automatizacion-empresarial/index.html"),
+        pageTerminos: path.resolve(__dirname, "pages/terminos/index.html"),
+        pagePrivacidad: path.resolve(__dirname, "pages/privacidad/index.html"),
+        // Blog article static HTML entry points
         blogArticle1: path.resolve(__dirname, "blog/1/index.html"),
         topAgencias: path.resolve(__dirname, "blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html"),
         queEsMarketing: path.resolve(__dirname, "blog/que-es-marketing-digital/index.html"),
