@@ -16,8 +16,8 @@ const Footer = () => (
         {/* Brand */}
         <div className="lg:col-span-2">
         <Link to="/" className="flex items-center gap-2.5 mb-4">
-            <img src={logoNorthDark} alt="North Digital" className="h-8 w-auto dark:hidden" loading="lazy" decoding="async" width={140} height={32} />
-            <img src={logoNorthLight} alt="North Digital" className="h-8 w-auto hidden dark:block" loading="lazy" decoding="async" width={140} height={32} />
+            <img src={logoNorthDark} alt="North" className="h-8 w-auto dark:hidden" loading="lazy" decoding="async" width={140} height={32} />
+            <img src={logoNorthLight} alt="North" className="h-8 w-auto hidden dark:block" loading="lazy" decoding="async" width={140} height={32} />
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed mb-5">
             Software empresarial, cloud services y marketing de crecimiento para empresas modernas.
