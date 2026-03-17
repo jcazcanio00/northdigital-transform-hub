@@ -152,7 +152,7 @@ function ContentBlock({ block }: { block: ArticleContent }) {
   switch (block.type) {
     case "paragraph":
       return (
-        <p className="text-base sm:text-lg leading-[1.8] text-muted-foreground mb-6">
+        <p className="text-base sm:text-lg leading-[1.85] text-muted-foreground mb-7">
           {block.text}
         </p>
       );
