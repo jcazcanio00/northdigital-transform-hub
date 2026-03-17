@@ -76,4 +76,4 @@ export const WhatsAppHeroButton = () => (
   </a>
 );
 
-export { trackWhatsAppClick };
+export { trackWhatsAppClick, WhatsAppIconColored };

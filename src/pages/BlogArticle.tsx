@@ -333,7 +333,7 @@ export default function BlogArticle() {
       <SEO
         title={`${article.title} | North Blog`}
         description={article.excerpt}
-        ogImage={article.image}
+        image={article.image}
       />
       <Header />
 
