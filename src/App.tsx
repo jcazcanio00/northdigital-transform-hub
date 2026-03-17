@@ -23,6 +23,7 @@ const MarketingDigitalTulum = lazy(() => import("./pages/MarketingDigitalTulum.t
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/marketing-digital-playa-del-carmen" element={<MarketingDigitalPlayaDelCarmen />} />
             <Route path="/marketing-digital-tulum" element={<MarketingDigitalTulum />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogArticle />} />
             <Route path="/crm-empresas" element={<CrmEmpresas />} />
             <Route path="/automatizacion-empresarial" element={<AutomatizacionEmpresarial />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

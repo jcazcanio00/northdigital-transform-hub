@@ -149,6 +149,7 @@ const jsonLd = {
 /* ─── Components ─── */
 
 const FeaturedCard = ({ article, large = false }: { article: typeof articles[0]; large?: boolean }) => (
+  <Link to={`/blog/${article.id}`} className="block">
   <motion.div
     {...fade(0.1)}
     className={`group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.15)] hover:-translate-y-2 ${large ? "md:col-span-2 md:grid md:grid-cols-2" : ""}`}
@@ -181,9 +182,11 @@ const FeaturedCard = ({ article, large = false }: { article: typeof articles[0];
       </span>
     </div>
   </motion.div>
+  </Link>
 );
 
 const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
+  <Link to={`/blog/${article.id}`} className="block">
   <motion.div
     {...fade(0.05)}
     className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
@@ -217,6 +220,7 @@ const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
       </span>
     </div>
   </motion.div>
+  </Link>
 );
 
 /* ─── Main Page ─── */
@@ -296,9 +300,10 @@ const BlogPage = () => {
           <div className="grid lg:grid-cols-5 gap-8">
             {/* ── Primary article (3/5 width) ── */}
             {featured[0] && (
+              <Link to={`/blog/${featured[0].id}`} className="lg:col-span-3 block">
               <motion.div
                 {...fade(0.1)}
-                className="lg:col-span-3 group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2"
+                className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
@@ -320,15 +325,16 @@ const BlogPage = () => {
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                 </div>
               </motion.div>
+              </Link>
             )}
 
             {/* ── Secondary articles (2/5 width, stacked) ── */}
             <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
+                <Link key={article.id} to={`/blog/${article.id}`} className="flex-1 block">
                 <motion.div
-                  key={article.id}
                   {...fade(0.15 + i * 0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 flex-1"
+                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="relative h-40 overflow-hidden">
@@ -347,6 +353,7 @@ const BlogPage = () => {
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                   </div>
                 </motion.div>
+                </Link>
               ))}
             </div>
           </div>
