@@ -285,7 +285,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "North Digital - Agencia de Marketing Digital en Playa del Carmen",
+    "name": "North - Agencia de Marketing Digital en Playa del Carmen",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx/marketing-digital-playa-del-carmen",
     "telephone": "+52-998-351-3337",
