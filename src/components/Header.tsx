@@ -103,6 +103,13 @@ const Header = () => {
           </div>
 
           <Link
+            to="/blog"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
+            Blog
+          </Link>
+
+          <Link
             to="/contacto"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
           >
@@ -169,6 +176,9 @@ const Header = () => {
               {s.label}
             </Link>
           ))}
+          <Link to="/blog" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Blog
+          </Link>
           <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Contacto
           </Link>

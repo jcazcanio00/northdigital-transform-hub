@@ -32,8 +32,8 @@ export const articles: Article[] = [
      1. CRM correcto (legacy /blog/1)
      ═══════════════════════════════════════════════ */
   {
-    slug: "1",
-    url: "/blog/1",
+    slug: "como-elegir-el-crm-correcto",
+    url: "/blog/como-elegir-el-crm-correcto",
     title: "Cómo elegir el CRM correcto para tu empresa en 2025",
     seoTitle: "Cómo elegir el CRM correcto para tu empresa en 2025 | North Digital",
     excerpt: "Una guía completa para evaluar, comparar e implementar un CRM que realmente se adapte a tu operación comercial y acelere tus ventas.",
