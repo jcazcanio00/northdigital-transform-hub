@@ -92,8 +92,8 @@ const sections = [
 const Privacidad = () => (
   <>
     <SEO
-      title="Aviso de Privacidad | North Digital"
-      description="Aviso de privacidad de North Digital. Conoce cómo recopilamos, usamos y protegemos tus datos personales conforme a la ley mexicana."
+      title="Aviso de Privacidad | North"
+      description="Aviso de privacidad de North. Conoce cómo recopilamos, usamos y protegemos tus datos personales conforme a la ley mexicana."
       url="https://northmkt.com.mx/privacidad"
     />
     <LegalPage

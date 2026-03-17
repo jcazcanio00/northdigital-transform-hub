@@ -55,8 +55,8 @@ const sections = [
 const Terminos = () => (
   <>
     <SEO
-      title="Términos y Condiciones | North Digital"
-      description="Términos y condiciones de uso del sitio web y servicios de North Digital Solutions. Propiedad intelectual, limitaciones y jurisdicción aplicable."
+      title="Términos y Condiciones | North"
+      description="Términos y condiciones de uso del sitio web y servicios de North Solutions. Propiedad intelectual, limitaciones y jurisdicción aplicable."
       url="https://northmkt.com.mx/terminos"
     />
     <LegalPage
