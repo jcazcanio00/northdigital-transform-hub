@@ -331,10 +331,10 @@ const BlogPage = () => {
             {/* ── Secondary articles (2/5 width, stacked) ── */}
             <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
+                <Link key={article.id} to={`/blog/${article.id}`} className="flex-1 block">
                 <motion.div
-                  key={article.id}
                   {...fade(0.15 + i * 0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 flex-1"
+                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="relative h-40 overflow-hidden">
@@ -353,6 +353,7 @@ const BlogPage = () => {
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                   </div>
                 </motion.div>
+                </Link>
               ))}
             </div>
           </div>
