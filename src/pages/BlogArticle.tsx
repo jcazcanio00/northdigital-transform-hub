@@ -124,9 +124,9 @@ function CodeBlock({ language, code }: { language: string; code: string }) {
   };
 
   return (
-    <div className="my-8 rounded-xl border border-border/60 overflow-hidden bg-[hsl(228_40%_6%)] shadow-lg">
-      <div className="flex items-center justify-between px-4 py-2.5 bg-[hsl(228_35%_10%)] border-b border-white/5">
-        <span className="text-xs font-mono font-medium text-muted-foreground/80 uppercase tracking-wider">
+    <div className="my-8 rounded-xl border border-border/60 overflow-hidden bg-foreground shadow-lg">
+      <div className="flex items-center justify-between px-4 py-2.5 bg-foreground/90 border-b border-background/5">
+        <span className="text-xs font-mono font-medium text-background/50 uppercase tracking-wider">
           {language}
         </span>
         <button
