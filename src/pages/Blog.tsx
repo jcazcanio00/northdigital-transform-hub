@@ -186,6 +186,7 @@ const FeaturedCard = ({ article, large = false }: { article: typeof articles[0];
 );
 
 const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
+  <Link to={`/blog/${article.id}`} className="block">
   <motion.div
     {...fade(0.05)}
     className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
@@ -219,6 +220,7 @@ const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
       </span>
     </div>
   </motion.div>
+  </Link>
 );
 
 /* ─── Main Page ─── */
