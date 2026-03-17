@@ -21,7 +21,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "North Digital",
+    "name": "North",
     "url": "https://northmkt.com.mx",
     "logo": "https://northmkt.com.mx/favicon.webp",
     "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
@@ -46,7 +46,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "North Digital",
+    "name": "North",
     "url": "https://northmkt.com.mx",
     "potentialAction": {
       "@type": "SearchAction",
@@ -57,7 +57,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "North Digital",
+    "name": "North",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx",
     "telephone": "+52-998-351-3337",
