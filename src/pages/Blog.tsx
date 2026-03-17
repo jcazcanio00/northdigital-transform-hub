@@ -182,6 +182,7 @@ const FeaturedCard = ({ article, large = false }: { article: typeof articles[0];
       </span>
     </div>
   </motion.div>
+  </Link>
 );
 
 const ArticleCard = ({ article }: { article: typeof articles[0] }) => (
