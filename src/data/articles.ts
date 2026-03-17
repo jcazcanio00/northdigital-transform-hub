@@ -406,7 +406,7 @@ export const articles: Article[] = [
     slug: "automatizacion-de-ventas-para-empresas",
     url: "/automatizacion-de-ventas-para-empresas",
     title: "Automatización de ventas para empresas: guía para escalar tu operación",
-    seoTitle: "Automatización de ventas para empresas | North Digital",
+    seoTitle: "Automatización de ventas para empresas | North",
     excerpt: "Cómo la automatización de ventas mejora la conversión, el seguimiento y la escalabilidad de tu empresa. Estrategias, herramientas y casos prácticos.",
     category: "automatizacion",
     categoryLabel: "Automatización",
