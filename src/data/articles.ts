@@ -230,8 +230,8 @@ export const articles: Article[] = [
       { type: "quote", text: "El SEO no es un gasto puntual, es una inversión acumulativa. Cada mes que trabajas en posicionamiento, tu activo digital crece y genera más valor." },
       { type: "h2", text: "¿Cuánto cuesta el SEO en Cancún?" },
       { type: "paragraph", text: "Los precios varían enormemente. Agencias locales pueden cobrar desde $5,000 MXN hasta $50,000+ MXN mensuales dependiendo de la competitividad de tu industria, el alcance del proyecto y la experiencia del equipo. Lo importante no es el precio, sino el retorno: un buen SEO debe generar más ingresos de los que cuesta." },
-      { type: "h2", text: "Cómo North Digital aborda el SEO" },
-      { type: "paragraph", text: "En North Digital integramos el SEO con una estrategia completa de generación de leads. No solo posicionamos tu sitio: conectamos el tráfico orgánico con tu CRM y automatizaciones para que cada visitante se convierta en una oportunidad de negocio real. Conoce nuestra estrategia de marketing digital en Cancún." },
+      { type: "h2", text: "Cómo North aborda el SEO" },
+      { type: "paragraph", text: "En North integramos el SEO con una estrategia completa de generación de leads. No solo posicionamos tu sitio: conectamos el tráfico orgánico con tu CRM y automatizaciones para que cada visitante se convierta en una oportunidad de negocio real. Conoce nuestra estrategia de marketing digital en Cancún." },
     ],
   },
 
