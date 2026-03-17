@@ -188,7 +188,7 @@ export const articles: Article[] = [
     slug: "seo-en-cancun",
     url: "/seo-en-cancun",
     title: "SEO en Cancún: cómo posicionar tu empresa en Google",
-    seoTitle: "SEO en Cancún: cómo posicionar tu empresa en Google | North Digital",
+    seoTitle: "SEO en Cancún: cómo posicionar tu empresa en Google | North",
     excerpt: "Guía práctica de SEO local para empresas en Cancún y la Riviera Maya. Aprende a posicionar tu negocio en Google y atraer clientes de forma orgánica.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
