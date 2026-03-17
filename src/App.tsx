@@ -23,6 +23,7 @@ const MarketingDigitalTulum = lazy(() => import("./pages/MarketingDigitalTulum.t
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 
 const queryClient = new QueryClient();
 
