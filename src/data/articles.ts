@@ -79,7 +79,7 @@ export const articles: Article[] = [
     slug: "top-7-de-agencias-de-marketing-digital-en-cancun",
     url: "/top-7-de-agencias-de-marketing-digital-en-cancun",
     title: "Las 7 mejores agencias de marketing digital en Cancún (2026)",
-    seoTitle: "Las 7 mejores agencias de marketing digital en Cancún en 2026 | North Digital",
+    seoTitle: "Las 7 mejores agencias de marketing digital en Cancún en 2026 | North",
     excerpt: "Descubre cuáles son las mejores agencias de marketing digital en Cancún en 2026 y elige la mejor opción según tu tipo de empresa, objetivos y estrategia de crecimiento.",
     category: "marketing",
     categoryLabel: "Marketing Digital",
