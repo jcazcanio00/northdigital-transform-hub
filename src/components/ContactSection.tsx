@@ -209,7 +209,7 @@ const ContactSection = () => {
               <div>
                 <label className="text-xs font-medium mb-1.5 block">Tipo de Proyecto</label>
                 <Select onValueChange={(v) => updateField("projectType", v)}>
-                  <SelectTrigger className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
+                  <SelectTrigger aria-label="Seleccionar tipo de proyecto" className="transition-all duration-300 focus:shadow-[0_0_15px_-5px_hsl(var(--primary)/0.3)]">
                     <SelectValue placeholder="Seleccionar..." />
                   </SelectTrigger>
                   <SelectContent>
