@@ -154,6 +154,8 @@ const Header = () => {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
