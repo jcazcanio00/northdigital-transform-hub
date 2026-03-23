@@ -80,6 +80,9 @@ const Header = () => {
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setSolOpen(!solOpen)}
+              aria-expanded={solOpen}
+              aria-haspopup="true"
+              aria-label="Menú de soluciones"
               className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
             >
               Soluciones
