@@ -4,7 +4,7 @@ const words = [
 ];
 
 const MarqueeText = () => (
-  <div className="relative py-3 overflow-hidden select-none pointer-events-none border-y border-border/20 bg-muted/20" style={{ height: 90 }}>
+  <div className="relative py-3 overflow-hidden select-none pointer-events-none border-y border-border/20 bg-muted/20" style={{ height: 90, minHeight: 90 }}>
     <div className="flex whitespace-nowrap animate-marquee-slow items-center h-full">
       {[...words, ...words, ...words].map((w, i) => (
         <span

@@ -39,7 +39,7 @@ const FloatingParticles = () => {
 };
 
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+  <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ containIntrinsicSize: "auto 100vh", contentVisibility: "visible" }}>
     {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
     {/* Radial blue glow behind dashboard */}
