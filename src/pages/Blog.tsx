@@ -77,12 +77,14 @@ const BlogPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const allArticles = getArticlesMeta();
-  const featured = getFeaturedArticles();
-  const nonFeatured = allArticles.filter((a) => !a.featured);
+  const sortArticlesByDate = <T extends { date: string }>(items: T[]) =>
+    [...items].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const allArticles = sortArticlesByDate(getArticlesMeta());
+  const featured = sortArticlesByDate(getFeaturedArticles());
   const filtered = activeCategory === "all"
-    ? nonFeatured
-    : nonFeatured.filter((a) => a.category === activeCategory);
+    ? allArticles
+    : allArticles.filter((a) => a.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
