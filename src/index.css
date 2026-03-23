@@ -128,6 +128,11 @@
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+  /* Prevent CLS from images without explicit dimensions */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
     font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
