@@ -519,6 +519,106 @@ export const articles: Article[] = [
       { type: "paragraph", text: "En North diseñamos estos sistemas completos para empresas en Cancún y la Riviera Maya. Desde la estrategia de marketing digital hasta la implementación de CRM y automatización — todo conectado para que cada peso invertido genere el máximo retorno. Agenda una consulta con nuestro equipo para diseñar tu sistema de generación de clientes." },
     ],
   },
+  /* ═══════════════════════════════════════════════
+     10. Cómo usar IA para vender más
+     ═══════════════════════════════════════════════ */
+  {
+    slug: "como-usar-ia-para-vender-mas-en-tu-empresa",
+    url: "/como-usar-ia-para-vender-mas-en-tu-empresa",
+    title: "Cómo usar IA para vender más en tu empresa (sin complicarte)",
+    seoTitle: "Cómo usar IA para vender más en tu empresa | Guía práctica",
+    excerpt: "Descubre cómo usar inteligencia artificial en tu empresa para vender más, automatizar procesos y no perder clientes. Guía práctica con casos reales.",
+    category: "automatizacion",
+    categoryLabel: "Automatización / IA",
+    tags: ["Inteligencia Artificial", "Ventas", "Automatización", "CRM", "WhatsApp", "Seguimiento"],
+    date: "23 Mar 2026",
+    readTime: "7 min",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&h=630&fit=crop",
+    author: "Equipo North",
+    authorRole: "Estrategia Digital",
+    featured: true,
+    content: [
+      { type: "paragraph", text: "Hoy todo el mundo habla de inteligencia artificial. Pero la mayoría de las empresas no sabe cómo usarla realmente para vender más." },
+      { type: "paragraph", text: "No necesitas modelos complejos ni conocimientos técnicos. La verdadera oportunidad está en algo mucho más simple: usar la IA para responder más rápido, organizar clientes y dar seguimiento automático." },
+      { type: "paragraph", text: "En este artículo te voy a mostrar cómo aplicar inteligencia artificial en tu empresa de forma práctica, sin complicarte y con ejemplos reales." },
+
+      { type: "h2", text: "El problema real en la mayoría de los negocios" },
+      { type: "paragraph", text: "El problema no es la falta de clientes. Es lo que pasa después." },
+      { type: "list", items: [
+        "Mensajes sin responder",
+        "Clientes sin seguimiento",
+        "Procesos manuales",
+        "Información desordenada"
+      ]},
+      { type: "paragraph", text: "Y lo más importante: clientes interesados que nunca compran. Aquí es donde la inteligencia artificial puede marcar la diferencia." },
+
+      { type: "h2", text: "5 formas reales de usar IA para vender más" },
+
+      { type: "h3", text: "1. Respuesta automática de clientes" },
+      { type: "paragraph", text: "Cada vez que alguien escribe, espera una respuesta inmediata. La IA puede responder al instante, incluso cuando no estás disponible. Esto evita perder oportunidades y mejora la experiencia del cliente." },
+
+      { type: "h3", text: "2. Clasificación de clientes" },
+      { type: "paragraph", text: "No todos los clientes son iguales. La IA puede ayudarte a identificar:" },
+      { type: "list", items: [
+        "Clientes listos para comprar",
+        "Clientes que solo preguntan",
+        "Clientes de alto valor"
+      ]},
+      { type: "paragraph", text: "Esto te permite enfocarte en lo que realmente importa." },
+
+      { type: "h3", text: "3. Seguimiento automático" },
+      { type: "paragraph", text: "Uno de los mayores errores es no dar seguimiento. La IA puede enviar mensajes como:" },
+      { type: "list", items: [
+        "\"¿Sigues interesado?\"",
+        "\"Tenemos disponibilidad esta semana\""
+      ]},
+      { type: "paragraph", text: "Esto aumenta significativamente las conversiones." },
+
+      { type: "h3", text: "4. Organización de información" },
+      { type: "paragraph", text: "En lugar de tener todo en WhatsApp desordenado, la IA permite estructurar:" },
+      { type: "list", items: [
+        "Clientes",
+        "Pedidos",
+        "Historial"
+      ]},
+      { type: "paragraph", text: "Esto convierte el caos en un sistema." },
+
+      { type: "h3", text: "5. Automatización de procesos" },
+      { type: "paragraph", text: "Desde responder preguntas hasta gestionar pedidos, la IA reduce tareas repetitivas. Esto te permite enfocarte en cerrar ventas, no en contestar mensajes." },
+
+      { type: "h2", text: "Caso real: de caos a sistema" },
+      { type: "paragraph", text: "Un negocio con más de 100 mensajes diarios tenía problemas de desorganización, respuestas tardías y ventas perdidas." },
+      { type: "paragraph", text: "Al implementar un sistema con automatización e IA:" },
+      { type: "list", items: [
+        "Se organizaron los clientes",
+        "Se mejoró el seguimiento",
+        "Aumentaron las conversiones"
+      ]},
+      { type: "quote", text: "El cambio no vino de más publicidad. Vino de organizar lo que ya existía." },
+
+      { type: "h2", text: "¿Cuánto cuesta implementar IA?" },
+      { type: "paragraph", text: "Depende del nivel, pero en la mayoría de los casos:" },
+      { type: "list", items: [
+        "Soluciones básicas: $300 – $800 USD",
+        "Sistemas más completos: $1,000 – $3,000 USD"
+      ]},
+      { type: "paragraph", text: "Lo importante no es el costo. Es el retorno. Una sola venta adicional puede cubrir la inversión." },
+
+      { type: "h2", text: "¿Cuándo tiene sentido implementar IA?" },
+      { type: "paragraph", text: "Este tipo de sistema es ideal si:" },
+      { type: "list", items: [
+        "Recibes muchos mensajes",
+        "Pierdes clientes por falta de seguimiento",
+        "Quieres organizar tu negocio",
+        "Buscas escalar sin contratar más personal"
+      ]},
+
+      { type: "h2", text: "Conclusión" },
+      { type: "paragraph", text: "La inteligencia artificial no es el futuro. Es una herramienta que ya puedes usar hoy para vender más." },
+      { type: "paragraph", text: "No se trata de tecnología compleja. Se trata de responder mejor, organizar clientes y dar seguimiento." },
+      { type: "paragraph", text: "Si quieres ver cómo un CRM con inteligencia artificial puede transformar tu operación comercial, conoce nuestras soluciones de CRM para empresas. Y si estás en Cancún, también podemos ayudarte con tu estrategia de marketing digital en Cancún." },
+    ],
+  },
 ];
 
 /* ─── Helper: find article by slug ─── */
