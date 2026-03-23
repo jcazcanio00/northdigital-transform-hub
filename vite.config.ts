@@ -37,6 +37,7 @@ export default defineConfig(({ mode }) => ({
         crmCancun: path.resolve(__dirname, "blog/crm-para-empresas-en-cancun/index.html"),
         automatizacionVentas: path.resolve(__dirname, "blog/automatizacion-de-ventas-para-empresas/index.html"),
         generarLeads: path.resolve(__dirname, "blog/como-generar-leads-para-mi-empresa-en-cancun/index.html"),
+        iaVenderMas: path.resolve(__dirname, "blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html"),
       },
     },
   },
