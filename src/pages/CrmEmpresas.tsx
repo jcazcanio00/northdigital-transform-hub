@@ -136,9 +136,10 @@ const CrmMockup = () => (
                   </div>
                   <div className="h-1 bg-primary/[0.06] rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full bg-primary/30 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: s.pct }}
+                      className="h-full bg-primary/30 rounded-full origin-left"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      style={{ width: s.pct }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1 }}
                     />
@@ -187,9 +188,10 @@ const CrmMockup = () => (
                 {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 55, 75].map((h, i) => (
                   <motion.div
                     key={i}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-primary/25 to-primary/10"
-                    initial={{ height: 0 }}
-                    whileInView={{ height: `${h}%` }}
+                    className="flex-1 rounded-sm bg-gradient-to-t from-primary/25 to-primary/10 origin-bottom"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    style={{ height: `${h}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.04 }}
                   />
@@ -547,6 +549,9 @@ const CrmEmpresas = () => {
                   alt={tech.name}
                   className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0"
                   loading="lazy"
+                  decoding="async"
+                  width={32}
+                  height={32}
                 />
                 <span className="text-[10px] font-medium text-muted-foreground/60 group-hover:text-foreground/80 transition-colors">{tech.name}</span>
               </motion.div>

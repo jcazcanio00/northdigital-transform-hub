@@ -152,9 +152,10 @@ const DashboardMockup = () => (
               {[40, 55, 35, 70, 60, 85, 75, 90, 65, 80, 95, 70, 88, 72, 94].map((h, i) => (
                 <motion.div
                   key={i}
-                  className="flex-1 rounded-sm bg-gradient-to-t from-primary to-primary/40"
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${h}%` }}
+                  className="flex-1 rounded-sm bg-gradient-to-t from-primary to-primary/40 origin-bottom"
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  style={{ height: `${h}%` }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: i * 0.03, duration: 0.4 }}
                 />

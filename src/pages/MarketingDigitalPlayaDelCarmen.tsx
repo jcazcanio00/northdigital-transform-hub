@@ -578,7 +578,7 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
           <div className="flex animate-[scroll_35s_linear_infinite] w-max gap-14 px-6">
             {[...marketingLogos, ...marketingLogos].map((logo, i) => (
               <div key={`${logo.name}-${i}`} className="flex flex-col items-center gap-2 min-w-[80px] opacity-50 hover:opacity-100 transition-opacity duration-300">
-                <img src={logo.icon} alt={logo.name} className="w-8 h-8 object-contain dark:invert dark:brightness-200 dark:contrast-200" loading="lazy" />
+                <img src={logo.icon} alt={logo.name} className="w-8 h-8 object-contain dark:invert dark:brightness-200 dark:contrast-200" loading="lazy" width={32} height={32} decoding="async" />
                 <span className="text-[9px] text-muted-foreground tracking-wider uppercase whitespace-nowrap">{logo.name}</span>
               </div>
             ))}
