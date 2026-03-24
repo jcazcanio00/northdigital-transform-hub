@@ -2,8 +2,8 @@ import { lazy, Suspense } from "react";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import LogoSlider from "@/components/LogoSlider";
-import SolutionsSection from "@/components/SolutionsSection";
+const LogoSlider = lazy(() => import("@/components/LogoSlider"));
+const SolutionsSection = lazy(() => import("@/components/SolutionsSection"));
 import Footer from "@/components/Footer";
 
 // Lazy-load below-the-fold sections to reduce initial JS
@@ -96,9 +96,9 @@ const Index = () => {
       />
       <Header />
       <HeroSection />
-      <LogoSlider />
-      <SolutionsSection />
       <Suspense fallback={null}>
+        <LogoSlider />
+        <SolutionsSection />
         <TrustSection />
         <BlueCta />
         <AboutSection />

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -11,22 +10,12 @@ const HeroSection = () => (
     <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[60px] pointer-events-none contain-strict" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      {/* Text content */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-center max-w-4xl mx-auto mb-16"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8"
-        >
+      {/* Text content — CSS fade-in instead of framer-motion */}
+      <div className="text-center max-w-4xl mx-auto mb-16 animate-hero-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8 animate-hero-scale-in">
           <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
           Socio en Transformación Digital
-        </motion.div>
+        </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
           Automatiza, Escala y{" "}
@@ -57,15 +46,10 @@ const HeroSection = () => (
           </Button>
           <WhatsAppHeroButton />
         </div>
-      </motion.div>
+      </div>
 
-      {/* Dashboard mockup */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
-        className="relative max-w-5xl mx-auto"
-      >
+      {/* Dashboard mockup — CSS fade-in */}
+      <div className="relative max-w-5xl mx-auto animate-hero-slide-up">
         {/* Lightweight glow */}
         <div className="absolute -inset-6 bg-primary/4 rounded-[32px] blur-[30px] pointer-events-none" />
 
@@ -149,7 +133,7 @@ const HeroSection = () => (
                 ))}
               </div>
 
-              {/* Charts — static bars instead of animated for perf */}
+              {/* Charts — static bars */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
                 <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
                   <div className="text-[11px] font-semibold mb-3">Ingresos Mensuales</div>
@@ -240,7 +224,7 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Floating widgets — CSS animation only, no framer-motion */}
+        {/* Floating widgets — CSS animation only */}
         <div className="absolute -left-6 top-[25%] bg-card rounded-xl p-3 shadow-lg border border-border/40 animate-float-slow hidden lg:block">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -262,7 +246,7 @@ const HeroSection = () => (
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   </section>
 );

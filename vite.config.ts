@@ -13,7 +13,6 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
-        // Page-specific HTML entry points (OG metadata for crawlers)
         pageBlog: path.resolve(__dirname, "blog/index.html"),
         pageSoftware: path.resolve(__dirname, "software/index.html"),
         pageCloud: path.resolve(__dirname, "cloud/index.html"),
@@ -27,7 +26,6 @@ export default defineConfig(({ mode }) => ({
         pageAutomatizacion: path.resolve(__dirname, "automatizacion-empresarial/index.html"),
         pageTerminos: path.resolve(__dirname, "terminos/index.html"),
         pagePrivacidad: path.resolve(__dirname, "privacidad/index.html"),
-        // Blog article static HTML entry points
         blogArticle1: path.resolve(__dirname, "blog/1/index.html"),
         topAgencias: path.resolve(__dirname, "blog/top-7-de-agencias-de-marketing-digital-en-cancun/index.html"),
         queEsMarketing: path.resolve(__dirname, "blog/que-es-marketing-digital/index.html"),
@@ -38,6 +36,11 @@ export default defineConfig(({ mode }) => ({
         automatizacionVentas: path.resolve(__dirname, "blog/automatizacion-de-ventas-para-empresas/index.html"),
         generarLeads: path.resolve(__dirname, "blog/como-generar-leads-para-mi-empresa-en-cancun/index.html"),
         iaVenderMas: path.resolve(__dirname, "blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html"),
+      },
+      output: {
+        manualChunks: {
+          'framer-motion': ['framer-motion'],
+        },
       },
     },
   },

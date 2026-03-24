@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Code2, Cloud, TrendingUp, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -30,12 +29,7 @@ const SolutionsSection = () => (
   <section id="solutions" className="py-24 relative">
     <div className="section-divider" />
     <div className="container mx-auto px-4 lg:px-8 py-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="text-center mb-14"
-      >
+      <div className="text-center mb-14 animate-fade-in-view">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
           <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
           Lo Que Hacemos
@@ -46,17 +40,11 @@ const SolutionsSection = () => (
         <p className="text-muted-foreground max-w-xl mx-auto">
           Tecnología integral para acelerar tu negocio.
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid md:grid-cols-3 gap-5">
         {solutions.map((s, i) => (
-          <motion.div
-            key={s.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: i * 0.1 }}
-          >
+          <div key={s.title} className="animate-fade-in-view" style={{ animationDelay: `${i * 100}ms` }}>
             <Link
               to={s.href}
               className="glass-card rounded-2xl p-7 group cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)] hover:border-primary/25 relative overflow-hidden block"
@@ -80,7 +68,7 @@ const SolutionsSection = () => (
                 </span>
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
