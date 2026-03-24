@@ -30,7 +30,7 @@ const LogoSlider = () => (
     <div className="relative">
       <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-      <div className="flex animate-marquee-slow hover:[animation-play-state:paused] will-change-transform">
+      <div className="flex animate-marquee-slow hover:[animation-play-state:paused]" style={{ willChange: 'transform' }}>
         {[...logos, ...logos, ...logos].map((logo, i) => (
           <div
             key={i}
