@@ -63,7 +63,7 @@ const SystemsSection = () => (
           viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
-          <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
+          <div className="absolute -inset-4 bg-primary/4 rounded-3xl blur-xl pointer-events-none" />
           <div className="glass-card rounded-2xl p-5 relative">
             <div className="flex items-center justify-between mb-4">
               <div className="text-[11px] font-bold font-display">Panel Empresarial</div>
