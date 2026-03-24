@@ -319,25 +319,10 @@
     filter: blur(0.5px);
   }
 
-  /* Card shine */
+  /* Card shine – disabled for perf; keep class for compat */
   .card-shine {
     position: relative;
     overflow: hidden;
-  }
-  .card-shine::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 180deg, transparent 0%, transparent 70%, hsl(var(--primary) / 0.02) 80%, transparent 100%);
-    animation: spin-slow 16s linear infinite;
-    pointer-events: none;
-  }
-
-  @keyframes spin-slow {
-    to { transform: rotate(360deg); }
   }
 
   @keyframes pulse-glow {
