@@ -10,8 +10,11 @@ export default defineConfig(({ mode }) => ({
     hmr: { overlay: false },
   },
   build: {
-    rollupOptions: {
-      input: {
+      output: {
+        manualChunks: {
+          'framer-motion': ['framer-motion'],
+        },
+      },
         main: path.resolve(__dirname, "index.html"),
         // Page-specific HTML entry points (OG metadata for crawlers)
         pageBlog: path.resolve(__dirname, "blog/index.html"),
