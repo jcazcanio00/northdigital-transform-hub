@@ -96,9 +96,9 @@ const Index = () => {
       />
       <Header />
       <HeroSection />
-      <LogoSlider />
-      <SolutionsSection />
       <Suspense fallback={null}>
+        <LogoSlider />
+        <SolutionsSection />
         <TrustSection />
         <BlueCta />
         <AboutSection />
