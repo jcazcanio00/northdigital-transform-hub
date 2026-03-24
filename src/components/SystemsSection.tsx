@@ -96,13 +96,10 @@ const SystemsSection = () => (
               <div className="text-[11px] font-semibold mb-3">Rendimiento Semanal</div>
               <div className="flex items-end gap-1 h-24">
                 {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ height: 0 }}
-                    whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
                     className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60"
+                    style={{ height: `${h}%` }}
                   />
                 ))}
               </div>
