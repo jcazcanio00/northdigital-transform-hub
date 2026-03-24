@@ -8,8 +8,7 @@ const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ containIntrinsicSize: "auto 100vh", contentVisibility: "visible" }}>
     {/* Lightweight background — no animated orbs */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-primary/6 blur-[100px] pointer-events-none will-change-transform contain-strict" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[500px] h-[400px] rounded-full bg-primary/4 blur-[80px] pointer-events-none will-change-transform contain-strict" />
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[60px] pointer-events-none contain-strict" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       {/* Text content */}
@@ -67,8 +66,8 @@ const HeroSection = () => (
         transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
         className="relative max-w-5xl mx-auto"
       >
-        {/* Lightweight glow — reduced blur */}
-        <div className="absolute -inset-8 bg-primary/6 rounded-[40px] blur-[40px] pointer-events-none will-change-transform" />
+        {/* Lightweight glow */}
+        <div className="absolute -inset-6 bg-primary/4 rounded-[32px] blur-[30px] pointer-events-none" />
 
         <div className="relative rounded-2xl border border-border/60 overflow-hidden shadow-2xl bg-card">
           {/* Chrome */}

@@ -63,7 +63,7 @@ const SystemsSection = () => (
           viewport={{ once: true, margin: "-100px" }}
           className="relative"
         >
-          <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl pointer-events-none" />
+          <div className="absolute -inset-4 bg-primary/4 rounded-3xl blur-xl pointer-events-none" />
           <div className="glass-card rounded-2xl p-5 relative">
             <div className="flex items-center justify-between mb-4">
               <div className="text-[11px] font-bold font-display">Panel Empresarial</div>
@@ -96,13 +96,10 @@ const SystemsSection = () => (
               <div className="text-[11px] font-semibold mb-3">Rendimiento Semanal</div>
               <div className="flex items-end gap-1 h-24">
                 {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ height: 0 }}
-                    whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
                     className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/20 to-primary/60"
+                    style={{ height: `${h}%` }}
                   />
                 ))}
               </div>
@@ -124,12 +121,9 @@ const SystemsSection = () => (
                       <span className="font-bold">{item.pct}%</span>
                     </div>
                     <div className="w-full h-1 rounded-full bg-secondary/50">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.pct}%` }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+                      <div
                         className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary"
+                        style={{ width: `${item.pct}%` }}
                       />
                     </div>
                   </div>
