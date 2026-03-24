@@ -68,7 +68,7 @@ const ContactSection = () => {
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="section-divider" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.04] pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/4 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-primary/3 blur-[60px] pointer-events-none will-change-transform" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">

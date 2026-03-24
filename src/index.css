@@ -142,22 +142,24 @@
 @layer components {
   /* Glass header (no overflow hidden so dropdowns work) */
   .glass-header {
-    background: var(--glass-bg);
+    background: hsl(var(--background) / 0.92);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(16px) saturate(1.3);
-    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     box-shadow: var(--glow-card);
   }
+  .dark .glass-header {
+    background: hsl(var(--background) / 0.88);
+  }
 
-  /* Glass card */
+  /* Glass card – solid bg instead of backdrop-blur for Safari perf */
   .glass-card {
-    background: var(--glass-bg);
+    background: hsl(var(--card) / 0.95);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(16px) saturate(1.3);
-    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     box-shadow: var(--glow-card);
     position: relative;
     overflow: hidden;
+  }
+  .dark .glass-card {
+    background: hsl(var(--card) / 0.9);
   }
   .glass-card::before {
     content: '';
@@ -275,13 +277,14 @@
       radial-gradient(at 80% 70%, hsl(var(--accent) / 0.04) 0%, transparent 50%);
   }
 
-  /* Floating orb */
+  /* Floating orb – reduced blur for Safari */
   .floating-orb {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(80px);
+    filter: blur(40px);
     pointer-events: none;
-    animation: pulse-glow 6s ease-in-out infinite;
+    will-change: opacity;
+    contain: strict;
   }
 
   /* Noise overlay */
@@ -316,25 +319,10 @@
     filter: blur(0.5px);
   }
 
-  /* Card shine */
+  /* Card shine – disabled for perf; keep class for compat */
   .card-shine {
     position: relative;
     overflow: hidden;
-  }
-  .card-shine::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 180deg, transparent 0%, transparent 70%, hsl(var(--primary) / 0.02) 80%, transparent 100%);
-    animation: spin-slow 16s linear infinite;
-    pointer-events: none;
-  }
-
-  @keyframes spin-slow {
-    to { transform: rotate(360deg); }
   }
 
   @keyframes pulse-glow {

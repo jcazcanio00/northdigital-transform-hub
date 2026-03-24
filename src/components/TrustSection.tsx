@@ -149,8 +149,8 @@ const TrustSection = () => (
               transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
             >
               <div
-                className={`rounded-2xl bg-card/80 border border-border/40 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_35px_-6px_hsl(var(--primary)/0.5)] hover:scale-115 ${
-                  i === 2 ? "shadow-[0_0_25px_-8px_hsl(var(--primary)/0.3)]" : ""
+                className={`rounded-2xl bg-card border border-border/40 flex items-center justify-center transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_25px_-6px_hsl(var(--primary)/0.4)] hover:scale-105 ${
+                  i === 2 ? "shadow-[0_0_15px_-8px_hsl(var(--primary)/0.2)]" : ""
                 }`}
                 style={{ width: node.size, height: node.size }}
               >
