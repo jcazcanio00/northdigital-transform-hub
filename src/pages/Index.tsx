@@ -98,18 +98,20 @@ const Index = () => {
       <HeroSection />
       <LogoSlider />
       <SolutionsSection />
-      <TrustSection />
-      <BlueCta />
-      <AboutSection />
-      <SystemsSection />
-      <CloudSection />
-      <GrowthSection />
-      <StatsSection />
-      <TestimonialSection />
-      <ProcessSection />
-      <CtaSection />
-      <ContactSection />
-      <MarqueeText />
+      <Suspense fallback={null}>
+        <TrustSection />
+        <BlueCta />
+        <AboutSection />
+        <SystemsSection />
+        <CloudSection />
+        <GrowthSection />
+        <StatsSection />
+        <TestimonialSection />
+        <ProcessSection />
+        <CtaSection />
+        <ContactSection />
+        <MarqueeText />
+      </Suspense>
       <Footer />
     </div>
   );

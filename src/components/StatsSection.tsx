@@ -42,7 +42,7 @@ const StatsSection = () => (
   <section className="py-24 relative overflow-hidden" style={{ minHeight: 420 }}>
     <div className="section-divider" />
     <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-primary/[0.03] pointer-events-none" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/4 blur-[120px] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] rounded-full bg-primary/4 blur-[50px] pointer-events-none contain-strict" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10 py-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

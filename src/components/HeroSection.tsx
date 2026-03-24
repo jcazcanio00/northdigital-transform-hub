@@ -66,8 +66,8 @@ const HeroSection = () => (
         transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
         className="relative max-w-5xl mx-auto"
       >
-        {/* Lightweight glow — reduced blur */}
-        <div className="absolute -inset-8 bg-primary/6 rounded-[40px] blur-[40px] pointer-events-none will-change-transform" />
+        {/* Lightweight glow */}
+        <div className="absolute -inset-6 bg-primary/4 rounded-[32px] blur-[30px] pointer-events-none" />
 
         <div className="relative rounded-2xl border border-border/60 overflow-hidden shadow-2xl bg-card">
           {/* Chrome */}
