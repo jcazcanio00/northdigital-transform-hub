@@ -26,8 +26,38 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://northmkt.com.mx/crm-empresas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://northmkt.com.mx/automatizacion-empresarial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://northmkt.com.mx/marketing-digital-cancun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://northmkt.com.mx/marketing-digital-playa-del-carmen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://northmkt.com.mx/marketing-digital-tulum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://northmkt.com.mx/contacto</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://northmkt.com.mx/blog</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
