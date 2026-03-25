@@ -158,33 +158,35 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border mt-2 p-4 space-y-1 bg-background">
-          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Inicio
-          </Link>
-          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Acerca de
-          </Link>
-          <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Soluciones</p>
-          {solutions.map((s) => (
-            <Link
-              key={s.href}
-              to={s.href}
-              onClick={() => setMobileOpen(false)}
-              className="block py-2 pl-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {s.label}
+        <div className="lg:hidden fixed inset-x-0 top-[56px] bottom-0 z-50 bg-background border-t border-border overflow-y-auto">
+          <div className="p-5 space-y-1">
+            <Link to="/" onClick={() => setMobileOpen(false)} className="block py-3 text-base font-medium text-foreground hover:text-primary transition-colors">
+              Inicio
             </Link>
-          ))}
-          <Link to="/blog" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Blog
-          </Link>
-          <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Contacto
-          </Link>
-          <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
-          </Button>
+            <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-3 text-base font-medium text-foreground hover:text-primary transition-colors">
+              Acerca de
+            </Link>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-4 pb-1 font-semibold">Soluciones</p>
+            {solutions.map((s) => (
+              <Link
+                key={s.href}
+                to={s.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 pl-3 text-base text-foreground hover:text-primary transition-colors"
+              >
+                {s.label}
+              </Link>
+            ))}
+            <Link to="/blog" onClick={() => setMobileOpen(false)} className="block py-3 text-base font-medium text-foreground hover:text-primary transition-colors">
+              Blog
+            </Link>
+            <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-3 text-base font-medium text-foreground hover:text-primary transition-colors">
+              Contacto
+            </Link>
+            <Button variant="gradient" size="sm" className="w-full mt-4" asChild>
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+            </Button>
+          </div>
         </div>
       )}
     </header>
