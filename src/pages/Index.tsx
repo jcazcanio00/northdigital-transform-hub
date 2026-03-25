@@ -86,10 +86,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Agencia de Marketing Digital en Cancún | North"
-        description="Agencia de marketing digital en Cancún especializada en SEO, Google Ads, CRM y estrategias de crecimiento para empresas."
+        title="North | Tecnología y Crecimiento para Empresas"
+        description="Impulsamos el crecimiento de tu empresa con marketing digital, CRM, software y soluciones cloud. Estrategia, tecnología y resultados."
         url="https://northmkt.com.mx"
-        keywords="marketing cancun, agencia de marketing cancun, marketing digital cancun, agencia de marketing digital cancun, seo cancun, google ads cancun"
         jsonLd={indexJsonLd}
       />
       <Header />
