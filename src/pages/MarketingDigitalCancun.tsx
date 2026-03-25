@@ -351,7 +351,7 @@ const MarketingDigitalCancunPage = () => {
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
                 Agencia de Marketing{" "}
-                <span className="gradient-text">Digital en Cancún, Playa del Carmen y Riviera Maya</span>
+                <span className="gradient-text">Digital en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Estrategias de marketing digital basadas en datos para empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.
