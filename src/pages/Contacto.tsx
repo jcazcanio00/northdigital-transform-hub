@@ -61,13 +61,13 @@ const Contacto = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Contacto | North — Software, Cloud y Marketing Digital"
-        description="Habla con nuestro equipo en Cancún para desarrollar software empresarial, implementar infraestructura cloud o escalar tu marketing de crecimiento."
+        title="Contacto | North Digital — Hablemos de tu proyecto"
+        description="Contacta a North Digital en Cancún. Hablemos sobre software, cloud o marketing digital para tu empresa."
         url="https://northmkt.com.mx/contacto"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contacto — North",
+          "name": "Contacto — North Digital",
           "url": "https://northmkt.com.mx/contacto",
           "mainEntity": {
             "@type": "Organization",
