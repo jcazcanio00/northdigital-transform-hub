@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -7,15 +8,26 @@ const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ containIntrinsicSize: "auto 100vh", contentVisibility: "visible" }}>
     {/* Lightweight background — no animated orbs */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[60px] pointer-events-none contain-strict" />
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-primary/6 blur-[100px] pointer-events-none will-change-transform contain-strict" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[500px] h-[400px] rounded-full bg-primary/4 blur-[80px] pointer-events-none will-change-transform contain-strict" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      {/* Text content — CSS fade-in instead of framer-motion */}
-      <div className="text-center max-w-4xl mx-auto mb-16 animate-hero-fade-in">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8 animate-hero-scale-in">
+      {/* Text content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center max-w-4xl mx-auto mb-16"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8"
+        >
           <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
           Socio en Transformación Digital
-        </div>
+        </motion.div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
           Automatiza, Escala y{" "}
@@ -46,12 +58,17 @@ const HeroSection = () => (
           </Button>
           <WhatsAppHeroButton />
         </div>
-      </div>
+      </motion.div>
 
-      {/* Dashboard mockup — CSS fade-in */}
-      <div className="relative max-w-5xl mx-auto animate-hero-slide-up">
-        {/* Lightweight glow */}
-        <div className="absolute -inset-6 bg-primary/4 rounded-[32px] blur-[30px] pointer-events-none" />
+      {/* Dashboard mockup */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
+        className="relative max-w-5xl mx-auto"
+      >
+        {/* Lightweight glow — reduced blur */}
+        <div className="absolute -inset-8 bg-primary/6 rounded-[40px] blur-[40px] pointer-events-none will-change-transform" />
 
         <div className="relative rounded-2xl border border-border/60 overflow-hidden shadow-2xl bg-card">
           {/* Chrome */}
@@ -133,7 +150,7 @@ const HeroSection = () => (
                 ))}
               </div>
 
-              {/* Charts — static bars */}
+              {/* Charts — static bars instead of animated for perf */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
                 <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
                   <div className="text-[11px] font-semibold mb-3">Ingresos Mensuales</div>
@@ -224,7 +241,7 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Floating widgets — CSS animation only */}
+        {/* Floating widgets — CSS animation only, no framer-motion */}
         <div className="absolute -left-6 top-[25%] bg-card rounded-xl p-3 shadow-lg border border-border/40 animate-float-slow hidden lg:block">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -246,7 +263,7 @@ const HeroSection = () => (
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   </section>
 );

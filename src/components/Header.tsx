@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoNorthDark from "@/assets/logo-north-dark-new.webp";
@@ -12,7 +12,6 @@ const solutions = [
   { label: "CRM para Empresas", href: "/crm-empresas" },
 ];
 
-const CALENDAR_LINK = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF";
 
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -36,7 +35,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -51,25 +50,11 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [mobileOpen]);
-
-  const toggleMobile = useCallback(() => setMobileOpen(prev => !prev), []);
-  const closeMobile = useCallback(() => setMobileOpen(false), []);
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow] duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "glass-header py-3 shadow-lg" : "py-5 bg-transparent"
       }`}
-      style={{ willChange: "padding" }}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
@@ -77,10 +62,17 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full">
+          <Link
+            to="/"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
             Inicio
           </Link>
-          <Link to="/acerca" className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full">
+
+          <Link
+            to="/acerca"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
             Acerca de
           </Link>
 
@@ -113,10 +105,17 @@ const Header = () => {
             )}
           </div>
 
-          <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full">
+          <Link
+            to="/blog"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
             Blog
           </Link>
-          <Link to="/contacto" className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full">
+
+          <Link
+            to="/contacto"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
+          >
             Contacto
           </Link>
         </nav>
@@ -124,7 +123,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`relative w-14 h-7 rounded-full transition-colors duration-300 flex items-center ${
+            className={`relative w-14 h-7 rounded-full transition-all duration-300 flex items-center ${
               isDark
                 ? "bg-gradient-to-r from-primary to-primary/80"
                 : "bg-muted/60 border border-border/40"
@@ -138,7 +137,7 @@ const Header = () => {
               <Moon size={12} className={`transition-opacity duration-300 ${isDark ? "opacity-0" : "opacity-40 text-foreground/60"}`} />
             </span>
             <span
-              className={`w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center transition-transform duration-300 ${
+              className={`w-5 h-5 rounded-full bg-white shadow-md flex items-center justify-center transition-all duration-300 ${
                 isDark ? "translate-x-[30px]" : "translate-x-[3px]"
               }`}
             >
@@ -150,10 +149,10 @@ const Header = () => {
             </span>
           </button>
           <Button variant="gradient" size="sm" className="hidden sm:inline-flex" asChild>
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
           </Button>
           <button
-            onClick={toggleMobile}
+            onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden p-2"
             aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={mobileOpen}
@@ -163,13 +162,12 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu — no glass-card, no pseudo-elements, instant open */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border mt-2 p-4 space-y-1 bg-card/98">
-          <Link to="/" onClick={closeMobile} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <div className="lg:hidden glass-card border-t border-border mt-2 p-4 space-y-1">
+          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Inicio
           </Link>
-          <Link to="/acerca" onClick={closeMobile} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/acerca" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Acerca de
           </Link>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider pt-3 pb-1 font-semibold">Soluciones</p>
@@ -177,20 +175,20 @@ const Header = () => {
             <Link
               key={s.href}
               to={s.href}
-              onClick={closeMobile}
+              onClick={() => setMobileOpen(false)}
               className="block py-2 pl-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {s.label}
             </Link>
           ))}
-          <Link to="/blog" onClick={closeMobile} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/blog" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Blog
           </Link>
-          <Link to="/contacto" onClick={closeMobile} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link to="/contacto" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Contacto
           </Link>
           <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
-            <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
           </Button>
         </div>
       )}

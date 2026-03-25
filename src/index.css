@@ -332,49 +332,16 @@
 
   /* Status pulse indicator */
   @keyframes status-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.4); opacity: 1; }
+    0%, 100% { transform: scale(1); opacity: 0.6; box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
+    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 0 4px hsl(var(--primary) / 0); }
   }
   .animate-status-pulse {
     animation: status-pulse 2s ease-in-out infinite;
-    will-change: transform, opacity;
   }
 
   @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-  }
-
-  /* Hero entrance animations — replaces framer-motion on critical path */
-  @keyframes hero-fade-in {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes hero-scale-in {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  @keyframes hero-slide-up {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-hero-fade-in {
-    animation: hero-fade-in 0.7s ease-out both;
-  }
-  .animate-hero-scale-in {
-    animation: hero-scale-in 0.4s ease-out both;
-  }
-  .animate-hero-slide-up {
-    animation: hero-slide-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-  }
-
-  /* Scroll-triggered fade for sections below fold */
-  @keyframes fade-in-view {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in-view {
-    animation: fade-in-view 0.6s ease-out both;
   }
 }
 
