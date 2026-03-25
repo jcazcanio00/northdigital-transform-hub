@@ -137,13 +137,13 @@ const connectionSteps = [
 const Acerca = () => (
   <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
     <SEO
-      title="Acerca de North | Agencia de Software y Marketing Digital en Cancún"
-      description="Conoce North: agencia de marketing digital y consultora tecnológica en Cancún especializada en software empresarial, infraestructura cloud y marketing de crecimiento."
+      title="North Digital | Agencia de Tecnología y Marketing"
+      description="Conoce a North Digital, especialistas en software, cloud y marketing digital para empresas modernas."
       url="https://northmkt.com.mx/acerca"
       jsonLd={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "Acerca de North",
+        "name": "Acerca de North Digital",
         "url": "https://northmkt.com.mx/acerca",
         "mainEntity": {
           "@type": "Organization",
