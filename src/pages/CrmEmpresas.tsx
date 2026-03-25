@@ -280,9 +280,9 @@ const CrmEmpresas = () => {
       <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[140px] pointer-events-none" />
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[100px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
