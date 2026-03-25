@@ -64,6 +64,7 @@ const Contacto = () => {
         title="Contacto | North — Hablemos de tu proyecto"
         description="Contacta a North en Cancún. Hablemos sobre software, cloud o marketing digital para tu empresa."
         url="https://northmkt.com.mx/contacto"
+        keywords="contacto north, contacto agencia cancun, cotizacion software, cotizacion marketing digital"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
