@@ -299,7 +299,7 @@ const Acerca = () => (
     <section className="py-28 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-primary/8 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[150px] pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
