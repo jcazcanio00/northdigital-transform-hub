@@ -147,7 +147,7 @@ const Acerca = () => (
         "url": "https://northmkt.com.mx/acerca",
         "mainEntity": {
           "@type": "Organization",
-          "name": "North",
+          "name": "North Digital",
           "foundingDate": "2018",
           "foundingLocation": { "@type": "Place", "name": "Cancún, Quintana Roo, México" },
           "description": "Agencia de marketing digital y empresa de tecnología especializada en software empresarial, infraestructura cloud y marketing de crecimiento."
