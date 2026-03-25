@@ -67,6 +67,7 @@ const App = () => (
             <Route path="/automatizacion-de-ventas-para-empresas" element={<BlogArticle slug="automatizacion-de-ventas-para-empresas" />} />
             <Route path="/como-generar-leads-para-mi-empresa-en-cancun" element={<BlogArticle slug="como-generar-leads-para-mi-empresa-en-cancun" />} />
             <Route path="/como-usar-ia-para-vender-mas-en-tu-empresa" element={<BlogArticle slug="como-usar-ia-para-vender-mas-en-tu-empresa" />} />
+            <Route path="/como-redactar-un-buen-prompt-para-deepseek" element={<BlogArticle slug="como-redactar-un-buen-prompt-para-deepseek" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

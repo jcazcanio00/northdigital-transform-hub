@@ -619,6 +619,65 @@ export const articles: Article[] = [
       { type: "paragraph", text: "Si quieres ver cómo un CRM con inteligencia artificial puede transformar tu operación comercial, conoce nuestras soluciones de CRM para empresas. Y si estás en Cancún, también podemos ayudarte con tu estrategia de marketing digital en Cancún." },
     ],
   },
+
+  /* ═══════════════════════════════════════════════
+     10. Cómo redactar un buen prompt para DeepSeek
+     ═══════════════════════════════════════════════ */
+  {
+    slug: "como-redactar-un-buen-prompt-para-deepseek",
+    url: "/como-redactar-un-buen-prompt-para-deepseek",
+    title: "Cómo redactar un buen prompt para DeepSeek",
+    seoTitle: "Cómo redactar un buen prompt para DeepSeek | Guía 2026",
+    excerpt: "Aprende cómo crear prompts efectivos para DeepSeek y mejorar tus resultados con inteligencia artificial. Guía práctica con ejemplos reales.",
+    category: "ia",
+    categoryLabel: "Inteligencia Artificial",
+    tags: ["prompt deepseek", "como usar deepseek", "prompts para ia", "inteligencia artificial prompts", "deepseek ejemplos", "crear prompts efectivos", "ai prompts guia"],
+    date: "25 Mar 2026",
+    readTime: "6 min",
+    image: "https://northmkt.com.mx/blog-images/deepseek-prompts.jpg",
+    author: "Equipo North",
+    authorRole: "Tecnología & IA",
+    featured: true,
+    content: [
+      { type: "paragraph", text: "La inteligencia artificial ha cambiado la forma en la que trabajamos, pero la clave para obtener buenos resultados no es la herramienta, sino cómo la utilizas." },
+      { type: "paragraph", text: "DeepSeek es una de las herramientas más potentes actualmente, pero si no sabes escribir prompts correctamente, los resultados serán mediocres." },
+      { type: "paragraph", text: "En esta guía aprenderás cómo crear prompts efectivos para DeepSeek paso a paso." },
+
+      { type: "h2", text: "¿Qué es un prompt en DeepSeek?" },
+      { type: "paragraph", text: "Un prompt es la instrucción que le das a la inteligencia artificial para generar una respuesta." },
+      { type: "paragraph", text: "Entre más claro, específico y estructurado sea tu prompt, mejor será el resultado." },
+      { type: "paragraph", text: "Ejemplo malo:" },
+      { type: "code", language: "text", code: "hazme un texto" },
+      { type: "paragraph", text: "Ejemplo bueno:" },
+      { type: "code", language: "text", code: "Escribe un artículo de 500 palabras sobre marketing digital en Cancún dirigido a empresas pequeñas, con tono profesional" },
+
+      { type: "h2", text: "Estructura ideal de un prompt efectivo" },
+      { type: "paragraph", text: "Para obtener resultados de alto nivel, tu prompt debe incluir:" },
+      { type: "ordered-list", items: ["Contexto", "Objetivo", "Formato", "Tono", "Restricciones"] },
+      { type: "paragraph", text: "Ejemplo:" },
+      { type: "code", language: "text", code: "Actúa como experto en marketing digital. Escribe un artículo de 800 palabras sobre generación de leads en México, dirigido a empresas B2B, con tono profesional, incluyendo ejemplos reales y conclusiones." },
+
+      { type: "h2", text: "Ejemplos de prompts para DeepSeek" },
+      { type: "h3", text: "Ejemplo 1 — SEO" },
+      { type: "code", language: "text", code: "Crea un artículo optimizado para SEO sobre CRM para empresas en Cancún, incluyendo H1, H2, meta descripción y palabras clave" },
+      { type: "h3", text: "Ejemplo 2 — Ventas" },
+      { type: "code", language: "text", code: "Escribe un copy de ventas para una agencia de marketing digital enfocada en empresas en México" },
+      { type: "h3", text: "Ejemplo 3 — Negocios" },
+      { type: "code", language: "text", code: "Genera una estrategia de crecimiento para una empresa de servicios tecnológicos en Latinoamérica" },
+
+      { type: "h2", text: "Errores comunes al usar DeepSeek" },
+      { type: "list", items: ["No dar contexto", "Usar prompts demasiado cortos", "No especificar el resultado esperado", "No definir el público objetivo"] },
+      { type: "paragraph", text: "Estos errores reducen la calidad de la respuesta significativamente." },
+
+      { type: "h2", text: "Consejos para mejorar tus resultados" },
+      { type: "list", items: ["Sé específico", "Usa ejemplos", "Indica el formato", "Ajusta el prompt varias veces"] },
+      { type: "quote", text: "La clave está en iterar. Cada ajuste a tu prompt te acerca más al resultado ideal." },
+
+      { type: "h2", text: "Conclusión" },
+      { type: "paragraph", text: "DeepSeek es una herramienta extremadamente poderosa, pero su verdadero potencial depende de cómo la uses." },
+      { type: "paragraph", text: "Aprender a escribir prompts efectivos puede marcar la diferencia entre resultados promedio y resultados profesionales." },
+    ],
+  },
 ];
 
 /* ─── Helper: find article by slug ─── */
