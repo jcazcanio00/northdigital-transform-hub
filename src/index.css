@@ -139,20 +139,29 @@
   .glass-header {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(16px) saturate(1.3);
-    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     box-shadow: var(--glow-card);
+  }
+  /* Only enable backdrop-filter on non-touch devices (desktop) */
+  @media (hover: hover) and (min-width: 1024px) {
+    .glass-header {
+      backdrop-filter: blur(16px) saturate(1.3);
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    }
   }
 
   /* Glass card */
   .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(16px) saturate(1.3);
-    -webkit-backdrop-filter: blur(16px) saturate(1.3);
     box-shadow: var(--glow-card);
     position: relative;
     overflow: hidden;
+  }
+  @media (hover: hover) and (min-width: 1024px) {
+    .glass-card {
+      backdrop-filter: blur(16px) saturate(1.3);
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    }
   }
   .glass-card::before {
     content: '';
@@ -270,13 +279,18 @@
       radial-gradient(at 80% 70%, hsl(var(--accent) / 0.04) 0%, transparent 50%);
   }
 
-  /* Floating orb */
+  /* Floating orb — disabled on mobile for GPU perf */
   .floating-orb {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(80px);
+    filter: blur(40px);
     pointer-events: none;
     animation: pulse-glow 6s ease-in-out infinite;
+  }
+  @media (max-width: 767px) {
+    .floating-orb {
+      display: none;
+    }
   }
 
   /* Noise overlay */
@@ -311,21 +325,23 @@
     filter: blur(0.5px);
   }
 
-  /* Card shine */
+  /* Card shine — disabled on mobile */
   .card-shine {
     position: relative;
     overflow: hidden;
   }
-  .card-shine::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 180deg, transparent 0%, transparent 70%, hsl(var(--primary) / 0.02) 80%, transparent 100%);
-    animation: spin-slow 16s linear infinite;
-    pointer-events: none;
+  @media (hover: hover) and (min-width: 1024px) {
+    .card-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 180deg, transparent 0%, transparent 70%, hsl(var(--primary) / 0.02) 80%, transparent 100%);
+      animation: spin-slow 16s linear infinite;
+      pointer-events: none;
+    }
   }
 
   @keyframes spin-slow {
@@ -349,6 +365,58 @@
   @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  /* Hero CSS animations (replaces framer-motion for first render perf) */
+  @keyframes hero-fade-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-hero-fade-in {
+    animation: hero-fade-in 0.7s ease-out both;
+  }
+
+  @keyframes hero-slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-hero-slide-up {
+    animation: hero-slide-up 0.9s ease-out 0.3s both;
+  }
+
+  /* Bar chart grow animation */
+  @keyframes bar-grow {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+  .animate-bar-grow {
+    transform-origin: bottom;
+    animation: bar-grow 0.5s ease-out both;
+  }
+
+  @keyframes bar-width {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  .animate-bar-width {
+    transform-origin: left;
+    animation: bar-width 0.8s ease-out both;
+  }
+
+  /* Float animations for desktop widgets */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .animate-float-delayed {
+    animation: float-delayed 5s ease-in-out 1s infinite;
   }
 }
 

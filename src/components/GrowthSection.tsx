@@ -7,7 +7,7 @@ const GrowthSection = () => (
   <section id="growth" className="py-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-br from-card via-muted/80 to-card pointer-events-none" />
     <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
-    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/4 blur-[150px] pointer-events-none" />
+    <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
