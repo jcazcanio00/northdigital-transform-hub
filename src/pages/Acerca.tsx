@@ -488,7 +488,7 @@ const Acerca = () => (
     {/* ═══ FILOSOFÍA ═══ */}
     <section className="py-24 relative overflow-hidden" style={{ background: "hsl(220 60% 8%)" }}>
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/6 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-primary/8 blur-[140px] pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10 text-center">
         <motion.div {...fade()}>

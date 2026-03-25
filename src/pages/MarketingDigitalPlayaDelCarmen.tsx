@@ -602,7 +602,7 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,60%,8%)] via-transparent to-[hsl(220,60%,8%)] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,60%,8%)]/60 via-transparent to-[hsl(220,60%,8%)]/60 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(ellipse, hsl(var(--primary)/0.12), transparent 70%)" }} />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.div {...fade()}>
@@ -744,7 +744,7 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
       {/* ═══ CTA FINAL ═══ */}
       <section className="py-24 relative overflow-hidden" style={{ background: "var(--gradient-cta)" }}>
         <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[200px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.div {...fade()}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white">

@@ -454,8 +454,8 @@ const Software = () => {
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+        <div className="hidden md:block absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -790,7 +790,7 @@ const Software = () => {
       {/* ── SECTION 7: FINAL CTA ── */}
       <section className="py-20 relative overflow-hidden" style={{ background: "var(--gradient-cta)" }}>
         <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
           <motion.div {...fade()}>
