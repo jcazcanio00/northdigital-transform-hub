@@ -269,8 +269,8 @@ const CrmEmpresas = () => {
   return (
     <>
       <SEO
-        title="CRM para Empresas | Implementación de CRM y Automatización de Ventas"
-        description="Implementamos sistemas CRM para empresas que organizan clientes, automatizan el seguimiento de leads y mejoran el control de ventas. Soluciones CRM personalizadas para negocios en crecimiento."
+        title="CRM para Empresas en Cancún | Automatización y Ventas"
+        description="Implementa CRM en tu empresa en Cancún. Automatiza procesos, mejora seguimiento y aumenta tus ventas con tecnología."
         url="https://northmkt.com.mx/crm-empresas"
         jsonLd={crmJsonLd}
       />
