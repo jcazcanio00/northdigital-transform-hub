@@ -39,7 +39,7 @@ const jsonLd = {
   "url": "https://northmkt.com.mx/blog",
   "publisher": {
     "@type": "Organization",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
   },
 };
