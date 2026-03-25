@@ -21,9 +21,9 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
-    "logo": "https://northmkt.com.mx/favicon.webp",
+    "logo": "https://northmkt.com.mx/logo.png",
     "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
     "address": {
       "@type": "PostalAddress",
