@@ -13,7 +13,7 @@ const SEO = ({
   title,
   description,
   url = "https://northmkt.com.mx",
-  image = "https://northmkt.com.mx/og-image.png",
+  image = "https://northmkt.com.mx/og-image.jpg",
   keywords,
   jsonLd,
 }: SEOProps) => (
