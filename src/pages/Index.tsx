@@ -46,7 +46,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
     "potentialAction": {
       "@type": "SearchAction",
