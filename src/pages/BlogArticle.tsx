@@ -172,7 +172,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
 
   return (
     <>
-      <SEO title={article.seoTitle} description={article.excerpt} image={article.image} url={articleUrl} />
+      <SEO title={article.seoTitle} description={article.excerpt} image={article.image} url={articleUrl} keywords={article.tags?.join(", ")} />
       <Header />
       <main className="min-h-screen">
         {/* ─── Hero ─── */}

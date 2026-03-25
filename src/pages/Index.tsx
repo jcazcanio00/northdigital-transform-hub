@@ -89,6 +89,7 @@ const Index = () => {
         title="North | Automatiza, Escala y Crece con Tecnología"
         description="Automatiza, escala y crece con tecnología. Software empresarial, cloud y marketing de crecimiento para empresas modernas."
         url="https://northmkt.com.mx"
+        keywords="north, software empresarial, cloud, marketing de crecimiento, automatizacion, tecnologia para empresas"
         jsonLd={indexJsonLd}
       />
       <Header />
