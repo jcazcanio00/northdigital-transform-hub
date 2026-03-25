@@ -38,8 +38,11 @@ export default defineConfig(({ mode }) => ({
         iaVenderMas: path.resolve(__dirname, "blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html"),
       },
       output: {
-        manualChunks: {
-          'framer-motion': ['framer-motion'],
+        manualChunks(id) {
+          // Keep react ecosystem in a shared vendor chunk
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/') || id.includes('node_modules/react-router')) {
+            return 'react-vendor';
+          }
         },
       },
     },
