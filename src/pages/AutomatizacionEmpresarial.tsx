@@ -47,7 +47,7 @@ const jsonLd = {
   "@type": "Service",
   name: "Automatización Empresarial",
   provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
-  description: "Diseñamos soluciones de automatización empresarial para empresas que buscan optimizar procesos, automatizar ventas, integrar sistemas y escalar con tecnología.",
+  description: "Automatizamos procesos, seguimiento comercial e integración de sistemas para que tu empresa opere con más eficiencia.",
   url: "https://northmkt.com.mx/automatizacion-empresarial",
   areaServed: { "@type": "Country", name: "México" },
   serviceType: "Automatización de Procesos Empresariales",
