@@ -199,7 +199,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
             <motion.div {...fade(0.2)} className="flex items-center justify-between pb-8 border-b border-border">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
-                  <img src="/favicon.webp" alt="North Digital" className="w-6 h-6 object-contain" />
+                  <img src="/favicon.webp" alt="North" className="w-6 h-6 object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">{article.author}</p>
