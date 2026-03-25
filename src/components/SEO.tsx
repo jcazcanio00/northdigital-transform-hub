@@ -5,16 +5,30 @@ interface SEOProps {
   description: string;
   url?: string;
   image?: string;
+  imageType?: string;
   keywords?: string;
+  ogType?: "website" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
+
+const getImageMimeType = (image: string) => {
+  const normalizedImage = image.split("?")[0].toLowerCase();
+
+  if (normalizedImage.endsWith(".png")) return "image/png";
+  if (normalizedImage.endsWith(".webp")) return "image/webp";
+  if (normalizedImage.endsWith(".gif")) return "image/gif";
+
+  return "image/jpeg";
+};
 
 const SEO = ({
   title,
   description,
   url = "https://northmkt.com.mx",
   image = "https://northmkt.com.mx/og-image.jpg",
+  imageType,
   keywords,
+  ogType = "website",
   jsonLd,
 }: SEOProps) => (
   <Helmet>
@@ -25,12 +39,12 @@ const SEO = ({
 
     <meta property="og:image" content={image} />
     <meta property="og:image:secure_url" content={image} />
-    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:type" content={imageType ?? getImageMimeType(image)} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={url} />
     <meta property="og:locale" content="es_MX" />
     <meta property="og:site_name" content="North" />
