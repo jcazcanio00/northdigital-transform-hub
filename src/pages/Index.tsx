@@ -1,24 +1,21 @@
-import { lazy, Suspense } from "react";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import LogoSlider from "@/components/LogoSlider";
-
-// Lazy load everything below the fold
-const TrustSection = lazy(() => import("@/components/TrustSection"));
-const BlueCta = lazy(() => import("@/components/BlueCta"));
-const AboutSection = lazy(() => import("@/components/AboutSection"));
-const SystemsSection = lazy(() => import("@/components/SystemsSection"));
-const CloudSection = lazy(() => import("@/components/CloudSection"));
-const GrowthSection = lazy(() => import("@/components/GrowthSection"));
-const StatsSection = lazy(() => import("@/components/StatsSection"));
-const TestimonialSection = lazy(() => import("@/components/TestimonialSection"));
-const ProcessSection = lazy(() => import("@/components/ProcessSection"));
-const CtaSection = lazy(() => import("@/components/CtaSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
-const MarqueeText = lazy(() => import("@/components/MarqueeText"));
-const Footer = lazy(() => import("@/components/Footer"));
+import TrustSection from "@/components/TrustSection";
+import BlueCta from "@/components/BlueCta";
+import AboutSection from "@/components/AboutSection";
+import SystemsSection from "@/components/SystemsSection";
+import CloudSection from "@/components/CloudSection";
+import GrowthSection from "@/components/GrowthSection";
+import StatsSection from "@/components/StatsSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import ProcessSection from "@/components/ProcessSection";
+import CtaSection from "@/components/CtaSection";
+import ContactSection from "@/components/ContactSection";
+import MarqueeText from "@/components/MarqueeText";
+import Footer from "@/components/Footer";
 
 const indexJsonLd = [
   {
@@ -98,21 +95,19 @@ const Index = () => {
       <HeroSection />
       <LogoSlider />
       <SolutionsSection />
-      <Suspense fallback={null}>
-        <TrustSection />
-        <BlueCta />
-        <AboutSection />
-        <SystemsSection />
-        <CloudSection />
-        <GrowthSection />
-        <StatsSection />
-        <TestimonialSection />
-        <ProcessSection />
-        <CtaSection />
-        <ContactSection />
-        <MarqueeText />
-        <Footer />
-      </Suspense>
+      <TrustSection />
+      <BlueCta />
+      <AboutSection />
+      <SystemsSection />
+      <CloudSection />
+      <GrowthSection />
+      <StatsSection />
+      <TestimonialSection />
+      <ProcessSection />
+      <CtaSection />
+      <ContactSection />
+      <MarqueeText />
+      <Footer />
     </div>
   );
 };

@@ -31,7 +31,7 @@ const TestimonialCard = ({ t }: { t: typeof testimonials[0] }) => (
 );
 
 const TestimonialSection = () => (
-  <section className="py-24 relative overflow-hidden" style={{ minHeight: 380 }}>
+  <section className="py-24 relative overflow-hidden">
     {/* Dark blue gradient background */}
     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
     <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />

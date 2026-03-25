@@ -121,8 +121,6 @@ const CloudSection = () => (
                   <img
                     src={logo.icon}
                     alt={logo.name}
-                    width={24}
-                    height={24}
                     className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity duration-300"
                     loading="lazy"
                   />

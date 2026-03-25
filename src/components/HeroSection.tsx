@@ -1,26 +1,82 @@
+import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Users, Zap, TrendingUp, Activity, Bell, CheckCircle2, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
+const FloatingParticles = () => {
+  // Pre-compute random values to avoid recalculation on re-renders
+  const particles = [
+    { w: 6, l: "15%", t: "20%", dy: -25, dx: 5 },
+    { w: 8, l: "45%", t: "30%", dy: -35, dx: -8 },
+    { w: 5, l: "70%", t: "15%", dy: -20, dx: 3 },
+    { w: 10, l: "30%", t: "60%", dy: -30, dx: -5 },
+    { w: 7, l: "80%", t: "50%", dy: -28, dx: 7 },
+    { w: 4, l: "55%", t: "75%", dy: -22, dx: -4 },
+  ];
+  return (
+    <>
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-primary/10 pointer-events-none"
+          style={{ width: p.w, height: p.w, left: p.l, top: p.t }}
+          animate={{
+            y: [0, p.dy, 0],
+            x: [0, p.dx, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 5 + i,
+            repeat: Infinity,
+            delay: i * 0.8,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </>
+  );
+};
+
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ containIntrinsicSize: "auto 100vh", contentVisibility: "visible" }}>
-    {/* Background effects — static, no motion */}
+  <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[40px] pointer-events-none will-change-transform" />
-    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[40px] pointer-events-none will-change-transform" />
-    {/* Subtle orbs — CSS animation only */}
-    <div className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[60px] pointer-events-none animate-orb-slow" />
-    <div className="absolute bottom-[20%] left-[20%] w-[250px] h-[250px] rounded-full bg-primary/4 blur-[60px] pointer-events-none animate-orb-slow" style={{ animationDelay: "2s" }} />
+    {/* Radial blue glow behind dashboard */}
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none will-change-transform" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none will-change-transform" />
+    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none will-change-transform" />
+    {/* Subtle gradient motion orbs */}
+    <motion.div
+      className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute bottom-[20%] left-[20%] w-[250px] h-[250px] rounded-full bg-primary/4 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+    />
+
+    <FloatingParticles />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      {/* Text content — CSS fade-in */}
-      <div className="text-center max-w-4xl mx-auto mb-16 animate-hero-fade-up">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8 animate-hero-scale-in">
+      {/* Text content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center max-w-4xl mx-auto mb-16"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8"
+        >
           <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
           Socio en Transformación Digital
-        </div>
+        </motion.div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
           Automatiza, Escala y{" "}
@@ -42,19 +98,27 @@ const HeroSection = () => (
             className="text-base px-8 py-6"
             onClick={() => {
               const el = document.getElementById("solutions");
-              if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
             }}
           >
             Explorar Soluciones
           </Button>
           <WhatsAppHeroButton />
         </div>
-      </div>
+      </motion.div>
 
-      {/* Dashboard mockup — CSS fade-in */}
-      <div className="relative max-w-5xl mx-auto animate-hero-slide-up">
+      {/* Dashboard mockup */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
+        className="relative max-w-5xl mx-auto"
+      >
+        {/* Stronger radial glow behind dashboard */}
         <div className="absolute -inset-12 bg-primary/8 rounded-[40px] blur-[60px] pointer-events-none" />
-        <div className="absolute -inset-20 bg-primary/4 rounded-full blur-[60px] pointer-events-none" />
+        <div className="absolute -inset-20 bg-primary/4 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative glass-card rounded-2xl border border-border/60 overflow-hidden shadow-2xl">
           {/* Chrome */}
@@ -136,16 +200,18 @@ const HeroSection = () => (
                 ))}
               </div>
 
-              {/* Charts — static bars, no motion */}
+              {/* Charts */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
                 <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
                   <div className="text-[11px] font-semibold mb-3">Ingresos Mensuales</div>
                   <div className="flex items-end gap-[3px] h-20">
                     {[35, 45, 30, 55, 48, 65, 58, 72, 68, 82, 75, 90, 85, 78, 92, 88, 95].map((h, i) => (
-                      <div
+                      <motion.div
                         key={i}
-                        className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60 animate-bar-grow"
-                        style={{ height: `${h}%`, animationDelay: `${0.6 + i * 0.03}s` }}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ duration: 0.5, delay: 0.6 + i * 0.03 }}
+                        className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60"
                       />
                     ))}
                   </div>
@@ -165,9 +231,11 @@ const HeroSection = () => (
                           <span className="font-bold">{item.pct}%</span>
                         </div>
                         <div className="w-full h-1 rounded-full bg-secondary/50">
-                          <div
-                            className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary animate-bar-width"
-                            style={{ '--bar-width': `${item.pct}%`, animationDelay: '1s' } as React.CSSProperties}
+                          <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: `${item.pct}%` }}
+                            transition={{ duration: 0.8, delay: 1 }}
+                            className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary"
                           />
                         </div>
                       </div>
@@ -210,10 +278,12 @@ const HeroSection = () => (
                   <div className="text-[10px] font-semibold mb-2">Uptime</div>
                   <div className="flex items-end gap-0.5 h-10 mb-1">
                     {[60, 45, 70, 55, 80, 65, 90, 72, 85, 78, 92, 88].map((h, i) => (
-                      <div
+                      <motion.div
                         key={i}
-                        className="flex-1 rounded-t-sm bg-gradient-to-t from-accent/25 to-accent/60 animate-bar-grow"
-                        style={{ height: `${h}%`, animationDelay: `${1.2 + i * 0.04}s` }}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ duration: 0.4, delay: 1.2 + i * 0.04 }}
+                        className="flex-1 rounded-t-sm bg-gradient-to-t from-accent/25 to-accent/60"
                       />
                     ))}
                   </div>
@@ -227,8 +297,13 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Floating widgets — CSS only */}
-        <div className="absolute -left-6 top-[25%] glass-card rounded-xl p-3 shadow-lg animate-float-slow hidden lg:block animate-hero-slide-left" style={{ animationDelay: "1.2s" }}>
+        {/* Floating widgets */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="absolute -left-6 top-[25%] glass-card rounded-xl p-3 shadow-lg animate-float-slow hidden lg:block"
+        >
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
               <TrendingUp size={12} className="text-primary" />
@@ -238,9 +313,14 @@ const HeroSection = () => (
               <div className="text-[8px] text-muted-foreground">Crecimiento Q1</div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="absolute -right-6 top-[30%] glass-card rounded-xl p-2.5 shadow-lg animate-float-delayed hidden lg:block animate-hero-slide-right" style={{ animationDelay: "1.4s" }}>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+          className="absolute -right-6 top-[30%] glass-card rounded-xl p-2.5 shadow-lg animate-float-delayed hidden lg:block"
+        >
           <div className="flex items-center gap-2">
             <Bell size={12} className="text-accent" />
             <div>
@@ -248,8 +328,8 @@ const HeroSection = () => (
               <div className="text-[8px] text-muted-foreground">Empresa Tech S.A.</div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   </section>
 );
