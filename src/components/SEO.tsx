@@ -14,12 +14,14 @@ const SEO = ({
   description,
   url = "https://northmkt.com.mx",
   image = "https://northmkt.com.mx/og-image.png",
+  keywords,
   jsonLd,
 }: SEOProps) => (
   <Helmet>
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={url} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
