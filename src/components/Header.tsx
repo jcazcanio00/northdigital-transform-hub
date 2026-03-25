@@ -158,7 +158,7 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden glass-card border-t border-border mt-2 p-4 space-y-1">
+        <div className="lg:hidden border-t border-border mt-2 p-4 space-y-1 bg-background">
           <Link to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             Inicio
           </Link>
