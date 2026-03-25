@@ -39,7 +39,7 @@ const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
 };
 
 const StatsSection = () => (
-  <section className="py-24 relative overflow-hidden">
+  <section className="py-24 relative overflow-hidden min-h-[400px]">
     <div className="section-divider" />
     <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-primary/[0.03] pointer-events-none" />
     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />

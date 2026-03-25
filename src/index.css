@@ -127,10 +127,17 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    /* Reserve space for fixed header to prevent CLS */
+    padding-top: 72px;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
     font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+  /* Prevent image layout shift globally */
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -140,6 +147,7 @@
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glow-card);
+    min-height: 72px;
   }
   /* Only enable backdrop-filter on non-touch devices (desktop) */
   @media (hover: hover) and (min-width: 1024px) {
@@ -173,7 +181,9 @@
   }
 
   .glass-card-hover {
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease;
+    transition-property: transform, box-shadow, border-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
   .glass-card-hover:hover {
     transform: translateY(-6px);

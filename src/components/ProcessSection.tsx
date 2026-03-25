@@ -9,7 +9,7 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section id="process" className="py-24 relative">
+  <section id="process" className="py-24 relative min-h-[500px]">
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
