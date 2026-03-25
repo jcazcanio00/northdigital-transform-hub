@@ -24,7 +24,7 @@ const indexJsonLd = [
     "name": "North",
     "url": "https://northmkt.com.mx",
     "logo": "https://northmkt.com.mx/logo.png",
-    "description": "Agencia de marketing digital en Cancún especializada en SEO, Google Ads, CRM y estrategias de crecimiento para empresas.",
+    "description": "Impulsamos el crecimiento de tu empresa con marketing digital, CRM, software y soluciones cloud.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Cancún",

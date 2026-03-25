@@ -21,13 +21,13 @@ const HeroSection = () => (
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
-          Agencia de Marketing{" "}
-          <span className="gradient-text">Digital</span>{" "}
-          en Cancún
+          Tecnología y{" "}
+          <span className="gradient-text">Crecimiento</span>{" "}
+          para tu Empresa
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Somos una agencia de marketing digital en Cancún que combina estrategias de crecimiento, SEO, Google Ads, CRM y tecnología para que tu empresa genere más clientes. Como agencia de marketing en Cancún, ayudamos a empresas a escalar con marketing digital en Cancún y la Riviera Maya.
+          Combinamos marketing digital, CRM, software a medida y soluciones cloud para impulsar el crecimiento de tu empresa. Estrategia, tecnología y resultados medibles.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center items-center">
