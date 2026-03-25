@@ -279,13 +279,18 @@
       radial-gradient(at 80% 70%, hsl(var(--accent) / 0.04) 0%, transparent 50%);
   }
 
-  /* Floating orb */
+  /* Floating orb — disabled on mobile for GPU perf */
   .floating-orb {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(80px);
+    filter: blur(40px);
     pointer-events: none;
     animation: pulse-glow 6s ease-in-out infinite;
+  }
+  @media (max-width: 767px) {
+    .floating-orb {
+      display: none;
+    }
   }
 
   /* Noise overlay */
