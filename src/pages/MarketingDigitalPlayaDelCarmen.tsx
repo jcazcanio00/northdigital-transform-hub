@@ -266,13 +266,13 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Agencia de Marketing Digital en Playa del Carmen y Riviera Maya",
+    "name": "Agencia de Marketing Digital en Playa del Carmen",
     "provider": {
       "@type": "Organization",
       "name": "North",
       "url": "https://northmkt.com.mx",
     },
-    "description": "Agencia de marketing digital en Playa del Carmen, Cancún, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
+    "description": "Agencia de marketing digital en Playa del Carmen. SEO, campañas y estrategias para generar clientes y hacer crecer tu empresa.",
     "url": "https://northmkt.com.mx/marketing-digital-playa-del-carmen",
     "areaServed": [
       { "@type": "City", "name": "Playa del Carmen" },
@@ -330,9 +330,10 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Agencia de Marketing Digital en Playa del Carmen | SEO y Growth"
-        description="Agencia de marketing digital en Playa del Carmen. Estrategias de crecimiento, SEO, automatización y generación de leads para empresas."
+        title="Agencia de Marketing Digital en Playa del Carmen | North"
+        description="Agencia de marketing digital en Playa del Carmen. SEO, campañas y estrategias para generar clientes y hacer crecer tu empresa."
         url="https://northmkt.com.mx/marketing-digital-playa-del-carmen"
+        keywords="marketing playa del carmen, agencia de marketing playa del carmen, marketing digital playa del carmen, agencia de marketing digital playa del carmen, seo playa del carmen"
         jsonLd={jsonLd}
       />
       <Header />
@@ -354,7 +355,7 @@ const MarketingDigitalPlayaDelCarmenPage = () => {
                 <span className="gradient-text">Digital en Playa del Carmen</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Estrategias de marketing digital basadas en datos para empresas en Playa del Carmen y la Riviera Maya. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.
+                Somos una agencia de marketing digital en Playa del Carmen especializada en SEO, campañas y estrategias de crecimiento. Nuestra agencia de marketing en Playa del Carmen ayuda a empresas a generar más clientes con marketing en Playa del Carmen y marketing digital en Playa del Carmen.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>

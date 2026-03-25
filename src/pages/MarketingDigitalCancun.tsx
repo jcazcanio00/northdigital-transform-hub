@@ -414,6 +414,12 @@ const MarketingDigitalCancunPage = () => {
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4">
               Servicios de Marketing <span className="gradient-text">Digital en Cancún</span>
             </h2>
+          </motion.div>
+          <motion.div {...fade(0.1)} className="text-center mb-8">
+            <h2 className="text-2xl font-bold font-display">
+              Agencia de Marketing en Cancún para Empresas
+            </h2>
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Cada canal está diseñado para generar tráfico cualificado, leads y revenue medible para negocios en Cancún, Playa del Carmen, Tulum y la Riviera Maya.
             </p>

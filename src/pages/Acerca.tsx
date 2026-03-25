@@ -172,7 +172,7 @@ const Acerca = () => (
 
         <motion.h1 {...fade(0.05)} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
           Sobre{" "}
-          <span className="gradient-text">North Digital</span>
+          <span className="gradient-text">North</span>
         </motion.h1>
 
         <motion.p {...fade(0.1)} className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">

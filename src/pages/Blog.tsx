@@ -89,9 +89,10 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Blog de Marketing, CRM y Tecnología | North Digital"
+        title="Blog de Marketing, CRM y Tecnología | North"
         description="Aprende sobre marketing digital, CRM, automatización y tecnología para hacer crecer tu empresa."
         url="https://northmkt.com.mx/blog"
+        keywords="blog marketing digital, blog crm, blog tecnologia empresarial, marketing digital cancun blog"
         jsonLd={jsonLd}
       />
       <Header />

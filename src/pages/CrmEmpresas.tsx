@@ -269,9 +269,10 @@ const CrmEmpresas = () => {
   return (
     <>
       <SEO
-        title="CRM para Empresas en Cancún | Automatización y Ventas"
-        description="Implementa CRM en tu empresa en Cancún. Automatiza procesos, mejora seguimiento y aumenta tus ventas con tecnología."
+        title="CRM para Empresas en Cancún | North"
+        description="Implementación de CRM para empresas en Cancún. Automatiza ventas, seguimiento y procesos comerciales."
         url="https://northmkt.com.mx/crm-empresas"
+        keywords="crm cancun, crm empresas cancun, crm para empresas cancun, automatizacion de ventas cancun"
         jsonLd={crmJsonLd}
       />
       <Header />

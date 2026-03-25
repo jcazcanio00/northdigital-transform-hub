@@ -226,14 +226,15 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Servicios Cloud en Cancún | Infraestructura y Hosting"
+        title="Servicios Cloud en Cancún | North"
         description="Implementa infraestructura cloud segura y escalable en Cancún. Hosting, servidores y soluciones empresariales."
         url="https://northmkt.com.mx/cloud"
+        keywords="cloud cancun, servicios cloud cancun, hosting empresarial cancun, infraestructura cloud"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
           "name": "Servicios Cloud para Empresas en Cancún",
-          "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
+          "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
           "description": "Infraestructura cloud segura y escalable, hosting empresarial, migraciones y monitoreo para empresas con operaciones críticas.",
           "url": "https://northmkt.com.mx/cloud",
           "areaServed": { "@type": "Country", "name": "México" },

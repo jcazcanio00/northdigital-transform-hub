@@ -443,9 +443,10 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Software Empresarial en Cancún | Sistemas a Medida"
+        title="Software Empresarial en Cancún | North"
         description="Desarrollamos software empresarial en Cancún para automatizar procesos y mejorar la operación de tu negocio."
         url="https://northmkt.com.mx/software"
+        keywords="software empresarial cancun, desarrollo de software cancun, sistemas a medida cancun"
         jsonLd={softwareJsonLd}
       />
       <Header />
