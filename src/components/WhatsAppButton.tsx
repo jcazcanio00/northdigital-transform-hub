@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
 const WHATSAPP_URL = "https://wa.me/529983513337";
 
 const trackWhatsAppClick = (ctaLocation: string) => {
@@ -20,42 +17,19 @@ const WhatsAppIcon = ({ size = 28 }: { size?: number }) => (
   </svg>
 );
 
-export const WhatsAppFloatingButton = () => {
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ opacity: 0, x: 10, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 10, scale: 0.9 }}
-            transition={{ duration: 0.2 }}
-            className="hidden sm:block px-4 py-2 rounded-xl bg-card border border-border/40 shadow-lg text-sm font-medium text-foreground whitespace-nowrap"
-          >
-            Hablar por WhatsApp
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <motion.a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => trackWhatsAppClick("floating_button")}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_rgba(37,211,102,0.5)] transition-shadow duration-300"
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        aria-label="Contactar por WhatsApp"
-      >
-        <WhatsAppIcon size={30} />
-      </motion.a>
-    </div>
-  );
-};
+/* Floating WhatsApp button — pure CSS, no framer-motion */
+export const WhatsAppFloatingButton = () => (
+  <a
+    href={WHATSAPP_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={() => trackWhatsAppClick("floating_button")}
+    className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_28px_rgba(37,211,102,0.5)] active:scale-95 transition-all duration-300"
+    aria-label="Contactar por WhatsApp"
+  >
+    <WhatsAppIcon size={30} />
+  </a>
+);
 
 const WhatsAppIconColored = ({ size = 18 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} fill="#25D366">
