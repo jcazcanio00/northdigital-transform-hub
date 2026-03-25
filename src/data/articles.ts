@@ -634,7 +634,7 @@ export const articles: Article[] = [
     tags: ["prompt deepseek", "como usar deepseek", "prompts para ia", "inteligencia artificial prompts", "deepseek ejemplos", "crear prompts efectivos", "ai prompts guia"],
     date: "25 Mar 2026",
     readTime: "6 min",
-    image: "https://northmkt.com.mx/blog-images/deepseek-prompts.jpg",
+    image: "https://northmkt.com.mx/blog-images/deepseek-prompts.png",
     author: "Equipo North",
     authorRole: "Tecnología & IA",
     featured: true,
