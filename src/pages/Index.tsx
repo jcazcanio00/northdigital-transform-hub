@@ -58,7 +58,7 @@ const indexJsonLd = [
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "North",
-    "image": "https://northmkt.com.mx/og-image.png",
+    "image": "https://northmkt.com.mx/og-image.jpg",
     "url": "https://northmkt.com.mx",
     "telephone": "+52-998-351-3337",
     "address": {

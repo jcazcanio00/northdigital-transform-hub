@@ -275,7 +275,7 @@ const AutomatizacionEmpresarial = () => {
         description="Automatiza procesos, ventas e integraciones en tu empresa. Soluciones de automatización empresarial con tecnología."
         url="https://northmkt.com.mx/automatizacion-empresarial"
         keywords="automatizacion empresarial cancun, automatizacion de procesos, automatizacion de ventas"
-        image="https://northmkt.com.mx/og-image.png"
+        image="https://northmkt.com.mx/og-image.jpg"
         jsonLd={jsonLd}
       />
       <Header />

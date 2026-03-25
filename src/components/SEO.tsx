@@ -13,7 +13,7 @@ const SEO = ({
   title,
   description,
   url = "https://northmkt.com.mx",
-  image = "https://northmkt.com.mx/og-image.png",
+  image = "https://northmkt.com.mx/og-image.jpg",
   keywords,
   jsonLd,
 }: SEOProps) => (
@@ -25,7 +25,7 @@ const SEO = ({
 
     <meta property="og:image" content={image} />
     <meta property="og:image:secure_url" content={image} />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:title" content={title} />

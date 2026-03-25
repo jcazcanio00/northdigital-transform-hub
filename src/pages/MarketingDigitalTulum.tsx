@@ -286,7 +286,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "North - Agencia de Marketing Digital en Tulum",
-    "image": "https://northmkt.com.mx/og-image.png",
+    "image": "https://northmkt.com.mx/og-image.jpg",
     "url": "https://northmkt.com.mx/marketing-digital-tulum",
     "telephone": "+52-998-351-3337",
     "address": {
