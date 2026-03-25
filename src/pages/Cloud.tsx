@@ -226,14 +226,14 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Infraestructura Cloud para Empresas | North"
-        description="Diseño, implementación y operación de infraestructura cloud segura y escalable. Hosting empresarial, migraciones, monitoreo y Google Workspace para operaciones críticas."
+        title="Servicios Cloud en Cancún | Infraestructura y Hosting"
+        description="Implementa infraestructura cloud segura y escalable en Cancún. Hosting, servidores y soluciones empresariales."
         url="https://northmkt.com.mx/cloud"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Infraestructura Cloud Empresarial",
-          "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
+          "name": "Servicios Cloud para Empresas en Cancún",
+          "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
           "description": "Infraestructura cloud segura y escalable, hosting empresarial, migraciones y monitoreo para empresas con operaciones críticas.",
           "url": "https://northmkt.com.mx/cloud",
           "areaServed": { "@type": "Country", "name": "México" },
@@ -256,8 +256,8 @@ const CloudPage = () => {
                 CLOUD EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Cloud Services{" "}
-                <span className="gradient-text">Segura y Escalable</span>
+                Servicios Cloud para Empresas{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.

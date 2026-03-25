@@ -269,7 +269,7 @@ const jsonLd = [
     "name": "Agencia de Marketing Digital en Cancún, Playa del Carmen y Riviera Maya",
     "provider": {
       "@type": "Organization",
-      "name": "North",
+      "name": "North Digital",
       "url": "https://northmkt.com.mx",
     },
     "description": "Agencia de marketing digital en Cancún, Playa del Carmen, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
@@ -330,8 +330,8 @@ const MarketingDigitalCancunPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Agencia de Marketing Digital en Cancún | SEO y Growth para Empresas"
-        description="Agencia de marketing digital en Cancún, Playa del Carmen y Riviera Maya. Estrategias de crecimiento, SEO, automatización y generación de leads para empresas."
+        title="Marketing Digital en Cancún | SEO, Ads y Crecimiento"
+        description="Agencia de marketing digital en Cancún. Genera clientes con SEO, Google Ads y estrategias de crecimiento."
         url="https://northmkt.com.mx/marketing-digital-cancun"
         jsonLd={jsonLd}
       />
@@ -351,7 +351,7 @@ const MarketingDigitalCancunPage = () => {
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
                 Agencia de Marketing{" "}
-                <span className="gradient-text">Digital en Cancún, Playa del Carmen y Riviera Maya</span>
+                <span className="gradient-text">Digital en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Estrategias de marketing digital basadas en datos para empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.

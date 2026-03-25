@@ -17,8 +17,8 @@ import SEO from "@/components/SEO";
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Software Empresarial a Medida",
-  "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
+  "name": "Software Empresarial en Cancún",
+  "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
   "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
   "url": "https://northmkt.com.mx/software",
   "areaServed": { "@type": "Country", "name": "México" },
@@ -443,8 +443,8 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Software Empresarial a Medida | North"
-        description="Desarrollo de CRM, dashboards, automatización de procesos y sistemas empresariales a medida. Plataformas internas con integraciones API para escalar operaciones."
+        title="Software Empresarial en Cancún | Sistemas a Medida"
+        description="Desarrollamos software empresarial en Cancún para automatizar procesos y mejorar la operación de tu negocio."
         url="https://northmkt.com.mx/software"
         jsonLd={softwareJsonLd}
       />
@@ -466,8 +466,8 @@ const Software = () => {
                 SOFTWARE EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Software Empresarial a Medida para{" "}
-                <span className="gradient-text">Operaciones Modernas</span>
+                Software Empresarial{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos sistemas, CRM, dashboards e integraciones para empresas que

@@ -34,12 +34,12 @@ const categories = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Blog de North",
+  "name": "Blog de North Digital",
   "description": "Insights, estrategias y guías prácticas sobre marketing digital, automatización, CRM y tecnología para empresas.",
   "url": "https://northmkt.com.mx/blog",
   "publisher": {
     "@type": "Organization",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
   },
 };
@@ -89,8 +89,8 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Blog de Marketing Digital, CRM y Automatización | North"
-        description="Aprende sobre marketing digital, CRM, automatización y tecnología empresarial con guías prácticas para hacer crecer tu empresa."
+        title="Blog de Marketing, CRM y Tecnología | North Digital"
+        description="Aprende sobre marketing digital, CRM, automatización y tecnología para hacer crecer tu empresa."
         url="https://northmkt.com.mx/blog"
         jsonLd={jsonLd}
       />
@@ -108,7 +108,7 @@ const BlogPage = () => {
               Knowledge Hub
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-              Blog de Tecnología, CRM y{" "}
+              Blog de Tecnología y{" "}
               <span className="gradient-text">Crecimiento Empresarial</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">

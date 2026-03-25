@@ -21,9 +21,9 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
-    "logo": "https://northmkt.com.mx/favicon.webp",
+    "logo": "https://northmkt.com.mx/logo.png",
     "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
     "address": {
       "@type": "PostalAddress",
@@ -46,7 +46,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "North",
+    "name": "North Digital",
     "url": "https://northmkt.com.mx",
     "potentialAction": {
       "@type": "SearchAction",
@@ -57,7 +57,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "North",
+    "name": "North Digital",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx",
     "telephone": "+52-998-351-3337",
@@ -86,8 +86,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="North | Software Empresarial, Cloud Services y Marketing de Crecimiento"
-        description="Agencia de marketing digital en Cancún especializada en software empresarial, infraestructura cloud y estrategias de crecimiento basadas en datos para escalar tu negocio."
+        title="North Digital | Marketing Digital, CRM y Cloud en Cancún"
+        description="Agencia en Cancún especializada en marketing digital, CRM y soluciones cloud para empresas que buscan crecer con tecnología."
         url="https://northmkt.com.mx"
         jsonLd={indexJsonLd}
       />

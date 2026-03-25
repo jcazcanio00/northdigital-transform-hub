@@ -19,7 +19,7 @@ const crmJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "CRM para Empresas",
-  provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
+  provider: { "@type": "Organization", name: "North Digital", url: "https://northmkt.com.mx" },
   description:
     "Implementamos sistemas CRM para empresas que organizan clientes, automatizan el seguimiento de leads y mejoran el control de ventas.",
   url: "https://northmkt.com.mx/crm-empresas",
@@ -269,8 +269,8 @@ const CrmEmpresas = () => {
   return (
     <>
       <SEO
-        title="CRM para Empresas | Implementación de CRM y Automatización de Ventas"
-        description="Implementamos sistemas CRM para empresas que organizan clientes, automatizan el seguimiento de leads y mejoran el control de ventas. Soluciones CRM personalizadas para negocios en crecimiento."
+        title="CRM para Empresas en Cancún | Automatización y Ventas"
+        description="Implementa CRM en tu empresa en Cancún. Automatiza procesos, mejora seguimiento y aumenta tus ventas con tecnología."
         url="https://northmkt.com.mx/crm-empresas"
         jsonLd={crmJsonLd}
       />
@@ -289,8 +289,8 @@ const CrmEmpresas = () => {
             <motion.div {...fade()}>
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
-                CRM para{" "}
-                <span className="gradient-text">Empresas</span>
+                CRM para Empresas{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
