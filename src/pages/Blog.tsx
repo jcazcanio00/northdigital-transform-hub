@@ -225,8 +225,6 @@ const BlogPage = () => {
                 <button
                   key={cat.value}
                   onClick={() => setActiveCategory(cat.value)}
-                  aria-label={`Filtrar por categoría: ${cat.label}`}
-                  aria-pressed={activeCategory === cat.value}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                     activeCategory === cat.value
                       ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]"
