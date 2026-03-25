@@ -466,8 +466,8 @@ const Software = () => {
                 SOFTWARE EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Software Empresarial a Medida para{" "}
-                <span className="gradient-text">Operaciones Modernas</span>
+                Software Empresarial{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos sistemas, CRM, dashboards e integraciones para empresas que

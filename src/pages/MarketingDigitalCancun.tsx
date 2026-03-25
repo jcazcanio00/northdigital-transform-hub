@@ -269,7 +269,7 @@ const jsonLd = [
     "name": "Agencia de Marketing Digital en Cancún, Playa del Carmen y Riviera Maya",
     "provider": {
       "@type": "Organization",
-      "name": "North",
+      "name": "North Digital",
       "url": "https://northmkt.com.mx",
     },
     "description": "Agencia de marketing digital en Cancún, Playa del Carmen, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
