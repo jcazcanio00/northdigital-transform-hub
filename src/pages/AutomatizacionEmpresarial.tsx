@@ -283,8 +283,8 @@ const AutomatizacionEmpresarial = () => {
       <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[140px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -334,7 +334,7 @@ const AutomatizacionEmpresarial = () => {
 
       {/* ──────── SECTION 1: PROBLEMAS ──────── */}
       <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "hsl(220, 20%, 97%)" }}>
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[160px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <motion.div {...fade()}>
@@ -367,7 +367,7 @@ const AutomatizacionEmpresarial = () => {
 
       {/* ──────── SECTION 2: QUÉ PODEMOS AUTOMATIZAR ──────── */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-[140px] pointer-events-none" />
+        <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
             <SectionBadge>Capacidades</SectionBadge>
@@ -475,7 +475,7 @@ const AutomatizacionEmpresarial = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
@@ -503,7 +503,7 @@ const AutomatizacionEmpresarial = () => {
 
       {/* ──────── SECTION 5: CASOS DE USO ──────── */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[140px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-16">
             <SectionBadge>Aplicaciones</SectionBadge>
@@ -576,8 +576,8 @@ const AutomatizacionEmpresarial = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
         <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[180px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] h-[200px] rounded-full bg-primary/6 blur-[100px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute bottom-0 right-1/4 w-[300px] h-[200px] rounded-full bg-primary/6 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center max-w-3xl mx-auto">
