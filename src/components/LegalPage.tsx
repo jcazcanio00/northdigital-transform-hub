@@ -30,7 +30,7 @@ const LegalPage = ({ title, subtitle, lastUpdated, sections }: LegalPageProps) =
     {/* Hero */}
     <section className="pt-32 pb-14 relative overflow-hidden">
       <div className="absolute inset-0 bg-[image:var(--gradient-hero)] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="hidden md:block absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/5 blur-[60px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-3xl">
         <motion.div {...fade()} className="flex items-center gap-3 mb-6">

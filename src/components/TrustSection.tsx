@@ -103,7 +103,7 @@ const TrustSection = () => (
           <div className="absolute inset-0 bg-dot-grid opacity-20 rounded-3xl pointer-events-none" />
 
           {/* Center glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-primary/10 blur-[80px] pointer-events-none" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-primary/10 blur-[40px] pointer-events-none" />
           <motion.div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-full bg-primary/8 blur-[40px] pointer-events-none"
             animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
