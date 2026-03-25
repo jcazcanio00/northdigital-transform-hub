@@ -289,8 +289,8 @@ const CrmEmpresas = () => {
             <motion.div {...fade()}>
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
-                CRM para{" "}
-                <span className="gradient-text">Empresas</span>
+                CRM para Empresas{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.

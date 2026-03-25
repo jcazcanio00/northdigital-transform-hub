@@ -17,8 +17,8 @@ import SEO from "@/components/SEO";
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Software Empresarial a Medida",
-  "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
+  "name": "Software Empresarial en Cancún",
+  "provider": { "@type": "Organization", "name": "North Digital", "url": "https://northmkt.com.mx" },
   "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
   "url": "https://northmkt.com.mx/software",
   "areaServed": { "@type": "Country", "name": "México" },

@@ -71,7 +71,7 @@ const Contacto = () => {
           "url": "https://northmkt.com.mx/contacto",
           "mainEntity": {
             "@type": "Organization",
-            "name": "North",
+            "name": "North Digital",
             "email": "info@northmkt.com.mx",
             "telephone": "+52-998-351-3337",
             "address": { "@type": "PostalAddress", "addressLocality": "Cancún", "addressRegion": "Quintana Roo", "addressCountry": "MX" }

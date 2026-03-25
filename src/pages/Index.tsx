@@ -86,8 +86,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="North | Software Empresarial, Cloud Services y Marketing de Crecimiento"
-        description="Agencia de marketing digital en Cancún especializada en software empresarial, infraestructura cloud y estrategias de crecimiento basadas en datos para escalar tu negocio."
+        title="North Digital | Marketing Digital, CRM y Cloud en Cancún"
+        description="Agencia en Cancún especializada en marketing digital, CRM y soluciones cloud para empresas que buscan crecer con tecnología."
         url="https://northmkt.com.mx"
         jsonLd={indexJsonLd}
       />

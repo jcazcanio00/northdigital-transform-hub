@@ -108,7 +108,7 @@ const BlogPage = () => {
               Knowledge Hub
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-              Blog de Tecnología, CRM y{" "}
+              Blog de Tecnología y{" "}
               <span className="gradient-text">Crecimiento Empresarial</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">

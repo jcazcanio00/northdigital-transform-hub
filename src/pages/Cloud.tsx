@@ -256,8 +256,8 @@ const CloudPage = () => {
                 CLOUD EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Cloud Services{" "}
-                <span className="gradient-text">Segura y Escalable</span>
+                Servicios Cloud para Empresas{" "}
+                <span className="gradient-text">en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.
