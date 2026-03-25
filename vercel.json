@@ -46,6 +46,8 @@
     { "source": "/como-generar-leads-para-mi-empresa-en-cancun/", "destination": "/blog/como-generar-leads-para-mi-empresa-en-cancun/index.html" },
     { "source": "/como-usar-ia-para-vender-mas-en-tu-empresa", "destination": "/blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html" },
     { "source": "/como-usar-ia-para-vender-mas-en-tu-empresa/", "destination": "/blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html" },
+    { "source": "/como-redactar-un-buen-prompt-para-deepseek", "destination": "/blog/como-redactar-un-buen-prompt-para-deepseek/index.html" },
+    { "source": "/como-redactar-un-buen-prompt-para-deepseek/", "destination": "/blog/como-redactar-un-buen-prompt-para-deepseek/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
