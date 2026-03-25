@@ -4,12 +4,61 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
+const FloatingParticles = () => {
+  // Pre-compute random values to avoid recalculation on re-renders
+  const particles = [
+    { w: 6, l: "15%", t: "20%", dy: -25, dx: 5 },
+    { w: 8, l: "45%", t: "30%", dy: -35, dx: -8 },
+    { w: 5, l: "70%", t: "15%", dy: -20, dx: 3 },
+    { w: 10, l: "30%", t: "60%", dy: -30, dx: -5 },
+    { w: 7, l: "80%", t: "50%", dy: -28, dx: 7 },
+    { w: 4, l: "55%", t: "75%", dy: -22, dx: -4 },
+  ];
+  return (
+    <>
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-primary/10 pointer-events-none"
+          style={{ width: p.w, height: p.w, left: p.l, top: p.t }}
+          animate={{
+            y: [0, p.dy, 0],
+            x: [0, p.dx, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 5 + i,
+            repeat: Infinity,
+            delay: i * 0.8,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </>
+  );
+};
+
 const HeroSection = () => (
   <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" style={{ containIntrinsicSize: "auto 100vh", contentVisibility: "visible" }}>
-    {/* Lightweight background — no animated orbs */}
+    {/* Background effects */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
-    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-primary/6 blur-[100px] pointer-events-none will-change-transform contain-strict" />
-    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[500px] h-[400px] rounded-full bg-primary/4 blur-[80px] pointer-events-none will-change-transform contain-strict" />
+    {/* Radial blue glow behind dashboard */}
+    <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] rounded-full bg-primary/8 blur-[180px] pointer-events-none will-change-transform" />
+    <div className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-primary/5 blur-[150px] pointer-events-none will-change-transform" />
+    <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-accent/4 blur-[120px] pointer-events-none will-change-transform" />
+    {/* Subtle gradient motion orbs */}
+    <motion.div
+      className="absolute top-[20%] right-[15%] w-[300px] h-[300px] rounded-full bg-accent/5 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute bottom-[20%] left-[20%] w-[250px] h-[250px] rounded-full bg-primary/4 blur-[100px] pointer-events-none"
+      animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+    />
+
+    <FloatingParticles />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       {/* Text content */}
@@ -67,10 +116,11 @@ const HeroSection = () => (
         transition={{ duration: 0.9, delay: 0.3, type: "spring", stiffness: 50 }}
         className="relative max-w-5xl mx-auto"
       >
-        {/* Lightweight glow — reduced blur */}
-        <div className="absolute -inset-8 bg-primary/6 rounded-[40px] blur-[40px] pointer-events-none will-change-transform" />
+        {/* Stronger radial glow behind dashboard */}
+        <div className="absolute -inset-12 bg-primary/8 rounded-[40px] blur-[60px] pointer-events-none" />
+        <div className="absolute -inset-20 bg-primary/4 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="relative rounded-2xl border border-border/60 overflow-hidden shadow-2xl bg-card">
+        <div className="relative glass-card rounded-2xl border border-border/60 overflow-hidden shadow-2xl">
           {/* Chrome */}
           <div className="flex items-center gap-2 px-5 py-3 border-b border-border/30 bg-muted/20">
             <div className="flex gap-1.5">
@@ -150,16 +200,18 @@ const HeroSection = () => (
                 ))}
               </div>
 
-              {/* Charts — static bars instead of animated for perf */}
+              {/* Charts */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
                 <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
                   <div className="text-[11px] font-semibold mb-3">Ingresos Mensuales</div>
                   <div className="flex items-end gap-[3px] h-20">
                     {[35, 45, 30, 55, 48, 65, 58, 72, 68, 82, 75, 90, 85, 78, 92, 88, 95].map((h, i) => (
-                      <div
+                      <motion.div
                         key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ duration: 0.5, delay: 0.6 + i * 0.03 }}
                         className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60"
-                        style={{ height: `${h}%` }}
                       />
                     ))}
                   </div>
@@ -179,9 +231,11 @@ const HeroSection = () => (
                           <span className="font-bold">{item.pct}%</span>
                         </div>
                         <div className="w-full h-1 rounded-full bg-secondary/50">
-                          <div
+                          <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: `${item.pct}%` }}
+                            transition={{ duration: 0.8, delay: 1 }}
                             className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary"
-                            style={{ width: `${item.pct}%` }}
                           />
                         </div>
                       </div>
@@ -224,10 +278,12 @@ const HeroSection = () => (
                   <div className="text-[10px] font-semibold mb-2">Uptime</div>
                   <div className="flex items-end gap-0.5 h-10 mb-1">
                     {[60, 45, 70, 55, 80, 65, 90, 72, 85, 78, 92, 88].map((h, i) => (
-                      <div
+                      <motion.div
                         key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ duration: 0.4, delay: 1.2 + i * 0.04 }}
                         className="flex-1 rounded-t-sm bg-gradient-to-t from-accent/25 to-accent/60"
-                        style={{ height: `${h}%` }}
                       />
                     ))}
                   </div>
@@ -241,8 +297,13 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Floating widgets — CSS animation only, no framer-motion */}
-        <div className="absolute -left-6 top-[25%] bg-card rounded-xl p-3 shadow-lg border border-border/40 animate-float-slow hidden lg:block">
+        {/* Floating widgets */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="absolute -left-6 top-[25%] glass-card rounded-xl p-3 shadow-lg animate-float-slow hidden lg:block"
+        >
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
               <TrendingUp size={12} className="text-primary" />
@@ -252,9 +313,14 @@ const HeroSection = () => (
               <div className="text-[8px] text-muted-foreground">Crecimiento Q1</div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="absolute -right-6 top-[30%] bg-card rounded-xl p-2.5 shadow-lg border border-border/40 animate-float-delayed hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+          className="absolute -right-6 top-[30%] glass-card rounded-xl p-2.5 shadow-lg animate-float-delayed hidden lg:block"
+        >
           <div className="flex items-center gap-2">
             <Bell size={12} className="text-accent" />
             <div>
@@ -262,7 +328,7 @@ const HeroSection = () => (
               <div className="text-[8px] text-muted-foreground">Empresa Tech S.A.</div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   </section>

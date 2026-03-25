@@ -150,7 +150,7 @@ const CloudSlider = () => (
       <div className="flex animate-[scroll_30s_linear_infinite] w-max gap-12 px-6">
         {[...cloudLogos, ...cloudLogos].map((logo, i) => (
           <div key={`${logo.name}-${i}`} className="flex flex-col items-center gap-2 min-w-[80px] opacity-50 hover:opacity-100 transition-opacity duration-300">
-            <img src={logo.icon} alt={logo.name} className="w-8 h-8 object-contain dark:invert dark:brightness-200 dark:contrast-200" loading="lazy" width={32} height={32} decoding="async" />
+            <img src={logo.icon} alt={logo.name} className="w-8 h-8 object-contain dark:invert dark:brightness-200 dark:contrast-200" loading="lazy" />
             <span className="text-[9px] text-muted-foreground tracking-wider uppercase whitespace-nowrap">{logo.name}</span>
           </div>
         ))}
@@ -525,7 +525,7 @@ const CloudPage = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 max-w-4xl mx-auto">
             {devopsTools.map((t, i) => (
               <motion.div key={t.name} {...fade(i * 0.05)} className="group flex flex-col items-center gap-3 p-5 rounded-2xl border border-border bg-card hover:border-primary/25 hover:shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.15)] hover:-translate-y-1 transition-all duration-400">
-                <img src={t.icon} alt={t.name} className="w-10 h-10 object-contain dark:invert dark:brightness-200 dark:contrast-200 group-hover:scale-110 transition-transform duration-300" loading="lazy" width={40} height={40} decoding="async" />
+                <img src={t.icon} alt={t.name} className="w-10 h-10 object-contain dark:invert dark:brightness-200 dark:contrast-200 group-hover:scale-110 transition-transform duration-300" loading="lazy" />
                 <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">{t.name}</span>
               </motion.div>
             ))}

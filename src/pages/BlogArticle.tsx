@@ -86,9 +86,7 @@ function ContentBlock({ block }: { block: ArticleContent }) {
     case "image":
       return (
         <figure className="my-10">
-          <div className="overflow-hidden rounded-xl shadow-md border border-border/30">
-            <img src={block.src} alt={block.alt} className="w-full aspect-[16/9] object-cover" loading="lazy" decoding="async" />
-          </div>
+          <img src={block.src} alt={block.alt} className="w-full rounded-xl shadow-md border border-border/30" loading="lazy" />
           {block.caption && <figcaption className="mt-3 text-center text-sm text-muted-foreground/70">{block.caption}</figcaption>}
         </figure>
       );
@@ -201,14 +199,14 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
             <motion.div {...fade(0.2)} className="flex items-center justify-between pb-8 border-b border-border">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
-                  <img src="/favicon.webp" alt="North Digital" className="w-6 h-6 object-contain" width={24} height={24} />
+                  <img src="/favicon.webp" alt="North Digital" className="w-6 h-6 object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">{article.author}</p>
                   <p className="text-xs text-muted-foreground">{article.authorRole}</p>
                 </div>
               </div>
-              <button onClick={() => navigator.share?.({ title: article.title, url: window.location.href }).catch(() => {})} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors" aria-label={`Compartir artículo: ${article.title}`}>
+              <button onClick={() => navigator.share?.({ title: article.title, url: window.location.href }).catch(() => {})} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Share2 className="w-4 h-4" /><span className="hidden sm:inline">Compartir</span>
               </button>
             </motion.div>
@@ -218,7 +216,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
         {/* ─── Featured Image ─── */}
         <section className="pb-12 sm:pb-16">
           <div className="max-w-4xl mx-auto px-6">
-            <motion.img {...fade()} src={article.image} alt={article.title} className="w-full aspect-[2/1] object-cover rounded-2xl shadow-lg border border-border/30" width={1200} height={630} loading="eager" decoding="async" />
+            <motion.img {...fade()} src={article.image} alt={article.title} className="w-full aspect-[2/1] object-cover rounded-2xl shadow-lg border border-border/30" />
           </div>
         </section>
 
