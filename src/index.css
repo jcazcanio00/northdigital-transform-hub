@@ -366,6 +366,58 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  /* Hero CSS animations (replaces framer-motion for first render perf) */
+  @keyframes hero-fade-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-hero-fade-in {
+    animation: hero-fade-in 0.7s ease-out both;
+  }
+
+  @keyframes hero-slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-hero-slide-up {
+    animation: hero-slide-up 0.9s ease-out 0.3s both;
+  }
+
+  /* Bar chart grow animation */
+  @keyframes bar-grow {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+  .animate-bar-grow {
+    transform-origin: bottom;
+    animation: bar-grow 0.5s ease-out both;
+  }
+
+  @keyframes bar-width {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  .animate-bar-width {
+    transform-origin: left;
+    animation: bar-width 0.8s ease-out both;
+  }
+
+  /* Float animations for desktop widgets */
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .animate-float-delayed {
+    animation: float-delayed 5s ease-in-out 1s infinite;
+  }
 }
 
 @layer utilities {
