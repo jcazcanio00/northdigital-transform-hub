@@ -24,7 +24,7 @@ const indexJsonLd = [
     "name": "North",
     "url": "https://northmkt.com.mx",
     "logo": "https://northmkt.com.mx/logo.png",
-    "description": "Impulsamos el crecimiento de tu empresa con marketing digital, CRM, software y soluciones cloud.",
+    "description": "Automatiza, escala y crece con tecnología. Software empresarial, cloud y marketing de crecimiento para empresas modernas.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Cancún",
@@ -86,8 +86,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="North | Tecnología y Crecimiento para Empresas"
-        description="Impulsamos el crecimiento de tu empresa con marketing digital, CRM, software y soluciones cloud. Estrategia, tecnología y resultados."
+        title="North | Automatiza, Escala y Crece con Tecnología"
+        description="Automatiza, escala y crece con tecnología. Software empresarial, cloud y marketing de crecimiento para empresas modernas."
         url="https://northmkt.com.mx"
         jsonLd={indexJsonLd}
       />
