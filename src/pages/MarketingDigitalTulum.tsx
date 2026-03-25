@@ -266,13 +266,13 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Agencia de Marketing Digital en Tulum y Riviera Maya",
+    "name": "Agencia de Marketing Digital en Tulum",
     "provider": {
       "@type": "Organization",
       "name": "North",
       "url": "https://northmkt.com.mx",
     },
-    "description": "Agencia de marketing digital en Tulum, Playa del Carmen, Cancún y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
+    "description": "Servicios de marketing digital en Tulum. SEO, campañas digitales y estrategias para atraer más clientes a tu empresa.",
     "url": "https://northmkt.com.mx/marketing-digital-tulum",
     "areaServed": [
       { "@type": "City", "name": "Tulum" },
@@ -330,9 +330,10 @@ const MarketingDigitalTulumPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Agencia de Marketing Digital en Tulum | SEO y Estrategia Digital"
-        description="Servicios de marketing digital en Tulum para empresas. SEO, publicidad, automatización y generación de clientes."
+        title="Agencia de Marketing Digital en Tulum | North"
+        description="Servicios de marketing digital en Tulum. SEO, campañas digitales y estrategias para atraer más clientes a tu empresa."
         url="https://northmkt.com.mx/marketing-digital-tulum"
+        keywords="marketing tulum, agencia de marketing tulum, marketing digital tulum, agencia de marketing digital tulum, seo tulum"
         jsonLd={jsonLd}
       />
       <Header />
@@ -354,7 +355,7 @@ const MarketingDigitalTulumPage = () => {
                 <span className="gradient-text">Digital en Tulum</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Estrategias de marketing digital basadas en datos para hoteles boutique, wellness brands y negocios premium en Tulum y la Riviera Maya. SEO internacional, Google Ads, CRO y analítica avanzada para escalar tus ingresos.
+                Somos una agencia de marketing digital en Tulum especializada en SEO, campañas digitales y estrategias de crecimiento para hoteles boutique, wellness brands y negocios premium. Nuestra agencia de marketing en Tulum ayuda a empresas a posicionarse con marketing en Tulum y marketing digital en Tulum.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
