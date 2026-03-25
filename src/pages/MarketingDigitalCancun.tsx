@@ -266,13 +266,13 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Agencia de Marketing Digital en Cancún, Playa del Carmen y Riviera Maya",
+    "name": "Agencia de Marketing Digital en Cancún",
     "provider": {
       "@type": "Organization",
-      "name": "North Digital",
+      "name": "North",
       "url": "https://northmkt.com.mx",
     },
-    "description": "Agencia de marketing digital en Cancún, Playa del Carmen, Tulum y Riviera Maya. Especialistas en SEO, Google Ads, CRO y analítica avanzada para empresas.",
+    "description": "Servicios de marketing digital en Cancún. SEO, publicidad, estrategia digital y generación de clientes para empresas.",
     "url": "https://northmkt.com.mx/marketing-digital-cancun",
     "areaServed": [
       { "@type": "City", "name": "Cancún" },
@@ -330,9 +330,10 @@ const MarketingDigitalCancunPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Marketing Digital en Cancún | SEO, Ads y Crecimiento"
-        description="Agencia de marketing digital en Cancún. Genera clientes con SEO, Google Ads y estrategias de crecimiento."
+        title="Agencia de Marketing Digital en Cancún | North"
+        description="Servicios de marketing digital en Cancún. SEO, publicidad, estrategia digital y generación de clientes para empresas."
         url="https://northmkt.com.mx/marketing-digital-cancun"
+        keywords="marketing cancun, agencia de marketing cancun, marketing digital cancun, agencia de marketing digital cancun, seo cancun, publicidad digital cancun, agencia seo cancun"
         jsonLd={jsonLd}
       />
       <Header />
@@ -354,7 +355,7 @@ const MarketingDigitalCancunPage = () => {
                 <span className="gradient-text">Digital en Cancún</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Estrategias de marketing digital basadas en datos para empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya. SEO local, Google Ads, CRO y analítica avanzada para escalar tus ingresos de forma predecible.
+                Somos una agencia de marketing digital en Cancún especializada en SEO, Google Ads y estrategias de crecimiento. Como agencia de marketing en Cancún, ayudamos a empresas en Cancún, Playa del Carmen, Tulum y la Riviera Maya a generar más clientes con marketing digital en Cancún y publicidad digital en Cancún.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="gradient" size="lg" asChild>
@@ -416,6 +417,11 @@ const MarketingDigitalCancunPage = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Cada canal está diseñado para generar tráfico cualificado, leads y revenue medible para negocios en Cancún, Playa del Carmen, Tulum y la Riviera Maya.
             </p>
+          </motion.div>
+          <motion.div {...fade(0.1)} className="text-center mb-8">
+            <h2 className="text-2xl font-bold font-display">
+              Agencia de Marketing en Cancún para Empresas
+            </h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {channels.map((s, i) => (

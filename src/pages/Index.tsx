@@ -21,10 +21,10 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "North Digital",
+    "name": "North",
     "url": "https://northmkt.com.mx",
     "logo": "https://northmkt.com.mx/logo.png",
-    "description": "Agencia de marketing digital y desarrollo de software empresarial en Cancún. Especialistas en infraestructura cloud, marketing de crecimiento y sistemas a medida.",
+    "description": "Agencia de marketing digital en Cancún especializada en SEO, Google Ads, CRM y estrategias de crecimiento para empresas.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Cancún",
@@ -46,7 +46,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "North Digital",
+    "name": "North",
     "url": "https://northmkt.com.mx",
     "potentialAction": {
       "@type": "SearchAction",
@@ -57,7 +57,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "North Digital",
+    "name": "North",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx",
     "telephone": "+52-998-351-3337",
@@ -78,7 +78,7 @@ const indexJsonLd = [
       "@type": "Country",
       "name": "México"
     },
-    "serviceType": ["Software empresarial", "Infraestructura cloud", "Marketing de crecimiento", "Marketing digital"]
+    "serviceType": ["Marketing digital", "SEO", "Google Ads", "CRM", "Software empresarial", "Cloud services"]
   }
 ];
 
@@ -86,9 +86,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="North Digital | Marketing Digital, CRM y Cloud en Cancún"
-        description="Agencia en Cancún especializada en marketing digital, CRM y soluciones cloud para empresas que buscan crecer con tecnología."
+        title="Agencia de Marketing Digital en Cancún | North"
+        description="Agencia de marketing digital en Cancún especializada en SEO, Google Ads, CRM y estrategias de crecimiento para empresas."
         url="https://northmkt.com.mx"
+        keywords="marketing cancun, agencia de marketing cancun, marketing digital cancun, agencia de marketing digital cancun, seo cancun, google ads cancun"
         jsonLd={indexJsonLd}
       />
       <Header />
