@@ -57,7 +57,7 @@ const indexJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "North",
+    "name": "North Digital",
     "image": "https://northmkt.com.mx/og-image.png",
     "url": "https://northmkt.com.mx",
     "telephone": "+52-998-351-3337",
