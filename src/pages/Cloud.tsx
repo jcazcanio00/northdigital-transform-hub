@@ -226,16 +226,16 @@ const CloudPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Servicios Cloud en Cancún | North"
-        description="Implementa infraestructura cloud segura y escalable en Cancún. Hosting, servidores y soluciones empresariales."
+        title="Servicios Cloud para Empresas | Infraestructura | North"
+        description="Diseñamos, implementamos y operamos infraestructura cloud segura y escalable para empresas con operaciones críticas y crecimiento acelerado."
         url="https://northmkt.com.mx/cloud"
-        keywords="cloud cancun, servicios cloud cancun, hosting empresarial cancun, infraestructura cloud"
+        keywords="servicios cloud, infraestructura cloud, hosting empresarial, cloud para empresas, servidores cloud"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Servicios Cloud para Empresas en Cancún",
+          "name": "Servicios Cloud para Empresas",
           "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
-          "description": "Infraestructura cloud segura y escalable, hosting empresarial, migraciones y monitoreo para empresas con operaciones críticas.",
+          "description": "Diseñamos, implementamos y operamos infraestructura cloud segura y escalable para empresas con operaciones críticas y crecimiento acelerado.",
           "url": "https://northmkt.com.mx/cloud",
           "areaServed": { "@type": "Country", "name": "México" },
           "serviceType": "Infraestructura cloud"
@@ -257,8 +257,8 @@ const CloudPage = () => {
                 CLOUD EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Servicios Cloud para Empresas{" "}
-                <span className="gradient-text">en Cancún</span>
+                Servicios Cloud para{" "}
+                <span className="gradient-text">Empresas</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.

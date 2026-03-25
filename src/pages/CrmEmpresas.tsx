@@ -18,10 +18,10 @@ import { Link } from "react-router-dom";
 const crmJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "CRM para Empresas en Cancún",
+  name: "CRM para Empresas",
   provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
   description:
-    "Implementación de CRM para empresas en Cancún. Automatiza ventas, seguimiento y procesos comerciales.",
+    "Implementamos sistemas CRM para empresas que buscan organizar ventas, automatizar seguimiento y escalar con tecnología.",
   url: "https://northmkt.com.mx/crm-empresas",
   areaServed: { "@type": "Country", name: "México" },
   serviceType: "Implementación de CRM",
@@ -269,10 +269,10 @@ const CrmEmpresas = () => {
   return (
     <>
       <SEO
-        title="CRM para Empresas en Cancún | North"
-        description="Implementación de CRM para empresas en Cancún. Automatiza ventas, seguimiento y procesos comerciales."
+        title="CRM para Empresas | Automatización y Ventas | North"
+        description="Implementamos sistemas CRM para empresas que buscan organizar ventas, automatizar seguimiento y escalar con tecnología."
         url="https://northmkt.com.mx/crm-empresas"
-        keywords="crm cancun, crm empresas cancun, crm para empresas cancun, automatizacion de ventas cancun"
+        keywords="crm para empresas, crm empresarial, automatizacion de ventas, sistema crm, pipeline de ventas"
         jsonLd={crmJsonLd}
       />
       <Header />
@@ -290,8 +290,8 @@ const CrmEmpresas = () => {
             <motion.div {...fade()}>
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
-                CRM para Empresas{" "}
-                <span className="gradient-text">en Cancún</span>
+                CRM para{" "}
+                <span className="gradient-text">Empresas</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.

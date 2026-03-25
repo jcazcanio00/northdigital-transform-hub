@@ -47,7 +47,7 @@ const jsonLd = {
   "@type": "Service",
   name: "Automatización Empresarial",
   provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
-  description: "Diseñamos soluciones de automatización empresarial para empresas que buscan optimizar procesos, automatizar ventas, integrar sistemas y escalar con tecnología.",
+  description: "Automatizamos procesos, seguimiento comercial e integración de sistemas para que tu empresa opere con más eficiencia.",
   url: "https://northmkt.com.mx/automatizacion-empresarial",
   areaServed: { "@type": "Country", name: "México" },
   serviceType: "Automatización de Procesos Empresariales",
@@ -271,10 +271,10 @@ const AutomatizacionEmpresarial = () => {
   return (
     <>
       <SEO
-        title="Automatización Empresarial en Cancún | North"
-        description="Automatiza procesos, ventas e integraciones en tu empresa. Soluciones de automatización empresarial con tecnología."
+        title="Automatización Empresarial | Procesos y Ventas | North"
+        description="Automatizamos procesos, seguimiento comercial e integración de sistemas para que tu empresa opere con más eficiencia."
         url="https://northmkt.com.mx/automatizacion-empresarial"
-        keywords="automatizacion empresarial cancun, automatizacion de procesos, automatizacion de ventas"
+        keywords="automatizacion empresarial, automatizacion de procesos, automatizacion de ventas, integracion de sistemas"
         image="https://northmkt.com.mx/og-image.jpg"
         jsonLd={jsonLd}
       />

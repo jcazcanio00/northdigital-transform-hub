@@ -17,9 +17,9 @@ import SEO from "@/components/SEO";
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Software Empresarial en Cancún",
+  "name": "Software Empresarial",
   "provider": { "@type": "Organization", "name": "North", "url": "https://northmkt.com.mx" },
-  "description": "Desarrollo de software empresarial, CRMs, dashboards y plataformas internas con automatización de procesos e integraciones API.",
+  "description": "Desarrollamos software empresarial, dashboards, CRM e integraciones para empresas que necesitan automatizar procesos y centralizar información.",
   "url": "https://northmkt.com.mx/software",
   "areaServed": { "@type": "Country", "name": "México" },
   "serviceType": "Software empresarial"
@@ -443,10 +443,10 @@ const Software = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
-        title="Software Empresarial en Cancún | North"
-        description="Desarrollamos software empresarial en Cancún para automatizar procesos y mejorar la operación de tu negocio."
+        title="Software Empresarial | Sistemas a Medida | North"
+        description="Desarrollamos software empresarial, dashboards, CRM e integraciones para empresas que necesitan automatizar procesos y centralizar información."
         url="https://northmkt.com.mx/software"
-        keywords="software empresarial cancun, desarrollo de software cancun, sistemas a medida cancun"
+        keywords="software empresarial, desarrollo de software, sistemas a medida, dashboards empresariales, integraciones API"
         jsonLd={softwareJsonLd}
       />
       <Header />
@@ -467,8 +467,8 @@ const Software = () => {
                 SOFTWARE EMPRESARIAL
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
-                Software Empresarial{" "}
-                <span className="gradient-text">en Cancún</span>
+                Software{" "}
+                <span className="gradient-text">Empresarial</span>
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Diseñamos sistemas, CRM, dashboards e integraciones para empresas que
