@@ -18,10 +18,10 @@ import { Link } from "react-router-dom";
 const crmJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "CRM para Empresas",
-  provider: { "@type": "Organization", name: "North Digital", url: "https://northmkt.com.mx" },
+  name: "CRM para Empresas en Cancún",
+  provider: { "@type": "Organization", name: "North", url: "https://northmkt.com.mx" },
   description:
-    "Implementamos sistemas CRM para empresas que organizan clientes, automatizan el seguimiento de leads y mejoran el control de ventas.",
+    "Implementación de CRM para empresas en Cancún. Automatiza ventas, seguimiento y procesos comerciales.",
   url: "https://northmkt.com.mx/crm-empresas",
   areaServed: { "@type": "Country", name: "México" },
   serviceType: "Implementación de CRM",
