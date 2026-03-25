@@ -330,8 +330,8 @@ const MarketingDigitalCancunPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEO
-        title="Agencia de Marketing Digital en Cancún | SEO y Growth para Empresas"
-        description="Agencia de marketing digital en Cancún, Playa del Carmen y Riviera Maya. Estrategias de crecimiento, SEO, automatización y generación de leads para empresas."
+        title="Marketing Digital en Cancún | SEO, Ads y Crecimiento"
+        description="Agencia de marketing digital en Cancún. Genera clientes con SEO, Google Ads y estrategias de crecimiento."
         url="https://northmkt.com.mx/marketing-digital-cancun"
         jsonLd={jsonLd}
       />
