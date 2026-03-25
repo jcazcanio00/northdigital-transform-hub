@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 min-h-[72px] transition-[background,border,box-shadow,padding] duration-300 ${
         scrolled ? "glass-header py-3 shadow-lg" : "py-5 bg-transparent"
       }`}
     >

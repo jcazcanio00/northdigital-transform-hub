@@ -27,7 +27,7 @@ const solutions = [
 ];
 
 const SolutionsSection = () => (
-  <section id="solutions" className="py-24 relative">
+  <section id="solutions" className="py-24 relative min-h-[480px]">
     <div className="section-divider" />
     <div className="container mx-auto px-4 lg:px-8 py-4">
       <motion.div

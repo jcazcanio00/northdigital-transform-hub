@@ -40,7 +40,7 @@ const connections = [
 ];
 
 const TrustSection = () => (
-  <section className="py-20 relative overflow-hidden">
+  <section className="py-20 relative overflow-hidden min-h-[500px]">
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
