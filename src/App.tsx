@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogArticle from "./pages/BlogArticle.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
 
@@ -20,10 +22,8 @@ const Privacidad = lazy(() => import("./pages/Privacidad.tsx"));
 const MarketingDigitalCancun = lazy(() => import("./pages/MarketingDigitalCancun.tsx"));
 const MarketingDigitalPlayaDelCarmen = lazy(() => import("./pages/MarketingDigitalPlayaDelCarmen.tsx"));
 const MarketingDigitalTulum = lazy(() => import("./pages/MarketingDigitalTulum.tsx"));
-const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
-const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 
 const queryClient = new QueryClient();
 

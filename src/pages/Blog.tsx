@@ -14,12 +14,7 @@ import Footer from "@/components/Footer";
 import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleMeta } from "@/data/articles";
 
 /* ─── Fade helper ─── */
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.5, delay },
-});
+const fade = () => ({ initial: false as const });
 
 /* ─── Categories ─── */
 const categories = [
@@ -49,16 +44,16 @@ const ArticleCard = ({ article }: { article: ArticleMeta }) => (
   <Link to={article.url} className="block">
     <motion.div
       {...fade(0.05)}
-      className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
+      className="group relative h-full min-h-[360px] rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
     >
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative aspect-[16/9] overflow-hidden">
-        <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
       </div>
-      <div className="relative z-10 p-5">
+      <div className="relative z-10 flex min-h-[154px] flex-col p-5">
         <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
           <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
           <span>·</span>
@@ -66,7 +61,7 @@ const ArticleCard = ({ article }: { article: ArticleMeta }) => (
         </div>
         <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
-        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer más <ChevronRight size={14} /></span>
+        <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer más <ChevronRight size={14} /></span>
       </div>
     </motion.div>
   </Link>
@@ -123,7 +118,7 @@ const BlogPage = () => {
       </section>
 
       {/* ═══ TOPIC MARQUEE ═══ */}
-      <div className="relative py-4 overflow-hidden select-none pointer-events-none border-y border-border/30 bg-muted/30">
+      <div className="relative flex min-h-[56px] items-center py-4 overflow-hidden select-none pointer-events-none border-y border-border/30 bg-muted/30">
         <div className="flex whitespace-nowrap animate-marquee-slow items-center h-full">
           {[...Array(3)].flatMap((_, r) =>
             ["CRM", "Automatización", "SEO", "Google Ads", "Funnels", "Analytics", "IA", "Software Empresarial", "Growth", "Marketing Digital"].map((t, i) => (
@@ -157,15 +152,15 @@ const BlogPage = () => {
               <Link to={featured[0].url} className="lg:col-span-3 block">
                 <motion.div
                   {...fade(0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
+                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="relative aspect-[16/9] lg:aspect-[2/1] overflow-hidden">
-                    <img src={featured[0].image} alt={featured[0].title} width={800} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <img src={featured[0].image} alt={featured[0].title} width={800} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" fetchPriority="high" decoding="async" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
                   </div>
-                  <div className="relative z-10 p-6 lg:p-8">
+                  <div className="relative z-10 flex min-h-[224px] flex-col p-6 lg:p-8">
                     <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
                       <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
                       <span>·</span>
@@ -175,7 +170,7 @@ const BlogPage = () => {
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
                     <p className="text-base text-muted-foreground leading-relaxed mb-5 line-clamp-3 lg:line-clamp-4">{getExtendedExcerpt(featured[0])}</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
+                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
                   </div>
                 </motion.div>
               </Link>
@@ -187,15 +182,15 @@ const BlogPage = () => {
                 <Link key={article.slug} to={article.url} className="flex-1 block">
                   <motion.div
                     {...fade(0.15 + i * 0.1)}
-                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
+                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
                   >
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                     <div className="relative aspect-[16/9] overflow-hidden">
-                      <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                       <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
                     </div>
-                    <div className="relative z-10 p-5">
+                    <div className="relative z-10 flex min-h-[168px] flex-col p-5">
                       <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
                         <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
                         <span>·</span>
@@ -203,7 +198,7 @@ const BlogPage = () => {
                       </div>
                       <h3 className="text-lg font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
+                      <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
                     </div>
                   </motion.div>
                 </Link>
@@ -226,7 +221,7 @@ const BlogPage = () => {
                 <button
                   key={cat.value}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-[background-color,border-color,color,box-shadow] duration-300 border ${
                     activeCategory === cat.value
                       ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)]"
                       : "bg-card border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
@@ -277,13 +272,13 @@ const BlogPage = () => {
               { to: "/marketing-digital-cancun", icon: TrendingUp, title: "Marketing Digital", desc: "Estrategias de marketing digital basadas en datos para generar leads y escalar ingresos." },
             ].map((s, i) => (
               <motion.div key={s.to} {...fade(i * 0.1)}>
-                <Link to={s.to} className="group block rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-all duration-500 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-all duration-500">
+                <Link to={s.to} className="group block rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-[transform,border-color,box-shadow] duration-500 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-[background-color,box-shadow] duration-500">
                     <s.icon size={22} className="text-primary" />
                   </div>
                   <h3 className="font-bold font-display mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Conocer más <ArrowRight size={14} /></span>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Conocer más <ArrowRight size={14} /></span>
                 </Link>
               </motion.div>
             ))}
