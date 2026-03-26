@@ -176,7 +176,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
       <Header />
       <main className="min-h-screen">
         {/* ─── Hero ─── */}
-        <section className="pt-28 sm:pt-36 pb-10 sm:pb-14">
+        <section className="pt-6 sm:pt-20 pb-10 sm:pb-14">
           <div className="max-w-4xl mx-auto px-6">
             <motion.nav {...fade()} className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
               <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>

@@ -453,7 +453,7 @@ const Software = () => {
       
 
       {/* ── HERO ── */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-6 md:pt-20 pb-10 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
         <div className="hidden md:block absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[60px] pointer-events-none" />
         <div className="hidden md:block absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[60px] pointer-events-none" />
