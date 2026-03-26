@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const CtaSection = () => (
-  <section className="py-24 relative overflow-hidden">
+  <section className="py-12 md:py-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
     <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />

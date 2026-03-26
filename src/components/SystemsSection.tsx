@@ -11,7 +11,7 @@ const capabilities = [
 ];
 
 const SystemsSection = () => (
-  <section id="systems" className="py-24 relative overflow-hidden min-h-[600px]">
+  <section id="systems" className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[600px]">
     <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background pointer-events-none" />
     <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">

@@ -65,7 +65,7 @@ const ContactSection = () => {
   const { form, loading, updateField, handleSubmit } = useContactForm();
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden min-h-[600px]">
+    <section id="contact" className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[600px]">
       <div className="section-divider" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.04] pointer-events-none" />
       <div className="hidden md:block absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />

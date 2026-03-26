@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const GrowthSection = () => (
-  <section id="growth" className="py-24 relative overflow-hidden min-h-[600px]">
+  <section id="growth" className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[600px]">
     <div className="absolute inset-0 bg-gradient-to-br from-card via-muted/80 to-card pointer-events-none" />
     <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
     <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />
