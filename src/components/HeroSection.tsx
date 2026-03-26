@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
 const HeroSection = () => (
-  <section id="home" className="relative min-h-0 md:min-h-[calc(100vh-72px)] flex items-center pt-6 md:pt-16 pb-8 md:pb-16 overflow-hidden">
+  <section id="home" className="relative min-h-[60vh] md:min-h-[calc(100vh-72px)] flex items-center pt-6 md:pt-16 pb-8 md:pb-16 overflow-hidden">
     {/* Background effects — lightweight, no blur on mobile */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
     <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />

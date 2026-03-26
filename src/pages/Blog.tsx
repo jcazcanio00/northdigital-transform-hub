@@ -98,7 +98,7 @@ const BlogPage = () => {
       <Header />
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-6 md:pt-20 pb-10 md:pb-16 relative">
+      <section className="pt-6 md:pt-20 pb-10 md:pb-16 relative min-h-[280px] md:min-h-[360px]">
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
