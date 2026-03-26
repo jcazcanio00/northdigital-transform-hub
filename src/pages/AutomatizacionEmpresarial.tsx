@@ -289,14 +289,14 @@ const AutomatizacionEmpresarial = () => {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fade()}>
+            <motion.div {...fade()} className="text-center lg:text-left">
               <SectionBadge>AUTOMATIZACIÓN EMPRESARIAL</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
                 Automatiza Procesos y Escala tu{" "}
                 <span className="gradient-text">Empresa</span>{" "}
                 con Tecnología
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-lg">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
                 Diseñamos sistemas y flujos de automatización que eliminan tareas manuales, conectan herramientas y permiten a tu empresa operar con mayor velocidad, control y eficiencia.
               </p>
               <div className="flex flex-col gap-2.5 mb-8">
@@ -313,7 +313,7 @@ const AutomatizacionEmpresarial = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
                   <Link to="/contacto">
                     Solicitar diagnóstico <ArrowRight size={16} className="ml-1" />

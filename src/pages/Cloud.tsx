@@ -250,7 +250,7 @@ const CloudPage = () => {
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fade()}>
+            <motion.div {...fade()} className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 <Cloud size={12} className="text-primary" />
@@ -260,10 +260,10 @@ const CloudPage = () => {
                 Servicios Cloud para{" "}
                 <span className="gradient-text">Empresas</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
                 Diseñamos, implementamos y operamos plataformas cloud de alto rendimiento para empresas con operaciones críticas y crecimiento acelerado.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Button variant="gradient" size="lg" asChild>
                   <a href="#architecture">Arquitectura Cloud <ArrowDown size={16} className="ml-2" /></a>
                 </Button>
