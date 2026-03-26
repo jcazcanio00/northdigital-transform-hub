@@ -303,7 +303,7 @@ const BlogPage = () => {
         <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
-          <motion.div {...fade()}>
+          <BlogReveal>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-white">
               ¿Listo para <span className="gradient-text">crecer</span>?
             </h2>
@@ -318,7 +318,7 @@ const BlogPage = () => {
                 <a href="https://wa.me/529983513337" target="_blank" rel="noopener noreferrer">WhatsApp <ArrowRight size={16} className="ml-2" /></a>
               </Button>
             </div>
-          </motion.div>
+          </BlogReveal>
         </div>
       </section>
 
