@@ -826,7 +826,6 @@ export const articles: Article[] = [
       { type: "paragraph", text: "En North, combinamos SEO local con CRM, automatización y marketing digital para crear un sistema completo de generación de clientes. Si quieres posicionar tu empresa en Cancún, hablemos." },
     ],
   },
-  },
 
   /* ═══════════════════════════════════════════════
      CRM precios México 2026
