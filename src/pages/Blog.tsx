@@ -14,7 +14,12 @@ import Footer from "@/components/Footer";
 import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleMeta } from "@/data/articles";
 
 /* ─── Fade helper ─── */
-const fade = (_delay = 0) => ({ initial: false as const });
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true, margin: "-80px" } as const,
+  transition: { duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] },
+});
 
 /* ─── Categories ─── */
 const categories = [
