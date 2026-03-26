@@ -159,7 +159,7 @@ const Acerca = () => (
     
 
     {/* ═══ HERO ═══ */}
-    <section className="pt-32 pb-24 relative overflow-hidden">
+    <section className="pt-6 md:pt-20 pb-12 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[image:var(--gradient-hero)] pointer-events-none" />
       <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-primary/6 blur-[60px] pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />

@@ -278,7 +278,7 @@ const CrmEmpresas = () => {
       <Header />
 
       {/* ──────── HERO ──────── */}
-      <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 overflow-hidden">
+      <section className="relative min-h-0 md:min-h-[90vh] flex items-center pt-6 md:pt-20 pb-12 md:pb-20 overflow-hidden">
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />

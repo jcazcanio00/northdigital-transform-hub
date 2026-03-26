@@ -83,7 +83,7 @@ const Contacto = () => {
       
 
       {/* Hero */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-6 md:pt-20 pb-10 md:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[image:var(--gradient-hero)] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
           <motion.span

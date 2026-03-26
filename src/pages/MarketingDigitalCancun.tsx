@@ -339,7 +339,7 @@ const MarketingDigitalCancunPage = () => {
       <Header />
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-32 pb-20 relative">
+      <section className="pt-6 md:pt-20 pb-12 md:pb-20 relative">
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
