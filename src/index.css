@@ -6,6 +6,7 @@
 
 @layer base {
   :root {
+    --header-height: 72px;
     --background: 0 0% 100%;
     --foreground: 224 47% 8%;
 
@@ -128,7 +129,7 @@
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     /* Reserve space for fixed header to prevent CLS */
-    padding-top: 72px;
+    padding-top: var(--header-height);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;

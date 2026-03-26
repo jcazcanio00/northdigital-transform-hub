@@ -52,11 +52,11 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 min-h-[72px] transition-[background,border,box-shadow,padding] duration-300 ${
-        scrolled ? "glass-header py-3 shadow-lg" : "py-5 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-[background,border,box-shadow] duration-300 ${
+        scrolled ? "glass-header shadow-lg" : "bg-transparent border-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-8 h-full flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={isDark ? logoNorthLight : logoNorthDark} alt="North" className="h-7 w-auto" width={120} height={28} fetchPriority="high" decoding="async" />
         </Link>
@@ -158,7 +158,7 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[56px] bottom-0 z-50 bg-background border-t border-border overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[72px] bottom-0 z-50 bg-background border-t border-border overflow-y-auto">
           <div className="p-5 space-y-1">
             <Link to="/" onClick={() => setMobileOpen(false)} className="block py-3 text-base font-medium text-foreground hover:text-primary transition-colors">
               Inicio
