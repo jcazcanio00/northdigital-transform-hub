@@ -70,6 +70,7 @@ const App = () => (
             <Route path="/como-redactar-un-buen-prompt-para-deepseek" element={<BlogArticle slug="como-redactar-un-buen-prompt-para-deepseek" />} />
             <Route path="/razones-de-por-que-los-clientes-compran" element={<BlogArticle slug="razones-de-por-que-los-clientes-compran" />} />
             <Route path="/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" element={<BlogArticle slug="como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" />} />
+            <Route path="/cuanto-cuesta-implementar-un-crm-en-mexico" element={<BlogArticle slug="cuanto-cuesta-implementar-un-crm-en-mexico" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
