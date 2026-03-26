@@ -16,9 +16,11 @@ import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleM
 /* ─── Fade helper ─── */
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
+  animate: undefined as any,
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.5, delay },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.5, delay, ease: "easeOut" },
+  style: { willChange: "transform, opacity" } as React.CSSProperties,
 });
 
 /* ─── Categories ─── */
