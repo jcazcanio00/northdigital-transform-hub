@@ -6,8 +6,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Blog from "./pages/Blog.tsx";
-import BlogArticle from "./pages/BlogArticle.tsx";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { WhatsAppFloatingButton } from "./components/WhatsAppButton";
 
@@ -22,8 +20,10 @@ const Privacidad = lazy(() => import("./pages/Privacidad.tsx"));
 const MarketingDigitalCancun = lazy(() => import("./pages/MarketingDigitalCancun.tsx"));
 const MarketingDigitalPlayaDelCarmen = lazy(() => import("./pages/MarketingDigitalPlayaDelCarmen.tsx"));
 const MarketingDigitalTulum = lazy(() => import("./pages/MarketingDigitalTulum.tsx"));
+const Blog = lazy(() => import("./pages/Blog.tsx"));
 const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -70,7 +70,6 @@ const App = () => (
             <Route path="/como-redactar-un-buen-prompt-para-deepseek" element={<BlogArticle slug="como-redactar-un-buen-prompt-para-deepseek" />} />
             <Route path="/razones-de-por-que-los-clientes-compran" element={<BlogArticle slug="razones-de-por-que-los-clientes-compran" />} />
             <Route path="/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" element={<BlogArticle slug="como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" />} />
-            <Route path="/cuanto-cuesta-implementar-un-crm-en-mexico" element={<BlogArticle slug="cuanto-cuesta-implementar-un-crm-en-mexico" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

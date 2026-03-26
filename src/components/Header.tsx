@@ -12,17 +12,17 @@ const solutions = [
   { label: "CRM para Empresas", href: "/crm-empresas" },
 ];
 
-const getInitialTheme = () => {
-  if (typeof window === "undefined") return false;
-  if (document.documentElement.classList.contains("dark")) return true;
-
-  const storedTheme = localStorage.getItem("theme");
-  return storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
-};
-
 
 const Header = () => {
-  const [isDark, setIsDark] = useState(getInitialTheme);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    }
+    return false;
+  });
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [solOpen, setSolOpen] = useState(false);
@@ -30,7 +30,6 @@ const Header = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
-    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 

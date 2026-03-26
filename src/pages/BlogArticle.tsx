@@ -86,7 +86,7 @@ function ContentBlock({ block }: { block: ArticleContent }) {
     case "image":
       return (
         <figure className="my-10">
-          <img src={block.src} alt={block.alt} className="w-full aspect-[16/9] object-cover rounded-xl shadow-md border border-border/30" loading="lazy" />
+          <img src={block.src} alt={block.alt} className="w-full rounded-xl shadow-md border border-border/30" loading="lazy" />
           {block.caption && <figcaption className="mt-3 text-center text-sm text-muted-foreground/70">{block.caption}</figcaption>}
         </figure>
       );
@@ -176,7 +176,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
       <Header />
       <main className="min-h-screen">
         {/* ─── Hero ─── */}
-        <section className="pt-6 sm:pt-20 pb-10 sm:pb-14 min-h-[300px]">
+        <section className="pt-6 sm:pt-20 pb-10 sm:pb-14">
           <div className="max-w-4xl mx-auto px-6">
             <motion.nav {...fade()} className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
               <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
@@ -216,7 +216,7 @@ export default function BlogArticle({ slug: propSlug }: { slug?: string }) {
         {/* ─── Featured Image ─── */}
         <section className="pb-12 sm:pb-16">
           <div className="max-w-4xl mx-auto px-6">
-            <img src={article.image} alt={article.title} width={800} height={400} className="w-full aspect-[2/1] object-cover rounded-2xl shadow-lg border border-border/30" loading="eager" />
+            <motion.img {...fade()} src={article.image} alt={article.title} className="w-full aspect-[2/1] object-cover rounded-2xl shadow-lg border border-border/30" />
           </div>
         </section>
 

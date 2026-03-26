@@ -52,8 +52,6 @@
     { "source": "/razones-de-por-que-los-clientes-compran/", "destination": "/razones-de-por-que-los-clientes-compran/index.html" },
     { "source": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local", "destination": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/index.html" },
     { "source": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/", "destination": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/index.html" },
-    { "source": "/cuanto-cuesta-implementar-un-crm-en-mexico", "destination": "/cuanto-cuesta-implementar-un-crm-en-mexico/index.html" },
-    { "source": "/cuanto-cuesta-implementar-un-crm-en-mexico/", "destination": "/cuanto-cuesta-implementar-un-crm-en-mexico/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
