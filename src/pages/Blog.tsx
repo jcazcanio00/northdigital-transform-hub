@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
-import { getArticlesMeta, getFeaturedArticles, type ArticleMeta } from "@/data/articles";
+import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleMeta } from "@/data/articles";
 
 /* ─── Fade helper ─── */
 const fade = (delay = 0) => ({

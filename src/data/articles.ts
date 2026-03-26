@@ -832,6 +832,22 @@ export const articles: Article[] = [
 export const getArticleBySlug = (slug: string): Article | undefined =>
   articles.find((a) => a.slug === slug);
 
+/* ─── Helper: get extended excerpt for featured cards ─── */
+export const getExtendedExcerpt = (article: Article, minLength = 200): string => {
+  if (article.excerpt.length >= minLength) return article.excerpt;
+  const paragraphs = article.content
+    .filter((b): b is { type: "paragraph"; text: string } => b.type === "paragraph")
+    .map((b) => b.text);
+  let extended = article.excerpt;
+  for (const p of paragraphs) {
+    if (extended.length >= minLength) break;
+    if (!extended.includes(p.slice(0, 40))) {
+      extended += " " + p;
+    }
+  }
+  return extended.length > 280 ? extended.slice(0, 277) + "…" : extended;
+};
+
 /* ─── Helper: get featured articles ─── */
 export const getFeaturedArticles = (): Article[] =>
   articles.filter((a) => a.featured);
