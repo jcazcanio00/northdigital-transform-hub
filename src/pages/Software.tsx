@@ -460,7 +460,7 @@ const Software = () => {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fade()}>
+            <motion.div {...fade()} className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 <FileCode2 size={12} className="text-primary" />
@@ -470,12 +470,12 @@ const Software = () => {
                 Software{" "}
                 <span className="gradient-text">Empresarial</span>
               </h1>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
                 Diseñamos sistemas, CRM, dashboards e integraciones para empresas que
                 necesitan automatizar procesos, centralizar información y escalar con
                 tecnología.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <Button variant="gradient" size="lg" asChild>
                   <a href="/#contact">Agendar Consulta</a>
                 </Button>

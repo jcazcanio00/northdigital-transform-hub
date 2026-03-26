@@ -287,16 +287,16 @@ const CrmEmpresas = () => {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fade()}>
+            <motion.div {...fade()} className="text-center lg:text-left">
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
                 CRM para{" "}
                 <span className="gradient-text">Empresas</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg mx-auto lg:mx-0">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6 max-w-lg">
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
                 Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
               </p>
               {/* Benefit highlights */}
@@ -314,7 +314,7 @@ const CrmEmpresas = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     Hablar con un especialista <ArrowRight size={16} className="ml-1" />
