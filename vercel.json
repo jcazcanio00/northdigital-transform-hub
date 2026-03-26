@@ -48,6 +48,10 @@
     { "source": "/como-usar-ia-para-vender-mas-en-tu-empresa/", "destination": "/blog/como-usar-ia-para-vender-mas-en-tu-empresa/index.html" },
     { "source": "/como-redactar-un-buen-prompt-para-deepseek", "destination": "/blog/como-redactar-un-buen-prompt-para-deepseek/index.html" },
     { "source": "/como-redactar-un-buen-prompt-para-deepseek/", "destination": "/blog/como-redactar-un-buen-prompt-para-deepseek/index.html" },
+    { "source": "/razones-de-por-que-los-clientes-compran", "destination": "/razones-de-por-que-los-clientes-compran/index.html" },
+    { "source": "/razones-de-por-que-los-clientes-compran/", "destination": "/razones-de-por-que-los-clientes-compran/index.html" },
+    { "source": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local", "destination": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/index.html" },
+    { "source": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/", "destination": "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
