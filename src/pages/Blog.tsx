@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
 import {
   ArrowRight, BookOpen, TrendingUp, Zap, Server,
   Target, BarChart3, Clock, ChevronRight, Search,
@@ -11,15 +10,13 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
-import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleMeta } from "@/data/articles";
+import BlogReveal from "@/components/blog/BlogReveal";
+import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type Article, type ArticleMeta } from "@/data/articles";
 
-/* ─── Fade helper ─── */
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 } as const,
-  whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true, margin: "-80px" } as const,
-  transition: { duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
-});
+type BlogCardArticle = Article | ArticleMeta;
+
+const sortArticlesByDate = <T extends { date: string }>(items: T[]) =>
+  [...items].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 /* ─── Categories ─── */
 const categories = [
@@ -44,47 +41,116 @@ const jsonLd = {
   },
 };
 
+const blogSolutions = [
+  { to: "/crm-empresas", icon: Users, title: "CRM para Empresas", desc: "Implementación de CRM y automatización de ventas para escalar tu operación comercial." },
+  { to: "/software", icon: Server, title: "Software Empresarial", desc: "Desarrollo de software a medida que digitaliza y optimiza los procesos de tu empresa." },
+  { to: "/marketing-digital-cancun", icon: TrendingUp, title: "Marketing Digital", desc: "Estrategias de marketing digital basadas en datos para generar leads y escalar ingresos." },
+] as const;
+
 /* ─── Components ─── */
-const ArticleCard = ({ article }: { article: ArticleMeta }) => (
+const ArticleCard = memo(({ article }: { article: ArticleMeta }) => (
   <Link to={article.url} className="block">
-    <motion.div
-      {...fade(0.05)}
-      className="group relative h-full min-h-[360px] rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
-    >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative aspect-[16/9] overflow-hidden">
-        <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
-      </div>
-      <div className="relative z-10 flex min-h-[154px] flex-col p-5">
-        <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
-          <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
-          <span>·</span>
-          <span>{article.readTime} lectura</span>
+    <BlogReveal delay={0.05}>
+      <div className="group relative transform-gpu h-full min-h-[360px] rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 blog-card-surface">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
         </div>
-        <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
-        <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer más <ChevronRight size={14} /></span>
+        <div className="relative z-10 flex min-h-[154px] flex-col p-5">
+          <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
+            <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+            <span>·</span>
+            <span>{article.readTime} lectura</span>
+          </div>
+          <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
+          <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer más <ChevronRight size={14} /></span>
+        </div>
       </div>
-    </motion.div>
+    </BlogReveal>
   </Link>
-);
+));
+
+const FeaturedPrimaryCard = memo(({ article, excerpt }: { article: BlogCardArticle; excerpt: string }) => (
+  <Link to={article.url} className="lg:col-span-3 block">
+    <BlogReveal delay={0.1}>
+      <div className="group relative transform-gpu rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full blog-card-surface">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="relative aspect-[16/9] lg:aspect-[2/1] overflow-hidden">
+          <img src={article.image} alt={article.title} width={800} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" fetchPriority="high" decoding="async" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+          <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
+        </div>
+        <div className="relative z-10 flex min-h-[224px] flex-col p-6 lg:p-8">
+          <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
+            <span className="flex items-center gap-1"><Clock size={11} /> {article.date}</span>
+            <span>·</span>
+            <span className="flex items-center gap-1"><BookOpen size={11} /> {article.readTime} lectura</span>
+            <span>·</span>
+            <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+          <p className="text-base text-muted-foreground leading-relaxed mb-5 line-clamp-3 lg:line-clamp-4">{excerpt}</p>
+          <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
+        </div>
+      </div>
+    </BlogReveal>
+  </Link>
+));
+
+const FeaturedSecondaryCard = memo(({ article, delay }: { article: BlogCardArticle; delay: number }) => (
+  <Link to={article.url} className="flex-1 block">
+    <BlogReveal delay={delay}>
+      <div className="group relative transform-gpu rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full blog-card-surface">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
+        </div>
+        <div className="relative z-10 flex min-h-[168px] flex-col p-5">
+          <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
+            <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+            <span>·</span>
+            <span>{article.readTime} lectura</span>
+          </div>
+          <h3 className="text-lg font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
+          <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
+        </div>
+      </div>
+    </BlogReveal>
+  </Link>
+));
+
+const SolutionCard = memo(({ solution, delay }: { solution: (typeof blogSolutions)[number]; delay: number }) => (
+  <BlogReveal delay={delay}>
+    <Link to={solution.to} className="group block transform-gpu rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-[transform,border-color,box-shadow] duration-500 h-full blog-card-surface">
+      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-[background-color,box-shadow] duration-500">
+        <solution.icon size={22} className="text-primary" />
+      </div>
+      <h3 className="font-bold font-display mb-2 group-hover:text-primary transition-colors">{solution.title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-3">{solution.desc}</p>
+      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Conocer más <ArrowRight size={14} /></span>
+    </Link>
+  </BlogReveal>
+));
 
 /* ─── Main Page ─── */
 const BlogPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const sortArticlesByDate = <T extends { date: string }>(items: T[]) =>
-    [...items].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  const allArticles = sortArticlesByDate(getArticlesMeta());
-  const featured = sortArticlesByDate(getFeaturedArticles());
-  const filtered = activeCategory === "all"
-    ? allArticles
-    : allArticles.filter((a) => a.category === activeCategory);
+  const allArticles = useMemo(() => sortArticlesByDate(getArticlesMeta()), []);
+  const featured = useMemo(() => sortArticlesByDate(getFeaturedArticles()), []);
+  const featuredExcerpt = useMemo(() => (featured[0] ? getExtendedExcerpt(featured[0]) : ""), [featured]);
+  const filtered = useMemo(
+    () => activeCategory === "all" ? allArticles : allArticles.filter((a) => a.category === activeCategory),
+    [activeCategory, allArticles]
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -102,7 +168,7 @@ const BlogPage = () => {
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
-          <motion.div {...fade()}>
+          <BlogReveal>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
               <BookOpen size={12} className="text-primary" />
@@ -118,7 +184,7 @@ const BlogPage = () => {
             <Button variant="gradient" size="lg" asChild>
               <a href="#articulos">Explorar artículos <ArrowRight size={16} className="ml-2" /></a>
             </Button>
-          </motion.div>
+          </BlogReveal>
         </div>
       </section>
 
@@ -140,7 +206,7 @@ const BlogPage = () => {
       <section className="py-20 lg:py-28 relative">
         <div className="absolute inset-0 bg-mesh pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="mb-14 text-center">
+          <BlogReveal className="mb-14 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/15 bg-primary/5 text-xs text-muted-foreground mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
               Selección recomendada
@@ -148,65 +214,19 @@ const BlogPage = () => {
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display">
               Artículos <span className="gradient-text">destacados</span>
             </h2>
-          </motion.div>
+          </BlogReveal>
 
           {/* Editorial split layout */}
           <div className="grid lg:grid-cols-5 gap-8">
             {/* ── Primary article (3/5 width) ── */}
             {featured[0] && (
-              <Link to={featured[0].url} className="lg:col-span-3 block">
-                <motion.div
-                  {...fade(0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="relative aspect-[16/9] lg:aspect-[2/1] overflow-hidden">
-                    <img src={featured[0].image} alt={featured[0].title} width={800} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" fetchPriority="high" decoding="async" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
-                  </div>
-                  <div className="relative z-10 flex min-h-[224px] flex-col p-6 lg:p-8">
-                    <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
-                      <span className="flex items-center gap-1"><Clock size={11} /> {featured[0].date}</span>
-                      <span>·</span>
-                      <span className="flex items-center gap-1"><BookOpen size={11} /> {featured[0].readTime} lectura</span>
-                      <span>·</span>
-                      <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed mb-5 line-clamp-3 lg:line-clamp-4">{getExtendedExcerpt(featured[0])}</p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
-                  </div>
-                </motion.div>
-              </Link>
+              <FeaturedPrimaryCard article={featured[0]} excerpt={featuredExcerpt} />
             )}
 
             {/* ── Secondary articles (2/5 width, stacked) ── */}
             <div className="lg:col-span-2 flex flex-col gap-6">
               {featured.slice(1, 3).map((article, i) => (
-                <Link key={article.slug} to={article.url} className="flex-1 block">
-                  <motion.div
-                    {...fade(0.15 + i * 0.1)}
-                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[transform,border-color,box-shadow] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
-                  >
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    <div className="relative aspect-[16/9] overflow-hidden">
-                      <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
-                    </div>
-                    <div className="relative z-10 flex min-h-[168px] flex-col p-5">
-                      <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
-                        <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
-                        <span>·</span>
-                        <span>{article.readTime} lectura</span>
-                      </div>
-                      <h3 className="text-lg font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">{article.excerpt}</p>
-                      <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Leer artículo <ArrowRight size={14} /></span>
-                    </div>
-                  </motion.div>
-                </Link>
+                <FeaturedSecondaryCard key={article.slug} article={article} delay={0.15 + i * 0.1} />
               ))}
             </div>
           </div>
@@ -217,7 +237,7 @@ const BlogPage = () => {
       <section id="articulos" className="py-20 surface-sunken relative">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="text-center mb-10">
+          <BlogReveal className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display mb-6">
               Explora por <span className="gradient-text">categoría</span>
             </h2>
@@ -237,7 +257,7 @@ const BlogPage = () => {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </BlogReveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {filtered.length > 0 ? (
@@ -245,10 +265,10 @@ const BlogPage = () => {
                 <ArticleCard key={article.slug} article={article} />
               ))
             ) : (
-              <motion.div {...fade()} className="col-span-full text-center py-16">
+              <BlogReveal className="col-span-full text-center py-16">
                 <Search size={40} className="text-muted-foreground/30 mx-auto mb-4" />
                 <p className="text-muted-foreground">No hay artículos en esta categoría aún. Pronto publicaremos nuevo contenido.</p>
-              </motion.div>
+              </BlogReveal>
             )}
           </div>
         </div>
@@ -258,7 +278,7 @@ const BlogPage = () => {
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-mesh pointer-events-none opacity-30" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="text-center mb-12">
+          <BlogReveal className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
               <Layers size={12} className="text-primary" />
               Soluciones
@@ -269,23 +289,10 @@ const BlogPage = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">
               Del conocimiento a la acción. Implementa las estrategias que necesitas con nuestro equipo.
             </p>
-          </motion.div>
+          </BlogReveal>
           <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              { to: "/crm-empresas", icon: Users, title: "CRM para Empresas", desc: "Implementación de CRM y automatización de ventas para escalar tu operación comercial." },
-              { to: "/software", icon: Server, title: "Software Empresarial", desc: "Desarrollo de software a medida que digitaliza y optimiza los procesos de tu empresa." },
-              { to: "/marketing-digital-cancun", icon: TrendingUp, title: "Marketing Digital", desc: "Estrategias de marketing digital basadas en datos para generar leads y escalar ingresos." },
-            ].map((s, i) => (
-              <motion.div key={s.to} {...fade(i * 0.1)}>
-                <Link to={s.to} className="group block rounded-2xl border border-border bg-card p-7 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-[transform,border-color,box-shadow] duration-500 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 group-hover:shadow-[0_0_25px_-5px_hsl(var(--primary)/0.3)] transition-[background-color,box-shadow] duration-500">
-                    <s.icon size={22} className="text-primary" />
-                  </div>
-                  <h3 className="font-bold font-display mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-[gap] duration-300 group-hover:gap-2.5">Conocer más <ArrowRight size={14} /></span>
-                </Link>
-              </motion.div>
+            {blogSolutions.map((solution, i) => (
+              <SolutionCard key={solution.to} solution={solution} delay={i * 0.1} />
             ))}
           </div>
         </div>
