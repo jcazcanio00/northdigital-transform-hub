@@ -23,7 +23,7 @@ const blocks = [
 ];
 
 const AboutSection = () => (
-  <section className="py-24 relative overflow-hidden min-h-[480px]">
+  <section className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[480px]">
     <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.015] via-transparent to-primary/[0.015] pointer-events-none" />
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div

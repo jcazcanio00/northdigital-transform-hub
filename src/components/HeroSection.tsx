@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { WhatsAppHeroButton } from "@/components/WhatsAppButton";
 
 const HeroSection = () => (
-  <section id="home" className="relative min-h-[calc(100vh-72px)] flex items-center pt-10 md:pt-16 pb-16 overflow-hidden">
+  <section id="home" className="relative min-h-0 md:min-h-[calc(100vh-72px)] flex items-center pt-6 md:pt-16 pb-10 md:pb-16 overflow-hidden">
     {/* Background effects — lightweight, no blur on mobile */}
     <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
     <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
@@ -14,19 +14,19 @@ const HeroSection = () => (
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       {/* Text content — CSS animations instead of framer-motion */}
-      <div className="text-center max-w-4xl mx-auto mb-16 animate-hero-fade-in">
+      <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16 animate-hero-fade-in">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
           <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
           Socio en Transformación Digital
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-6 text-balance font-display">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-4 md:mb-6 text-balance font-display">
           Automatiza, Escala y{" "}
           <span className="gradient-text">Crece</span>{" "}
           con Tecnología.
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed">
           Somos una agencia de marketing digital en Cancún que combina software empresarial, infraestructura cloud y marketing de crecimiento para empresas modernas.
         </p>
 

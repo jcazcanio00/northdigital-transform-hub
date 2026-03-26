@@ -17,7 +17,7 @@ const providerLogos = [
 ];
 
 const CloudSection = () => (
-  <section id="cloud" className="py-16 relative overflow-hidden min-h-[500px]">
+  <section id="cloud" className="py-12 md:py-16 relative overflow-hidden min-h-0 md:min-h-[500px]">
     <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-primary/[0.08] to-accent/[0.04] pointer-events-none" />
     <div className="hidden md:block absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[60px] pointer-events-none" />
     <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
