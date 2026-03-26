@@ -678,6 +678,154 @@ export const articles: Article[] = [
       { type: "paragraph", text: "Aprender a escribir prompts efectivos puede marcar la diferencia entre resultados promedio y resultados profesionales." },
     ],
   },
+
+  /* ═══════════════════════════════════════════════
+     11. Razones de por qué los clientes compran
+     ═══════════════════════════════════════════════ */
+  {
+    slug: "razones-de-por-que-los-clientes-compran",
+    url: "/razones-de-por-que-los-clientes-compran",
+    title: "Razones de por qué los clientes compran en 2026",
+    seoTitle: "Razones de por qué los clientes compran en 2026 | North",
+    excerpt: "Descubre las principales razones por las que los clientes toman decisiones de compra en 2026 y cómo aplicarlas a tu estrategia digital.",
+    category: "marketing",
+    categoryLabel: "Marketing Digital",
+    tags: ["Psicología del consumidor", "Ventas", "Estrategia digital", "Conversión", "Comportamiento de compra"],
+    date: "26 Mar 2026",
+    readTime: "7 min",
+    image: "https://northmkt.com.mx/blog/razones-clientes-compran-2026.jpg",
+    author: "Equipo North",
+    authorRole: "Estrategia Digital",
+    featured: false,
+    content: [
+      { type: "paragraph", text: "¿Por qué compra la gente? En 2026, las decisiones de compra están más influenciadas que nunca por factores emocionales, sociales y tecnológicos. Entender estas razones es clave para diseñar estrategias de marketing y ventas que realmente conviertan." },
+
+      { type: "h2", text: "1. Confianza y prueba social" },
+      { type: "paragraph", text: "Los clientes compran cuando sienten confianza. Reseñas, testimonios, casos de éxito y certificaciones son más poderosas que cualquier argumento de venta. En 2026, el 87% de los consumidores consulta opiniones antes de comprar." },
+      { type: "quote", text: "La confianza no se compra, se construye con consistencia y transparencia." },
+
+      { type: "h2", text: "2. Necesidad real vs. necesidad percibida" },
+      { type: "paragraph", text: "Existen compras por necesidad funcional (resolver un problema concreto) y por necesidad emocional (sentirse mejor, pertenecer a un grupo, mejorar su estatus). Las marcas que entienden ambas dimensiones venden más." },
+      { type: "list", items: [
+        "Necesidad funcional: software que ahorra tiempo, herramientas que simplifican procesos",
+        "Necesidad emocional: productos que generan pertenencia, exclusividad o bienestar",
+        "Necesidad aspiracional: servicios que acercan al cliente a la versión ideal de sí mismo"
+      ] },
+
+      { type: "h2", text: "3. Urgencia y escasez" },
+      { type: "paragraph", text: "Las ofertas limitadas, los contadores regresivos y las ediciones especiales siguen siendo gatillos de compra efectivos. Sin embargo, en 2026 los consumidores son más escépticos — la escasez debe ser auténtica para funcionar." },
+
+      { type: "h2", text: "4. Experiencia de compra simplificada" },
+      { type: "paragraph", text: "La fricción mata conversiones. Los clientes compran donde el proceso es rápido, claro y sin obstáculos. Checkout en un clic, WhatsApp como canal de venta, y CRMs que personalizan la experiencia son diferenciadores clave." },
+      { type: "list", items: [
+        "Menos pasos = más conversiones",
+        "Múltiples métodos de pago (incluyendo BNPL)",
+        "Atención inmediata vía chat o WhatsApp",
+        "Seguimiento post-venta automatizado"
+      ] },
+
+      { type: "h2", text: "5. Personalización inteligente" },
+      { type: "paragraph", text: "Los consumidores esperan que las marcas los conozcan. Recomendaciones basadas en comportamiento, emails segmentados y ofertas personalizadas incrementan la tasa de conversión hasta un 40%." },
+
+      { type: "h2", text: "6. Valores y propósito de marca" },
+      { type: "paragraph", text: "En 2026, los clientes — especialmente los millennials y Gen Z — prefieren comprar a marcas con propósito. Sostenibilidad, responsabilidad social y autenticidad no son extras, son requisitos." },
+      { type: "quote", text: "Los clientes no solo compran productos, compran lo que la marca representa." },
+
+      { type: "h2", text: "7. El poder de la comunidad" },
+      { type: "paragraph", text: "Las marcas que construyen comunidades alrededor de su producto generan lealtad y compras recurrentes. Grupos de usuarios, foros, eventos y contenido exclusivo crean un ecosistema que retiene clientes." },
+
+      { type: "h2", text: "Cómo aplicar esto a tu estrategia" },
+      { type: "ordered-list", items: [
+        "Audita tu proceso de compra y elimina fricciones",
+        "Implementa prueba social visible (reseñas, logos de clientes, casos de éxito)",
+        "Personaliza la comunicación con un CRM bien configurado",
+        "Comunica el propósito de tu marca de forma auténtica",
+        "Crea urgencia real con ofertas limitadas verificables",
+        "Construye una comunidad alrededor de tu producto o servicio"
+      ] },
+
+      { type: "h2", text: "Conclusión" },
+      { type: "paragraph", text: "Los clientes en 2026 son más informados, exigentes y selectivos. Pero las razones fundamentales de compra siguen siendo las mismas: confianza, emoción, conveniencia y conexión. Las empresas que dominan estos principios no solo venden más — construyen relaciones duraderas." },
+      { type: "paragraph", text: "¿Quieres implementar estas estrategias en tu negocio? En North te ayudamos a diseñar un sistema de ventas que entiende a tu cliente y convierte de forma consistente." },
+    ],
+  },
+
+  /* ═══════════════════════════════════════════════
+     12. Agencias SEO de Cancún y posicionamiento local
+     ═══════════════════════════════════════════════ */
+  {
+    slug: "como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local",
+    url: "/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local",
+    title: "Cómo las agencias SEO de Cancún utilizan posicionamiento local en 2026",
+    seoTitle: "Cómo las agencias SEO de Cancún utilizan posicionamiento local en 2026 | North",
+    excerpt: "Conoce cómo las agencias SEO en Cancún utilizan estrategias de posicionamiento local para dominar resultados en Google en 2026.",
+    category: "marketing",
+    categoryLabel: "Marketing Digital",
+    tags: ["SEO local", "Cancún", "Posicionamiento web", "Google Business", "Marketing digital", "Riviera Maya"],
+    date: "26 Mar 2026",
+    readTime: "8 min",
+    image: "https://northmkt.com.mx/blog/seo-local-cancun-2026.jpg",
+    author: "Equipo North",
+    authorRole: "Estrategia Digital",
+    featured: false,
+    content: [
+      { type: "paragraph", text: "El SEO local se ha convertido en una de las estrategias más rentables para empresas en Cancún y la Riviera Maya. En 2026, con el auge del turismo digital y la competencia creciente, las agencias SEO de la región han perfeccionado técnicas específicas para dominar los resultados de búsqueda locales." },
+
+      { type: "h2", text: "¿Qué es el SEO local y por qué importa en Cancún?" },
+      { type: "paragraph", text: "El SEO local es el conjunto de estrategias orientadas a posicionar un negocio en las búsquedas con intención geográfica. Cuando alguien busca 'restaurante en Cancún' o 'agencia de marketing cerca de mí', Google prioriza resultados locales — y ahí es donde el SEO local marca la diferencia." },
+      { type: "list", items: [
+        "El 46% de todas las búsquedas en Google tienen intención local",
+        "El 78% de las búsquedas móviles locales resultan en una compra offline",
+        "Los negocios con perfil optimizado en Google reciben 7x más clics"
+      ] },
+
+      { type: "h2", text: "Estrategias que usan las agencias SEO en Cancún" },
+
+      { type: "h3", text: "1. Optimización de Google Business Profile" },
+      { type: "paragraph", text: "El perfil de Google Business (antes Google My Business) es la base del SEO local. Las agencias en Cancún se aseguran de que cada negocio tenga un perfil completo con fotos de calidad, horarios actualizados, categorías correctas y publicaciones regulares." },
+
+      { type: "h3", text: "2. Contenido localizado y relevante" },
+      { type: "paragraph", text: "Crear contenido que mencione naturalmente ubicaciones como Cancún, Playa del Carmen, Tulum y la Riviera Maya. Esto incluye blogs, landing pages específicas por zona y guías locales que capturan búsquedas de cola larga." },
+
+      { type: "h3", text: "3. Gestión de reseñas y reputación" },
+      { type: "paragraph", text: "Las reseñas en Google son un factor de ranking directo para SEO local. Las agencias implementan sistemas para solicitar reseñas después de cada servicio y responder profesionalmente a cada opinión." },
+      { type: "quote", text: "Una reseña positiva en Google vale más que mil pesos en publicidad para un negocio local." },
+
+      { type: "h3", text: "4. Citaciones y directorios locales" },
+      { type: "paragraph", text: "Registrar el negocio en directorios relevantes como Yelp, TripAdvisor, Sección Amarilla y directorios de cámaras de comercio locales. La consistencia del NAP (Nombre, Dirección, Teléfono) es crucial." },
+
+      { type: "h3", text: "5. Schema markup y datos estructurados" },
+      { type: "paragraph", text: "Implementar marcado de datos estructurados (Schema.org) para que Google entienda mejor la información del negocio: tipo de empresa, ubicación, horarios, servicios y reseñas." },
+
+      { type: "h3", text: "6. Link building local" },
+      { type: "paragraph", text: "Obtener enlaces de medios locales, blogs de turismo, cámaras de comercio y partners regionales. Los enlaces locales tienen un peso significativo en el algoritmo de búsqueda local de Google." },
+
+      { type: "h2", text: "Errores comunes en SEO local" },
+      { type: "list", items: [
+        "No verificar el perfil de Google Business",
+        "Información inconsistente entre plataformas (NAP diferente)",
+        "No responder a reseñas negativas",
+        "Ignorar las búsquedas por voz y móviles",
+        "No crear contenido específico para cada ubicación que se atiende"
+      ] },
+
+      { type: "h2", text: "Resultados reales del SEO local en Cancún" },
+      { type: "paragraph", text: "Las empresas que implementan una estrategia de SEO local completa en Cancún reportan un aumento promedio del 150% en visibilidad en Google Maps, un incremento del 80% en llamadas desde Google y un 60% más de visitas presenciales atribuidas a búsquedas orgánicas." },
+
+      { type: "h2", text: "¿Cómo elegir una agencia SEO en Cancún?" },
+      { type: "ordered-list", items: [
+        "Pide casos de éxito verificables con métricas reales",
+        "Asegúrate de que entienden el mercado local y turístico",
+        "Verifica que usen herramientas profesionales (Ahrefs, SEMrush, Google Search Console)",
+        "Confirma que su estrategia incluye reportes mensuales transparentes",
+        "Busca una agencia que combine SEO con otras disciplinas (CRM, automatización, paid media)"
+      ] },
+
+      { type: "h2", text: "Conclusión" },
+      { type: "paragraph", text: "El SEO local no es opcional para negocios en Cancún — es la base de cualquier estrategia digital seria. Las agencias que dominan el posicionamiento local combinan técnica, contenido y reputación para generar resultados medibles y sostenibles." },
+      { type: "paragraph", text: "En North, combinamos SEO local con CRM, automatización y marketing digital para crear un sistema completo de generación de clientes. Si quieres posicionar tu empresa en Cancún, hablemos." },
+    ],
+  },
 ];
 
 /* ─── Helper: find article by slug ─── */
