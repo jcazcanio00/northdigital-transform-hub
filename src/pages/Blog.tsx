@@ -53,8 +53,8 @@ const ArticleCard = ({ article }: { article: ArticleMeta }) => (
     >
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative h-44 overflow-hidden">
-        <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+      <div className="relative aspect-[16/9] overflow-hidden">
+        <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
       </div>
@@ -98,7 +98,7 @@ const BlogPage = () => {
       <Header />
 
       {/* ═══ HERO ═══ */}
-      <section className="pt-6 md:pt-20 pb-10 md:pb-16 relative">
+      <section className="pt-6 md:pt-20 pb-10 md:pb-16 relative min-h-[280px] md:min-h-[360px]">
         <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
@@ -160,8 +160,8 @@ const BlogPage = () => {
                   className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
-                    <img src={featured[0].image} alt={featured[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <div className="relative aspect-[16/9] lg:aspect-[2/1] overflow-hidden">
+                    <img src={featured[0].image} alt={featured[0].title} width={800} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
                   </div>
@@ -190,8 +190,8 @@ const BlogPage = () => {
                     className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
                   >
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    <div className="relative h-40 overflow-hidden">
-                      <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img src={article.image} alt={article.title} width={400} height={225} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                       <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
                     </div>
