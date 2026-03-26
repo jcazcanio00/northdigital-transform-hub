@@ -174,7 +174,7 @@ const BlogPage = () => {
                       <span className="flex items-center gap-1"><TrendingUp size={11} /> Destacado</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display mb-4 leading-snug group-hover:text-primary transition-colors duration-300">{featured[0].title}</h3>
-                    <p className="text-base text-muted-foreground leading-relaxed mb-5">{featured[0].excerpt}</p>
+                    <p className="text-base text-muted-foreground leading-relaxed mb-5 line-clamp-3 lg:line-clamp-4">{getExtendedExcerpt(featured[0])}</p>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer artículo <ArrowRight size={14} /></span>
                   </div>
                 </motion.div>
