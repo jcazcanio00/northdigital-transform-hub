@@ -15,7 +15,8 @@ import Footer from "@/components/Footer";
 
 /* ─── Google product icons ─── */
 import gmailIcon from "@/assets/google/gmail.png";
-import driveIcon from "@/assets/google/workspace.png";
+import driveIcon from "@/assets/google/drive.svg";
+import calendarIcon from "@/assets/google/calendar.svg";
 import meetIcon from "@/assets/google/meet.png";
 import docsIcon from "@/assets/google/docs.png";
 import sheetsIcon from "@/assets/google/sheets.png";
