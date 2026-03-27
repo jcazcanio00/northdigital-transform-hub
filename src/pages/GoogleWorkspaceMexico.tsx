@@ -23,7 +23,7 @@ import sheetsIcon from "@/assets/google/sheets.svg";
 import slidesIcon from "@/assets/google/slides.svg";
 import chatIcon from "@/assets/google/chat-new.svg";
 import formsIcon from "@/assets/google/forms.svg";
-import sitesIcon from "@/assets/google/sites.png";
+import sitesIcon from "@/assets/google/sites.svg";
 import currentsIcon from "@/assets/google/currents.png";
 import jamboardIcon from "@/assets/google/jamboard.png";
 import geminiIcon from "@/assets/google/gemini.png";
