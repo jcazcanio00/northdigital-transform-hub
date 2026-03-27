@@ -602,7 +602,8 @@ const GoogleWorkspaceMexico = () => {
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-primary/[0.06] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="max-w-2xl mx-auto text-center">
-            <Building2 size={40} className="text-primary mx-auto mb-6" />
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+              <img src="/favicon.webp" alt="North" className="w-8 h-8 object-contain" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-foreground leading-tight">
               Implementa Google Workspace{" "}
               <span className="gradient-text">sin complicaciones</span>
@@ -617,10 +618,11 @@ const GoogleWorkspaceMexico = () => {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                <a href={WA} target="_blank" rel="noopener noreferrer">
-                  Hablar por WhatsApp
-                </a>
-              </Button>
+              <a href={WA} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border border-[#25D366]/40 text-[#25D366] font-semibold text-base transition-all duration-300 hover:bg-[#25D366]/10 hover:border-[#25D366]/60 hover:shadow-[0_0_20px_rgba(37,211,102,0.15)]"
+              >
+                Hablar por WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>
