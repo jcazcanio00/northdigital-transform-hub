@@ -14,15 +14,15 @@ import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 
 /* ─── Google product icons ─── */
-import gmailIcon from "@/assets/google/gmail.png";
+import gmailIcon from "@/assets/google/gmail.svg";
 import driveIcon from "@/assets/google/drive.svg";
 import calendarIcon from "@/assets/google/calendar.svg";
-import meetIcon from "@/assets/google/meet.png";
-import docsIcon from "@/assets/google/docs.png";
-import sheetsIcon from "@/assets/google/sheets.png";
-import slidesIcon from "@/assets/google/slides.png";
+import meetIcon from "@/assets/google/meet.svg";
+import docsIcon from "@/assets/google/docs.svg";
+import sheetsIcon from "@/assets/google/sheets.svg";
+import slidesIcon from "@/assets/google/slides.svg";
 import chatIcon from "@/assets/google/chat-new.svg";
-import formsIcon from "@/assets/google/forms.png";
+import formsIcon from "@/assets/google/forms.svg";
 import sitesIcon from "@/assets/google/sites.png";
 import currentsIcon from "@/assets/google/currents.png";
 import jamboardIcon from "@/assets/google/jamboard.png";
