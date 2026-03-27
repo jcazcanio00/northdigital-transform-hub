@@ -320,13 +320,13 @@ const GoogleWorkspaceMexico = () => {
               </div>
 
               {/* Apps strip */}
-              <div className="flex items-center gap-1 justify-center lg:justify-start">
+              <div className="flex items-center gap-2 justify-center lg:justify-start">
                 {heroApps.map((app, i) => (
-                  <div key={i} className="w-10 h-10 rounded-xl bg-card border border-border/60 flex items-center justify-center" title={app.name}>
-                    <img src={app.icon} alt={app.name} width={22} height={22} />
+                  <div key={i} className={`rounded-xl bg-card border flex items-center justify-center transition-transform duration-300 hover:scale-110 ${app.primary ? "w-12 h-12 border-primary/25 shadow-sm" : "w-10 h-10 border-border/60"}`} title={app.name}>
+                    <img src={app.icon} alt={app.name} width={app.primary ? 26 : 20} height={app.primary ? 26 : 20} />
                   </div>
                 ))}
-                <span className="text-xs text-muted-foreground ml-3">+9 herramientas incluidas</span>
+                <span className="text-xs text-muted-foreground ml-3">+9 más</span>
               </div>
             </motion.div>
             <WorkspaceMockup />
