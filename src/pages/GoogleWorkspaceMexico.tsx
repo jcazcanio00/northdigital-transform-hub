@@ -141,6 +141,7 @@ const services = [
   { icon: Shield, title: "Configuración de seguridad", desc: "Autenticación de dos factores, políticas de contraseñas, control de acceso y prevención de pérdida de datos (DLP)." },
   { icon: Workflow, title: "Integración con sistemas", desc: "Conectamos Google Workspace con tu CRM, ERP, herramientas de automatización y sistemas empresariales." },
   { icon: Headphones, title: "Soporte y administración", desc: "Gestionamos tu consola de administración, resolvemos incidencias y mantenemos tu entorno actualizado." },
+  { icon: MonitorSmartphone, title: "Administración continua", desc: "Monitoreamos, optimizamos y damos soporte a tu entorno de Google Workspace para asegurar estabilidad y rendimiento continuo." },
 ];
 
 const whyBlocks = [
