@@ -117,11 +117,11 @@ const WorkspaceMockup = () => (
     <div className="flex min-h-[280px] md:min-h-[340px]">
       {/* Sidebar */}
       <div className="hidden md:flex flex-col w-14 border-r border-border/40 bg-card/50 py-4 items-center gap-4">
-        <GoogleIcon type="gmail" size={20} />
-        <GoogleIcon type="drive" size={20} />
-        <GoogleIcon type="meet" size={20} />
-        <GoogleIcon type="calendar" size={20} />
-        <GoogleIcon type="docs" size={20} />
+        <img src={gmailIcon} alt="Gmail" width={20} height={20} />
+        <img src={docsIcon} alt="Docs" width={20} height={20} />
+        <img src={meetIcon} alt="Meet" width={20} height={20} />
+        <img src={sheetsIcon} alt="Sheets" width={20} height={20} />
+        <img src={chatIcon} alt="Chat" width={20} height={20} />
         <div className="mt-auto">
           <Settings size={16} className="text-muted-foreground/40" />
         </div>
