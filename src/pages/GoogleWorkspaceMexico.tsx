@@ -1,24 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail, HardDrive, Video, CalendarDays, FileText,
   Shield, Globe, Zap, ArrowRight, CheckCircle2,
-  Users, Settings, Lock, Cloud, Layers, RefreshCw,
-  AlertTriangle, Search, Headphones, Monitor,
-  ArrowUpRight
+  Users, Settings, Lock, Layers, RefreshCw,
+  Headphones, ChevronDown,
+  ArrowUpRight, Building2, Workflow
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
 import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
 
 /* ─── Google product icons ─── */
 import gmailIcon from "@/assets/google/gmail.png";
 import driveIcon from "@/assets/google/workspace.png";
 import meetIcon from "@/assets/google/meet.png";
-import calendarIcon from "@/assets/google/jamboard.png";
 import docsIcon from "@/assets/google/docs.png";
 import sheetsIcon from "@/assets/google/sheets.png";
 import slidesIcon from "@/assets/google/slides.png";
@@ -26,10 +24,11 @@ import chatIcon from "@/assets/google/chat.png";
 import formsIcon from "@/assets/google/forms.png";
 import sitesIcon from "@/assets/google/sites.png";
 import currentsIcon from "@/assets/google/currents.png";
+import jamboardIcon from "@/assets/google/jamboard.png";
 
 /* ─── Constants ─── */
-const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20la%20implementaci%C3%B3n%20de%20Google%20Workspace%20para%20mi%20empresa";
-const CALENDAR_LINK = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF";
+const WA = "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20la%20implementaci%C3%B3n%20de%20Google%20Workspace%20para%20mi%20empresa";
+const CAL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3zBYcC4sEwgevqpE4iQ66kD86CbDLcacZwVv1nghaXxdPbtFP3F8Kl3dm8495z0PmBRDVlbLiF";
 
 /* ─── JSON-LD ─── */
 const jsonLd = [
@@ -51,46 +50,129 @@ const jsonLd = [
     logo: "https://northmkt.com.mx/favicon.webp",
     sameAs: ["https://www.facebook.com/northmkt", "https://www.instagram.com/northmkt"],
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "¿Cuánto tarda una migración a Google Workspace?", acceptedAnswer: { "@type": "Answer", text: "Dependiendo del volumen de datos y cantidad de usuarios, una migración típica tarda entre 3 y 10 días hábiles." } },
+      { "@type": "Question", name: "¿Pueden migrar correos existentes?", acceptedAnswer: { "@type": "Answer", text: "Sí, migramos correos, contactos, calendarios y archivos desde cualquier plataforma sin pérdida de datos." } },
+      { "@type": "Question", name: "¿Incluyen configuración de seguridad?", acceptedAnswer: { "@type": "Answer", text: "Sí, configuramos autenticación de dos factores, políticas de contraseñas, DLP y gestión de dispositivos." } },
+      { "@type": "Question", name: "¿Pueden dar soporte mensual?", acceptedAnswer: { "@type": "Answer", text: "Sí, ofrecemos planes de soporte y administración continua para mantener tu entorno seguro y actualizado." } },
+      { "@type": "Question", name: "¿Pueden integrar Google Workspace con otros sistemas?", acceptedAnswer: { "@type": "Answer", text: "Sí, conectamos Google Workspace con CRM, ERP, herramientas de automatización y otros sistemas." } },
+    ],
+  },
 ];
 
 /* ─── Fade helper ─── */
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
   transition: { duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] as const },
   style: { willChange: "transform, opacity" } as React.CSSProperties,
 });
 
-/* ─── Section Badge ─── */
-const SectionBadge = ({ children, variant = "primary" }: { children: React.ReactNode; variant?: "primary" | "destructive" | "accent" }) => {
-  const colors = {
-    primary: "border-primary/20 bg-primary/5 text-muted-foreground",
-    destructive: "border-destructive/20 bg-destructive/10 text-white/60",
-    accent: "border-accent/20 bg-accent/10 text-white/60",
-  };
-  const dotColors = { primary: "bg-primary", destructive: "bg-destructive", accent: "bg-accent" };
-  return (
-    <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs mb-4 ${colors[variant]}`}>
-      <span className={`w-2 h-2 rounded-full animate-status-pulse ${dotColors[variant]}`} />
-      {children}
-    </span>
-  );
-};
+/* ─── Data ─── */
+const heroApps = [
+  { icon: gmailIcon, name: "Gmail" },
+  { icon: meetIcon, name: "Meet" },
+  { icon: driveIcon, name: "Drive" },
+  { icon: docsIcon, name: "Docs" },
+  { icon: sheetsIcon, name: "Sheets" },
+  { icon: slidesIcon, name: "Slides" },
+  { icon: chatIcon, name: "Chat" },
+];
 
-/* ─── Google product colors for icons ─── */
-const GoogleIcon = ({ type, size = 18 }: { type: "gmail" | "drive" | "meet" | "calendar" | "docs"; size?: number }) => {
-  const icons = { gmail: Mail, drive: HardDrive, meet: Video, calendar: CalendarDays, docs: FileText };
-  const colors = {
-    gmail: "text-red-500",
-    drive: "text-yellow-500",
-    meet: "text-green-500",
-    calendar: "text-blue-500",
-    docs: "text-blue-400",
-  };
-  const Icon = icons[type];
-  return <Icon size={size} className={colors[type]} />;
-};
+const workspaceTools = [
+  { name: "Gmail", label: "Correo empresarial personalizado con tu dominio", icon: gmailIcon },
+  { name: "Google Drive", label: "Almacenamiento seguro en la nube para tu equipo", icon: driveIcon },
+  { name: "Google Meet", label: "Videollamadas HD con hasta 500 participantes", icon: meetIcon },
+  { name: "Google Docs", label: "Documentos colaborativos en tiempo real", icon: docsIcon },
+  { name: "Google Sheets", label: "Hojas de cálculo con análisis avanzado", icon: sheetsIcon },
+  { name: "Google Slides", label: "Presentaciones profesionales colaborativas", icon: slidesIcon },
+  { name: "Google Chat", label: "Mensajería instantánea para equipos", icon: chatIcon },
+  { name: "Google Forms", label: "Formularios y encuestas inteligentes", icon: formsIcon },
+  { name: "Google Sites", label: "Sitios web internos sin código", icon: sitesIcon },
+  { name: "Currents", label: "Comunicación interna empresarial", icon: currentsIcon },
+  { name: "Jamboard", label: "Pizarra digital colaborativa", icon: jamboardIcon },
+];
+
+const benefitsData = [
+  {
+    icon: Mail,
+    title: "Correo profesional y colaboración",
+    desc: "Correo con tu dominio, calendario compartido y herramientas de productividad integradas para que tu equipo opere con una imagen profesional.",
+    highlights: ["Correo @tuempresa.com", "30 GB – ilimitado por usuario", "Filtros y etiquetas inteligentes"],
+  },
+  {
+    icon: Shield,
+    title: "Seguridad empresarial",
+    desc: "Protege la información de tu empresa con cifrado, autenticación avanzada y control centralizado de accesos y dispositivos.",
+    highlights: ["Autenticación de dos factores", "Prevención de pérdida de datos", "Gestión de dispositivos"],
+  },
+  {
+    icon: Users,
+    title: "Trabajo en tiempo real",
+    desc: "Tu equipo edita documentos simultáneamente, se comunica al instante y mantiene la información siempre sincronizada.",
+    highlights: ["Edición simultánea", "Comentarios y sugerencias", "Historial de versiones"],
+  },
+  {
+    icon: Globe,
+    title: "Acceso desde cualquier lugar",
+    desc: "Trabaja desde oficina, casa o cualquier ubicación. Todas tus herramientas y archivos disponibles en la nube.",
+    highlights: ["Apps móviles nativas", "Sincronización automática", "Sin VPN ni servidores"],
+  },
+];
+
+const services = [
+  { icon: RefreshCw, title: "Migración a Google Workspace", desc: "Migramos correos, contactos, calendarios y archivos desde cualquier plataforma sin pérdida de datos ni tiempo de inactividad." },
+  { icon: Layers, title: "Implementación completa", desc: "Configuramos desde cero: dominio, cuentas de usuario, políticas de seguridad y estructura organizacional completa." },
+  { icon: Shield, title: "Configuración de seguridad", desc: "Autenticación de dos factores, políticas de contraseñas, control de acceso y prevención de pérdida de datos (DLP)." },
+  { icon: Workflow, title: "Integración con sistemas", desc: "Conectamos Google Workspace con tu CRM, ERP, herramientas de automatización y sistemas empresariales." },
+  { icon: Headphones, title: "Soporte y administración", desc: "Gestionamos tu consola de administración, resolvemos incidencias y mantenemos tu entorno actualizado." },
+];
+
+const whyBlocks = [
+  { icon: Zap, title: "Trabajo en tiempo real", desc: "Edición simultánea, videollamadas integradas y mensajería instantánea." },
+  { icon: Shield, title: "Seguridad de nivel empresarial", desc: "Cifrado, 2FA, DLP y cumplimiento de normativas internacionales." },
+  { icon: Globe, title: "Acceso desde cualquier lugar", desc: "Nube nativa — sin servidores, sin VPN, sin complicaciones." },
+  { icon: ArrowUpRight, title: "Escalabilidad inmediata", desc: "Agrega usuarios en minutos. Tu infraestructura crece contigo." },
+];
+
+const plans = [
+  {
+    name: "Implementación básica",
+    price: "Desde $8,000 MXN",
+    desc: "Ideal para empresas pequeñas que necesitan correo profesional y herramientas básicas.",
+    features: ["Configuración de dominio", "Hasta 10 cuentas de usuario", "Configuración de Gmail y Drive", "Capacitación básica"],
+    cta: "Solicitar cotización",
+    featured: false,
+  },
+  {
+    name: "Migración y configuración",
+    price: "Desde $18,000 MXN",
+    desc: "Para empresas que necesitan migrar desde otra plataforma con configuración avanzada.",
+    features: ["Migración completa de datos", "Configuración de seguridad", "Políticas de acceso", "Drive compartidos", "Capacitación del equipo"],
+    cta: "Solicitar cotización",
+    featured: true,
+  },
+  {
+    name: "Soporte y administración",
+    price: "Desde $5,000 MXN/mes",
+    desc: "Administración continua para empresas que necesitan soporte especializado permanente.",
+    features: ["Gestión de consola admin", "Soporte prioritario", "Monitoreo de seguridad", "Actualizaciones y optimización", "Reportes mensuales"],
+    cta: "Solicitar cotización",
+    featured: false,
+  },
+];
+
+const faqs = [
+  { q: "¿Cuánto tarda una migración a Google Workspace?", a: "Dependiendo del volumen de datos y cantidad de usuarios, una migración típica tarda entre 3 y 10 días hábiles. Planificamos cada paso para minimizar interrupciones." },
+  { q: "¿Pueden migrar correos existentes?", a: "Sí, migramos correos, contactos, calendarios y archivos desde cualquier plataforma (Outlook, Yahoo, GoDaddy, cPanel, etc.) sin pérdida de datos." },
+  { q: "¿Incluyen configuración de seguridad?", a: "Sí, todos nuestros planes incluyen configuración de autenticación de dos factores, políticas de contraseñas y control de acceso. Los planes avanzados incluyen DLP y gestión de dispositivos." },
+  { q: "¿Pueden dar soporte mensual?", a: "Sí, ofrecemos planes de soporte y administración continua que incluyen gestión de consola, resolución de incidencias, monitoreo de seguridad y reportes mensuales." },
+  { q: "¿Pueden integrar Google Workspace con otros sistemas?", a: "Sí, conectamos Google Workspace con CRM, ERP, herramientas de automatización y otros sistemas empresariales mediante APIs y conectores nativos." },
+];
 
 /* ─── Workspace Dashboard Mockup ─── */
 const WorkspaceMockup = () => (
@@ -98,67 +180,55 @@ const WorkspaceMockup = () => (
     {...fade(0.2)}
     className="relative rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden"
   >
-    {/* Title bar */}
     <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
-          <span className="w-3 h-3 rounded-full bg-red-400/80" />
-          <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
-          <span className="w-3 h-3 rounded-full bg-green-400/80" />
+          <span className="w-3 h-3 rounded-full bg-[hsl(0,70%,65%)]" />
+          <span className="w-3 h-3 rounded-full bg-[hsl(45,80%,60%)]" />
+          <span className="w-3 h-3 rounded-full bg-[hsl(140,60%,50%)]" />
         </div>
         <span className="text-xs text-muted-foreground/60 ml-2 font-mono">workspace.google.com</span>
       </div>
       <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-green-500 animate-status-pulse" />
-        <span className="text-[10px] text-green-500 font-medium">Active</span>
+        <span className="w-2 h-2 rounded-full bg-[hsl(140,60%,50%)] animate-status-pulse" />
+        <span className="text-[10px] text-muted-foreground font-medium">Active</span>
       </div>
     </div>
-
-    <div className="flex min-h-[280px] md:min-h-[340px]">
-      {/* Sidebar */}
+    <div className="flex min-h-[260px] md:min-h-[320px]">
       <div className="hidden md:flex flex-col w-14 border-r border-border/40 bg-card/50 py-4 items-center gap-4">
-        <img src={gmailIcon} alt="Gmail" width={20} height={20} />
-        <img src={docsIcon} alt="Docs" width={20} height={20} />
-        <img src={meetIcon} alt="Meet" width={20} height={20} />
-        <img src={sheetsIcon} alt="Sheets" width={20} height={20} />
-        <img src={chatIcon} alt="Chat" width={20} height={20} />
-        <div className="mt-auto">
-          <Settings size={16} className="text-muted-foreground/40" />
-        </div>
+        {[gmailIcon, docsIcon, meetIcon, sheetsIcon, chatIcon].map((src, i) => (
+          <img key={i} src={src} alt="" width={20} height={20} className="opacity-70" />
+        ))}
+        <div className="mt-auto"><Settings size={16} className="text-muted-foreground/40" /></div>
       </div>
-
-      {/* Main content */}
-      <div className="flex-1 p-4 space-y-4">
-        {/* Metrics row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="flex-1 p-4 space-y-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
           {[
-            { label: "Usuarios", value: "48", icon: Users, color: "text-blue-500" },
-            { label: "Almacenamiento", value: "2.4 TB", icon: HardDrive, color: "text-yellow-500" },
-            { label: "Emails Hoy", value: "1,247", icon: Mail, color: "text-red-500" },
-            { label: "Reuniones", value: "23", icon: Video, color: "text-green-500" },
+            { label: "Usuarios", value: "48", icon: Users, color: "text-primary" },
+            { label: "Almacenamiento", value: "2.4 TB", icon: HardDrive, color: "text-accent" },
+            { label: "Emails Hoy", value: "1,247", icon: Mail, color: "text-destructive" },
+            { label: "Reuniones", value: "23", icon: Video, color: "text-primary" },
           ].map((m, i) => (
-            <div key={i} className="p-3 rounded-lg border border-border/40 bg-card/50">
-              <div className="flex items-center gap-2 mb-1">
-                <m.icon size={12} className={m.color} />
-                <span className="text-[10px] text-muted-foreground/60 uppercase tracking-wider">{m.label}</span>
+            <div key={i} className="p-2.5 rounded-lg border border-border/40 bg-card/50">
+              <div className="flex items-center gap-1.5 mb-1">
+                <m.icon size={11} className={m.color} />
+                <span className="text-[9px] text-muted-foreground/60 uppercase tracking-wider">{m.label}</span>
               </div>
-              <p className="text-lg font-bold font-display text-foreground">{m.value}</p>
+              <p className="text-base font-bold font-display text-foreground">{m.value}</p>
             </div>
           ))}
         </div>
-
-        {/* Activity feed */}
         <div className="rounded-lg border border-border/40 bg-card/30 p-3">
-          <p className="text-[10px] text-muted-foreground/50 uppercase tracking-wider mb-2">Actividad Reciente</p>
-          <div className="space-y-2">
+          <p className="text-[9px] text-muted-foreground/50 uppercase tracking-wider mb-2">Actividad Reciente</p>
+          <div className="space-y-1.5">
             {[
-              { icon: Mail, msg: "Migración completada — 48 cuentas", color: "text-green-500" },
-              { icon: Shield, msg: "2FA activado para todos los usuarios", color: "text-blue-500" },
-              { icon: HardDrive, msg: "Drive compartido creado — Equipo Ventas", color: "text-yellow-500" },
+              { icon: Mail, msg: "Migración completada — 48 cuentas", color: "text-primary" },
+              { icon: Shield, msg: "2FA activado para todos los usuarios", color: "text-primary" },
+              { icon: HardDrive, msg: "Drive compartido — Equipo Ventas", color: "text-accent" },
               { icon: Lock, msg: "Política de seguridad actualizada", color: "text-primary" },
             ].map((l, i) => (
               <div key={i} className="flex items-center gap-2">
-                <l.icon size={12} className={l.color} />
+                <l.icon size={11} className={l.color} />
                 <span className="text-xs text-muted-foreground/70 truncate">{l.msg}</span>
               </div>
             ))}
@@ -169,48 +239,27 @@ const WorkspaceMockup = () => (
   </motion.div>
 );
 
-/* ─── Data ─── */
-const problems = [
-  { icon: AlertTriangle, title: "Correos no profesionales", desc: "Usar @gmail.com o @hotmail.com reduce la confianza de tus clientes y afecta la imagen de tu empresa." },
-  { icon: Search, title: "Pérdida de información", desc: "Archivos dispersos en USB, computadoras personales o chats de WhatsApp sin respaldo centralizado." },
-  { icon: Users, title: "Falta de colaboración", desc: "Tu equipo no puede trabajar en documentos al mismo tiempo ni compartir información de forma organizada." },
-  { icon: Lock, title: "Sin control de seguridad", desc: "No tienes visibilidad sobre quién accede a qué información ni puedes gestionar permisos de forma centralizada." },
-  { icon: Settings, title: "Trabajo manual innecesario", desc: "Procesos que podrían automatizarse siguen dependiendo de correos, llamadas y archivos adjuntos." },
-];
+/* ─── FAQ Accordion Item ─── */
+const FaqItem = ({ q, a, open, onClick }: { q: string; a: string; open: boolean; onClick: () => void }) => (
+  <div className="border border-border/60 rounded-xl overflow-hidden bg-card transition-colors">
+    <button onClick={onClick} className="w-full flex items-center justify-between p-5 text-left gap-4">
+      <span className="font-semibold text-foreground text-[15px] leading-snug">{q}</span>
+      <ChevronDown size={18} className={`text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+    </button>
+    <div className={`grid transition-all duration-300 ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+      <div className="overflow-hidden">
+        <p className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed">{a}</p>
+      </div>
+    </div>
+  </div>
+);
 
-/* ─── Google Workspace Tools with official icons ─── */
-const workspaceTools = [
-  { name: "Gmail", label: "Correo empresarial", icon: gmailIcon },
-  { name: "Google Drive", label: "Almacenamiento en la nube", icon: driveIcon },
-  { name: "Google Meet", label: "Videollamadas", icon: meetIcon },
-  { name: "Google Docs", label: "Documentos colaborativos", icon: docsIcon },
-  { name: "Google Sheets", label: "Control y reportes", icon: sheetsIcon },
-  { name: "Google Slides", label: "Presentaciones", icon: slidesIcon },
-  { name: "Google Chat", label: "Mensajería empresarial", icon: chatIcon },
-  { name: "Google Forms", label: "Formularios y encuestas", icon: formsIcon },
-  { name: "Google Sites", label: "Sitios web internos", icon: sitesIcon },
-  { name: "Currents", label: "Comunicación interna", icon: currentsIcon },
-  { name: "Jamboard", label: "Pizarra colaborativa", icon: calendarIcon },
-];
-
-const services = [
-  { icon: RefreshCw, title: "Migración a Google Workspace", desc: "Migramos tus correos, contactos, calendarios y archivos desde cualquier plataforma sin pérdida de datos ni tiempo de inactividad." },
-  { icon: Layers, title: "Implementación completa", desc: "Configuramos Google Workspace desde cero: dominio, cuentas de usuario, políticas de seguridad y estructura organizacional." },
-  { icon: Headphones, title: "Administración y soporte", desc: "Gestionamos tu consola de administración, resolvemos incidencias y mantenemos tu entorno actualizado y optimizado." },
-  { icon: Shield, title: "Configuración de seguridad", desc: "Implementamos autenticación de dos factores, políticas de contraseñas, control de acceso y prevención de pérdida de datos (DLP)." },
-  { icon: Zap, title: "Integración con sistemas", desc: "Conectamos Google Workspace con tu CRM, ERP, herramientas de automatización y otros sistemas empresariales." },
-];
-
-const benefits = [
-  { icon: Users, title: "Trabajo en tiempo real", desc: "Tu equipo colabora simultáneamente en documentos, hojas de cálculo y presentaciones desde cualquier dispositivo." },
-  { icon: Shield, title: "Seguridad empresarial", desc: "Cifrado de datos, autenticación de dos factores, gestión de dispositivos y cumplimiento de normativas de seguridad." },
-  { icon: Globe, title: "Acceso desde cualquier lugar", desc: "Trabaja desde oficina, casa o cualquier ubicación con acceso a todos tus archivos y herramientas en la nube." },
-  { icon: Zap, title: "Escalabilidad inmediata", desc: "Agrega o elimina usuarios en minutos. Tu infraestructura crece al ritmo de tu empresa sin inversión en hardware." },
-];
-
-/* ─── Component ─── */
+/* ══════════════════════════════════════════════
+   MAIN COMPONENT
+   ══════════════════════════════════════════════ */
 const GoogleWorkspaceMexico = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
@@ -224,49 +273,47 @@ const GoogleWorkspaceMexico = () => {
       />
       <Header />
 
-      {/* ──────── HERO ──────── */}
-      <section className="relative min-h-0 md:min-h-[90vh] flex items-center pt-6 md:pt-20 pb-12 md:pb-20 overflow-hidden">
+      {/* ══════════ 1. HERO ══════════ */}
+      <section className="relative min-h-0 md:min-h-[92vh] flex items-center pt-8 md:pt-24 pb-16 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-        <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/[0.06] blur-[80px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fade()} className="text-center lg:text-left">
-              <SectionBadge>Google Workspace</SectionBadge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Google Workspace Partner
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold font-display leading-[1.08] mb-6 tracking-tight">
                 Google Workspace para{" "}
                 <span className="gradient-text">Empresas en México</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg mx-auto lg:mx-0">
-                Implementamos, migramos y administramos Google Workspace para empresas que necesitan operar mejor, colaborar en tiempo real y escalar sin fricción.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                Implementamos, migramos y administramos Google Workspace para empresas que necesitan colaborar mejor, operar con seguridad y escalar sin fricción.
               </p>
-              <div className="flex flex-col gap-2.5 mb-8">
-                {[
-                  { icon: Mail, text: "Correo profesional con tu dominio" },
-                  { icon: Shield, text: "Seguridad empresarial avanzada" },
-                  { icon: Globe, text: "Acceso desde cualquier dispositivo" },
-                ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                      <b.icon size={14} className="text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground/80">{b.text}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
                 <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
-                  <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
+                  <a href={CAL} target="_blank" rel="noopener noreferrer">
                     Solicitar implementación <ArrowRight size={16} className="ml-1" />
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <a href={WA} target="_blank" rel="noopener noreferrer">
                     Hablar con un especialista
                   </a>
                 </Button>
+              </div>
+
+              {/* Apps strip */}
+              <div className="flex items-center gap-1 justify-center lg:justify-start">
+                {heroApps.map((app, i) => (
+                  <div key={i} className="w-10 h-10 rounded-xl bg-card border border-border/60 flex items-center justify-center" title={app.name}>
+                    <img src={app.icon} alt={app.name} width={22} height={22} />
+                  </div>
+                ))}
+                <span className="text-xs text-muted-foreground ml-3">+4 herramientas incluidas</span>
               </div>
             </motion.div>
             <WorkspaceMockup />
@@ -274,75 +321,92 @@ const GoogleWorkspaceMexico = () => {
         </div>
       </section>
 
-      {/* ──────── PROBLEMA ──────── */}
-      <section className="py-24 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
-        <div className="hidden md:block absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[60px] pointer-events-none" />
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <motion.div {...fade()} className="lg:sticky lg:top-32">
-              <SectionBadge variant="destructive">Problema</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-foreground leading-tight">
-                ¿Tu empresa sigue usando correos desordenados o <span className="gradient-text">sistemas ineficientes</span>?
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-md mb-6">
-                La falta de herramientas profesionales de colaboración frena el crecimiento de tu empresa y pone en riesgo tu información.
-              </p>
-            </motion.div>
-            <div className="space-y-3">
-              {problems.map((p, i) => (
-                <motion.div key={i} {...fade(i * 0.08)} className="group flex items-start gap-5 p-5 rounded-xl border border-border/60 bg-background shadow-sm hover:border-primary/25 hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-destructive/15 flex items-center justify-center shrink-0 group-hover:bg-primary/10 transition-colors">
-                    <p.icon size={18} className="text-destructive/90 group-hover:text-primary transition-colors" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-foreground mb-1 text-[15px] leading-snug">{p.title}</h3>
-                    <p className="text-sm text-muted-foreground/80 leading-relaxed">{p.desc}</p>
-                  </div>
-                  <ArrowUpRight size={14} className="text-muted-foreground/20 group-hover:text-primary/50 transition-colors shrink-0 mt-1" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ──────── HERRAMIENTAS INCLUIDAS ──────── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[60px] pointer-events-none" />
+      {/* ══════════ 2. INCLUDED TOOLS ══════════ */}
+      <section className="py-28 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
-            <SectionBadge>Solución</SectionBadge>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Ecosistema completo
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-foreground leading-tight">
               Herramientas incluidas en <span className="gradient-text">Google Workspace</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Una suite completa de herramientas profesionales que conectan a tu equipo y optimizan cada proceso de tu empresa.
+              Una suite completa de aplicaciones empresariales integradas que potencian la productividad de tu equipo.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {workspaceTools.map((tool, i) => (
               <motion.div
                 key={i}
-                {...fade(i * 0.06)}
-                className="group flex flex-col items-center text-center p-6 rounded-2xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+                {...fade(i * 0.04)}
+                className="group flex items-center gap-4 p-4 rounded-xl border border-border/50 bg-background hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300"
               >
-                <div className="w-16 h-16 rounded-2xl bg-muted/60 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:shadow-md transition-transform duration-300">
-                  <img src={tool.icon} alt={tool.name} width={36} height={36} loading="lazy" className="object-contain" />
+                <div className="w-12 h-12 rounded-xl bg-muted/50 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <img src={tool.icon} alt={tool.name} width={28} height={28} loading="lazy" className="object-contain" />
                 </div>
-                <h3 className="text-sm font-bold font-display text-foreground mb-1">{tool.name}</h3>
-                <p className="text-xs text-muted-foreground/70 leading-relaxed">{tool.label}</p>
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold font-display text-foreground leading-snug">{tool.name}</h3>
+                  <p className="text-[11px] text-muted-foreground/70 leading-snug mt-0.5 line-clamp-2">{tool.label}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── SERVICIOS ──────── */}
-      <section className="py-24 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
+      {/* ══════════ 3. BENEFITS ══════════ */}
+      <section className="py-28 relative overflow-hidden">
+        <div className="hidden md:block absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[80px] pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div {...fade()} className="text-center mb-20">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Beneficios
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-foreground leading-tight">
+              Todo lo que tu empresa necesita para <span className="gradient-text">trabajar mejor</span>
+            </h2>
+          </motion.div>
+
+          <div className="space-y-6 max-w-5xl mx-auto">
+            {benefitsData.map((b, i) => (
+              <motion.div
+                key={i}
+                {...fade(i * 0.1)}
+                className="group grid md:grid-cols-[1fr_1.2fr] gap-8 items-center p-8 rounded-2xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-lg transition-shadow transition-border duration-300"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <b.icon size={22} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold font-display text-foreground mb-2">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  {b.highlights.map((h, j) => (
+                    <div key={j} className="flex items-center gap-3 p-3 rounded-lg bg-muted/40 border border-border/30">
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      <span className="text-sm text-foreground font-medium">{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ 4. SERVICES ══════════ */}
+      <section className="py-28 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
-            <SectionBadge>Servicios</SectionBadge>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Servicios
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-foreground leading-tight">
               Lo que hacemos por <span className="gradient-text">tu empresa</span>
             </h2>
@@ -351,13 +415,13 @@ const GoogleWorkspaceMexico = () => {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {services.map((s, i) => (
-              <motion.div key={i} {...fade(i * 0.08)} className="group p-6 rounded-xl border border-border/60 bg-background hover:border-primary/25 hover:shadow-lg transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                  <s.icon size={22} className="text-primary" />
+              <motion.div key={i} {...fade(i * 0.08)} className="group p-6 rounded-xl border border-border/60 bg-background hover:border-primary/25 hover:shadow-lg transition-shadow transition-border duration-300">
+                <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors duration-300">
+                  <s.icon size={20} className="text-primary" />
                 </div>
-                <h3 className="text-lg font-bold font-display text-foreground mb-2">{s.title}</h3>
+                <h3 className="text-base font-bold font-display text-foreground mb-2 leading-snug">{s.title}</h3>
                 <p className="text-sm text-muted-foreground/80 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
@@ -365,71 +429,183 @@ const GoogleWorkspaceMexico = () => {
         </div>
       </section>
 
-      {/* ──────── BENEFICIOS ──────── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="hidden md:block absolute bottom-0 left-1/3 w-[600px] h-[400px] rounded-full bg-primary/[0.03] blur-[60px] pointer-events-none" />
+      {/* ══════════ 5. WHY IMPLEMENT ══════════ */}
+      <section className="py-28 relative overflow-hidden">
+        <div className="hidden md:block absolute bottom-0 left-1/4 w-[600px] h-[400px] rounded-full bg-accent/[0.04] blur-[80px] pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+            <motion.div {...fade()}>
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Ventajas
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-foreground leading-tight">
+                Por qué implementar <span className="gradient-text">Google Workspace</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
+                Las empresas más productivas de México ya operan con Google Workspace. Centraliza tu operación, protege tu información y escala sin fricción.
+              </p>
+              <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+                <a href={CAL} target="_blank" rel="noopener noreferrer">
+                  Agenda una consulta <ArrowRight size={16} className="ml-1" />
+                </a>
+              </Button>
+            </motion.div>
+
+            <div className="space-y-4">
+              {whyBlocks.map((w, i) => (
+                <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <w.icon size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-[15px] mb-1">{w.title}</h3>
+                    <p className="text-sm text-muted-foreground/80 leading-relaxed">{w.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ 6. PLANS ══════════ */}
+      <section className="py-28 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
-            <SectionBadge>Beneficios</SectionBadge>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Inversión
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-foreground leading-tight">
-              Por qué implementar <span className="gradient-text">Google Workspace</span>
+              Planes de implementación para <span className="gradient-text">empresas</span>
             </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Elige el plan que mejor se adapte a las necesidades de tu empresa. Todos incluyen acompañamiento personalizado.
+            </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            {benefits.map((b, i) => (
-              <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-5 p-6 rounded-xl border border-border/60 bg-card hover:border-primary/25 hover:shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <b.icon size={22} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold font-display text-foreground mb-1">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground/80 leading-relaxed">{b.desc}</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {plans.map((plan, i) => (
+              <motion.div
+                key={i}
+                {...fade(i * 0.1)}
+                className={`relative flex flex-col p-7 rounded-2xl border transition-shadow duration-300 ${
+                  plan.featured
+                    ? "border-primary/40 bg-background shadow-[var(--glow-soft)]"
+                    : "border-border/60 bg-background hover:shadow-lg"
+                }`}
+              >
+                {plan.featured && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                    Más popular
+                  </span>
+                )}
+                <h3 className="text-lg font-bold font-display text-foreground mb-1">{plan.name}</h3>
+                <p className="text-2xl font-extrabold font-display text-primary mb-3">{plan.price}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">{plan.desc}</p>
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((f, j) => (
+                    <li key={j} className="flex items-center gap-2.5 text-sm text-foreground">
+                      <CheckCircle2 size={15} className="text-primary shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant={plan.featured ? "gradient" : "outline"} className="w-full py-5" asChild>
+                  <a href={CAL} target="_blank" rel="noopener noreferrer">
+                    {plan.cta} <ArrowRight size={14} className="ml-1" />
+                  </a>
+                </Button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ──────── AUTORIDAD ──────── */}
-      <section className="py-20 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
+      {/* ══════════ 7. TRUST / SOCIAL PROOF ══════════ */}
+      <section className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div {...fade()} className="max-w-3xl mx-auto text-center">
-            <SectionBadge>Experiencia</SectionBadge>
-            <blockquote className="text-2xl sm:text-3xl font-bold font-display text-foreground leading-snug mb-6">
-              "Hemos implementado soluciones de Google Workspace para empresas que necesitan operar con{" "}
-              <span className="gradient-text">eficiencia y seguridad</span>."
-            </blockquote>
-            <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Desde startups hasta empresas con más de 200 colaboradores, configuramos entornos de trabajo que funcionan desde el primer día.
-            </p>
+          <motion.div {...fade()} className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                  Experiencia
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-5 text-foreground leading-tight">
+                  Implementaciones pensadas para empresas que necesitan <span className="gradient-text">operar sin fricción</span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Desde startups hasta empresas con más de 200 colaboradores, configuramos entornos de Google Workspace que funcionan desde el primer día — con seguridad, estructura y soporte real.
+                </p>
+                <blockquote className="border-l-2 border-primary pl-5 italic text-foreground/80 text-[15px] leading-relaxed">
+                  "Necesitábamos un equipo que entendiera nuestra operación y nos ayudara a migrar sin perder un solo correo. North lo logró en 5 días."
+                </blockquote>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "200+", label: "Cuentas migradas" },
+                  { value: "99.9%", label: "Uptime garantizado" },
+                  { value: "5 días", label: "Migración promedio" },
+                  { value: "24/7", label: "Soporte disponible" },
+                ].map((s, i) => (
+                  <motion.div key={i} {...fade(i * 0.1)} className="p-5 rounded-xl border border-border/60 bg-card text-center">
+                    <p className="text-2xl font-extrabold font-display text-primary mb-1">{s.value}</p>
+                    <p className="text-xs text-muted-foreground">{s.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ──────── CTA FINAL ──────── */}
-      <section className="py-24 relative overflow-hidden">
+      {/* ══════════ 8. FAQ ══════════ */}
+      <section className="py-28 relative overflow-hidden bg-[hsl(var(--surface-sunken))]">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div {...fade()} className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-5">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              Preguntas frecuentes
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground leading-tight">
+              Resolvemos tus <span className="gradient-text">dudas</span>
+            </h2>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto space-y-3">
+            {faqs.map((faq, i) => (
+              <motion.div key={i} {...fade(i * 0.06)}>
+                <FaqItem q={faq.q} a={faq.a} open={openFaq === i} onClick={() => setOpenFaq(openFaq === i ? null : i)} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ 9. FINAL CTA ══════════ */}
+      <section className="py-28 relative overflow-hidden">
         <div className="absolute inset-0 hero-gradient pointer-events-none" />
-        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-primary/8 blur-[80px] pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-primary/[0.06] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="max-w-2xl mx-auto text-center">
-            <SectionBadge>Siguiente Paso</SectionBadge>
+            <Building2 size={40} className="text-primary mx-auto mb-6" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-foreground leading-tight">
               Implementa Google Workspace{" "}
               <span className="gradient-text">sin complicaciones</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl mx-auto">
               Te ayudamos a migrar, configurar y administrar Google Workspace para que tu equipo trabaje mejor desde el primer día.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button variant="gradient" size="lg" className="text-base px-10 py-6" asChild>
-                <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
+                <a href={CAL} target="_blank" rel="noopener noreferrer">
                   Agenda una llamada <ArrowRight size={16} className="ml-1" />
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <a href={WA} target="_blank" rel="noopener noreferrer">
                   Hablar por WhatsApp
                 </a>
               </Button>
