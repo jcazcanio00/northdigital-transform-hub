@@ -81,20 +81,20 @@ const fade = (delay = 0) => ({
 
 /* ─── Data ─── */
 const heroApps = [
-  { icon: gmailIcon, name: "Gmail" },
-  { icon: meetIcon, name: "Meet" },
-  { icon: driveIcon, name: "Drive" },
-  { icon: docsIcon, name: "Docs" },
-  { icon: sheetsIcon, name: "Sheets" },
-  { icon: slidesIcon, name: "Slides" },
-  { icon: chatIcon, name: "Chat" },
+  { icon: gmailIcon, name: "Gmail", primary: true },
+  { icon: calendarIcon, name: "Calendar", primary: true },
+  { icon: driveIcon, name: "Drive", primary: true },
+  { icon: meetIcon, name: "Meet", primary: false },
+  { icon: docsIcon, name: "Docs", primary: false },
+  { icon: sheetsIcon, name: "Sheets", primary: false },
+  { icon: slidesIcon, name: "Slides", primary: false },
 ];
 
 const workspaceTools = [
   { name: "Gmail", label: "Correo empresarial personalizado con tu dominio", icon: gmailIcon },
   { name: "Google Drive", label: "Almacenamiento seguro en la nube para tu equipo", icon: driveIcon },
+  { name: "Google Calendar", label: "Calendario compartido y gestión de eventos", icon: calendarIcon },
   { name: "Google Meet", label: "Videollamadas HD con hasta 500 participantes", icon: meetIcon },
-  { name: "Google Calendar", label: "Calendario compartido y gestión de eventos", icon: jamboardIcon },
   { name: "Google Docs", label: "Documentos colaborativos en tiempo real", icon: docsIcon },
   { name: "Google Sheets", label: "Hojas de cálculo con análisis avanzado", icon: sheetsIcon },
   { name: "Google Slides", label: "Presentaciones profesionales colaborativas", icon: slidesIcon },
