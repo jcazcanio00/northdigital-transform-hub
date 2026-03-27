@@ -286,28 +286,32 @@ const GoogleWorkspaceMexico = () => {
         </div>
       </section>
 
-      {/* ──────── SOLUCIÓN — Google Workspace Tools ──────── */}
+      {/* ──────── HERRAMIENTAS INCLUIDAS ──────── */}
       <section className="py-24 relative overflow-hidden">
         <div className="hidden md:block absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[60px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="text-center mb-16">
             <SectionBadge>Solución</SectionBadge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display mb-4 text-foreground leading-tight">
-              Centraliza tu empresa con <span className="gradient-text">Google Workspace</span>
+              Herramientas incluidas en <span className="gradient-text">Google Workspace</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Una suite completa de herramientas profesionales que conectan a tu equipo y optimizan cada proceso de tu empresa.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {solutions.map((s, i) => (
-              <motion.div key={i} {...fade(i * 0.08)} className="group p-6 rounded-xl border border-border/60 bg-card hover:border-primary/25 hover:shadow-lg transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                  <s.icon size={22} className={s.color} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+            {workspaceTools.map((tool, i) => (
+              <motion.div
+                key={i}
+                {...fade(i * 0.06)}
+                className="group flex flex-col items-center text-center p-6 rounded-2xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-muted/60 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
+                  {tool.svg}
                 </div>
-                <h3 className="text-lg font-bold font-display text-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">{s.desc}</p>
+                <h3 className="text-sm font-bold font-display text-foreground mb-1">{tool.name}</h3>
+                <p className="text-xs text-muted-foreground/70 leading-relaxed">{tool.label}</p>
               </motion.div>
             ))}
           </div>
