@@ -31,6 +31,7 @@ import appsheetIcon from "@/assets/google/appsheet.svg";
 import vidsIcon from "@/assets/google/vids.svg";
 import tasksIcon from "@/assets/google/tasks.svg";
 import notebooklmIcon from "@/assets/google/notebooklm.svg";
+import keepIcon from "@/assets/google/notes.svg";
 import googleShieldIcon from "@/assets/google/google-shield.svg";
 
 /* ─── Constants ─── */
@@ -107,6 +108,7 @@ const workspaceTools = [
   { name: "Google Tasks", label: "Gestión de tareas y pendientes", icon: tasksIcon },
   { name: "NotebookLM", label: "Asistente de investigación con IA", icon: notebooklmIcon },
   { name: "Currents", label: "Comunicación interna empresarial", icon: currentsIcon },
+  { name: "Google Keep", label: "Notas y listas rápidas para tu equipo", icon: keepIcon },
 ];
 
 const benefitsData = [
