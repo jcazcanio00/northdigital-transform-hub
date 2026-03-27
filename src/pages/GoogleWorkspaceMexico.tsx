@@ -4,8 +4,8 @@ import {
   Mail, HardDrive, Video, CalendarDays, FileText,
   Shield, Globe, Zap, ArrowRight, CheckCircle2,
   Users, Settings, Lock, Layers, RefreshCw,
-  Headphones, ChevronDown,
-  ArrowUpRight, Building2, Workflow
+  Headphones, ChevronDown, MonitorSmartphone,
+  ArrowUpRight, Workflow
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -20,11 +20,17 @@ import meetIcon from "@/assets/google/meet.png";
 import docsIcon from "@/assets/google/docs.png";
 import sheetsIcon from "@/assets/google/sheets.png";
 import slidesIcon from "@/assets/google/slides.png";
-import chatIcon from "@/assets/google/chat.png";
+import chatIcon from "@/assets/google/chat-new.svg";
 import formsIcon from "@/assets/google/forms.png";
 import sitesIcon from "@/assets/google/sites.png";
 import currentsIcon from "@/assets/google/currents.png";
 import jamboardIcon from "@/assets/google/jamboard.png";
+import geminiIcon from "@/assets/google/gemini.png";
+import appsheetIcon from "@/assets/google/appsheet.svg";
+import vidsIcon from "@/assets/google/vids.svg";
+import tasksIcon from "@/assets/google/tasks.svg";
+import notebooklmIcon from "@/assets/google/notebooklm.svg";
+import googleShieldIcon from "@/assets/google/google-shield.svg";
 
 /* ─── Constants ─── */
 const WA = "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20la%20implementaci%C3%B3n%20de%20Google%20Workspace%20para%20mi%20empresa";
@@ -87,14 +93,19 @@ const workspaceTools = [
   { name: "Gmail", label: "Correo empresarial personalizado con tu dominio", icon: gmailIcon },
   { name: "Google Drive", label: "Almacenamiento seguro en la nube para tu equipo", icon: driveIcon },
   { name: "Google Meet", label: "Videollamadas HD con hasta 500 participantes", icon: meetIcon },
+  { name: "Google Calendar", label: "Calendario compartido y gestión de eventos", icon: jamboardIcon },
   { name: "Google Docs", label: "Documentos colaborativos en tiempo real", icon: docsIcon },
   { name: "Google Sheets", label: "Hojas de cálculo con análisis avanzado", icon: sheetsIcon },
   { name: "Google Slides", label: "Presentaciones profesionales colaborativas", icon: slidesIcon },
   { name: "Google Chat", label: "Mensajería instantánea para equipos", icon: chatIcon },
   { name: "Google Forms", label: "Formularios y encuestas inteligentes", icon: formsIcon },
   { name: "Google Sites", label: "Sitios web internos sin código", icon: sitesIcon },
+  { name: "Gemini", label: "IA integrada para productividad avanzada", icon: geminiIcon },
+  { name: "AppSheet", label: "Crea apps empresariales sin código", icon: appsheetIcon },
+  { name: "Google Vids", label: "Creación de videos colaborativa", icon: vidsIcon },
+  { name: "Google Tasks", label: "Gestión de tareas y pendientes", icon: tasksIcon },
+  { name: "NotebookLM", label: "Asistente de investigación con IA", icon: notebooklmIcon },
   { name: "Currents", label: "Comunicación interna empresarial", icon: currentsIcon },
-  { name: "Jamboard", label: "Pizarra digital colaborativa", icon: jamboardIcon },
 ];
 
 const benefitsData = [
@@ -130,6 +141,7 @@ const services = [
   { icon: Shield, title: "Configuración de seguridad", desc: "Autenticación de dos factores, políticas de contraseñas, control de acceso y prevención de pérdida de datos (DLP)." },
   { icon: Workflow, title: "Integración con sistemas", desc: "Conectamos Google Workspace con tu CRM, ERP, herramientas de automatización y sistemas empresariales." },
   { icon: Headphones, title: "Soporte y administración", desc: "Gestionamos tu consola de administración, resolvemos incidencias y mantenemos tu entorno actualizado." },
+  { icon: MonitorSmartphone, title: "Administración continua", desc: "Monitoreamos, optimizamos y damos soporte a tu entorno de Google Workspace para asegurar estabilidad y rendimiento continuo." },
 ];
 
 const whyBlocks = [
@@ -299,11 +311,11 @@ const GoogleWorkspaceMexico = () => {
                     Solicitar implementación <ArrowRight size={16} className="ml-1" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                  <a href={WA} target="_blank" rel="noopener noreferrer">
-                    Hablar con un especialista
-                  </a>
-                </Button>
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border border-[#25D366]/40 text-[#25D366] font-semibold text-base transition-all duration-300 hover:bg-[#25D366]/10 hover:border-[#25D366]/60 hover:shadow-[0_0_20px_rgba(37,211,102,0.15)]"
+                >
+                  Hablar con un especialista
+                </a>
               </div>
 
               {/* Apps strip */}
@@ -313,7 +325,7 @@ const GoogleWorkspaceMexico = () => {
                     <img src={app.icon} alt={app.name} width={22} height={22} />
                   </div>
                 ))}
-                <span className="text-xs text-muted-foreground ml-3">+4 herramientas incluidas</span>
+                <span className="text-xs text-muted-foreground ml-3">+9 herramientas incluidas</span>
               </div>
             </motion.div>
             <WorkspaceMockup />
@@ -453,17 +465,22 @@ const GoogleWorkspaceMexico = () => {
             </motion.div>
 
             <div className="space-y-4">
-              {whyBlocks.map((w, i) => (
-                <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <w.icon size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground text-[15px] mb-1">{w.title}</h3>
-                    <p className="text-sm text-muted-foreground/80 leading-relaxed">{w.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {whyBlocks.map((w, i) => {
+                const isSecurityBlock = w.icon === Shield;
+                return (
+                  <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      {isSecurityBlock
+                        ? <img src={googleShieldIcon} alt="Google Security" width={22} height={22} className="object-contain" />
+                        : <w.icon size={18} className="text-primary" />}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground text-[15px] mb-1">{w.title}</h3>
+                      <p className="text-sm text-muted-foreground/80 leading-relaxed">{w.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -590,7 +607,9 @@ const GoogleWorkspaceMexico = () => {
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-primary/[0.06] blur-[80px] pointer-events-none" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div {...fade()} className="max-w-2xl mx-auto text-center">
-            <Building2 size={40} className="text-primary mx-auto mb-6" />
+            <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+              <img src="/favicon.webp" alt="North" className="w-8 h-8 object-contain" />
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-6 text-foreground leading-tight">
               Implementa Google Workspace{" "}
               <span className="gradient-text">sin complicaciones</span>
@@ -604,11 +623,11 @@ const GoogleWorkspaceMexico = () => {
                   Agenda una llamada <ArrowRight size={16} className="ml-1" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                <a href={WA} target="_blank" rel="noopener noreferrer">
-                  Hablar por WhatsApp
-                </a>
-              </Button>
+              <a href={WA} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-12 px-8 rounded-xl border border-[#25D366]/40 text-[#25D366] font-semibold text-base transition-all duration-300 hover:bg-[#25D366]/10 hover:border-[#25D366]/60 hover:shadow-[0_0_20px_rgba(37,211,102,0.15)]"
+              >
+                Hablar por WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>
