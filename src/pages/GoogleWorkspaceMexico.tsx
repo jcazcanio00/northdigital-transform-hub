@@ -211,7 +211,7 @@ const WorkspaceMockup = () => (
     </div>
     <div className="flex min-h-[260px] md:min-h-[320px]">
       <div className="hidden md:flex flex-col w-14 border-r border-border/40 bg-card/50 py-4 items-center gap-4">
-        {[gmailIcon, docsIcon, meetIcon, sheetsIcon, chatIcon].map((src, i) => (
+        {[gmailIcon, calendarIcon, driveIcon, meetIcon, chatIcon].map((src, i) => (
           <img key={i} src={src} alt="" width={20} height={20} className="opacity-70" />
         ))}
         <div className="mt-auto"><Settings size={16} className="text-muted-foreground/40" /></div>
@@ -324,8 +324,8 @@ const GoogleWorkspaceMexico = () => {
               {/* Apps strip */}
               <div className="flex items-center gap-2 justify-center lg:justify-start">
                 {heroApps.map((app, i) => (
-                  <div key={i} className={`rounded-xl bg-card border flex items-center justify-center transition-transform duration-300 hover:scale-110 ${app.primary ? "w-12 h-12 border-primary/25 shadow-sm" : "w-10 h-10 border-border/60"}`} title={app.name}>
-                    <img src={app.icon} alt={app.name} width={app.primary ? 26 : 20} height={app.primary ? 26 : 20} />
+                  <div key={i} className="rounded-xl bg-card border border-border/60 flex items-center justify-center w-12 h-12 shadow-sm transition-transform duration-300 hover:scale-110" title={app.name}>
+                    <img src={app.icon} alt={app.name} width={26} height={26} />
                   </div>
                 ))}
                 <span className="text-xs text-muted-foreground ml-3">+9 más</span>
