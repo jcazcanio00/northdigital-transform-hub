@@ -165,12 +165,90 @@ const problems = [
   { icon: Settings, title: "Trabajo manual innecesario", desc: "Procesos que podrían automatizarse siguen dependiendo de correos, llamadas y archivos adjuntos." },
 ];
 
-const solutions = [
-  { icon: Mail, title: "Gmail Empresarial", desc: "Correo profesional con tu dominio, 30 GB+ de almacenamiento y búsqueda avanzada. Sin anuncios, con soporte 24/7.", color: "text-red-500" },
-  { icon: HardDrive, title: "Google Drive", desc: "Almacenamiento en la nube seguro y compartido. Organiza archivos por equipo con permisos granulares.", color: "text-yellow-500" },
-  { icon: Video, title: "Google Meet", desc: "Videollamadas HD para hasta 500 participantes. Grabación, subtítulos en vivo y pantalla compartida.", color: "text-green-500" },
-  { icon: CalendarDays, title: "Google Calendar", desc: "Agenda compartida del equipo. Programa reuniones, reserva salas y sincroniza con otros calendarios.", color: "text-blue-500" },
-  { icon: FileText, title: "Documentos Colaborativos", desc: "Docs, Sheets y Slides con edición en tiempo real. Múltiples personas en el mismo archivo simultáneamente.", color: "text-blue-400" },
+/* ─── Google Workspace Tools with official-style SVG icons ─── */
+const workspaceTools: { name: string; label: string; svg: React.ReactNode }[] = [
+  {
+    name: "Gmail",
+    label: "Correo empresarial",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#4285F4" d="M5 10v28a3 3 0 0 0 3 3h4V17.6L24 28l12-10.4V41h4a3 3 0 0 0 3-3V10L40 4l-8 6-8 6-8-6-8-6Z"/>
+        <path fill="#34A853" d="M5 10l12 10.4V41H8a3 3 0 0 1-3-3Z"/>
+        <path fill="#FBBC04" d="M36 41V20.4L48 10v28a3 3 0 0 1-3 3Z"/>
+        <path fill="#EA4335" d="M48 10v1.2L36 20.4l-12 10L12 20.4 0 11.2V10a3 3 0 0 1 3-3l5 4 8 6 8 6 8-6 8-6 5-4a3 3 0 0 1 3 3Z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Drive",
+    label: "Almacenamiento en la nube",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#FFC107" d="m29.56 30-4.88-8.44L16 6h16l13.56 24Z"/>
+        <path fill="#1976D2" d="M16 6 2.44 30l7.12 12L23.12 18Z"/>
+        <path fill="#4CAF50" d="M29.56 30H2.44L9.56 42h33.88Z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Meet",
+    label: "Videollamadas",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#00832D" d="M30 24v6l10 8V10l-10 8v6Z"/>
+        <rect fill="#00AC47" x="6" y="12" width="24" height="24" rx="3"/>
+        <path fill="#00832D" d="M30 24v-6l10-8v28l-10-8v-6Z"/>
+        <path fill="#2E7D32" d="M30 18l10-8H33L30 18Z"/>
+        <path fill="#4CAF50" d="M30 30l10 8H33L30 30Z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Calendar",
+    label: "Gestión de agenda",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#fff" d="M34 6H14a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4V10a4 4 0 0 0-4-4Z"/>
+        <path fill="#1A73E8" d="M34 6H14a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4V10a4 4 0 0 0-4-4Zm0 2a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z"/>
+        <path fill="#1A73E8" d="M14 16h20v2H14zM18 22h4v4h-4zM26 22h4v4h-4zM18 30h4v4h-4zM26 30h4v4h-4z"/>
+        <path fill="#EA4335" d="M18 10h4V6h-4zM26 10h4V6h-4z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Docs",
+    label: "Documentos colaborativos",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#2196F3" d="M12 6a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16L28 6Z"/>
+        <path fill="#1565C0" d="M28 6v10h12Z"/>
+        <path fill="#E3F2FD" d="M16 22h16v2H16zM16 28h16v2H16zM16 34h10v2H16z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Sheets",
+    label: "Control y reportes",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#43A047" d="M12 6a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16L28 6Z"/>
+        <path fill="#2E7D32" d="M28 6v10h12Z"/>
+        <path fill="#E8F5E9" d="M14 22h20v14H14Zm2 2v4h7v-4Zm9 0v4h7v-4Zm-9 6v4h7v-4Zm9 0v4h7v-4Z"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Google Slides",
+    label: "Presentaciones",
+    svg: (
+      <svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <path fill="#F9A825" d="M12 6a4 4 0 0 0-4 4v28a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16L28 6Z"/>
+        <path fill="#F57F17" d="M28 6v10h12Z"/>
+        <rect fill="#FFF8E1" x="14" y="22" width="20" height="14" rx="1"/>
+        <rect fill="#F9A825" x="18" y="26" width="12" height="6" rx="0.5"/>
+      </svg>
+    ),
+  },
 ];
 
 const services = [
