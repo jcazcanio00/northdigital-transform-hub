@@ -93,14 +93,19 @@ const workspaceTools = [
   { name: "Gmail", label: "Correo empresarial personalizado con tu dominio", icon: gmailIcon },
   { name: "Google Drive", label: "Almacenamiento seguro en la nube para tu equipo", icon: driveIcon },
   { name: "Google Meet", label: "Videollamadas HD con hasta 500 participantes", icon: meetIcon },
+  { name: "Google Calendar", label: "Calendario compartido y gestión de eventos", icon: jamboardIcon },
   { name: "Google Docs", label: "Documentos colaborativos en tiempo real", icon: docsIcon },
   { name: "Google Sheets", label: "Hojas de cálculo con análisis avanzado", icon: sheetsIcon },
   { name: "Google Slides", label: "Presentaciones profesionales colaborativas", icon: slidesIcon },
   { name: "Google Chat", label: "Mensajería instantánea para equipos", icon: chatIcon },
   { name: "Google Forms", label: "Formularios y encuestas inteligentes", icon: formsIcon },
   { name: "Google Sites", label: "Sitios web internos sin código", icon: sitesIcon },
+  { name: "Gemini", label: "IA integrada para productividad avanzada", icon: geminiIcon },
+  { name: "AppSheet", label: "Crea apps empresariales sin código", icon: appsheetIcon },
+  { name: "Google Vids", label: "Creación de videos colaborativa", icon: vidsIcon },
+  { name: "Google Tasks", label: "Gestión de tareas y pendientes", icon: tasksIcon },
+  { name: "NotebookLM", label: "Asistente de investigación con IA", icon: notebooklmIcon },
   { name: "Currents", label: "Comunicación interna empresarial", icon: currentsIcon },
-  { name: "Jamboard", label: "Pizarra digital colaborativa", icon: jamboardIcon },
 ];
 
 const benefitsData = [
