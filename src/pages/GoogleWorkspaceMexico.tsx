@@ -311,11 +311,11 @@ const GoogleWorkspaceMexico = () => {
                     Solicitar implementación <ArrowRight size={16} className="ml-1" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
-                  <a href={WA} target="_blank" rel="noopener noreferrer">
-                    Hablar con un especialista
-                  </a>
-                </Button>
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-xl border border-[#25D366]/40 text-[#25D366] font-semibold text-base transition-all duration-300 hover:bg-[#25D366]/10 hover:border-[#25D366]/60 hover:shadow-[0_0_20px_rgba(37,211,102,0.15)]"
+                >
+                  Hablar con un especialista
+                </a>
               </div>
 
               {/* Apps strip */}
