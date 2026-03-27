@@ -325,7 +325,7 @@ const GoogleWorkspaceMexico = () => {
                     <img src={app.icon} alt={app.name} width={22} height={22} />
                   </div>
                 ))}
-                <span className="text-xs text-muted-foreground ml-3">+4 herramientas incluidas</span>
+                <span className="text-xs text-muted-foreground ml-3">+9 herramientas incluidas</span>
               </div>
             </motion.div>
             <WorkspaceMockup />
