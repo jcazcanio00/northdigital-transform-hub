@@ -4,8 +4,8 @@ import {
   Mail, HardDrive, Video, CalendarDays, FileText,
   Shield, Globe, Zap, ArrowRight, CheckCircle2,
   Users, Settings, Lock, Layers, RefreshCw,
-  Headphones, ChevronDown,
-  ArrowUpRight, Building2, Workflow
+  Headphones, ChevronDown, MonitorSmartphone,
+  ArrowUpRight, Workflow
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -20,11 +20,17 @@ import meetIcon from "@/assets/google/meet.png";
 import docsIcon from "@/assets/google/docs.png";
 import sheetsIcon from "@/assets/google/sheets.png";
 import slidesIcon from "@/assets/google/slides.png";
-import chatIcon from "@/assets/google/chat.png";
+import chatIcon from "@/assets/google/chat-new.svg";
 import formsIcon from "@/assets/google/forms.png";
 import sitesIcon from "@/assets/google/sites.png";
 import currentsIcon from "@/assets/google/currents.png";
 import jamboardIcon from "@/assets/google/jamboard.png";
+import geminiIcon from "@/assets/google/gemini.png";
+import appsheetIcon from "@/assets/google/appsheet.svg";
+import vidsIcon from "@/assets/google/vids.svg";
+import tasksIcon from "@/assets/google/tasks.svg";
+import notebooklmIcon from "@/assets/google/notebooklm.svg";
+import googleShieldIcon from "@/assets/google/google-shield.svg";
 
 /* ─── Constants ─── */
 const WA = "https://wa.me/529982127561?text=Hola%2C%20me%20interesa%20la%20implementaci%C3%B3n%20de%20Google%20Workspace%20para%20mi%20empresa";
