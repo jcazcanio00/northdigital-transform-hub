@@ -465,17 +465,22 @@ const GoogleWorkspaceMexico = () => {
             </motion.div>
 
             <div className="space-y-4">
-              {whyBlocks.map((w, i) => (
-                <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <w.icon size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground text-[15px] mb-1">{w.title}</h3>
-                    <p className="text-sm text-muted-foreground/80 leading-relaxed">{w.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {whyBlocks.map((w, i) => {
+                const isSecurityBlock = w.icon === Shield;
+                return (
+                  <motion.div key={i} {...fade(i * 0.1)} className="flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/20 hover:shadow-md transition-shadow transition-border duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      {isSecurityBlock
+                        ? <img src={googleShieldIcon} alt="Google Security" width={22} height={22} className="object-contain" />
+                        : <w.icon size={18} className="text-primary" />}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground text-[15px] mb-1">{w.title}</h3>
+                      <p className="text-sm text-muted-foreground/80 leading-relaxed">{w.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
