@@ -282,7 +282,7 @@ const GoogleWorkspaceMexico = () => {
         title="Google Workspace para Empresas en México | Implementación y Soporte"
         description="Implementamos y migramos Google Workspace para empresas en México. Configuración profesional, seguridad y soporte especializado."
         url="https://northmkt.com.mx/google-workspace-mexico"
-        image="https://northmkt.com.mx/og-google-workspace-v3.jpg"
+        image="https://northmkt.com.mx/og-google-workspace-v5.jpg"
         keywords="Google Workspace México, migración Google Workspace, implementación Google Workspace, soporte Google Workspace empresas, correo empresarial Google"
         jsonLd={jsonLd}
       />
