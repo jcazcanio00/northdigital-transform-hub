@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Users, Zap, BarChart3, Plug, ArrowRight, CheckCircle2,
@@ -551,7 +552,13 @@ const Software = () => {
                         <p className="text-xs font-semibold uppercase tracking-wider text-foreground/70 mb-3">Integraciones</p>
                         <div className="flex flex-wrap gap-2">
                           {c.integrations.map((int) => (
-                            <span key={int} className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground">{int}</span>
+                            int === "Google Workspace" ? (
+                              <Link key={int} to="/google-workspace-mexico" className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-primary hover:underline">
+                                {int}
+                              </Link>
+                            ) : (
+                              <span key={int} className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground">{int}</span>
+                            )
                           ))}
                         </div>
                       </div>
