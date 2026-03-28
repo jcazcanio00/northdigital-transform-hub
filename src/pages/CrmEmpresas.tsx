@@ -287,26 +287,26 @@ const CrmEmpresas = () => {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fade()} className="text-center lg:text-left">
+            <motion.div {...fade()} className="flex flex-col items-center lg:items-start text-center lg:text-left">
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6 w-full">
                 CRM para{" "}
                 <span className="gradient-text">Empresas</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg mx-auto lg:mx-0">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-8 max-w-lg">
                 Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
               </p>
               {/* Benefit highlights */}
-              <div className="flex flex-col gap-2.5 mb-8">
+              <div className="flex flex-col gap-3 mb-8 w-full max-w-md mx-auto lg:mx-0">
                 {[
                   { icon: Zap, text: "Seguimiento automático de leads" },
                   { icon: Target, text: "Control total del pipeline de ventas" },
                   { icon: BarChart3, text: "Reportes en tiempo real" },
                 ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-3">
+                  <div key={i} className="flex items-center gap-3 text-left">
                     <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                       <b.icon size={14} className="text-primary" />
                     </div>
@@ -314,13 +314,13 @@ const CrmEmpresas = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md mx-auto lg:mx-0">
+                <Button variant="gradient" size="lg" className="text-base px-8 py-6 flex-1" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     Hablar con un especialista <ArrowRight size={16} className="ml-1" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6" asChild>
+                <Button variant="outline" size="lg" className="text-base px-8 py-6 flex-1" asChild>
                   <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
                     <Calendar size={16} className="mr-1" /> Agendar Consulta
                   </a>
