@@ -446,3 +446,19 @@
   transform: translateY(24px);
   will-change: transform, opacity;
 }
+
+/* Blog card scroll-reveal (CSS-only, GPU-composited) */
+.blog-card-reveal {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.blog-card-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
