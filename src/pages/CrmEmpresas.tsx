@@ -287,22 +287,22 @@ const CrmEmpresas = () => {
         <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
         <div className="hidden md:block absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="container mx-auto px-5 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fade()} className="flex flex-col items-center lg:items-start text-center lg:text-left">
               <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6 w-full">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-5 w-full">
                 CRM para{" "}
                 <span className="gradient-text">Empresas</span>
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-lg">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-3 max-w-lg">
                 Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
               </p>
-              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-8 max-w-lg">
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-7 max-w-lg">
                 Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
               </p>
               {/* Benefit highlights */}
-              <div className="flex flex-col gap-3 mb-8 w-full max-w-md mx-auto lg:mx-0">
+              <div className="flex flex-col gap-3 mb-7 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0">
                 {[
                   { icon: Zap, text: "Seguimiento automático de leads" },
                   { icon: Target, text: "Control total del pipeline de ventas" },
@@ -316,13 +316,13 @@ const CrmEmpresas = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md mx-auto lg:mx-0">
-                <Button variant="gradient" size="lg" className="text-base px-8 py-6 flex-1" asChild>
+              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0">
+                <Button variant="gradient" size="lg" className="text-sm sm:text-base px-6 py-5 sm:py-6 flex-1" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     Hablar con un especialista <ArrowRight size={16} className="ml-1" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6 flex-1" asChild>
+                <Button variant="outline" size="lg" className="text-sm sm:text-base px-6 py-5 sm:py-6 flex-1" asChild>
                   <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
                     <Calendar size={16} className="mr-1" /> Agendar Consulta
                   </a>
