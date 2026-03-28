@@ -55,29 +55,28 @@ const SectionBadge = ({ children, variant = "primary" }: { children: React.React
 
 /* ─── CRM Dashboard Mockup ─── */
 const CrmMockup = () => (
-  <div className="relative rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)] overflow-hidden">
-    {/* Title bar */}
-    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
+  <div className="relative mx-auto w-full max-w-[760px] overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
+    <div className="flex items-center justify-between border-b border-border/60 bg-card px-4 py-2.5">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-red-400/60" />
-          <span className="w-2 h-2 rounded-full bg-yellow-400/60" />
-          <span className="w-2 h-2 rounded-full bg-green-400/60" />
+          <span className="h-2 w-2 rounded-full bg-red-400/60" />
+          <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
+          <span className="h-2 w-2 rounded-full bg-green-400/60" />
         </div>
-        <span className="text-[9px] text-muted-foreground/50 ml-1 font-mono">crm.northmkt.com</span>
+        <span className="ml-1 text-[9px] font-mono text-muted-foreground/50">crm.northmkt.com</span>
       </div>
       <div className="flex items-center gap-1.5">
-        <div className="w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center">
+        <div className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/10">
           <Bell size={8} className="text-primary" />
         </div>
-        <div className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center">
+        <div className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/15">
           <span className="text-[7px] font-bold text-primary">N</span>
         </div>
       </div>
     </div>
+
     <div className="flex">
-      {/* Sidebar */}
-      <div className="w-36 border-r border-border/40 py-3 px-2 space-y-0.5 hidden md:block bg-card">
+      <div className="hidden w-36 space-y-0.5 border-r border-border/40 bg-card px-2 py-3 md:block">
         {[
           { icon: Monitor, label: "Dashboard", active: true },
           { icon: Users, label: "Contactos" },
@@ -86,41 +85,37 @@ const CrmMockup = () => (
           { icon: BarChart3, label: "Reportes" },
           { icon: Settings, label: "Config" },
         ].map((item, i) => (
-          <div key={i} className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[10px] font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/50"}`}>
+          <div key={i} className={`flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-[10px] font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/50"}`}>
             <item.icon size={12} />
             {item.label}
           </div>
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 p-3 space-y-2.5 bg-secondary">
-        {/* Metrics row */}
-        <div className="grid grid-cols-4 gap-2">
+      <div className="flex-1 space-y-2.5 bg-secondary p-2.5 sm:p-3">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {[
             { label: "Leads Activos", value: "247", change: "+18%", icon: Users, color: "text-primary" },
             { label: "Oportunidades", value: "$1.2M", change: "+24%", icon: TrendingUp, color: "text-emerald-500" },
             { label: "Tasa Cierre", value: "32%", change: "+5%", icon: Target, color: "text-accent" },
             { label: "Resp. Promedio", value: "2.4h", change: "-15%", icon: Clock, color: "text-amber-500" },
           ].map((m, i) => (
-            <div key={i} className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
-              <div className="flex items-center justify-between mb-1">
-                <p className="text-[8px] text-muted-foreground/50 font-medium">{m.label}</p>
+            <div key={i} className="rounded-lg border border-border/40 bg-background p-2 shadow-sm">
+              <div className="mb-1 flex items-center justify-between">
+                <p className="text-[8px] font-medium text-muted-foreground/50">{m.label}</p>
                 <m.icon size={10} className="text-muted-foreground/30" />
               </div>
-              <p className={`text-sm font-bold ${m.color} leading-none`}>{m.value}</p>
-              <p className="text-[8px] text-emerald-500 font-medium mt-0.5">{m.change}</p>
+              <p className={`text-sm font-bold leading-none sm:text-base ${m.color}`}>{m.value}</p>
+              <p className="mt-0.5 text-[8px] font-medium text-emerald-500">{m.change}</p>
             </div>
           ))}
         </div>
 
-        {/* Two-column: Pipeline + Lead Cards */}
-        <div className="grid grid-cols-5 gap-2">
-          {/* Pipeline Kanban */}
-          <div className="col-span-3 rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
-            <div className="flex items-center justify-between mb-2">
-              <p className="text-[9px] text-muted-foreground/60 font-semibold">Pipeline de Ventas</p>
-              <span className="text-[7px] px-1.5 py-0.5 rounded-full bg-primary/8 text-primary font-medium">$1.2M total</span>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-5">
+          <div className="rounded-lg border border-border/40 bg-background p-2.5 shadow-sm sm:col-span-3">
+            <div className="mb-2 flex items-center justify-between">
+              <p className="text-[9px] font-semibold text-muted-foreground/60">Pipeline de Ventas</p>
+              <span className="rounded-full bg-primary/8 px-1.5 py-0.5 text-[7px] font-medium text-primary">$1.2M total</span>
             </div>
             <div className="flex gap-1.5">
               {[
@@ -131,22 +126,21 @@ const CrmMockup = () => (
               ].map((s, i) => (
                 <div key={i} className="flex-1 space-y-1">
                   <div className="flex items-center justify-between">
-                    <p className="text-[7px] text-muted-foreground/40 font-medium">{s.stage}</p>
+                    <p className="text-[7px] font-medium text-muted-foreground/40">{s.stage}</p>
                     <p className="text-[7px] font-semibold text-foreground/50">{s.count}</p>
                   </div>
-                  <div className="h-1 bg-primary/[0.06] rounded-full overflow-hidden">
+                  <div className="h-1 overflow-hidden rounded-full bg-primary/[0.06]">
                     <motion.div
-                      className="h-full bg-primary/30 rounded-full"
+                      className="h-full rounded-full bg-primary/30"
                       initial={{ width: 0 }}
                       whileInView={{ width: s.pct }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.1 }}
                     />
                   </div>
-                  {/* Mini deal cards */}
                   <div className="space-y-0.5">
                     {s.deals.map((d, j) => (
-                      <div key={j} className="rounded bg-secondary border border-border/30 px-1.5 py-1 text-[7px] text-foreground/50 font-medium truncate">
+                      <div key={j} className="truncate rounded border border-border/30 bg-secondary px-1.5 py-1 text-[7px] font-medium text-foreground/50">
                         {d}
                       </div>
                     ))}
@@ -156,34 +150,32 @@ const CrmMockup = () => (
             </div>
           </div>
 
-          {/* Lead Cards */}
-          <div className="col-span-2 space-y-2">
-             <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
-              <p className="text-[9px] text-muted-foreground/60 font-semibold mb-2">Leads Recientes</p>
+          <div className="space-y-2 sm:col-span-2">
+            <div className="rounded-lg border border-border/40 bg-background p-2.5 shadow-sm">
+              <p className="mb-2 text-[9px] font-semibold text-muted-foreground/60">Leads Recientes</p>
               <div className="space-y-1.5">
                 {[
                   { name: "María González", company: "Grupo Inmob.", status: "Calificado", statusColor: "bg-emerald-500" },
                   { name: "Carlos Ruiz", company: "Tech Solutions", status: "Nuevo", statusColor: "bg-primary" },
                   { name: "Ana Mendoza", company: "LogiPack MX", status: "Propuesta", statusColor: "bg-amber-500" },
                 ].map((lead, i) => (
-                  <div key={i} className="flex items-center gap-2 p-1.5 rounded-md bg-secondary border border-border/20">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <div key={i} className="flex items-center gap-2 rounded-md border border-border/20 bg-secondary p-1.5">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
                       <span className="text-[7px] font-bold text-primary">{lead.name[0]}</span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[8px] font-semibold text-foreground/70 truncate">{lead.name}</p>
-                      <p className="text-[7px] text-muted-foreground/40 truncate">{lead.company}</p>
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-[8px] font-semibold text-foreground/70">{lead.name}</p>
+                      <p className="truncate text-[7px] text-muted-foreground/40">{lead.company}</p>
                     </div>
-                    <span className={`w-1.5 h-1.5 rounded-full ${lead.statusColor} shrink-0`} />
+                    <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${lead.statusColor}`} />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Mini chart */}
-            <div className="rounded-lg bg-background border border-border/40 p-2.5 shadow-sm">
-              <p className="text-[9px] text-muted-foreground/60 font-semibold mb-1.5">Conversiones</p>
-              <div className="flex items-end gap-[3px] h-10">
+            <div className="rounded-lg border border-border/40 bg-background p-2.5 shadow-sm">
+              <p className="mb-1.5 text-[9px] font-semibold text-muted-foreground/60">Conversiones</p>
+              <div className="flex h-10 items-end gap-[3px]">
                 {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 55, 75].map((h, i) => (
                   <motion.div
                     key={i}
@@ -195,7 +187,7 @@ const CrmMockup = () => (
                   />
                 ))}
               </div>
-              <div className="flex justify-between mt-1">
+              <div className="mt-1 flex justify-between">
                 <span className="text-[6px] text-muted-foreground/30">Ene</span>
                 <span className="text-[6px] text-muted-foreground/30">Jun</span>
                 <span className="text-[6px] text-muted-foreground/30">Dic</span>
@@ -204,19 +196,18 @@ const CrmMockup = () => (
           </div>
         </div>
 
-        {/* Activity bar */}
-        <div className="rounded-lg bg-background border border-border/40 p-2 shadow-sm">
+        <div className="hidden rounded-lg border border-border/40 bg-background p-2 shadow-sm sm:block">
           <div className="flex items-center gap-3">
             {[
               { icon: UserCheck, text: "Lead calificado: Grupo Inmobiliario", time: "5 min" },
               { icon: MessageSquare, text: "12 seguimientos enviados", time: "22 min" },
               { icon: Bell, text: "Propuesta aceptada: $45K", time: "1 hr" },
             ].map((a, i) => (
-              <div key={i} className="flex items-center gap-1.5 flex-1 text-[8px]">
-                <div className="w-4 h-4 rounded bg-primary/8 flex items-center justify-center shrink-0">
+              <div key={i} className="flex flex-1 items-center gap-1.5 text-[8px]">
+                <div className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-primary/8">
                   <a.icon size={8} className="text-primary" />
                 </div>
-                <span className="text-foreground/50 truncate">{a.text}</span>
+                <span className="truncate text-foreground/50">{a.text}</span>
               </div>
             ))}
           </div>
