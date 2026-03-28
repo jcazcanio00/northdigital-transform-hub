@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback, memo } from "react";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
@@ -13,7 +13,7 @@ import MarqueeText from "@/components/MarqueeText";
 import Footer from "@/components/Footer";
 import { getArticlesMeta, getFeaturedArticles, getExtendedExcerpt, type ArticleMeta } from "@/data/articles";
 
-/* ─── Fade helper ─── */
+/* ─── Fade helper (kept for non-card sections) ─── */
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -45,33 +45,58 @@ const jsonLd = {
   },
 };
 
+/* ─── CSS-only scroll reveal hook ─── */
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("is-visible");
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: "-40px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
+
 /* ─── Components ─── */
-const ArticleCard = ({ article }: { article: ArticleMeta }) => (
-  <Link to={article.url} className="block">
-    <motion.div
-      {...fade(0.05)}
-      className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5"
-    >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative h-44 overflow-hidden">
-        <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
-      </div>
-      <div className="relative z-10 p-5">
-        <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
-          <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
-          <span>·</span>
-          <span>{article.readTime} lectura</span>
+const ArticleCard = memo(({ article }: { article: ArticleMeta }) => {
+  const cardRef = useScrollReveal();
+  return (
+    <Link to={article.url} className="block">
+      <div
+        ref={cardRef}
+        className="blog-card-reveal group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(var(--primary)/0.15)] hover:-translate-y-1.5 transition-[border-color,box-shadow,transform] duration-500"
+      >
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
+          <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="400" height="225" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80">{article.categoryLabel}</span>
         </div>
-        <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
-        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">Leer más <ChevronRight size={14} /></span>
+        <div className="relative z-10 p-5 min-h-[140px]">
+          <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2.5">
+            <span className="flex items-center gap-1"><Clock size={10} /> {article.date}</span>
+            <span>·</span>
+            <span>{article.readTime} lectura</span>
+          </div>
+          <h3 className="text-base font-bold font-display mb-2 leading-snug group-hover:text-primary transition-colors duration-300">{article.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{article.excerpt}</p>
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-[gap] duration-300">Leer más <ChevronRight size={14} /></span>
+        </div>
       </div>
-    </motion.div>
-  </Link>
-);
+    </Link>
+  );
+});
+ArticleCard.displayName = "ArticleCard";
 
 /* ─── Main Page ─── */
 const BlogPage = () => {
