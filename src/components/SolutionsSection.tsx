@@ -13,7 +13,7 @@ const solutions = [
   {
     icon: Cloud,
     title: "Cloud Services",
-    description: "Implementación y gestión de servicios en la nube incluyendo hosting empresarial, Google Workspace, infraestructura escalable y plataformas cloud seguras.",
+    description: "Implementación y gestión de servicios en la nube incluyendo hosting empresarial, infraestructura escalable y plataformas cloud seguras.",
     href: "/cloud",
     tag: "Cloud",
   },

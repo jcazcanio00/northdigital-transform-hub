@@ -46,6 +46,7 @@ const Footer = () => (
               { label: "Software Empresarial", href: "/software" },
               { label: "Cloud Services", href: "/cloud" },
               { label: "Marketing de Crecimiento", href: "/marketing" },
+              { label: "Google Workspace", href: "/google-workspace-mexico" },
             ].map((l) => (
               <li key={l.label}>
                 <Link to={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">

@@ -10,6 +10,7 @@ const solutions = [
   { label: "Cloud Services", href: "/cloud" },
   { label: "Marketing de Crecimiento", href: "/marketing" },
   { label: "CRM para Empresas", href: "/crm-empresas" },
+  { label: "Google Workspace", href: "/google-workspace-mexico" },
 ];
 
 
