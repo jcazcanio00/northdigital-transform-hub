@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import {
@@ -319,6 +320,22 @@ const CloudPage = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Google Workspace CTA */}
+          <motion.div {...fade(0.2)} className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-lg font-bold font-display mb-2">¿Necesitas implementar Google Workspace?</h3>
+              <p className="text-sm text-muted-foreground max-w-lg">
+                Realizamos la <Link to="/google-workspace-mexico" className="text-primary hover:underline font-medium">implementación de Google Workspace</Link> para empresas en México: migración de correo, configuración de seguridad y soporte continuo.
+              </p>
+            </div>
+            <Link
+              to="/google-workspace-mexico"
+              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              Ver Google Workspace <ArrowRight size={14} />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

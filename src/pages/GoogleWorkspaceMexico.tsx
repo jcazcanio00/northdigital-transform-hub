@@ -280,10 +280,10 @@ const GoogleWorkspaceMexico = () => {
     <>
       <SEO
         title="Google Workspace para Empresas en México | Implementación y Soporte"
-        description="Implementamos y migramos Google Workspace para empresas en México. Configuración profesional, seguridad y soporte especializado."
+        description="Implementamos y migramos Google Workspace para empresas en México. Configuración profesional, seguridad, soporte y acompañamiento para equipos que quieren escalar."
         url="https://northmkt.com.mx/google-workspace-mexico"
         image="https://northmkt.com.mx/og-google-workspace-v10.jpg"
-        keywords="Google Workspace México, migración Google Workspace, implementación Google Workspace, soporte Google Workspace empresas, correo empresarial Google"
+        keywords="Google Workspace México, Google Workspace empresas, implementación Google Workspace, migración Google Workspace, correo empresarial Google, soporte Google Workspace México, Google Workspace para empresas, Google Workspace precio México, configurar Google Workspace, servicios Google Workspace México"
         jsonLd={jsonLd}
       />
       <Header />
