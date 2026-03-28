@@ -56,6 +56,8 @@
     { "source": "/cuanto-cuesta-implementar-un-crm-en-mexico/", "destination": "/cuanto-cuesta-implementar-un-crm-en-mexico/index.html" },
     { "source": "/google-workspace-mexico", "destination": "/google-workspace-mexico/index.html" },
     { "source": "/google-workspace-mexico/", "destination": "/google-workspace-mexico/index.html" },
+    { "source": "/blog/google-workspace-vs-microsoft-365", "destination": "/blog/google-workspace-vs-microsoft-365/index.html" },
+    { "source": "/blog/google-workspace-vs-microsoft-365/", "destination": "/blog/google-workspace-vs-microsoft-365/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
