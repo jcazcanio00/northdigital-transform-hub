@@ -7,7 +7,8 @@ export type ArticleContent =
   | { type: "list"; items: string[] }
   | { type: "ordered-list"; items: string[] }
   | { type: "code"; language: string; code: string }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 export interface Article {
   slug: string;
