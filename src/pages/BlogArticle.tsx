@@ -90,6 +90,29 @@ function ContentBlock({ block }: { block: ArticleContent }) {
           {block.caption && <figcaption className="mt-3 text-center text-sm text-muted-foreground/70">{block.caption}</figcaption>}
         </figure>
       );
+    case "table":
+      return (
+        <div className="my-8 overflow-x-auto rounded-xl border border-border/60 shadow-sm">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border bg-muted/50">
+                {block.headers.map((h, i) => (
+                  <th key={i} className="px-5 py-3.5 text-left font-semibold text-foreground whitespace-nowrap">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, i) => (
+                <tr key={i} className="border-b border-border/40 last:border-0 hover:bg-muted/30 transition-colors">
+                  {row.map((cell, j) => (
+                    <td key={j} className={`px-5 py-3.5 text-muted-foreground ${j === 0 ? "font-medium text-foreground" : ""}`}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     default:
       return null;
   }

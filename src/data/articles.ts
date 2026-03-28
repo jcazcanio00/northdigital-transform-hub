@@ -7,7 +7,8 @@ export type ArticleContent =
   | { type: "list"; items: string[] }
   | { type: "ordered-list"; items: string[] }
   | { type: "code"; language: string; code: string }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 export interface Article {
   slug: string;
@@ -947,6 +948,119 @@ export const articles: Article[] = [
       { type: "h2", text: "Conclusión: la inversión que define tu crecimiento" },
       { type: "paragraph", text: "Implementar un CRM en México en 2026 es una inversión que va desde $5,000 hasta más de $100,000 MXN, dependiendo de la complejidad y escala de tu operación. Pero el verdadero costo no es el CRM — es seguir vendiendo sin uno." },
       { type: "paragraph", text: "Las empresas que implementan CRM correctamente ven un retorno de inversión en los primeros 6 meses a través de mejor seguimiento, mayor conversión y decisiones basadas en datos reales. La pregunta no es si puedes pagarlo — es si puedes permitirte no tenerlo." },
+    ],
+  },
+
+  /* ═══════════════════════════════════════════════
+     Google Workspace vs Microsoft 365
+     ═══════════════════════════════════════════════ */
+  {
+    slug: "google-workspace-vs-microsoft-365",
+    url: "/blog/google-workspace-vs-microsoft-365",
+    title: "Google Workspace vs Microsoft 365: ¿Cuál conviene a tu empresa?",
+    seoTitle: "Google Workspace vs Microsoft 365 | ¿Cuál elegir?",
+    excerpt: "Comparativa completa entre Google Workspace y Microsoft 365. Descubre cuál conviene más para tu empresa en México según funcionalidades, precio y escalabilidad.",
+    category: "tech",
+    categoryLabel: "Tecnología Empresarial",
+    tags: ["Google Workspace", "Microsoft 365", "Office 365", "Productividad", "Correo empresarial", "Colaboración", "Cloud"],
+    date: "28 Mar 2026",
+    readTime: "10 min",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=630&fit=crop",
+    author: "Equipo North",
+    authorRole: "Tecnología Empresarial",
+    featured: false,
+    content: [
+      { type: "paragraph", text: "Elegir entre Google Workspace y Microsoft 365 es una de las decisiones tecnológicas más importantes para cualquier empresa en México. No se trata solo de correo electrónico — es una decisión que impacta directamente la productividad, los costos operativos y la capacidad de escalar tu negocio." },
+      { type: "paragraph", text: "En esta guía comparamos ambas plataformas a fondo para ayudarte a tomar la mejor decisión según el tipo de empresa que tienes, tu presupuesto y tus objetivos de crecimiento." },
+
+      { type: "h2", text: "¿Qué es Google Workspace y qué es Microsoft 365?" },
+      { type: "paragraph", text: "Google Workspace (antes G Suite) es la suite de productividad cloud de Google. Incluye Gmail, Drive, Docs, Sheets, Meet, Calendar y más de 15 herramientas integradas. Está diseñada desde cero para trabajar en la nube, con colaboración en tiempo real como pilar central." },
+      { type: "paragraph", text: "Microsoft 365 (antes Office 365) es la suite de productividad de Microsoft que incluye Outlook, Word, Excel, PowerPoint, Teams y OneDrive. Combina aplicaciones de escritorio tradicionales con funcionalidades cloud, ofreciendo una experiencia híbrida entre local y nube." },
+      { type: "paragraph", text: "Ambas plataformas están orientadas a empresas, pero su filosofía es fundamentalmente diferente: Google nació en la nube; Microsoft migró a ella." },
+
+      { type: "h2", text: "Principales diferencias entre Google Workspace y Microsoft 365" },
+      { type: "paragraph", text: "A continuación, una comparativa directa de las características más relevantes para empresas en México:" },
+      {
+        type: "table",
+        headers: ["Característica", "Google Workspace", "Microsoft 365"],
+        rows: [
+          ["Interfaz", "Limpia, minimalista, basada en web", "Compleja, potente, basada en escritorio"],
+          ["Colaboración en tiempo real", "Nativa en todas las apps", "Mejorada, pero no tan fluida"],
+          ["Almacenamiento", "30 GB a ilimitado según plan", "1 TB por usuario en todos los planes"],
+          ["Seguridad", "Cifrado avanzado, 2FA, consola admin", "Compliance avanzado, DLP, Azure AD"],
+          ["Facilidad de uso", "Muy intuitivo, curva de aprendizaje baja", "Requiere más capacitación"],
+          ["Integraciones", "Ecosistema Google + marketplace", "Ecosistema Microsoft + AppSource"],
+          ["Precio (MXN/usuario/mes)", "Desde ~$130 MXN", "Desde ~$150 MXN"],
+        ],
+      },
+
+      { type: "h2", text: "Ventajas de Google Workspace" },
+      { type: "list", items: [
+        "Simplicidad: la interfaz es intuitiva y cualquier equipo puede adoptarla sin capacitación extensa.",
+        "Colaboración en tiempo real: múltiples usuarios pueden editar documentos, hojas de cálculo y presentaciones simultáneamente sin conflictos de versión.",
+        "Cloud nativo: todo vive en la nube. No hay archivos locales que se pierdan, no hay versiones desactualizadas. Accedes desde cualquier dispositivo.",
+        "Ideal para empresas modernas: startups, agencias, equipos remotos y empresas que priorizan la agilidad operan mejor con Google Workspace.",
+        "Integración con IA: Gemini integrado en todas las aplicaciones para generar contenido, analizar datos y automatizar tareas.",
+        "Administración centralizada: consola de administración potente para gestionar usuarios, dispositivos y seguridad desde un solo lugar.",
+      ]},
+
+      { type: "h2", text: "Ventajas de Microsoft 365" },
+      { type: "list", items: [
+        "Potencia en Office: Excel avanzado con macros y VBA sigue siendo insuperable para análisis financiero y procesos complejos.",
+        "Compatibilidad corporativa: muchas industrias reguladas y empresas grandes ya tienen infraestructura Microsoft, facilitando la integración.",
+        "Uso offline robusto: las aplicaciones de escritorio funcionan sin conexión y sincronizan al reconectarse.",
+        "Empresas tradicionales: organizaciones con procesos establecidos en Word y Excel encuentran menor fricción en la transición.",
+        "Microsoft Teams: plataforma de comunicación unificada con integración profunda en el ecosistema Microsoft.",
+        "Compliance avanzado: herramientas de cumplimiento normativo y prevención de pérdida de datos para industrias reguladas.",
+      ]},
+
+      { type: "h2", text: "¿Cuál conviene más según tu tipo de empresa?" },
+      { type: "paragraph", text: "No existe una respuesta universal. La mejor plataforma depende del perfil de tu empresa:" },
+      { type: "h3", text: "Startups y negocios digitales → Google Workspace" },
+      { type: "paragraph", text: "Si tu empresa es joven, ágil y digital, Google Workspace es la opción natural. La colaboración en tiempo real, la simplicidad de uso y los costos competitivos lo hacen ideal para equipos que necesitan moverse rápido sin complicaciones técnicas." },
+      { type: "h3", text: "Empresas tradicionales y corporativos → Microsoft 365" },
+      { type: "paragraph", text: "Si tu empresa depende de Excel avanzado con macros, tiene infraestructura Windows establecida o opera en una industria regulada que requiere compliance específico, Microsoft 365 puede ser la mejor opción por compatibilidad." },
+      { type: "h3", text: "Equipos remotos y distribuidos → Google Workspace" },
+      { type: "paragraph", text: "Para equipos que trabajan desde diferentes ubicaciones, Google Workspace ofrece una experiencia superior. Todo funciona desde el navegador, la colaboración es instantánea y no hay dependencia de software instalado en máquinas específicas." },
+      { type: "h3", text: "Empresas con procesos complejos en Office → Microsoft 365" },
+      { type: "paragraph", text: "Si tu operación depende de plantillas complejas de Word, hojas de cálculo con macros avanzadas o flujos de trabajo en SharePoint, mantenerte en el ecosistema Microsoft evita la fricción de migración." },
+
+      { type: "h2", text: "Precios en México (2026)" },
+      { type: "paragraph", text: "Los precios varían según el plan y el número de usuarios. Aquí un resumen actualizado para empresas en México:" },
+      { type: "h3", text: "Google Workspace" },
+      { type: "list", items: [
+        "Business Starter: ~$130 MXN/usuario/mes — 30 GB de almacenamiento, correo empresarial, videoconferencias de hasta 100 participantes.",
+        "Business Standard: ~$260 MXN/usuario/mes — 2 TB de almacenamiento, grabación de reuniones, controles de seguridad avanzados.",
+        "Business Plus: ~$370 MXN/usuario/mes — 5 TB, Vault para retención de datos, controles de cumplimiento.",
+        "Enterprise: precio personalizado — almacenamiento ilimitado, seguridad avanzada, soporte premium.",
+      ]},
+      { type: "h3", text: "Microsoft 365" },
+      { type: "list", items: [
+        "Business Basic: ~$150 MXN/usuario/mes — apps web, 1 TB OneDrive, Teams.",
+        "Business Standard: ~$300 MXN/usuario/mes — apps de escritorio completas, 1 TB, Teams.",
+        "Business Premium: ~$450 MXN/usuario/mes — todo lo anterior + seguridad avanzada, Intune.",
+        "Enterprise E3/E5: precio personalizado — compliance, analytics avanzados, seguridad enterprise.",
+      ]},
+      { type: "h3", text: "Costos ocultos a considerar" },
+      { type: "paragraph", text: "Más allá de la licencia mensual, considera los costos de implementación, migración de datos, capacitación del equipo y soporte técnico continuo. En nuestra experiencia, Google Workspace tiene un costo total de propiedad menor porque requiere menos capacitación y menos soporte técnico a largo plazo." },
+
+      { type: "h2", text: "¿Cuál recomendamos en North?" },
+      { type: "paragraph", text: "Como agencia de tecnología empresarial, hemos implementado ambas plataformas para empresas de distintos tamaños en México. Nuestra recomendación clara para la mayoría de las empresas es Google Workspace." },
+      { type: "quote", text: "El 80% de las empresas que nos consultan operan mejor con Google Workspace. La simplicidad, el costo y la colaboración nativa hacen la diferencia." },
+      { type: "paragraph", text: "Las razones principales de nuestra recomendación:" },
+      { type: "ordered-list", items: [
+        "Menor curva de aprendizaje: los equipos adoptan Google Workspace en días, no semanas. Esto reduce costos de capacitación y acelera el retorno de inversión.",
+        "Costo total más bajo: aunque las licencias tienen precios similares, el costo de implementación, soporte y administración es significativamente menor con Google.",
+        "Colaboración superior: en nuestra experiencia, los equipos que usan Google Workspace colaboran de forma más fluida y producen resultados más rápido.",
+        "Seguridad moderna: la consola de administración de Google es más intuitiva y las políticas de seguridad son más fáciles de implementar sin un equipo de IT dedicado.",
+        "Escalabilidad sin fricción: agregar usuarios, cambiar planes o activar funcionalidades avanzadas se hace en minutos, no en días.",
+      ]},
+      { type: "paragraph", text: "Dicho esto, si tu empresa tiene dependencia crítica de macros de Excel, infraestructura Active Directory o requisitos de compliance específicos de Microsoft, respetamos esa necesidad y te orientamos en la mejor implementación posible." },
+
+      { type: "h2", text: "Conclusión" },
+      { type: "paragraph", text: "Google Workspace y Microsoft 365 son plataformas excelentes, pero sirven a perfiles diferentes. Google Workspace destaca por su simplicidad, colaboración nativa y costo total de propiedad más bajo. Microsoft 365 brilla en potencia de Office, compatibilidad corporativa y compliance avanzado." },
+      { type: "paragraph", text: "Para la mayoría de las empresas en México — especialmente PyMEs, startups y equipos en crecimiento — Google Workspace es la opción que ofrece mejor relación entre valor, productividad y escalabilidad." },
+      { type: "paragraph", text: "Si estás evaluando qué plataforma implementar, en North te ayudamos a tomar la decisión correcta, migrar tu información sin perder nada y dejar tu equipo operando al 100% desde el primer día." },
     ],
   },
 ];
