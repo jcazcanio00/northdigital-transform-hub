@@ -230,6 +230,8 @@ const CloudPage = () => {
         title="Servicios Cloud para Empresas | Infraestructura | North"
         description="Diseñamos, implementamos y operamos infraestructura cloud segura y escalable para empresas con operaciones críticas y crecimiento acelerado."
         url="https://northmkt.com.mx/cloud"
+        image="https://northmkt.com.mx/og-cloud.png"
+        imageType="image/png"
         keywords="servicios cloud, infraestructura cloud, hosting empresarial, cloud para empresas, servidores cloud"
         jsonLd={{
           "@context": "https://schema.org",
