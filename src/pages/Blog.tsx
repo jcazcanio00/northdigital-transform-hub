@@ -189,7 +189,7 @@ const BlogPage = () => {
                   <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
                     <img src={featured[0].image} alt={featured[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80 backdrop-blur-sm">{featured[0].categoryLabel}</span>
+                    <span className="absolute top-4 left-4 text-[9px] font-semibold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-primary/80">{featured[0].categoryLabel}</span>
                   </div>
                   <div className="relative z-10 p-6 lg:p-8">
                     <div className="flex items-center gap-3 text-[11px] text-muted-foreground mb-3">
@@ -219,7 +219,7 @@ const BlogPage = () => {
                     <div className="relative h-40 overflow-hidden">
                       <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80 backdrop-blur-sm">{article.categoryLabel}</span>
+                      <span className="absolute top-3 left-3 text-[8px] font-semibold uppercase tracking-wider text-white px-2 py-0.5 rounded-full bg-primary/80">{article.categoryLabel}</span>
                     </div>
                     <div className="relative z-10 p-5">
                       <div className="flex items-center gap-3 text-[10px] text-muted-foreground mb-2">
