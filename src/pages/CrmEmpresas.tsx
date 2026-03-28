@@ -271,54 +271,71 @@ const CrmEmpresas = () => {
       <Header />
 
       {/* ──────── HERO ──────── */}
-      <section className="relative min-h-0 md:min-h-[90vh] flex items-center pt-6 md:pt-20 pb-12 md:pb-20 overflow-hidden">
-        <div className="absolute inset-0 hero-gradient pointer-events-none" />
+      <section className="pt-6 md:pt-20 pb-12 md:pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-        <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
-        <div className="hidden md:block absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[60px] pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[80px] pointer-events-none" />
 
-        <div className="container mx-auto px-5 lg:px-8 relative z-10 overflow-x-hidden">
-          <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
-            <motion.div {...fade()} className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-full">
-              <SectionBadge>CRM &amp; Automatización de Ventas</SectionBadge>
-              <h1 className="text-[2.4rem] sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.02] tracking-[-0.02em] mb-4 w-full max-w-[12ch] mx-auto lg:mx-0">
-                CRM para <span className="gradient-text">Empresas</span>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT — Text */}
+            <motion.div {...fade()} className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                <Database size={12} className="text-primary" />
+                CRM EMPRESARIAL
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-6">
+                CRM que Impulsa tus Ventas y Automatiza tu{" "}
+                <span className="gradient-text">Empresa</span>
               </h1>
-              <p className="text-[clamp(1.05rem,4.5vw,1.3rem)] text-muted-foreground leading-[1.45] mb-4 max-w-[20ch] sm:max-w-xl mx-auto lg:mx-0 text-balance">
-                Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te permiten tener control total de tu pipeline comercial.
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                Implementamos sistemas CRM que organizan tus ventas, automatizan el seguimiento de clientes y te dan control total de tu pipeline comercial.
               </p>
-              <p className="hidden sm:block text-sm text-muted-foreground/80 leading-[1.6] mb-7 max-w-xl mx-auto lg:mx-0 text-balance">
-                Muchas empresas pierden oportunidades porque sus leads se gestionan en Excel, WhatsApp o correos desordenados. Diseñamos e implementamos CRM que centralizan toda la información de clientes y automatizan el proceso de ventas.
-              </p>
-              <div className="flex flex-col gap-4 mb-7 w-full max-w-[19rem] sm:max-w-md mx-auto lg:mx-0">
+
+              {/* Bullets */}
+              <div className="flex flex-col gap-4 mb-8 max-w-md mx-auto lg:mx-0">
                 {[
                   { icon: Zap, text: "Seguimiento automático de leads" },
                   { icon: Target, text: "Control total del pipeline de ventas" },
-                  { icon: BarChart3, text: "Reportes en tiempo real" },
+                  { icon: BarChart3, text: "Reportes y analytics en tiempo real" },
                 ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-4 text-left">
-                    <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <b.icon size={16} className="text-primary" />
+                  <motion.div
+                    key={i}
+                    {...fade(i * 0.08)}
+                    className="group flex items-center gap-4 text-left"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/15 group-hover:scale-110 group-hover:shadow-[0_0_20px_-4px_hsl(var(--primary)/0.3)] transition-all duration-300">
+                      <b.icon size={18} className="text-primary" />
                     </div>
-                    <span className="text-[1.02rem] sm:text-sm font-medium leading-snug text-foreground/80">{b.text}</span>
-                  </div>
+                    <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">{b.text}</span>
+                  </motion.div>
                 ))}
               </div>
-              <div className="flex flex-col gap-3 w-full max-w-[19rem] sm:max-w-md mx-auto lg:mx-0">
-                <Button variant="gradient" size="lg" className="w-full text-base px-6 py-6" asChild>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <Button variant="gradient" size="lg" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    Hablar con un especialista <ArrowRight size={18} className="ml-1 shrink-0" />
+                    Hablemos de tu CRM <ArrowRight size={16} className="ml-2" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="w-full text-base px-6 py-6" asChild>
+                <Button variant="outline" size="lg" className="gradient-btn-outline" asChild>
                   <a href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
-                    <Calendar size={18} className="mr-2 shrink-0" /> Agendar Consulta
+                    <Calendar size={16} className="mr-2" /> Agendar Consultoría
                   </a>
                 </Button>
               </div>
             </motion.div>
-            <motion.div {...fade(0.2)} className="w-full max-w-full overflow-hidden">
+
+            {/* RIGHT — Dashboard Mockup */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               <CrmMockup />
             </motion.div>
           </div>
