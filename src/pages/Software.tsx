@@ -447,6 +447,7 @@ const Software = () => {
         title="Software Empresarial | Sistemas a Medida | North"
         description="Desarrollamos software empresarial, dashboards, CRM e integraciones para empresas que necesitan automatizar procesos y centralizar información."
         url="https://northmkt.com.mx/software"
+        image="https://northmkt.com.mx/og-software-v1.jpg"
         keywords="software empresarial, desarrollo de software, sistemas a medida, dashboards empresariales, integraciones API"
         jsonLd={softwareJsonLd}
       />
