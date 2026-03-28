@@ -183,7 +183,7 @@ const BlogPage = () => {
               <Link to={featured[0].url} className="lg:col-span-3 block">
                 <motion.div
                   {...fade(0.1)}
-                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
+                  className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[border-color,box-shadow,transform] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-2 h-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="relative h-60 sm:h-72 lg:h-[340px] overflow-hidden">
@@ -213,7 +213,7 @@ const BlogPage = () => {
                 <Link key={article.slug} to={article.url} className="flex-1 block">
                   <motion.div
                     {...fade(0.15 + i * 0.1)}
-                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
+                    className="group relative rounded-2xl border border-border bg-card overflow-hidden transition-[border-color,box-shadow,transform] duration-500 hover:border-primary/30 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.12)] hover:-translate-y-1.5 h-full"
                   >
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                     <div className="relative h-40 overflow-hidden">
