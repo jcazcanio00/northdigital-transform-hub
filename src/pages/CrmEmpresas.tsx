@@ -272,6 +272,8 @@ const CrmEmpresas = () => {
         title="CRM para Empresas | Automatización y Ventas | North"
         description="Implementamos sistemas CRM para empresas que buscan organizar ventas, automatizar seguimiento y escalar con tecnología."
         url="https://northmkt.com.mx/crm-empresas"
+        image="https://northmkt.com.mx/og-crm.png"
+        imageType="image/png"
         keywords="crm para empresas, crm empresarial, automatizacion de ventas, sistema crm, pipeline de ventas"
         jsonLd={crmJsonLd}
       />
