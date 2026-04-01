@@ -115,134 +115,6 @@ const reasons = [
   { icon: Users, title: "Equipo senior dedicado", desc: "Consultores con experiencia real en SEO para distintas industrias. Sin rotación, sin juniors, sin intermediarios." },
 ];
 
-/* ─── SEO Dashboard Mockup ─── */
-const SeoMockup = () => (
-  <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
-    <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
-      <div className="flex items-center gap-2">
-        <div className="flex gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-red-400/60" />
-          <span className="h-2 w-2 rounded-full bg-yellow-400/60" />
-          <span className="h-2 w-2 rounded-full bg-green-400/60" />
-        </div>
-        <span className="ml-1 text-[9px] font-mono text-muted-foreground/50">seo-analytics.north.dev</span>
-      </div>
-      <div className="flex items-center gap-1.5">
-        <div className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/10">
-          <Bell size={8} className="text-primary" />
-        </div>
-        <div className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/15">
-          <span className="text-[7px] font-bold text-primary">N</span>
-        </div>
-      </div>
-    </div>
-
-    <div className="flex">
-      <div className="hidden w-36 space-y-0.5 border-r border-border/40 bg-card px-2 py-3 md:block">
-        {[
-          { icon: Monitor, label: "Dashboard", active: true },
-          { icon: Search, label: "Keywords" },
-          { icon: TrendingUp, label: "Rankings" },
-          { icon: Link2, label: "Backlinks" },
-          { icon: Activity, label: "Auditoría" },
-          { icon: Settings, label: "Config" },
-        ].map((item, i) => (
-          <div key={i} className={`flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-[10px] font-medium ${item.active ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground/50"}`}>
-            <item.icon size={12} />
-            {item.label}
-          </div>
-        ))}
-      </div>
-
-      <div className="flex-1 space-y-3 bg-secondary p-3 sm:p-4">
-        {/* Metrics row */}
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {[
-            { label: "Tráfico Orgánico", value: "24.8K", change: "+32%", icon: TrendingUp, color: "text-primary" },
-            { label: "Keywords Top 10", value: "142", change: "+18", icon: Target, color: "text-emerald-500" },
-            { label: "Domain Authority", value: "48", change: "+6", icon: Shield, color: "text-accent" },
-            { label: "Conv. Orgánicas", value: "312", change: "+45%", icon: BarChart3, color: "text-amber-500" },
-          ].map((m, i) => (
-            <div key={i} className="rounded-lg border border-border/40 bg-background p-2 shadow-sm">
-              <div className="mb-1 flex items-center justify-between">
-                <p className="text-[8px] font-medium text-muted-foreground/50">{m.label}</p>
-                <m.icon size={10} className="text-muted-foreground/30" />
-              </div>
-              <p className={`text-sm font-bold leading-none sm:text-base ${m.color}`}>{m.value}</p>
-              <p className="mt-0.5 text-[8px] font-medium text-emerald-500">{m.change}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Charts row */}
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-5">
-          <div className="rounded-lg border border-border/40 bg-background p-2.5 shadow-sm sm:col-span-3">
-            <div className="mb-2 flex items-center justify-between">
-              <p className="text-[9px] font-semibold text-muted-foreground/60">Tráfico Orgánico (12m)</p>
-              <span className="rounded-full bg-primary/8 px-1.5 py-0.5 text-[7px] font-medium text-primary">+32% YoY</span>
-            </div>
-            <div className="flex items-end gap-[3px] h-24">
-              {[30, 35, 38, 42, 48, 52, 58, 65, 62, 70, 75, 82].map((h, i) => (
-                <motion.div
-                  key={i}
-                  className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60"
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${h}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.04 }}
-                />
-              ))}
-            </div>
-            <div className="flex justify-between mt-1">
-              <span className="text-[6px] text-muted-foreground/30">Ene</span>
-              <span className="text-[6px] text-muted-foreground/30">Jun</span>
-              <span className="text-[6px] text-muted-foreground/30">Dic</span>
-            </div>
-          </div>
-
-          <div className="space-y-2 sm:col-span-2">
-            <div className="rounded-lg border border-border/40 bg-background p-2.5 shadow-sm">
-              <p className="text-[9px] font-semibold text-muted-foreground/60 mb-2">Top Keywords</p>
-              <div className="space-y-1.5">
-                {[
-                  { kw: "seo cancún", pos: "#1", change: "↑2" },
-                  { kw: "agencia seo mérida", pos: "#3", change: "↑4" },
-                  { kw: "posicionamiento web", pos: "#4", change: "↑3" },
-                  { kw: "seo empresas méxico", pos: "#5", change: "↑6" },
-                ].map((k, i) => (
-                  <div key={i} className="flex items-center gap-2 rounded-md border border-border/20 bg-secondary p-1.5">
-                    <span className="text-[8px] text-foreground/70 truncate flex-1">{k.kw}</span>
-                    <span className="font-bold text-primary text-[8px]">{k.pos}</span>
-                    <span className="text-emerald-500 font-medium text-[8px]">{k.change}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom activity bar */}
-        <div className="hidden rounded-lg border border-border/40 bg-background p-2 shadow-sm sm:block">
-          <div className="flex items-center gap-3">
-            {[
-              { icon: CheckCircle2, text: "15 keywords nuevas en Top 10", time: "Hoy" },
-              { icon: TrendingUp, text: "Tráfico orgánico +12% vs. mes anterior", time: "7d" },
-              { icon: Link2, text: "8 backlinks nuevos adquiridos", time: "30d" },
-            ].map((a, i) => (
-              <div key={i} className="flex flex-1 items-center gap-1.5 text-[8px]">
-                <div className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-primary/8">
-                  <a.icon size={8} className="text-primary" />
-                </div>
-                <span className="truncate text-foreground/50">{a.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
 /* ═══════════════════════════════════════════════════════════ */
 
 const SeoPage = () => {
@@ -260,70 +132,257 @@ const SeoPage = () => {
       <Header />
 
       {/* ──────── HERO ──────── */}
-      <section className="pt-8 md:pt-24 pb-16 md:pb-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[80px] pointer-events-none" />
-        <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
+      <section className="relative min-h-0 md:min-h-[calc(100vh-72px)] flex items-center pt-6 md:pt-16 pb-8 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+        <div className="hidden lg:block absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
+        <div className="hidden lg:block absolute top-[5%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-8 items-center">
-            <motion.div {...fade()} className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                <Search size={12} className="text-primary" />
-                SEO &amp; POSICIONAMIENTO WEB
-              </div>
+          {/* Text content — centered like Home */}
+          <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16 animate-hero-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
+              <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+              <Search size={12} className="text-primary" />
+              SEO &amp; Posicionamiento Web
+            </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-7">
-                Posiciona tu Empresa en{" "}
-                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[2em] align-middle relative -top-[0.06em]" />{" "}
-                y Genera Más Clientes
-              </h1>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-4 md:mb-6 text-balance font-display">
+              Posiciona tu Empresa en{" "}
+              <img src="/images/google-logo.png" alt="Google" className="inline-block h-[1.1em] align-middle relative -top-[0.04em]" />{" "}
+              y Convierte{" "}
+              <span className="gradient-text">Búsquedas</span>{" "}
+              en Clientes
+            </h1>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-7 max-w-lg mx-auto lg:mx-0">
-                Diseñamos estrategias SEO para empresas en la Península de Yucatán que buscan crecer con tráfico orgánico, autoridad digital y más oportunidades de venta.
-              </p>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed">
+              SEO estratégico para empresas en la Península de Yucatán que buscan crecer con tráfico orgánico, autoridad digital y más oportunidades de venta.
+            </p>
 
-              {/* Bullets */}
-              <div className="flex flex-col gap-2.5 mb-9">
-                {[
-                  { icon: TrendingUp, text: "Crecimiento orgánico sostenido y medible" },
-                  { icon: MapPin, text: "SEO local adaptado a tu ciudad y mercado" },
-                  { icon: BarChart3, text: "Reportes ejecutivos con métricas reales" },
-                ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                      <b.icon size={14} className="text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground/80">{b.text}</span>
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-8 md:mb-12 justify-center">
+              {[
+                { icon: TrendingUp, text: "Crecimiento orgánico sostenible" },
+                { icon: Target, text: "SEO local enfocado en conversión" },
+                { icon: BarChart3, text: "Estrategia basada en datos reales" },
+              ].map((b, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                    <b.icon size={12} className="text-primary" />
                   </div>
-                ))}
+                  <span className="text-sm font-medium text-foreground/70">{b.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+                <Link to="/contacto">Solicitar diagnóstico SEO <ArrowRight size={16} className="ml-1" /></Link>
+              </Button>
+              <Button variant="outline" size="lg" className="text-base px-8 py-6 gradient-btn-outline" asChild>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <MessageSquare size={16} className="mr-1" /> Hablar con un especialista
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Dashboard mockup — full width, same pattern as Home */}
+          <div className="relative max-w-5xl mx-auto animate-hero-slide-up">
+            <div className="hidden lg:block absolute -inset-12 bg-primary/8 rounded-[40px] blur-[40px] pointer-events-none" />
+
+            <div className="relative glass-card rounded-2xl border border-border/60 overflow-hidden shadow-2xl">
+              {/* Chrome */}
+              <div className="flex items-center gap-2 px-5 py-3 border-b border-border/30 bg-muted/20">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-destructive/50" />
+                  <div className="w-3 h-3 rounded-full bg-accent/40" />
+                  <div className="w-3 h-3 rounded-full bg-primary/30" />
+                </div>
+                <div className="flex-1 flex justify-center">
+                  <div className="px-4 py-1 rounded-md bg-muted/40 text-[10px] text-muted-foreground flex items-center gap-2">
+                    <Shield size={9} /> seo-analytics.north.dev
+                  </div>
+                </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
-                  <Link to="/contacto">
-                    Solicitar diagnóstico SEO <ArrowRight size={16} className="ml-1" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6 gradient-btn-outline" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <MessageSquare size={16} className="mr-1" /> Hablar con un especialista
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
+              {/* Content */}
+              <div className="flex min-h-[380px] lg:min-h-[420px]">
+                {/* Sidebar */}
+                <div className="hidden lg:flex flex-col w-48 border-r border-border/20 p-4 bg-muted/5">
+                  <div className="flex items-center gap-2 mb-8">
+                    <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Search size={14} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold font-display">North SEO</div>
+                      <div className="text-[9px] text-muted-foreground">Analytics</div>
+                    </div>
+                  </div>
+                  <nav className="space-y-0.5">
+                    {[
+                      { icon: Monitor, label: "Dashboard", active: true },
+                      { icon: Search, label: "Keywords" },
+                      { icon: TrendingUp, label: "Rankings" },
+                      { icon: Link2, label: "Backlinks" },
+                      { icon: Activity, label: "Auditoría" },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] transition-colors ${
+                          item.active ? "bg-primary/10 text-primary font-semibold" : "text-muted-foreground"
+                        }`}
+                      >
+                        <item.icon size={13} />
+                        {item.label}
+                      </div>
+                    ))}
+                  </nav>
+                </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:scale-[1.35] lg:origin-left lg:-mr-16"
-            >
-              <SeoMockup />
-            </motion.div>
+                {/* Main area */}
+                <div className="flex-1 p-5 space-y-4 overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-bold font-display">SEO Dashboard</div>
+                      <div className="text-[10px] text-muted-foreground">Marzo 2026 · Actualizado hace 2 min</div>
+                    </div>
+                    <div className="relative">
+                      <Bell size={14} className="text-muted-foreground" />
+                      <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-primary" />
+                    </div>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                    {[
+                      { label: "Tráfico Orgánico", value: "24.8K", change: "+32%" },
+                      { label: "Keywords Top 10", value: "142", change: "+18" },
+                      { label: "Domain Authority", value: "48", change: "+6" },
+                      { label: "Conv. Orgánicas", value: "312", change: "+45%" },
+                    ].map((m) => (
+                      <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-3">
+                        <div className="text-[9px] text-muted-foreground">{m.label}</div>
+                        <div className="text-sm font-bold">{m.value}</div>
+                        <div className="text-[9px] font-medium text-primary">
+                          <TrendingUp size={9} className="inline mr-0.5" />{m.change}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Charts */}
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
+                    <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
+                      <div className="text-[11px] font-semibold mb-3">Tráfico Orgánico (12 meses)</div>
+                      <div className="flex items-end gap-[3px] h-20">
+                        {[30, 35, 38, 42, 48, 52, 58, 65, 62, 70, 75, 82, 78, 85, 88, 92, 95].map((h, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60 animate-bar-grow"
+                            style={{ height: `${h}%`, animationDelay: `${0.6 + i * 0.03}s` }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <div className="lg:col-span-2 rounded-xl bg-muted/10 border border-border/20 p-4">
+                      <div className="text-[11px] font-semibold mb-3">Top Keywords</div>
+                      <div className="space-y-2">
+                        {[
+                          { kw: "seo cancún", pos: "#1", pct: 100 },
+                          { kw: "agencia seo mérida", pos: "#3", pct: 72 },
+                          { kw: "posicionamiento web", pos: "#4", pct: 58 },
+                          { kw: "seo empresas méxico", pos: "#5", pct: 45 },
+                        ].map((item) => (
+                          <div key={item.kw}>
+                            <div className="flex justify-between text-[9px] mb-1">
+                              <span className="text-muted-foreground">{item.kw}</span>
+                              <span className="font-bold text-primary">{item.pos}</span>
+                            </div>
+                            <div className="w-full h-1 rounded-full bg-secondary/50">
+                              <div
+                                className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary animate-bar-width"
+                                style={{ width: `${item.pct}%`, animationDelay: "1s" }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <Link2 size={10} className="text-accent" />
+                        <span className="text-[10px] font-semibold">Backlinks</span>
+                      </div>
+                      {["Alta autoridad", "Digital PR", "Guest posting"].map((f) => (
+                        <div key={f} className="flex items-center justify-between text-[9px] py-0.5">
+                          <span className="text-muted-foreground">{f}</span>
+                          <CheckCircle2 size={8} className="text-primary" />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
+                      <div className="text-[10px] font-semibold mb-2">Actividad SEO</div>
+                      {[
+                        { t: "15 keywords nuevas en Top 10", time: "Hoy" },
+                        { t: "Tráfico +12% vs. mes anterior", time: "7d" },
+                        { t: "8 backlinks adquiridos", time: "30d" },
+                      ].map((a, i) => (
+                        <div key={i} className="flex items-start gap-1.5 py-0.5">
+                          <div className="w-1 h-1 rounded-full bg-primary/50 mt-1.5 shrink-0" />
+                          <div>
+                            <div className="text-[9px]">{a.t}</div>
+                            <div className="text-[8px] text-muted-foreground">{a.time}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="rounded-xl bg-muted/10 border border-border/20 p-3">
+                      <div className="text-[10px] font-semibold mb-2">Core Web Vitals</div>
+                      <div className="flex items-end gap-0.5 h-10 mb-1">
+                        {[60, 45, 70, 55, 80, 65, 90, 72, 85, 78, 92, 88].map((h, i) => (
+                          <div
+                            key={i}
+                            className="flex-1 rounded-t-sm bg-gradient-to-t from-accent/25 to-accent/60 animate-bar-grow"
+                            style={{ height: `${h}%`, animationDelay: `${1.2 + i * 0.04}s` }}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[9px] text-muted-foreground">LCP</span>
+                        <span className="text-[10px] font-bold text-primary">1.2s</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating widgets — desktop only */}
+            <div className="absolute -left-6 top-[25%] glass-card rounded-xl p-3 shadow-lg animate-float-slow hidden lg:block">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <TrendingUp size={12} className="text-primary" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold gradient-text">+180%</div>
+                  <div className="text-[8px] text-muted-foreground">Tráfico Orgánico</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -right-6 top-[30%] glass-card rounded-xl p-2.5 shadow-lg animate-float-delayed hidden lg:block">
+              <div className="flex items-center gap-2">
+                <Target size={12} className="text-accent" />
+                <div>
+                  <div className="text-[9px] font-semibold">Top 5 en Google</div>
+                  <div className="text-[8px] text-muted-foreground">seo cancún</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
