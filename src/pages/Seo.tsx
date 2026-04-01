@@ -117,7 +117,7 @@ const reasons = [
 
 /* ─── SEO Dashboard Mockup ─── */
 const SeoMockup = () => (
-  <div className="relative mx-auto w-full max-w-[760px] overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
+  <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
     <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
