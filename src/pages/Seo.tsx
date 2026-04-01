@@ -154,7 +154,7 @@ const SeoMockup = () => (
         ))}
       </div>
 
-      <div className="flex-1 space-y-2.5 bg-secondary p-2.5 sm:p-3">
+      <div className="flex-1 space-y-3 bg-secondary p-3 sm:p-4">
         {/* Metrics row */}
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {[
@@ -181,7 +181,7 @@ const SeoMockup = () => (
               <p className="text-[9px] font-semibold text-muted-foreground/60">Tráfico Orgánico (12m)</p>
               <span className="rounded-full bg-primary/8 px-1.5 py-0.5 text-[7px] font-medium text-primary">+32% YoY</span>
             </div>
-            <div className="flex items-end gap-[3px] h-16">
+            <div className="flex items-end gap-[3px] h-24">
               {[30, 35, 38, 42, 48, 52, 58, 65, 62, 70, 75, 82].map((h, i) => (
                 <motion.div
                   key={i}
@@ -267,7 +267,7 @@ const SeoPage = () => {
         <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-6 items-center">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-8 items-center">
             <motion.div {...fade()} className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
@@ -277,7 +277,7 @@ const SeoPage = () => {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-7">
                 Posiciona tu Empresa en{" "}
-                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[1.5em] align-middle relative -top-[0.08em]" />{" "}
+                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[2em] align-middle relative -top-[0.06em]" />{" "}
                 y Genera Más Clientes
               </h1>
 
@@ -320,7 +320,7 @@ const SeoPage = () => {
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:scale-[1.25] lg:origin-left lg:-mr-12"
+              className="lg:scale-[1.35] lg:origin-left lg:-mr-16"
             >
               <SeoMockup />
             </motion.div>
