@@ -25,6 +25,7 @@ const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 const GoogleWorkspaceMexico = lazy(() => import("./pages/GoogleWorkspaceMexico.tsx"));
+const Seo = lazy(() => import("./pages/Seo.tsx"));
 
 const queryClient = new QueryClient();
 
