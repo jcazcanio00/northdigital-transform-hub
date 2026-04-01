@@ -277,7 +277,7 @@ const SeoPage = () => {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
                 Posiciona tu Empresa en{" "}
-                <span className="gradient-text">Google</span>{" "}
+                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[0.85em] align-baseline relative -top-[0.02em]" />{" "}
                 y Genera Más Clientes
               </h1>
 
