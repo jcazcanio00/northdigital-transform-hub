@@ -92,11 +92,11 @@ const processSteps = [
 ];
 
 const cities = [
-  { name: "Cancún", desc: "Posicionamiento SEO para empresas turísticas, inmobiliarias, restaurantes y servicios profesionales en la zona hotelera y alrededores.", href: "/marketing-digital-cancun", icon: "🏖️", industries: ["Turismo", "Inmobiliaria", "Gastronomía"] },
-  { name: "Mérida", desc: "SEO para negocios locales, clínicas, despachos profesionales y empresas en crecimiento en la capital yucateca.", icon: "🏛️", industries: ["Salud", "Legal", "Servicios"] },
-  { name: "Playa del Carmen", desc: "Estrategias de posicionamiento para bienes raíces, servicios turísticos y comercios de la Riviera Maya.", href: "/marketing-digital-playa-del-carmen", icon: "🌊", industries: ["Bienes raíces", "Turismo", "Retail"] },
-  { name: "Tulum", desc: "SEO especializado para hoteles boutique, marcas wellness, restaurantes de autor y experiencias de lujo.", href: "/marketing-digital-tulum", icon: "🌿", industries: ["Wellness", "Hotelería", "Experiencias"] },
-  { name: "Campeche", desc: "Posicionamiento web para empresas locales, servicios profesionales y negocios en expansión en el estado.", icon: "⚓", industries: ["Comercio", "Servicios", "Industria"] },
+  { name: "Cancún", desc: "Posicionamiento SEO para empresas turísticas, inmobiliarias, restaurantes y servicios profesionales en la zona hotelera y alrededores.", href: "/marketing-digital-cancun", icon: Globe, industries: ["Turismo", "Inmobiliaria", "Gastronomía"] },
+  { name: "Mérida", desc: "SEO para negocios locales, clínicas, despachos profesionales y empresas en crecimiento en la capital yucateca.", icon: Target, industries: ["Salud", "Legal", "Servicios"] },
+  { name: "Playa del Carmen", desc: "Estrategias de posicionamiento para bienes raíces, servicios turísticos y comercios de la Riviera Maya.", href: "/marketing-digital-playa-del-carmen", icon: TrendingUp, industries: ["Bienes raíces", "Turismo", "Retail"] },
+  { name: "Tulum", desc: "SEO especializado para hoteles boutique, marcas wellness, restaurantes de autor y experiencias de lujo.", href: "/marketing-digital-tulum", icon: Layers, industries: ["Wellness", "Hotelería", "Experiencias"] },
+  { name: "Campeche", desc: "Posicionamiento web para empresas locales, servicios profesionales y negocios en expansión en el estado.", icon: MapPin, industries: ["Comercio", "Servicios", "Industria"] },
 ];
 
 const results = [
@@ -117,7 +117,7 @@ const reasons = [
 
 /* ─── SEO Dashboard Mockup ─── */
 const SeoMockup = () => (
-  <div className="relative mx-auto w-full max-w-[760px] overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
+  <div className="relative mx-auto w-full overflow-hidden rounded-2xl border border-border bg-background shadow-[0_8px_60px_-15px_hsl(228,69%,55%/0.12),0_2px_12px_-3px_hsl(0,0%,0%/0.06)]">
     <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/60 bg-card">
       <div className="flex items-center gap-2">
         <div className="flex gap-1.5">
@@ -277,7 +277,7 @@ const SeoPage = () => {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
                 Posiciona tu Empresa en{" "}
-                <span className="gradient-text">Google</span>{" "}
+                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[0.85em] align-baseline relative -top-[0.02em]" />{" "}
                 y Genera Más Clientes
               </h1>
 
@@ -320,6 +320,7 @@ const SeoPage = () => {
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
+              className="lg:scale-110 lg:origin-center"
             >
               <SeoMockup />
             </motion.div>
@@ -488,7 +489,7 @@ const SeoPage = () => {
                 <div className="relative p-8">
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                      <span className="text-2xl">{city.icon}</span>
+                      <city.icon size={24} className="text-primary" />
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground text-lg mb-1 group-hover:text-primary transition-colors duration-300">{city.name}</h3>
