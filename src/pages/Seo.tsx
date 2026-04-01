@@ -92,11 +92,11 @@ const processSteps = [
 ];
 
 const cities = [
-  { name: "Cancún", desc: "Posicionamiento SEO para empresas turísticas, inmobiliarias, restaurantes y servicios profesionales en la zona hotelera y alrededores.", href: "/marketing-digital-cancun", icon: "🏖️", industries: ["Turismo", "Inmobiliaria", "Gastronomía"] },
-  { name: "Mérida", desc: "SEO para negocios locales, clínicas, despachos profesionales y empresas en crecimiento en la capital yucateca.", icon: "🏛️", industries: ["Salud", "Legal", "Servicios"] },
-  { name: "Playa del Carmen", desc: "Estrategias de posicionamiento para bienes raíces, servicios turísticos y comercios de la Riviera Maya.", href: "/marketing-digital-playa-del-carmen", icon: "🌊", industries: ["Bienes raíces", "Turismo", "Retail"] },
-  { name: "Tulum", desc: "SEO especializado para hoteles boutique, marcas wellness, restaurantes de autor y experiencias de lujo.", href: "/marketing-digital-tulum", icon: "🌿", industries: ["Wellness", "Hotelería", "Experiencias"] },
-  { name: "Campeche", desc: "Posicionamiento web para empresas locales, servicios profesionales y negocios en expansión en el estado.", icon: "⚓", industries: ["Comercio", "Servicios", "Industria"] },
+  { name: "Cancún", desc: "Posicionamiento SEO para empresas turísticas, inmobiliarias, restaurantes y servicios profesionales en la zona hotelera y alrededores.", href: "/marketing-digital-cancun", icon: Globe, industries: ["Turismo", "Inmobiliaria", "Gastronomía"] },
+  { name: "Mérida", desc: "SEO para negocios locales, clínicas, despachos profesionales y empresas en crecimiento en la capital yucateca.", icon: Target, industries: ["Salud", "Legal", "Servicios"] },
+  { name: "Playa del Carmen", desc: "Estrategias de posicionamiento para bienes raíces, servicios turísticos y comercios de la Riviera Maya.", href: "/marketing-digital-playa-del-carmen", icon: TrendingUp, industries: ["Bienes raíces", "Turismo", "Retail"] },
+  { name: "Tulum", desc: "SEO especializado para hoteles boutique, marcas wellness, restaurantes de autor y experiencias de lujo.", href: "/marketing-digital-tulum", icon: Layers, industries: ["Wellness", "Hotelería", "Experiencias"] },
+  { name: "Campeche", desc: "Posicionamiento web para empresas locales, servicios profesionales y negocios en expansión en el estado.", icon: MapPin, industries: ["Comercio", "Servicios", "Industria"] },
 ];
 
 const results = [
