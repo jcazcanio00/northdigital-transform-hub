@@ -260,33 +260,33 @@ const SeoPage = () => {
       <Header />
 
       {/* ──────── HERO ──────── */}
-      <section className="pt-6 md:pt-20 pb-12 md:pb-20 relative overflow-hidden">
+      <section className="pt-8 md:pt-24 pb-16 md:pb-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-dot-grid opacity-30 pointer-events-none" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-primary/8 blur-[80px] pointer-events-none" />
         <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-6 items-center">
             <motion.div {...fade()} className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 <Search size={12} className="text-primary" />
                 SEO &amp; POSICIONAMIENTO WEB
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display leading-[1.1] mb-7">
                 Posiciona tu Empresa en{" "}
-                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[0.85em] align-baseline relative -top-[0.02em]" />{" "}
+                <img src="/images/google-logo.png" alt="Google" className="inline-block h-[1.5em] align-middle relative -top-[0.08em]" />{" "}
                 y Genera Más Clientes
               </h1>
 
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-7 max-w-lg mx-auto lg:mx-0">
                 Diseñamos estrategias SEO para empresas en la Península de Yucatán que buscan crecer con tráfico orgánico, autoridad digital y más oportunidades de venta.
               </p>
 
               {/* Bullets */}
-              <div className="flex flex-col gap-2.5 mb-8">
+              <div className="flex flex-col gap-2.5 mb-9">
                 {[
                   { icon: TrendingUp, text: "Crecimiento orgánico sostenido y medible" },
                   { icon: MapPin, text: "SEO local adaptado a tu ciudad y mercado" },
@@ -320,7 +320,7 @@ const SeoPage = () => {
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:scale-110 lg:origin-center"
+              className="lg:scale-[1.25] lg:origin-left lg:-mr-12"
             >
               <SeoMockup />
             </motion.div>
