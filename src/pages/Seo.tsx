@@ -154,7 +154,7 @@ const SeoMockup = () => (
         ))}
       </div>
 
-      <div className="flex-1 space-y-2.5 bg-secondary p-2.5 sm:p-3">
+      <div className="flex-1 space-y-3 bg-secondary p-3 sm:p-4">
         {/* Metrics row */}
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {[
