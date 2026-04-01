@@ -488,7 +488,7 @@ const SeoPage = () => {
                 <div className="relative p-8">
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                      <span className="text-2xl">{city.icon}</span>
+                      <city.icon size={24} className="text-primary" />
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground text-lg mb-1 group-hover:text-primary transition-colors duration-300">{city.name}</h3>
