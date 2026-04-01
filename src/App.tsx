@@ -25,6 +25,7 @@ const CrmEmpresas = lazy(() => import("./pages/CrmEmpresas.tsx"));
 const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpresarial.tsx"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 const GoogleWorkspaceMexico = lazy(() => import("./pages/GoogleWorkspaceMexico.tsx"));
+const Seo = lazy(() => import("./pages/Seo.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -73,6 +74,7 @@ const App = () => (
             <Route path="/como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" element={<BlogArticle slug="como-las-agencias-seo-de-cancun-utilizan-posicionamiento-local" />} />
             <Route path="/cuanto-cuesta-implementar-un-crm-en-mexico" element={<BlogArticle slug="cuanto-cuesta-implementar-un-crm-en-mexico" />} />
             <Route path="/google-workspace-mexico" element={<GoogleWorkspaceMexico />} />
+            <Route path="/seo" element={<Seo />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

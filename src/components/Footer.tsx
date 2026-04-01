@@ -46,6 +46,7 @@ const Footer = () => (
               { label: "Software Empresarial", href: "/software" },
               { label: "Cloud Services", href: "/cloud" },
               { label: "Marketing de Crecimiento", href: "/marketing" },
+              { label: "SEO", href: "/seo" },
               { label: "Google Workspace", href: "/google-workspace-mexico" },
             ].map((l) => (
               <li key={l.label}>
