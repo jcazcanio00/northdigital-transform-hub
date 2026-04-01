@@ -267,7 +267,7 @@ const SeoPage = () => {
         <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent/6 blur-[60px] pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-6 items-center">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-8 items-center">
             <motion.div {...fade()} className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
