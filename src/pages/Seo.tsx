@@ -181,7 +181,7 @@ const SeoMockup = () => (
               <p className="text-[9px] font-semibold text-muted-foreground/60">Tráfico Orgánico (12m)</p>
               <span className="rounded-full bg-primary/8 px-1.5 py-0.5 text-[7px] font-medium text-primary">+32% YoY</span>
             </div>
-            <div className="flex items-end gap-[3px] h-16">
+            <div className="flex items-end gap-[3px] h-24">
               {[30, 35, 38, 42, 48, 52, 58, 65, 62, 70, 75, 82].map((h, i) => (
                 <motion.div
                   key={i}
