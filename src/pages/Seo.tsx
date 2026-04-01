@@ -320,7 +320,7 @@ const SeoPage = () => {
               initial={{ opacity: 0, y: 30, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:scale-[1.25] lg:origin-left lg:-mr-12"
+              className="lg:scale-[1.35] lg:origin-left lg:-mr-16"
             >
               <SeoMockup />
             </motion.div>
