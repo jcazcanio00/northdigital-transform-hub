@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Repository cleanup
+build
+.env.local
+.tmp
+tmp
