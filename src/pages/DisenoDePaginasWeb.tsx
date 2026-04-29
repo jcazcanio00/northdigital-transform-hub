@@ -247,11 +247,12 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative flex min-h-0 items-center overflow-hidden pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
+        <section className="relative flex min-h-0 items-center overflow-hidden bg-brand-navy pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
           <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-brand-navy via-brand-navy/95 to-primary/20" />
           <div className="hidden lg:block absolute top-[40%] left-1/2 h-[500px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
-          <div className="hidden lg:block absolute top-[5%] left-1/2 h-[300px] w-[400px] -translate-x-1/2 rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute right-0 top-[8%] h-[380px] w-[560px] rounded-full bg-primary/18 blur-[70px] pointer-events-none will-change-transform" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14">
@@ -259,10 +260,10 @@ const DisenoDePaginasWeb = () => {
                 <div className="mb-8">
                   <SectionBadge>Diseño de páginas web</SectionBadge>
                 </div>
-                <h1 className="mb-4 text-3xl font-extrabold leading-[1.05] text-balance font-display sm:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
+                <h1 className="mb-4 text-3xl font-extrabold leading-[1.05] text-balance text-brand-navy-foreground font-display sm:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
                   Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web
                 </h1>
-                <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:mb-10 md:text-lg lg:mx-0">
+                <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-brand-navy-foreground/68 md:mb-10 md:text-lg lg:mx-0">
                   Crear páginas web que comuniquen, generen confianza y conviertan visitas en oportunidades reales.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
