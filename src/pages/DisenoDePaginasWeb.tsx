@@ -82,15 +82,15 @@ const fundamentals = [
 const regions = [
   {
     city: "Cancún",
-    text: "Para empresas turísticas, inmobiliarias, servicios profesionales y marcas que necesitan competir por confianza.",
+    text: "Claridad inmediata para mercados con alta comparación: turismo, real estate, salud, servicios profesionales y marcas que necesitan verse confiables desde el primer contacto.",
   },
   {
     city: "Playa del Carmen",
-    text: "Para negocios en expansión que requieren una web moderna, clara y lista para campañas de crecimiento.",
+    text: "Estructura comercial para negocios en crecimiento que dependen de campañas, reputación y una explicación rápida de su propuesta de valor.",
   },
   {
     city: "Tulum",
-    text: "Para proyectos boutique, hospitality y experiencias premium donde la percepción visual impacta la decisión.",
+    text: "Presencia premium para proyectos boutique, hospitality y experiencias donde la percepción visual define confianza antes de solicitar información.",
   },
 ];
 
