@@ -297,7 +297,7 @@ const DisenoDePaginasWeb = () => {
             <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una página web para sentirse premium" copy="Diseñamos cada sección con una función clara: atraer atención, explicar valor, construir confianza y facilitar el contacto." />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="glass-card glass-card-hover rounded-2xl p-6">
+                <article key={service.title} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                     <service.icon size={22} className="text-primary" />
                   </div>
@@ -309,9 +309,11 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
+        <section className="relative overflow-hidden bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
+          <div className="absolute inset-0 bg-dot-grid opacity-15" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <SectionBadge dark>Beneficios de negocio</SectionBadge>
                 <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
@@ -334,12 +336,12 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-secondary/45 py-14 md:py-24">
+        <section className="border-y border-border/60 bg-secondary/45 py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <SectionHeader eyebrow="Presencia regional" title="Diseño web para empresas en Cancún, Playa del Carmen y Tulum" copy="Adaptamos la experiencia al mercado donde compite tu empresa, manteniendo una imagen moderna, corporativa y de alto valor." />
             <div className="grid gap-4 md:grid-cols-3">
               {cities.map((item) => (
-                <article key={item.city} className="rounded-2xl border border-border/60 bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <article key={item.city} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
                   <MapPin size={22} className="mb-5 text-brand-red" />
                   <h3 className="font-display text-2xl font-extrabold">{item.city}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
@@ -369,7 +371,7 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-card py-14 md:py-24">
+        <section className="bg-secondary/45 py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
@@ -381,7 +383,9 @@ const DisenoDePaginasWeb = () => {
                   Una página premium no se mide solo por cómo se ve. Se mide por lo fácil que hace entender tu valor, confiar en tu empresa y dar el siguiente paso.
                 </p>
               </div>
-              <div className="rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
+              <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
+                <div className="absolute inset-0 bg-dot-grid opacity-15" />
+                <div className="relative z-10">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red">
                     <Zap size={22} />
@@ -398,6 +402,7 @@ const DisenoDePaginasWeb = () => {
                       <span>{item}</span>
                     </div>
                   ))}
+                </div>
                 </div>
               </div>
             </div>
