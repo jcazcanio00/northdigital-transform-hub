@@ -147,117 +147,77 @@ const faqs = [
 ];
 
 const WebsiteMockup = () => (
-  <div className="group relative mx-auto w-full max-w-[700px] animate-hero-slide-up lg:max-w-none lg:[perspective:1400px]">
-    <div className="pointer-events-none absolute -inset-8 rounded-[40px] bg-primary/10 opacity-80 blur-[52px] transition-opacity duration-500 group-hover:opacity-100" />
-    <div className="glass-card relative overflow-visible rounded-2xl border border-border/60 shadow-2xl transition-transform duration-500 lg:rotate-[-1.5deg] lg:[transform-style:preserve-3d] lg:group-hover:rotate-0">
+  <div className="group relative mx-auto w-full max-w-[760px] animate-hero-slide-up lg:ml-0 lg:max-w-none lg:[perspective:1600px]">
+    <div className="pointer-events-none absolute -bottom-8 left-10 right-2 h-14 rounded-full bg-primary/25 opacity-70 blur-[32px] transition-opacity duration-500 group-hover:opacity-100" />
+    <div className="relative overflow-visible rounded-2xl border border-border/40 bg-primary-foreground text-brand-navy shadow-[0_28px_90px_-32px_hsl(var(--primary)/0.75)] transition-transform duration-500 lg:origin-bottom-left lg:rotate-[2deg] lg:-skew-x-[5deg] lg:group-hover:rotate-[1deg] lg:group-hover:-skew-x-[3deg]">
       <div className="overflow-hidden rounded-2xl">
-        <div className="flex items-center gap-2 border-b border-border/30 bg-muted/25 px-5 py-3">
-          <div className="flex gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-primary/55" />
-            <span className="h-3 w-3 rounded-full bg-accent/45" />
-            <span className="h-3 w-3 rounded-full bg-primary/25" />
+        <div className="flex items-center justify-between px-5 py-4 sm:px-7">
+          <div className="flex items-center gap-2 font-display text-[11px] font-extrabold uppercase tracking-wide">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+            </span>
+            Riviera Stays
           </div>
-          <div className="mx-auto hidden rounded-full border border-border/50 bg-background/70 px-5 py-1 text-[10px] font-medium text-muted-foreground sm:block">
-            casamare.mx · experiencia lista para convertir
+          <nav className="hidden items-center gap-6 text-[10px] font-bold text-brand-navy/55 md:flex">
+            <span>Destino</span>
+            <span>Alojamiento</span>
+            <span>Experiencias</span>
+            <span>Contacto</span>
+          </nav>
+          <div className="rounded-lg bg-brand-navy px-4 py-2 text-[10px] font-extrabold text-brand-navy-foreground">
+            Reservar ahora
           </div>
         </div>
 
-        <div className="relative bg-background p-3 sm:p-5">
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background shadow-[0_24px_80px_-40px_hsl(var(--primary)/0.65)]">
-            <div className="absolute inset-0 bg-dot-grid opacity-15" />
-            <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-br from-primary/20 via-accent/10 to-background" />
+        <div className="relative min-h-[410px] overflow-hidden sm:min-h-[470px]">
+          <div className="absolute inset-x-0 top-0 h-[72%] bg-gradient-to-br from-primary/8 via-primary-foreground to-primary/12" />
+          <div className="absolute right-0 top-0 h-[72%] w-[62%] overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/20" />
+            <div className="absolute bottom-0 right-0 h-[74%] w-[92%] rounded-tl-[70%] bg-brand-navy/20" />
+            <div className="absolute bottom-[18%] right-[12%] h-[46%] w-[72%] rounded-tl-full rounded-tr-[18%] bg-brand-navy/55" />
+            <div className="absolute bottom-[10%] left-0 h-[22%] w-full bg-primary/10" />
+            <div className="absolute bottom-[20%] left-0 h-[2px] w-full bg-primary/25" />
+          </div>
 
-            <div className="relative z-10 flex items-center justify-between border-b border-border/45 bg-background/72 px-4 py-4 sm:px-6">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
-                  <span className="h-3.5 w-3.5 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.65)]" />
-                </div>
-                <span className="font-display text-xs font-extrabold tracking-tight sm:text-sm">Casa Maré</span>
-              </div>
-              <nav className="hidden items-center gap-5 text-[11px] font-semibold text-muted-foreground md:flex">
-                <span>Suites</span>
-                <span>Experiencias</span>
-                <span>Ubicación</span>
-              </nav>
-              <div className="rounded-lg bg-primary px-4 py-2 text-[10px] font-bold text-primary-foreground sm:text-xs">
-                Reservar
+          <div className="relative z-10 px-7 pb-6 pt-10 sm:px-12 sm:pt-14">
+            <div className="max-w-[390px]">
+              <h3 className="font-display text-3xl font-extrabold leading-tight text-brand-navy sm:text-4xl">
+                Vive experiencias inolvidables en el Caribe
+              </h3>
+              <p className="mt-4 max-w-[330px] text-sm font-medium leading-relaxed text-brand-navy/58">
+                Hospedajes exclusivos en destinos únicos, con atención directa y reservas sin fricción.
+              </p>
+              <div className="mt-6 inline-flex rounded-lg bg-brand-navy px-5 py-3 text-[11px] font-extrabold text-brand-navy-foreground shadow-[0_16px_36px_-18px_hsl(var(--brand-navy)/0.9)]">
+                Reservar ahora
               </div>
             </div>
+          </div>
 
-            <div className="relative z-10 grid min-h-[450px] lg:grid-cols-[1.04fr_0.96fr]">
-              <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
-                <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[10px] font-semibold text-primary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-status-pulse" />
-                  Boutique stay · Tulum
-                </div>
-                <h3 className="max-w-[390px] text-3xl font-extrabold leading-tight text-foreground font-display sm:text-4xl">
-                  Hospedaje privado frente al Caribe
-                </h3>
-                <p className="mt-5 max-w-[380px] text-sm leading-relaxed text-muted-foreground">
-                  Suites con concierge, experiencias locales y reserva directa para viajeros que comparan antes de decidir.
-                </p>
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <div className="rounded-lg bg-primary px-5 py-3 text-[11px] font-bold text-primary-foreground shadow-[0_18px_40px_-22px_hsl(var(--primary)/0.8)]">Consultar fechas</div>
-                  <div className="rounded-lg border border-border bg-background/80 px-5 py-3 text-[11px] font-bold text-foreground">Ver suites</div>
-                </div>
-                <div className="mt-8 grid max-w-[360px] grid-cols-3 gap-3 border-t border-border/50 pt-5">
-                  <div>
-                    <div className="font-display text-lg font-extrabold text-foreground">4.9</div>
-                    <div className="text-[10px] font-medium text-muted-foreground">reviews</div>
-                  </div>
-                  <div>
-                    <div className="font-display text-lg font-extrabold text-foreground">24h</div>
-                    <div className="text-[10px] font-medium text-muted-foreground">respuesta</div>
-                  </div>
-                  <div>
-                    <div className="font-display text-lg font-extrabold text-foreground">+37%</div>
-                    <div className="text-[10px] font-medium text-muted-foreground">reservas</div>
-                  </div>
+          <div className="absolute inset-x-7 bottom-7 z-10 grid grid-cols-3 gap-3 sm:inset-x-12">
+            {["Cancún Beach", "Playa del Carmen", "Tulum Villas"].map((place, index) => (
+              <div key={place} className="relative min-h-[78px] overflow-hidden rounded-xl border border-primary-foreground/60 bg-primary/10 shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary-foreground/30 to-brand-navy/20" />
+                <div className="absolute bottom-0 left-0 right-0 bg-brand-navy/55 p-2">
+                  <p className="text-[9px] font-extrabold leading-tight text-brand-navy-foreground">{place}</p>
+                  <p className="text-[8px] font-semibold text-brand-navy-foreground/70">desde {index + 2} noches</p>
                 </div>
               </div>
-
-              <div className="relative flex items-center border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
-                <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-primary/12 blur-3xl" />
-                <div className="relative w-full space-y-4">
-                  <div className="overflow-hidden rounded-2xl border border-border/60 bg-background shadow-xl">
-                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/25 via-accent/15 to-muted">
-                      <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-border/40 bg-background/80 p-4 shadow-2xl">
-                        <div className="mb-3 flex items-center justify-between">
-                          <span className="text-xs font-bold font-display">Suite Ocean View</span>
-                          <span className="rounded-full bg-primary/10 px-2 py-1 text-[9px] font-bold text-primary">Disponible</span>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Spa</span>
-                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Vista mar</span>
-                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Transfer</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 divide-x divide-border/50 border-t border-border/50">
-                      <div className="p-4">
-                        <Shield size={17} className="mb-3 text-primary" />
-                        <div className="text-xs font-bold font-display">Confianza</div>
-                        <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">Prueba social visible.</p>
-                      </div>
-                      <div className="p-4">
-                        <MessageSquare size={17} className="mb-3 text-primary" />
-                        <div className="text-xs font-bold font-display">Conversión</div>
-                        <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">CTA directo a reserva.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="absolute -right-3 top-20 z-20 hidden rounded-2xl border border-primary/20 bg-background/90 p-4 shadow-2xl shadow-primary/10 md:block">
-        <div className="text-[10px] font-semibold uppercase text-muted-foreground">conversiones</div>
-        <div className="mt-1 font-display text-2xl font-extrabold text-primary">+128%</div>
-        <div className="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-muted">
-          <div className="h-full w-[78%] rounded-full bg-primary" />
+      <div className="absolute -right-5 top-[43%] z-20 hidden w-48 rounded-2xl border border-border/50 bg-primary-foreground/95 p-5 text-brand-navy shadow-2xl md:block lg:skew-x-[5deg]">
+        <div className="mb-3 flex items-center justify-between">
+          <span className="text-[10px] font-extrabold text-brand-navy/60">Solicitudes</span>
+          <span className="rounded-full bg-primary/10 px-2 py-1 text-[9px] font-bold text-primary">● ●</span>
+        </div>
+        <div className="font-display text-2xl font-extrabold text-brand-navy">+128%</div>
+        <div className="text-[9px] font-semibold text-brand-navy/45">vs. mes anterior</div>
+        <div className="mt-5 flex h-20 items-end gap-1.5">
+          {[34, 48, 39, 55, 45, 62, 58, 75, 60, 88].map((height, index) => (
+            <span key={index} className="w-full rounded-t-full bg-primary" style={{ height: `${height}%`, opacity: 0.45 + index * 0.045 }} />
+          ))}
         </div>
       </div>
     </div>
@@ -287,11 +247,12 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative flex min-h-0 items-center overflow-hidden pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
+        <section className="relative flex min-h-0 items-center overflow-hidden bg-brand-navy pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
           <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-brand-navy via-brand-navy/95 to-primary/20" />
           <div className="hidden lg:block absolute top-[40%] left-1/2 h-[500px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
-          <div className="hidden lg:block absolute top-[5%] left-1/2 h-[300px] w-[400px] -translate-x-1/2 rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute right-0 top-[8%] h-[380px] w-[560px] rounded-full bg-primary/18 blur-[70px] pointer-events-none will-change-transform" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14">
@@ -299,10 +260,10 @@ const DisenoDePaginasWeb = () => {
                 <div className="mb-8">
                   <SectionBadge>Diseño de páginas web</SectionBadge>
                 </div>
-                <h1 className="mb-4 text-3xl font-extrabold leading-[1.05] text-balance font-display sm:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
+                <h1 className="mb-4 text-3xl font-extrabold leading-[1.05] text-balance text-brand-navy-foreground font-display sm:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
                   Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web
                 </h1>
-                <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:mb-10 md:text-lg lg:mx-0">
+                <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-brand-navy-foreground/68 md:mb-10 md:text-lg lg:mx-0">
                   Crear páginas web que comuniquen, generen confianza y conviertan visitas en oportunidades reales.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
