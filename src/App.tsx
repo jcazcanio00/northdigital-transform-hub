@@ -26,6 +26,7 @@ const AutomatizacionEmpresarial = lazy(() => import("./pages/AutomatizacionEmpre
 const BlogArticle = lazy(() => import("./pages/BlogArticle.tsx"));
 const GoogleWorkspaceMexico = lazy(() => import("./pages/GoogleWorkspaceMexico.tsx"));
 const Seo = lazy(() => import("./pages/Seo.tsx"));
+const DisenoDePaginasWeb = lazy(() => import("./pages/DisenoDePaginasWeb.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -75,6 +76,7 @@ const App = () => (
             <Route path="/cuanto-cuesta-implementar-un-crm-en-mexico" element={<BlogArticle slug="cuanto-cuesta-implementar-un-crm-en-mexico" />} />
             <Route path="/google-workspace-mexico" element={<GoogleWorkspaceMexico />} />
             <Route path="/seo" element={<Seo />} />
+            <Route path="/diseno-de-paginas-web" element={<DisenoDePaginasWeb />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

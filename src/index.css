@@ -31,6 +31,11 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
+    --brand-navy: 213 50% 19%;
+    --brand-navy-foreground: 0 0% 100%;
+    --brand-red: 348 100% 56%;
+    --brand-red-foreground: 0 0% 100%;
+
     --border: 220 15% 91%;
     --input: 220 15% 91%;
     --ring: 228 69% 55%;
@@ -88,6 +93,11 @@
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 96%;
+
+    --brand-navy: 213 50% 19%;
+    --brand-navy-foreground: 0 0% 100%;
+    --brand-red: 348 100% 56%;
+    --brand-red-foreground: 0 0% 100%;
 
     --border: 228 20% 12%;
     --input: 228 20% 12%;

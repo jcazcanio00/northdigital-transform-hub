@@ -60,6 +60,8 @@
     { "source": "/blog/google-workspace-vs-microsoft-365/", "destination": "/blog/google-workspace-vs-microsoft-365/index.html" },
     { "source": "/seo", "destination": "/seo/index.html" },
     { "source": "/seo/", "destination": "/seo/index.html" },
+    { "source": "/diseno-de-paginas-web", "destination": "/diseno-de-paginas-web/index.html" },
+    { "source": "/diseno-de-paginas-web/", "destination": "/diseno-de-paginas-web/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
