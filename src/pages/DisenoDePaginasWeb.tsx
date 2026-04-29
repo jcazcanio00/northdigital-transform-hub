@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import {
   ArrowRight,
-  BarChart3,
-  CheckCircle2,
   Code2,
   Compass,
   Gauge,
@@ -15,10 +13,7 @@ import {
   Search,
   Shield,
   Smartphone,
-  Target,
-  TrendingUp,
   Workflow,
-  Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -37,48 +32,46 @@ const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotiza
 
 const solutions = [
   {
-    icon: Code2,
-    title: "Arquitectura Web",
-    description: "Sitios y landing pages construidos como activos digitales para explicar valor, convertir tráfico y sostener campañas.",
-    tag: "Sistema",
+    icon: MousePointerClick,
+    title: "Claridad desde el primer scroll",
+    description: "El visitante entiende qué vendes, por qué confiar y cuál es el siguiente paso sin tener que buscar demasiado.",
+    tag: "Mensaje",
   },
   {
-    icon: TrendingUp,
-    title: "Conversión y Crecimiento",
-    description: "Estructura, mensajes y CTAs diseñados para generar solicitudes reales en Cancún, Playa del Carmen y Tulum.",
-    tag: "Growth",
+    icon: Smartphone,
+    title: "Experiencia mobile-first",
+    description: "Diseño pensado para usuarios que comparan, deciden y contactan desde celular en mercados competitivos.",
+    tag: "UX",
   },
   {
     icon: Workflow,
-    title: "Base para Integraciones",
-    description: "Una web preparada para conectar formularios, WhatsApp, CRM, automatización, analítica y optimización posterior.",
+    title: "Contacto sin fricción",
+    description: "CTAs, WhatsApp y formularios ubicados donde aportan valor, no como elementos decorativos.",
     tag: "Tech",
   },
 ];
 
-const features = [
+const functionCards = [
   {
-    icon: MousePointerClick,
-    title: "UX enfocada en acción",
-    desc: "Jerarquía clara, navegación simple y puntos de contacto visibles para convertir mejor.",
+    icon: Shield,
+    title: "Confianza antes que decoración",
+    desc: "Una página efectiva reduce dudas: muestra autoridad, explica el servicio y presenta la marca con orden profesional.",
+  },
+  {
+    icon: Layers3,
+    title: "Contenido con intención comercial",
+    desc: "Cada bloque debe ayudar a tomar una decisión: entender, comparar, confiar o contactar.",
   },
   {
     icon: Gauge,
-    title: "Rendimiento y claridad",
-    desc: "Experiencias rápidas, ordenadas y fáciles de entender en mobile y desktop.",
+    title: "Rendimiento que sostiene campañas",
+    desc: "Una web lenta o confusa desperdicia tráfico. Construimos una base rápida, clara y preparada para medir.",
   },
   {
-    icon: Shield,
-    title: "Presencia premium",
-    desc: "Diseño consistente con una empresa seria, moderna y lista para competir por confianza.",
+    icon: Search,
+    title: "Estructura lista para crecer",
+    desc: "Dejamos una arquitectura ordenada para trabajar SEO, nuevas secciones, campañas e integraciones después.",
   },
-];
-
-const serviceCards = [
-  { icon: Smartphone, title: "Diseño mobile-first", desc: "Interfaces pensadas primero para el usuario que llega desde celular y necesita actuar rápido." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Estructuras comerciales para servicios, campañas, empresas locales y marcas premium." },
-  { icon: Search, title: "Base lista para SEO", desc: "Arquitectura ordenada para trabajar contenido, posicionamiento y optimización técnica después." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, contacto y rutas de conversión integradas al flujo natural del visitante." },
 ];
 
 const cities = [
@@ -88,44 +81,38 @@ const cities = [
 ];
 
 const process = [
-  { icon: Compass, title: "Descubrimiento", desc: "Analizamos oferta, audiencia, mercado local y objetivos comerciales antes de definir la estructura." },
-  { icon: Lightbulb, title: "Estrategia", desc: "Creamos un mapa de secciones, mensajes, CTAs y tecnología necesaria para convertir visitas en oportunidades." },
-  { icon: Code2, title: "Desarrollo", desc: "Construimos una experiencia responsive, rápida y alineada al sistema visual de North." },
-  { icon: Rocket, title: "Crecimiento", desc: "Dejamos una base preparada para medir, optimizar, conectar CRM, automatizar y escalar." },
-];
-
-const conversionItems = [
-  "Mensaje comercial claro desde el primer scroll.",
-  "Rutas de contacto visibles para cotización y WhatsApp.",
-  "Estructura preparada para campañas, SEO y analítica.",
-  "Base tecnológica compatible con CRM y automatización.",
+  { icon: Compass, title: "Diagnóstico", desc: "Entendemos tu oferta, tus clientes y el contexto competitivo de Cancún, Playa del Carmen o Tulum." },
+  { icon: Lightbulb, title: "Dirección", desc: "Definimos narrativa, secciones, jerarquía visual y acciones clave antes de diseñar pantallas." },
+  { icon: Code2, title: "Producción", desc: "Diseñamos y construimos una experiencia responsive con criterios de claridad, velocidad y confianza." },
+  { icon: Rocket, title: "Lanzamiento", desc: "Publicamos una web lista para recibir tráfico, medir comportamiento y conectar próximos sistemas." },
 ];
 
 const faqs = [
-  { q: "¿Esto es solo diseño visual?", a: "No. La página se plantea como una pieza de tecnología comercial: estructura, mensaje, rendimiento, conversión y base para integraciones futuras." },
-  { q: "¿Sirve para empresas en Cancún, Playa del Carmen y Tulum?", a: "Sí. El enfoque está pensado para empresas de la región que necesitan verse premium, generar confianza y convertir tráfico local en oportunidades reales." },
-  { q: "¿Puede conectarse con WhatsApp, formularios o CRM?", a: "Sí. La estructura permite conectar rutas de contacto, formularios, WhatsApp, CRM, automatización y medición según el alcance del proyecto." },
-  { q: "¿La web puede crecer después?", a: "Sí. Se construye como una base escalable para nuevas secciones, campañas, contenido SEO, automatizaciones e integraciones." },
+  { q: "¿Cuánto tarda una página web?", a: "Depende del alcance, pero una landing o sitio institucional bien definido normalmente avanza por etapas: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento. Desde el inicio dejamos claro qué se entrega y en qué tiempos." },
+  { q: "¿Qué incluye exactamente?", a: "Incluye estructura de contenido, diseño responsive, desarrollo web, CTAs de contacto, conexión a WhatsApp o formulario, criterios de rendimiento y una base ordenada para medición, campañas y crecimiento posterior." },
+  { q: "¿La puedo administrar yo?", a: "Sí, si el proyecto lo requiere podemos plantear una estructura administrable. En otros casos conviene una web más ligera y controlada para mantener velocidad, consistencia visual y menor mantenimiento." },
+  { q: "¿Funciona para SEO?", a: "Sí. Se construye con una base técnica ordenada para SEO: estructura clara, contenido jerarquizado, rendimiento y buenas prácticas. El posicionamiento continuo puede trabajarse después como estrategia de contenido y optimización." },
+  { q: "¿También sirve para Cancún, Playa del Carmen y Tulum?", a: "Sí. La página se plantea para empresas de la región que necesitan competir por confianza, explicar su propuesta con claridad y convertir visitas locales o de campañas en contactos reales." },
 ];
 
 const HeroMockup = () => (
   <div className="relative mx-auto w-full max-w-[680px] animate-hero-slide-up lg:max-w-5xl">
     <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
-    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
+    <div className="absolute -right-2 top-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
       <div className="flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-          <TrendingUp size={19} className="text-primary" />
+          <MessageSquare size={19} className="text-primary" />
         </div>
         <div>
-          <div className="font-display text-base font-extrabold">+42%</div>
-          <div className="text-xs text-muted-foreground">más contactos</div>
+          <div className="font-display text-base font-extrabold">Cotiza hoy</div>
+          <div className="text-xs text-muted-foreground">CTA visible</div>
         </div>
       </div>
     </div>
-    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
+    <div className="absolute -left-3 bottom-12 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
       <div className="flex items-center gap-2 text-xs font-semibold">
         <Shield size={16} className="text-primary" />
-        Diseño listo para vender
+        Marca confiable desde el primer vistazo
       </div>
     </div>
 
@@ -134,86 +121,68 @@ const HeroMockup = () => (
         <span className="h-3 w-3 rounded-full bg-primary/70" />
         <span className="h-3 w-3 rounded-full bg-accent/70" />
         <span className="h-3 w-3 rounded-full bg-primary/35" />
-        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/conversion</span>
+        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">empresa.com.mx</span>
       </div>
 
-      <div className="grid min-h-[430px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
-        <div className="relative overflow-hidden bg-brand-navy p-5 text-brand-navy-foreground sm:p-7">
-          <div className="absolute inset-0 bg-dot-grid opacity-20" />
-          <div className="relative z-10 flex h-full flex-col justify-between gap-10">
-            <div>
-              <div className="mb-8 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="h-9 w-9 rounded-xl bg-brand-navy-foreground/12" />
-                  <div className="h-2.5 w-24 rounded-full bg-brand-navy-foreground/28" />
-                </div>
-                <div className="h-9 w-28 rounded-full bg-primary" />
-              </div>
-              <div className="mb-5 h-3 w-32 rounded-full bg-brand-navy-foreground/25" />
-              <div className="space-y-3">
-                <div className="h-9 w-full max-w-[330px] rounded-lg bg-brand-navy-foreground/90" />
-                <div className="h-9 w-11/12 rounded-lg bg-brand-navy-foreground/70" />
-                <div className="h-9 w-8/12 rounded-lg bg-brand-navy-foreground/45" />
-              </div>
-              <div className="mt-7 space-y-2.5">
-                <div className="h-2.5 w-11/12 rounded-full bg-brand-navy-foreground/25" />
-                <div className="h-2.5 w-8/12 rounded-full bg-brand-navy-foreground/18" />
-              </div>
+      <div className="bg-background p-3 sm:p-5">
+        <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background shadow-sm">
+          <div className="absolute inset-0 bg-dot-grid opacity-30" />
+          <div className="relative z-10 flex items-center justify-between border-b border-border/50 px-4 py-3 sm:px-6">
+            <div className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-xl bg-primary/10" />
+              <div className="h-2.5 w-24 rounded-full bg-foreground/20" />
             </div>
-            <div className="grid grid-cols-3 gap-2.5">
-              {[
-                ["UX", MousePointerClick],
-                ["SEO", Search],
-                ["CRM", Workflow],
-              ].map(([label, Icon]) => (
-                <div key={label as string} className="rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/10 p-3">
-                  <Icon size={18} className="mb-3 text-primary" />
-                  <div className="text-xs font-bold">{label as string}</div>
-                </div>
-              ))}
+            <div className="hidden items-center gap-4 md:flex">
+              <div className="h-2 w-14 rounded-full bg-muted-foreground/25" />
+              <div className="h-2 w-16 rounded-full bg-muted-foreground/25" />
+              <div className="h-2 w-12 rounded-full bg-muted-foreground/25" />
             </div>
+            <div className="h-9 w-28 rounded-full bg-primary" />
           </div>
-        </div>
 
-        <div className="bg-muted/10 p-4 sm:p-5">
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <div className="font-display text-sm font-bold">Conversion OS</div>
-              <div className="text-[11px] text-muted-foreground">Sitio web empresarial</div>
-            </div>
-            <div className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold text-primary">Live</div>
-          </div>
-          <div className="grid grid-cols-2 gap-2.5">
-            {[
-              ["Leads", "124"],
-              ["Speed", "98"],
-              ["Mobile", "A+"],
-              ["Conv.", "6.8%"],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-xl border border-border/60 bg-background p-3">
-                <div className="text-[10px] text-muted-foreground">{label}</div>
-                <div className="font-display text-xl font-extrabold">{value}</div>
+          <div className="relative z-10 grid min-h-[420px] gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
+              <div className="mb-5 h-3 w-32 rounded-full bg-primary/25" />
+              <div className="space-y-3">
+                <div className="h-10 w-full max-w-[430px] rounded-xl bg-foreground/90" />
+                <div className="h-10 w-10/12 rounded-xl bg-foreground/70" />
+                <div className="h-10 w-7/12 rounded-xl bg-foreground/45" />
               </div>
-            ))}
-          </div>
-          <div className="mt-4 rounded-xl border border-border/60 bg-background p-4">
-            <div className="mb-4 flex items-center justify-between text-xs font-semibold">
-              <span>Solicitudes</span>
-              <BarChart3 size={15} className="text-primary" />
-            </div>
-            <div className="flex h-32 items-end gap-1.5">
-              {[34, 48, 42, 60, 54, 69, 76, 68, 86, 80, 94, 90].map((height, index) => (
-                <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-primary/25 to-primary transition-transform duration-300 hover:scale-y-105" style={{ height: `${height}%` }} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-4 space-y-2.5">
-            {["CTA visible", "WhatsApp conectado", "Base lista para SEO"].map((item) => (
-              <div key={item} className="flex items-center justify-between rounded-xl border border-border/50 bg-background px-3 py-2.5 text-xs">
-                <span className="font-medium">{item}</span>
-                <CheckCircle2 size={14} className="text-primary" />
+              <div className="mt-7 max-w-[420px] space-y-2.5">
+                <div className="h-2.5 w-full rounded-full bg-muted-foreground/25" />
+                <div className="h-2.5 w-9/12 rounded-full bg-muted-foreground/18" />
               </div>
-            ))}
+              <div className="mt-8 flex flex-wrap gap-3">
+                <div className="h-11 w-36 rounded-xl bg-primary" />
+                <div className="h-11 w-32 rounded-xl border border-border bg-background" />
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+              <div className="relative grid h-full content-center gap-4">
+                <div className="rounded-2xl border border-border/60 bg-background p-4 shadow-sm">
+                  <div className="mb-4 h-36 rounded-xl bg-gradient-to-br from-primary/18 via-accent/10 to-muted" />
+                  <div className="space-y-2">
+                    <div className="h-3 w-8/12 rounded-full bg-foreground/25" />
+                    <div className="h-2.5 w-full rounded-full bg-muted-foreground/18" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    ["Servicios", Layers3],
+                    ["Reseñas", Shield],
+                    ["Ubicación", MapPin],
+                    ["Contacto", MessageSquare],
+                  ].map(([label, Icon]) => (
+                    <div key={label as string} className="rounded-xl border border-border/60 bg-background p-3">
+                      <Icon size={17} className="mb-2 text-primary" />
+                      <div className="text-[11px] font-bold">{label as string}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -314,82 +283,39 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider mt-8" />
         </section>
 
-        <section className="py-12 md:py-20 relative overflow-hidden min-h-0 md:min-h-[500px]">
+        <section className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[500px]">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center mb-14">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-12">
+              <div>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Propuesta de Valor
+                Criterio Comercial
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5">
-                Diseño web conectado a <span className="gradient-text">crecimiento</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5 leading-tight">
+                Lo que realmente hace que una página web <span className="gradient-text">funcione</span>
               </h2>
-            </div>
-
-            <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-6 items-center">
-              <div className="lg:pl-4">
-                <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  North no construye páginas aisladas. Creamos interfaces comerciales integradas a la estrategia digital, preparadas para campañas, medición, automatización y confianza.
-                </p>
-                <div className="space-y-5">
-                  {features.map((f) => (
-                    <div key={f.title} className="flex gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] transition-all duration-300">
-                        <f.icon size={22} className="text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold mb-1 group-hover:text-primary transition-colors">{f.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <p className="text-muted-foreground max-w-xl leading-relaxed">
+                No se trata de llenar una web de efectos. Se trata de ordenar información, reducir fricción y convertir la confianza en una acción clara.
+              </p>
               </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {serviceCards.map((card) => (
-                  <article key={card.title} className="glass-card rounded-2xl p-6 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
-                    <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-all duration-500">
-                      <card.icon size={22} className="text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{card.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{card.desc}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 md:py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
-          <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-              <div>
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-xs text-brand-navy-foreground/75 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                  Conversión y Sistemas
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight text-brand-navy-foreground">
-                  Una web no debe verse bonita solamente. Debe integrarse a tu crecimiento.
-                </h2>
-                <p className="text-brand-navy-foreground/65 text-base leading-relaxed max-w-xl">
-                  La página se convierte en una pieza del sistema comercial: atrae, explica, filtra, conecta y deja lista la base para escalar con tecnología.
+              <div className="rounded-2xl border border-border/60 bg-secondary/50 p-6 md:p-8">
+                <p className="font-display text-xl font-extrabold leading-tight md:text-2xl">
+                  Diseño, contenido y tecnología trabajando juntos para que tu sitio explique mejor y venda con menos esfuerzo.
                 </p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {conversionItems.map((item, index) => (
-                  <div key={item} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-brand-navy-foreground/[0.12] hover:shadow-[0_0_40px_-14px_hsl(var(--primary)/0.45)]">
-                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary font-display text-sm font-bold ring-1 ring-primary/20">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm leading-relaxed text-brand-navy-foreground/75">{item}</p>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {functionCards.map((card) => (
+                <article key={card.title} className="glass-card rounded-2xl p-7 md:p-8 group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
+                  <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15">
+                    <card.icon size={24} className="text-primary" />
                   </div>
-                ))}
-              </div>
+                  <h3 className="mb-3 font-display text-xl font-bold transition-colors duration-300 group-hover:text-primary">{card.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{card.desc}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -405,10 +331,10 @@ const DisenoDePaginasWeb = () => {
                 Presencia Regional
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
-                Presencia digital premium para mercados que compiten por confianza
+                Diseño web para empresas en Cancún, Playa del Carmen y Tulum
               </h2>
               <p className="text-muted-foreground max-w-xl leading-relaxed">
-                Una presencia premium para mercados donde la confianza, velocidad y claridad comercial definen la primera decisión.
+                Una página clara para mercados donde el visitante compara rápido, revisa confianza y decide con quién contactar.
               </p>
             </div>
               <div className="rounded-2xl border border-border/60 bg-background/80 p-5 shadow-sm">
@@ -440,43 +366,37 @@ const DisenoDePaginasWeb = () => {
         <section className="py-12 md:py-24 relative min-h-0 md:min-h-[500px]">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-14">
+              <div>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 Consultoría y Ejecución
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-                De la idea al <span className="gradient-text">lanzamiento</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
+                Un proceso más consultivo, menos plantilla
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Un proceso claro para convertir una necesidad comercial en una página web lista para vender, medir y escalar.
+              </div>
+              <p className="text-muted-foreground max-w-xl leading-relaxed lg:ml-auto">
+                Antes de diseñar pantallas, ordenamos la oferta, la narrativa y los puntos de decisión que necesita tu cliente para avanzar.
               </p>
             </div>
 
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
-              <div className="space-y-12">
+            <div className="grid gap-4 lg:grid-cols-4">
                 {process.map((step, i) => (
-                  <div
+                  <article
                     key={step.title}
-                    className={`flex items-start gap-6 md:gap-12 group ${i % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}
+                    className="glass-card rounded-2xl p-6 md:p-7 group transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
                   >
-                    <div className="flex-1 hidden md:block" />
-                    <div className="relative z-10 shrink-0">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)] group-hover:scale-105">
-                        <step.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
+                    <div className="mb-8 flex items-center justify-between">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 transition-all duration-500 group-hover:bg-primary/15">
+                        <step.icon size={23} className="text-primary" />
                       </div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full gradient-btn flex items-center justify-center text-[10px] font-bold text-white">
-                        {i + 1}
-                      </div>
+                      <span className="font-display text-4xl font-extrabold text-primary/15">0{i + 1}</span>
                     </div>
-                    <div className="flex-1 rounded-2xl border border-border/50 bg-card/70 p-5 shadow-sm transition-all duration-500 group-hover:-translate-y-1 group-hover:border-primary/20 group-hover:shadow-[0_0_40px_-16px_hsl(var(--primary)/0.3)]">
-                      <h3 className="text-lg font-bold font-display mb-2 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
+                    <h3 className="text-xl font-bold font-display mb-3 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </article>
                 ))}
-              </div>
             </div>
           </div>
         </section>
@@ -508,24 +428,29 @@ const DisenoDePaginasWeb = () => {
         </section>
 
         <section className="relative overflow-hidden bg-background py-14 md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-4xl">
-              <div className="text-center mb-12 md:mb-14">
+            <div className="mx-auto max-w-5xl">
+              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end mb-12 md:mb-14">
+                <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                   <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                   FAQ
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">Preguntas frecuentes</h2>
-                <p className="mx-auto max-w-xl text-muted-foreground">
-                  Respuestas rápidas para entender cómo planteamos una página web como activo comercial y tecnológico.
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">Preguntas antes de cotizar</h2>
+                </div>
+                <p className="max-w-xl text-muted-foreground leading-relaxed lg:ml-auto">
+                  Respuestas directas sobre alcance, tiempos, administración y preparación para SEO antes de iniciar un proyecto web.
                 </p>
               </div>
-              <Accordion type="single" collapsible className="glass-card rounded-2xl border border-border/60 px-4 py-2 shadow-sm md:px-6 md:py-4">
+              <Accordion type="single" collapsible className="grid gap-4">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={faq.q} value={`item-${index}`} className="border-border/50 px-1">
-                    <AccordionTrigger className="py-5 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-lg">{faq.q}</AccordionTrigger>
-                    <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:max-w-3xl">{faq.a}</AccordionContent>
+                  <AccordionItem key={faq.q} value={`item-${index}`} className="glass-card rounded-2xl border border-border/60 px-5 py-1 transition-all duration-300 hover:border-primary/20 md:px-7">
+                    <AccordionTrigger className="py-6 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-xl">
+                      <span className="pr-4">{faq.q}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground md:max-w-3xl md:text-base">{faq.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
