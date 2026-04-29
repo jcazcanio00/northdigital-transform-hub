@@ -403,39 +403,69 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden border-y border-border/60 bg-secondary/45 py-12 md:py-24">
-          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
+        <section className="relative overflow-hidden border-y border-border/60 py-12 md:py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/35 to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
+          <div className="absolute right-0 top-1/2 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-primary/8 blur-[70px] pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div className="lg:sticky lg:top-28">
+            <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-16">
+              <div>
                 <div className="mb-4">
                   <SectionBadge>Presencia Regional</SectionBadge>
                 </div>
-                <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+                <h2 className="mb-5 max-w-xl text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
                   Páginas web que compiten en mercados reales
                 </h2>
                 <p className="max-w-xl leading-relaxed text-muted-foreground">
                   En la Riviera Maya, una web compite contra marcas locales, opciones internacionales y decisiones rápidas. Diseñamos páginas que explican con claridad, transmiten confianza y ayudan a que el cliente entienda por qué elegirte.
                 </p>
+                <div className="mt-8 grid max-w-xl grid-cols-3 gap-3">
+                  {['Turismo', 'Real estate', 'Servicios'].map((label) => (
+                    <div key={label} className="rounded-2xl border border-border/60 bg-background/70 px-4 py-3 text-center shadow-sm">
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-primary">Mercado</span>
+                      <p className="mt-1 text-xs font-extrabold text-foreground sm:text-sm">{label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="glass-card overflow-hidden rounded-2xl border border-border/60 bg-background/70">
-                <div className="divide-y divide-border/50">
+              <div className="relative">
+                <div className="absolute -left-4 top-8 hidden h-32 w-32 rounded-full border border-primary/20 lg:block" />
+                <div className="absolute -right-3 bottom-10 hidden h-24 w-24 rounded-full bg-primary/10 blur-2xl lg:block" />
+                <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-background/82 shadow-[0_28px_90px_-55px_hsl(var(--primary)/0.55)]">
+                  <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-primary/8 to-transparent pointer-events-none" />
+                  <div className="relative flex items-center justify-between border-b border-border/50 px-6 py-5 md:px-8">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-primary/70">Mapa comercial</p>
+                      <h3 className="mt-1 font-display text-xl font-extrabold text-foreground">Riviera Maya</h3>
+                    </div>
+                    <div className="hidden rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[11px] font-bold text-primary sm:block">
+                      3 mercados clave
+                    </div>
+                  </div>
+
+                  <div className="relative px-6 py-2 md:px-8">
+                    <div className="absolute bottom-10 left-[52px] top-10 w-px bg-gradient-to-b from-primary/10 via-primary/45 to-primary/10 md:left-[60px]" />
                   {regions.map((region, index) => (
-                    <div key={region.city} className="grid gap-5 p-6 transition-colors duration-300 hover:bg-primary/[0.025] sm:grid-cols-[auto_1fr] md:p-8">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 font-display text-sm font-extrabold text-primary">
+                    <div key={region.city} className="group relative grid gap-5 py-7 pl-16 transition-all duration-300 hover:translate-x-1 md:pl-20">
+                      <div className="absolute left-0 top-7 z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/25 bg-background font-display text-sm font-extrabold text-primary shadow-[0_0_44px_-14px_hsl(var(--primary)/0.5)] md:h-16 md:w-16">
                         0{index + 1}
                       </div>
-                      <div>
-                        <div className="mb-3 flex items-center gap-3">
-                          <MapPin size={18} className="text-primary" />
-                          <h3 className="text-xl font-bold font-display">{region.city}</h3>
+                      <div className="rounded-2xl border border-border/50 bg-secondary/35 p-5 transition-all duration-300 group-hover:border-primary/25 group-hover:bg-background/80 md:p-6">
+                        <div className="mb-3 flex items-center justify-between gap-4">
+                          <div className="flex items-center gap-3">
+                            <MapPin size={18} className="text-primary" />
+                            <h3 className="text-xl font-bold font-display">{region.city}</h3>
+                          </div>
+                          <span className="hidden rounded-full bg-primary/8 px-3 py-1 text-[10px] font-bold text-primary sm:inline-flex">
+                            Prioridad {index + 1}
+                          </span>
                         </div>
                         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{region.text}</p>
                       </div>
                     </div>
                   ))}
+                  </div>
                 </div>
               </div>
             </div>
