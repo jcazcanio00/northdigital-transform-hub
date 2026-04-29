@@ -238,16 +238,16 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative overflow-hidden bg-background pb-10 pt-6 md:pb-16 md:pt-14 lg:pt-16">
+        <section className="relative min-h-0 overflow-hidden bg-background pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
           <div className="absolute inset-0 bg-dot-grid opacity-40" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
           <div className="hidden lg:block absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
           <div className="hidden lg:block absolute top-[4%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-4xl animate-hero-fade-in text-center">
+            <div className="mx-auto mb-8 max-w-4xl animate-hero-fade-in text-center md:mb-16">
                 <SectionBadge>Diseño de páginas web</SectionBadge>
                 <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Páginas web premium conectadas a crecimiento y conversión
+                  Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web.
                 </h1>
                 <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                   Creamos activos digitales para empresas en Cancún, Playa del Carmen y Tulum que necesitan convertir tráfico en oportunidades, conectar ventas y construir una base escalable.
@@ -268,7 +268,7 @@ const DisenoDePaginasWeb = () => {
                   ))}
                 </div>
             </div>
-              <div className="mt-10 md:mt-14">
+              <div>
                 <HeroVisual />
               </div>
           </div>
