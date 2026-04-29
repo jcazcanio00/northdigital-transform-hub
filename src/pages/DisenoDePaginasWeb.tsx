@@ -1,14 +1,11 @@
 import { useEffect } from "react";
 import {
-  Activity,
   ArrowRight,
   BarChart3,
-  Bell,
   CheckCircle2,
   Code2,
   Compass,
   Gauge,
-  Globe,
   Layers3,
   Lightbulb,
   MapPin,
@@ -20,7 +17,6 @@ import {
   Smartphone,
   Target,
   TrendingUp,
-  Users,
   Workflow,
   Zap,
 } from "lucide-react";
@@ -111,6 +107,119 @@ const faqs = [
   { q: "¿Puede conectarse con WhatsApp, formularios o CRM?", a: "Sí. La estructura permite conectar rutas de contacto, formularios, WhatsApp, CRM, automatización y medición según el alcance del proyecto." },
   { q: "¿La web puede crecer después?", a: "Sí. Se construye como una base escalable para nuevas secciones, campañas, contenido SEO, automatizaciones e integraciones." },
 ];
+
+const HeroMockup = () => (
+  <div className="relative mx-auto w-full max-w-[680px] animate-hero-slide-up lg:max-w-5xl">
+    <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
+    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
+      <div className="flex items-center gap-3">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+          <TrendingUp size={19} className="text-primary" />
+        </div>
+        <div>
+          <div className="font-display text-base font-extrabold">+42%</div>
+          <div className="text-xs text-muted-foreground">más contactos</div>
+        </div>
+      </div>
+    </div>
+    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
+      <div className="flex items-center gap-2 text-xs font-semibold">
+        <Shield size={16} className="text-primary" />
+        Diseño listo para vender
+      </div>
+    </div>
+
+    <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
+      <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
+        <span className="h-3 w-3 rounded-full bg-primary/70" />
+        <span className="h-3 w-3 rounded-full bg-accent/70" />
+        <span className="h-3 w-3 rounded-full bg-primary/35" />
+        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/conversion</span>
+      </div>
+
+      <div className="grid min-h-[430px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
+        <div className="relative overflow-hidden bg-brand-navy p-5 text-brand-navy-foreground sm:p-7">
+          <div className="absolute inset-0 bg-dot-grid opacity-20" />
+          <div className="relative z-10 flex h-full flex-col justify-between gap-10">
+            <div>
+              <div className="mb-8 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-9 w-9 rounded-xl bg-brand-navy-foreground/12" />
+                  <div className="h-2.5 w-24 rounded-full bg-brand-navy-foreground/28" />
+                </div>
+                <div className="h-9 w-28 rounded-full bg-primary" />
+              </div>
+              <div className="mb-5 h-3 w-32 rounded-full bg-brand-navy-foreground/25" />
+              <div className="space-y-3">
+                <div className="h-9 w-full max-w-[330px] rounded-lg bg-brand-navy-foreground/90" />
+                <div className="h-9 w-11/12 rounded-lg bg-brand-navy-foreground/70" />
+                <div className="h-9 w-8/12 rounded-lg bg-brand-navy-foreground/45" />
+              </div>
+              <div className="mt-7 space-y-2.5">
+                <div className="h-2.5 w-11/12 rounded-full bg-brand-navy-foreground/25" />
+                <div className="h-2.5 w-8/12 rounded-full bg-brand-navy-foreground/18" />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-2.5">
+              {[
+                ["UX", MousePointerClick],
+                ["SEO", Search],
+                ["CRM", Workflow],
+              ].map(([label, Icon]) => (
+                <div key={label as string} className="rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/10 p-3">
+                  <Icon size={18} className="mb-3 text-primary" />
+                  <div className="text-xs font-bold">{label as string}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-muted/10 p-4 sm:p-5">
+          <div className="mb-4 flex items-center justify-between">
+            <div>
+              <div className="font-display text-sm font-bold">Conversion OS</div>
+              <div className="text-[11px] text-muted-foreground">Sitio web empresarial</div>
+            </div>
+            <div className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold text-primary">Live</div>
+          </div>
+          <div className="grid grid-cols-2 gap-2.5">
+            {[
+              ["Leads", "124"],
+              ["Speed", "98"],
+              ["Mobile", "A+"],
+              ["Conv.", "6.8%"],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-xl border border-border/60 bg-background p-3">
+                <div className="text-[10px] text-muted-foreground">{label}</div>
+                <div className="font-display text-xl font-extrabold">{value}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 rounded-xl border border-border/60 bg-background p-4">
+            <div className="mb-4 flex items-center justify-between text-xs font-semibold">
+              <span>Solicitudes</span>
+              <BarChart3 size={15} className="text-primary" />
+            </div>
+            <div className="flex h-32 items-end gap-1.5">
+              {[34, 48, 42, 60, 54, 69, 76, 68, 86, 80, 94, 90].map((height, index) => (
+                <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-primary/25 to-primary transition-transform duration-300 hover:scale-y-105" style={{ height: `${height}%` }} />
+              ))}
+            </div>
+          </div>
+          <div className="mt-4 space-y-2.5">
+            {["CTA visible", "WhatsApp conectado", "Base lista para SEO"].map((item) => (
+              <div key={item} className="flex items-center justify-between rounded-xl border border-border/50 bg-background px-3 py-2.5 text-xs">
+                <span className="font-medium">{item}</span>
+                <CheckCircle2 size={14} className="text-primary" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const DisenoDePaginasWeb = () => {
   useEffect(() => {
