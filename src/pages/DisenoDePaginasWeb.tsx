@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import {
   ArrowRight,
-  BarChart3,
   CheckCircle2,
   Code2,
   Compass,
@@ -15,10 +14,8 @@ import {
   Search,
   Shield,
   Smartphone,
-  Target,
   TrendingUp,
   Workflow,
-  Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
@@ -37,48 +34,46 @@ const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotiza
 
 const solutions = [
   {
-    icon: Code2,
-    title: "Arquitectura Web",
-    description: "Sitios y landing pages construidos como activos digitales para explicar valor, convertir tráfico y sostener campañas.",
-    tag: "Sistema",
+    icon: MousePointerClick,
+    title: "Claridad desde el primer scroll",
+    description: "El visitante entiende qué vendes, por qué confiar y cuál es el siguiente paso sin tener que buscar demasiado.",
+    tag: "Mensaje",
   },
   {
-    icon: TrendingUp,
-    title: "Conversión y Crecimiento",
-    description: "Estructura, mensajes y CTAs diseñados para generar solicitudes reales en Cancún, Playa del Carmen y Tulum.",
-    tag: "Growth",
+    icon: Smartphone,
+    title: "Experiencia mobile-first",
+    description: "Diseño pensado para usuarios que comparan, deciden y contactan desde celular en mercados competitivos.",
+    tag: "UX",
   },
   {
     icon: Workflow,
-    title: "Base para Integraciones",
-    description: "Una web preparada para conectar formularios, WhatsApp, CRM, automatización, analítica y optimización posterior.",
+    title: "Contacto sin fricción",
+    description: "CTAs, WhatsApp y formularios ubicados donde aportan valor, no como elementos decorativos.",
     tag: "Tech",
   },
 ];
 
-const features = [
+const functionCards = [
   {
-    icon: MousePointerClick,
-    title: "UX enfocada en acción",
-    desc: "Jerarquía clara, navegación simple y puntos de contacto visibles para convertir mejor.",
+    icon: Shield,
+    title: "Confianza antes que decoración",
+    desc: "Una página efectiva reduce dudas: muestra autoridad, explica el servicio y presenta la marca con orden profesional.",
+  },
+  {
+    icon: Layers3,
+    title: "Contenido con intención comercial",
+    desc: "Cada bloque debe ayudar a tomar una decisión: entender, comparar, confiar o contactar.",
   },
   {
     icon: Gauge,
-    title: "Rendimiento y claridad",
-    desc: "Experiencias rápidas, ordenadas y fáciles de entender en mobile y desktop.",
+    title: "Rendimiento que sostiene campañas",
+    desc: "Una web lenta o confusa desperdicia tráfico. Construimos una base rápida, clara y preparada para medir.",
   },
   {
-    icon: Shield,
-    title: "Presencia premium",
-    desc: "Diseño consistente con una empresa seria, moderna y lista para competir por confianza.",
+    icon: Search,
+    title: "Estructura lista para crecer",
+    desc: "Dejamos una arquitectura ordenada para trabajar SEO, nuevas secciones, campañas e integraciones después.",
   },
-];
-
-const serviceCards = [
-  { icon: Smartphone, title: "Diseño mobile-first", desc: "Interfaces pensadas primero para el usuario que llega desde celular y necesita actuar rápido." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Estructuras comerciales para servicios, campañas, empresas locales y marcas premium." },
-  { icon: Search, title: "Base lista para SEO", desc: "Arquitectura ordenada para trabajar contenido, posicionamiento y optimización técnica después." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, contacto y rutas de conversión integradas al flujo natural del visitante." },
 ];
 
 const cities = [
@@ -88,24 +83,18 @@ const cities = [
 ];
 
 const process = [
-  { icon: Compass, title: "Descubrimiento", desc: "Analizamos oferta, audiencia, mercado local y objetivos comerciales antes de definir la estructura." },
-  { icon: Lightbulb, title: "Estrategia", desc: "Creamos un mapa de secciones, mensajes, CTAs y tecnología necesaria para convertir visitas en oportunidades." },
-  { icon: Code2, title: "Desarrollo", desc: "Construimos una experiencia responsive, rápida y alineada al sistema visual de North." },
-  { icon: Rocket, title: "Crecimiento", desc: "Dejamos una base preparada para medir, optimizar, conectar CRM, automatizar y escalar." },
-];
-
-const conversionItems = [
-  "Mensaje comercial claro desde el primer scroll.",
-  "Rutas de contacto visibles para cotización y WhatsApp.",
-  "Estructura preparada para campañas, SEO y analítica.",
-  "Base tecnológica compatible con CRM y automatización.",
+  { icon: Compass, title: "Diagnóstico", desc: "Entendemos tu oferta, tus clientes y el contexto competitivo de Cancún, Playa del Carmen o Tulum." },
+  { icon: Lightbulb, title: "Dirección", desc: "Definimos narrativa, secciones, jerarquía visual y acciones clave antes de diseñar pantallas." },
+  { icon: Code2, title: "Producción", desc: "Diseñamos y construimos una experiencia responsive con criterios de claridad, velocidad y confianza." },
+  { icon: Rocket, title: "Lanzamiento", desc: "Publicamos una web lista para recibir tráfico, medir comportamiento y conectar próximos sistemas." },
 ];
 
 const faqs = [
-  { q: "¿Esto es solo diseño visual?", a: "No. La página se plantea como una pieza de tecnología comercial: estructura, mensaje, rendimiento, conversión y base para integraciones futuras." },
-  { q: "¿Sirve para empresas en Cancún, Playa del Carmen y Tulum?", a: "Sí. El enfoque está pensado para empresas de la región que necesitan verse premium, generar confianza y convertir tráfico local en oportunidades reales." },
-  { q: "¿Puede conectarse con WhatsApp, formularios o CRM?", a: "Sí. La estructura permite conectar rutas de contacto, formularios, WhatsApp, CRM, automatización y medición según el alcance del proyecto." },
-  { q: "¿La web puede crecer después?", a: "Sí. Se construye como una base escalable para nuevas secciones, campañas, contenido SEO, automatizaciones e integraciones." },
+  { q: "¿Cuánto tarda una página web?", a: "Depende del alcance, pero una landing o sitio institucional bien definido normalmente avanza por etapas: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento. Desde el inicio dejamos claro qué se entrega y en qué tiempos." },
+  { q: "¿Qué incluye exactamente?", a: "Incluye estructura de contenido, diseño responsive, desarrollo web, CTAs de contacto, conexión a WhatsApp o formulario, criterios de rendimiento y una base ordenada para medición, campañas y crecimiento posterior." },
+  { q: "¿La puedo administrar yo?", a: "Sí, si el proyecto lo requiere podemos plantear una estructura administrable. En otros casos conviene una web más ligera y controlada para mantener velocidad, consistencia visual y menor mantenimiento." },
+  { q: "¿Funciona para SEO?", a: "Sí. Se construye con una base técnica ordenada para SEO: estructura clara, contenido jerarquizado, rendimiento y buenas prácticas. El posicionamiento continuo puede trabajarse después como estrategia de contenido y optimización." },
+  { q: "¿También sirve para Cancún, Playa del Carmen y Tulum?", a: "Sí. La página se plantea para empresas de la región que necesitan competir por confianza, explicar su propuesta con claridad y convertir visitas locales o de campañas en contactos reales." },
 ];
 
 const HeroMockup = () => (
