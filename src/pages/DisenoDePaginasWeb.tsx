@@ -292,21 +292,28 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-background py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una web para operar como activo de crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <section className="relative min-h-0 py-12 md:min-h-[480px] md:py-24">
+          <div className="section-divider" />
+          <div className="container mx-auto px-4 py-4 lg:px-8">
+            <SectionHeader eyebrow="Servicio completo" title="Soluciones web conectadas a crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <service.icon size={22} className="text-primary" />
+                <article key={service.title} className="glass-card group relative block overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-3 hover:border-primary/25 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)]">
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent group-hover:opacity-100" />
+                  <div className="relative z-10">
+                  <div className="mb-5 flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)]">
+                      <service.icon size={22} className="text-primary" />
+                    </div>
                   </div>
-                  <h3 className="mb-3 font-display text-lg font-bold">{service.title}</h3>
+                  <h3 className="mb-3 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{service.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
+          <div className="section-divider mt-8" />
         </section>
 
         <section className="relative overflow-hidden bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
@@ -351,22 +358,31 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-background py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative min-h-0 py-12 md:min-h-[500px] md:py-24">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <SectionHeader eyebrow="Proceso claro" title="De idea a sistema web listo para crecer" copy="Un flujo simple, ordenado y enfocado en lanzar una experiencia premium que cumpla una función comercial dentro de tu operación digital." />
-            <div className="grid gap-4 lg:grid-cols-4">
-              {process.map((item) => (
-                <article key={item.title} className="rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="mb-8 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                      <item.icon size={21} className="text-primary" />
+            <div className="relative mx-auto max-w-4xl">
+              <div className="absolute bottom-0 left-8 top-0 hidden w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:block lg:left-1/2" />
+              <div className="space-y-12">
+              {process.map((item, index) => (
+                <article key={item.title} className={`group flex items-start gap-6 md:gap-12 ${index % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}>
+                  <div className="hidden flex-1 md:block" />
+                  <div className="relative z-10 shrink-0">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)]">
+                      <item.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
                     </div>
-                    <span className="font-display text-3xl font-extrabold text-primary/15">{item.step}</span>
+                    <div className="gradient-btn absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                      {index + 1}
+                    </div>
                   </div>
-                  <h3 className="mb-3 font-display text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  <div className="flex-1">
+                    <h3 className="mb-2 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  </div>
                 </article>
               ))}
+              </div>
             </div>
           </div>
         </section>
