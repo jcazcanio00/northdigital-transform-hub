@@ -179,12 +179,12 @@ const trustItems = [
 ];
 
 const services = [
-  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el tipo de cliente que quieres convertir." },
-  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción operativa." },
-  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros, ordenados y preparados para crecer con campañas, contenido, analítica y futuras integraciones." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos digitales comerciales, sitios corporativos y estructuras listas para conectar marketing, ventas y SEO posterior." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en conversaciones y oportunidades medibles." },
-  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas genéricas ni piezas aisladas de tu operación." },
+  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el cliente que necesitas convertir." },
+  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción." },
+  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros y preparados para crecer con campañas, contenido, analítica e integraciones futuras." },
+  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos comerciales y sitios corporativos listos para conectar marketing, ventas y posicionamiento orgánico." },
+  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en oportunidades medibles." },
+  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas ni piezas aisladas." },
 ];
 
 const benefits = [
@@ -201,10 +201,10 @@ const cities = [
 ];
 
 const process = [
-  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol que la página debe cumplir dentro de tu sistema comercial." },
-  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia premium alineada al estándar visual de North." },
-  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente, preparada para analítica e integraciones futuras." },
-  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos una base lista para publicar, medir y optimizar después." },
+  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol de la página dentro de tu sistema comercial." },
+  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones y CTAs alineados al estándar visual de North." },
+  { step: "03", icon: Code2, title: "Desarrollo", desc: "Construimos una interfaz responsive, rápida y preparada para analítica e integraciones futuras." },
+  { step: "04", icon: Rocket, title: "Crecimiento", desc: "Dejamos una base lista para publicar, medir, optimizar y escalar después." },
 ];
 
 const differentiators = [
