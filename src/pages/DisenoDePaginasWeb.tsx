@@ -281,10 +281,10 @@ const DisenoDePaginasWeb = () => {
                 Lo Que Hacemos
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-                Webs como <span className="gradient-text">Sistemas</span>
+                Páginas web diseñadas para <span className="gradient-text">vender</span>
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Tecnología visual, comercial y operativa para acelerar la forma en que tu empresa convierte oportunidades.
+                Diseño profesional, tecnología y estructura comercial para empresas que quieren generar confianza, contactos y crecimiento.
               </p>
             </div>
 
@@ -370,7 +370,7 @@ const DisenoDePaginasWeb = () => {
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-xs text-brand-navy-foreground/75 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-brand-red animate-status-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                   Conversión y Sistemas
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight text-brand-navy-foreground">
@@ -382,8 +382,8 @@ const DisenoDePaginasWeb = () => {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {conversionItems.map((item, index) => (
-                  <div key={item} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-navy-foreground/[0.12]">
-                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red text-brand-navy-foreground font-display text-sm font-bold">
+                  <div key={item} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-brand-navy-foreground/[0.12] hover:shadow-[0_0_40px_-14px_hsl(var(--primary)/0.45)]">
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary font-display text-sm font-bold ring-1 ring-primary/20">
                       {index + 1}
                     </div>
                     <p className="text-sm leading-relaxed text-brand-navy-foreground/75">{item}</p>
