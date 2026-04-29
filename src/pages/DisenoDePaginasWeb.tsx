@@ -147,83 +147,117 @@ const faqs = [
 ];
 
 const WebsiteMockup = () => (
-  <div className="relative mx-auto w-full max-w-[680px] animate-hero-slide-up lg:max-w-none">
-    <div className="hidden lg:block absolute -inset-10 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
-    <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
-      <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
-        <div className="flex gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-primary/55" />
-          <span className="h-3 w-3 rounded-full bg-accent/45" />
-          <span className="h-3 w-3 rounded-full bg-primary/25" />
+  <div className="group relative mx-auto w-full max-w-[700px] animate-hero-slide-up lg:max-w-none lg:[perspective:1400px]">
+    <div className="pointer-events-none absolute -inset-8 rounded-[40px] bg-primary/10 opacity-80 blur-[52px] transition-opacity duration-500 group-hover:opacity-100" />
+    <div className="glass-card relative overflow-visible rounded-2xl border border-border/60 shadow-2xl transition-transform duration-500 lg:rotate-[-1.5deg] lg:[transform-style:preserve-3d] lg:group-hover:rotate-0">
+      <div className="overflow-hidden rounded-2xl">
+        <div className="flex items-center gap-2 border-b border-border/30 bg-muted/25 px-5 py-3">
+          <div className="flex gap-1.5">
+            <span className="h-3 w-3 rounded-full bg-primary/55" />
+            <span className="h-3 w-3 rounded-full bg-accent/45" />
+            <span className="h-3 w-3 rounded-full bg-primary/25" />
+          </div>
+          <div className="mx-auto hidden rounded-full border border-border/50 bg-background/70 px-5 py-1 text-[10px] font-medium text-muted-foreground sm:block">
+            casamare.mx · experiencia lista para convertir
+          </div>
         </div>
-        <div className="mx-auto hidden rounded-md bg-muted/40 px-4 py-1 text-[10px] text-muted-foreground sm:block">
-          vista previa · sitio web
+
+        <div className="relative bg-background p-3 sm:p-5">
+          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background shadow-[0_24px_80px_-40px_hsl(var(--primary)/0.65)]">
+            <div className="absolute inset-0 bg-dot-grid opacity-15" />
+            <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-br from-primary/20 via-accent/10 to-background" />
+
+            <div className="relative z-10 flex items-center justify-between border-b border-border/45 bg-background/72 px-4 py-4 sm:px-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary/20 bg-primary/10">
+                  <span className="h-3.5 w-3.5 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.65)]" />
+                </div>
+                <span className="font-display text-xs font-extrabold tracking-tight sm:text-sm">Casa Maré</span>
+              </div>
+              <nav className="hidden items-center gap-5 text-[11px] font-semibold text-muted-foreground md:flex">
+                <span>Suites</span>
+                <span>Experiencias</span>
+                <span>Ubicación</span>
+              </nav>
+              <div className="rounded-lg bg-primary px-4 py-2 text-[10px] font-bold text-primary-foreground sm:text-xs">
+                Reservar
+              </div>
+            </div>
+
+            <div className="relative z-10 grid min-h-[450px] lg:grid-cols-[1.04fr_0.96fr]">
+              <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
+                <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[10px] font-semibold text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-status-pulse" />
+                  Boutique stay · Tulum
+                </div>
+                <h3 className="max-w-[390px] text-3xl font-extrabold leading-tight text-foreground font-display sm:text-4xl">
+                  Hospedaje privado frente al Caribe
+                </h3>
+                <p className="mt-5 max-w-[380px] text-sm leading-relaxed text-muted-foreground">
+                  Suites con concierge, experiencias locales y reserva directa para viajeros que comparan antes de decidir.
+                </p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <div className="rounded-lg bg-primary px-5 py-3 text-[11px] font-bold text-primary-foreground shadow-[0_18px_40px_-22px_hsl(var(--primary)/0.8)]">Consultar fechas</div>
+                  <div className="rounded-lg border border-border bg-background/80 px-5 py-3 text-[11px] font-bold text-foreground">Ver suites</div>
+                </div>
+                <div className="mt-8 grid max-w-[360px] grid-cols-3 gap-3 border-t border-border/50 pt-5">
+                  <div>
+                    <div className="font-display text-lg font-extrabold text-foreground">4.9</div>
+                    <div className="text-[10px] font-medium text-muted-foreground">reviews</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-lg font-extrabold text-foreground">24h</div>
+                    <div className="text-[10px] font-medium text-muted-foreground">respuesta</div>
+                  </div>
+                  <div>
+                    <div className="font-display text-lg font-extrabold text-foreground">+37%</div>
+                    <div className="text-[10px] font-medium text-muted-foreground">reservas</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative flex items-center border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
+                <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-primary/12 blur-3xl" />
+                <div className="relative w-full space-y-4">
+                  <div className="overflow-hidden rounded-2xl border border-border/60 bg-background shadow-xl">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/25 via-accent/15 to-muted">
+                      <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-border/40 bg-background/80 p-4 shadow-2xl">
+                        <div className="mb-3 flex items-center justify-between">
+                          <span className="text-xs font-bold font-display">Suite Ocean View</span>
+                          <span className="rounded-full bg-primary/10 px-2 py-1 text-[9px] font-bold text-primary">Disponible</span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-2">
+                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Spa</span>
+                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Vista mar</span>
+                          <span className="rounded-lg bg-muted/70 px-2 py-2 text-center text-[9px] font-semibold text-muted-foreground">Transfer</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 divide-x divide-border/50 border-t border-border/50">
+                      <div className="p-4">
+                        <Shield size={17} className="mb-3 text-primary" />
+                        <div className="text-xs font-bold font-display">Confianza</div>
+                        <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">Prueba social visible.</p>
+                      </div>
+                      <div className="p-4">
+                        <MessageSquare size={17} className="mb-3 text-primary" />
+                        <div className="text-xs font-bold font-display">Conversión</div>
+                        <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">CTA directo a reserva.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-background p-3 sm:p-5">
-        <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background">
-          <div className="absolute inset-0 bg-dot-grid opacity-20" />
-          <div className="relative z-10 flex items-center justify-between border-b border-border/50 px-4 py-4 sm:px-6">
-            <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10">
-                <span className="h-3 w-3 rounded-full bg-primary" />
-              </div>
-              <span className="font-display text-xs font-extrabold tracking-tight sm:text-sm">Marca</span>
-            </div>
-            <nav className="hidden items-center gap-5 text-[11px] font-semibold text-muted-foreground md:flex">
-              <span>Servicios</span>
-              <span>Experiencia</span>
-              <span>Proyecto</span>
-            </nav>
-            <div className="rounded-lg bg-primary px-4 py-2 text-[10px] font-bold text-primary-foreground sm:text-xs">
-              Contactar
-            </div>
-          </div>
-
-          <div className="relative z-10 grid min-h-[430px] lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
-              <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[10px] font-semibold text-primary">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Servicio premium
-              </div>
-              <h3 className="max-w-[390px] text-3xl font-extrabold leading-tight font-display text-foreground sm:text-4xl">
-                Una experiencia digital diseñada para generar confianza
-              </h3>
-              <p className="mt-5 max-w-[380px] text-sm leading-relaxed text-muted-foreground">
-                Mensaje claro, estética cuidada y rutas de contacto visibles para convertir visitas en conversaciones.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <div className="rounded-lg bg-primary px-5 py-3 text-[11px] font-bold text-primary-foreground">Solicitar propuesta</div>
-                <div className="rounded-lg border border-border bg-background px-5 py-3 text-[11px] font-bold text-foreground">Ver servicios</div>
-              </div>
-            </div>
-
-            <div className="relative flex items-center border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
-              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
-              <div className="relative w-full space-y-4">
-                <div className="overflow-hidden rounded-2xl border border-border/60 bg-background shadow-sm">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/18 via-accent/10 to-muted" />
-                  <div className="p-4">
-                    <div className="mb-2 text-sm font-bold font-display">Servicio destacado</div>
-                    <p className="text-xs leading-relaxed text-muted-foreground">Sección visual para explicar valor, diferenciar oferta y llevar al contacto.</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-border/60 bg-background/85 p-4">
-                    <Shield size={17} className="mb-3 text-primary" />
-                    <div className="text-xs font-bold font-display">Confianza</div>
-                    <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">Prueba social y claridad.</p>
-                  </div>
-                  <div className="rounded-xl border border-border/60 bg-background/85 p-4">
-                    <MessageSquare size={17} className="mb-3 text-primary" />
-                    <div className="text-xs font-bold font-display">Contacto</div>
-                    <p className="mt-1 text-[10px] leading-relaxed text-muted-foreground">CTA visible y directo.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="absolute -right-3 top-20 z-20 hidden rounded-2xl border border-primary/20 bg-background/90 p-4 shadow-2xl shadow-primary/10 md:block">
+        <div className="text-[10px] font-semibold uppercase text-muted-foreground">conversiones</div>
+        <div className="mt-1 font-display text-2xl font-extrabold text-primary">+128%</div>
+        <div className="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-muted">
+          <div className="h-full w-[78%] rounded-full bg-primary" />
         </div>
       </div>
     </div>
