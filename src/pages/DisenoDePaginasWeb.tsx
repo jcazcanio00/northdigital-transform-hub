@@ -1,7 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import {
   ArrowRight,
-  BadgeCheck,
   CheckCircle2,
   Compass,
   FileText,
@@ -27,7 +26,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import heroTravelImage from "@/assets/diseno-web-hero-travel.jpg";
 
 const WHATSAPP_LINK =
   "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotizar%20una%20pagina%20web%20para%20mi%20empresa";
@@ -98,10 +96,8 @@ const benefits = [
 const strategyItems = [
   { icon: FileText, title: "Copywriting con intención" },
   { icon: Layers3, title: "Estructura comercial" },
-  { icon: Gauge, title: "Velocidad" },
+  { icon: Gauge, title: "Velocidad y claridad" },
   { icon: Search, title: "SEO base" },
-  { icon: MessageSquare, title: "Contacto visible" },
-  { icon: BadgeCheck, title: "Confianza" },
 ];
 
 const markets = [
@@ -178,103 +174,96 @@ const faqs = [
 ];
 
 const HeroWebsiteMockup = () => (
-  <div className="relative mx-auto w-full max-w-[680px] animate-fade-in lg:mx-0">
-    <div className="absolute -inset-6 rounded-[2rem] bg-primary/10 blur-[48px] animate-pulse-glow" />
-    <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background shadow-2xl transition-transform duration-500 hover:-translate-y-1">
-      <div className="flex items-center gap-3 border-b border-border/60 bg-card px-4 py-3">
-        <div className="flex gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-muted" />
-          <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
-          <span className="h-2.5 w-2.5 rounded-full bg-accent/35" />
-        </div>
-        <div className="mx-auto hidden rounded-md bg-muted/50 px-4 py-1 text-[10px] font-medium text-muted-foreground sm:block">
-          riviera-stays.mx
-        </div>
-      </div>
+  <div className="relative mx-auto w-full max-w-[660px] animate-fade-in lg:mx-0">
+    <div className="absolute -inset-4 rounded-[2rem] bg-primary/10 blur-[56px]" />
+    <div className="relative rounded-[1.75rem] border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.04] p-3 shadow-2xl transition-transform duration-500 hover:-translate-y-1 sm:p-4">
+      <div className="overflow-hidden rounded-2xl border border-brand-navy-foreground/10 bg-background/95">
+        <div className="grid min-h-[440px] bg-gradient-to-br from-background via-secondary/40 to-background sm:min-h-[500px] lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="flex flex-col justify-between border-b border-border/60 p-6 sm:p-8 lg:border-b-0 lg:border-r">
+            <div>
+              <div className="mb-10 flex items-center justify-between">
+                <div className="flex items-center gap-2 font-display text-xs font-extrabold uppercase text-foreground">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                    <span className="h-3 w-3 rounded-full bg-primary" />
+                  </span>
+                  Marea Studio
+                </div>
+                <span className="rounded-lg border border-border bg-card px-3 py-2 text-[10px] font-bold text-muted-foreground">
+                  Reservar
+                </span>
+              </div>
 
-      <div className="bg-background">
-        <div className="flex items-center justify-between border-b border-border/50 px-5 py-4 sm:px-7">
-          <div className="flex items-center gap-2 font-display text-xs font-extrabold uppercase text-foreground">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-              <span className="h-3 w-3 rounded-full bg-primary" />
-            </span>
-            Riviera Stays
-          </div>
-          <nav className="hidden items-center gap-5 text-[10px] font-bold text-muted-foreground md:flex">
-            <span>Suites</span>
-            <span>Experiencias</span>
-            <span>Ubicación</span>
-          </nav>
-          <span className="rounded-lg bg-primary px-4 py-2 text-[10px] font-extrabold text-primary-foreground">
-            Reservar
-          </span>
-        </div>
-
-        <div className="relative min-h-[420px] overflow-hidden sm:min-h-[500px]">
-          <img
-            src={heroTravelImage}
-            alt="Landing page premium para empresa turística con hero visual y llamada a reservar"
-            width={1024}
-            height={768}
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-navy/85 to-transparent" />
-
-          <div className="relative z-10 flex min-h-[420px] flex-col justify-between p-5 text-brand-navy-foreground sm:min-h-[500px] sm:p-8">
-            <div className="max-w-[380px] pt-5 sm:pt-10">
-              <span className="mb-4 inline-flex rounded-full border border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-3 py-1 text-[10px] font-bold uppercase text-brand-navy-foreground/75">
-                Hotel boutique · Riviera Maya
+              <span className="mb-4 inline-flex rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[10px] font-bold uppercase text-primary">
+                Experiencia premium
               </span>
-              <h3 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
-                Estancias privadas frente al Caribe
+              <h3 className="max-w-sm font-display text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
+                Una web que presenta valor antes de pedir contacto
               </h3>
-              <p className="mt-4 max-w-[320px] text-sm font-medium leading-relaxed text-brand-navy-foreground/70">
-                Una landing real con mensaje claro, fotografía protagonista,
-                confianza visible y CTA desde el primer bloque.
+              <p className="mt-4 max-w-[330px] text-sm leading-relaxed text-muted-foreground">
+                Mensaje claro, prueba social, servicios visibles y un recorrido
+                que guía la decisión sin saturar la pantalla.
               </p>
-              <span className="mt-6 inline-flex rounded-lg bg-brand-navy-foreground px-5 py-3 text-[11px] font-extrabold text-brand-navy">
-                Solicitar disponibilidad
-              </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
-              {["Suites", "Reseñas", "Contacto"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-xl border border-brand-navy-foreground/15 bg-brand-navy/60 p-3"
-                >
-                  <div className="mb-2 flex items-center gap-1.5 text-primary">
-                    <CheckCircle2 size={12} />
-                    <span className="text-[9px] font-bold uppercase">
-                      {item}
-                    </span>
-                  </div>
-                  <p className="text-[10px] font-semibold leading-tight text-brand-navy-foreground/80 sm:text-xs">
-                    Sección visible
+            <div className="mt-8 grid grid-cols-3 gap-3">
+              {["Oferta", "Confianza", "CTA"].map((item) => (
+                <div key={item} className="rounded-xl border border-border/70 bg-card p-3">
+                  <CheckCircle2 size={13} className="mb-2 text-primary" />
+                  <p className="text-[10px] font-extrabold uppercase text-foreground">
+                    {item}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div className="absolute -bottom-5 left-5 hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block">
-      <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-          <MessageSquare size={18} />
-        </div>
-        <div>
-          <p className="font-display text-sm font-extrabold text-foreground">
-            Cotización recibida
-          </p>
-          <p className="text-[10px] font-medium text-muted-foreground">
-            Lead por WhatsApp
-          </p>
+          <div className="relative overflow-hidden p-6 sm:p-8">
+            <div className="absolute right-8 top-8 h-36 w-36 rounded-full bg-primary/8 blur-[45px]" />
+            <div className="relative flex h-full min-h-[330px] flex-col justify-between rounded-2xl border border-border/70 bg-card p-5">
+              <div className="space-y-4">
+                <div className="h-44 rounded-xl bg-gradient-to-br from-primary/10 via-secondary to-background p-4">
+                  <div className="flex h-full flex-col justify-end rounded-lg border border-border/60 bg-background/70 p-4">
+                    <p className="text-[10px] font-bold uppercase text-primary">
+                      Hero principal
+                    </p>
+                    <div className="mt-3 h-3 w-2/3 rounded-full bg-foreground/15" />
+                    <div className="mt-2 h-3 w-1/2 rounded-full bg-foreground/10" />
+                  </div>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-xl border border-border/70 bg-background p-4">
+                    <MessageSquare size={17} className="mb-3 text-primary" />
+                    <p className="font-display text-sm font-extrabold text-foreground">
+                      Lead directo
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      WhatsApp visible
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-border/70 bg-background p-4">
+                    <Gauge size={17} className="mb-3 text-primary" />
+                    <p className="font-display text-sm font-extrabold text-foreground">
+                      Carga clara
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      Sin fricción
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <div className="mb-3 flex items-center justify-between text-[10px] font-bold uppercase text-muted-foreground">
+                  <span>Ruta de conversión</span>
+                  <span className="text-primary">Activa</span>
+                </div>
+                <div className="h-2 overflow-hidden rounded-full bg-muted">
+                  <div className="h-full w-3/4 rounded-full bg-primary" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
