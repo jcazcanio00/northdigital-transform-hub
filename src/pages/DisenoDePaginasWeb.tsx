@@ -179,19 +179,19 @@ const trustItems = [
 ];
 
 const services = [
-  { icon: PenTool, title: "Diseño web a medida", desc: "Estructura visual creada alrededor de tu oferta, tu marca y el tipo de cliente que quieres atraer." },
-  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Pantallas claras, botones cómodos y navegación fluida para convertir desde celular, tablet y desktop." },
-  { icon: Gauge, title: "Rendimiento y claridad", desc: "Sitios rápidos, ordenados y fáciles de escanear para reducir fricción en cada visita." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Páginas comerciales, sitios corporativos y estructuras listas para campañas o SEO posterior." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto pensadas para generar oportunidades reales." },
-  { icon: Code2, title: "Base tecnológica sólida", desc: "Desarrollo moderno integrado al ecosistema de North, sin plantillas genéricas ni piezas aisladas." },
+  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el tipo de cliente que quieres convertir." },
+  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción operativa." },
+  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros, ordenados y preparados para crecer con campañas, contenido, analítica y futuras integraciones." },
+  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos digitales comerciales, sitios corporativos y estructuras listas para conectar marketing, ventas y SEO posterior." },
+  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en conversaciones y oportunidades medibles." },
+  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas genéricas ni piezas aisladas de tu operación." },
 ];
 
 const benefits = [
-  { icon: Users, title: "Más confianza desde el primer scroll", desc: "Una presencia premium hace que el visitante entienda rápido que tu empresa es seria y confiable." },
-  { icon: Target, title: "Mensajes que guían a comprar", desc: "Priorizamos jerarquía, claridad y argumentos comerciales para mover al usuario hacia el contacto." },
-  { icon: BarChart3, title: "Mejor desempeño comercial", desc: "La página funciona como activo de ventas: presenta, filtra, educa y genera solicitudes." },
-  { icon: Rocket, title: "Lista para escalar después", desc: "Dejamos una base clara para SEO, campañas, CRM, automatización y crecimiento digital." },
+  { icon: Users, title: "Confianza desde el primer scroll", desc: "Una presencia premium comunica solidez, orden y capacidad antes de que el usuario lea todos los detalles." },
+  { icon: Target, title: "Mensaje orientado a conversión", desc: "Priorizamos jerarquía, claridad y argumentos comerciales para mover al visitante hacia una acción concreta." },
+  { icon: BarChart3, title: "Activo comercial medible", desc: "La página presenta, filtra, educa y genera solicitudes para que marketing y ventas tengan una base más eficiente." },
+  { icon: Rocket, title: "Preparada para escalar", desc: "Dejamos una infraestructura clara para SEO, campañas, CRM, automatización y crecimiento digital posterior." },
 ];
 
 const cities = [
@@ -201,17 +201,17 @@ const cities = [
 ];
 
 const process = [
-  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el mensaje principal que debe comunicar la página." },
-  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia visual premium alineada a North." },
-  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente con el sistema actual del sitio." },
-  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos la página lista para publicar y optimizar SEO después." },
+  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol que la página debe cumplir dentro de tu sistema comercial." },
+  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia premium alineada al estándar visual de North." },
+  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente, preparada para analítica e integraciones futuras." },
+  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos una base lista para publicar, medir y optimizar después." },
 ];
 
 const differentiators = [
-  "No diseñamos una página aislada: construimos una pieza comercial dentro de tu sistema digital.",
-  "Conectamos diseño, mensaje, tecnología y conversión desde la primera versión.",
-  "Mantenemos un look premium, limpio y corporativo sin caer en estilos genéricos.",
-  "La estructura queda preparada para campañas, contenido, SEO y CRM cuando decidas escalar.",
+  "No diseñamos una página aislada: construimos una interfaz dentro de tu sistema digital de crecimiento.",
+  "Conectamos diseño, mensaje, tecnología y conversión desde la primera versión operativa.",
+  "Mantenemos un look premium, limpio y corporativo sin perder enfoque comercial ni rendimiento.",
+  "La estructura queda preparada para campañas, contenido, SEO, CRM y automatización cuando decidas escalar.",
 ];
 
 const faqs = [
@@ -247,22 +247,22 @@ const DisenoDePaginasWeb = () => {
             <div className="mx-auto max-w-4xl animate-hero-fade-in text-center">
                 <SectionBadge>Diseño de páginas web</SectionBadge>
                 <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Páginas web premium diseñadas para convertir y crecer
+                  Páginas web premium conectadas a crecimiento y conversión
                 </h1>
                 <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Creamos sitios modernos para empresas en Cancún, Playa del Carmen y Tulum que necesitan confianza visual, claridad comercial y tecnología lista para generar oportunidades reales.
+                  Creamos activos digitales para empresas en Cancún, Playa del Carmen y Tulum que necesitan convertir tráfico en oportunidades, conectar ventas y construir una base escalable.
                 </p>
                 <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
                   <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
-                    <Link to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
+                    <Link to="/contacto">Diseñar mi sistema web <ArrowRight size={18} /></Link>
                   </Button>
                   <Button variant="gradient-outline" size="lg" className="px-8 py-6 text-base" asChild>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar por WhatsApp</a>
                   </Button>
                 </div>
                 <div className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
-                  {["Mobile-first", "UX de conversión", "Lista para SEO"].map((item) => (
-                    <div key={item} className="rounded-xl border border-border/20 bg-muted/20 p-3 text-xs font-semibold text-foreground/75 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+                  {["Mobile-first", "Sistema de conversión", "Base escalable"].map((item) => (
+                    <div key={item} className="rounded-xl border border-border/30 bg-muted/30 p-3 text-xs font-semibold text-foreground/80 shadow-sm transition-transform duration-300 hover:-translate-y-1">
                       <CheckCircle2 size={15} className="mb-2 text-primary" />{item}
                     </div>
                   ))}
@@ -278,8 +278,8 @@ const DisenoDePaginasWeb = () => {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
               <div>
-                <p className="font-display text-lg font-extrabold">Diseño para empresas que necesitan vender mejor</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Confianza visual, claridad comercial y experiencia premium desde el primer contacto.</p>
+                <p className="font-display text-lg font-extrabold">Infraestructura web para empresas que necesitan crecer mejor</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Confianza visual, claridad comercial y una base digital preparada para marketing, ventas y automatización.</p>
               </div>
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {trustItems.map((item) => (
@@ -294,7 +294,7 @@ const DisenoDePaginasWeb = () => {
 
         <section className="bg-background py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una página web para sentirse premium" copy="Diseñamos cada sección con una función clara: atraer atención, explicar valor, construir confianza y facilitar el contacto." />
+            <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una web para operar como activo de crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <article key={service.title} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
@@ -317,10 +317,10 @@ const DisenoDePaginasWeb = () => {
               <div>
                 <SectionBadge dark>Beneficios de negocio</SectionBadge>
                 <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                  Una web no debe verse bonita solamente. Debe ayudarte a vender.
+                  Una web no debe verse bonita solamente. Debe integrarse a tu crecimiento.
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-brand-navy-foreground/65">
-                  Convertimos tu sitio en una experiencia comercial: clara, rápida y diseñada para que el usuario sepa qué haces, por qué confiar y cómo contactarte.
+                  Convertimos tu sitio en una experiencia comercial conectada a tu operación: clara, rápida y diseñada para generar oportunidades que marketing y ventas puedan aprovechar.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -353,7 +353,7 @@ const DisenoDePaginasWeb = () => {
 
         <section className="bg-background py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Proceso claro" title="De idea a página lista para vender" copy="Un flujo simple, ordenado y enfocado en lanzar una experiencia que se vea bien y cumpla una función comercial." />
+            <SectionHeader eyebrow="Proceso claro" title="De idea a sistema web listo para crecer" copy="Un flujo simple, ordenado y enfocado en lanzar una experiencia premium que cumpla una función comercial dentro de tu operación digital." />
             <div className="grid gap-4 lg:grid-cols-4">
               {process.map((item) => (
                 <article key={item.title} className="rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -377,10 +377,10 @@ const DisenoDePaginasWeb = () => {
               <div>
                 <SectionBadge>Diferenciador North</SectionBadge>
                 <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                  Diseño, tecnología y conversión en una sola experiencia
+                  Diseño, tecnología y conversión en una misma infraestructura
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                  Una página premium no se mide solo por cómo se ve. Se mide por lo fácil que hace entender tu valor, confiar en tu empresa y dar el siguiente paso.
+                  Una página premium no se mide solo por cómo se ve. Se mide por su capacidad de explicar valor, generar confianza y convertir interés en una oportunidad real.
                 </p>
               </div>
               <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
@@ -415,14 +415,14 @@ const DisenoDePaginasWeb = () => {
             <div className="mx-auto max-w-3xl">
               <SectionBadge dark>Listo para avanzar</SectionBadge>
               <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                Haz que tu página trabaje como tu mejor vendedor digital
+                Haz que tu página funcione como un sistema de crecimiento digital
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-navy-foreground/65">
-                Cuéntanos qué vendes y diseñamos una experiencia clara, premium y preparada para convertir visitantes en oportunidades.
+                Cuéntanos qué vendes y diseñamos una experiencia clara, premium y preparada para convertir visitantes en oportunidades medibles.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Button variant="gradient" size="lg" className="h-14 px-8 text-base" asChild>
-                  <Link to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
+                  <Link to="/contacto">Diseñar mi sistema web <ArrowRight size={18} /></Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-14 border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-8 text-base text-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar con North</a>
