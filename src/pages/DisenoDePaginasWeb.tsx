@@ -330,7 +330,7 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/35 to-background" />
           <div className="container relative z-10 mx-auto px-4 py-4 lg:px-8">
-              <div className="mx-auto mb-14 max-w-4xl animate-fade-in text-center">
+            <div className="mx-auto mb-14 max-w-4xl animate-fade-in text-center">
               <div className="mb-4 flex justify-center">
                 <SectionBadge>Beneficios</SectionBadge>
               </div>
