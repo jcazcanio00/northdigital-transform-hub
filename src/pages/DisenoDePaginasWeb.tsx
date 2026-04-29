@@ -330,13 +330,12 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/35 to-background" />
           <div className="container relative z-10 mx-auto px-4 py-4 lg:px-8">
-            <div className="mx-auto mb-14 max-w-3xl animate-fade-in text-center">
+              <div className="mx-auto mb-14 max-w-4xl animate-fade-in text-center">
               <div className="mb-4 flex justify-center">
                 <SectionBadge>Beneficios</SectionBadge>
               </div>
-              <h2 className="mb-5 text-3xl font-extrabold font-display sm:text-4xl lg:text-5xl">
-                Páginas web diseñadas para{" "}
-                <span className="gradient-text">vender</span>
+              <h2 className="mx-auto mb-5 max-w-3xl text-balance text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+                Páginas web diseñadas para <span className="gradient-text">vender</span>
               </h2>
             </div>
 
@@ -393,11 +392,11 @@ const DisenoDePaginasWeb = () => {
                 </Button>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-5 sm:grid-cols-2">
                 {strategyItems.map((item) => (
                   <article
                     key={item.title}
-                    className="glass-card group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
+                    className="glass-card group rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
                   >
                     <div className="relative z-10 flex items-start gap-4">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary/15">
