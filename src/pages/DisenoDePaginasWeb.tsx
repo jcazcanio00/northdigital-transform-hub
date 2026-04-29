@@ -285,82 +285,39 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider mt-8" />
         </section>
 
-        <section className="py-12 md:py-20 relative overflow-hidden min-h-0 md:min-h-[500px]">
+        <section className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[500px]">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center mb-14">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-12">
+              <div>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Propuesta de Valor
+                Criterio Comercial
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5">
-                Diseño web conectado a <span className="gradient-text">crecimiento</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5 leading-tight">
+                Lo que realmente hace que una página web <span className="gradient-text">funcione</span>
               </h2>
-            </div>
-
-            <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-6 items-center">
-              <div className="lg:pl-4">
-                <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  North no construye páginas aisladas. Creamos interfaces comerciales integradas a la estrategia digital, preparadas para campañas, medición, automatización y confianza.
-                </p>
-                <div className="space-y-5">
-                  {features.map((f) => (
-                    <div key={f.title} className="flex gap-4 group">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] transition-all duration-300">
-                        <f.icon size={22} className="text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold mb-1 group-hover:text-primary transition-colors">{f.title}</h4>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <p className="text-muted-foreground max-w-xl leading-relaxed">
+                No se trata de llenar una web de efectos. Se trata de ordenar información, reducir fricción y convertir la confianza en una acción clara.
+              </p>
               </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {serviceCards.map((card) => (
-                  <article key={card.title} className="glass-card rounded-2xl p-6 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
-                    <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-all duration-500">
-                      <card.icon size={22} className="text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{card.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{card.desc}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 md:py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
-          <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-              <div>
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-xs text-brand-navy-foreground/75 mb-4">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                  Conversión y Sistemas
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight text-brand-navy-foreground">
-                  Una web no debe verse bonita solamente. Debe integrarse a tu crecimiento.
-                </h2>
-                <p className="text-brand-navy-foreground/65 text-base leading-relaxed max-w-xl">
-                  La página se convierte en una pieza del sistema comercial: atrae, explica, filtra, conecta y deja lista la base para escalar con tecnología.
+              <div className="rounded-2xl border border-border/60 bg-secondary/50 p-6 md:p-8">
+                <p className="font-display text-xl font-extrabold leading-tight md:text-2xl">
+                  Diseño, contenido y tecnología trabajando juntos para que tu sitio explique mejor y venda con menos esfuerzo.
                 </p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {conversionItems.map((item, index) => (
-                  <div key={item} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-brand-navy-foreground/[0.12] hover:shadow-[0_0_40px_-14px_hsl(var(--primary)/0.45)]">
-                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary font-display text-sm font-bold ring-1 ring-primary/20">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm leading-relaxed text-brand-navy-foreground/75">{item}</p>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {functionCards.map((card) => (
+                <article key={card.title} className="glass-card rounded-2xl p-7 md:p-8 group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
+                  <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15">
+                    <card.icon size={24} className="text-primary" />
                   </div>
-                ))}
-              </div>
+                  <h3 className="mb-3 font-display text-xl font-bold transition-colors duration-300 group-hover:text-primary">{card.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{card.desc}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
