@@ -297,10 +297,10 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative overflow-hidden bg-brand-navy py-12 md:py-20 lg:py-24">
-          <div className="absolute inset-0 bg-dot-grid opacity-30" />
-          <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-          <div className="absolute right-0 top-16 hidden h-[520px] w-[520px] rounded-full bg-primary/10 blur-[70px] lg:block" />
+        <section className="relative overflow-hidden py-12 md:py-20 lg:py-24">
+          <div className="absolute inset-0" style={{ background: "var(--gradient-cta)" }} />
+          <div className="absolute inset-0 bg-dot-grid opacity-10" />
+          <div className="absolute right-0 top-16 hidden h-[520px] w-[520px] rounded-full bg-primary/8 blur-[70px] lg:block" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
