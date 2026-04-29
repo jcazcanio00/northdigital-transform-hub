@@ -41,7 +41,7 @@ const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotiza
 
 const SectionBadge = ({ children, dark = false }: { children: ReactNode; dark?: boolean }) => (
   <span className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium ${dark ? "border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-brand-navy-foreground/75" : "border-primary/20 bg-primary/5 text-muted-foreground"}`}>
-    <span className={`h-2 w-2 rounded-full ${dark ? "bg-brand-red" : "bg-primary"}`} />
+    <span className={`h-2 w-2 rounded-full animate-status-pulse ${dark ? "bg-brand-red" : "bg-primary"}`} />
     {children}
   </span>
 );
@@ -57,9 +57,9 @@ const SectionHeader = ({ eyebrow, title, copy, dark = false }: { eyebrow: string
 );
 
 const HeroVisual = () => (
-  <div className="relative mx-auto w-full max-w-[680px] lg:ml-auto">
-    <div className="absolute -inset-6 rounded-[2rem] bg-primary/10 blur-3xl" />
-    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/70 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
+  <div className="relative mx-auto w-full max-w-5xl animate-hero-slide-up">
+    <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
+    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
       <div className="flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
           <TrendingUp size={19} className="text-primary" />
@@ -70,22 +70,22 @@ const HeroVisual = () => (
         </div>
       </div>
     </div>
-    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/70 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
+    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
       <div className="flex items-center gap-2 text-xs font-semibold">
         <ShieldCheck size={16} className="text-brand-red" />
         Diseño listo para vender
       </div>
     </div>
 
-    <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-background shadow-2xl">
-      <div className="flex items-center gap-2 border-b border-border/60 bg-card px-4 py-3">
+    <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
+      <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
         <span className="h-3 w-3 rounded-full bg-brand-red/80" />
         <span className="h-3 w-3 rounded-full bg-accent/70" />
         <span className="h-3 w-3 rounded-full bg-primary/70" />
-        <span className="ml-auto hidden rounded-md bg-background px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/system</span>
+        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/system</span>
       </div>
 
-      <div className="grid min-h-[520px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
+      <div className="grid min-h-[460px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
         <div className="relative overflow-hidden bg-brand-navy p-5 text-brand-navy-foreground sm:p-7">
           <div className="absolute inset-0 bg-dot-grid opacity-20" />
           <div className="relative z-10 flex h-full flex-col justify-between gap-10">
@@ -123,7 +123,7 @@ const HeroVisual = () => (
           </div>
         </div>
 
-        <div className="bg-card p-4 sm:p-5">
+        <div className="bg-muted/10 p-4 sm:p-5">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <div className="font-display text-sm font-bold">Conversion OS</div>
