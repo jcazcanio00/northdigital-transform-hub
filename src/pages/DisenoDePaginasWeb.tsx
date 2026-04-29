@@ -394,25 +394,42 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="border-y border-border/60 bg-secondary/45 py-12 md:py-20">
+        <section className="relative overflow-hidden border-y border-border/60 bg-secondary/45 py-12 md:py-20">
+          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center mb-14">
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div className="mb-4 lg:mb-0">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 Presencia Regional
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-                Diseño web para Cancún, Playa del Carmen y Tulum
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
+                Presencia digital premium para mercados que compiten por confianza
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
+              <p className="text-muted-foreground max-w-xl leading-relaxed">
                 Una presencia premium para mercados donde la confianza, velocidad y claridad comercial definen la primera decisión.
               </p>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-2xl border border-border/60 bg-background/80 p-5 shadow-sm">
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  {["Cancún", "Playa del Carmen", "Tulum"].map((city) => (
+                    <div key={city} className="rounded-xl border border-border/50 bg-muted/20 px-3 py-4">
+                      <MapPin size={16} className="mx-auto mb-2 text-primary" />
+                      <div className="font-display text-sm font-bold">{city}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relative z-10 mt-10 grid gap-5 md:grid-cols-3">
               {cities.map((item) => (
                 <article key={item.city} className="glass-card rounded-2xl p-7 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
-                  <MapPin size={22} className="mb-5 text-primary" />
-                  <h3 className="text-lg font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{item.city}</h3>
+                  <div className="mb-5 flex items-center justify-between">
+                    <MapPin size={22} className="text-primary" />
+                    <span className="rounded-full border border-primary/15 bg-primary/5 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-primary/70">Región</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{item.city}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </article>
               ))}
