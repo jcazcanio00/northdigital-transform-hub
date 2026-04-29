@@ -220,6 +220,7 @@ const HeroWebsiteMockup = () => (
 
     <div className="relative overflow-visible rounded-2xl border border-border/60 bg-card shadow-2xl transition-transform duration-500 lg:origin-bottom-left lg:rotate-[1.5deg] lg:-skew-x-[3deg] lg:group-hover:rotate-[0.5deg] lg:group-hover:-skew-x-[1deg]">
       <div className="overflow-hidden rounded-2xl">
+        {/* Browser chrome */}
         <div className="flex items-center gap-3 border-b border-border/50 bg-background px-4 py-3 sm:px-5">
           <div className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-muted" />
@@ -232,7 +233,8 @@ const HeroWebsiteMockup = () => (
         </div>
 
         <div className="bg-background">
-          <div className="flex items-center justify-between px-5 py-4 sm:px-8">
+          {/* Site navbar */}
+          <div className="flex items-center justify-between border-b border-border/30 px-5 py-3.5 sm:px-8">
             <div className="flex items-center gap-2 font-display text-[11px] font-extrabold uppercase tracking-wide text-foreground">
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
                 <span className="h-2.5 w-2.5 rounded-full bg-primary" />
@@ -249,7 +251,8 @@ const HeroWebsiteMockup = () => (
             </span>
           </div>
 
-          <div className="relative min-h-[420px] overflow-hidden sm:min-h-[500px]">
+          {/* Hero image area */}
+          <div className="relative min-h-[340px] overflow-hidden sm:min-h-[420px]">
             <img
               src={heroTravelImage}
               alt="Mockup de landing premium para hotel boutique en la Riviera Maya"
@@ -259,75 +262,95 @@ const HeroWebsiteMockup = () => (
               loading="eager"
               decoding="async"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 to-brand-navy/10" />
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-navy/85 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/92 via-brand-navy/60 to-brand-navy/10" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-navy/80 to-transparent" />
 
-            <div className="relative z-10 flex min-h-[420px] flex-col justify-between p-5 text-brand-navy-foreground sm:min-h-[500px] sm:p-8">
-              <div className="max-w-[390px] pt-4 sm:pt-10">
-                <span className="mb-4 inline-flex rounded-full border border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-navy-foreground/75">
+            {/* Hero content */}
+            <div className="relative z-10 flex min-h-[340px] flex-col justify-center p-5 text-brand-navy-foreground sm:min-h-[420px] sm:p-8">
+              <div className="max-w-[370px]">
+                <span className="mb-3 inline-flex rounded-full border border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-3 py-1 text-[9px] font-bold uppercase tracking-widest text-brand-navy-foreground/75">
                   Hotel boutique · Riviera Maya
                 </span>
-                <h3 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+                <h3 className="font-display text-[26px] font-extrabold leading-tight text-white sm:text-[32px]">
                   Estancias privadas frente al Caribe
                 </h3>
-                <p className="mt-4 max-w-[330px] text-sm font-medium leading-relaxed text-brand-navy-foreground/70">
-                  Una web real con narrativa, imagen aspiracional, prueba de
-                  confianza y CTA visible desde el primer bloque.
+                <p className="mt-2.5 max-w-[290px] text-[11px] leading-relaxed text-brand-navy-foreground/70 sm:text-[13px]">
+                  Suites exclusivas, playa privada y servicio personalizado en la Riviera Maya.
                 </p>
-                <div className="mt-6 inline-flex rounded-lg bg-brand-navy-foreground px-5 py-3 text-[11px] font-extrabold text-brand-navy">
-                  Solicitar disponibilidad
+                <div className="mt-5 flex flex-wrap items-center gap-2.5">
+                  <div className="inline-flex rounded-xl bg-white px-5 py-2.5 text-[10px] font-extrabold text-brand-navy shadow-lg">
+                    Solicitar disponibilidad
+                  </div>
+                  <div className="inline-flex rounded-xl border border-white/25 px-4 py-2.5 text-[10px] font-semibold text-white/85">
+                    Ver suites
+                  </div>
+                </div>
+                {/* Social proof strip */}
+                <div className="mt-4 flex items-center gap-2.5">
+                  <div className="flex -space-x-2">
+                    <span className="h-6 w-6 rounded-full border-2 border-white/20 bg-primary/70" />
+                    <span className="h-6 w-6 rounded-full border-2 border-white/20 bg-accent/60" />
+                    <span className="h-6 w-6 rounded-full border-2 border-white/20 bg-primary/50" />
+                  </div>
+                  <span className="text-[10px] font-medium text-white/70">
+                    4.9 · 120+ huéspedes satisfechos
+                  </span>
                 </div>
               </div>
-
-              <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                {["Suites", "Experiencias", "Contacto"].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-xl border border-brand-navy-foreground/15 bg-brand-navy/55 p-3"
-                  >
-                    <div className="mb-2 flex items-center gap-1.5 text-primary">
-                      <CheckCircle2 size={12} />
-                      <span className="text-[9px] font-bold uppercase tracking-wide">
-                        {item}
-                      </span>
-                    </div>
-                    <p className="text-[10px] font-semibold leading-tight text-brand-navy-foreground/80 sm:text-xs">
-                      Sección lista
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
+          </div>
+
+          {/* Trust / features strip */}
+          <div className="grid grid-cols-3 divide-x divide-border/40 border-t border-border/50 bg-background">
+            {[
+              { label: "Playa privada", Icon: Shield },
+              { label: "Traslado gratis", Icon: CheckCircle2 },
+              { label: "100% verificado", Icon: BadgeCheck },
+            ].map(({ label, Icon }) => (
+              <div key={label} className="flex items-center justify-center gap-1.5 px-2 py-3">
+                <Icon size={11} className="shrink-0 text-primary" />
+                <span className="hidden text-[9px] font-semibold text-muted-foreground sm:block">
+                  {label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
+      {/* Floating conversion card */}
       <div className="absolute -bottom-5 -left-4 hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[3deg]">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <TrendingUp size={18} />
           </div>
           <div>
-            <p className="font-display text-lg font-extrabold text-foreground">
+            <p className="font-display text-lg font-extrabold leading-none text-foreground">
               +128%
             </p>
-            <p className="text-[10px] font-medium text-muted-foreground">
+            <p className="mt-0.5 text-[10px] font-medium text-muted-foreground">
               más solicitudes
             </p>
           </div>
         </div>
       </div>
 
+      {/* Floating WhatsApp lead card */}
       <div className="absolute -right-4 top-[38%] hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[3deg]">
-        <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
-          Lead listo
-        </p>
-        <p className="mt-1 text-sm font-extrabold text-foreground">
-          Nuevo mensaje
-        </p>
-        <p className="text-[11px] text-muted-foreground">
-          Cotización por WhatsApp
-        </p>
+        <div className="mb-2 flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]">
+            <WhatsAppGlyph size={14} />
+          </div>
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-wide text-muted-foreground">
+              Nuevo lead
+            </p>
+            <p className="text-xs font-extrabold text-foreground">
+              Cotización recibida
+            </p>
+          </div>
+        </div>
+        <p className="text-[10px] text-muted-foreground">Hace 2 min · WhatsApp</p>
       </div>
     </div>
   </div>
