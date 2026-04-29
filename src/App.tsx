@@ -48,6 +48,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/software" element={<Software />} />
             <Route path="/cloud" element={<Cloud />} />
+            <Route path="/cloud-services" element={<Cloud />} />
             <Route path="/marketing" element={<Marketing />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/acerca" element={<Acerca />} />
