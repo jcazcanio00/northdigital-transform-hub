@@ -56,7 +56,7 @@ const SectionBadge = ({ children, dark = false }: { children: ReactNode; dark?: 
 const WebMockup = () => (
   <div className="relative mx-auto w-full max-w-[680px]">
     <div className="hidden lg:block absolute -inset-10 rounded-[40px] bg-primary/10 blur-[44px]" />
-    <div className="absolute -right-3 top-10 z-20 hidden rounded-2xl border border-white/70 bg-background/90 p-3 shadow-2xl backdrop-blur md:block animate-float-slow">
+    <div className="absolute -right-3 top-10 z-20 hidden rounded-2xl border border-background/70 bg-background/90 p-3 shadow-2xl backdrop-blur md:block animate-float-slow">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red/10">
           <TrendingUp size={18} className="text-brand-red" />
@@ -67,7 +67,7 @@ const WebMockup = () => (
         </div>
       </div>
     </div>
-    <div className="absolute -left-4 bottom-16 z-20 hidden rounded-2xl border border-white/70 bg-background/90 p-3 shadow-2xl backdrop-blur lg:block animate-float-delayed">
+    <div className="absolute -left-4 bottom-16 z-20 hidden rounded-2xl border border-background/70 bg-background/90 p-3 shadow-2xl backdrop-blur lg:block animate-float-delayed">
       <div className="flex items-center gap-2 text-xs font-semibold">
         <CheckCircle2 size={16} className="text-primary" />
         Web lista para vender
