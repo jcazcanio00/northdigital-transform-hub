@@ -1,23 +1,23 @@
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 import {
+  Activity,
   ArrowRight,
   BarChart3,
+  Bell,
   CheckCircle2,
   Code2,
+  Compass,
   Gauge,
-  Globe2,
+  Globe,
   Layers3,
-  LineChart,
+  Lightbulb,
   MapPin,
   MessageSquare,
   MousePointerClick,
-  PenTool,
   Rocket,
   Search,
-  ShieldCheck,
+  Shield,
   Smartphone,
-  Sparkles,
-  Star,
   Target,
   TrendingUp,
   Users,
@@ -39,187 +39,77 @@ import {
 
 const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotizar%20una%20pagina%20web%20para%20mi%20empresa";
 
-const SectionBadge = ({ children, dark = false }: { children: ReactNode; dark?: boolean }) => (
-  <span className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium ${dark ? "border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-brand-navy-foreground/75" : "border-primary/20 bg-primary/5 text-muted-foreground"}`}>
-    <span className={`h-2 w-2 rounded-full animate-status-pulse ${dark ? "bg-brand-red" : "bg-primary"}`} />
-    {children}
-  </span>
-);
-
-const SectionHeader = ({ eyebrow, title, copy, dark = false }: { eyebrow: string; title: string; copy?: string; dark?: boolean }) => (
-  <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
-    <SectionBadge dark={dark}>{eyebrow}</SectionBadge>
-    <h2 className={`mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl ${dark ? "text-brand-navy-foreground" : "text-foreground"}`}>
-      {title}
-    </h2>
-    {copy && <p className={`mx-auto mt-4 max-w-2xl text-base leading-relaxed md:text-lg ${dark ? "text-brand-navy-foreground/65" : "text-muted-foreground"}`}>{copy}</p>}
-  </div>
-);
-
-const HeroVisual = () => (
-  <div className="relative mx-auto w-full max-w-5xl animate-hero-slide-up">
-    <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
-    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
-      <div className="flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-          <TrendingUp size={19} className="text-primary" />
-        </div>
-        <div>
-          <div className="font-display text-base font-extrabold">+42%</div>
-          <div className="text-xs text-muted-foreground">más contactos</div>
-        </div>
-      </div>
-    </div>
-    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
-      <div className="flex items-center gap-2 text-xs font-semibold">
-        <ShieldCheck size={16} className="text-brand-red" />
-        Diseño listo para vender
-      </div>
-    </div>
-
-    <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
-      <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
-        <span className="h-3 w-3 rounded-full bg-brand-red/80" />
-        <span className="h-3 w-3 rounded-full bg-accent/70" />
-        <span className="h-3 w-3 rounded-full bg-primary/70" />
-        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/system</span>
-      </div>
-
-      <div className="grid min-h-[460px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
-        <div className="relative overflow-hidden bg-brand-navy p-5 text-brand-navy-foreground sm:p-7">
-          <div className="absolute inset-0 bg-dot-grid opacity-20" />
-          <div className="relative z-10 flex h-full flex-col justify-between gap-10">
-            <div>
-              <div className="mb-8 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="h-9 w-9 rounded-xl bg-brand-navy-foreground/12" />
-                  <div className="h-2.5 w-24 rounded-full bg-brand-navy-foreground/28" />
-                </div>
-                <div className="h-9 w-28 rounded-full bg-brand-red" />
-              </div>
-              <div className="mb-5 h-3 w-32 rounded-full bg-brand-navy-foreground/25" />
-              <div className="space-y-3">
-                <div className="h-9 w-full max-w-[330px] rounded-lg bg-brand-navy-foreground/90" />
-                <div className="h-9 w-11/12 rounded-lg bg-brand-navy-foreground/70" />
-                <div className="h-9 w-8/12 rounded-lg bg-brand-navy-foreground/45" />
-              </div>
-              <div className="mt-7 space-y-2.5">
-                <div className="h-2.5 w-11/12 rounded-full bg-brand-navy-foreground/25" />
-                <div className="h-2.5 w-8/12 rounded-full bg-brand-navy-foreground/18" />
-              </div>
-            </div>
-            <div className="grid grid-cols-3 gap-2.5">
-              {[
-                ["UX", MousePointerClick],
-                ["SEO", Search],
-                ["CRM", Workflow],
-              ].map(([label, Icon]) => (
-                <div key={label as string} className="rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/10 p-3">
-                  <Icon size={18} className="mb-3 text-brand-red" />
-                  <div className="text-xs font-bold">{label as string}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-muted/10 p-4 sm:p-5">
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <div className="font-display text-sm font-bold">Conversion OS</div>
-              <div className="text-[11px] text-muted-foreground">Sitio web empresarial</div>
-            </div>
-            <div className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold text-primary">Live</div>
-          </div>
-          <div className="grid grid-cols-2 gap-2.5">
-            {[
-              ["Leads", "124"],
-              ["Speed", "98"],
-              ["Mobile", "A+"],
-              ["Conv.", "6.8%"],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-xl border border-border/60 bg-background p-3">
-                <div className="text-[10px] text-muted-foreground">{label}</div>
-                <div className="font-display text-xl font-extrabold">{value}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 rounded-xl border border-border/60 bg-background p-4">
-            <div className="mb-4 flex items-center justify-between text-xs font-semibold">
-              <span>Solicitudes</span>
-              <LineChart size={15} className="text-primary" />
-            </div>
-            <div className="flex h-32 items-end gap-1.5">
-              {[34, 48, 42, 60, 54, 69, 76, 68, 86, 80, 94, 90].map((height, index) => (
-                <div key={index} className="flex-1 rounded-t-md bg-gradient-to-t from-primary/25 to-primary transition-transform duration-300 hover:scale-y-105" style={{ height: `${height}%` }} />
-              ))}
-            </div>
-          </div>
-          <div className="mt-4 space-y-2.5">
-            {["CTA visible", "WhatsApp conectado", "Base lista para SEO"].map((item) => (
-              <div key={item} className="flex items-center justify-between rounded-xl border border-border/50 bg-background px-3 py-2.5 text-xs">
-                <span className="font-medium">{item}</span>
-                <CheckCircle2 size={14} className="text-primary" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const trustItems = [
-  "Empresas de servicios",
-  "Real estate",
-  "Hospitality",
-  "Consultorías",
-  "Clínicas",
-  "Marcas premium",
+const solutions = [
+  {
+    icon: Code2,
+    title: "Arquitectura Web",
+    description: "Sitios y landing pages construidos como activos digitales para explicar valor, convertir tráfico y sostener campañas.",
+    tag: "Sistema",
+  },
+  {
+    icon: TrendingUp,
+    title: "Conversión y Crecimiento",
+    description: "Estructura, mensajes y CTAs diseñados para generar solicitudes reales en Cancún, Playa del Carmen y Tulum.",
+    tag: "Growth",
+  },
+  {
+    icon: Workflow,
+    title: "Base para Integraciones",
+    description: "Una web preparada para conectar formularios, WhatsApp, CRM, automatización, analítica y optimización posterior.",
+    tag: "Tech",
+  },
 ];
 
-const services = [
-  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el cliente que necesitas convertir." },
-  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción." },
-  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros y preparados para crecer con campañas, contenido, analítica e integraciones futuras." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos comerciales y sitios corporativos listos para conectar marketing, ventas y posicionamiento orgánico." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en oportunidades medibles." },
-  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas ni piezas aisladas." },
+const features = [
+  {
+    icon: MousePointerClick,
+    title: "UX enfocada en acción",
+    desc: "Jerarquía clara, navegación simple y puntos de contacto visibles para convertir mejor.",
+  },
+  {
+    icon: Gauge,
+    title: "Rendimiento y claridad",
+    desc: "Experiencias rápidas, ordenadas y fáciles de entender en mobile y desktop.",
+  },
+  {
+    icon: Shield,
+    title: "Presencia premium",
+    desc: "Diseño consistente con una empresa seria, moderna y lista para competir por confianza.",
+  },
 ];
 
-const benefits = [
-  { icon: Users, title: "Confianza desde el primer scroll", desc: "Una presencia premium comunica solidez, orden y capacidad antes de que el usuario lea todos los detalles." },
-  { icon: Target, title: "Mensaje orientado a conversión", desc: "Priorizamos jerarquía, claridad y argumentos comerciales para mover al visitante hacia una acción concreta." },
-  { icon: BarChart3, title: "Activo comercial medible", desc: "La página presenta, filtra, educa y genera solicitudes para que marketing y ventas tengan una base más eficiente." },
-  { icon: Rocket, title: "Preparada para escalar", desc: "Dejamos una infraestructura clara para SEO, campañas, CRM, automatización y crecimiento digital posterior." },
+const serviceCards = [
+  { icon: Smartphone, title: "Diseño mobile-first", desc: "Interfaces pensadas primero para el usuario que llega desde celular y necesita actuar rápido." },
+  { icon: Layers3, title: "Landing pages y sitios", desc: "Estructuras comerciales para servicios, campañas, empresas locales y marcas premium." },
+  { icon: Search, title: "Base lista para SEO", desc: "Arquitectura ordenada para trabajar contenido, posicionamiento y optimización técnica después." },
+  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, contacto y rutas de conversión integradas al flujo natural del visitante." },
 ];
 
 const cities = [
-  { city: "Cancún", desc: "Para empresas turísticas, servicios profesionales, real estate y marcas que compiten por confianza." },
-  { city: "Playa del Carmen", desc: "Para negocios en crecimiento que necesitan una imagen moderna, clara y preparada para convertir." },
-  { city: "Tulum", desc: "Para proyectos boutique, wellness, hospitality y experiencias de alto valor que requieren percepción premium." },
+  { city: "Cancún", desc: "Para empresas turísticas, servicios profesionales, real estate y marcas que necesitan verse confiables desde el primer contacto." },
+  { city: "Playa del Carmen", desc: "Para negocios en crecimiento que requieren una presencia digital moderna, clara y lista para campañas." },
+  { city: "Tulum", desc: "Para proyectos boutique, wellness, hospitality y experiencias de alto valor que dependen de percepción premium." },
 ];
 
 const process = [
-  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol de la página dentro de tu sistema comercial." },
-  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones y CTAs alineados al estándar visual de North." },
-  { step: "03", icon: Code2, title: "Desarrollo", desc: "Construimos una interfaz responsive, rápida y preparada para analítica e integraciones futuras." },
-  { step: "04", icon: Rocket, title: "Crecimiento", desc: "Dejamos una base lista para publicar, medir, optimizar y escalar después." },
+  { icon: Compass, title: "Descubrimiento", desc: "Analizamos oferta, audiencia, mercado local y objetivos comerciales antes de definir la estructura." },
+  { icon: Lightbulb, title: "Estrategia", desc: "Creamos un mapa de secciones, mensajes, CTAs y tecnología necesaria para convertir visitas en oportunidades." },
+  { icon: Code2, title: "Desarrollo", desc: "Construimos una experiencia responsive, rápida y alineada al sistema visual de North." },
+  { icon: Rocket, title: "Crecimiento", desc: "Dejamos una base preparada para medir, optimizar, conectar CRM, automatizar y escalar." },
 ];
 
-const differentiators = [
-  "No diseñamos una página aislada: construimos una interfaz dentro de tu sistema digital de crecimiento.",
-  "Conectamos diseño, mensaje, tecnología y conversión desde la primera versión operativa.",
-  "Mantenemos un look premium, limpio y corporativo sin perder enfoque comercial ni rendimiento.",
-  "La estructura queda preparada para campañas, contenido, SEO, CRM y automatización cuando decidas escalar.",
+const conversionItems = [
+  "Mensaje comercial claro desde el primer scroll.",
+  "Rutas de contacto visibles para cotización y WhatsApp.",
+  "Estructura preparada para campañas, SEO y analítica.",
+  "Base tecnológica compatible con CRM y automatización.",
 ];
 
 const faqs = [
-  { q: "¿Esta página ya queda lista para SEO?", a: "Queda lista como base visual y estructural para que después se trabaje la optimización SEO técnica, contenido y metadata sin rehacer el diseño." },
-  { q: "¿El diseño funciona bien en móvil?", a: "Sí. La página está pensada mobile-first: botones grandes, secciones escaneables y cards apiladas correctamente en pantallas pequeñas." },
-  { q: "¿Pueden integrar WhatsApp y formularios?", a: "Sí. La experiencia puede incluir CTAs a WhatsApp, formularios de contacto y rutas claras hacia ventas o agenda." },
-  { q: "¿Es para negocios locales o empresas más grandes?", a: "Está pensada para empresas en Cancún, Playa del Carmen y Tulum que quieren verse premium, no como una página local básica." },
-  { q: "¿Se puede ampliar después?", a: "Sí. La estructura permite crecer hacia más secciones, landings, CRM, automatización, campañas o contenido SEO." },
+  { q: "¿Esto es solo diseño visual?", a: "No. La página se plantea como una pieza de tecnología comercial: estructura, mensaje, rendimiento, conversión y base para integraciones futuras." },
+  { q: "¿Sirve para empresas en Cancún, Playa del Carmen y Tulum?", a: "Sí. El enfoque está pensado para empresas de la región que necesitan verse premium, generar confianza y convertir tráfico local en oportunidades reales." },
+  { q: "¿Puede conectarse con WhatsApp, formularios o CRM?", a: "Sí. La estructura permite conectar rutas de contacto, formularios, WhatsApp, CRM, automatización y medición según el alcance del proyecto." },
+  { q: "¿La web puede crecer después?", a: "Sí. Se construye como una base escalable para nuevas secciones, campañas, contenido SEO, automatizaciones e integraciones." },
 ];
 
 const DisenoDePaginasWeb = () => {
@@ -228,7 +118,7 @@ const DisenoDePaginasWeb = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <SEO
         title="Diseño de Páginas Web | North"
         description="Diseño de páginas web premium para empresas en Cancún, Playa del Carmen y Tulum. Landing pages y sitios modernos enfocados en conversión."
@@ -238,76 +128,214 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative min-h-0 overflow-hidden bg-background pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
-          <div className="absolute inset-0 bg-dot-grid opacity-40" />
+        <section className="relative flex min-h-0 items-center overflow-hidden pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
+          <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
-          <div className="hidden lg:block absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
-          <div className="hidden lg:block absolute top-[4%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
-          <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto mb-8 max-w-4xl animate-hero-fade-in text-center md:mb-16">
-                <SectionBadge>Diseño de páginas web</SectionBadge>
-                <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web.
-                </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Creamos activos digitales para empresas en Cancún, Playa del Carmen y Tulum que necesitan convertir tráfico en oportunidades, conectar ventas y construir una base escalable.
-                </p>
-                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
-                  <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
-                    <Link to="/contacto">Diseñar mi sistema web <ArrowRight size={18} /></Link>
-                  </Button>
-                  <Button variant="gradient-outline" size="lg" className="px-8 py-6 text-base" asChild>
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar por WhatsApp</a>
-                  </Button>
-                </div>
-                <div className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
-                  {["Mobile-first", "Sistema de conversión", "Base escalable"].map((item) => (
-                    <div key={item} className="rounded-xl border border-border/30 bg-muted/30 p-3 text-xs font-semibold text-foreground/80 shadow-sm transition-transform duration-300 hover:-translate-y-1">
-                      <CheckCircle2 size={15} className="mb-2 text-primary" />{item}
-                    </div>
-                  ))}
-                </div>
-            </div>
-              <div>
-                <HeroVisual />
-              </div>
-          </div>
-        </section>
+          <div className="hidden lg:block absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute top-[5%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
 
-        <section className="border-y border-border/60 bg-secondary/55 py-9 md:py-12">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-              <div>
-                <p className="font-display text-lg font-extrabold">Infraestructura web para empresas que necesitan crecer mejor</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Confianza visual, claridad comercial y una base digital preparada para marketing, ventas y automatización.</p>
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16 animate-hero-fade-in">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Diseño de páginas web
               </div>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {trustItems.map((item) => (
-                  <div key={item} className="rounded-xl border border-border/60 bg-background px-3 py-3 text-center text-xs font-bold text-muted-foreground shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:text-foreground">
-                    {item}
+
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-4 md:mb-6 text-balance font-display">
+                Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web.
+              </h1>
+
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed">
+                Creamos páginas web para empresas en Cancún, Playa del Carmen y Tulum que funcionan como infraestructura comercial: conversión, sistemas, confianza y crecimiento.
+              </p>
+
+              <div className="flex flex-wrap gap-4 justify-center items-center">
+                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+                  <Link to="/contacto">Cotizar mi página web <ArrowRight size={16} className="ml-1" /></Link>
+                </Button>
+                <Button variant="gradient-outline" size="lg" className="text-base px-8 py-6" asChild>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={16} /> Hablar por WhatsApp</a>
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative max-w-5xl mx-auto animate-hero-slide-up">
+              <div className="hidden lg:block absolute -inset-12 bg-primary/8 rounded-[40px] blur-[40px] pointer-events-none" />
+              <div className="relative glass-card rounded-2xl border border-border/60 overflow-hidden shadow-2xl">
+                <div className="flex items-center gap-2 px-5 py-3 border-b border-border/30 bg-muted/20">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-destructive/50" />
+                    <div className="w-3 h-3 rounded-full bg-accent/40" />
+                    <div className="w-3 h-3 rounded-full bg-primary/30" />
                   </div>
-                ))}
+                  <div className="flex-1 flex justify-center">
+                    <div className="px-4 py-1 rounded-md bg-muted/40 text-[10px] text-muted-foreground flex items-center gap-2">
+                      <Shield size={9} /> northmkt.com.mx/web-system
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex min-h-[380px] lg:min-h-[420px]">
+                  <div className="hidden lg:flex flex-col w-48 border-r border-border/20 p-4 bg-muted/5">
+                    <div className="flex items-center gap-2 mb-8">
+                      <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <Globe size={14} className="text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold font-display">North</div>
+                        <div className="text-[9px] text-muted-foreground">Web System</div>
+                      </div>
+                    </div>
+                    <nav className="space-y-0.5">
+                      {[
+                        { icon: BarChart3, label: "Conversión", active: true },
+                        { icon: Users, label: "Audiencia" },
+                        { icon: Zap, label: "Automatización" },
+                        { icon: Activity, label: "Analítica" },
+                        { icon: Globe, label: "SEO Base" },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className={`flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] transition-colors ${
+                            item.active ? "bg-primary/10 text-primary font-semibold" : "text-muted-foreground"
+                          }`}
+                        >
+                          <item.icon size={13} />
+                          {item.label}
+                        </div>
+                      ))}
+                    </nav>
+                  </div>
+
+                  <div className="flex-1 p-5 space-y-4 overflow-hidden">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-sm font-bold font-display">Panel de Conversión</div>
+                        <div className="text-[10px] text-muted-foreground">Cancún · Playa del Carmen · Tulum</div>
+                      </div>
+                      <div className="relative">
+                        <Bell size={14} className="text-muted-foreground" />
+                        <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-primary" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                      {[
+                        { label: "Leads", value: "+42%", change: "web" },
+                        { label: "Velocidad", value: "98", change: "score" },
+                        { label: "Mobile", value: "A+", change: "UX" },
+                        { label: "CTA", value: "24/7", change: "activo" },
+                      ].map((m) => (
+                        <div key={m.label} className="rounded-xl bg-muted/20 border border-border/20 p-3">
+                          <div className="text-[9px] text-muted-foreground">{m.label}</div>
+                          <div className="text-sm font-bold">{m.value}</div>
+                          <div className="text-[9px] font-medium text-primary">
+                            <TrendingUp size={9} className="inline mr-0.5" />{m.change}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
+                      <div className="lg:col-span-3 rounded-xl bg-muted/10 border border-border/20 p-4">
+                        <div className="text-[11px] font-semibold mb-3">Solicitudes Mensuales</div>
+                        <div className="flex items-end gap-[3px] h-20">
+                          {[35, 45, 30, 55, 48, 65, 58, 72, 68, 82, 75, 90, 85, 78, 92, 88, 95].map((h, i) => (
+                            <div
+                              key={i}
+                              className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/25 to-primary/60 animate-bar-grow"
+                              style={{ height: `${h}%`, animationDelay: `${0.6 + i * 0.03}s` }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="lg:col-span-2 rounded-xl bg-muted/10 border border-border/20 p-4">
+                        <div className="text-[11px] font-semibold mb-3">Sistema</div>
+                        <div className="space-y-2">
+                          {[
+                            { label: "Tráfico", pct: 100 },
+                            { label: "Interés", pct: 63 },
+                            { label: "Contacto", pct: 39 },
+                            { label: "Oportunidad", pct: 24 },
+                          ].map((item) => (
+                            <div key={item.label}>
+                              <div className="flex justify-between text-[9px] mb-1">
+                                <span className="text-muted-foreground">{item.label}</span>
+                                <span className="font-bold">{item.pct}%</span>
+                              </div>
+                              <div className="w-full h-1 rounded-full bg-secondary/50">
+                                <div
+                                  className="h-full rounded-full bg-gradient-to-r from-primary/40 to-primary animate-bar-width"
+                                  style={{ width: `${item.pct}%`, animationDelay: "1s" }}
+                                />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { icon: Zap, title: "Automatización", items: ["WhatsApp", "Formularios", "CRM"] },
+                        { icon: Target, title: "Conversión", items: ["Oferta", "CTA", "Confianza"] },
+                        { icon: CheckCircle2, title: "Base", items: ["SEO", "Analítica", "Escala"] },
+                      ].map((block) => (
+                        <div key={block.title} className="rounded-xl bg-muted/10 border border-border/20 p-3">
+                          <div className="flex items-center gap-1.5 mb-2">
+                            <block.icon size={10} className="text-accent" />
+                            <span className="text-[10px] font-semibold">{block.title}</span>
+                          </div>
+                          {block.items.map((item) => (
+                            <div key={item} className="flex items-center justify-between text-[9px] py-0.5">
+                              <span className="text-muted-foreground">{item}</span>
+                              <CheckCircle2 size={8} className="text-primary" />
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative min-h-0 py-12 md:min-h-[480px] md:py-24">
+        <section className="py-12 md:py-24 relative min-h-0 md:min-h-[480px]">
           <div className="section-divider" />
-          <div className="container mx-auto px-4 py-4 lg:px-8">
-            <SectionHeader eyebrow="Servicio completo" title="Soluciones web conectadas a crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {services.map((service) => (
-                <article key={service.title} className="glass-card group relative block overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-3 hover:border-primary/25 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)]">
-                  <div className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent group-hover:opacity-100" />
+          <div className="container mx-auto px-4 lg:px-8 py-4">
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Lo Que Hacemos
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
+                Webs como <span className="gradient-text">Sistemas</span>
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Tecnología visual, comercial y operativa para acelerar la forma en que tu empresa convierte oportunidades.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {solutions.map((s) => (
+                <article
+                  key={s.title}
+                  className="glass-card rounded-2xl p-7 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)] hover:border-primary/25 relative overflow-hidden block"
+                >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent" />
                   <div className="relative z-10">
-                  <div className="mb-5 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)]">
-                      <service.icon size={22} className="text-primary" />
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)] transition-all duration-500">
+                        <s.icon size={22} className="text-primary" />
+                      </div>
+                      <span className="text-[9px] uppercase tracking-wider font-medium text-primary/60 px-2.5 py-1 rounded-full border border-primary/15 bg-primary/5">
+                        {s.tag}
+                      </span>
                     </div>
-                  </div>
-                  <h3 className="mb-3 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{service.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
+                    <h3 className="text-lg font-bold mb-3 font-display transition-colors duration-300 group-hover:text-primary">{s.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
                   </div>
                 </article>
               ))}
@@ -316,26 +344,47 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider mt-8" />
         </section>
 
-        <section className="relative overflow-hidden bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
-          <div className="absolute inset-0 bg-dot-grid opacity-15" />
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-              <div>
-                <SectionBadge dark>Beneficios de negocio</SectionBadge>
-                <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                  Una web no debe verse bonita solamente. Debe integrarse a tu crecimiento.
-                </h2>
-                <p className="mt-5 text-base leading-relaxed text-brand-navy-foreground/65">
-                  Convertimos tu sitio en una experiencia comercial conectada a tu operación: clara, rápida y diseñada para generar oportunidades que marketing y ventas puedan aprovechar.
+        <section className="py-12 md:py-20 relative overflow-hidden min-h-0 md:min-h-[500px]">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Propuesta de Valor
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5">
+                Diseño web conectado a <span className="gradient-text">crecimiento</span>
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-[5fr_7fr] gap-10 lg:gap-6 items-center">
+              <div className="lg:pl-4">
+                <p className="text-base text-muted-foreground leading-relaxed mb-8">
+                  North no construye páginas aisladas. Creamos interfaces comerciales integradas a la estrategia digital, preparadas para campañas, medición, automatización y confianza.
                 </p>
+                <div className="space-y-5">
+                  {features.map((f) => (
+                    <div key={f.title} className="flex gap-4 group">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.4)] transition-all duration-300">
+                        <f.icon size={22} className="text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold mb-1 group-hover:text-primary transition-colors">{f.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
+
               <div className="grid gap-4 sm:grid-cols-2">
-                {benefits.map((benefit) => (
-                  <article key={benefit.title} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-navy-foreground/[0.12]">
-                    <benefit.icon size={24} className="mb-5 text-brand-red" />
-                    <h3 className="mb-2 font-display text-lg font-bold">{benefit.title}</h3>
-                    <p className="text-sm leading-relaxed text-brand-navy-foreground/65">{benefit.desc}</p>
+                {serviceCards.map((card) => (
+                  <article key={card.title} className="glass-card rounded-2xl p-6 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
+                    <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-all duration-500">
+                      <card.icon size={22} className="text-primary" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{card.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{card.desc}</p>
                   </article>
                 ))}
               </div>
@@ -343,106 +392,126 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="border-y border-border/60 bg-secondary/45 py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Presencia regional" title="Diseño web para empresas en Cancún, Playa del Carmen y Tulum" copy="Adaptamos la experiencia al mercado donde compite tu empresa, manteniendo una imagen moderna, corporativa y de alto valor." />
-            <div className="grid gap-4 md:grid-cols-3">
-              {cities.map((item) => (
-                <article key={item.city} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
-                  <MapPin size={22} className="mb-5 text-brand-red" />
-                  <h3 className="font-display text-2xl font-extrabold">{item.city}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="relative min-h-0 py-12 md:min-h-[500px] md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
-          <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Proceso claro" title="De idea a sistema web listo para crecer" copy="Un flujo simple, ordenado y enfocado en lanzar una experiencia premium que cumpla una función comercial dentro de tu operación digital." />
-            <div className="relative mx-auto max-w-4xl">
-              <div className="absolute bottom-0 left-8 top-0 hidden w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:block lg:left-1/2" />
-              <div className="space-y-12">
-              {process.map((item, index) => (
-                <article key={item.title} className={`group flex items-start gap-6 md:gap-12 ${index % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}>
-                  <div className="hidden flex-1 md:block" />
-                  <div className="relative z-10 shrink-0">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)]">
-                      <item.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
-                    </div>
-                    <div className="gradient-btn absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white">
-                      {index + 1}
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="mb-2 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
-                  </div>
-                </article>
-              ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-secondary/45 py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <section className="py-12 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+          <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
-                <SectionBadge>Diferenciador North</SectionBadge>
-                <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                  Diseño, tecnología y conversión en una misma infraestructura
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-xs text-brand-navy-foreground/75 mb-4">
+                  <span className="w-2 h-2 rounded-full bg-brand-red animate-status-pulse" />
+                  Conversión y Sistemas
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight text-brand-navy-foreground">
+                  Una web no debe verse bonita solamente. Debe integrarse a tu crecimiento.
                 </h2>
-                <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                  Una página premium no se mide solo por cómo se ve. Se mide por su capacidad de explicar valor, generar confianza y convertir interés en una oportunidad real.
+                <p className="text-brand-navy-foreground/65 text-base leading-relaxed max-w-xl">
+                  La página se convierte en una pieza del sistema comercial: atrae, explica, filtra, conecta y deja lista la base para escalar con tecnología.
                 </p>
               </div>
-              <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
-                <div className="absolute inset-0 bg-dot-grid opacity-15" />
-                <div className="relative z-10">
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red">
-                    <Zap size={22} />
-                  </div>
-                  <div>
-                    <div className="font-display text-xl font-bold">Sistema de conversión</div>
-                    <div className="text-sm text-brand-navy-foreground/60">No solo una página informativa</div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  {differentiators.map((item) => (
-                    <div key={item} className="flex gap-3 rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-3 text-sm leading-relaxed text-brand-navy-foreground/75">
-                      <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-brand-red" />
-                      <span>{item}</span>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {conversionItems.map((item, index) => (
+                  <div key={item} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-navy-foreground/[0.12]">
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-red text-brand-navy-foreground font-display text-sm font-bold">
+                      {index + 1}
                     </div>
-                  ))}
-                </div>
-                </div>
+                    <p className="text-sm leading-relaxed text-brand-navy-foreground/75">{item}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-brand-navy py-14 text-center text-brand-navy-foreground md:py-24">
-          <div className="absolute inset-0 bg-dot-grid opacity-15" />
-          <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <SectionBadge dark>Listo para avanzar</SectionBadge>
-              <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                Haz que tu página funcione como un sistema de crecimiento digital
+        <section className="border-y border-border/60 bg-secondary/45 py-12 md:py-20">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Presencia Regional
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
+                Diseño web para Cancún, Playa del Carmen y Tulum
               </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-navy-foreground/65">
-                Cuéntanos qué vendes y diseñamos una experiencia clara, premium y preparada para convertir visitantes en oportunidades medibles.
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Una presencia premium para mercados donde la confianza, velocidad y claridad comercial definen la primera decisión.
               </p>
-              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-                <Button variant="gradient" size="lg" className="h-14 px-8 text-base" asChild>
-                  <Link to="/contacto">Diseñar mi sistema web <ArrowRight size={18} /></Link>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {cities.map((item) => (
+                <article key={item.city} className="glass-card rounded-2xl p-7 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
+                  <MapPin size={22} className="mb-5 text-primary" />
+                  <h3 className="text-lg font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{item.city}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-24 relative min-h-0 md:min-h-[500px]">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                Metodología
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
+                Nuestro <span className="gradient-text">Proceso</span>
+              </h2>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto">
+              <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
+              <div className="space-y-12">
+                {process.map((step, i) => (
+                  <div
+                    key={step.title}
+                    className={`flex items-start gap-6 md:gap-12 group ${i % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}
+                  >
+                    <div className="flex-1 hidden md:block" />
+                    <div className="relative z-10 shrink-0">
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)] group-hover:scale-105">
+                        <step.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full gradient-btn flex items-center justify-center text-[10px] font-bold text-white">
+                        {i + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold font-display mb-2 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+          <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+          <div className="hidden md:block absolute bottom-0 right-1/4 w-[300px] h-[200px] rounded-full bg-primary/6 blur-[40px] pointer-events-none" />
+
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 font-display leading-tight text-brand-navy-foreground">
+                Convierte tu sitio web en una pieza real de <span className="gradient-text">crecimiento</span>
+              </h2>
+              <p className="text-brand-navy-foreground/60 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                Cuéntanos qué vendes y diseñamos una experiencia clara, tecnológica y preparada para convertir visitas en oportunidades.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
+                  <Link to="/contacto">Solicitar Cotización <ArrowRight size={16} className="ml-1" /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-8 text-base text-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar con North</a>
-                </Button>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-base px-8 py-3 rounded-lg border border-white/40 text-brand-navy-foreground bg-transparent font-medium transition-all duration-300 hover:bg-white hover:text-[hsl(220,50%,10%)] hover:border-white">
+                  <MessageSquare size={16} /> Hablar por WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -451,7 +520,13 @@ const DisenoDePaginasWeb = () => {
         <section className="bg-background py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <SectionHeader eyebrow="FAQ" title="Preguntas frecuentes" />
+              <div className="text-center mb-14">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
+                  FAQ
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">Preguntas frecuentes</h2>
+              </div>
               <Accordion type="single" collapsible className="rounded-2xl border border-border/60 bg-card px-4 md:px-6">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={faq.q} value={`item-${index}`} className="border-border/60">
