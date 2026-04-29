@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/button";
 
 const solutions = [
   { label: "Software Empresarial", href: "/software" },
-  { label: "Diseño de páginas web", href: "/diseno-de-paginas-web" },
-  { label: "Cloud Services", href: "/cloud" },
-  { label: "Marketing de Crecimiento", href: "/marketing" },
-  { label: "CRM para Empresas", href: "/crm-empresas" },
+  { label: "Cloud Services", href: "/cloud-services" },
+  { label: "Marketing Digital", href: "/marketing" },
   { label: "SEO", href: "/seo" },
   { label: "Google Workspace", href: "/google-workspace-mexico" },
+  { label: "Diseño de Páginas Web", href: "/diseno-de-paginas-web" },
 ];
 
 
