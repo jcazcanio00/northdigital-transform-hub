@@ -372,7 +372,7 @@ const DisenoDePaginasWeb = () => {
         </section>
 
         <section className="relative overflow-hidden py-12 md:py-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+          <div className="absolute inset-0" style={{ background: "var(--gradient-cta)" }} />
           <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
           <div className="hidden md:block absolute left-1/2 top-1/2 h-[520px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
@@ -466,10 +466,7 @@ const DisenoDePaginasWeb = () => {
               <div className="absolute left-6 top-8 bottom-8 hidden w-px bg-gradient-to-b from-primary/15 via-primary/40 to-primary/15 md:block lg:left-1/2" />
               <div className="space-y-6 md:space-y-10">
                 {process.map((step, index) => (
-                  <article
-                    key={step.title}
-                    className={`relative grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center ${index % 2 === 1 ? "" : ""}`}
-                  >
+                  <article key={step.title} className="relative grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
                     <div className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-3"}`}>
                       <div className="glass-card rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)] md:p-7">
                         <div className={`mb-4 flex items-center gap-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
@@ -491,7 +488,7 @@ const DisenoDePaginasWeb = () => {
         </section>
 
         <section className="relative overflow-hidden py-12 md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+          <div className="absolute inset-0" style={{ background: "var(--gradient-cta)" }} />
           <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
           <div className="hidden md:block absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
           <div className="hidden md:block absolute bottom-0 right-1/4 h-[200px] w-[300px] rounded-full bg-primary/6 blur-[40px] pointer-events-none" />
