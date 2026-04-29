@@ -179,12 +179,12 @@ const trustItems = [
 ];
 
 const services = [
-  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el tipo de cliente que quieres convertir." },
-  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción operativa." },
-  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros, ordenados y preparados para crecer con campañas, contenido, analítica y futuras integraciones." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos digitales comerciales, sitios corporativos y estructuras listas para conectar marketing, ventas y SEO posterior." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en conversaciones y oportunidades medibles." },
-  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas genéricas ni piezas aisladas de tu operación." },
+  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el cliente que necesitas convertir." },
+  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción." },
+  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros y preparados para crecer con campañas, contenido, analítica e integraciones futuras." },
+  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos comerciales y sitios corporativos listos para conectar marketing, ventas y posicionamiento orgánico." },
+  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en oportunidades medibles." },
+  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas ni piezas aisladas." },
 ];
 
 const benefits = [
@@ -201,10 +201,10 @@ const cities = [
 ];
 
 const process = [
-  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol que la página debe cumplir dentro de tu sistema comercial." },
-  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia premium alineada al estándar visual de North." },
-  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente, preparada para analítica e integraciones futuras." },
-  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos una base lista para publicar, medir y optimizar después." },
+  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol de la página dentro de tu sistema comercial." },
+  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones y CTAs alineados al estándar visual de North." },
+  { step: "03", icon: Code2, title: "Desarrollo", desc: "Construimos una interfaz responsive, rápida y preparada para analítica e integraciones futuras." },
+  { step: "04", icon: Rocket, title: "Crecimiento", desc: "Dejamos una base lista para publicar, medir, optimizar y escalar después." },
 ];
 
 const differentiators = [
@@ -238,16 +238,16 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative overflow-hidden bg-background pb-10 pt-6 md:pb-16 md:pt-14 lg:pt-16">
+        <section className="relative min-h-0 overflow-hidden bg-background pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
           <div className="absolute inset-0 bg-dot-grid opacity-40" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
           <div className="hidden lg:block absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
           <div className="hidden lg:block absolute top-[4%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-4xl animate-hero-fade-in text-center">
+            <div className="mx-auto mb-8 max-w-4xl animate-hero-fade-in text-center md:mb-16">
                 <SectionBadge>Diseño de páginas web</SectionBadge>
                 <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Páginas web premium conectadas a crecimiento y conversión
+                  Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web.
                 </h1>
                 <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                   Creamos activos digitales para empresas en Cancún, Playa del Carmen y Tulum que necesitan convertir tráfico en oportunidades, conectar ventas y construir una base escalable.
@@ -268,7 +268,7 @@ const DisenoDePaginasWeb = () => {
                   ))}
                 </div>
             </div>
-              <div className="mt-10 md:mt-14">
+              <div>
                 <HeroVisual />
               </div>
           </div>
@@ -292,21 +292,28 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-background py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
-            <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una web para operar como activo de crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <section className="relative min-h-0 py-12 md:min-h-[480px] md:py-24">
+          <div className="section-divider" />
+          <div className="container mx-auto px-4 py-4 lg:px-8">
+            <SectionHeader eyebrow="Servicio completo" title="Soluciones web conectadas a crecimiento" copy="Diseñamos cada sección con una función clara: captar atención, explicar valor, construir confianza y llevar al usuario hacia una acción medible." />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <service.icon size={22} className="text-primary" />
+                <article key={service.title} className="glass-card group relative block overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-3 hover:border-primary/25 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)]">
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent group-hover:opacity-100" />
+                  <div className="relative z-10">
+                  <div className="mb-5 flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)]">
+                      <service.icon size={22} className="text-primary" />
+                    </div>
                   </div>
-                  <h3 className="mb-3 font-display text-lg font-bold">{service.title}</h3>
+                  <h3 className="mb-3 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{service.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
+          <div className="section-divider mt-8" />
         </section>
 
         <section className="relative overflow-hidden bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
@@ -351,22 +358,31 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-background py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
+        <section className="relative min-h-0 py-12 md:min-h-[500px] md:py-24">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <SectionHeader eyebrow="Proceso claro" title="De idea a sistema web listo para crecer" copy="Un flujo simple, ordenado y enfocado en lanzar una experiencia premium que cumpla una función comercial dentro de tu operación digital." />
-            <div className="grid gap-4 lg:grid-cols-4">
-              {process.map((item) => (
-                <article key={item.title} className="rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="mb-8 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                      <item.icon size={21} className="text-primary" />
+            <div className="relative mx-auto max-w-4xl">
+              <div className="absolute bottom-0 left-8 top-0 hidden w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:block lg:left-1/2" />
+              <div className="space-y-12">
+              {process.map((item, index) => (
+                <article key={item.title} className={`group flex items-start gap-6 md:gap-12 ${index % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}>
+                  <div className="hidden flex-1 md:block" />
+                  <div className="relative z-10 shrink-0">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)]">
+                      <item.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
                     </div>
-                    <span className="font-display text-3xl font-extrabold text-primary/15">{item.step}</span>
+                    <div className="gradient-btn absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                      {index + 1}
+                    </div>
                   </div>
-                  <h3 className="mb-3 font-display text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  <div className="flex-1">
+                    <h3 className="mb-2 font-display text-lg font-bold transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  </div>
                 </article>
               ))}
+              </div>
             </div>
           </div>
         </section>
