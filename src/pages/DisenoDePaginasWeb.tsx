@@ -507,21 +507,25 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-background py-14 md:py-24">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl">
-              <div className="text-center mb-14">
+        <section className="relative overflow-hidden bg-background py-14 md:py-24">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="mx-auto max-w-4xl">
+              <div className="text-center mb-12 md:mb-14">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                   <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                   FAQ
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">Preguntas frecuentes</h2>
+                <p className="mx-auto max-w-xl text-muted-foreground">
+                  Respuestas rápidas para entender cómo planteamos una página web como activo comercial y tecnológico.
+                </p>
               </div>
-              <Accordion type="single" collapsible className="rounded-2xl border border-border/60 bg-card px-4 md:px-6">
+              <Accordion type="single" collapsible className="glass-card rounded-2xl border border-border/60 px-4 py-2 shadow-sm md:px-6 md:py-4">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={faq.q} value={`item-${index}`} className="border-border/60">
-                    <AccordionTrigger className="text-left font-display text-base font-bold hover:no-underline md:text-lg">{faq.q}</AccordionTrigger>
-                    <AccordionContent className="text-sm leading-relaxed text-muted-foreground">{faq.a}</AccordionContent>
+                  <AccordionItem key={faq.q} value={`item-${index}`} className="border-border/50 px-1">
+                    <AccordionTrigger className="py-5 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-lg">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:max-w-3xl">{faq.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
