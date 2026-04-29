@@ -443,11 +443,14 @@ const DisenoDePaginasWeb = () => {
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Metodología
+                Consultoría y Ejecución
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-                Nuestro <span className="gradient-text">Proceso</span>
+                De la idea al <span className="gradient-text">lanzamiento</span>
               </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Un proceso claro para convertir una necesidad comercial en una página web lista para vender, medir y escalar.
+              </p>
             </div>
 
             <div className="relative max-w-4xl mx-auto">
@@ -467,7 +470,7 @@ const DisenoDePaginasWeb = () => {
                         {i + 1}
                       </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 rounded-2xl border border-border/50 bg-card/70 p-5 shadow-sm transition-all duration-500 group-hover:-translate-y-1 group-hover:border-primary/20 group-hover:shadow-[0_0_40px_-16px_hsl(var(--primary)/0.3)]">
                       <h3 className="text-lg font-bold font-display mb-2 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
