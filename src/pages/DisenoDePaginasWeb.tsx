@@ -303,7 +303,7 @@ const DisenoDePaginasWeb = () => {
                   Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web
                 </h1>
                 <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:mb-10 md:text-lg lg:mx-0">
-                  Creamos páginas web para empresas en Cancún, Playa del Carmen y Tulum que comunican mejor, generan confianza y convierten visitas en conversaciones comerciales.
+                  Crear páginas web que comuniquen, generen confianza y conviertan visitas en oportunidades reales.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                   <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
