@@ -41,7 +41,7 @@ const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotiza
 
 const SectionBadge = ({ children, dark = false }: { children: ReactNode; dark?: boolean }) => (
   <span className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium ${dark ? "border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-brand-navy-foreground/75" : "border-primary/20 bg-primary/5 text-muted-foreground"}`}>
-    <span className={`h-2 w-2 rounded-full ${dark ? "bg-brand-red" : "bg-primary"}`} />
+    <span className={`h-2 w-2 rounded-full animate-status-pulse ${dark ? "bg-brand-red" : "bg-primary"}`} />
     {children}
   </span>
 );
@@ -57,9 +57,9 @@ const SectionHeader = ({ eyebrow, title, copy, dark = false }: { eyebrow: string
 );
 
 const HeroVisual = () => (
-  <div className="relative mx-auto w-full max-w-[680px] lg:ml-auto">
-    <div className="absolute -inset-6 rounded-[2rem] bg-primary/10 blur-3xl" />
-    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/70 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
+  <div className="relative mx-auto w-full max-w-5xl animate-hero-slide-up">
+    <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
+    <div className="absolute -right-2 top-8 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
       <div className="flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
           <TrendingUp size={19} className="text-primary" />
@@ -70,22 +70,22 @@ const HeroVisual = () => (
         </div>
       </div>
     </div>
-    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/70 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
+    <div className="absolute -left-3 bottom-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
       <div className="flex items-center gap-2 text-xs font-semibold">
         <ShieldCheck size={16} className="text-brand-red" />
         Diseño listo para vender
       </div>
     </div>
 
-    <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-background shadow-2xl">
-      <div className="flex items-center gap-2 border-b border-border/60 bg-card px-4 py-3">
+    <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
+      <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
         <span className="h-3 w-3 rounded-full bg-brand-red/80" />
         <span className="h-3 w-3 rounded-full bg-accent/70" />
         <span className="h-3 w-3 rounded-full bg-primary/70" />
-        <span className="ml-auto hidden rounded-md bg-background px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/system</span>
+        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">north.website/system</span>
       </div>
 
-      <div className="grid min-h-[520px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
+      <div className="grid min-h-[460px] grid-cols-1 lg:grid-cols-[0.58fr_0.42fr]">
         <div className="relative overflow-hidden bg-brand-navy p-5 text-brand-navy-foreground sm:p-7">
           <div className="absolute inset-0 bg-dot-grid opacity-20" />
           <div className="relative z-10 flex h-full flex-col justify-between gap-10">
@@ -123,7 +123,7 @@ const HeroVisual = () => (
           </div>
         </div>
 
-        <div className="bg-card p-4 sm:p-5">
+        <div className="bg-muted/10 p-4 sm:p-5">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <div className="font-display text-sm font-bold">Conversion OS</div>
@@ -238,39 +238,39 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative overflow-hidden bg-background pb-14 pt-8 md:pb-20 md:pt-14 lg:pt-16">
-          <div className="absolute inset-0 bg-dot-grid opacity-35" />
+        <section className="relative overflow-hidden bg-background pb-10 pt-6 md:pb-16 md:pt-14 lg:pt-16">
+          <div className="absolute inset-0 bg-dot-grid opacity-40" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+          <div className="hidden lg:block absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute top-[4%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-              <div className="animate-hero-fade-in text-center lg:text-left">
+            <div className="mx-auto max-w-4xl animate-hero-fade-in text-center">
                 <SectionBadge>Diseño de páginas web</SectionBadge>
-                <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Páginas web premium diseñadas para convertir más clientes
+                <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
+                  Páginas web premium diseñadas para convertir y crecer
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
-                  Creamos sitios modernos para empresas en Cancún, Playa del Carmen y Tulum que necesitan verse profesionales, explicar su valor y generar solicitudes reales.
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Creamos sitios modernos para empresas en Cancún, Playa del Carmen y Tulum que necesitan confianza visual, claridad comercial y tecnología lista para generar oportunidades reales.
                 </p>
-                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
-                  <Button variant="gradient" size="lg" className="h-14 px-8 text-base" asChild>
+                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+                  <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
                     <Link to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
                   </Button>
-                  <Button variant="gradient-outline" size="lg" className="h-14 px-8 text-base" asChild>
+                  <Button variant="gradient-outline" size="lg" className="px-8 py-6 text-base" asChild>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar por WhatsApp</a>
                   </Button>
                 </div>
-                <div className="mt-7 grid grid-cols-1 gap-3 text-left sm:grid-cols-3">
+                <div className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
                   {["Mobile-first", "UX de conversión", "Lista para SEO"].map((item) => (
-                    <div key={item} className="rounded-xl border border-border/60 bg-card/80 p-3 text-xs font-semibold text-foreground/75 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+                    <div key={item} className="rounded-xl border border-border/20 bg-muted/20 p-3 text-xs font-semibold text-foreground/75 shadow-sm transition-transform duration-300 hover:-translate-y-1">
                       <CheckCircle2 size={15} className="mb-2 text-primary" />{item}
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="animate-hero-fade-in [animation-delay:120ms]">
+            </div>
+              <div className="mt-10 md:mt-14">
                 <HeroVisual />
               </div>
-            </div>
           </div>
         </section>
 
@@ -297,7 +297,7 @@ const DisenoDePaginasWeb = () => {
             <SectionHeader eyebrow="Servicio completo" title="Todo lo que necesita una página web para sentirse premium" copy="Diseñamos cada sección con una función clara: atraer atención, explicar valor, construir confianza y facilitar el contacto." />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="glass-card glass-card-hover rounded-2xl p-6">
+                <article key={service.title} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                     <service.icon size={22} className="text-primary" />
                   </div>
@@ -309,9 +309,11 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
+        <section className="relative overflow-hidden bg-brand-navy py-14 text-brand-navy-foreground md:py-24">
+          <div className="absolute inset-0 bg-dot-grid opacity-15" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <div>
                 <SectionBadge dark>Beneficios de negocio</SectionBadge>
                 <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
@@ -334,12 +336,12 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-secondary/45 py-14 md:py-24">
+        <section className="border-y border-border/60 bg-secondary/45 py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <SectionHeader eyebrow="Presencia regional" title="Diseño web para empresas en Cancún, Playa del Carmen y Tulum" copy="Adaptamos la experiencia al mercado donde compite tu empresa, manteniendo una imagen moderna, corporativa y de alto valor." />
             <div className="grid gap-4 md:grid-cols-3">
               {cities.map((item) => (
-                <article key={item.city} className="rounded-2xl border border-border/60 bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <article key={item.city} className="glass-card glass-card-hover rounded-2xl border-border/60 p-6">
                   <MapPin size={22} className="mb-5 text-brand-red" />
                   <h3 className="font-display text-2xl font-extrabold">{item.city}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
@@ -369,7 +371,7 @@ const DisenoDePaginasWeb = () => {
           </div>
         </section>
 
-        <section className="bg-card py-14 md:py-24">
+        <section className="bg-secondary/45 py-14 md:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
@@ -381,7 +383,9 @@ const DisenoDePaginasWeb = () => {
                   Una página premium no se mide solo por cómo se ve. Se mide por lo fácil que hace entender tu valor, confiar en tu empresa y dar el siguiente paso.
                 </p>
               </div>
-              <div className="rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
+              <div className="relative overflow-hidden rounded-2xl bg-brand-navy p-6 text-brand-navy-foreground shadow-2xl md:p-8">
+                <div className="absolute inset-0 bg-dot-grid opacity-15" />
+                <div className="relative z-10">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red">
                     <Zap size={22} />
@@ -398,6 +402,7 @@ const DisenoDePaginasWeb = () => {
                       <span>{item}</span>
                     </div>
                   ))}
+                </div>
                 </div>
               </div>
             </div>
