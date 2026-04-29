@@ -238,39 +238,39 @@ const DisenoDePaginasWeb = () => {
       <Header />
 
       <main>
-        <section className="relative overflow-hidden bg-background pb-14 pt-8 md:pb-20 md:pt-14 lg:pt-16">
-          <div className="absolute inset-0 bg-dot-grid opacity-35" />
+        <section className="relative overflow-hidden bg-background pb-10 pt-6 md:pb-16 md:pt-14 lg:pt-16">
+          <div className="absolute inset-0 bg-dot-grid opacity-40" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+          <div className="hidden lg:block absolute top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute top-[4%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-              <div className="animate-hero-fade-in text-center lg:text-left">
+            <div className="mx-auto max-w-4xl animate-hero-fade-in text-center">
                 <SectionBadge>Diseño de páginas web</SectionBadge>
-                <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.04] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Páginas web premium diseñadas para convertir más clientes
+                <h1 className="mx-auto mt-4 max-w-4xl font-display text-3xl font-extrabold leading-[1.05] text-balance sm:text-5xl lg:text-6xl xl:text-7xl">
+                  Páginas web premium diseñadas para convertir y crecer
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:mx-0">
-                  Creamos sitios modernos para empresas en Cancún, Playa del Carmen y Tulum que necesitan verse profesionales, explicar su valor y generar solicitudes reales.
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Creamos sitios modernos para empresas en Cancún, Playa del Carmen y Tulum que necesitan confianza visual, claridad comercial y tecnología lista para generar oportunidades reales.
                 </p>
-                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
-                  <Button variant="gradient" size="lg" className="h-14 px-8 text-base" asChild>
+                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center">
+                  <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
                     <Link to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
                   </Button>
-                  <Button variant="gradient-outline" size="lg" className="h-14 px-8 text-base" asChild>
+                  <Button variant="gradient-outline" size="lg" className="px-8 py-6 text-base" asChild>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar por WhatsApp</a>
                   </Button>
                 </div>
-                <div className="mt-7 grid grid-cols-1 gap-3 text-left sm:grid-cols-3">
+                <div className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3 text-left sm:grid-cols-3">
                   {["Mobile-first", "UX de conversión", "Lista para SEO"].map((item) => (
-                    <div key={item} className="rounded-xl border border-border/60 bg-card/80 p-3 text-xs font-semibold text-foreground/75 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+                    <div key={item} className="rounded-xl border border-border/20 bg-muted/20 p-3 text-xs font-semibold text-foreground/75 shadow-sm transition-transform duration-300 hover:-translate-y-1">
                       <CheckCircle2 size={15} className="mb-2 text-primary" />{item}
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="animate-hero-fade-in [animation-delay:120ms]">
+            </div>
+              <div className="mt-10 md:mt-14">
                 <HeroVisual />
               </div>
-            </div>
           </div>
         </section>
 
