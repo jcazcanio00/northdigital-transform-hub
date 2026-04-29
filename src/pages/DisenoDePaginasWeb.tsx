@@ -13,7 +13,6 @@ import {
   Search,
   Shield,
   Smartphone,
-  Sparkles,
   TrendingUp,
   Workflow,
 } from "lucide-react";
@@ -29,6 +28,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import heroTravelImage from "@/assets/diseno-web-hero-travel.jpg";
 
 const WHATSAPP_LINK =
   "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotizar%20una%20pagina%20web%20para%20mi%20empresa";
@@ -52,11 +52,22 @@ const SectionBadge = ({ children }: { children: ReactNode }) => (
   </span>
 );
 
-const WhatsAppButton = ({
+const DarkWhatsAppLink = ({
   children = "Hablar por WhatsApp",
 }: {
   children?: ReactNode;
 }) => (
+  <a
+    href={WHATSAPP_LINK}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy-foreground/30 bg-transparent px-8 py-3 text-base font-medium text-brand-navy-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy"
+  >
+    <WhatsAppGlyph size={16} /> {children}
+  </a>
+);
+
+const HeroWhatsAppButton = () => (
   <Button
     variant="gradient-outline"
     size="lg"
@@ -64,75 +75,77 @@ const WhatsAppButton = ({
     asChild
   >
     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-      <WhatsAppGlyph size={16} /> {children}
+      <WhatsAppGlyph size={16} /> Hablar por WhatsApp
     </a>
   </Button>
 );
-
-const darkWhatsAppClass =
-  "inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy-foreground/40 bg-transparent px-8 py-3 text-base font-medium text-brand-navy-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy";
 
 const benefits = [
   {
     icon: Shield,
     title: "Confianza inmediata",
     description:
-      "Una primera impresión clara, profesional y preparada para que tu empresa se perciba seria desde el primer contacto.",
+      "Una web clara, profesional y consistente para que tu empresa se perciba confiable desde el primer contacto.",
   },
   {
     icon: Smartphone,
     title: "Experiencia mobile-first",
     description:
-      "Diseñamos primero para celular, donde tus clientes comparan opciones, revisan tu propuesta y deciden escribirte.",
+      "Diseño pensado para usuarios que descubren, comparan y deciden desde celular en pocos segundos.",
   },
   {
     icon: MessageSquare,
     title: "Contacto sin fricción",
     description:
-      "CTAs, WhatsApp y formularios visibles para convertir visitas en conversaciones comerciales sin pasos innecesarios.",
+      "WhatsApp, formularios y CTAs visibles para convertir interés en conversaciones comerciales reales.",
   },
   {
     icon: Workflow,
     title: "Base para crecer",
     description:
-      "Una web lista para campañas, analítica, CRM, automatizaciones y evolución orgánica conforme el negocio avance.",
+      "Una página preparada para campañas, analítica, SEO, CRM y siguientes etapas de crecimiento digital.",
   },
 ];
 
-const strategicPoints = [
+const strategy = [
   {
     icon: FileText,
     title: "Mensaje claro",
-    text: "Explica qué haces, para quién y por qué elegirte sin obligar al visitante a descifrar tu oferta.",
+    description:
+      "Explica qué haces, para quién y por qué confiar en tu negocio.",
   },
   {
     icon: Layers3,
     title: "Estructura comercial",
-    text: "Ordena la información para responder dudas, mostrar valor y llevar al usuario hacia el siguiente paso.",
+    description:
+      "Ordena la información para guiar al visitante hacia una decisión.",
   },
   {
     icon: Gauge,
     title: "Velocidad",
-    text: "Una experiencia ligera sostiene campañas, reduce fricción y mejora la percepción de calidad.",
+    description: "Reduce fricción y mejora la experiencia en mobile y desktop.",
   },
   {
     icon: Search,
-    title: "Base SEO",
-    text: "Jerarquía, contenido y arquitectura preparados para construir visibilidad de forma progresiva.",
+    title: "SEO",
+    description:
+      "Construye una base ordenada para posicionamiento y contenidos futuros.",
   },
   {
     icon: MessageSquare,
     title: "Contacto visible",
-    text: "WhatsApp, formularios y llamadas a la acción ubicadas donde el usuario ya está listo para avanzar.",
+    description:
+      "Facilita cotizaciones, mensajes y solicitudes desde puntos clave.",
   },
   {
     icon: BadgeCheck,
     title: "Confianza",
-    text: "Señales de credibilidad, claridad visual y consistencia para que tu marca se sienta real y confiable.",
+    description:
+      "Refuerza credibilidad con jerarquía, prueba y claridad visual.",
   },
 ];
 
-const regions = [
+const markets = [
   {
     city: "Cancún",
     description:
@@ -152,148 +165,151 @@ const regions = [
 
 const process = [
   {
+    icon: Compass,
     title: "Diagnóstico",
     description: "Entendemos tu negocio, cliente ideal y oportunidades reales.",
-    icon: Compass,
   },
   {
+    icon: FileText,
     title: "Estrategia",
     description: "Definimos estructura, mensaje y flujo de conversión.",
-    icon: Sparkles,
   },
   {
+    icon: Layers3,
     title: "Diseño + Desarrollo",
     description: "Creamos una experiencia visual clara, rápida y optimizada.",
-    icon: Layers3,
   },
   {
+    icon: Rocket,
     title: "Lanzamiento",
     description: "Publicamos, medimos y dejamos todo listo para crecer.",
-    icon: Rocket,
   },
 ];
 
 const faqs = [
   {
-    q: "¿Cuánto tarda una página web?",
-    a: "Depende del alcance, pero trabajamos por etapas claras: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento.",
+    question: "¿Cuánto tarda una página web?",
+    answer:
+      "Depende del alcance, pero trabajamos por etapas claras: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento.",
   },
   {
-    q: "¿Qué incluye exactamente?",
-    a: "Incluye estrategia de estructura, diseño responsive, desarrollo web, llamados a la acción, contacto por WhatsApp o formulario y una base lista para medición y crecimiento.",
+    question: "¿Qué incluye exactamente?",
+    answer:
+      "Incluye estrategia de estructura, diseño responsive, desarrollo web, CTAs, contacto por WhatsApp o formulario y base lista para medición.",
   },
   {
-    q: "¿La puedo administrar yo?",
-    a: "Sí. Podemos plantear una estructura administrable si tu operación lo necesita, o una web más controlada si la prioridad es velocidad y consistencia.",
+    question: "¿La puedo administrar yo?",
+    answer:
+      "Sí. Podemos plantear una estructura administrable si el proyecto lo requiere, o una web más controlada si la prioridad es velocidad y consistencia.",
   },
   {
-    q: "¿Funciona para SEO?",
-    a: "Sí. La página se construye con jerarquía, contenido ordenado y base técnica preparada para trabajar posicionamiento como estrategia continua.",
+    question: "¿Funciona para SEO?",
+    answer:
+      "Sí. La página se construye con jerarquía clara, contenido ordenado y estructura técnica preparada para trabajar SEO después.",
   },
   {
-    q: "¿Trabajan para Cancún, Playa del Carmen y Tulum?",
-    a: "Sí. Diseñamos páginas web para empresas que compiten en esos mercados y necesitan verse profesionales, explicar mejor su oferta y generar oportunidades reales.",
+    question: "¿Trabajan para Cancún, Playa del Carmen y Tulum?",
+    answer:
+      "Sí. Diseñamos páginas web para empresas de estos mercados que necesitan verse profesionales y convertir visitas en oportunidades reales.",
   },
 ];
 
-const HeroMockup = () => (
+const HeroWebsiteMockup = () => (
   <div className="group relative mx-auto w-full max-w-[720px] animate-hero-slide-up lg:ml-0 lg:[perspective:1400px]">
-    <div className="hidden lg:block absolute -inset-8 rounded-[40px] bg-primary/10 blur-[40px] pointer-events-none transition-opacity duration-500 group-hover:opacity-80" />
-    <div className="relative overflow-visible rounded-2xl border border-border/60 bg-background shadow-2xl transition-transform duration-500 lg:origin-bottom-left lg:rotate-[1.5deg] lg:-skew-x-[4deg] lg:group-hover:rotate-[0.5deg] lg:group-hover:-skew-x-[2deg]">
+    <div className="hidden lg:block absolute -inset-10 rounded-[40px] bg-primary/10 blur-[40px] pointer-events-none transition-opacity duration-500 group-hover:opacity-80" />
+
+    <div className="relative overflow-visible rounded-2xl border border-border/60 bg-card shadow-2xl transition-transform duration-500 lg:origin-bottom-left lg:rotate-[1.5deg] lg:-skew-x-[3deg] lg:group-hover:rotate-[0.5deg] lg:group-hover:-skew-x-[1deg]">
       <div className="overflow-hidden rounded-2xl">
-        <div className="flex items-center gap-3 border-b border-border/50 bg-muted/20 px-4 py-3 sm:px-5">
+        <div className="flex items-center gap-3 border-b border-border/50 bg-background px-4 py-3 sm:px-5">
           <div className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-muted" />
             <span className="h-2.5 w-2.5 rounded-full bg-primary/25" />
             <span className="h-2.5 w-2.5 rounded-full bg-accent/35" />
           </div>
           <div className="mx-auto hidden rounded-md bg-muted/40 px-4 py-1 text-[10px] font-medium text-muted-foreground sm:block">
-            riviera-studio.mx
+            costa-prime.mx
           </div>
         </div>
 
-        <div className="relative min-h-[430px] overflow-hidden bg-card sm:min-h-[500px]">
-          <div className="absolute inset-0 bg-dot-grid opacity-20" />
-          <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-br from-brand-navy via-brand-navy to-primary/70" />
-          <div className="absolute right-0 top-0 h-3/5 w-3/5 bg-primary/20" />
-
-          <div className="relative z-10 flex items-center justify-between px-5 py-5 text-brand-navy-foreground sm:px-8">
-            <div className="flex items-center gap-2 font-display text-[11px] font-extrabold uppercase tracking-wide">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-navy-foreground/10">
+        <div className="bg-background">
+          <div className="flex items-center justify-between px-5 py-4 sm:px-8">
+            <div className="flex items-center gap-2 font-display text-[11px] font-extrabold uppercase tracking-wide text-foreground">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
                 <span className="h-2.5 w-2.5 rounded-full bg-primary" />
               </span>
               Costa Prime
             </div>
-            <nav className="hidden items-center gap-5 text-[10px] font-bold text-brand-navy-foreground/65 md:flex">
-              <span>Servicios</span>
-              <span>Portafolio</span>
-              <span>Reseñas</span>
+            <nav className="hidden items-center gap-5 text-[10px] font-bold text-muted-foreground md:flex">
+              <span>Suites</span>
+              <span>Experiencias</span>
+              <span>Ubicación</span>
             </nav>
-            <span className="rounded-lg bg-brand-navy-foreground px-4 py-2 text-[10px] font-extrabold text-brand-navy">
-              Agendar visita
+            <span className="rounded-lg bg-primary px-4 py-2 text-[10px] font-extrabold text-primary-foreground">
+              Reservar
             </span>
           </div>
 
-          <div className="relative z-10 grid gap-6 px-5 pb-8 pt-5 sm:px-8 md:grid-cols-[1fr_0.9fr] md:pt-9">
-            <div className="max-w-[360px] text-brand-navy-foreground">
-              <span className="mb-4 inline-flex rounded-full border border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-navy-foreground/75">
-                Experiencias privadas
-              </span>
-              <h3 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
-                Diseñamos estancias memorables en la Riviera Maya
-              </h3>
-              <p className="mt-4 text-sm font-medium leading-relaxed text-brand-navy-foreground/66">
-                Una landing realista con narrativa, confianza, prueba visual y
-                CTA comercial visible desde el primer bloque.
-              </p>
-              <div className="mt-6 inline-flex rounded-lg bg-brand-navy-foreground px-5 py-3 text-[11px] font-extrabold text-brand-navy">
-                Solicitar disponibilidad
-              </div>
-            </div>
+          <div className="relative min-h-[420px] overflow-hidden sm:min-h-[500px]">
+            <img
+              src={heroTravelImage}
+              alt="Mockup de landing premium para hotel boutique en la Riviera Maya"
+              width={1024}
+              height={768}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 to-brand-navy/10" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-brand-navy/85 to-transparent" />
 
-            <div className="relative hidden md:block">
-              <div className="absolute inset-0 rounded-[2rem] border border-brand-navy-foreground/15 bg-brand-navy-foreground/10" />
-              <div className="absolute bottom-4 left-4 right-4 top-4 overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-primary/40 via-brand-navy-foreground/20 to-accent/30">
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-brand-navy/45" />
-                <div className="absolute bottom-8 left-8 h-24 w-28 rounded-t-full bg-brand-navy-foreground/20" />
-                <div className="absolute right-8 top-8 h-28 w-24 rounded-full border border-brand-navy-foreground/25" />
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute inset-x-5 bottom-5 z-20 grid grid-cols-3 gap-2 sm:inset-x-8 sm:gap-3">
-            {["Reservas", "Confianza", "Contacto"].map((label, index) => (
-              <div
-                key={label}
-                className="rounded-xl border border-border/60 bg-background/90 p-3 shadow-sm"
-              >
-                <div className="mb-2 flex items-center gap-1.5 text-primary">
-                  <CheckCircle2 size={12} />
-                  <span className="text-[9px] font-bold uppercase tracking-wide">
-                    {label}
-                  </span>
-                </div>
-                <p className="text-[10px] font-semibold leading-tight text-foreground sm:text-xs">
-                  {index === 0
-                    ? "CTA directo"
-                    : index === 1
-                      ? "Prueba visible"
-                      : "WhatsApp listo"}
+            <div className="relative z-10 flex min-h-[420px] flex-col justify-between p-5 text-brand-navy-foreground sm:min-h-[500px] sm:p-8">
+              <div className="max-w-[390px] pt-4 sm:pt-10">
+                <span className="mb-4 inline-flex rounded-full border border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-navy-foreground/75">
+                  Hotel boutique · Riviera Maya
+                </span>
+                <h3 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+                  Estancias privadas frente al Caribe
+                </h3>
+                <p className="mt-4 max-w-[330px] text-sm font-medium leading-relaxed text-brand-navy-foreground/70">
+                  Una web real con narrativa, imagen aspiracional, prueba de
+                  confianza y CTA visible desde el primer bloque.
                 </p>
+                <div className="mt-6 inline-flex rounded-lg bg-brand-navy-foreground px-5 py-3 text-[11px] font-extrabold text-brand-navy">
+                  Solicitar disponibilidad
+                </div>
               </div>
-            ))}
+
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                {["Suites", "Experiencias", "Contacto"].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-xl border border-brand-navy-foreground/15 bg-brand-navy/55 p-3"
+                  >
+                    <div className="mb-2 flex items-center gap-1.5 text-primary">
+                      <CheckCircle2 size={12} />
+                      <span className="text-[9px] font-bold uppercase tracking-wide">
+                        {item}
+                      </span>
+                    </div>
+                    <p className="text-[10px] font-semibold leading-tight text-brand-navy-foreground/80 sm:text-xs">
+                      Sección lista
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute -bottom-5 -left-4 hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[4deg]">
+      <div className="absolute -bottom-5 -left-4 hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[3deg]">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <TrendingUp size={18} />
           </div>
           <div>
             <p className="font-display text-lg font-extrabold text-foreground">
-              +42%
+              +128%
             </p>
             <p className="text-[10px] font-medium text-muted-foreground">
               más solicitudes
@@ -302,7 +318,7 @@ const HeroMockup = () => (
         </div>
       </div>
 
-      <div className="absolute -right-4 top-[38%] hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[4deg]">
+      <div className="absolute -right-4 top-[38%] hidden rounded-xl border border-border/60 bg-background p-4 shadow-2xl md:block lg:skew-x-[3deg]">
         <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
           Lead listo
         </p>
@@ -339,8 +355,7 @@ const DisenoDePaginasWeb = () => {
             className="absolute inset-0 pointer-events-none"
             style={{ background: "var(--gradient-hero)" }}
           />
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-brand-navy via-brand-navy to-primary/20" />
-          <div className="hidden lg:block absolute right-0 top-[12%] h-[420px] w-[560px] rounded-full bg-primary/12 blur-[60px] pointer-events-none" />
+          <div className="hidden lg:block absolute right-0 top-[10%] h-[420px] w-[560px] rounded-full bg-primary/12 blur-[60px] pointer-events-none" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14">
@@ -369,11 +384,11 @@ const DisenoDePaginasWeb = () => {
                       <ArrowRight size={16} className="ml-1" />
                     </Link>
                   </Button>
-                  <WhatsAppButton />
+                  <HeroWhatsAppButton />
                 </div>
               </div>
 
-              <HeroMockup />
+              <HeroWebsiteMockup />
             </div>
           </div>
         </section>
@@ -381,18 +396,18 @@ const DisenoDePaginasWeb = () => {
         <section className="relative overflow-hidden py-12 md:py-24">
           <div className="section-divider" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/35 to-background pointer-events-none" />
-          <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto mb-12 max-w-3xl text-center animate-fade-in md:mb-14">
+          <div className="container relative z-10 mx-auto px-4 py-4 lg:px-8">
+            <div className="mx-auto mb-14 max-w-3xl animate-fade-in text-center">
               <div className="mb-4 flex justify-center">
                 <SectionBadge>Beneficios</SectionBadge>
               </div>
-              <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+              <h2 className="mb-5 text-3xl font-extrabold font-display sm:text-4xl lg:text-5xl">
                 Páginas web diseñadas para{" "}
                 <span className="gradient-text">vender</span>
               </h2>
-              <p className="mx-auto max-w-xl leading-relaxed text-muted-foreground">
-                Diseño, claridad y tecnología aplicada para que tu web funcione
-                como una herramienta comercial, no solo como presencia digital.
+              <p className="mx-auto max-w-xl text-muted-foreground">
+                Diseño, tecnología y estructura comercial para marcas que
+                necesitan verse confiables y convertir mejor.
               </p>
             </div>
 
@@ -400,11 +415,12 @@ const DisenoDePaginasWeb = () => {
               {benefits.map((benefit) => (
                 <article
                   key={benefit.title}
-                  className="glass-card glass-card-hover group rounded-2xl p-6 md:p-7"
+                  className="glass-card group relative block overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-3 hover:border-primary/25 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)]"
                 >
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent group-hover:opacity-100" />
                   <div className="relative z-10">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary/15">
-                      <benefit.icon size={22} />
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)]">
+                      <benefit.icon size={22} className="text-primary" />
                     </div>
                     <h3 className="mb-3 text-lg font-bold font-display transition-colors duration-300 group-hover:text-primary">
                       {benefit.title}
@@ -417,14 +433,15 @@ const DisenoDePaginasWeb = () => {
               ))}
             </div>
           </div>
+          <div className="section-divider mt-8" />
         </section>
 
         <section className="relative overflow-hidden py-12 md:py-24">
-          <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-grid opacity-15 pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-              <div className="animate-fade-in">
+            <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start lg:gap-16">
+              <div className="animate-fade-in lg:sticky lg:top-28">
                 <div className="mb-4">
                   <SectionBadge>Estrategia</SectionBadge>
                 </div>
@@ -432,34 +449,41 @@ const DisenoDePaginasWeb = () => {
                   Lo que hace que una web{" "}
                   <span className="gradient-text">funcione</span>
                 </h2>
-                <p className="max-w-xl leading-relaxed text-muted-foreground">
-                  Una web no es solo diseño. Necesita mensaje claro, estructura
-                  comercial, velocidad, SEO, contacto visible y señales de
-                  confianza para convertir interés en acción.
+                <p className="mb-8 max-w-xl leading-relaxed text-muted-foreground">
+                  Una página no vende por verse bonita. Vende cuando el mensaje,
+                  la estructura, la velocidad y el contacto trabajan juntos.
                 </p>
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  className="px-8 py-6 text-base"
+                  asChild
+                >
+                  <Link to="/contacto">
+                    Cotizar proyecto <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </Button>
               </div>
 
-              <div className="glass-card rounded-2xl p-4 md:p-6">
-                <div className="relative z-10 grid gap-3 sm:grid-cols-2">
-                  {strategicPoints.map((point) => (
-                    <article
-                      key={point.title}
-                      className="group rounded-xl border border-border/50 bg-background/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-background"
-                    >
-                      <div className="mb-4 flex items-center gap-3">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                          <point.icon size={19} />
-                        </span>
-                        <h3 className="font-display text-base font-extrabold transition-colors duration-300 group-hover:text-primary">
-                          {point.title}
-                        </h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {strategy.map((item) => (
+                  <article
+                    key={item.title}
+                    className="glass-card group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
+                  >
+                    <div className="relative z-10">
+                      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary/15">
+                        <item.icon size={22} />
                       </div>
+                      <h3 className="mb-3 text-lg font-bold font-display transition-colors duration-300 group-hover:text-primary">
+                        {item.title}
+                      </h3>
                       <p className="text-sm leading-relaxed text-muted-foreground">
-                        {point.text}
+                        {item.description}
                       </p>
-                    </article>
-                  ))}
-                </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
@@ -471,10 +495,10 @@ const DisenoDePaginasWeb = () => {
             style={{ background: "var(--gradient-cta)" }}
           />
           <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-          <div className="hidden md:block absolute left-1/2 top-1/2 h-[560px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+          <div className="hidden md:block absolute top-1/2 left-1/2 h-[500px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center animate-fade-in">
+            <div className="mx-auto max-w-3xl animate-fade-in text-center">
               <h2 className="mb-6 text-3xl font-extrabold leading-tight text-brand-navy-foreground font-display sm:text-4xl lg:text-5xl">
                 Tu web no debe verse bien. Debe ayudar a{" "}
                 <span className="gradient-text">vender mejor</span>.
@@ -495,14 +519,7 @@ const DisenoDePaginasWeb = () => {
                     <ArrowRight size={16} className="ml-1" />
                   </Link>
                 </Button>
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={darkWhatsAppClass}
-                >
-                  <WhatsAppGlyph size={16} /> Hablar por WhatsApp
-                </a>
+                <DarkWhatsAppLink />
               </div>
             </div>
           </div>
@@ -515,7 +532,7 @@ const DisenoDePaginasWeb = () => {
             <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-16">
               <div className="animate-fade-in">
                 <div className="mb-4">
-                  <SectionBadge>Presencia regional</SectionBadge>
+                  <SectionBadge>Mercado</SectionBadge>
                 </div>
                 <h2 className="mb-5 max-w-xl text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
                   Páginas web que compiten en mercados reales
@@ -526,47 +543,38 @@ const DisenoDePaginasWeb = () => {
                 </p>
               </div>
 
-              <div className="relative">
-                <div className="hidden lg:block absolute -left-8 top-10 h-32 w-32 rounded-full border border-primary/20" />
-                <div className="glass-card rounded-2xl p-5 md:p-7">
-                  <div className="relative z-10">
-                    <div className="mb-6 flex items-center justify-between gap-4 border-b border-border/50 pb-5">
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-wide text-primary">
-                          Mapa comercial
-                        </p>
-                        <h3 className="mt-1 text-xl font-extrabold font-display">
-                          Riviera Maya
-                        </h3>
-                      </div>
-                      <span className="hidden rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[11px] font-bold text-primary sm:inline-flex">
+              <div className="glass-card rounded-2xl p-5 md:p-7">
+                <div className="relative z-10">
+                  <div className="mb-6 flex items-center justify-between gap-4 border-b border-border/50 pb-5">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-primary">
+                        Riviera Maya
+                      </p>
+                      <h3 className="mt-1 text-xl font-extrabold font-display">
                         3 mercados clave
-                      </span>
+                      </h3>
                     </div>
-
-                    <div className="grid gap-4">
-                      {regions.map((region, index) => (
-                        <article
-                          key={region.city}
-                          className="group grid gap-4 rounded-xl border border-border/50 bg-background/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-background sm:grid-cols-[auto_1fr] sm:items-start"
-                        >
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 font-display text-sm font-extrabold text-primary transition-all duration-300 group-hover:bg-primary/15">
-                            0{index + 1}
-                          </div>
-                          <div>
-                            <div className="mb-2 flex items-center gap-2">
-                              <MapPin size={17} className="text-primary" />
-                              <h3 className="text-xl font-bold font-display">
-                                {region.city}
-                              </h3>
-                            </div>
-                            <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                              {region.description}
-                            </p>
-                          </div>
-                        </article>
-                      ))}
-                    </div>
+                    <MapPin size={22} className="text-primary" />
+                  </div>
+                  <div className="space-y-5">
+                    {markets.map((market, index) => (
+                      <article
+                        key={market.city}
+                        className="group grid gap-4 border-b border-border/50 pb-5 last:border-b-0 last:pb-0 sm:grid-cols-[64px_1fr]"
+                      >
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 font-display text-sm font-extrabold text-primary transition-all duration-300 group-hover:bg-primary/15">
+                          0{index + 1}
+                        </div>
+                        <div>
+                          <h3 className="mb-2 text-xl font-bold font-display transition-colors duration-300 group-hover:text-primary">
+                            {market.city}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                            {market.description}
+                          </p>
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -578,7 +586,7 @@ const DisenoDePaginasWeb = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto mb-14 max-w-3xl text-center animate-fade-in md:mb-16">
+            <div className="mx-auto mb-14 max-w-3xl animate-fade-in text-center md:mb-16">
               <div className="mb-4 flex justify-center">
                 <SectionBadge>Proceso</SectionBadge>
               </div>
@@ -586,8 +594,8 @@ const DisenoDePaginasWeb = () => {
                 De la idea al lanzamiento, con dirección clara
               </h2>
               <p className="mx-auto max-w-xl leading-relaxed text-muted-foreground">
-                Un proceso visual y consultivo para construir una web con
-                intención comercial desde el primer día.
+                Un flujo limpio para pasar de una idea comercial a una página
+                clara, premium y lista para convertir.
               </p>
             </div>
 
@@ -604,7 +612,7 @@ const DisenoDePaginasWeb = () => {
                         index % 2 === 0 ? "md:text-right" : "md:col-start-3"
                       }
                     >
-                      <div className="glass-card glass-card-hover group rounded-2xl p-6 md:p-8">
+                      <div className="glass-card group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_60px_-16px_hsl(var(--primary)/0.35)] md:p-8">
                         <div
                           className={`relative z-10 mb-5 flex items-center gap-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}
                         >
@@ -646,7 +654,7 @@ const DisenoDePaginasWeb = () => {
           <div className="hidden md:block absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
 
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center animate-fade-in">
+            <div className="mx-auto max-w-3xl animate-fade-in text-center">
               <h2 className="mb-6 text-3xl font-extrabold leading-tight text-brand-navy-foreground font-display sm:text-4xl lg:text-5xl">
                 Convierte tu sitio web en una pieza real de{" "}
                 <span className="gradient-text">crecimiento</span>
@@ -667,14 +675,7 @@ const DisenoDePaginasWeb = () => {
                     <ArrowRight size={16} className="ml-1" />
                   </Link>
                 </Button>
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={darkWhatsAppClass}
-                >
-                  <WhatsAppGlyph size={16} /> Hablar por WhatsApp
-                </a>
+                <DarkWhatsAppLink />
               </div>
             </div>
           </div>
@@ -705,15 +706,15 @@ const DisenoDePaginasWeb = () => {
               >
                 {faqs.map((faq, index) => (
                   <AccordionItem
-                    key={faq.q}
+                    key={faq.question}
                     value={`item-${index}`}
                     className="glass-card rounded-2xl border border-border/60 px-5 py-1 transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_0_45px_-18px_hsl(var(--primary)/0.3)] md:px-7"
                   >
                     <AccordionTrigger className="py-6 text-left text-base font-bold font-display hover:text-primary hover:no-underline md:text-lg">
-                      <span className="pr-4">{faq.q}</span>
+                      <span className="pr-4">{faq.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground md:text-base">
-                      {faq.a}
+                      {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
