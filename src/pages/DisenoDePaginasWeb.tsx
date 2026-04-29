@@ -179,19 +179,19 @@ const trustItems = [
 ];
 
 const services = [
-  { icon: PenTool, title: "Diseño web a medida", desc: "Estructura visual creada alrededor de tu oferta, tu marca y el tipo de cliente que quieres atraer." },
-  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Pantallas claras, botones cómodos y navegación fluida para convertir desde celular, tablet y desktop." },
-  { icon: Gauge, title: "Rendimiento y claridad", desc: "Sitios rápidos, ordenados y fáciles de escanear para reducir fricción en cada visita." },
-  { icon: Layers3, title: "Landing pages y sitios", desc: "Páginas comerciales, sitios corporativos y estructuras listas para campañas o SEO posterior." },
-  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto pensadas para generar oportunidades reales." },
-  { icon: Code2, title: "Base tecnológica sólida", desc: "Desarrollo moderno integrado al ecosistema de North, sin plantillas genéricas ni piezas aisladas." },
+  { icon: PenTool, title: "Arquitectura web estratégica", desc: "Estructuramos cada pantalla alrededor de tu oferta, tus sistemas comerciales y el tipo de cliente que quieres convertir." },
+  { icon: Smartphone, title: "Experiencia mobile-first", desc: "Interfaces rápidas, claras y accionables para convertir desde celular, tablet y desktop sin fricción operativa." },
+  { icon: Gauge, title: "Rendimiento y escalabilidad", desc: "Sitios ligeros, ordenados y preparados para crecer con campañas, contenido, analítica y futuras integraciones." },
+  { icon: Layers3, title: "Landing pages y sitios", desc: "Activos digitales comerciales, sitios corporativos y estructuras listas para conectar marketing, ventas y SEO posterior." },
+  { icon: MessageSquare, title: "CTAs conectados", desc: "WhatsApp, formularios y rutas de contacto diseñadas para convertir tráfico en conversaciones y oportunidades medibles." },
+  { icon: Code2, title: "Base tecnológica North", desc: "Desarrollo moderno integrado al ecosistema digital de North, sin plantillas genéricas ni piezas aisladas de tu operación." },
 ];
 
 const benefits = [
-  { icon: Users, title: "Más confianza desde el primer scroll", desc: "Una presencia premium hace que el visitante entienda rápido que tu empresa es seria y confiable." },
-  { icon: Target, title: "Mensajes que guían a comprar", desc: "Priorizamos jerarquía, claridad y argumentos comerciales para mover al usuario hacia el contacto." },
-  { icon: BarChart3, title: "Mejor desempeño comercial", desc: "La página funciona como activo de ventas: presenta, filtra, educa y genera solicitudes." },
-  { icon: Rocket, title: "Lista para escalar después", desc: "Dejamos una base clara para SEO, campañas, CRM, automatización y crecimiento digital." },
+  { icon: Users, title: "Confianza desde el primer scroll", desc: "Una presencia premium comunica solidez, orden y capacidad antes de que el usuario lea todos los detalles." },
+  { icon: Target, title: "Mensaje orientado a conversión", desc: "Priorizamos jerarquía, claridad y argumentos comerciales para mover al visitante hacia una acción concreta." },
+  { icon: BarChart3, title: "Activo comercial medible", desc: "La página presenta, filtra, educa y genera solicitudes para que marketing y ventas tengan una base más eficiente." },
+  { icon: Rocket, title: "Preparada para escalar", desc: "Dejamos una infraestructura clara para SEO, campañas, CRM, automatización y crecimiento digital posterior." },
 ];
 
 const cities = [
@@ -201,17 +201,17 @@ const cities = [
 ];
 
 const process = [
-  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el mensaje principal que debe comunicar la página." },
-  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia visual premium alineada a North." },
-  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente con el sistema actual del sitio." },
-  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos la página lista para publicar y optimizar SEO después." },
+  { step: "01", icon: Target, title: "Estrategia", desc: "Definimos objetivos, audiencia, oferta y el rol que la página debe cumplir dentro de tu sistema comercial." },
+  { step: "02", icon: PenTool, title: "UX/UI", desc: "Diseñamos jerarquía, secciones, CTAs y una experiencia premium alineada al estándar visual de North." },
+  { step: "03", icon: Code2, title: "Construcción", desc: "Desarrollamos una interfaz responsive, rápida y consistente, preparada para analítica e integraciones futuras." },
+  { step: "04", icon: Rocket, title: "Lanzamiento", desc: "Revisamos la experiencia final y dejamos una base lista para publicar, medir y optimizar después." },
 ];
 
 const differentiators = [
-  "No diseñamos una página aislada: construimos una pieza comercial dentro de tu sistema digital.",
-  "Conectamos diseño, mensaje, tecnología y conversión desde la primera versión.",
-  "Mantenemos un look premium, limpio y corporativo sin caer en estilos genéricos.",
-  "La estructura queda preparada para campañas, contenido, SEO y CRM cuando decidas escalar.",
+  "No diseñamos una página aislada: construimos una interfaz dentro de tu sistema digital de crecimiento.",
+  "Conectamos diseño, mensaje, tecnología y conversión desde la primera versión operativa.",
+  "Mantenemos un look premium, limpio y corporativo sin perder enfoque comercial ni rendimiento.",
+  "La estructura queda preparada para campañas, contenido, SEO, CRM y automatización cuando decidas escalar.",
 ];
 
 const faqs = [
