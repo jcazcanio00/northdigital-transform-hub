@@ -428,24 +428,29 @@ const DisenoDePaginasWeb = () => {
         </section>
 
         <section className="relative overflow-hidden bg-background py-14 md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mx-auto max-w-4xl">
-              <div className="text-center mb-12 md:mb-14">
+            <div className="mx-auto max-w-5xl">
+              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end mb-12 md:mb-14">
+                <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                   <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                   FAQ
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">Preguntas frecuentes</h2>
-                <p className="mx-auto max-w-xl text-muted-foreground">
-                  Respuestas rápidas para entender cómo planteamos una página web como activo comercial y tecnológico.
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">Preguntas antes de cotizar</h2>
+                </div>
+                <p className="max-w-xl text-muted-foreground leading-relaxed lg:ml-auto">
+                  Respuestas directas sobre alcance, tiempos, administración y preparación para SEO antes de iniciar un proyecto web.
                 </p>
               </div>
-              <Accordion type="single" collapsible className="glass-card rounded-2xl border border-border/60 px-4 py-2 shadow-sm md:px-6 md:py-4">
+              <Accordion type="single" collapsible className="grid gap-4">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={faq.q} value={`item-${index}`} className="border-border/50 px-1">
-                    <AccordionTrigger className="py-5 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-lg">{faq.q}</AccordionTrigger>
-                    <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:max-w-3xl">{faq.a}</AccordionContent>
+                  <AccordionItem key={faq.q} value={`item-${index}`} className="glass-card rounded-2xl border border-border/60 px-5 py-1 transition-all duration-300 hover:border-primary/20 md:px-7">
+                    <AccordionTrigger className="py-6 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-xl">
+                      <span className="pr-4">{faq.q}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground md:max-w-3xl md:text-base">{faq.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
