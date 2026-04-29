@@ -512,7 +512,7 @@ const DisenoDePaginasWeb = () => {
                       </div>
                     </div>
 
-                    <div className="absolute left-0 top-1 z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/25 bg-background font-display text-base font-extrabold text-primary shadow-[0_0_46px_-12px_hsl(var(--primary)/0.45)] md:static md:h-20 md:w-20">
+                    <div className="absolute left-0 top-1 z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/25 bg-background font-display text-base font-extrabold text-primary shadow-[0_0_46px_-12px_hsl(var(--primary)/0.45)] md:static md:col-start-2 md:row-start-1 md:mx-auto md:h-20 md:w-20">
                       0{index + 1}
                     </div>
 
