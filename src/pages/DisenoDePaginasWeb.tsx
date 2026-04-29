@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import {
   ArrowRight,
-  Code2,
+  CheckCircle2,
   Compass,
+  FileText,
   Gauge,
   Layers3,
   Lightbulb,
   MapPin,
   MessageSquare,
-  MousePointerClick,
   Rocket,
   Search,
   Shield,
@@ -30,156 +30,192 @@ import {
 
 const WHATSAPP_LINK = "https://wa.me/529982127561?text=Hola%2C%20quiero%20cotizar%20una%20pagina%20web%20para%20mi%20empresa";
 
-const solutions = [
+const benefits = [
   {
-    icon: MousePointerClick,
-    title: "Claridad desde el primer scroll",
-    description: "El visitante entiende qué vendes, por qué confiar y cuál es el siguiente paso sin tener que buscar demasiado.",
-    tag: "Mensaje",
+    icon: Shield,
+    title: "Confianza inmediata",
+    description: "Una presencia clara que explica tu oferta, eleva la percepción de tu marca y reduce dudas antes del primer contacto.",
+    tag: "Marca",
   },
   {
     icon: Smartphone,
     title: "Experiencia mobile-first",
-    description: "Diseño pensado para usuarios que comparan, deciden y contactan desde celular en mercados competitivos.",
+    description: "Diseño pensado para visitantes que descubren, comparan y deciden desde celular en mercados de alta competencia.",
     tag: "UX",
   },
   {
-    icon: Workflow,
+    icon: MessageSquare,
     title: "Contacto sin fricción",
-    description: "CTAs, WhatsApp y formularios ubicados donde aportan valor, no como elementos decorativos.",
-    tag: "Tech",
+    description: "CTAs, WhatsApp y formularios ubicados con intención para convertir interés en conversaciones comerciales reales.",
+    tag: "Conversión",
+  },
+  {
+    icon: Workflow,
+    title: "Base para crecer",
+    description: "Una web preparada para integrarse con campañas, CRM, analítica, SEO y nuevas etapas de crecimiento digital.",
+    tag: "Sistema",
   },
 ];
 
-const functionCards = [
+const fundamentals = [
   {
-    icon: Shield,
-    title: "Confianza antes que decoración",
-    desc: "Una página efectiva reduce dudas: muestra autoridad, explica el servicio y presenta la marca con orden profesional.",
+    icon: FileText,
+    title: "Copywriting con intención",
+    description: "Mensajes que explican valor, diferencian tu servicio y llevan al usuario hacia una decisión clara.",
   },
   {
     icon: Layers3,
-    title: "Contenido con intención comercial",
-    desc: "Cada bloque debe ayudar a tomar una decisión: entender, comparar, confiar o contactar.",
+    title: "Estructura comercial",
+    description: "Secciones ordenadas para responder preguntas, construir confianza y sostener campañas de adquisición.",
   },
   {
     icon: Gauge,
-    title: "Rendimiento que sostiene campañas",
-    desc: "Una web lenta o confusa desperdicia tráfico. Construimos una base rápida, clara y preparada para medir.",
+    title: "Velocidad y claridad",
+    description: "Interfaz ligera, responsive y enfocada en que el visitante encuentre rápido lo que necesita.",
   },
   {
     icon: Search,
-    title: "Estructura lista para crecer",
-    desc: "Dejamos una arquitectura ordenada para trabajar SEO, nuevas secciones, campañas e integraciones después.",
+    title: "Base lista para SEO",
+    description: "Jerarquía, contenido y arquitectura preparados para evolucionar hacia posicionamiento orgánico.",
   },
 ];
 
-const cities = [
-  { city: "Cancún", desc: "Para empresas turísticas, servicios profesionales, real estate y marcas que necesitan verse confiables desde el primer contacto." },
-  { city: "Playa del Carmen", desc: "Para negocios en crecimiento que requieren una presencia digital moderna, clara y lista para campañas." },
-  { city: "Tulum", desc: "Para proyectos boutique, wellness, hospitality y experiencias de alto valor que dependen de percepción premium." },
+const regions = [
+  {
+    city: "Cancún",
+    text: "Para empresas turísticas, inmobiliarias, servicios profesionales y marcas que necesitan competir por confianza.",
+  },
+  {
+    city: "Playa del Carmen",
+    text: "Para negocios en expansión que requieren una web moderna, clara y lista para campañas de crecimiento.",
+  },
+  {
+    city: "Tulum",
+    text: "Para proyectos boutique, hospitality y experiencias premium donde la percepción visual impacta la decisión.",
+  },
 ];
 
 const process = [
-  { icon: Compass, title: "Diagnóstico", desc: "Entendemos tu oferta, tus clientes y el contexto competitivo de Cancún, Playa del Carmen o Tulum." },
-  { icon: Lightbulb, title: "Dirección", desc: "Definimos narrativa, secciones, jerarquía visual y acciones clave antes de diseñar pantallas." },
-  { icon: Code2, title: "Producción", desc: "Diseñamos y construimos una experiencia responsive con criterios de claridad, velocidad y confianza." },
-  { icon: Rocket, title: "Lanzamiento", desc: "Publicamos una web lista para recibir tráfico, medir comportamiento y conectar próximos sistemas." },
+  {
+    icon: Compass,
+    title: "Diagnóstico",
+    description: "Entendemos tu oferta, mercado, cliente ideal y objetivos antes de proponer estructura o diseño.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Estrategia",
+    description: "Definimos narrativa, jerarquía, secciones clave y acciones de conversión para la página.",
+  },
+  {
+    icon: Layers3,
+    title: "Diseño y desarrollo",
+    description: "Construimos una experiencia responsive con estética premium, claridad comercial y base técnica sólida.",
+  },
+  {
+    icon: Rocket,
+    title: "Lanzamiento",
+    description: "Publicamos una web lista para recibir tráfico, generar contactos y conectar próximos sistemas.",
+  },
 ];
 
 const faqs = [
-  { q: "¿Cuánto tarda una página web?", a: "Depende del alcance, pero una landing o sitio institucional bien definido normalmente avanza por etapas: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento. Desde el inicio dejamos claro qué se entrega y en qué tiempos." },
-  { q: "¿Qué incluye exactamente?", a: "Incluye estructura de contenido, diseño responsive, desarrollo web, CTAs de contacto, conexión a WhatsApp o formulario, criterios de rendimiento y una base ordenada para medición, campañas y crecimiento posterior." },
-  { q: "¿La puedo administrar yo?", a: "Sí, si el proyecto lo requiere podemos plantear una estructura administrable. En otros casos conviene una web más ligera y controlada para mantener velocidad, consistencia visual y menor mantenimiento." },
-  { q: "¿Funciona para SEO?", a: "Sí. Se construye con una base técnica ordenada para SEO: estructura clara, contenido jerarquizado, rendimiento y buenas prácticas. El posicionamiento continuo puede trabajarse después como estrategia de contenido y optimización." },
-  { q: "¿También sirve para Cancún, Playa del Carmen y Tulum?", a: "Sí. La página se plantea para empresas de la región que necesitan competir por confianza, explicar su propuesta con claridad y convertir visitas locales o de campañas en contactos reales." },
+  {
+    q: "¿Cuánto tarda una página web?",
+    a: "Depende del alcance, pero una página bien definida suele avanzar por etapas: diagnóstico, estructura, diseño, desarrollo, revisión y lanzamiento. Desde el inicio dejamos claro qué se entrega y en qué tiempos.",
+  },
+  {
+    q: "¿Qué incluye exactamente?",
+    a: "Incluye estrategia de estructura, diseño responsive, desarrollo web, CTAs de contacto, conexión con WhatsApp o formulario y una base preparada para campañas, medición y crecimiento posterior.",
+  },
+  {
+    q: "¿La puedo administrar yo?",
+    a: "Sí, si el proyecto lo requiere podemos plantear una estructura administrable. También podemos construir una web más ligera y controlada si la prioridad es velocidad, consistencia y menor mantenimiento.",
+  },
+  {
+    q: "¿Funciona para SEO?",
+    a: "Sí. La página se construye con jerarquía clara, contenido ordenado, buen rendimiento y estructura técnica preparada para trabajar posicionamiento después como una estrategia continua.",
+  },
+  {
+    q: "¿Trabajan para Cancún, Playa del Carmen y Tulum?",
+    a: "Sí. Diseñamos páginas web para empresas de la región que necesitan verse profesionales, explicar mejor su oferta y convertir visitas locales o de campañas en oportunidades reales.",
+  },
 ];
 
-const HeroMockup = () => (
-  <div className="relative mx-auto w-full max-w-[680px] animate-hero-slide-up lg:max-w-5xl">
-    <div className="hidden lg:block absolute -inset-12 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
-    <div className="absolute -right-2 top-10 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl md:block animate-float-slow">
-      <div className="flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-          <MessageSquare size={19} className="text-primary" />
-        </div>
-        <div>
-          <div className="font-display text-base font-extrabold">Cotiza hoy</div>
-          <div className="text-xs text-muted-foreground">CTA visible</div>
-        </div>
-      </div>
-    </div>
-    <div className="absolute -left-3 bottom-12 z-20 hidden rounded-2xl border border-border/60 bg-background/95 p-3 shadow-2xl lg:block animate-float-delayed">
-      <div className="flex items-center gap-2 text-xs font-semibold">
-        <Shield size={16} className="text-primary" />
-        Marca confiable desde el primer vistazo
-      </div>
-    </div>
-
+const WebsiteMockup = () => (
+  <div className="relative mx-auto w-full max-w-[620px] animate-hero-slide-up lg:max-w-none">
+    <div className="hidden lg:block absolute -inset-10 rounded-[40px] bg-primary/8 blur-[40px] pointer-events-none" />
     <div className="glass-card relative overflow-hidden rounded-2xl border border-border/60 shadow-2xl">
       <div className="flex items-center gap-2 border-b border-border/30 bg-muted/20 px-5 py-3">
-        <span className="h-3 w-3 rounded-full bg-primary/70" />
-        <span className="h-3 w-3 rounded-full bg-accent/70" />
-        <span className="h-3 w-3 rounded-full bg-primary/35" />
-        <span className="ml-auto hidden rounded-md bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground sm:block">empresa.com.mx</span>
+        <div className="flex gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-primary/55" />
+          <span className="h-3 w-3 rounded-full bg-accent/45" />
+          <span className="h-3 w-3 rounded-full bg-primary/25" />
+        </div>
+        <div className="mx-auto hidden rounded-md bg-muted/40 px-4 py-1 text-[10px] text-muted-foreground sm:block">
+          marca.com.mx
+        </div>
       </div>
 
       <div className="bg-background p-3 sm:p-5">
-        <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background shadow-sm">
-          <div className="absolute inset-0 bg-dot-grid opacity-30" />
-          <div className="relative z-10 flex items-center justify-between border-b border-border/50 px-4 py-3 sm:px-6">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-xl bg-primary/10" />
-              <div className="h-2.5 w-24 rounded-full bg-foreground/20" />
+        <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-background">
+          <div className="absolute inset-0 bg-dot-grid opacity-25" />
+          <div className="relative z-10 flex items-center justify-between border-b border-border/50 px-4 py-4 sm:px-6">
+            <div className="flex items-center gap-3">
+              <div className="h-9 w-9 rounded-xl bg-primary/10" />
+              <div>
+                <div className="h-2.5 w-24 rounded-full bg-foreground/25" />
+                <div className="mt-1.5 h-1.5 w-16 rounded-full bg-muted-foreground/20" />
+              </div>
             </div>
-            <div className="hidden items-center gap-4 md:flex">
-              <div className="h-2 w-14 rounded-full bg-muted-foreground/25" />
-              <div className="h-2 w-16 rounded-full bg-muted-foreground/25" />
-              <div className="h-2 w-12 rounded-full bg-muted-foreground/25" />
+            <div className="hidden items-center gap-5 md:flex">
+              <span className="h-2 w-14 rounded-full bg-muted-foreground/25" />
+              <span className="h-2 w-16 rounded-full bg-muted-foreground/25" />
+              <span className="h-2 w-12 rounded-full bg-muted-foreground/25" />
             </div>
-            <div className="h-9 w-28 rounded-full bg-primary" />
+            <div className="h-9 w-24 rounded-lg bg-primary" />
           </div>
 
-          <div className="relative z-10 grid min-h-[420px] gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
-              <div className="mb-5 h-3 w-32 rounded-full bg-primary/25" />
+          <div className="relative z-10 grid min-h-[420px] lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="flex flex-col justify-center p-6 sm:p-10">
+              <div className="mb-5 h-3 w-28 rounded-full bg-primary/25" />
               <div className="space-y-3">
-                <div className="h-10 w-full max-w-[430px] rounded-xl bg-foreground/90" />
+                <div className="h-10 w-full max-w-[360px] rounded-xl bg-foreground/90" />
                 <div className="h-10 w-10/12 rounded-xl bg-foreground/70" />
                 <div className="h-10 w-7/12 rounded-xl bg-foreground/45" />
               </div>
-              <div className="mt-7 max-w-[420px] space-y-2.5">
-                <div className="h-2.5 w-full rounded-full bg-muted-foreground/25" />
+              <div className="mt-7 max-w-[380px] space-y-2.5">
+                <div className="h-2.5 w-full rounded-full bg-muted-foreground/24" />
                 <div className="h-2.5 w-9/12 rounded-full bg-muted-foreground/18" />
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <div className="h-11 w-36 rounded-xl bg-primary" />
-                <div className="h-11 w-32 rounded-xl border border-border bg-background" />
+                <div className="h-11 w-36 rounded-lg bg-primary" />
+                <div className="h-11 w-32 rounded-lg border border-border bg-background" />
               </div>
             </div>
 
-            <div className="relative overflow-hidden border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-              <div className="relative grid h-full content-center gap-4">
-                <div className="rounded-2xl border border-border/60 bg-background p-4 shadow-sm">
-                  <div className="mb-4 h-36 rounded-xl bg-gradient-to-br from-primary/18 via-accent/10 to-muted" />
-                  <div className="space-y-2">
-                    <div className="h-3 w-8/12 rounded-full bg-foreground/25" />
-                    <div className="h-2.5 w-full rounded-full bg-muted-foreground/18" />
+            <div className="relative flex items-center border-t border-border/50 bg-muted/20 p-5 sm:p-7 lg:border-l lg:border-t-0">
+              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
+              <div className="relative w-full space-y-4">
+                <div className="aspect-[4/3] rounded-2xl border border-border/60 bg-gradient-to-br from-primary/18 via-accent/10 to-muted" />
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border border-border/60 bg-background/80 p-4">
+                    <div className="mb-3 h-8 w-8 rounded-lg bg-primary/10" />
+                    <div className="h-2.5 w-20 rounded-full bg-foreground/25" />
+                    <div className="mt-2 h-2 w-full rounded-full bg-muted-foreground/18" />
+                  </div>
+                  <div className="rounded-xl border border-border/60 bg-background/80 p-4">
+                    <div className="mb-3 h-8 w-8 rounded-lg bg-primary/10" />
+                    <div className="h-2.5 w-16 rounded-full bg-foreground/25" />
+                    <div className="mt-2 h-2 w-full rounded-full bg-muted-foreground/18" />
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    ["Servicios", Layers3],
-                    ["Reseñas", Shield],
-                    ["Ubicación", MapPin],
-                    ["Contacto", MessageSquare],
-                  ].map(([label, Icon]) => (
-                    <div key={label as string} className="rounded-xl border border-border/60 bg-background p-3">
-                      <Icon size={17} className="mb-2 text-primary" />
-                      <div className="text-[11px] font-bold">{label as string}</div>
-                    </div>
-                  ))}
+                <div className="rounded-xl border border-border/60 bg-background/80 p-4">
+                  <div className="mb-3 h-2.5 w-24 rounded-full bg-foreground/25" />
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="h-14 rounded-lg bg-muted/60" />
+                    <div className="h-14 rounded-lg bg-muted/60" />
+                    <div className="h-14 rounded-lg bg-primary/12" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -188,6 +224,13 @@ const HeroMockup = () => (
       </div>
     </div>
   </div>
+);
+
+const SectionBadge = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs text-muted-foreground">
+    <span className="h-2 w-2 rounded-full bg-primary animate-status-pulse" />
+    {children}
+  </span>
 );
 
 const DisenoDePaginasWeb = () => {
@@ -209,72 +252,73 @@ const DisenoDePaginasWeb = () => {
         <section className="relative flex min-h-0 items-center overflow-hidden pb-8 pt-6 md:min-h-[calc(100vh-72px)] md:pb-16 md:pt-16">
           <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
-          <div className="hidden lg:block absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
-          <div className="hidden lg:block absolute top-[5%] left-1/2 -translate-x-1/2 w-[400px] h-[300px] rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute top-[40%] left-1/2 h-[500px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none will-change-transform" />
+          <div className="hidden lg:block absolute top-[5%] left-1/2 h-[300px] w-[400px] -translate-x-1/2 rounded-full bg-primary/5 blur-[50px] pointer-events-none will-change-transform" />
 
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16 animate-hero-fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-8">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Diseño de páginas web
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14">
+              <div className="animate-hero-fade-in text-center lg:text-left">
+                <div className="mb-8">
+                  <SectionBadge>Diseño de páginas web</SectionBadge>
+                </div>
+                <h1 className="mb-4 text-3xl font-extrabold leading-[1.05] text-balance font-display sm:text-5xl lg:text-6xl xl:text-7xl md:mb-6">
+                  Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web
+                </h1>
+                <p className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:mb-10 md:text-lg lg:mx-0">
+                  Creamos páginas web para empresas en Cancún, Playa del Carmen y Tulum que comunican mejor, generan confianza y convierten visitas en conversaciones comerciales.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                  <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
+                    <Link to="/contacto">
+                      Solicitar página web <ArrowRight size={16} className="ml-1" />
+                    </Link>
+                  </Button>
+                  <Button variant="gradient-outline" size="lg" className="px-8 py-6 text-base" asChild>
+                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                      <MessageSquare size={16} /> Hablar por WhatsApp
+                    </a>
+                  </Button>
+                </div>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-4 md:mb-6 text-balance font-display">
-                Diseña, Conecta y <span className="gradient-text">Convierte</span> con tu Web.
-              </h1>
-
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed">
-                Creamos páginas web para empresas en Cancún, Playa del Carmen y Tulum que funcionan como infraestructura comercial: conversión, sistemas, confianza y crecimiento.
-              </p>
-
-              <div className="flex flex-wrap gap-4 justify-center items-center">
-                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
-                  <Link to="/contacto">Cotizar mi página web <ArrowRight size={16} className="ml-1" /></Link>
-                </Button>
-                <Button variant="gradient-outline" size="lg" className="text-base px-8 py-6" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={16} /> Hablar por WhatsApp</a>
-                </Button>
-              </div>
+              <WebsiteMockup />
             </div>
-
-            <HeroMockup />
           </div>
         </section>
 
-        <section className="py-12 md:py-24 relative min-h-0 md:min-h-[480px]">
+        <section className="relative min-h-0 py-12 md:min-h-[480px] md:py-24">
           <div className="section-divider" />
-          <div className="container mx-auto px-4 lg:px-8 py-4">
-            <div className="text-center mb-14">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Lo Que Hacemos
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
+          <div className="container mx-auto px-4 py-4 lg:px-8">
+            <div className="mb-14 text-center">
+              <div className="mb-4">
+                <SectionBadge>Lo Que Hacemos</SectionBadge>
+              </div>
+              <h2 className="mb-5 text-3xl font-extrabold font-display sm:text-4xl lg:text-5xl">
                 Páginas web diseñadas para <span className="gradient-text">vender</span>
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Diseño profesional, tecnología y estructura comercial para empresas que quieren generar confianza, contactos y crecimiento.
+              <p className="mx-auto max-w-xl text-muted-foreground">
+                Diseño, tecnología y estructura comercial para marcas que necesitan verse confiables y convertir mejor.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5">
-              {solutions.map((s) => (
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {benefits.map((item) => (
                 <article
-                  key={s.title}
-                  className="glass-card rounded-2xl p-7 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)] hover:border-primary/25 relative overflow-hidden block"
+                  key={item.title}
+                  className="glass-card group relative block overflow-hidden rounded-2xl p-7 transition-all duration-500 hover:-translate-y-3 hover:border-primary/25 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.3)]"
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent" />
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent group-hover:opacity-100" />
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)] transition-all duration-500">
-                        <s.icon size={22} className="text-primary" />
+                    <div className="mb-5 flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15 group-hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.4)]">
+                        <item.icon size={22} className="text-primary" />
                       </div>
-                      <span className="text-[9px] uppercase tracking-wider font-medium text-primary/60 px-2.5 py-1 rounded-full border border-primary/15 bg-primary/5">
-                        {s.tag}
+                      <span className="rounded-full border border-primary/15 bg-primary/5 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-primary/60">
+                        {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold mb-3 font-display transition-colors duration-300 group-hover:text-primary">{s.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
+                    <h3 className="mb-3 text-lg font-bold font-display transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                   </div>
                 </article>
               ))}
@@ -283,143 +327,196 @@ const DisenoDePaginasWeb = () => {
           <div className="section-divider mt-8" />
         </section>
 
-        <section className="py-12 md:py-24 relative overflow-hidden min-h-0 md:min-h-[500px]">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-12">
-              <div>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Criterio Comercial
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-5 leading-tight">
-                Lo que realmente hace que una página web <span className="gradient-text">funcione</span>
-              </h2>
-              <p className="text-muted-foreground max-w-xl leading-relaxed">
-                No se trata de llenar una web de efectos. Se trata de ordenar información, reducir fricción y convertir la confianza en una acción clara.
-              </p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-secondary/50 p-6 md:p-8">
-                <p className="font-display text-xl font-extrabold leading-tight md:text-2xl">
-                  Diseño, contenido y tecnología trabajando juntos para que tu sitio explique mejor y venda con menos esfuerzo.
+        <section className="relative min-h-0 overflow-hidden py-12 md:min-h-[560px] md:py-24">
+          <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background pointer-events-none" />
+          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="grid items-start gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+              <div className="lg:sticky lg:top-28">
+                <div className="mb-4">
+                  <SectionBadge>Criterio Comercial</SectionBadge>
+                </div>
+                <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+                  Lo que hace que una web <span className="gradient-text">funcione</span>
+                </h2>
+                <p className="mb-8 max-w-xl leading-relaxed text-muted-foreground">
+                  Una página web premium no depende de adornos. Depende de claridad, intención, velocidad y una estructura capaz de convertir interés en acción.
                 </p>
+                <Button variant="gradient" size="lg" asChild>
+                  <Link to="/contacto">
+                    Cotizar proyecto <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </Button>
               </div>
-            </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              {functionCards.map((card) => (
-                <article key={card.title} className="glass-card rounded-2xl p-7 md:p-8 group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
-                  <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/8 transition-all duration-500 group-hover:bg-primary/15">
-                    <card.icon size={24} className="text-primary" />
-                  </div>
-                  <h3 className="mb-3 font-display text-xl font-bold transition-colors duration-300 group-hover:text-primary">{card.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{card.desc}</p>
-                </article>
-              ))}
+              <div className="grid gap-4">
+                {fundamentals.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="glass-card group grid gap-5 rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)] sm:grid-cols-[auto_1fr] md:p-7"
+                  >
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 transition-all duration-500 group-hover:bg-primary/15">
+                      <item.icon size={23} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="mb-2 flex items-center gap-3">
+                        <span className="font-display text-xs font-extrabold text-primary/50">0{index + 1}</span>
+                        <h3 className="text-xl font-bold font-display transition-colors duration-300 group-hover:text-primary">{item.title}</h3>
+                      </div>
+                      <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{item.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden border-y border-border/60 bg-secondary/45 py-12 md:py-20">
-          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-              <div className="mb-4 lg:mb-0">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Presencia Regional
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
-                Diseño web para empresas en Cancún, Playa del Carmen y Tulum
+        <section className="relative overflow-hidden py-12 md:py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
+          <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
+          <div className="hidden md:block absolute left-1/2 top-1/2 h-[520px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-3xl font-extrabold leading-tight text-brand-navy-foreground font-display sm:text-4xl lg:text-5xl">
+                Tu web no debe verse bien. Debe ayudar a <span className="gradient-text">vender mejor</span>.
               </h2>
-              <p className="text-muted-foreground max-w-xl leading-relaxed">
-                Una página clara para mercados donde el visitante compara rápido, revisa confianza y decide con quién contactar.
+              <p className="mx-auto max-w-xl text-lg leading-relaxed text-brand-navy-foreground/60">
+                Convertimos tu propuesta en una experiencia digital clara: qué haces, por qué confiar y cuál es el siguiente paso.
               </p>
             </div>
-              <div className="rounded-2xl border border-border/60 bg-background/80 p-5 shadow-sm">
-                <div className="grid grid-cols-3 gap-3 text-center">
-                  {["Cancún", "Playa del Carmen", "Tulum"].map((city) => (
-                    <div key={city} className="rounded-xl border border-border/50 bg-muted/20 px-3 py-4">
-                      <MapPin size={16} className="mx-auto mb-2 text-primary" />
-                      <div className="font-display text-sm font-bold">{city}</div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden border-y border-border/60 bg-secondary/45 py-12 md:py-24">
+          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div>
+                <div className="mb-4">
+                  <SectionBadge>Presencia Regional</SectionBadge>
+                </div>
+                <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+                  Diseño web en Cancún, Playa del Carmen y Tulum
+                </h2>
+              </div>
+              <p className="max-w-xl leading-relaxed text-muted-foreground lg:ml-auto">
+                Creamos páginas para mercados donde la percepción, la confianza y la velocidad de contacto definen quién gana la oportunidad.
+              </p>
+            </div>
+
+            <div className="glass-card overflow-hidden rounded-2xl border border-border/60">
+              <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+                <div className="relative min-h-[320px] border-b border-border/50 bg-background p-8 lg:border-b-0 lg:border-r lg:p-10">
+                  <div className="absolute inset-0 bg-dot-grid opacity-25" />
+                  <div className="relative z-10 flex h-full flex-col justify-between">
+                    <div>
+                      <MapPin size={28} className="mb-6 text-primary" />
+                      <h3 className="mb-4 text-2xl font-extrabold font-display md:text-3xl">Una web para competir en la Riviera Maya</h3>
+                      <p className="leading-relaxed text-muted-foreground">
+                        Misma calidad visual, distinto enfoque comercial según el tipo de cliente, oferta y ciudad donde compite tu empresa.
+                      </p>
+                    </div>
+                    <div className="mt-8 grid grid-cols-3 gap-2">
+                      {regions.map((region) => (
+                        <div key={region.city} className="rounded-xl border border-border/50 bg-muted/25 px-3 py-4 text-center">
+                          <div className="mx-auto mb-2 h-2 w-2 rounded-full bg-primary" />
+                          <div className="text-xs font-bold font-display">{region.city}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="divide-y divide-border/50 bg-background/70">
+                  {regions.map((region, index) => (
+                    <div key={region.city} className="grid gap-4 p-6 transition-colors duration-300 hover:bg-primary/[0.025] sm:grid-cols-[auto_1fr] md:p-8">
+                      <span className="font-display text-4xl font-extrabold text-primary/15">0{index + 1}</span>
+                      <div>
+                        <h4 className="mb-2 text-xl font-bold font-display">{region.city}</h4>
+                        <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{region.text}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="relative z-10 mt-10 grid gap-5 md:grid-cols-3">
-              {cities.map((item) => (
-                <article key={item.city} className="glass-card rounded-2xl p-7 group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_0_50px_-10px_hsl(var(--primary)/0.25)] hover:border-primary/25">
-                  <div className="mb-5 flex items-center justify-between">
-                    <MapPin size={22} className="text-primary" />
-                    <span className="rounded-full border border-primary/15 bg-primary/5 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-primary/70">Región</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 font-display group-hover:text-primary transition-colors duration-300">{item.city}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
-        <section className="py-12 md:py-24 relative min-h-0 md:min-h-[500px]">
+        <section className="relative min-h-0 py-12 md:min-h-[500px] md:py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-14">
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
               <div>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-                <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                Consultoría y Ejecución
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
-                Un proceso más consultivo, menos plantilla
-              </h2>
+                <div className="mb-4">
+                  <SectionBadge>Proceso</SectionBadge>
+                </div>
+                <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
+                  De la idea al lanzamiento, con dirección clara
+                </h2>
               </div>
-              <p className="text-muted-foreground max-w-xl leading-relaxed lg:ml-auto">
-                Antes de diseñar pantallas, ordenamos la oferta, la narrativa y los puntos de decisión que necesita tu cliente para avanzar.
+              <p className="max-w-xl leading-relaxed text-muted-foreground lg:ml-auto">
+                Un proceso consultivo para ordenar tu oferta, diseñar con intención y lanzar una página preparada para crecer.
               </p>
             </div>
 
-            <div className="grid gap-4 lg:grid-cols-4">
-                {process.map((step, i) => (
+            <div className="relative mx-auto max-w-5xl">
+              <div className="absolute left-6 top-8 bottom-8 hidden w-px bg-gradient-to-b from-primary/15 via-primary/40 to-primary/15 md:block lg:left-1/2" />
+              <div className="space-y-6 md:space-y-10">
+                {process.map((step, index) => (
                   <article
                     key={step.title}
-                    className="glass-card rounded-2xl p-6 md:p-7 group transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
+                    className={`relative grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center ${index % 2 === 1 ? "" : ""}`}
                   >
-                    <div className="mb-8 flex items-center justify-between">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 transition-all duration-500 group-hover:bg-primary/15">
-                        <step.icon size={23} className="text-primary" />
+                    <div className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-3"}`}>
+                      <div className="glass-card rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)] md:p-7">
+                        <div className={`mb-4 flex items-center gap-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                          <step.icon size={21} className="text-primary" />
+                          <h3 className="text-xl font-bold font-display">{step.title}</h3>
+                        </div>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
                       </div>
-                      <span className="font-display text-4xl font-extrabold text-primary/15">0{i + 1}</span>
                     </div>
-                    <h3 className="text-xl font-bold font-display mb-3 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    <div className="relative z-10 hidden h-12 w-12 items-center justify-center rounded-2xl border border-primary/20 bg-background font-display text-sm font-extrabold text-primary shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] md:flex">
+                      0{index + 1}
+                    </div>
+                    <div className={`${index % 2 === 0 ? "hidden md:block" : "hidden md:col-start-1 md:row-start-1 md:block"}`} />
                   </article>
                 ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-12 md:py-24 relative overflow-hidden">
+        <section className="relative overflow-hidden py-12 md:py-24">
           <div className="absolute inset-0 bg-gradient-to-br from-[hsl(228,40%,6%)] via-[hsl(220,50%,10%)] to-[hsl(228,45%,5%)]" />
           <div className="absolute inset-0 bg-dot-grid opacity-10 pointer-events-none" />
-          <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
-          <div className="hidden md:block absolute bottom-0 right-1/4 w-[300px] h-[200px] rounded-full bg-primary/6 blur-[40px] pointer-events-none" />
+          <div className="hidden md:block absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[60px] pointer-events-none" />
+          <div className="hidden md:block absolute bottom-0 right-1/4 h-[200px] w-[300px] rounded-full bg-primary/6 blur-[40px] pointer-events-none" />
 
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 font-display leading-tight text-brand-navy-foreground">
+          <div className="container relative z-10 mx-auto px-4 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-3xl font-extrabold leading-tight text-brand-navy-foreground font-display sm:text-4xl lg:text-5xl">
                 Convierte tu sitio web en una pieza real de <span className="gradient-text">crecimiento</span>
               </h2>
-              <p className="text-brand-navy-foreground/60 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-brand-navy-foreground/60">
                 Cuéntanos qué vendes y diseñamos una experiencia clara, tecnológica y preparada para convertir visitas en oportunidades.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button variant="gradient" size="lg" className="text-base px-8 py-6" asChild>
-                  <Link to="/contacto">Solicitar Cotización <ArrowRight size={16} className="ml-1" /></Link>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
+                  <Link to="/contacto">
+                    Solicitar cotización <ArrowRight size={16} className="ml-1" />
+                  </Link>
                 </Button>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-base px-8 py-3 rounded-lg border border-white/40 text-brand-navy-foreground bg-transparent font-medium transition-all duration-300 hover:bg-white hover:text-[hsl(220,50%,10%)] hover:border-white">
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy-foreground/40 bg-transparent px-8 py-3 text-base font-medium text-brand-navy-foreground transition-all duration-300 hover:border-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy"
+                >
                   <MessageSquare size={16} /> Hablar por WhatsApp
                 </a>
               </div>
@@ -432,25 +529,30 @@ const DisenoDePaginasWeb = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
             <div className="mx-auto max-w-5xl">
-              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end mb-12 md:mb-14">
+              <div className="mb-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end md:mb-14">
                 <div>
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
-                  FAQ
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">Preguntas antes de cotizar</h2>
+                  <div className="mb-4">
+                    <SectionBadge>FAQ</SectionBadge>
+                  </div>
+                  <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">Preguntas antes de cotizar</h2>
                 </div>
-                <p className="max-w-xl text-muted-foreground leading-relaxed lg:ml-auto">
+                <p className="max-w-xl leading-relaxed text-muted-foreground lg:ml-auto">
                   Respuestas directas sobre alcance, tiempos, administración y preparación para SEO antes de iniciar un proyecto web.
                 </p>
               </div>
               <Accordion type="single" collapsible className="grid gap-4">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={faq.q} value={`item-${index}`} className="glass-card rounded-2xl border border-border/60 px-5 py-1 transition-all duration-300 hover:border-primary/20 md:px-7">
-                    <AccordionTrigger className="py-6 text-left font-display text-base font-bold hover:text-primary hover:no-underline md:text-xl">
+                  <AccordionItem
+                    key={faq.q}
+                    value={`item-${index}`}
+                    className="glass-card rounded-2xl border border-border/60 px-5 py-1 transition-all duration-300 hover:border-primary/20 md:px-7"
+                  >
+                    <AccordionTrigger className="py-6 text-left text-base font-bold font-display hover:text-primary hover:no-underline md:text-xl">
                       <span className="pr-4">{faq.q}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground md:max-w-3xl md:text-base">{faq.a}</AccordionContent>
+                    <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground md:max-w-3xl md:text-base">
+                      {faq.a}
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
