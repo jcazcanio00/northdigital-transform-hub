@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -46,8 +46,8 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.55, delay },
 });
 
-const SectionBadge = ({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) => (
-  <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs mb-4 ${dark ? "border-white/15 bg-white/10 text-white/70" : "border-primary/20 bg-primary/5 text-muted-foreground"}`}>
+const SectionBadge = ({ children, dark = false }: { children: ReactNode; dark?: boolean }) => (
+  <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs mb-4 ${dark ? "border-brand-navy-foreground/15 bg-brand-navy-foreground/10 text-brand-navy-foreground/70" : "border-primary/20 bg-primary/5 text-muted-foreground"}`}>
     <span className={`${dark ? "bg-brand-red" : "bg-primary"} w-2 h-2 rounded-full animate-status-pulse`} />
     {children}
   </span>
@@ -88,26 +88,26 @@ const WebMockup = () => (
             <div>
               <div className="mb-8 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-white/10" />
-                  <div className="h-2.5 w-20 rounded-full bg-white/30" />
+                  <div className="h-8 w-8 rounded-lg bg-brand-navy-foreground/10" />
+                  <div className="h-2.5 w-20 rounded-full bg-brand-navy-foreground/30" />
                 </div>
                 <div className="h-8 w-24 rounded-full bg-brand-red" />
               </div>
-              <div className="mb-5 h-3 w-28 rounded-full bg-white/25" />
+              <div className="mb-5 h-3 w-28 rounded-full bg-brand-navy-foreground/25" />
               <div className="space-y-3">
-                <div className="h-8 w-full max-w-[320px] rounded-lg bg-white/90" />
-                <div className="h-8 w-10/12 rounded-lg bg-white/70" />
-                <div className="h-8 w-8/12 rounded-lg bg-white/40" />
+                <div className="h-8 w-full max-w-[320px] rounded-lg bg-brand-navy-foreground/90" />
+                <div className="h-8 w-10/12 rounded-lg bg-brand-navy-foreground/70" />
+                <div className="h-8 w-8/12 rounded-lg bg-brand-navy-foreground/40" />
               </div>
               <div className="mt-6 space-y-2">
-                <div className="h-2 w-11/12 rounded-full bg-white/25" />
-                <div className="h-2 w-8/12 rounded-full bg-white/20" />
+                <div className="h-2 w-11/12 rounded-full bg-brand-navy-foreground/25" />
+                <div className="h-2 w-8/12 rounded-full bg-brand-navy-foreground/20" />
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2">
               {["UX", "SEO", "CRM"].map((item) => (
-                <div key={item} className="rounded-xl border border-white/10 bg-white/10 p-3">
-                  <div className="mb-3 h-7 w-7 rounded-lg bg-white/15" />
+                <div key={item} className="rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/10 p-3">
+                  <div className="mb-3 h-7 w-7 rounded-lg bg-brand-navy-foreground/15" />
                   <div className="text-xs font-bold">{item}</div>
                 </div>
               ))}
@@ -291,14 +291,14 @@ const DisenoDePaginasWeb = () => {
               <motion.div {...fade()}>
                 <SectionBadge dark>Beneficios de negocio</SectionBadge>
                 <h2 className="font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">Una web no debe ser un folleto. Debe ayudarte a vender.</h2>
-                <p className="mt-5 text-base leading-relaxed text-white/65">Diseñamos la experiencia completa para que tu cliente entienda rápido qué haces, por qué confiar y cuál es el siguiente paso.</p>
+                <p className="mt-5 text-base leading-relaxed text-brand-navy-foreground/65">Diseñamos la experiencia completa para que tu cliente entienda rápido qué haces, por qué confiar y cuál es el siguiente paso.</p>
               </motion.div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {benefits.map((benefit, i) => (
-                  <motion.div key={benefit.title} {...fade(i * 0.08)} className="rounded-2xl border border-white/10 bg-white/8 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/12">
+                  <motion.div key={benefit.title} {...fade(i * 0.08)} className="rounded-2xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-navy-foreground/[0.12]">
                     <benefit.icon size={24} className="mb-5 text-brand-red" />
                     <h3 className="mb-2 font-display text-lg font-bold">{benefit.title}</h3>
-                    <p className="text-sm leading-relaxed text-white/65">{benefit.desc}</p>
+                    <p className="text-sm leading-relaxed text-brand-navy-foreground/65">{benefit.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -359,12 +359,12 @@ const DisenoDePaginasWeb = () => {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red"><ShieldCheck size={22} /></div>
                   <div>
                     <div className="font-display text-xl font-bold">Sistema de conversión</div>
-                    <div className="text-sm text-white/60">No solo una página informativa</div>
+                    <div className="text-sm text-brand-navy-foreground/60">No solo una página informativa</div>
                   </div>
                 </div>
                 <div className="space-y-3">
                   {differentiators.map((item) => (
-                    <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/8 p-3 text-sm text-white/75">
+                    <div key={item} className="flex gap-3 rounded-xl border border-brand-navy-foreground/10 bg-brand-navy-foreground/[0.08] p-3 text-sm text-brand-navy-foreground/75">
                       <CheckCircle2 size={18} className="shrink-0 text-brand-red" />
                       <span>{item}</span>
                     </div>
@@ -381,12 +381,12 @@ const DisenoDePaginasWeb = () => {
             <motion.div {...fade()} className="mx-auto max-w-3xl">
               <SectionBadge dark>Listo para avanzar</SectionBadge>
               <h2 className="font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">Haz que tu página trabaje como tu mejor vendedor digital</h2>
-              <p className="mx-auto mt-5 max-w-2xl text-white/65">Cuéntanos qué vendes y diseñamos una experiencia clara, premium y preparada para convertir visitantes en oportunidades.</p>
+              <p className="mx-auto mt-5 max-w-2xl text-brand-navy-foreground/65">Cuéntanos qué vendes y diseñamos una experiencia clara, premium y preparada para convertir visitantes en oportunidades.</p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                 <Button size="lg" className="h-14 bg-brand-red px-8 text-base text-brand-red-foreground hover:bg-brand-red/90" asChild>
                   <Link to="/contacto">Solicitar cotización <ArrowRight size={18} /></Link>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 border-white/20 bg-white/10 px-8 text-base text-white hover:bg-white hover:text-brand-navy" asChild>
+                <Button size="lg" variant="outline" className="h-14 border-brand-navy-foreground/20 bg-brand-navy-foreground/10 px-8 text-base text-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><MessageSquare size={18} /> Hablar con North</a>
                 </Button>
               </div>
