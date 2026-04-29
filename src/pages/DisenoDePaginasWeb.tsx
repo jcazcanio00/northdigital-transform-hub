@@ -507,46 +507,27 @@ const DisenoDePaginasWeb = () => {
             </div>
 
             <div className="relative mx-auto max-w-6xl">
-              <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-primary/10 via-primary/45 to-primary/10" />
-              <div className="space-y-10 md:space-y-12">
+              <div className="absolute left-8 top-8 hidden h-px w-[calc(100%-4rem)] bg-gradient-to-r from-primary/10 via-primary/35 to-primary/10 lg:block" />
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {process.map((step, index) => (
                   <article
                     key={step.title}
-                    className="relative grid gap-5 md:grid-cols-[1fr_96px_1fr] md:items-center md:gap-8"
+                    className="glass-card group relative rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_60px_-16px_hsl(var(--primary)/0.35)] md:p-7"
                   >
-                    <div
-                      className={`order-2 ${
-                        index % 2 === 0
-                          ? "md:order-1 md:text-right"
-                          : "md:order-3 md:col-start-3"
-                      }`}
-                    >
-                      <div className="glass-card group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_60px_-16px_hsl(var(--primary)/0.35)] md:p-8">
-                        <div
-                          className={`relative z-10 mb-4 flex items-center gap-3 ${
-                            index % 2 === 0 ? "md:justify-end" : ""
-                          }`}
-                        >
-                          <step.icon size={22} className="text-primary" />
-                          <h3 className="text-xl font-bold font-display md:text-2xl">
-                            {step.title}
-                          </h3>
+                    <div className="relative z-10">
+                      <div className="mb-6 flex items-center justify-between gap-4">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 font-display text-sm font-extrabold text-primary shadow-[0_0_36px_-14px_hsl(var(--primary)/0.45)]">
+                          0{index + 1}
                         </div>
-                        <p className="relative z-10 text-sm leading-relaxed text-muted-foreground md:text-base">
-                          {step.description}
-                        </p>
+                        <step.icon size={21} className="text-primary" />
                       </div>
+                      <h3 className="mb-3 text-xl font-bold font-display transition-colors duration-300 group-hover:text-primary">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {step.description}
+                      </p>
                     </div>
-
-                    <div className="order-1 z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/25 bg-background font-display text-base font-extrabold text-primary shadow-[0_0_46px_-12px_hsl(var(--primary)/0.45)] md:order-2 md:col-start-2 md:row-start-1 md:h-20 md:w-20">
-                      0{index + 1}
-                    </div>
-
-                    <div
-                      className={`hidden md:row-start-1 md:block ${
-                        index % 2 === 0 ? "md:order-3" : "md:order-1 md:col-start-1"
-                      }`}
-                    />
                   </article>
                 ))}
               </div>
