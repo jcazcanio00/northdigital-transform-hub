@@ -384,6 +384,21 @@ const DisenoDePaginasWeb = () => {
               <p className="mx-auto max-w-xl text-lg leading-relaxed text-brand-navy-foreground/60">
                 Convertimos tu propuesta en una experiencia digital clara: qué haces, por qué confiar y cuál es el siguiente paso.
               </p>
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Button variant="gradient" size="lg" className="px-8 py-6 text-base" asChild>
+                  <Link to="/contacto">
+                    Solicitar cotización <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </Button>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy-foreground/40 bg-transparent px-8 py-3 text-base font-medium text-brand-navy-foreground transition-all duration-300 hover:border-brand-navy-foreground hover:bg-brand-navy-foreground hover:text-brand-navy"
+                >
+                  <MessageSquare size={16} /> Hablar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -392,49 +407,31 @@ const DisenoDePaginasWeb = () => {
           <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.025] to-transparent pointer-events-none" />
           <div className="container relative z-10 mx-auto px-4 lg:px-8">
-            <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-              <div>
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div className="lg:sticky lg:top-28">
                 <div className="mb-4">
                   <SectionBadge>Presencia Regional</SectionBadge>
                 </div>
                 <h2 className="mb-5 text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl">
-                  Diseño web en Cancún, Playa del Carmen y Tulum
+                  Páginas web que compiten en mercados reales
                 </h2>
+                <p className="max-w-xl leading-relaxed text-muted-foreground">
+                  En la Riviera Maya, una web compite contra marcas locales, opciones internacionales y decisiones rápidas. Diseñamos páginas que explican con claridad, transmiten confianza y ayudan a que el cliente entienda por qué elegirte.
+                </p>
               </div>
-              <p className="max-w-xl leading-relaxed text-muted-foreground lg:ml-auto">
-                Creamos páginas para mercados donde la percepción, la confianza y la velocidad de contacto definen quién gana la oportunidad.
-              </p>
-            </div>
 
-            <div className="glass-card overflow-hidden rounded-2xl border border-border/60">
-              <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-                <div className="relative min-h-[320px] border-b border-border/50 bg-background p-8 lg:border-b-0 lg:border-r lg:p-10">
-                  <div className="absolute inset-0 bg-dot-grid opacity-25" />
-                  <div className="relative z-10 flex h-full flex-col justify-between">
-                    <div>
-                      <MapPin size={28} className="mb-6 text-primary" />
-                      <h3 className="mb-4 text-2xl font-extrabold font-display md:text-3xl">Una web para competir en la Riviera Maya</h3>
-                      <p className="leading-relaxed text-muted-foreground">
-                        Misma calidad visual, distinto enfoque comercial según el tipo de cliente, oferta y ciudad donde compite tu empresa.
-                      </p>
-                    </div>
-                    <div className="mt-8 grid grid-cols-3 gap-2">
-                      {regions.map((region) => (
-                        <div key={region.city} className="rounded-xl border border-border/50 bg-muted/25 px-3 py-4 text-center">
-                          <div className="mx-auto mb-2 h-2 w-2 rounded-full bg-primary" />
-                          <div className="text-xs font-bold font-display">{region.city}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="divide-y divide-border/50 bg-background/70">
+              <div className="glass-card overflow-hidden rounded-2xl border border-border/60 bg-background/70">
+                <div className="divide-y divide-border/50">
                   {regions.map((region, index) => (
-                    <div key={region.city} className="grid gap-4 p-6 transition-colors duration-300 hover:bg-primary/[0.025] sm:grid-cols-[auto_1fr] md:p-8">
-                      <span className="font-display text-4xl font-extrabold text-primary/15">0{index + 1}</span>
+                    <div key={region.city} className="grid gap-5 p-6 transition-colors duration-300 hover:bg-primary/[0.025] sm:grid-cols-[auto_1fr] md:p-8">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 font-display text-sm font-extrabold text-primary">
+                        0{index + 1}
+                      </div>
                       <div>
-                        <h4 className="mb-2 text-xl font-bold font-display">{region.city}</h4>
+                        <div className="mb-3 flex items-center gap-3">
+                          <MapPin size={18} className="text-primary" />
+                          <h3 className="text-xl font-bold font-display">{region.city}</h3>
+                        </div>
                         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{region.text}</p>
                       </div>
                     </div>
