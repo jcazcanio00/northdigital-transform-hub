@@ -333,10 +333,10 @@ const DisenoDePaginasWeb = () => {
                 Presencia Regional
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
-                Presencia digital premium para mercados que compiten por confianza
+                Diseño web para empresas en Cancún, Playa del Carmen y Tulum
               </h2>
               <p className="text-muted-foreground max-w-xl leading-relaxed">
-                Una presencia premium para mercados donde la confianza, velocidad y claridad comercial definen la primera decisión.
+                Una página clara para mercados donde el visitante compara rápido, revisa confianza y decide con quién contactar.
               </p>
             </div>
               <div className="rounded-2xl border border-border/60 bg-background/80 p-5 shadow-sm">
@@ -368,43 +368,37 @@ const DisenoDePaginasWeb = () => {
         <section className="py-12 md:py-24 relative min-h-0 md:min-h-[500px]">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
+            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end mb-14">
+              <div>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs text-muted-foreground mb-4">
                 <span className="w-2 h-2 rounded-full bg-primary animate-status-pulse" />
                 Consultoría y Ejecución
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display">
-                De la idea al <span className="gradient-text">lanzamiento</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 font-display leading-tight">
+                Un proceso más consultivo, menos plantilla
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                Un proceso claro para convertir una necesidad comercial en una página web lista para vender, medir y escalar.
+              </div>
+              <p className="text-muted-foreground max-w-xl leading-relaxed lg:ml-auto">
+                Antes de diseñar pantallas, ordenamos la oferta, la narrativa y los puntos de decisión que necesita tu cliente para avanzar.
               </p>
             </div>
 
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
-              <div className="space-y-12">
+            <div className="grid gap-4 lg:grid-cols-4">
                 {process.map((step, i) => (
-                  <div
+                  <article
                     key={step.title}
-                    className={`flex items-start gap-6 md:gap-12 group ${i % 2 === 1 ? "md:flex-row-reverse md:text-right" : ""}`}
+                    className="glass-card rounded-2xl p-6 md:p-7 group transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_0_50px_-14px_hsl(var(--primary)/0.25)]"
                   >
-                    <div className="flex-1 hidden md:block" />
-                    <div className="relative z-10 shrink-0">
-                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-[0_0_30px_-8px_hsl(var(--primary)/0.3)] transition-all duration-500 group-hover:bg-primary/20 group-hover:shadow-[0_0_50px_-8px_hsl(var(--primary)/0.4)] group-hover:scale-105">
-                        <step.icon size={24} className="text-primary transition-transform duration-500 group-hover:scale-110" />
+                    <div className="mb-8 flex items-center justify-between">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 transition-all duration-500 group-hover:bg-primary/15">
+                        <step.icon size={23} className="text-primary" />
                       </div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full gradient-btn flex items-center justify-center text-[10px] font-bold text-white">
-                        {i + 1}
-                      </div>
+                      <span className="font-display text-4xl font-extrabold text-primary/15">0{i + 1}</span>
                     </div>
-                    <div className="flex-1 rounded-2xl border border-border/50 bg-card/70 p-5 shadow-sm transition-all duration-500 group-hover:-translate-y-1 group-hover:border-primary/20 group-hover:shadow-[0_0_40px_-16px_hsl(var(--primary)/0.3)]">
-                      <h3 className="text-lg font-bold font-display mb-2 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
+                    <h3 className="text-xl font-bold font-display mb-3 transition-colors duration-300 group-hover:text-primary">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </article>
                 ))}
-              </div>
             </div>
           </div>
         </section>
