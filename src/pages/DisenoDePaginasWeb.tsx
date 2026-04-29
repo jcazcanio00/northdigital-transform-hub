@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import {
   ArrowRight,
-  CheckCircle2,
   Code2,
   Compass,
   Gauge,
@@ -14,7 +13,6 @@ import {
   Search,
   Shield,
   Smartphone,
-  TrendingUp,
   Workflow,
 } from "lucide-react";
 import { Link } from "react-router-dom";
